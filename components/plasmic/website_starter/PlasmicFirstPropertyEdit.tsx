@@ -104,6 +104,7 @@ export type PlasmicFirstPropertyEdit__OverridesType = {
   upload?: Flex__<typeof UploadWrapper>;
   newButtons2?: Flex__<"div">;
   next2?: Flex__<"div">;
+  divarEdition?: Flex__<"div">;
   privious2?: Flex__<"div">;
   back?: Flex__<"div">;
   propGuide5?: Flex__<"div">;
@@ -1718,6 +1719,215 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
                       {"\u0630\u062e\u06cc\u0631\u0647 \u0634\u0648\u062f"}
                     </div>
                   </div>
+                  {(() => {
+                    try {
+                      return (() => {
+                        function checkDivarSource() {
+                          const cookies = document.cookie.split(";");
+                          for (let i = 0; i < cookies.length; i++) {
+                            const [key, value] = cookies[i].trim().split("=");
+                            if (key === "source" && value === "divar") {
+                              return true;
+                            }
+                          }
+                          return false;
+                        }
+                        const isDivar = checkDivarSource();
+                        return console.log(isDivar);
+                      })();
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return false;
+                      }
+                      throw e;
+                    }
+                  })() ? (
+                    <div
+                      data-plasmic-name={"divarEdition"}
+                      data-plasmic-override={overrides.divarEdition}
+                      className={classNames(
+                        projectcss.all,
+                        sty.divarEdition,
+                        "clickable"
+                      )}
+                      onClick={async event => {
+                        const $steps = {};
+
+                        $steps["updateLoading"] = true
+                          ? (() => {
+                              const actionArgs = {
+                                variable: {
+                                  objRoot: $state,
+                                  variablePath: ["loading"]
+                                },
+                                operation: 0,
+                                value: ($state.loading = true)
+                              };
+                              return (({
+                                variable,
+                                value,
+                                startIndex,
+                                deleteCount
+                              }) => {
+                                if (!variable) {
+                                  return;
+                                }
+                                const { objRoot, variablePath } = variable;
+
+                                $stateSet(objRoot, variablePath, value);
+                                return value;
+                              })?.apply(null, [actionArgs]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["updateLoading"] != null &&
+                          typeof $steps["updateLoading"] === "object" &&
+                          typeof $steps["updateLoading"].then === "function"
+                        ) {
+                          $steps["updateLoading"] =
+                            await $steps["updateLoading"];
+                        }
+
+                        $steps["deletePropTourCookie"] = true
+                          ? (() => {
+                              const actionArgs = {
+                                customFunction: async () => {
+                                  return (() => {
+                                    function deleteCookie(name) {
+                                      document.cookie =
+                                        name +
+                                        "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
+                                    }
+                                    deleteCookie("prop_tour");
+                                    return ($state.propTour = false);
+                                  })();
+                                }
+                              };
+                              return (({ customFunction }) => {
+                                return customFunction();
+                              })?.apply(null, [actionArgs]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["deletePropTourCookie"] != null &&
+                          typeof $steps["deletePropTourCookie"] === "object" &&
+                          typeof $steps["deletePropTourCookie"].then ===
+                            "function"
+                        ) {
+                          $steps["deletePropTourCookie"] =
+                            await $steps["deletePropTourCookie"];
+                        }
+
+                        $steps["goToPanel"] = true
+                          ? (() => {
+                              const actionArgs = {
+                                destination: `/direct-booking/select-property`
+                              };
+                              return (({ destination }) => {
+                                if (
+                                  typeof destination === "string" &&
+                                  destination.startsWith("#")
+                                ) {
+                                  document
+                                    .getElementById(destination.substr(1))
+                                    .scrollIntoView({ behavior: "smooth" });
+                                } else {
+                                  __nextRouter?.push(destination);
+                                }
+                              })?.apply(null, [actionArgs]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["goToPanel"] != null &&
+                          typeof $steps["goToPanel"] === "object" &&
+                          typeof $steps["goToPanel"].then === "function"
+                        ) {
+                          $steps["goToPanel"] = await $steps["goToPanel"];
+                        }
+
+                        $steps["updateLoading2"] = true
+                          ? (() => {
+                              const actionArgs = {
+                                variable: {
+                                  objRoot: $state,
+                                  variablePath: ["loading"]
+                                },
+                                operation: 0,
+                                value: ($state.loading = false)
+                              };
+                              return (({
+                                variable,
+                                value,
+                                startIndex,
+                                deleteCount
+                              }) => {
+                                if (!variable) {
+                                  return;
+                                }
+                                const { objRoot, variablePath } = variable;
+
+                                $stateSet(objRoot, variablePath, value);
+                                return value;
+                              })?.apply(null, [actionArgs]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["updateLoading2"] != null &&
+                          typeof $steps["updateLoading2"] === "object" &&
+                          typeof $steps["updateLoading2"].then === "function"
+                        ) {
+                          $steps["updateLoading2"] =
+                            await $steps["updateLoading2"];
+                        }
+                      }}
+                    >
+                      {(() => {
+                        try {
+                          return $state.loading;
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return true;
+                          }
+                          throw e;
+                        }
+                      })() ? (
+                        <PlasmicImg__
+                          alt={""}
+                          className={classNames(sty.img__csBhy)}
+                          displayHeight={"37px"}
+                          displayMaxHeight={"none"}
+                          displayMaxWidth={"100%"}
+                          displayMinHeight={"0"}
+                          displayMinWidth={"0"}
+                          displayWidth={"auto"}
+                          loading={"lazy"}
+                          src={{
+                            src: "/plasmic/website_starter/images/image140.gif",
+                            fullWidth: 500,
+                            fullHeight: 500,
+                            aspectRatio: undefined
+                          }}
+                        />
+                      ) : null}
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__blWEa
+                        )}
+                      >
+                        {
+                          "\u0630\u062e\u06cc\u0631\u0647 \u0634\u0648\u062f(\u062f\u06cc\u0648\u0627\u0631)"
+                        }
+                      </div>
+                    </div>
+                  ) : null}
                   <div
                     data-plasmic-name={"privious2"}
                     data-plasmic-override={overrides.privious2}
@@ -2188,6 +2398,7 @@ const PlasmicDescendants = {
     "upload",
     "newButtons2",
     "next2",
+    "divarEdition",
     "privious2",
     "back",
     "propGuide5",
@@ -2214,6 +2425,7 @@ const PlasmicDescendants = {
     "upload",
     "newButtons2",
     "next2",
+    "divarEdition",
     "privious2"
   ],
   title: ["title"],
@@ -2223,12 +2435,14 @@ const PlasmicDescendants = {
     "upload",
     "newButtons2",
     "next2",
+    "divarEdition",
     "privious2"
   ],
   embedHtml: ["embedHtml"],
   upload: ["upload"],
-  newButtons2: ["newButtons2", "next2", "privious2"],
+  newButtons2: ["newButtons2", "next2", "divarEdition", "privious2"],
   next2: ["next2"],
+  divarEdition: ["divarEdition"],
   privious2: ["privious2"],
   back: ["back", "propGuide5", "propGuide6"],
   propGuide5: ["propGuide5", "propGuide6"],
@@ -2259,6 +2473,7 @@ type NodeDefaultElementType = {
   upload: typeof UploadWrapper;
   newButtons2: "div";
   next2: "div";
+  divarEdition: "div";
   privious2: "div";
   back: "div";
   propGuide5: "div";
@@ -2347,6 +2562,7 @@ export const PlasmicFirstPropertyEdit = Object.assign(
     upload: makeNodeComponent("upload"),
     newButtons2: makeNodeComponent("newButtons2"),
     next2: makeNodeComponent("next2"),
+    divarEdition: makeNodeComponent("divarEdition"),
     privious2: makeNodeComponent("privious2"),
     back: makeNodeComponent("back"),
     propGuide5: makeNodeComponent("propGuide5"),

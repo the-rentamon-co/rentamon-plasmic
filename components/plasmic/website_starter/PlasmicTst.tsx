@@ -96,6 +96,7 @@ export type PlasmicTst__OverridesType = {
   apiRequest4?: Flex__<typeof ApiRequest>;
   datePicker?: Flex__<typeof DatePicker>;
   profile2?: Flex__<typeof ApiRequest>;
+  org?: Flex__<typeof Button>;
   mahanTest?: Flex__<"div">;
   button?: Flex__<typeof Button>;
 };
@@ -735,9 +736,39 @@ function PlasmicTst__RenderFunc(props: {
             <div className={classNames(projectcss.all, sty.freeBox__f4NMm)}>
               <Embed
                 className={classNames("__wab_instance", sty.embedHtml__gpUeV)}
-                code={"<div>Paste your embed code via the right sidebar</div>"}
+                code={
+                  '<script type="module">\r\n  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";\r\n  import { getMessaging, getToken, onMessage } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-messaging.js";\r\n\r\n  // --- 1. CONFIGURATION ---\r\n  const firebaseConfig = {\r\n    apiKey: "AIzaSyCwfbUiQNPQSyL48d0It3MgFOoTwF6AHN4",\r\n    authDomain: "miaan-notify-mn5436.firebaseapp.com",\r\n    projectId: "miaan-notify-mn5436",\r\n    storageBucket: "miaan-notify-mn5436.firebasestorage.app",\r\n    messagingSenderId: "553708011126",\r\n    appId: "1:553708011126:web:dcdff7eacd0ea7b3296957"\r\n  };\r\n\r\n  const VAPID_KEY = "BPBCMzaOwuDnklPI_8EXu6x30lu0-eq0fcZ058u1fXWbHxicUr0fn8MdpyLFdP5QQIOgiIg9zZtVsyCrr7rV15k";\r\n  const BACKEND_URL = "https://second-n8n.darkube.app/webhook/v1/devices/sync";\r\n  const MANDATORY_ICON = "https://media.rentamon.com/img%2Flogo-miaan%2Fsign-blue-small.png";\r\n\r\n  // Initialize\r\n  const app = initializeApp(firebaseConfig);\r\n  const messaging = getMessaging(app);\r\n\r\n  // --- 2. HELPERS ---\r\n  function getCookie(name) {\r\n    const value = `; ${document.cookie}`;\r\n    const parts = value.split(`; ${name}=`);\r\n    if (parts.length === 2) return parts.pop().split(\';\').shift();\r\n    return null;\r\n  }\r\n\r\n  // --- 3. FORCE SYNC TO BACKEND ---\r\n  async function sendTokenToBackend(fcmToken) {\r\n    const ussoToken = getCookie("usso_access_token");\r\n    console.log("\ud83d\ude80 [FCM-FORCE] Sending fresh token to backend...");\r\n\r\n    try {\r\n      const response = await fetch(BACKEND_URL, {\r\n        method: "POST",\r\n        headers: {\r\n          "Content-Type": "application/json",\r\n          "x-fcm-token": fcmToken,\r\n          "Authorization": ussoToken ? `Bearer ${ussoToken}` : ""\r\n        },\r\n        body: JSON.stringify({\r\n          fcm_token: fcmToken,\r\n          usso_access_token: ussoToken,\r\n          device_type: "pwa-apk",\r\n          platform: "android_web",\r\n          timestamp: new Date().toISOString() // \u062a\u0627\u06cc\u0645 \u062f\u0642\u06cc\u0642 \u0628\u0631\u0627\u06cc \u062f\u06cc\u0628\u0627\u06af\r\n        })\r\n      });\r\n\r\n      if (response.ok) {\r\n        console.log("\u2705 [FCM-FORCE] Backend updated successfully.");\r\n      } else {\r\n        console.error("\u274c [FCM-FORCE] Backend sync failed:", response.status);\r\n      }\r\n    } catch (error) {\r\n      console.error("\u274c [FCM-FORCE] Network error:", error);\r\n    }\r\n  }\r\n\r\n  // --- 4. MAIN LOGIC: GET FRESH TOKEN ---\r\n  async function forceGetAndSyncToken() {\r\n    // \u0641\u0642\u0637 \u0627\u06af\u0631 \u06a9\u0627\u0631\u0628\u0631 \u0642\u0628\u0644\u0627 \u0627\u062c\u0627\u0632\u0647 \u062f\u0627\u062f\u0647 \u0627\u0633\u062a\u060c \u0627\u06cc\u0646 \u06a9\u0627\u0631 \u0631\u0627 \u0628\u06a9\u0646 (\u062a\u0627 \u0645\u0632\u0627\u062d\u0645 \u06a9\u0627\u0631\u0628\u0631 \u062c\u062f\u06cc\u062f \u0646\u0634\u0648\u06cc\u0645)\r\n    if (Notification.permission === "granted") {\r\n      try {\r\n        // \u0647\u0645\u06cc\u0634\u0647 \u0633\u0631\u0648\u06cc\u0633 \u0648\u0631\u06a9\u0631 \u0631\u0627 \u0628\u06af\u06cc\u0631 \u06cc\u0627 \u062b\u0628\u062a \u06a9\u0646\r\n        const registration = await navigator.serviceWorker.register("/firebase-messaging-sw.js", { scope: \'/\' });\r\n        \r\n        console.log("\ud83d\udd04 [FCM-FORCE] Requesting fresh token from Firebase SDK...");\r\n        \r\n        // \u062f\u0631\u062e\u0648\u0627\u0633\u062a \u0645\u0633\u062a\u0642\u06cc\u0645 \u062a\u0648\u06a9\u0646 \u0627\u0632 \u0641\u0627\u06cc\u0631\u0628\u06cc\u0633\r\n        // \u0627\u06cc\u0646 \u062a\u0627\u0628\u0639 \u062e\u0648\u062f\u0634 \u0627\u06af\u0631 \u062a\u0648\u06a9\u0646 \u0645\u0646\u0642\u0636\u06cc \u0634\u062f\u0647 \u0628\u0627\u0634\u062f\u060c \u062c\u062f\u06cc\u062f\u0634 \u0631\u0627 \u0645\u06cc\u200c\u062f\u0647\u062f\r\n        const currentToken = await getToken(messaging, { \r\n          vapidKey: VAPID_KEY,\r\n          serviceWorkerRegistration: registration \r\n        });\r\n\r\n        if (currentToken) {\r\n          console.log("\ud83d\udce6 [FCM-FORCE] Token received from Firebase.");\r\n          // \u0628\u062f\u0648\u0646 \u0647\u06cc\u0686 \u0634\u0631\u0637\u06cc (if) \u0645\u0633\u062a\u0642\u06cc\u0645 \u0628\u0641\u0631\u0633\u062a \u0628\u0647 \u0628\u06a9\u200c\u0627\u0646\u062f\r\n          await sendTokenToBackend(currentToken);\r\n        } else {\r\n          console.warn("\u26a0\ufe0f [FCM-FORCE] No token returned from Firebase.");\r\n        }\r\n\r\n      } catch (err) {\r\n        console.error("\u274c [FCM-FORCE] Error getting token:", err);\r\n      }\r\n    } else {\r\n      console.log("\u2139\ufe0f [FCM] Permission not granted yet. Waiting for user action.");\r\n    }\r\n  }\r\n\r\n  // --- 5. FOREGROUND MESSAGE HANDLER ---\r\n  onMessage(messaging, (payload) => {\r\n    console.log("\ud83d\udd14 Foreground Message:", payload);\r\n    const { title, body } = payload.notification || {};\r\n    const data = payload.data || {};\r\n    \r\n    navigator.serviceWorker.getRegistration().then(reg => {\r\n      if(reg) {\r\n        reg.showNotification(title || data.title || "\u067e\u06cc\u0627\u0645 \u062c\u062f\u06cc\u062f", {\r\n          body: body || data.body || "",\r\n          icon: MANDATORY_ICON,\r\n          data: { url: data.url || data.link || "/" }\r\n        });\r\n      }\r\n    });\r\n  });\r\n\r\n  // --- 6. EXECUTE ON LOAD ---\r\n  // \u0627\u06cc\u0646 \u062e\u0637 \u0647\u0631 \u0628\u0627\u0631 \u06a9\u0647 \u06a9\u0627\u0631\u0628\u0631 \u0648\u0627\u0631\u062f \u0633\u0627\u06cc\u062a \u0634\u0648\u062f \u06cc\u0627 \u0635\u0641\u062d\u0647 \u0631\u0627 \u0631\u0641\u0631\u0634 \u06a9\u0646\u062f \u0627\u062c\u0631\u0627 \u0645\u06cc\u200c\u0634\u0648\u062f\r\n  forceGetAndSyncToken();\r\n\r\n  // \u062a\u0627\u0628\u0639 \u0628\u0631\u0627\u06cc \u062f\u06a9\u0645\u0647 \u0641\u0639\u0627\u0644\u200c\u0633\u0627\u0632\u06cc (\u062f\u0631 \u0635\u0648\u0631\u062a \u0646\u06cc\u0627\u0632 \u062f\u0631 \u0635\u0641\u062d\u0647 \u067e\u0631\u0648\u0641\u0627\u06cc\u0644)\r\n  window.requestNotificationPermission = async function() {\r\n      const permission = await Notification.requestPermission();\r\n      if (permission === "granted") {\r\n          await forceGetAndSyncToken();\r\n          alert("\u0646\u0648\u062a\u06cc\u0641\u06cc\u06a9\u06cc\u0634\u0646 \u0641\u0639\u0627\u0644 \u0634\u062f \u0648 \u062f\u0633\u062a\u06af\u0627\u0647 \u0647\u0645\u06af\u0627\u0645\u200c\u0633\u0627\u0632\u06cc \u06af\u0631\u062f\u06cc\u062f.");\r\n      }\r\n  };\r\n</script>'
+                }
               />
             </div>
+            <Button
+              data-plasmic-name={"org"}
+              data-plasmic-override={overrides.org}
+              className={classNames("__wab_instance", sty.org)}
+              onClick={async event => {
+                const $steps = {};
+
+                $steps["runCode"] = true
+                  ? (() => {
+                      const actionArgs = {
+                        customFunction: async () => {
+                          return window.requestNotificationPermission();
+                        }
+                      };
+                      return (({ customFunction }) => {
+                        return customFunction();
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+                if (
+                  $steps["runCode"] != null &&
+                  typeof $steps["runCode"] === "object" &&
+                  typeof $steps["runCode"].then === "function"
+                ) {
+                  $steps["runCode"] = await $steps["runCode"];
+                }
+              }}
+            />
           </div>
           <div
             data-plasmic-name={"mahanTest"}
@@ -746,9 +777,7 @@ function PlasmicTst__RenderFunc(props: {
           >
             <Embed
               className={classNames("__wab_instance", sty.embedHtml__ruw5X)}
-              code={
-                '<script type="module">\r\n  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";\r\n  import { getMessaging, getToken, onMessage } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-messaging.js";\r\n\r\n  // --- 1. CONFIGURATION ---\r\n  const firebaseConfig = {\r\n    apiKey: "AIzaSyCwfbUiQNPQSyL48d0It3MgFOoTwF6AHN4",\r\n    authDomain: "miaan-notify-mn5436.firebaseapp.com", \r\n    projectId: "miaan-notify-mn5436",\r\n    storageBucket: "miaan-notify-mn5436.firebasestorage.app",\r\n    messagingSenderId: "553708011126", \r\n    appId: "1:553708011126:web:dcdff7eacd0ea7b3296957" \r\n  };\r\n\r\n  const VAPID_KEY = "BPBCMzaOwuDnklPI_8EXu6x30lu0-eq0fcZ058u1fXWbHxicUr0fn8MdpyLFdP5QQIOgiIg9zZtVsyCrr7rV15k";\r\n  const BACKEND_URL = "https://second-n8n.darkube.app/webhook/v1/devices/sync";\r\n  const MANDATORY_ICON = "https://media.rentamon.com/img%2Flogo-miaan%2Fsign-blue-small.png";\r\n\r\n  const app = initializeApp(firebaseConfig);\r\n  const messaging = getMessaging(app);\r\n\r\n  // --- 2. HELPERS ---\r\n  function getCookie(name) {\r\n    const value = `; ${document.cookie}`;\r\n    const parts = value.split(`; ${name}=`);\r\n    if (parts.length === 2) return parts.pop().split(\';\').shift();\r\n    return null;\r\n  }\r\n\r\n  async function syncTokenToBackend(fcmToken) {\r\n    const ussoToken = getCookie("usso_access_token");\r\n    console.log("\ud83d\udd04 [FCM] Attempting sync...");\r\n\r\n    try {\r\n      const response = await fetch(BACKEND_URL, {\r\n        method: "POST",\r\n        headers: {\r\n          "Content-Type": "application/json",\r\n          "x-fcm-token": fcmToken,\r\n          "Authorization": ussoToken ? `Bearer ${ussoToken}` : ""\r\n        },\r\n        body: JSON.stringify({\r\n          fcm_token: fcmToken,\r\n          usso_access_token: ussoToken,\r\n          device_type: "pwa-apk",\r\n          platform: "android", // Force android/web detection\r\n          timestamp: new Date().toISOString()\r\n        })\r\n      });\r\n\r\n      if (response.ok) {\r\n        console.log("\u2705 [FCM] Token synced with backend.");\r\n        localStorage.setItem("fcm_synced_token", fcmToken);\r\n      } else {\r\n        console.error("\u274c [FCM] Sync failed:", response.status);\r\n      }\r\n    } catch (error) {\r\n      console.error("\u274c [FCM] Network error:", error);\r\n    }\r\n  }\r\n\r\n  // --- 3. CORE LOGIC ---\r\n  \r\n  // \u0627\u06cc\u0646 \u062a\u0627\u0628\u0639 \u0641\u0642\u0637 \u0648\u0642\u062a\u06cc \u0627\u062c\u0631\u0627 \u0645\u06cc\u0634\u0647 \u06a9\u0647 \u062f\u06a9\u0645\u0647 \u0631\u0648 \u0628\u0632\u0646\u06cc\u062f\r\n  window.enableNotifications = async function() {\r\n    console.log("\ud83d\udc46 User clicked enable notifications");\r\n    try {\r\n      const permission = await Notification.requestPermission();\r\n      if (permission === "granted") {\r\n        await checkAndRefreshToken(true); // Force update\r\n        alert("\u0646\u0648\u062a\u06cc\u0641\u06cc\u06a9\u06cc\u0634\u0646 \u0628\u0627 \u0645\u0648\u0641\u0642\u06cc\u062a \u0641\u0639\u0627\u0644 \u0634\u062f.");\r\n      } else {\r\n        alert("\u0628\u0631\u0627\u06cc \u062f\u0631\u06cc\u0627\u0641\u062a \u067e\u06cc\u0627\u0645\u200c\u0647\u0627 \u0644\u0637\u0641\u0627 \u062f\u0633\u062a\u0631\u0633\u06cc \u0646\u0648\u062a\u06cc\u0641\u06cc\u06a9\u06cc\u0634\u0646 \u0631\u0627 \u062a\u0627\u06cc\u06cc\u062f \u06a9\u0646\u06cc\u062f.");\r\n      }\r\n    } catch (e) {\r\n      console.error("Error requesting permission:", e);\r\n    }\r\n  };\r\n\r\n  // \u0627\u06cc\u0646 \u062a\u0627\u0628\u0639 \u062a\u0648\u06a9\u0646 \u0631\u0648 \u0686\u06a9 \u0645\u06cc\u200c\u06a9\u0646\u0647\r\n  async function checkAndRefreshToken(forceSync = false) {\r\n    try {\r\n      const registration = await navigator.serviceWorker.register("/firebase-messaging-sw.js", { scope: \'/\' });\r\n      \r\n      // \u06af\u0631\u0641\u062a\u0646 \u062a\u0648\u06a9\u0646 \u0648\u0627\u0642\u0639\u06cc \u0627\u0632 \u0641\u0627\u06cc\u0631\u0628\u06cc\u0633\r\n      const currentToken = await getToken(messaging, { \r\n        vapidKey: VAPID_KEY,\r\n        serviceWorkerRegistration: registration \r\n      });\r\n\r\n      if (currentToken) {\r\n        const cachedToken = localStorage.getItem("fcm_synced_token");\r\n        \r\n        // \u0627\u06af\u0631 \u062a\u0648\u06a9\u0646 \u0628\u0627 \u0686\u06cc\u0632\u06cc \u06a9\u0647 \u0642\u0628\u0644\u0627 \u0630\u062e\u06cc\u0631\u0647 \u06a9\u0631\u062f\u06cc\u0645 \u0641\u0631\u0642 \u062f\u0627\u0631\u0647 OR \u062f\u0633\u062a\u0648\u0631 \u0641\u0648\u0631\u0633 \u062f\u0627\u062f\u06cc\u0645\r\n        if (currentToken !== cachedToken || forceSync) {\r\n          console.log("\ud83c\udd95 [FCM] Token refresh needed.");\r\n          await syncTokenToBackend(currentToken);\r\n        } else {\r\n          console.log("\u2705 [FCM] Token is valid and synced.");\r\n        }\r\n      } else {\r\n        console.warn("\u26a0\ufe0f [FCM] No token retrieved.");\r\n      }\r\n    } catch (err) {\r\n      console.error("\u274c [FCM] Token retrieval failed:", err);\r\n    }\r\n  }\r\n\r\n  // --- 4. ON LOAD (SILENT CHECK) ---\r\n  // \u0648\u0642\u062a\u06cc \u0635\u0641\u062d\u0647 \u0644\u0648\u062f \u0645\u06cc\u0634\u0647\u060c \u0627\u06af\u0631 \u0642\u0628\u0644\u0627 \u0627\u062c\u0627\u0632\u0647 \u062f\u0627\u062f\u0647 \u0628\u0627\u0634\u0647\u060c \u0633\u0627\u06a9\u062a \u0686\u06a9 \u0645\u06cc\u06a9\u0646\u06cc\u0645 \u06a9\u0647 \u062a\u0648\u06a9\u0646 \u0639\u0648\u0636 \u0646\u0634\u062f\u0647 \u0628\u0627\u0634\u0647\r\n  if (Notification.permission === "granted") {\r\n     checkAndRefreshToken(false);\r\n  }\r\n\r\n  // --- 5. FOREGROUND MESSAGE ---\r\n  onMessage(messaging, (payload) => {\r\n    console.log("\ud83d\udd14 Foreground Message:", payload);\r\n    const { title, body } = payload.notification || {};\r\n    const data = payload.data || {};\r\n    \r\n    // \u0627\u06af\u0631 \u0627\u067e \u0628\u0627\u0632 \u0628\u0627\u0634\u0647\u060c \u0628\u0627 \u0627\u06cc\u0646 \u0631\u0648\u0634 \u0646\u0634\u0648\u0646 \u0645\u06cc\u062f\u06cc\u0645\r\n    navigator.serviceWorker.getRegistration().then(reg => {\r\n      if(reg) {\r\n        reg.showNotification(title || data.title || "\u067e\u06cc\u0627\u0645 \u062c\u062f\u06cc\u062f", {\r\n          body: body || data.body || "",\r\n          icon: MANDATORY_ICON,\r\n          data: { url: data.url || data.link || "/" }\r\n        });\r\n      }\r\n    });\r\n  });\r\n</script>'
-              }
+              code={""}
             />
 
             <Button
@@ -803,6 +832,7 @@ const PlasmicDescendants = {
     "apiRequest4",
     "datePicker",
     "profile2",
+    "org",
     "mahanTest",
     "button"
   ],
@@ -814,6 +844,7 @@ const PlasmicDescendants = {
   apiRequest4: ["apiRequest4"],
   datePicker: ["datePicker"],
   profile2: ["profile2"],
+  org: ["org"],
   mahanTest: ["mahanTest", "button"],
   button: ["button"]
 } as const;
@@ -830,6 +861,7 @@ type NodeDefaultElementType = {
   apiRequest4: typeof ApiRequest;
   datePicker: typeof DatePicker;
   profile2: typeof ApiRequest;
+  org: typeof Button;
   mahanTest: "div";
   button: typeof Button;
 };
@@ -904,6 +936,7 @@ export const PlasmicTst = Object.assign(
     apiRequest4: makeNodeComponent("apiRequest4"),
     datePicker: makeNodeComponent("datePicker"),
     profile2: makeNodeComponent("profile2"),
+    org: makeNodeComponent("org"),
     mahanTest: makeNodeComponent("mahanTest"),
     button: makeNodeComponent("button"),
 

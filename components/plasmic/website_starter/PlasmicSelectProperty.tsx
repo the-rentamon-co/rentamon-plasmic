@@ -547,12 +547,13 @@ function PlasmicSelectProperty__RenderFunc(props: {
 <html lang="fa" dir="rtl">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="https://cdn.jsdelivr.net/npm/jalaali-js/dist/jalaali.js"></script>
 
 <style>
   #host-calendar-container {
     --bg-free: #ffffff; 
-    --bg-blocked-by-host: #ffcccc; /* رنگ روزهایی که میزبان می‌بندد (قرمز کمرنگ) */
+    --bg-blocked-by-host: #ffcccc; 
     --border-color: #ddd; 
     --text-dark: #333; 
     --text-friday: #ff3b30; 
@@ -595,7 +596,6 @@ function PlasmicSelectProperty__RenderFunc(props: {
       justify-content: center; 
   }
   
-  /* استایل سلول‌های روز */
   #host-calendar-container .day-cell { 
       aspect-ratio: 1/1; 
       border-radius: var(--radius); 
@@ -608,28 +608,25 @@ function PlasmicSelectProperty__RenderFunc(props: {
       transition: all 0.2s; 
       padding: 0; 
       margin: 0; 
-      cursor: pointer; /* قابلیت کلیک فعال است */
+      cursor: pointer; 
       background-color: var(--bg-free);
       border: 1px solid var(--border-color);
       color: var(--text-dark);
   }
 
-  /* افکت هاور */
-  #host-calendar-container .day-cell:hover {
+  #host-calendar-container .day-cell:hover:not(.past-day) {
       border-color: #999;
       transform: scale(1.02);
   }
 
   #host-calendar-container .friday { color: var(--text-friday); }
   
-  /* روزهای گذشته (غیرقابل ویرایش) */
   #host-calendar-container .past-day { 
       opacity: 0.4; 
       pointer-events: none; 
       background-color: #f0f0f0;
   }
   
-  /* استایل روزهایی که میزبان انتخاب کرده (بلاک) */
   #host-calendar-container .host-blocked { 
       background-color: var(--bg-blocked-by-host) !important; 
       border-color: #ff9999 !important;
@@ -667,14 +664,11 @@ function PlasmicSelectProperty__RenderFunc(props: {
 </div>
 
 <script>
-  // اگر دیتای اولیه‌ای از سمت سرور می‌آید (روزهایی که قبلا بسته بودید)، اینجا لود کنید
-  // فعلا فرض می‌کنیم لیست خالی است
+  // تنظیمات
+  var MAX_MONTHS_AHEAD = 6;
+  var INITIAL_BLOCKED_DATES = []; 
 
-  var MAX_MONTHS_AHEAD = 6; // میزبان معمولاً تا ۶ ماه آینده را می‌بیند
-  
-  // این Set حاوی تمام تاریخ‌هایی است که میزبان روی آن‌ها کلیک کرده (به فرمت 1403-09-12)
   var hostSelection = new Set();    
-
   var today = new Date();
   var todayJ = jalaali.toJalaali(today);
   var currentYear = todayJ.jy;
@@ -686,17 +680,15 @@ function PlasmicSelectProperty__RenderFunc(props: {
   function toPersianNum(num) {
       if(num === undefined || num === null) return "";
       var farsiDigits = ['۰', '۱', '۲', '۳', '۴', '۵', '۶', '۷', '۸', '۹'];
-      return num.toString().replace(/\\d/g, function(x) { return farsiDigits[x]; });
+      return num.toString().replace(/\d/g, function(x) { return farsiDigits[x]; });
   }
   
   function initCalendar() {
     try {
-      // لود کردن دیتای اولیه (اگر وجود داشته باشد)
       if (INITIAL_BLOCKED_DATES && Array.isArray(INITIAL_BLOCKED_DATES)) {
         INITIAL_BLOCKED_DATES.forEach(function(d) { hostSelection.add(d); });
       }
       
-      // آپدیت کردن متغیر جهانی برای بار اول
       updateGlobalVariable();
 
       var loadMsg = document.getElementById('loading-msg');
@@ -712,14 +704,9 @@ function PlasmicSelectProperty__RenderFunc(props: {
     }
   }
 
-  // *** تابع مهم: به‌روزرسانی متغیر جهانی برای استفاده در پلازمیک ***
   function updateGlobalVariable() {
-      // تبدیل Set به آرایه و ذخیره در window
       window.hostSelectedDates = Array.from(hostSelection).sort();
-      
-      console.log("تاریخ‌های انتخاب شده:", window.hostSelectedDates);
-      
-      // ارسال ایونت سفارشی (اختیاری - اگر بخواهید با ایونت لیسنر کار کنید)
+      console.log("Updated List:", window.hostSelectedDates);
       window.dispatchEvent(new CustomEvent('host-dates-changed', { 
           detail: window.hostSelectedDates 
       }));
@@ -731,6 +718,17 @@ function PlasmicSelectProperty__RenderFunc(props: {
     if (m < todayJ.jm) return true;
     if (m > todayJ.jm) return false;
     return d < todayJ.jd;
+  }
+
+  function toggleDate(dateStr) {
+      if (hostSelection.has(dateStr)) {
+          hostSelection.delete(dateStr);
+      } else {
+          hostSelection.add(dateStr);
+      }
+      // آپدیت متغیر و رندر مجدد برای اعمال تغییر گرافیکی
+      updateGlobalVariable();
+      renderCalendar();
   }
 
   function renderCalendar() {
@@ -761,46 +759,25 @@ function PlasmicSelectProperty__RenderFunc(props: {
       var dateString = currentYear + "-" + mStr + "-" + dStr;
       
       var isPast = isDateInPast(currentYear, currentMonth, day);
-      
-      // بررسی اینکه آیا این روز توسط میزبان انتخاب شده یا نه
       var isSelected = hostSelection.has(dateString);
 
       var classes = 'day-cell';
-      
-      if (isPast) {
-          classes += ' past-day';
-      } 
-      else if (isSelected) {
-          classes += ' host-blocked'; // کلاس برای رنگ قرمز
-      }
+      if (isPast) classes += ' past-day';
+      else if (isSelected) classes += ' host-blocked';
       else {
           var dayOfWeekIndex = (day - 1 + startDayIndex) % 7;
           if (dayOfWeekIndex === 6) classes += ' friday';
       }
       
-      var content = '<span>' + toPersianNum(day) + '</span>';
-      
       cell.className = classes;
-      cell.innerHTML = content;
+      cell.innerHTML = '<span>' + toPersianNum(day) + '</span>';
       
-      // لاجیک کلیک (Toggle)
-      (function(dStr) {
-          if (!isPast) {
-              cell.onclick = function() {
-                  if (hostSelection.has(dStr)) {
-                      // اگر قبلا انتخاب شده، حذفش کن (آزاد کن)
-                      hostSelection.delete(dStr);
-                  } else {
-                      // اگر انتخاب نشده، اضافه‌اش کن (بلاک کن)
-                      hostSelection.add(dStr);
-                  }
-                  
-                  // به‌روزرسانی متغیر جهانی و رندر مجدد
-                  updateGlobalVariable();
-                  renderCalendar();
-              };
-          }
-      })(dateString);
+      if (!isPast) {
+          // فقط کلیک ساده
+          cell.onclick = function() {
+              toggleDate(dateString);
+          };
+      }
 
       grid.appendChild(cell);
     }
