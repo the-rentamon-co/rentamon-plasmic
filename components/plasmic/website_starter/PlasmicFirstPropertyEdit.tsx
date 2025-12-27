@@ -1719,32 +1719,65 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
                       {"\u0630\u062e\u06cc\u0631\u0647 \u0634\u0648\u062f"}
                     </div>
                   </div>
-                  {(() => {
-                    try {
-                      return (() => {
-                        function checkDivarSource() {
-                          const cookies = document.cookie.split(";");
-                          for (let i = 0; i < cookies.length; i++) {
-                            const [key, value] = cookies[i].trim().split("=");
-                            if (key === "source" && value === "divar") {
-                              return true;
+                  {(
+                    hasVariant(globalVariants, "screen", "mobile")
+                      ? (() => {
+                          try {
+                            return (() => {
+                              function checkDivarSource() {
+                                const cookies = document.cookie.split(";");
+                                for (let i = 0; i < cookies.length; i++) {
+                                  const [key, value] = cookies[i]
+                                    .trim()
+                                    .split("=");
+                                  if (key === "source" && value === "divar") {
+                                    return true;
+                                  }
+                                }
+                                return false;
+                              }
+                              const isDivar = checkDivarSource();
+                              return isDivar;
+                            })();
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return false;
                             }
+                            throw e;
                           }
-                          return false;
-                        }
-                        const isDivar = checkDivarSource();
-                        return console.log(isDivar);
-                      })();
-                    } catch (e) {
-                      if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
-                      ) {
-                        return false;
-                      }
-                      throw e;
-                    }
-                  })() ? (
+                        })()
+                      : (() => {
+                          try {
+                            return (() => {
+                              function checkDivarSource() {
+                                const cookies = document.cookie.split(";");
+                                for (let i = 0; i < cookies.length; i++) {
+                                  const [key, value] = cookies[i]
+                                    .trim()
+                                    .split("=");
+                                  if (key === "source" && value === "divar") {
+                                    return true;
+                                  }
+                                }
+                                return false;
+                              }
+                              const isDivar = checkDivarSource();
+                              return console.log(isDivar);
+                            })();
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return false;
+                            }
+                            throw e;
+                          }
+                        })()
+                  ) ? (
                     <div
                       data-plasmic-name={"divarEdition"}
                       data-plasmic-override={overrides.divarEdition}

@@ -87,7 +87,6 @@ export type PlasmicSelectProperty__OverridesType = {
   main?: Flex__<"div">;
   apiRequest?: Flex__<typeof ApiRequest>;
   selectProperty?: Flex__<typeof Select>;
-  apiRequest2?: Flex__<typeof ApiRequest>;
   sideEffect?: Flex__<typeof SideEffect>;
 };
 
@@ -180,30 +179,6 @@ function PlasmicSelectProperty__RenderFunc(props: {
               throw e;
             }
           })()
-      },
-      {
-        path: "apiRequest2.data",
-        type: "private",
-        variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
-
-        refName: "apiRequest2"
-      },
-      {
-        path: "apiRequest2.error",
-        type: "private",
-        variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
-
-        refName: "apiRequest2"
-      },
-      {
-        path: "apiRequest2.loading",
-        type: "private",
-        variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
-
-        refName: "apiRequest2"
       }
     ],
     [$props, $ctx, $refs]
@@ -460,84 +435,20 @@ function PlasmicSelectProperty__RenderFunc(props: {
                 </div>
               </div>
             </div>
-            <div className={classNames(projectcss.all, sty.freeBox__q5W0)}>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__cqfiG
-                )}
-              >
-                {
-                  "\u062a\u0642\u0648\u06cc\u0645\u06cc \u06a9\u0647 \u0645\u0634\u062a\u0631\u06cc \u0642\u0631\u0627\u0631\u0647 \u0628\u0628\u06cc\u0646\u0647\ud83d\udc47"
-                }
-              </div>
-              <ApiRequest
-                data-plasmic-name={"apiRequest2"}
-                data-plasmic-override={overrides.apiRequest2}
-                className={classNames("__wab_instance", sty.apiRequest2)}
-                errorDisplay={
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__t7YvF
-                    )}
-                  >
-                    {"Error fetching data"}
-                  </div>
-                }
-                loadingDisplay={
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__veH9G
-                    )}
-                  >
-                    {"Loading..."}
-                  </div>
-                }
-                method={"GET"}
-                onError={async (...eventArgs: any) => {
-                  generateStateOnChangeProp($state, [
-                    "apiRequest2",
-                    "error"
-                  ]).apply(null, eventArgs);
-                }}
-                onLoading={async (...eventArgs: any) => {
-                  generateStateOnChangeProp($state, [
-                    "apiRequest2",
-                    "loading"
-                  ]).apply(null, eventArgs);
-                }}
-                onSuccess={async (...eventArgs: any) => {
-                  generateStateOnChangeProp($state, [
-                    "apiRequest2",
-                    "data"
-                  ]).apply(null, eventArgs);
-                }}
-                ref={ref => {
-                  $refs["apiRequest2"] = ref;
-                }}
-                url={(() => {
-                  try {
-                    return (() => {
-                      return `https://automation.miaan.ir/webhook/calendar/blocked-dates?property_id=${$state.apiRequest.data.find(property => property.name === $state.selectProperty.value).id}`;
-                    })();
-                  } catch (e) {
-                    if (
-                      e instanceof TypeError ||
-                      e?.plasmicType === "PlasmicUndefinedDataError"
-                    ) {
-                      return undefined;
-                    }
-                    throw e;
-                  }
-                })()}
-              />
-            </div>
             <div className={classNames(projectcss.all, sty.freeBox__zxxOc)}>
+              <div className={classNames(projectcss.all, sty.freeBox__q5W0)}>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__cqfiG
+                  )}
+                >
+                  {
+                    "\u0631\u0648\u0632 \u0647\u0627\u06cc \u067e\u0631\u062a \u0631\u0648 \u0627\u0646\u062a\u062e\u0627\u0628 \u06a9\u0646:"
+                  }
+                </div>
+              </div>
               <Embed
                 className={classNames("__wab_instance", sty.embedHtml__i6Eoe)}
                 code={(() => {
@@ -547,19 +458,25 @@ function PlasmicSelectProperty__RenderFunc(props: {
 <html lang="fa" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="https://cdn.jsdelivr.net/npm/jalaali-js/dist/jalaali.js"></script>
 
 <style>
-  #host-calendar-container {
+  #custom-calendar-container {
+    /* متغیرهای اصلی */
+    --bg-prebooked: #e2e2e2;
     --bg-free: #ffffff; 
-    --bg-blocked-by-host: #ffcccc; 
-    --border-color: #ddd; 
+    --border-free: #ddd; 
+    --text-white: #fff; 
     --text-dark: #333; 
     --text-friday: #ff3b30; 
     --text-disabled: #ccc;
     --radius: 8px;
     
+    /* متغیرهای حالت انتخاب */
+    --bg-selected: #e6f7ff;
+    --border-selected: #1890ff;
+    --text-selected: #096dd9;
+
     width: 100%; 
     max-width: 400px; 
     padding: 10px; 
@@ -567,17 +484,16 @@ function PlasmicSelectProperty__RenderFunc(props: {
     direction: rtl;
     font-family: inherit;
     margin: 0 auto; 
-    user-select: none;
   }
   
-  #host-calendar-container * { box-sizing: border-box; }
+  #custom-calendar-container * { box-sizing: border-box; }
   
-  #host-calendar-container .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; font-size: 1.1rem; font-weight: bold; color: #333; }
+  #custom-calendar-container .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; font-size: 1.1rem; font-weight: bold; color: #333; }
   
-  #host-calendar-container .nav-btn { background: transparent !important; border: none !important; box-shadow: none !important; cursor: pointer; padding: 5px 15px; font-size: 1.5rem !important; color: #888 !important; display: flex; align-items: center; justify-content: center; line-height: 1; }
-  #host-calendar-container .nav-btn:disabled { color: #e0e0e0 !important; cursor: not-allowed; }
+  #custom-calendar-container .nav-btn { background: transparent !important; border: none !important; box-shadow: none !important; cursor: pointer; padding: 5px 15px; font-size: 1.5rem !important; color: #888 !important; display: flex; align-items: center; justify-content: center; line-height: 1; }
+  #custom-calendar-container .nav-btn:disabled { color: #e0e0e0 !important; cursor: not-allowed; }
   
-  #host-calendar-container .weekdays { 
+  #custom-calendar-container .weekdays { 
       display: grid; 
       grid-template-columns: repeat(7, 1fr); 
       text-align: center; 
@@ -589,14 +505,14 @@ function PlasmicSelectProperty__RenderFunc(props: {
       justify-content: center; 
   }
   
-  #host-calendar-container .days-grid { 
+  #custom-calendar-container .days-grid { 
       display: grid; 
       grid-template-columns: repeat(7, 1fr); 
       gap: 6px; 
       justify-content: center; 
   }
   
-  #host-calendar-container .day-cell { 
+  #custom-calendar-container .day-cell { 
       aspect-ratio: 1/1; 
       border-radius: var(--radius); 
       display: flex; 
@@ -608,67 +524,65 @@ function PlasmicSelectProperty__RenderFunc(props: {
       transition: all 0.2s; 
       padding: 0; 
       margin: 0; 
+      user-select: none; 
       cursor: pointer; 
       background-color: var(--bg-free);
-      border: 1px solid var(--border-color);
+      border: 1px solid var(--border-free);
       color: var(--text-dark);
   }
 
-  #host-calendar-container .day-cell:hover:not(.past-day) {
+  #custom-calendar-container .day-cell:hover {
       border-color: #999;
       transform: scale(1.02);
+      z-index: 2;
   }
 
-  #host-calendar-container .friday { color: var(--text-friday); }
+  #custom-calendar-container .friday { color: var(--text-friday); }
   
-  #host-calendar-container .past-day { 
-      opacity: 0.4; 
-      pointer-events: none; 
-      background-color: #f0f0f0;
-  }
-  
-  #host-calendar-container .host-blocked { 
-      background-color: var(--bg-blocked-by-host) !important; 
-      border-color: #ff9999 !important;
-      color: #cc0000 !important;
+  /* استایل روز انتخاب شده */
+  #custom-calendar-container .day-selected { 
+      background-color: var(--bg-selected) !important; 
+      border-color: var(--border-selected) !important;
+      color: var(--text-selected) !important;
       font-weight: bold;
   }
-
-  #host-calendar-container .empty-slot { pointer-events: none; }
-  #host-calendar-container .loading { text-align: center; padding: 20px; color: #666; font-size: 0.9rem; }
   
-  #host-calendar-container .legend { display: flex; justify-content: flex-start; align-items: center; margin-top: 20px; gap: 15px; font-size: 0.8rem; color: #666; }
-  #host-calendar-container .legend-item { display: flex; align-items: center; gap: 8px; }
-  #host-calendar-container .legend-box { width: 16px; height: 16px; border-radius: 4px; }
+  #custom-calendar-container .past-day { opacity: 0; pointer-events: none; }
+  #custom-calendar-container .empty-slot { pointer-events: none; }
   
-  #host-calendar-container .box-free { background: #fff; border: 1px solid #ccc; }
-  #host-calendar-container .box-blocked { background: var(--bg-blocked-by-host); border: 1px solid #ff9999; }
+  #custom-calendar-container .legend { display: flex; justify-content: flex-start; align-items: center; margin-top: 20px; gap: 15px; font-size: 0.8rem; color: #666; }
+  #custom-calendar-container .legend-item { display: flex; align-items: center; gap: 8px; }
+  #custom-calendar-container .legend-box { width: 16px; height: 16px; border-radius: 4px; }
+  
+  #custom-calendar-container .box-free { background: #fff; border: 1px solid #ccc; }
+  #custom-calendar-container .box-selected { background: var(--bg-selected); border: 1px solid var(--border-selected); }
 </style>
 </head>
 <body>
 
-<div id="host-calendar-container">
+<div id="custom-calendar-container">
   <div class="header">
     <button class="nav-btn" id="prev-btn">&#10094;</button> 
     <span id="month-year-label">...</span>
     <button class="nav-btn" id="next-btn">&#10095;</button>
   </div>
   <div class="weekdays"><div>ش</div><div>ی</div><div>د</div><div>س</div><div>چ</div><div>پ</div><div>ج</div></div>
-  <div id="loading-msg" class="loading">در حال بارگذاری تقویم...</div>
+  
   <div class="days-grid" id="calendar-grid"></div>
   
-  <div class="legend" id="legend-section" style="display:none;">
-    <div class="legend-item"><div class="legend-box box-free"></div><span>باز (قابل رزرو)</span></div>
-    <div class="legend-item"><div class="legend-box box-blocked"></div><span>بسته (انتخاب شما)</span></div>
+  <div class="legend" id="legend-section">
+    <div class="legend-item"><div class="legend-box box-free"></div><span>خالی</span></div>
+    <div class="legend-item"><div class="legend-box box-selected"></div><span>انتخاب شده</span></div>
   </div>
 </div>
 
 <script>
   // تنظیمات
-  var MAX_MONTHS_AHEAD = 6;
-  var INITIAL_BLOCKED_DATES = []; 
+  var MAX_MONTHS_AHEAD = 12;
+  
+  // متغیر ذخیره روزهای انتخاب شده
+  var selectionSet = new Set();    
 
-  var hostSelection = new Set();    
   var today = new Date();
   var todayJ = jalaali.toJalaali(today);
   var currentYear = todayJ.jy;
@@ -677,6 +591,9 @@ function PlasmicSelectProperty__RenderFunc(props: {
   var startMonth = todayJ.jm;
   var monthNames = ["", "فروردین", "اردیبهشت", "خرداد", "تیر", "مرداد", "شهریور", "مهر", "آبان", "آذر", "دی", "بهمن", "اسفند"];
 
+  // متغیر جهانی
+  window.selectedDates = [];
+
   function toPersianNum(num) {
       if(num === undefined || num === null) return "";
       var farsiDigits = ['۰', '۱', '۲', '۳', '۴', '۵', '۶', '۷', '۸', '۹'];
@@ -684,31 +601,18 @@ function PlasmicSelectProperty__RenderFunc(props: {
   }
   
   function initCalendar() {
-    try {
-      if (INITIAL_BLOCKED_DATES && Array.isArray(INITIAL_BLOCKED_DATES)) {
-        INITIAL_BLOCKED_DATES.forEach(function(d) { hostSelection.add(d); });
-      }
-      
-      updateGlobalVariable();
-
-      var loadMsg = document.getElementById('loading-msg');
-      if(loadMsg) loadMsg.style.display = 'none';
-      var legSec = document.getElementById('legend-section');
-      if(legSec) legSec.style.display = 'flex';
-      
       renderCalendar();
       updateNavButtons();
-      
-    } catch (error) {
-      console.error("Error initializing calendar:", error);
-    }
+      updateGlobalVariable();
   }
 
   function updateGlobalVariable() {
-      window.hostSelectedDates = Array.from(hostSelection).sort();
-      console.log("Updated List:", window.hostSelectedDates);
-      window.dispatchEvent(new CustomEvent('host-dates-changed', { 
-          detail: window.hostSelectedDates 
+      window.selectedDates = Array.from(selectionSet).sort();
+      console.log("Selected Dates Updated:", window.selectedDates);
+      
+      // ایونت برای لیسنرهای خارجی
+      window.dispatchEvent(new CustomEvent('calendar-selection-changed', { 
+          detail: window.selectedDates 
       }));
   }
 
@@ -720,17 +624,6 @@ function PlasmicSelectProperty__RenderFunc(props: {
     return d < todayJ.jd;
   }
 
-  function toggleDate(dateStr) {
-      if (hostSelection.has(dateStr)) {
-          hostSelection.delete(dateStr);
-      } else {
-          hostSelection.add(dateStr);
-      }
-      // آپدیت متغیر و رندر مجدد برای اعمال تغییر گرافیکی
-      updateGlobalVariable();
-      renderCalendar();
-  }
-
   function renderCalendar() {
     var grid = document.getElementById('calendar-grid');
     var label = document.getElementById('month-year-label');
@@ -738,6 +631,7 @@ function PlasmicSelectProperty__RenderFunc(props: {
     
     grid.innerHTML = '';
     label.innerText = monthNames[currentMonth] + " " + toPersianNum(currentYear);
+    
     var daysInMonth = jalaali.jalaaliMonthLength(currentYear, currentMonth);
     var gDate = jalaali.toGregorian(currentYear, currentMonth, 1);
     var dateObj = new Date(gDate.gy, gDate.gm - 1, gDate.gd);
@@ -759,25 +653,40 @@ function PlasmicSelectProperty__RenderFunc(props: {
       var dateString = currentYear + "-" + mStr + "-" + dStr;
       
       var isPast = isDateInPast(currentYear, currentMonth, day);
-      var isSelected = hostSelection.has(dateString);
+      var isSelected = selectionSet.has(dateString);
 
       var classes = 'day-cell';
-      if (isPast) classes += ' past-day';
-      else if (isSelected) classes += ' host-blocked';
+      
+      if (isPast) {
+          classes += ' past-day';
+      } 
+      else if (isSelected) {
+          classes += ' day-selected';
+      }
       else {
           var dayOfWeekIndex = (day - 1 + startDayIndex) % 7;
           if (dayOfWeekIndex === 6) classes += ' friday';
       }
       
-      cell.className = classes;
-      cell.innerHTML = '<span>' + toPersianNum(day) + '</span>';
+      var content = '<span>' + toPersianNum(day) + '</span>';
       
-      if (!isPast) {
-          // فقط کلیک ساده
-          cell.onclick = function() {
-              toggleDate(dateString);
-          };
-      }
+      cell.className = classes;
+      cell.innerHTML = content;
+      
+      // لاجیک کلیک
+      (function(dStr) {
+          if (!isPast) {
+              cell.onclick = function() {
+                  if (selectionSet.has(dStr)) {
+                      selectionSet.delete(dStr);
+                  } else {
+                      selectionSet.add(dStr);
+                  }
+                  updateGlobalVariable();
+                  renderCalendar();
+              };
+          }
+      })(dateString);
 
       grid.appendChild(cell);
     }
@@ -798,16 +707,19 @@ function PlasmicSelectProperty__RenderFunc(props: {
     var prevBtn = document.getElementById('prev-btn');
     var nextBtn = document.getElementById('next-btn');
     if(!prevBtn || !nextBtn) return;
+    
     prevBtn.onclick = function() { changeMonth(-1); };
     nextBtn.onclick = function() { changeMonth(1); };
+    
     if (currentYear === startYear && currentMonth === startMonth) prevBtn.disabled = true;
     else prevBtn.disabled = false;
+    
     var diffMonths = (currentYear - startYear) * 12 + (currentMonth - startMonth);
     if (diffMonths >= MAX_MONTHS_AHEAD) nextBtn.disabled = true;
     else nextBtn.disabled = false;
   }
 
-  setTimeout(initCalendar, 50);
+  initCalendar();
 </script>
 </body>
 </html>
@@ -823,6 +735,90 @@ function PlasmicSelectProperty__RenderFunc(props: {
                   }
                 })()}
               />
+
+              <div
+                className={classNames(projectcss.all, sty.freeBox__ehrla)}
+                onClick={async event => {
+                  const $steps = {};
+
+                  $steps["invokeGlobalAction"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          args: [
+                            "POST",
+                            (() => {
+                              try {
+                                return (() => {
+                                  const isMiaan =
+                                    window.location.hostname.includes(
+                                      "miaan.ir"
+                                    );
+                                  const gatewayBase = isMiaan
+                                    ? "https://gateway.miaan.ir"
+                                    : "https://gateway.rentamon.com";
+                                  return `${gatewayBase}/webhook/api/divar/property`;
+                                })();
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
+                                }
+                                throw e;
+                              }
+                            })(),
+                            undefined,
+                            (() => {
+                              try {
+                                return {
+                                  post_token:
+                                    typeof window !== "undefined"
+                                      ? new URLSearchParams(
+                                          window.location.search
+                                        ).get("post_token")
+                                      : null,
+                                  property_id: $state.apiRequest.data.find(
+                                    property =>
+                                      property.name ===
+                                      $state.selectProperty.value
+                                  ).id
+                                };
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
+                                }
+                                throw e;
+                              }
+                            })()
+                          ]
+                        };
+                        return $globalActions["Fragment.apiRequest"]?.apply(
+                          null,
+                          [...actionArgs.args]
+                        );
+                      })()
+                    : undefined;
+                  if (
+                    $steps["invokeGlobalAction"] != null &&
+                    typeof $steps["invokeGlobalAction"] === "object" &&
+                    typeof $steps["invokeGlobalAction"].then === "function"
+                  ) {
+                    $steps["invokeGlobalAction"] =
+                      await $steps["invokeGlobalAction"];
+                  }
+                }}
+              >
+                <Embed
+                  className={classNames("__wab_instance", sty.embedHtml__v1JqU)}
+                  code={
+                    '<div style="width: 100%; display: flex; justify-content: center;">\r\n  \r\n  <style>\r\n    /* \u0627\u0633\u062a\u0627\u06cc\u0644 \u062f\u06a9\u0645\u0647 \u0622\u0628\u06cc */\r\n    .divar-blue-btn {\r\n      background-color: #2727ea; \r\n      color: white; \r\n      border: none; \r\n      border-radius: 8px;\r\n      padding: 12px 24px; \r\n      font-size: 16px; \r\n      font-weight: bold; \r\n      width: 100%;\r\n      cursor: pointer; \r\n      font-family: inherit; \r\n      box-shadow: 0 4px 6px rgba(39, 39, 234, 0.2);\r\n      transition: all 0.2s ease; \r\n      display: flex; \r\n      align-items: center; \r\n      justify-content: center;\r\n    }\r\n    .divar-blue-btn:hover { background-color: #1a1ab8; }\r\n    .divar-blue-btn:active { transform: scale(0.98); }\r\n  </style>\r\n\r\n  <button type="button" onclick="window.goBackToDivar()" class="divar-blue-btn">\r\n    \u062b\u0628\u062a\r\n  </button>\r\n\r\n</div>\r\n\r\n<script>\r\n  window.goBackToDivar = function() {\r\n    // 1. \u062e\u0648\u0627\u0646\u062f\u0646 return_url \u0627\u0632 \u0622\u062f\u0631\u0633 \u0645\u0631\u0648\u0631\u06af\u0631\r\n    var urlParams = new URLSearchParams(window.location.search);\r\n    var returnUrl = urlParams.get(\'return_url\');\r\n\r\n    // 2. \u0644\u06cc\u0646\u06a9 \u0627\u0633\u062a\u0627\u0646\u062f\u0627\u0631\u062f \u0641\u0627\u0644\u200c\u0628\u06a9 (\u0645\u062d\u0636 \u0627\u062d\u062a\u06cc\u0627\u0637)\r\n    var fallbackUrl = "https://open-platform-redirect.divar.ir/completion";\r\n\r\n    console.log("Redirecting to:", returnUrl || fallbackUrl);\r\n\r\n    if (returnUrl) {\r\n        // \u0627\u06af\u0631 \u062f\u06cc\u0648\u0627\u0631 \u0644\u06cc\u0646\u06a9 \u062f\u0627\u062f\u0647 \u0628\u0648\u062f\u060c \u0628\u0647 \u0647\u0645\u0627\u0646 \u0628\u0631\u06af\u0631\u062f\r\n        // decodeURIComponent \u0628\u0631\u0627\u06cc \u0627\u0637\u0645\u06cc\u0646\u0627\u0646 \u0627\u0632 \u0627\u06cc\u0646\u06a9\u0647 \u0622\u062f\u0631\u0633 \u0627\u0646\u06a9\u062f \u0634\u062f\u0647 \u062f\u0631\u0633\u062a \u06a9\u0627\u0631 \u06a9\u0646\u062f\r\n        window.location.href = decodeURIComponent(returnUrl);\r\n    } else {\r\n        // \u0627\u06af\u0631 \u0646\u0628\u0648\u062f\u060c \u0628\u0647 \u0644\u06cc\u0646\u06a9 \u0639\u0645\u0648\u0645\u06cc \u062f\u06cc\u0648\u0627\u0631 \u0628\u0631\u0648\r\n        window.location.href = fallbackUrl;\r\n    }\r\n  };\r\n</script>'
+                  }
+                />
+              </div>
             </div>
           </div>
           <SideEffect
@@ -956,18 +952,10 @@ function PlasmicSelectProperty__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: [
-    "root",
-    "main",
-    "apiRequest",
-    "selectProperty",
-    "apiRequest2",
-    "sideEffect"
-  ],
-  main: ["main", "apiRequest", "selectProperty", "apiRequest2"],
+  root: ["root", "main", "apiRequest", "selectProperty", "sideEffect"],
+  main: ["main", "apiRequest", "selectProperty"],
   apiRequest: ["apiRequest", "selectProperty"],
   selectProperty: ["selectProperty"],
-  apiRequest2: ["apiRequest2"],
   sideEffect: ["sideEffect"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -978,7 +966,6 @@ type NodeDefaultElementType = {
   main: "div";
   apiRequest: typeof ApiRequest;
   selectProperty: typeof Select;
-  apiRequest2: typeof ApiRequest;
   sideEffect: typeof SideEffect;
 };
 
@@ -1047,7 +1034,6 @@ export const PlasmicSelectProperty = Object.assign(
     main: makeNodeComponent("main"),
     apiRequest: makeNodeComponent("apiRequest"),
     selectProperty: makeNodeComponent("selectProperty"),
-    apiRequest2: makeNodeComponent("apiRequest2"),
     sideEffect: makeNodeComponent("sideEffect"),
 
     // Metadata about props expected for PlasmicSelectProperty
