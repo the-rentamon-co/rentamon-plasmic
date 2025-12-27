@@ -96,9 +96,8 @@ export type PlasmicTst__OverridesType = {
   apiRequest4?: Flex__<typeof ApiRequest>;
   datePicker?: Flex__<typeof DatePicker>;
   profile2?: Flex__<typeof ApiRequest>;
-  org?: Flex__<typeof Button>;
-  mahanTest?: Flex__<"div">;
-  button?: Flex__<typeof Button>;
+  twat?: Flex__<"div">;
+  tset?: Flex__<typeof Button>;
 };
 
 export interface DefaultTstProps {}
@@ -680,6 +679,58 @@ function PlasmicTst__RenderFunc(props: {
           />
 
           <div
+            data-plasmic-name={"twat"}
+            data-plasmic-override={overrides.twat}
+            className={classNames(projectcss.all, sty.twat)}
+          >
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__eF2
+              )}
+            >
+              {"\u0645\u0627\u0647\u0627\u0646"}
+            </div>
+            <Embed
+              className={classNames("__wab_instance", sty.embedHtml__sD2Gc)}
+              code={
+                '<script type="module">\r\n  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js";\r\n  import { getMessaging, getToken, onMessage } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-messaging.js";\r\n\r\n  // --- CONFIGURATION ---\r\n  const firebaseConfig = {\r\n    apiKey: "AIzaSyCwfbUiQNPQSyL48d0It3MgFOoTwF6AHN4", // \u062c\u0627\u06cc\u06af\u0632\u06cc\u0646 \u06a9\u0646\u06cc\u062f\r\n    authDomain: "miaan-notify-mn5436.firebaseapp.com",\r\n    projectId: "miaan-notify-mn5436",\r\n    storageBucket: "miaan-notify-mn5436.firebasestorage.app",\r\n    messagingSenderId: "553708011126",\r\n    appId: "1:553708011126:web:dcdff7eacd0ea7b3296957" // \u062c\u0627\u06cc\u06af\u0632\u06cc\u0646 \u06a9\u0646\u06cc\u062f\r\n  };\r\n\r\n  const VAPID_KEY = "BPBCMzaOwuDnklPI_8EXu6x30lu0-eq0fcZ058u1fXWbHxicUr0fn8MdpyLFdP5QQIOgiIg9zZtVsyCrr7rV15k"; // \u06a9\u0644\u06cc\u062f \u0639\u0645\u0648\u0645\u06cc Vapid \u0631\u0627 \u0627\u06cc\u0646\u062c\u0627 \u0628\u06af\u0630\u0627\u0631\u06cc\u062f\r\n\r\n  // --- UTILS: COOKIE MANAGER ---\r\n  const CookieManager = {\r\n    get: (name) => {\r\n      try {\r\n        const v = document.cookie.match(\'(^|;) ?\' + name + \'=([^;]*)(;|$)\');\r\n        return v ? v[2] : null;\r\n      } catch (e) { return null; }\r\n    },\r\n    set: (name, value, days) => {\r\n      try {\r\n        const d = new Date();\r\n        d.setTime(d.getTime() + 24*60*60*1000*days);\r\n        document.cookie = name + "=" + value + ";path=/;expires=" + d.toGMTString();\r\n      } catch (e) {}\r\n    }\r\n  };\r\n\r\n  // --- MAIN LOGIC ---\r\n  async function startNotificationFlow() {\r\n    // \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 try-catch \u06a9\u0644\u06cc \u0628\u0631\u0627\u06cc \u062c\u0644\u0648\u06af\u06cc\u0631\u06cc \u0627\u0632 \u06a9\u0631\u0634 \u06a9\u0631\u062f\u0646 \u0628\u0631\u0646\u0627\u0645\u0647 (\u0646\u06a9\u062a\u0647: \u0647\u06cc\u0686 \u0627\u0631\u0648\u0631\u06cc \u0646\u062f\u0647)\r\n    try {\r\n      // 1. Initialize\r\n      const app = initializeApp(firebaseConfig);\r\n      const messaging = getMessaging(app);\r\n\r\n      // 2. Request Permission\r\n      const permission = await Notification.requestPermission();\r\n      if (permission !== \'granted\') {\r\n        console.log(\'Permission denied\');\r\n        return;\r\n      }\r\n\r\n      // 3. GET TOKEN (ALWAYS FRESH) - \u0646\u06a9\u062a\u0647 \u062f\u0648\u0645\r\n      // \u0645\u0627 \u0627\u06cc\u0646\u062c\u0627 \u0627\u0635\u0644\u0627 \u0686\u06a9 \u0646\u0645\u06cc\u06a9\u0646\u06cc\u0645 \u06a9\u0647 \u062a\u0648\u06a9\u0646 \u062f\u0631 \u06a9\u0648\u06a9\u06cc \u0647\u0633\u062a \u06cc\u0627 \u0646\u0647\u060c \u0645\u0633\u062a\u0642\u06cc\u0645 \u0627\u0632 \u0641\u0627\u06cc\u0631\u0628\u06cc\u0633 \u0645\u06cc\u06af\u06cc\u0631\u06cc\u0645 \u06a9\u0647 \u0645\u0637\u0645\u0626\u0646 \u062a\u0631\u06cc\u0646 \u0631\u0627\u0647 \u0627\u0633\u062a\r\n      const currentToken = await getToken(messaging, { vapidKey: VAPID_KEY });\r\n\r\n      if (!currentToken) {\r\n        console.log(\'No registration token available.\');\r\n        return;\r\n      }\r\n\r\n      // 4. SAVE TO COOKIE (\u062c\u0647\u062a \u0627\u0637\u0644\u0627\u0639\u060c \u0648\u0644\u06cc \u0628\u0631\u0627\u06cc \u0644\u0627\u062c\u06cc\u06a9 \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0646\u0645\u06cc\u06a9\u0646\u06cc\u0645)\r\n      CookieManager.set(\'fcm_token_storage\', currentToken, 30);\r\n\r\n      // 5. SYNC TO BACKEND - \u0646\u06a9\u062a\u0647 \u0627\u0648\u0644 \u0648 \u062f\u0648\u0645\r\n      const userToken = CookieManager.get(\'usso_access_token\') || \'\';\r\n      \r\n      console.log(\'Syncing token to backend...\');\r\n      \r\n      // \u0631\u06cc\u06a9\u0648\u06cc\u0633\u062a \u0628\u0647 \u0628\u06a9\u0646\u062f \u0628\u062f\u0648\u0646 \u0627\u06cc\u0646\u06a9\u0647 \u0645\u0646\u062a\u0638\u0631 \u062c\u0648\u0627\u0628 \u0628\u0645\u0627\u0646\u06cc\u0645 (\u0628\u0631\u0627\u06cc \u0633\u0631\u0639\u062a UI) \u0627\u0645\u0627 \u062f\u0627\u062e\u0644 \u0628\u0644\u0627\u06a9 \u0627\u0645\u0646\r\n      fetch("https://second-n8n.darkube.app/webhook/v1/devices/sync", {\r\n        method: "POST",\r\n        headers: {\r\n          "Content-Type": "application/json",\r\n          "x-fcm-token": currentToken, // \u0627\u0631\u0633\u0627\u0644 \u062f\u0631 \u0647\u062f\u0631 \u0637\u0628\u0642 \u062f\u0631\u062e\u0648\u0627\u0633\u062a\r\n          "x-user-token": userToken    // \u0627\u0631\u0633\u0627\u0644 \u062f\u0631 \u0647\u062f\u0631 \u0637\u0628\u0642 \u062f\u0631\u062e\u0648\u0627\u0633\u062a\r\n        },\r\n        body: JSON.stringify({\r\n          fcm_token: currentToken,\r\n          user_token: userToken,\r\n          platform: "PWA_APK",\r\n          timestamp: new Date().toISOString()\r\n        })\r\n      }).catch(err => console.warn(\'Backend sync failed silently\', err));\r\n\r\n      // 6. FOREGROUND HANDLER - \u0646\u06a9\u062a\u0647 \u0647\u0641\u062a\u0645\r\n      // \u0648\u0642\u062a\u06cc \u0627\u067e \u0628\u0627\u0632 \u0627\u0633\u062a\u060c \u0646\u0648\u062a\u06cc\u0641\u06cc\u06a9\u06cc\u0634\u0646 \u0631\u0627 \u0646\u0634\u0627\u0646 \u0628\u062f\u0647\r\n      onMessage(messaging, (payload) => {\r\n        console.log(\'Message received in foreground \', payload);\r\n        try {\r\n            const title = payload.notification?.title || payload.data?.title || \'\u067e\u06cc\u0627\u0645 \u062c\u062f\u06cc\u062f\';\r\n            const options = {\r\n                body: payload.notification?.body || payload.data?.body,\r\n                icon: "https://media.rentamon.com/img%2Flogo-miaan%2Fsign-blue-small.png", // \u0646\u06a9\u062a\u0647 \u067e\u0646\u062c\u0645\r\n                data: { url: payload.data?.url || payload.data?.link || \'/\' }\r\n            };\r\n\r\n            // \u0646\u06a9\u062a\u0647 \u0645\u0647\u0645: \u0628\u0631\u0627\u06cc \u0627\u06cc\u0646\u06a9\u0647 \u0648\u0642\u062a\u06cc \u0627\u067e \u0628\u0627\u0632 \u0627\u0633\u062a \u0645\u062b\u0644 \u06cc\u06a9 \u0646\u0648\u062a\u06cc\u0641\u06cc\u06a9\u06cc\u0634\u0646 \u0648\u0627\u0642\u0639\u06cc \u062f\u06cc\u062f\u0647 \u0634\u0648\u062f\r\n            // \u0627\u0632 \u0633\u0631\u0648\u06cc\u0633 \u0648\u0631\u06a9\u0631 \u0645\u06cc\u062e\u0648\u0627\u0647\u06cc\u0645 \u0622\u0646 \u0631\u0627 \u0646\u0634\u0627\u0646 \u062f\u0647\u062f\r\n            if (\'serviceWorker\' in navigator) {\r\n                navigator.serviceWorker.ready.then(registration => {\r\n                    registration.showNotification(title, options);\r\n                });\r\n            }\r\n        } catch (e) {\r\n            console.warn(\'Foreground notify error\', e);\r\n        }\r\n      });\r\n\r\n    } catch (globalError) {\r\n      // \u0627\u06cc\u0646 \u0628\u062e\u0634 \u062a\u0636\u0645\u06cc\u0646 \u0645\u06cc\u06a9\u0646\u062f \u06a9\u0647 \u0647\u06cc\u0686 \u0627\u0631\u0648\u0631\u06cc \u0641\u0644\u0648 \u0628\u0631\u0646\u0627\u0645\u0647 \u0631\u0627 \u0645\u062a\u0648\u0642\u0641 \u0646\u06a9\u0646\u062f\r\n      console.warn(\'Notification system logic error:\', globalError);\r\n    }\r\n  }\r\n\r\n  // --- TRIGGERS ---\r\n\r\n  // 1. \u0627\u062c\u0631\u0627 \u062f\u0631 \u0632\u0645\u0627\u0646 \u0644\u0648\u062f \u0635\u0641\u062d\u0647\r\n  window.addEventListener(\'load\', () => {\r\n    if (\'serviceWorker\' in navigator && \'Notification\' in window) {\r\n      // \u0631\u062c\u06cc\u0633\u062a\u0631 \u06a9\u0631\u062f\u0646 \u0633\u0631\u0648\u06cc\u0633 \u0648\u0631\u06a9\u0631\r\n      navigator.serviceWorker.register(\'/firebase-messaging-sw.js\')\r\n      .then((registration) => {\r\n         console.log(\'SW Registered\');\r\n         startNotificationFlow();\r\n      })\r\n      .catch(err => console.warn(\'SW Register failed\', err));\r\n    }\r\n  });\r\n\r\n  // 2. \u0627\u062c\u0631\u0627 \u0647\u0631 \u0628\u0627\u0631 \u06a9\u0647 \u06a9\u0627\u0631\u0628\u0631 \u0648\u0627\u0631\u062f \u0627\u067e \u0645\u06cc\u0634\u0648\u062f (\u062d\u062a\u06cc \u0627\u06af\u0631 \u0627\u067e \u062f\u0631 \u067e\u0633 \u0632\u0645\u06cc\u0646\u0647 \u0628\u0627\u0632 \u0628\u0648\u062f\u0647) - \u0646\u06a9\u062a\u0647 \u062f\u0648\u0645\r\n  document.addEventListener("visibilitychange", () => {\r\n    if (document.visibilityState === "visible") {\r\n      console.log("App entered foreground. Resyncing...");\r\n      startNotificationFlow();\r\n    }\r\n  });\r\n\r\n</script>'
+              }
+            />
+
+            <Button
+              data-plasmic-name={"tset"}
+              data-plasmic-override={overrides.tset}
+              className={classNames("__wab_instance", sty.tset)}
+              onClick={async event => {
+                const $steps = {};
+
+                $steps["runCode"] = true
+                  ? (() => {
+                      const actionArgs = {
+                        customFunction: async () => {
+                          return window.requestNotificationPermission();
+                        }
+                      };
+                      return (({ customFunction }) => {
+                        return customFunction();
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+                if (
+                  $steps["runCode"] != null &&
+                  typeof $steps["runCode"] === "object" &&
+                  typeof $steps["runCode"].then === "function"
+                ) {
+                  $steps["runCode"] = await $steps["runCode"];
+                }
+              }}
+            >
+              {"jsj"}
+            </Button>
+          </div>
+          <div
             className={classNames(projectcss.all, sty.freeBox__nuKAm)}
             onClick={async event => {
               const $steps = {};
@@ -723,99 +774,7 @@ function PlasmicTst__RenderFunc(props: {
                   await $steps["invokeGlobalAction"];
               }
             }}
-          >
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__eF2
-              )}
-            >
-              {"\u0645\u0627\u0647\u0627\u0646"}
-            </div>
-            <div className={classNames(projectcss.all, sty.freeBox__f4NMm)}>
-              <Embed
-                className={classNames("__wab_instance", sty.embedHtml__gpUeV)}
-                code={
-                  '<script type="module">\r\n  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";\r\n  import { getMessaging, getToken, onMessage } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-messaging.js";\r\n\r\n  // --- 1. CONFIGURATION ---\r\n  const firebaseConfig = {\r\n    apiKey: "AIzaSyCwfbUiQNPQSyL48d0It3MgFOoTwF6AHN4",\r\n    authDomain: "miaan-notify-mn5436.firebaseapp.com",\r\n    projectId: "miaan-notify-mn5436",\r\n    storageBucket: "miaan-notify-mn5436.firebasestorage.app",\r\n    messagingSenderId: "553708011126",\r\n    appId: "1:553708011126:web:dcdff7eacd0ea7b3296957"\r\n  };\r\n\r\n  const VAPID_KEY = "BPBCMzaOwuDnklPI_8EXu6x30lu0-eq0fcZ058u1fXWbHxicUr0fn8MdpyLFdP5QQIOgiIg9zZtVsyCrr7rV15k";\r\n  const BACKEND_URL = "https://second-n8n.darkube.app/webhook/v1/devices/sync";\r\n  const SW_PATH = "/firebase-messaging-sw.js"; // \u0645\u0633\u06cc\u0631 \u0641\u0627\u06cc\u0644 \u0633\u0631\u0648\u06cc\u0633 \u0648\u0631\u06a9\u0631\r\n\r\n  // Initialize\r\n  const app = initializeApp(firebaseConfig);\r\n  const messaging = getMessaging(app);\r\n\r\n  // --- 2. HELPERS ---\r\n  function getCookie(name) {\r\n    const value = `; ${document.cookie}`;\r\n    const parts = value.split(`; ${name}=`);\r\n    if (parts.length === 2) return parts.pop().split(\';\').shift();\r\n    return null;\r\n  }\r\n\r\n  // --- 3. FORCE SYNC ---\r\n  async function sendTokenToBackend(fcmToken) {\r\n    const ussoToken = getCookie("usso_access_token");\r\n    alert("5. Sending to Backend..."); // DEBUG\r\n\r\n    try {\r\n      const response = await fetch(BACKEND_URL, {\r\n        method: "POST",\r\n        headers: {\r\n          "Content-Type": "application/json",\r\n          "x-fcm-token": fcmToken,\r\n          "Authorization": ussoToken ? `Bearer ${ussoToken}` : ""\r\n        },\r\n        body: JSON.stringify({\r\n          fcm_token: fcmToken,\r\n          usso_access_token: ussoToken,\r\n          device_type: "pwa-apk",\r\n          platform: "android_web_debug",\r\n          timestamp: new Date().toISOString()\r\n        })\r\n      });\r\n\r\n      if (response.ok) {\r\n        alert("\u2705 Success! Token sent to backend.");\r\n      } else {\r\n        alert("\u274c Backend Error: " + response.status);\r\n      }\r\n    } catch (error) {\r\n      alert("\u274c Network Error: " + error.message);\r\n    }\r\n  }\r\n\r\n  // --- 4. MAIN ACTION ---\r\n  window.requestNotificationPermission = async function() {\r\n      alert("1. Start Process"); // DEBUG\r\n\r\n      try {\r\n          // A. Permission\r\n          const permission = await Notification.requestPermission();\r\n          alert("2. Permission status: " + permission); // DEBUG\r\n          \r\n          if (permission === "granted") {\r\n              \r\n              // B. Service Worker Check\r\n              alert("3. Registering SW: " + SW_PATH); // DEBUG\r\n              const registration = await navigator.serviceWorker.register(SW_PATH, { scope: \'/\' });\r\n              \r\n              // C. Get Token\r\n              alert("4. Requesting Token (Please wait)..."); // DEBUG\r\n              \r\n              // \u0627\u06cc\u0646\u062c\u0627 \u0645\u0645\u06a9\u0646\u0647 \u06af\u06cc\u0631 \u06a9\u0646\u0647\r\n              const currentToken = await getToken(messaging, { \r\n                vapidKey: VAPID_KEY,\r\n                serviceWorkerRegistration: registration \r\n              });\r\n\r\n              if (currentToken) {\r\n                  alert("4.5 Token Got! " + currentToken.substring(0, 10) + "..."); // DEBUG\r\n                  await sendTokenToBackend(currentToken);\r\n              } else {\r\n                  alert("\u274c No Token Returned from Firebase!");\r\n              }\r\n\r\n          } else {\r\n              alert("\u274c Permission Denied by User");\r\n          }\r\n      } catch (err) {\r\n          // \u0627\u06af\u0631 \u0627\u06cc\u0646\u062c\u0627 \u0627\u0631\u0648\u0631 \u062f\u0627\u062f\u060c \u06cc\u0639\u0646\u06cc \u0645\u0634\u06a9\u0644 \u0627\u0633\u0627\u0633\u06cc \u0648\u062c\u0648\u062f \u062f\u0627\u0631\u062f\r\n          alert("\u274c CRITICAL ERROR: " + err.message);\r\n          console.error(err);\r\n      }\r\n  };\r\n</script>'
-                }
-              />
-
-              <Button
-                data-plasmic-name={"org"}
-                data-plasmic-override={overrides.org}
-                className={classNames("__wab_instance", sty.org)}
-                onClick={async event => {
-                  const $steps = {};
-
-                  $steps["runCode"] = true
-                    ? (() => {
-                        const actionArgs = {
-                          customFunction: async () => {
-                            return window.requestNotificationPermission();
-                          }
-                        };
-                        return (({ customFunction }) => {
-                          return customFunction();
-                        })?.apply(null, [actionArgs]);
-                      })()
-                    : undefined;
-                  if (
-                    $steps["runCode"] != null &&
-                    typeof $steps["runCode"] === "object" &&
-                    typeof $steps["runCode"].then === "function"
-                  ) {
-                    $steps["runCode"] = await $steps["runCode"];
-                  }
-                }}
-              />
-            </div>
-          </div>
-          <div
-            data-plasmic-name={"mahanTest"}
-            data-plasmic-override={overrides.mahanTest}
-            className={classNames(projectcss.all, sty.mahanTest)}
-          >
-            <Embed
-              className={classNames("__wab_instance", sty.embedHtml__ruw5X)}
-              code={""}
-            />
-
-            <Button
-              data-plasmic-name={"button"}
-              data-plasmic-override={overrides.button}
-              className={classNames("__wab_instance", sty.button)}
-              onClick={async event => {
-                const $steps = {};
-
-                $steps["runCode"] = true
-                  ? (() => {
-                      const actionArgs = {
-                        customFunction: async () => {
-                          return (() => {
-                            return window.askForNotificationPermission();
-                          })();
-                        }
-                      };
-                      return (({ customFunction }) => {
-                        return customFunction();
-                      })?.apply(null, [actionArgs]);
-                    })()
-                  : undefined;
-                if (
-                  $steps["runCode"] != null &&
-                  typeof $steps["runCode"] === "object" &&
-                  typeof $steps["runCode"].then === "function"
-                ) {
-                  $steps["runCode"] = await $steps["runCode"];
-                }
-              }}
-            >
-              {
-                "\u0628\u0631\u0627\u06cc \u0627\u06cc\u0646\u06a9\u0647 \u0647\u0631 \u0631\u0648\u06cc\u062f\u0627\u062f\u06cc \u0631\u0648 \u0628\u0647\u062a \u062e\u0628\u0631 \u0628\u062f\u06cc\u0645 \u0644\u0637\u0641\u0627 \u06a9\u06cc\u0644\u06a9 \u06a9\u0646 \u0648 \u0627\u062c\u0627\u0632\u0647 \u0631\u0648 \u0628\u062f \u0628\u0647 \u0645\u0627"
-              }
-            </Button>
-          </div>
+          />
         </div>
       </div>
     </React.Fragment>
@@ -833,9 +792,8 @@ const PlasmicDescendants = {
     "apiRequest4",
     "datePicker",
     "profile2",
-    "org",
-    "mahanTest",
-    "button"
+    "twat",
+    "tset"
   ],
   progressbar: ["progressbar"],
   progressbar2: ["progressbar2"],
@@ -845,9 +803,8 @@ const PlasmicDescendants = {
   apiRequest4: ["apiRequest4"],
   datePicker: ["datePicker"],
   profile2: ["profile2"],
-  org: ["org"],
-  mahanTest: ["mahanTest", "button"],
-  button: ["button"]
+  twat: ["twat", "tset"],
+  tset: ["tset"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -862,9 +819,8 @@ type NodeDefaultElementType = {
   apiRequest4: typeof ApiRequest;
   datePicker: typeof DatePicker;
   profile2: typeof ApiRequest;
-  org: typeof Button;
-  mahanTest: "div";
-  button: typeof Button;
+  twat: "div";
+  tset: typeof Button;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -937,9 +893,8 @@ export const PlasmicTst = Object.assign(
     apiRequest4: makeNodeComponent("apiRequest4"),
     datePicker: makeNodeComponent("datePicker"),
     profile2: makeNodeComponent("profile2"),
-    org: makeNodeComponent("org"),
-    mahanTest: makeNodeComponent("mahanTest"),
-    button: makeNodeComponent("button"),
+    twat: makeNodeComponent("twat"),
+    tset: makeNodeComponent("tset"),
 
     // Metadata about props expected for PlasmicTst
     internalVariantProps: PlasmicTst__VariantProps,

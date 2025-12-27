@@ -646,29 +646,7 @@ function PlasmicSelectProperty__RenderFunc(props: {
                           const actionArgs = {
                             args: [
                               "POST",
-                              (() => {
-                                try {
-                                  return (() => {
-                                    const isMiaan =
-                                      window.location.hostname.includes(
-                                        "miaan.ir"
-                                      );
-                                    const gatewayBase = isMiaan
-                                      ? "https://gateway.miaan.ir"
-                                      : "https://gateway.rentamon.com";
-                                    return `${gatewayBase}/webhook/api/divar/block`;
-                                  })();
-                                } catch (e) {
-                                  if (
-                                    e instanceof TypeError ||
-                                    e?.plasmicType ===
-                                      "PlasmicUndefinedDataError"
-                                  ) {
-                                    return undefined;
-                                  }
-                                  throw e;
-                                }
-                              })(),
+                              "https://automation.miaan.ir/webhook/api/divar/booking",
                               undefined,
                               (() => {
                                 try {
@@ -677,7 +655,8 @@ function PlasmicSelectProperty__RenderFunc(props: {
                                       property =>
                                         property.name ===
                                         $state.selectProperty.value
-                                    ).id
+                                    ).id,
+                                    dates: window.selectedDates || []
                                   };
                                 } catch (e) {
                                   if (
