@@ -84,8 +84,8 @@ export type PlasmicGuestCalendar__OverridesType = {
   root?: Flex__<"div">;
   main?: Flex__<"div">;
   profile2?: Flex__<typeof ApiRequest>;
+  img?: Flex__<typeof PlasmicImg__>;
   apiRequest2?: Flex__<typeof ApiRequest>;
-  fetchImage?: Flex__<typeof ApiRequest>;
 };
 
 export interface DefaultGuestCalendarProps {}
@@ -156,30 +156,6 @@ function PlasmicGuestCalendar__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
 
         refName: "apiRequest2"
-      },
-      {
-        path: "fetchImage.data",
-        type: "private",
-        variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
-
-        refName: "fetchImage"
-      },
-      {
-        path: "fetchImage.error",
-        type: "private",
-        variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
-
-        refName: "fetchImage"
-      },
-      {
-        path: "fetchImage.loading",
-        type: "private",
-        variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
-
-        refName: "fetchImage"
       },
       {
         path: "profile2.data",
@@ -334,8 +310,10 @@ function PlasmicGuestCalendar__RenderFunc(props: {
                         )}
                       >
                         <PlasmicImg__
+                          data-plasmic-name={"img"}
+                          data-plasmic-override={overrides.img}
                           alt={""}
-                          className={classNames(sty.img__kGe4)}
+                          className={classNames(sty.img)}
                           displayHeight={"auto"}
                           displayMaxHeight={"none"}
                           displayMaxWidth={"100%"}
@@ -575,7 +553,7 @@ function PlasmicGuestCalendar__RenderFunc(props: {
   
   <div class="legend" id="legend-section" style="display:none;">
     <div class="legend-item"><div class="legend-box box-free"></div><span>خالی</span></div>
-    <div class="legend-item"><div class="legend-box box-blocked"></div><span>غیرفعال / پر</span></div>
+    <div class="legend-item"><div class="legend-box box-blocked"></div><span>پر</span></div>
   </div>
 </div>
 
@@ -755,78 +733,6 @@ function PlasmicGuestCalendar__RenderFunc(props: {
                 </div>
               </div>
             </ApiRequest>
-            <PlasmicImg__
-              alt={""}
-              className={classNames(sty.img__nhEbb)}
-              displayHeight={"auto"}
-              displayMaxHeight={"none"}
-              displayMaxWidth={"100%"}
-              displayMinHeight={"0"}
-              displayMinWidth={"0"}
-              displayWidth={"auto"}
-              loading={"lazy"}
-              src={(() => {
-                try {
-                  return $state.fetchImage.data.property_pic_link;
-                } catch (e) {
-                  if (
-                    e instanceof TypeError ||
-                    e?.plasmicType === "PlasmicUndefinedDataError"
-                  ) {
-                    return undefined;
-                  }
-                  throw e;
-                }
-              })()}
-              width={
-                hasVariant(globalVariants, "screen", "mobile") ? `` : "400"
-              }
-            />
-
-            <ApiRequest
-              data-plasmic-name={"fetchImage"}
-              data-plasmic-override={overrides.fetchImage}
-              children={null}
-              className={classNames("__wab_instance", sty.fetchImage)}
-              errorDisplay={null}
-              loadingDisplay={null}
-              method={"GET"}
-              onError={async (...eventArgs: any) => {
-                generateStateOnChangeProp($state, [
-                  "fetchImage",
-                  "error"
-                ]).apply(null, eventArgs);
-              }}
-              onLoading={async (...eventArgs: any) => {
-                generateStateOnChangeProp($state, [
-                  "fetchImage",
-                  "loading"
-                ]).apply(null, eventArgs);
-              }}
-              onSuccess={async (...eventArgs: any) => {
-                generateStateOnChangeProp($state, ["fetchImage", "data"]).apply(
-                  null,
-                  eventArgs
-                );
-              }}
-              params={undefined}
-              ref={ref => {
-                $refs["fetchImage"] = ref;
-              }}
-              url={(() => {
-                try {
-                  return `https://automation.miaan.ir/webhook/property/image?property_id=${$ctx.params.property_id}`;
-                } catch (e) {
-                  if (
-                    e instanceof TypeError ||
-                    e?.plasmicType === "PlasmicUndefinedDataError"
-                  ) {
-                    return undefined;
-                  }
-                  throw e;
-                }
-              })()}
-            />
           </div>
         </div>
       </div>
@@ -835,11 +741,11 @@ function PlasmicGuestCalendar__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "main", "profile2", "apiRequest2", "fetchImage"],
-  main: ["main", "profile2", "apiRequest2", "fetchImage"],
-  profile2: ["profile2"],
-  apiRequest2: ["apiRequest2"],
-  fetchImage: ["fetchImage"]
+  root: ["root", "main", "profile2", "img", "apiRequest2"],
+  main: ["main", "profile2", "img", "apiRequest2"],
+  profile2: ["profile2", "img"],
+  img: ["img"],
+  apiRequest2: ["apiRequest2"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -848,8 +754,8 @@ type NodeDefaultElementType = {
   root: "div";
   main: "div";
   profile2: typeof ApiRequest;
+  img: typeof PlasmicImg__;
   apiRequest2: typeof ApiRequest;
-  fetchImage: typeof ApiRequest;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -916,8 +822,8 @@ export const PlasmicGuestCalendar = Object.assign(
     // Helper components rendering sub-elements
     main: makeNodeComponent("main"),
     profile2: makeNodeComponent("profile2"),
+    img: makeNodeComponent("img"),
     apiRequest2: makeNodeComponent("apiRequest2"),
-    fetchImage: makeNodeComponent("fetchImage"),
 
     // Metadata about props expected for PlasmicGuestCalendar
     internalVariantProps: PlasmicGuestCalendar__VariantProps,
