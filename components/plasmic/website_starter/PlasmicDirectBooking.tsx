@@ -455,28 +455,8 @@ function PlasmicDirectBooking__RenderFunc(props: {
                   data-plasmic-name={"apiRequest"}
                   data-plasmic-override={overrides.apiRequest}
                   className={classNames("__wab_instance", sty.apiRequest)}
-                  errorDisplay={
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__sivcu
-                      )}
-                    >
-                      {"Error fetching data"}
-                    </div>
-                  }
-                  loadingDisplay={
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__yEdBu
-                      )}
-                    >
-                      {"Loading..."}
-                    </div>
-                  }
+                  errorDisplay={null}
+                  loadingDisplay={null}
                   method={"GET"}
                   onError={async (...eventArgs: any) => {
                     generateStateOnChangeProp($state, [
@@ -932,9 +912,229 @@ window.smartCal = (function() {
                         "__wab_instance",
                         sty.embedHtml__mojIr
                       )}
-                      code={
-                        '<div id="booking-widget-wrapper">\r\n  <style>\r\n    /* \u062a\u0646\u0638\u06cc\u0645\u0627\u062a \u06a9\u0644\u06cc */\r\n    #booking-widget-wrapper { direction: rtl; }\r\n    #booking-widget-wrapper * { box-sizing: border-box; }\r\n\r\n    /* \u062f\u06a9\u0645\u0647 \u0627\u0635\u0644\u06cc */\r\n    #booking-widget-wrapper .trigger-container { text-align: center; margin-top: 25px; }\r\n    \r\n    #booking-widget-wrapper .trigger-btn {\r\n        background: #0070BB; color: white; padding: 14px 40px; border: none; border-radius: 8px; \r\n        cursor: pointer; font-size: 1.2rem; font-weight: bold; transition: 0.3s; width: 100%; max-width: 400px;\r\n    }\r\n    #booking-widget-wrapper .trigger-btn:disabled { background: #ccc; cursor: not-allowed; opacity: 0.7; }\r\n    #booking-widget-wrapper .trigger-btn:hover:not(:disabled) { background: #005a96; }\r\n\r\n    /* \u0645\u0648\u062f\u0627\u0644 */\r\n    #booking-widget-wrapper .modal-overlay {\r\n        position: fixed; top: 0; left: 0; width: 100%; height: 100%;\r\n        background: rgba(0,0,0,0.6); z-index: 9999;\r\n        display: none; justify-content: center; align-items: center;\r\n        backdrop-filter: blur(2px);\r\n    }\r\n    #booking-widget-wrapper .modal-overlay.open { display: flex; }\r\n\r\n    #booking-widget-wrapper .modal-box {\r\n        background: white; padding: 25px; border-radius: 12px;\r\n        width: 90%; max-width: 450px; position: relative; border: 1px solid #ddd;\r\n    }\r\n\r\n    #booking-widget-wrapper .close-icon {\r\n        position: absolute; left: 20px; top: 20px; font-size: 28px; cursor: pointer; color: #333; line-height: 1;\r\n    }\r\n\r\n    /* \u0628\u0627\u06a9\u0633 \u0627\u0637\u0644\u0627\u0639\u0627\u062a */\r\n    #booking-widget-wrapper .info-box {\r\n        background: #f2f9ff; padding: 15px; border-radius: 8px; \r\n        margin-bottom: 25px; font-size: 1rem; color: #444; border: 1px solid #e6f2fa;\r\n    }\r\n    #booking-widget-wrapper .info-row { display: flex; justify-content: space-between; margin-bottom: 8px; }\r\n    \r\n    #booking-widget-wrapper .price-row {\r\n        color: #0070BB; border-top: 1px solid #ddd; padding-top: 10px; margin-top: 10px; margin-bottom: 0; font-size: 1.1em;\r\n    }\r\n\r\n    /* \u0641\u0631\u0645 */\r\n    #booking-widget-wrapper .inp-group { margin-bottom: 18px; }\r\n    #booking-widget-wrapper .inp-label { display: block; margin-bottom: 8px; font-weight: bold; font-size: 1rem; color: #333; }\r\n    #booking-widget-wrapper .inp-field {\r\n        width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 8px; \r\n        font-size: 16px; background: #fff; font-family: inherit;\r\n    }\r\n    #booking-widget-wrapper .inp-field:focus { outline: none; border-color: #0070BB; }\r\n    \r\n    #booking-widget-wrapper .final-btn {\r\n        width: 100%; padding: 14px; background: #0070BB; color: white; \r\n        border: none; border-radius: 8px; cursor: pointer; \r\n        font-size: 1.1rem; font-weight: bold; margin-top: 10px;\r\n    }\r\n    #booking-widget-wrapper .final-btn:disabled { background: #999; cursor: default; }\r\n    #booking-widget-wrapper .err-txt { color: #d32f2f; font-size: 0.9rem; display: none; margin-top: 5px; }\r\n    #booking-widget-wrapper h3 { font-size: 1.3rem; margin-bottom: 20px; color: #333; }\r\n  </style>\r\n\r\n  <div class="trigger-container">\r\n    <button id="bookBtn" class="trigger-btn" disabled>\u062b\u0628\u062a \u062f\u0631\u062e\u0648\u0627\u0633\u062a \u0631\u0632\u0631\u0648</button>\r\n  </div>\r\n\r\n  <div class="modal-overlay" id="modalOverlay">\r\n    <div class="modal-box">\r\n      <div class="close-icon" id="closeModal">&times;</div>\r\n      <h3 style="margin-top:0; border-bottom:2px solid #0070BB; display:inline-block; padding-bottom:10px;">\u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0631\u0632\u0631\u0648</h3>\r\n      \r\n      <div class="info-box">\r\n          <div class="info-row"><span>\u062a\u0627\u0631\u06cc\u062e \u0648\u0631\u0648\u062f:</span> <span id="sStart" style="font-weight:bold">-</span></div>\r\n          <div class="info-row"><span>\u062a\u0627\u0631\u06cc\u062e \u062e\u0631\u0648\u062c:</span> <span id="sEnd" style="font-weight:bold">-</span></div>\r\n          <div class="info-row"><span>\u0645\u062f\u062a \u0627\u0642\u0627\u0645\u062a:</span> <span id="sNights" style="font-weight:bold">0 \u0634\u0628</span></div>\r\n          \r\n          <div class="info-row price-row">\r\n             <span style="font-weight:bold">\u0645\u0628\u0644\u063a \u0642\u0627\u0628\u0644 \u067e\u0631\u062f\u0627\u062e\u062a:</span> \r\n             <span id="sTotalPrice" style="font-weight:bold;">0 \u062a\u0648\u0645\u0627\u0646</span>\r\n          </div>\r\n      </div>\r\n\r\n      <form id="reqForm">\r\n        <div class="inp-group">\r\n          <label class="inp-label">\u0646\u0627\u0645 \u0648 \u0646\u0627\u0645 \u062e\u0627\u0646\u0648\u0627\u062f\u06af\u06cc</label>\r\n          <input type="text" id="nameInp" class="inp-field" placeholder="\u0645\u062b\u0627\u0644: \u0639\u0644\u06cc \u0645\u062d\u0645\u062f\u06cc" required>\r\n        </div>\r\n        <div class="inp-group">\r\n          <label class="inp-label">\u0634\u0645\u0627\u0631\u0647 \u0647\u0645\u0631\u0627\u0647</label>\r\n          <input type="tel" id="phoneInp" class="inp-field" placeholder="0912..." required>\r\n        </div>\r\n        <div class="inp-group">\r\n          <label class="inp-label">\u062a\u0639\u062f\u0627\u062f \u0646\u0641\u0631\u0627\u062a</label>\r\n          <input type="number" id="guestInp" class="inp-field" min="1" value="1" required>\r\n        </div>\r\n        <button type="submit" id="finalBtn" class="final-btn">\u062b\u0628\u062a \u0646\u0647\u0627\u06cc\u06cc \u062f\u0631\u062e\u0648\u0627\u0633\u062a</button>\r\n      </form>\r\n    </div>\r\n  </div>\r\n</div>\r\n\r\n<script>\r\n(function() {\r\n  var bookBtn = document.getElementById(\'bookBtn\');\r\n  var modal = document.getElementById(\'modalOverlay\');\r\n  var close = document.getElementById(\'closeModal\');\r\n  var form = document.getElementById(\'reqForm\');\r\n  var finalBtn = document.getElementById(\'finalBtn\');\r\n  var guestInp = document.getElementById(\'guestInp\');\r\n  \r\n  var sStart = document.getElementById(\'sStart\');\r\n  var sEnd = document.getElementById(\'sEnd\');\r\n  var sNights = document.getElementById(\'sNights\');\r\n  var sTotalPrice = document.getElementById(\'sTotalPrice\');\r\n\r\n  var bookingState = {};\r\n  \r\n  function formatMoney(num) {\r\n      if(!num) return \'0\';\r\n      return num.toString().replace(/\\B(?=(\\d{3})+(?!\\d))/g, ",");\r\n  }\r\n\r\n  // \u062f\u0631\u06cc\u0627\u0641\u062a \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0627\u0632 \u062a\u0642\u0648\u06cc\u0645\r\n  window.addEventListener(\'calendar-update\', function(e) {\r\n    bookingState = e.detail;\r\n    if(bookingState.startDate && bookingState.endDate && bookingState.nightsCount > 0) {\r\n        bookBtn.disabled = false;\r\n        sStart.innerText = bookingState.startDate;\r\n        sEnd.innerText = bookingState.endDate;\r\n        sNights.innerText = bookingState.nightsCount + \' \u0634\u0628\';\r\n        \r\n        var total = bookingState.totalPrice || 0;\r\n        sTotalPrice.innerText = formatMoney(total) + \' \u062a\u0648\u0645\u0627\u0646\';\r\n    } else {\r\n        bookBtn.disabled = true;\r\n    }\r\n  });\r\n\r\n  bookBtn.onclick = function() { modal.className += \' open\'; };\r\n  function closeModalFunc() { modal.className = modal.className.replace(\' open\', \'\'); }\r\n  close.onclick = closeModalFunc;\r\n  modal.onclick = function(e) { if(e.target === modal) closeModalFunc(); };\r\n  \r\n  // \u0627\u0631\u0633\u0627\u0644 \u0641\u0631\u0645\r\n  form.onsubmit = function(e) {\r\n    e.preventDefault();\r\n\r\n    // 1. \u062c\u0645\u0639\u200c\u0622\u0648\u0631\u06cc \u062f\u0627\u062f\u0647\u200c\u0647\u0627\r\n    var guestName = document.getElementById(\'nameInp\').value;\r\n    var guestPhone = document.getElementById(\'phoneInp\').value;\r\n    var guestCount = document.getElementById(\'guestInp\').value;\r\n\r\n    // 2. \u0633\u0627\u062e\u062a \u067e\u0650\u06cc\u0644\u0648\u062f (Body) \u0628\u0627 \u0627\u0636\u0627\u0641\u0647 \u06a9\u0631\u062f\u0646 property_id\r\n    var apiPayload = {\r\n        property_id: "${$ctx.params.property_id}", // \u0634\u0646\u0627\u0633\u0647 \u0645\u0644\u06a9\r\n        name: guestName,\r\n        phone: guestPhone,\r\n        count: guestCount,\r\n        startDate: bookingState.startDate,\r\n        endDate: bookingState.endDate,\r\n        totalPrice: bookingState.totalPrice,\r\n        nights: bookingState.nightsCount\r\n    };\r\n\r\n    // \u062a\u063a\u06cc\u06cc\u0631 \u0648\u0636\u0639\u06cc\u062a \u062f\u06a9\u0645\u0647\r\n    finalBtn.innerText = \'\u062f\u0631 \u062d\u0627\u0644 \u0627\u0631\u0633\u0627\u0644...\';\r\n    finalBtn.disabled = true;\r\n    finalBtn.style.opacity = \'0.7\';\r\n\r\n    // 3. \u0627\u0631\u0633\u0627\u0644 \u062f\u0631\u062e\u0648\u0627\u0633\u062a POST \u0648\u0627\u0642\u0639\u06cc\r\n    fetch(\'https://automation.rentamon.com/webhook/direct-booking/booking\', {\r\n        method: \'POST\',\r\n        headers: {\r\n            \'Content-Type\': \'application/json\'\r\n        },\r\n        body: JSON.stringify(apiPayload)\r\n    })\r\n    .then(function(response) {\r\n        if (response.ok) {\r\n            // \u0645\u0648\u0641\u0642\u06cc\u062a\r\n            finalBtn.innerText = \'\u062f\u0631\u062e\u0648\u0627\u0633\u062a \u0628\u0627 \u0645\u0648\u0641\u0642\u06cc\u062a \u062b\u0628\u062a \u0634\u062f\';\r\n            finalBtn.style.background = \'#4CAF50\';\r\n            finalBtn.style.opacity = \'1\';\r\n            \r\n            setTimeout(function() {\r\n                closeModalFunc();\r\n                finalBtn.innerText = \'\u062b\u0628\u062a \u0646\u0647\u0627\u06cc\u06cc \u062f\u0631\u062e\u0648\u0627\u0633\u062a\';\r\n                finalBtn.style.background = \'#0070BB\';\r\n                finalBtn.disabled = false;\r\n                form.reset();\r\n            }, 2000);\r\n        } else {\r\n            // \u062e\u0637\u0627\u06cc \u0633\u0631\u0648\u0631\r\n            throw new Error(\'Server Error\');\r\n        }\r\n    })\r\n    .catch(function(error) {\r\n        // \u062e\u0637\u0627\u06cc \u0634\u0628\u06a9\u0647 \u06cc\u0627 \u0633\u0631\u0648\u0631\r\n        console.error(\'Error:\', error);\r\n        finalBtn.innerText = \'\u062e\u0637\u0627 \u062f\u0631 \u0627\u0631\u0633\u0627\u0644. \u0645\u062c\u062f\u062f \u062a\u0644\u0627\u0634 \u06a9\u0646\u06cc\u062f\';\r\n        finalBtn.style.background = \'#d32f2f\';\r\n        finalBtn.style.opacity = \'1\';\r\n        \r\n        setTimeout(function() {\r\n            finalBtn.innerText = \'\u062b\u0628\u062a \u0646\u0647\u0627\u06cc\u06cc \u062f\u0631\u062e\u0648\u0627\u0633\u062a\';\r\n            finalBtn.style.background = \'#0070BB\';\r\n            finalBtn.disabled = false;\r\n        }, 3000);\r\n    });\r\n  };\r\n})();\r\n</script>'
-                      }
+                      code={(() => {
+                        try {
+                          return `
+<div id="booking-widget-wrapper">
+  <style>
+    /* تنظیمات کلی */
+    #booking-widget-wrapper { direction: rtl; }
+    #booking-widget-wrapper * { box-sizing: border-box; }
+
+    /* دکمه اصلی */
+    #booking-widget-wrapper .trigger-container { text-align: center; margin-top: 25px; }
+    
+    #booking-widget-wrapper .trigger-btn {
+        background: #0070BB; color: white; padding: 14px 40px; border: none; border-radius: 8px; 
+        cursor: pointer; font-size: 1.2rem; font-weight: bold; transition: 0.3s; width: 100%; max-width: 400px;
+    }
+    #booking-widget-wrapper .trigger-btn:disabled { background: #ccc; cursor: not-allowed; opacity: 0.7; }
+    #booking-widget-wrapper .trigger-btn:hover:not(:disabled) { background: #005a96; }
+
+    /* مودال */
+    #booking-widget-wrapper .modal-overlay {
+        position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+        background: rgba(0,0,0,0.6); z-index: 9999;
+        display: none; justify-content: center; align-items: center;
+        backdrop-filter: blur(2px);
+    }
+    #booking-widget-wrapper .modal-overlay.open { display: flex; }
+
+    #booking-widget-wrapper .modal-box {
+        background: white; padding: 25px; border-radius: 12px;
+        width: 90%; max-width: 450px; position: relative; border: 1px solid #ddd;
+    }
+
+    #booking-widget-wrapper .close-icon {
+        position: absolute; left: 20px; top: 20px; font-size: 28px; cursor: pointer; color: #333; line-height: 1;
+    }
+
+    /* باکس اطلاعات */
+    #booking-widget-wrapper .info-box {
+        background: #f2f9ff; padding: 15px; border-radius: 8px; 
+        margin-bottom: 25px; font-size: 1rem; color: #444; border: 1px solid #e6f2fa;
+    }
+    #booking-widget-wrapper .info-row { display: flex; justify-content: space-between; margin-bottom: 8px; }
+    
+    #booking-widget-wrapper .price-row {
+        color: #0070BB; border-top: 1px solid #ddd; padding-top: 10px; margin-top: 10px; margin-bottom: 0; font-size: 1.1em;
+    }
+
+    /* فرم */
+    #booking-widget-wrapper .inp-group { margin-bottom: 18px; }
+    #booking-widget-wrapper .inp-label { display: block; margin-bottom: 8px; font-weight: bold; font-size: 1rem; color: #333; }
+    #booking-widget-wrapper .inp-field {
+        width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 8px; 
+        font-size: 16px; background: #fff; font-family: inherit;
+    }
+    #booking-widget-wrapper .inp-field:focus { outline: none; border-color: #0070BB; }
+    
+    #booking-widget-wrapper .final-btn {
+        width: 100%; padding: 14px; background: #0070BB; color: white; 
+        border: none; border-radius: 8px; cursor: pointer; 
+        font-size: 1.1rem; font-weight: bold; margin-top: 10px;
+    }
+    #booking-widget-wrapper .final-btn:disabled { background: #999; cursor: default; }
+    #booking-widget-wrapper .err-txt { color: #d32f2f; font-size: 0.9rem; display: none; margin-top: 5px; }
+    #booking-widget-wrapper h3 { font-size: 1.3rem; margin-bottom: 20px; color: #333; }
+  </style>
+
+  <div class="trigger-container">
+    <button id="bookBtn" class="trigger-btn" disabled>ثبت درخواست رزرو</button>
+  </div>
+
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal-box">
+      <div class="close-icon" id="closeModal">&times;</div>
+      <h3 style="margin-top:0; border-bottom:2px solid #0070BB; display:inline-block; padding-bottom:10px;">اطلاعات رزرو</h3>
+      
+      <div class="info-box">
+          <div class="info-row"><span>تاریخ ورود:</span> <span id="sStart" style="font-weight:bold">-</span></div>
+          <div class="info-row"><span>تاریخ خروج:</span> <span id="sEnd" style="font-weight:bold">-</span></div>
+          <div class="info-row"><span>مدت اقامت:</span> <span id="sNights" style="font-weight:bold">0 شب</span></div>
+          
+          <div class="info-row price-row">
+             <span style="font-weight:bold">مبلغ قابل پرداخت:</span> 
+             <span id="sTotalPrice" style="font-weight:bold;">0 تومان</span>
+          </div>
+      </div>
+
+      <form id="reqForm">
+        <div class="inp-group">
+          <label class="inp-label">نام و نام خانوادگی</label>
+          <input type="text" id="nameInp" class="inp-field" placeholder="مثال: علی محمدی" required>
+        </div>
+        <div class="inp-group">
+          <label class="inp-label">شماره همراه</label>
+          <input type="tel" id="phoneInp" class="inp-field" placeholder="0912..." required>
+        </div>
+        <div class="inp-group">
+          <label class="inp-label">تعداد نفرات</label>
+          <input type="number" id="guestInp" class="inp-field" min="1" value="1" required>
+        </div>
+        <button type="submit" id="finalBtn" class="final-btn">ثبت نهایی درخواست</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script>
+(function() {
+  var bookBtn = document.getElementById('bookBtn');
+  var modal = document.getElementById('modalOverlay');
+  var close = document.getElementById('closeModal');
+  var form = document.getElementById('reqForm');
+  var finalBtn = document.getElementById('finalBtn');
+  var guestInp = document.getElementById('guestInp');
+  
+  var sStart = document.getElementById('sStart');
+  var sEnd = document.getElementById('sEnd');
+  var sNights = document.getElementById('sNights');
+  var sTotalPrice = document.getElementById('sTotalPrice');
+
+  var bookingState = {};
+  
+  function formatMoney(num) {
+      if(!num) return '0';
+      return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  }
+
+  // دریافت اطلاعات از تقویم
+  window.addEventListener('calendar-update', function(e) {
+    bookingState = e.detail;
+    if(bookingState.startDate && bookingState.endDate && bookingState.nightsCount > 0) {
+        bookBtn.disabled = false;
+        sStart.innerText = bookingState.startDate;
+        sEnd.innerText = bookingState.endDate;
+        sNights.innerText = bookingState.nightsCount + ' شب';
+        
+        var total = bookingState.totalPrice || 0;
+        sTotalPrice.innerText = formatMoney(total) + ' تومان';
+    } else {
+        bookBtn.disabled = true;
+    }
+  });
+
+  // باز و بسته کردن مودال
+  bookBtn.onclick = function() { modal.className += ' open'; };
+  function closeModalFunc() { modal.className = modal.className.replace(' open', ''); }
+  close.onclick = closeModalFunc;
+  modal.onclick = function(e) { if(e.target === modal) closeModalFunc(); };
+  
+  // ارسال فرم
+  form.onsubmit = function(e) {
+    e.preventDefault();
+
+    try {
+        var guestName = document.getElementById('nameInp').value;
+        var guestPhone = document.getElementById('phoneInp').value;
+        var guestCount = document.getElementById('guestInp').value;
+
+        // دریافت شناسه ملک به صورت ایمن
+        var propId = "${$ctx.params.property_id}";
+
+        var apiPayload = {
+            property_id: propId,
+            name: guestName,
+            phone: guestPhone,
+            count: guestCount,
+            startDate: bookingState.startDate,
+            endDate: bookingState.endDate,
+            totalPrice: bookingState.totalPrice,
+            nights: bookingState.nightsCount
+        };
+
+        finalBtn.innerText = 'در حال ارسال...';
+        finalBtn.disabled = true;
+        finalBtn.style.opacity = '0.7';
+
+        fetch('https://automation.rentamon.com/webhook/direct-booking/booking', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(apiPayload)
+        })
+        .then(function(response) {
+            if (response.ok) {
+                finalBtn.innerText = 'درخواست با موفقیت ثبت شد';
+                finalBtn.style.background = '#4CAF50';
+                finalBtn.style.opacity = '1';
+                
+                setTimeout(function() {
+                    closeModalFunc();
+                    finalBtn.innerText = 'ثبت نهایی درخواست';
+                    finalBtn.style.background = '#0070BB';
+                    finalBtn.disabled = false;
+                    form.reset();
+                }, 2000);
+            } else {
+                throw new Error('Server Error');
+            }
+        })
+        .catch(function(error) {
+            console.error('Submission Error:', error);
+            finalBtn.innerText = 'خطا. مجدد تلاش کنید';
+            finalBtn.style.background = '#d32f2f';
+            finalBtn.disabled = false;
+        });
+
+    } catch (err) {
+        console.error('Internal Error:', err);
+        alert('متاسفانه خطایی رخ داد. لطفا صفحه را رفرش کنید.');
+    }
+  };
+})();
+</script>
+`;
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return "";
+                          }
+                          throw e;
+                        }
+                      })()}
                     />
                   </div>
                   <div
