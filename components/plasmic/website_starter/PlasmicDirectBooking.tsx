@@ -86,6 +86,7 @@ export type PlasmicDirectBooking__OverridesType = {
   profile2?: Flex__<typeof ApiRequest>;
   img?: Flex__<typeof PlasmicImg__>;
   apiRequest2?: Flex__<typeof ApiRequest>;
+  apiRequest?: Flex__<typeof ApiRequest>;
 };
 
 export interface DefaultDirectBookingProps {}
@@ -180,6 +181,30 @@ function PlasmicDirectBooking__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
 
         refName: "apiRequest2"
+      },
+      {
+        path: "apiRequest.data",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "apiRequest"
+      },
+      {
+        path: "apiRequest.error",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "apiRequest"
+      },
+      {
+        path: "apiRequest.loading",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "apiRequest"
       }
     ],
     [$props, $ctx, $refs]
@@ -426,58 +451,134 @@ function PlasmicDirectBooking__RenderFunc(props: {
               })()}
             >
               <div className={classNames(projectcss.all, sty.freeBox__yBaL)}>
-                <Embed
-                  className={classNames("__wab_instance", sty.embedHtml__qCmh3)}
-                  code={(() => {
+                <ApiRequest
+                  data-plasmic-name={"apiRequest"}
+                  data-plasmic-override={overrides.apiRequest}
+                  className={classNames("__wab_instance", sty.apiRequest)}
+                  errorDisplay={
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__sivcu
+                      )}
+                    >
+                      {"Error fetching data"}
+                    </div>
+                  }
+                  loadingDisplay={
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__yEdBu
+                      )}
+                    >
+                      {"Loading..."}
+                    </div>
+                  }
+                  method={"GET"}
+                  onError={async (...eventArgs: any) => {
+                    generateStateOnChangeProp($state, [
+                      "apiRequest",
+                      "error"
+                    ]).apply(null, eventArgs);
+                  }}
+                  onLoading={async (...eventArgs: any) => {
+                    generateStateOnChangeProp($state, [
+                      "apiRequest",
+                      "loading"
+                    ]).apply(null, eventArgs);
+                  }}
+                  onSuccess={async (...eventArgs: any) => {
+                    generateStateOnChangeProp($state, [
+                      "apiRequest",
+                      "data"
+                    ]).apply(null, eventArgs);
+                  }}
+                  ref={ref => {
+                    $refs["apiRequest"] = ref;
+                  }}
+                  url={(() => {
                     try {
-                      return `<div id="smart-calendar-widget">
+                      return `https://automation.rentamon.com/webhook/calendar/price?property_id=${$ctx.params.property_id}`;
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return undefined;
+                      }
+                      throw e;
+                    }
+                  })()}
+                >
+                  <Embed
+                    className={classNames(
+                      "__wab_instance",
+                      sty.embedHtml__qCmh3
+                    )}
+                    code={(() => {
+                      try {
+                        return `<div id="smart-calendar-widget">
   <style>
     #smart-calendar-widget {
       --cal-main: #0070BB;
       --cal-bg-range: #e6f2fa;
-      --cal-blocked: #e2e2e2; /* رنگ پس‌زمینه روزهای پر */
-      --cal-blocked-text: #ccc; /* رنگ متن روزهای پر */
+      --cal-blocked: #e2e2e2;
+      --cal-blocked-text: #ccc;
       --radius: 8px;
       
       direction: rtl; 
-      /* font-family حذف شد تا از سیستم ارث ببرد */
-      
       width: 100%; max-width: 400px; padding: 10px; margin: 0 auto;
       background: #fff; border-radius: 12px;
-      /* box-shadow حذف شد */
       box-sizing: border-box;
+      border: 1px solid #eee;
+      font-size: 16px;
     }
     #smart-calendar-widget * { box-sizing: border-box; }
 
     /* Header */
-    #smart-calendar-widget .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; font-weight: bold; color: #333; }
+    #smart-calendar-widget .header { 
+        display: flex; justify-content: space-between; align-items: center; 
+        margin-bottom: 20px; font-weight: bold; color: #333; 
+        font-size: 1.2rem;
+    }
     
-    /* تغییر رنگ فلش‌ها به مشکی */
-    #smart-calendar-widget .nav-btn { background: none; border: none; cursor: pointer; font-size: 1.4rem; color: #000; padding: 0 10px; }
+    #smart-calendar-widget .nav-btn { 
+        background: none; border: none; cursor: pointer; 
+        font-size: 1.5rem; color: #000; padding: 5px 15px; transition: opacity 0.3s; 
+    }
+    #smart-calendar-widget .nav-btn:disabled { opacity: 0.2; cursor: default; }
 
     /* Grids */
-    #smart-calendar-widget .weekdays { display: grid; grid-template-columns: repeat(7, 1fr); text-align: center; margin-bottom: 10px; font-size: 0.85rem; color: #888; }
-    #smart-calendar-widget .days-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 5px; min-height: 200px; }
+    #smart-calendar-widget .weekdays { 
+        display: grid; grid-template-columns: repeat(7, 1fr); text-align: center; 
+        margin-bottom: 10px; font-size: 0.9rem; color: #666; font-weight: normal;
+    }
+    #smart-calendar-widget .days-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; min-height: 250px; }
 
     /* Cells */
     #smart-calendar-widget .day-cell { 
         aspect-ratio: 1; border-radius: var(--radius); 
         display: flex; flex-direction: column; justify-content: center; align-items: center; 
-        font-size: 0.95rem; cursor: pointer; border: 1px solid #ddd; /* بوردر پیش‌فرض مثل نمونه */
-        transition: all 0.2s; position: relative; background: #fff;
-        color: #333;
+        cursor: pointer; border: 1px solid #ddd;
+        transition: all 0.2s; position: relative; background: #fff; color: #333;
+        padding: 2px;
     }
     
-    /* هاور فقط روی روزهای آزاد */
-    #smart-calendar-widget .day-cell:hover:not(.past-day):not(.blocked) { border-color: var(--cal-main); color: var(--cal-main); }
+    #smart-calendar-widget .day-num { font-size: 1.1rem; font-weight: bold; line-height: 1.2; }
     
-    /* مخفی کردن کامل روزهای گذشته (مثل نمونه کد شما) */
-    #smart-calendar-widget .past-day { 
-        opacity: 0; 
-        pointer-events: none; 
+    /* استایل قیمت (ریز شده) */
+    #smart-calendar-widget .day-price { 
+        font-size: 0.7em; color: #888; margin-top: 1px; letter-spacing: -0.5px;
     }
     
-    /* استایل روزهای بلاک شده (طبق کد نمونه) */
+    #smart-calendar-widget .day-cell:hover:not(.past-day):not(.blocked) { border-color: var(--cal-main); transform: scale(1.05); }
+    #smart-calendar-widget .day-cell:hover:not(.past-day):not(.blocked) .day-num { color: var(--cal-main); }
+    
+    #smart-calendar-widget .past-day { opacity: 0; pointer-events: none; }
+    
     #smart-calendar-widget .blocked { 
         background-color: var(--cal-blocked) !important; 
         border-color: var(--cal-blocked) !important;
@@ -486,65 +587,157 @@ function PlasmicDirectBooking__RenderFunc(props: {
         pointer-events: none; 
     }
     
-    /* استایل‌های انتخاب بازه */
+    /* انتخاب شده */
     #smart-calendar-widget .selected { background-color: var(--cal-main); color: #fff !important; border-color: var(--cal-main); }
+    #smart-calendar-widget .selected .day-num { color: #fff !important; }
+    #smart-calendar-widget .selected .day-price { color: #e0e0e0 !important; }
+
+    #smart-calendar-widget .in-range { background-color: var(--cal-bg-range); border-color: var(--cal-bg-range); }
+    #smart-calendar-widget .in-range .day-num { color: var(--cal-main); }
+    #smart-calendar-widget .in-range .day-price { color: var(--cal-main); opacity: 0.8; }
     
-    #smart-calendar-widget .in-range { background-color: var(--cal-bg-range); color: var(--cal-main); border-radius: 0; border-color: var(--cal-bg-range); }
     #smart-calendar-widget .range-start { border-radius: 0 8px 8px 0; }
     #smart-calendar-widget .range-end { border-radius: 8px 0 0 8px; }
     #smart-calendar-widget .selected:not(.range-start):not(.range-end) { border-radius: 8px; }
 
-    /* Loading / Error */
-    #smart-calendar-widget .status-msg { grid-column: 1 / -1; text-align: center; padding: 40px; color: #666; font-size: 0.9rem; line-height: 1.6; }
-    #smart-calendar-widget .error-text { color: red; direction: ltr; font-family: monospace; font-size: 0.8rem; margin-top: 10px; display: block;}
+    /* Footer */
+    #smart-calendar-widget .cal-footer {
+        margin-top: 20px; padding-top: 15px; border-top: 1px solid #eee;
+        display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;
+        font-size: 0.85rem; color: #555; gap: 10px;
+    }
+    #smart-calendar-widget .footer-item { display: flex; flex-direction: column; align-items: center; gap: 3px; min-width: 60px; }
+    #smart-calendar-widget .footer-label { font-size: 0.8em; color: #999; }
+    #smart-calendar-widget .footer-value { font-weight: bold; color: #333; font-size: 1.1em; }
+    #smart-calendar-widget .footer-value.highlight { color: var(--cal-main); }
+
+    /* Status */
+    #smart-calendar-widget .status-msg { grid-column: 1 / -1; text-align: center; padding: 40px; color: #666; font-size: 1rem; }
+    #smart-calendar-widget .error-text { color: red; display: block; margin-top: 5px; font-size: 0.9em; }
   </style>
 
   <div class="header">
-    <button class="nav-btn" type="button" onclick="window.smartCal.changeMonth(-1)">&#10094;</button> 
+    <button id="cal-prev-btn" class="nav-btn" type="button" onclick="window.smartCal.changeMonth(-1)">&#10094;</button> 
     <span id="cal-month-label">...</span>
-    <button class="nav-btn" type="button" onclick="window.smartCal.changeMonth(1)">&#10095;</button>
+    <button id="cal-next-btn" class="nav-btn" type="button" onclick="window.smartCal.changeMonth(1)">&#10095;</button>
   </div>
   
   <div class="weekdays"><div>ش</div><div>ی</div><div>د</div><div>س</div><div>چ</div><div>پ</div><div>ج</div></div>
   
   <div class="days-grid" id="cal-days-grid">
-    <div class="status-msg" id="cal-status">
-        درحال دریافت اطلاعات...
-    </div>
+    <div class="status-msg" id="cal-status">درحال دریافت اطلاعات...</div>
+  </div>
+
+  <div class="cal-footer">
+      <div class="footer-item">
+          <span class="footer-label">ورود</span>
+          <span class="footer-value" id="lbl-start">-</span>
+      </div>
+      <div class="footer-item">
+          <span class="footer-label">خروج</span>
+          <span class="footer-value" id="lbl-end">-</span>
+      </div>
+      <div class="footer-item">
+          <span class="footer-label">مدت</span>
+          <span class="footer-value" id="lbl-nights">۰ شب</span>
+      </div>
+      <div class="footer-item" style="flex-grow: 1; align-items: flex-end; padding-right: 10px; border-right: 1px solid #eee;">
+          <span class="footer-label">قیمت کل</span>
+          <span class="footer-value highlight" id="lbl-total">۰ تومان</span>
+      </div>
   </div>
 </div>
 
 <script>
 window.smartCal = (function() {
-  // --- 1. تنظیمات و داده‌ها ---
+  // --- تنظیمات و داده‌ها ---
   
-  // کد داینامیک شما
+  // دریافت داده‌ها از متغیرهای داینامیک
   var API_BOOKED_DATES = ${JSON.stringify($state.apiRequest2?.data?.dates ?? [])};
+  var API_PRICES_RAW = ${JSON.stringify($state.apiRequest?.data ?? [])};
+
   var PERSIAN_MONTHS = ['فروردین', 'اردیبهشت', 'خرداد', 'تیر', 'مرداد', 'شهریور', 'مهر', 'آبان', 'آذر', 'دی', 'بهمن', 'اسفند'];
-  
+  var MAX_MONTHS_AHEAD = 3; 
+
   var bookedSet = new Set(API_BOOKED_DATES || []);
+  var priceMap = {}; 
+
+  if (API_PRICES_RAW && Array.isArray(API_PRICES_RAW)) {
+      API_PRICES_RAW.forEach(function(item) {
+          if(item.price_date && item.price) {
+              priceMap[item.price_date] = item.price;
+          }
+      });
+  }
+
   var state = { todayJ: null, currYear: null, currMonth: null, selStart: null, selEnd: null };
 
-  // --- 2. توابع کمکی ---
+  // --- توابع کمکی ---
   function getJDateStr(y, m, d) { return y + '-' + String(m).padStart(2, '0') + '-' + String(d).padStart(2, '0'); }
   
+  function formatNumber(num) {
+      if(!num && num !== 0) return '';
+      return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  }
+
   function compareJDates(d1, d2) {
-    if(!d1 || !d2) return null;
-    if(d1.jy !== d2.jy) return d1.jy - d2.jy;
-    if(d1.jm !== d2.jm) return d1.jm - d2.jm;
-    return d1.jd - d2.jd;
+      if(!d1 || !d2) return null;
+      if(d1.jy !== d2.jy) return d1.jy - d2.jy;
+      if(d1.jm !== d2.jm) return d1.jm - d2.jm;
+      return d1.jd - d2.jd;
   }
 
+  function calcTotal(start, end) {
+      if(!start || !end) return 0;
+      var total = 0;
+      var gStart = jalaali.toGregorian(start.jy, start.jm, start.jd);
+      var gEnd = jalaali.toGregorian(end.jy, end.jm, end.jd);
+      
+      var dStart = new Date(gStart.gy, gStart.gm - 1, gStart.gd);
+      var dEnd = new Date(gEnd.gy, gEnd.gm - 1, gEnd.gd);
+      
+      if(dStart > dEnd) { var temp = dStart; dStart = dEnd; dEnd = temp; }
+      
+      var curr = new Date(dStart);
+      // حلقه تا روز قبل از خروج
+      while(curr < dEnd) {
+          var j = jalaali.toJalaali(curr);
+          var str = getJDateStr(j.jy, j.jm, j.jd);
+          var p = priceMap[str];
+          if(p) total += parseInt(p);
+          curr.setDate(curr.getDate() + 1);
+      }
+      return total;
+  }
+  
   function calcNights(start, end) {
-    if(!start || !end) return 0;
-    var gStart = jalaali.toGregorian(start.jy, start.jm, start.jd);
-    var gEnd = jalaali.toGregorian(end.jy, end.jm, end.jd);
-    var d1 = new Date(gStart.gy, gStart.gm-1, gStart.gd);
-    var d2 = new Date(gEnd.gy, gEnd.gm-1, gEnd.gd);
-    return Math.ceil(Math.abs(d2 - d1) / (1000 * 60 * 60 * 24));
+      if(!start || !end) return 0;
+      var gStart = jalaali.toGregorian(start.jy, start.jm, start.jd);
+      var gEnd = jalaali.toGregorian(end.jy, end.jm, end.jd);
+      var d1 = new Date(gStart.gy, gStart.gm-1, gStart.gd);
+      var d2 = new Date(gEnd.gy, gEnd.gm-1, gEnd.gd);
+      return Math.ceil(Math.abs(d2 - d1) / (1000 * 60 * 60 * 24));
   }
 
-  // --- 3. رندر اصلی ---
+  function hasBlockedInBetween(start, end) {
+      if(!start || !end) return false;
+      var gStart = jalaali.toGregorian(start.jy, start.jm, start.jd);
+      var gEnd = jalaali.toGregorian(end.jy, end.jm, end.jd);
+      var d1 = new Date(gStart.gy, gStart.gm - 1, gStart.gd);
+      var d2 = new Date(gEnd.gy, gEnd.gm - 1, gEnd.gd);
+      if(d1 > d2) { var temp = d1; d1 = d2; d2 = temp; }
+
+      var curr = new Date(d1);
+      while(curr <= d2) {
+          var j = jalaali.toJalaali(curr);
+          var str = getJDateStr(j.jy, j.jm, j.jd);
+          if(bookedSet.has(str)) return true;
+          curr.setDate(curr.getDate() + 1);
+      }
+      return false;
+  }
+
+  // --- رندر ---
   function render() {
     try {
         var grid = document.getElementById('cal-days-grid');
@@ -553,6 +746,7 @@ window.smartCal = (function() {
 
         grid.innerHTML = ''; 
         label.innerText = PERSIAN_MONTHS[state.currMonth - 1] + ' ' + state.currYear;
+        updateNavButtons();
 
         var daysLen = jalaali.jalaaliMonthLength(state.currYear, state.currMonth);
         var gDate = jalaali.toGregorian(state.currYear, state.currMonth, 1);
@@ -568,36 +762,36 @@ window.smartCal = (function() {
                 var dateStr = getJDateStr(state.currYear, state.currMonth, dayNum);
                 
                 var cls = 'day-cell';
-                
-                // بررسی وضعیت‌ها
                 var isBlocked = bookedSet.has(dateStr);
-                var isPast = compareJDates(dateObj, state.todayJ) < 0; // روزهای قبل از امروز
-
+                var isPast = compareJDates(dateObj, state.todayJ) < 0;
+                
                 var isStart = compareJDates(dateObj, state.selStart) === 0;
                 var isEnd = compareJDates(dateObj, state.selEnd) === 0;
                 var inRange = state.selStart && state.selEnd && 
                               compareJDates(dateObj, state.selStart) > 0 && 
                               compareJDates(dateObj, state.selEnd) < 0;
 
-                // اولویت‌دهی کلاس‌ها
-                if (isPast) {
-                    cls += ' past-day'; // کلاس مخفی کننده
-                } else if (isBlocked) {
-                    cls += ' blocked';
-                } else if (isStart) {
-                    cls += ' selected range-start';
-                } else if (isEnd) {
-                    cls += ' selected range-end';
-                } else if (inRange) {
-                    cls += ' in-range';
-                }
+                if (isPast) cls += ' past-day';
+                else if (isBlocked) cls += ' blocked';
+                else if (isStart) cls += ' selected range-start';
+                else if (isEnd) cls += ' selected range-end';
+                else if (inRange) cls += ' in-range';
 
                 cell.className = cls;
                 
-                // فقط عدد روز (بدون قیمت، چون خواستید مثل نمونه باشد)
-                cell.innerHTML = '<span>' + dayNum + '</span>';
+                // HTML محتوای سلول
+                var htmlContent = '<span class="day-num">' + dayNum + '</span>';
+                
+                // نمایش قیمت (تقسیم بر 1000)
+                var priceVal = priceMap[dateStr];
+                if(priceVal && !isBlocked && !isPast) {
+                    // محاسبه قیمت خلاصه شده (مثلا 4500000 -> 4,500)
+                    var shortPrice = Math.floor(parseInt(priceVal) / 1000);
+                    htmlContent += '<span class="day-price">' + formatNumber(shortPrice) + '</span>';
+                }
+                
+                cell.innerHTML = htmlContent;
 
-                // اگر روز مخفی یا بلاک نیست، کلیک فعال باشد
                 if(!isBlocked && !isPast) {
                     cell.onclick = function() { handleDateClick(dateObj); };
                 }
@@ -615,8 +809,16 @@ window.smartCal = (function() {
     } else if (compareJDates(date, state.selStart) === 0 && !state.selEnd) {
         state.selStart = null;
     } else if (!state.selEnd) {
-        if (compareJDates(date, state.selStart) < 0) state.selStart = date;
-        else state.selEnd = date;
+        if (hasBlockedInBetween(state.selStart, date)) {
+            state.selStart = date;
+            state.selEnd = null;
+        } else {
+            if (compareJDates(date, state.selStart) < 0) {
+                 state.selStart = date; 
+            } else {
+                 state.selEnd = date;
+            }
+        }
     } else {
         state.selStart = date;
         state.selEnd = null;
@@ -627,15 +829,49 @@ window.smartCal = (function() {
 
   function broadcast() {
     var nights = (state.selStart && state.selEnd) ? calcNights(state.selStart, state.selEnd) : 0;
-    var data = {
-        startDate: state.selStart ? getJDateStr(state.selStart.jy, state.selStart.jm, state.selStart.jd) : null,
-        endDate: state.selEnd ? getJDateStr(state.selEnd.jy, state.selEnd.jm, state.selEnd.jd) : null,
-        nightsCount: nights
+    var totalPrice = (state.selStart && state.selEnd) ? calcTotal(state.selStart, state.selEnd) : 0;
+    
+    var sStr = state.selStart ? getJDateStr(state.selStart.jy, state.selStart.jm, state.selStart.jd) : null;
+    var eStr = state.selEnd ? getJDateStr(state.selEnd.jy, state.selEnd.jm, state.selEnd.jd) : null;
+
+    var elStart = document.getElementById('lbl-start');
+    var elEnd = document.getElementById('lbl-end');
+    var elNights = document.getElementById('lbl-nights');
+    var elTotal = document.getElementById('lbl-total');
+
+    if(elStart) elStart.innerText = sStr ? sStr : '-';
+    if(elEnd) elEnd.innerText = eStr ? eStr : '-';
+    if(elNights) elNights.innerText = nights + ' شب';
+    
+    // نمایش قیمت کل به صورت کامل (تومان)
+    if(elTotal) elTotal.innerText = totalPrice > 0 ? formatNumber(totalPrice) + ' تومان' : '۰ تومان';
+
+    var data = { 
+        startDate: sStr, 
+        endDate: eStr, 
+        nightsCount: nights,
+        totalPrice: totalPrice 
     };
     window.dispatchEvent(new CustomEvent('calendar-update', { detail: data }));
   }
 
+  function updateNavButtons() {
+    var prevBtn = document.getElementById('cal-prev-btn');
+    var nextBtn = document.getElementById('cal-next-btn');
+    var diff = (state.currYear - state.todayJ.jy) * 12 + (state.currMonth - state.todayJ.jm);
+
+    if (diff <= 0) prevBtn.disabled = true;
+    else prevBtn.disabled = false;
+
+    if (diff >= MAX_MONTHS_AHEAD) nextBtn.disabled = true;
+    else nextBtn.disabled = false;
+  }
+
   function changeMonth(dir) {
+    var diff = (state.currYear - state.todayJ.jy) * 12 + (state.currMonth - state.todayJ.jm);
+    if (dir === -1 && diff <= 0) return;
+    if (dir === 1 && diff >= MAX_MONTHS_AHEAD) return;
+
     state.currMonth += dir;
     if(state.currMonth > 12) { state.currMonth = 1; state.currYear++; }
     if(state.currMonth < 1) { state.currMonth = 12; state.currYear--; }
@@ -644,9 +880,7 @@ window.smartCal = (function() {
 
   function showError(msg) {
     var el = document.getElementById('cal-status');
-    if(el) {
-        el.innerHTML = '<span class="error-text">' + msg + '</span>';
-    }
+    if(el) el.innerHTML = '<span class="error-text">' + msg + '</span>';
   }
 
   function init() {
@@ -677,18 +911,18 @@ window.smartCal = (function() {
 })();
 </script>
 `;
-                    } catch (e) {
-                      if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
-                      ) {
-                        return "";
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return "";
+                        }
+                        throw e;
                       }
-                      throw e;
-                    }
-                  })()}
-                />
-
+                    })()}
+                  />
+                </ApiRequest>
                 <div className={classNames(projectcss.all, sty.freeBox__bIzk)}>
                   <div
                     className={classNames(projectcss.all, sty.freeBox___2EUy1)}
@@ -699,7 +933,7 @@ window.smartCal = (function() {
                         sty.embedHtml__mojIr
                       )}
                       code={
-                        '<div id="booking-widget-wrapper">\r\n  <style>\r\n    \r\n    /* \u062f\u06a9\u0645\u0647 \u0627\u0635\u0644\u06cc */\r\n    #booking-widget-wrapper .trigger-container { text-align: center; margin-top: 20px; }\r\n    #booking-widget-wrapper .trigger-btn {\r\n        background: #0070BB; color: white; padding: 12px 40px; \r\n        border: none; border-radius: 8px; cursor: pointer; font-size: 1.1rem;\r\n        transition: 0.3s; box-shadow: 0 4px 10px rgba(0, 112, 187, 0.2);\r\n    }\r\n    #booking-widget-wrapper .trigger-btn:disabled { background: #ccc; cursor: not-allowed; box-shadow: none; }\r\n    #booking-widget-wrapper .trigger-btn:hover:not(:disabled) { background: #005a96; }\r\n\r\n    /* \u0645\u0648\u062f\u0627\u0644 */\r\n    #booking-widget-wrapper .modal-overlay {\r\n        position: fixed; top: 0; left: 0; width: 100%; height: 100%;\r\n        background: rgba(0,0,0,0.6); z-index: 9999;\r\n        display: none; justify-content: center; align-items: center;\r\n    }\r\n    #booking-widget-wrapper .modal-overlay.open { display: flex; }\r\n\r\n    #booking-widget-wrapper .modal-box {\r\n        background: white; padding: 25px; border-radius: 12px;\r\n        width: 90%; max-width: 400px; position: relative;\r\n    }\r\n\r\n    #booking-widget-wrapper .close-icon {\r\n        position: absolute; left: 20px; top: 15px; font-size: 24px; cursor: pointer; color: #888;\r\n    }\r\n\r\n    /* \u0641\u0631\u0645 */\r\n    #booking-widget-wrapper .info-box {\r\n        background: #f0f8ff; padding: 15px; border-radius: 8px; margin-bottom: 20px; font-size: 0.9em;\r\n    }\r\n    #booking-widget-wrapper .info-row { display: flex; justify-content: space-between; margin-bottom: 5px; }\r\n    \r\n    #booking-widget-wrapper .inp-group { margin-bottom: 15px; }\r\n    #booking-widget-wrapper .inp-label { display: block; margin-bottom: 5px; font-weight: bold; font-size: 0.9em; }\r\n    #booking-widget-wrapper .inp-field {\r\n        width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box;\r\n    }\r\n    \r\n    #booking-widget-wrapper .final-btn {\r\n        width: 100%; padding: 12px; background: #0070BB; color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 1rem;\r\n    }\r\n    #booking-widget-wrapper .err-txt { color: red; font-size: 0.8em; display: none; margin-top: 5px; }\r\n  </style>\r\n\r\n  <div class="trigger-container">\r\n    <button id="bookBtn" class="trigger-btn" disabled>\u062b\u0628\u062a \u062f\u0631\u062e\u0648\u0627\u0633\u062a \u0631\u0632\u0631\u0648</button>\r\n  </div>\r\n\r\n  <div class="modal-overlay" id="modalOverlay">\r\n    <div class="modal-box">\r\n      <div class="close-icon" id="closeModal">&times;</div>\r\n      <h3 style="margin-top:0; border-bottom:2px solid #0070BB; display:inline-block; padding-bottom:5px;">\u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0631\u0632\u0631\u0648</h3>\r\n      \r\n      <div class="info-box">\r\n          <div class="info-row"><span>\u0648\u0631\u0648\u062f:</span> <span id="sStart">-</span></div>\r\n          <div class="info-row"><span>\u062e\u0631\u0648\u062c:</span> <span id="sEnd">-</span></div>\r\n          <div class="info-row" style="font-weight:bold; color:#0070BB; border-top:1px solid #ddd; padding-top:5px; margin-top:5px;">\r\n             <span>\u0645\u062f\u062a \u0627\u0642\u0627\u0645\u062a:</span> <span id="sNights">0 \u0634\u0628</span>\r\n          </div>\r\n      </div>\r\n\r\n      <form id="reqForm">\r\n        <div class="inp-group">\r\n          <label class="inp-label">\u0646\u0627\u0645 \u0648 \u0646\u0627\u0645 \u062e\u0627\u0646\u0648\u0627\u062f\u06af\u06cc</label>\r\n          <input type="text" id="nameInp" class="inp-field" required>\r\n        </div>\r\n        <div class="inp-group">\r\n          <label class="inp-label">\u0634\u0645\u0627\u0631\u0647 \u0647\u0645\u0631\u0627\u0647</label>\r\n          <input type="tel" id="phoneInp" class="inp-field" required>\r\n        </div>\r\n        <div class="inp-group">\r\n          <label class="inp-label">\u062a\u0639\u062f\u0627\u062f \u0646\u0641\u0631\u0627\u062a (\u062d\u062f\u0627\u06a9\u062b\u0631 \u06f4)</label>\r\n          <input type="number" id="guestInp" class="inp-field" min="1" max="4" value="1" required>\r\n          <div id="guestErr" class="err-txt">\u062a\u0639\u062f\u0627\u062f \u0646\u0641\u0631\u0627\u062a \u0628\u06cc\u0634\u062a\u0631 \u0627\u0632 \u0645\u062c\u0627\u0632 \u0627\u0633\u062a.</div>\r\n        </div>\r\n        <button type="submit" id="finalBtn" class="final-btn">\u062b\u0628\u062a \u0646\u0647\u0627\u06cc\u06cc \u062f\u0631\u062e\u0648\u0627\u0633\u062a</button>\r\n      </form>\r\n    </div>\r\n  </div>\r\n</div>\r\n\r\n<script>\r\n(function() {\r\n  var bookBtn = document.getElementById(\'bookBtn\');\r\n  var modal = document.getElementById(\'modalOverlay\');\r\n  var close = document.getElementById(\'closeModal\');\r\n  var form = document.getElementById(\'reqForm\');\r\n  var finalBtn = document.getElementById(\'finalBtn\');\r\n  var guestInp = document.getElementById(\'guestInp\');\r\n  var guestErr = document.getElementById(\'guestErr\');\r\n  \r\n  var sStart = document.getElementById(\'sStart\');\r\n  var sEnd = document.getElementById(\'sEnd\');\r\n  var sNights = document.getElementById(\'sNights\');\r\n\r\n  var bookingState = {};\r\n\r\n  // \u062f\u0631\u06cc\u0627\u0641\u062a \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0627\u0632 \u062a\u0642\u0648\u06cc\u0645\r\n  window.addEventListener(\'calendar-update\', function(e) {\r\n    bookingState = e.detail;\r\n    if(bookingState.startDate && bookingState.endDate && bookingState.nightsCount > 0) {\r\n        bookBtn.disabled = false;\r\n        sStart.innerText = bookingState.startDate;\r\n        sEnd.innerText = bookingState.endDate;\r\n        sNights.innerText = bookingState.nightsCount + \' \u0634\u0628\';\r\n    } else {\r\n        bookBtn.disabled = true;\r\n    }\r\n  });\r\n\r\n  // \u0645\u0648\u062f\u0627\u0644\r\n  bookBtn.onclick = function() { modal.className += \' open\'; };\r\n  function closeModalFunc() { modal.className = modal.className.replace(\' open\', \'\'); }\r\n  close.onclick = closeModalFunc;\r\n  \r\n  // \u0627\u0639\u062a\u0628\u0627\u0631\u0633\u0646\u062c\u06cc\r\n  guestInp.oninput = function() {\r\n    if(parseInt(guestInp.value) > 4) {\r\n        guestErr.style.display = \'block\';\r\n        finalBtn.disabled = true;\r\n    } else {\r\n        guestErr.style.display = \'none\';\r\n        finalBtn.disabled = false;\r\n    }\r\n  };\r\n\r\n  // \u0627\u0631\u0633\u0627\u0644\r\n  form.onsubmit = function(e) {\r\n    e.preventDefault();\r\n    if(parseInt(guestInp.value) > 4) return;\r\n\r\n    finalBtn.innerText = \'\u062f\u0631 \u062d\u0627\u0644 \u0627\u0631\u0633\u0627\u0644...\';\r\n    finalBtn.disabled = true;\r\n\r\n    var payload = {\r\n        guest: document.getElementById(\'nameInp\').value,\r\n        phone: document.getElementById(\'phoneInp\').value,\r\n        count: guestInp.value,\r\n        dates: bookingState\r\n    };\r\n\r\n    // \u0634\u0628\u06cc\u0647\u200c\u0633\u0627\u0632\u06cc \u0627\u0631\u0633\u0627\u0644 \u0628\u0647 n8n\r\n    // \u062f\u0631 \u0627\u06cc\u0646\u062c\u0627 \u0645\u06cc\u200c\u062a\u0648\u0627\u0646\u06cc\u062f fetch \u0648\u0627\u0642\u0639\u06cc \u0628\u0632\u0646\u06cc\u062f\r\n    setTimeout(function() {\r\n        finalBtn.innerText = \'\u062f\u0631\u062e\u0648\u0627\u0633\u062a \u062b\u0628\u062a \u0634\u062f\';\r\n        finalBtn.style.background = \'#4CAF50\';\r\n        setTimeout(function() {\r\n            closeModalFunc();\r\n            finalBtn.innerText = \'\u062b\u0628\u062a \u0646\u0647\u0627\u06cc\u06cc \u062f\u0631\u062e\u0648\u0627\u0633\u062a\';\r\n            finalBtn.style.background = \'#0070BB\';\r\n            finalBtn.disabled = false;\r\n            form.reset();\r\n        }, 2000);\r\n    }, 1500);\r\n  };\r\n})();\r\n</script>'
+                        '<div id="booking-widget-wrapper">\r\n  <style>\r\n    /* \u062a\u0646\u0638\u06cc\u0645\u0627\u062a \u06a9\u0644\u06cc */\r\n    #booking-widget-wrapper { direction: rtl; }\r\n    #booking-widget-wrapper * { box-sizing: border-box; }\r\n\r\n    /* \u062f\u06a9\u0645\u0647 \u0627\u0635\u0644\u06cc */\r\n    #booking-widget-wrapper .trigger-container { text-align: center; margin-top: 25px; }\r\n    \r\n    #booking-widget-wrapper .trigger-btn {\r\n        background: #0070BB; color: white; padding: 14px 40px; border: none; border-radius: 8px; \r\n        cursor: pointer; font-size: 1.2rem; font-weight: bold; transition: 0.3s; width: 100%; max-width: 400px;\r\n    }\r\n    #booking-widget-wrapper .trigger-btn:disabled { background: #ccc; cursor: not-allowed; opacity: 0.7; }\r\n    #booking-widget-wrapper .trigger-btn:hover:not(:disabled) { background: #005a96; }\r\n\r\n    /* \u0645\u0648\u062f\u0627\u0644 */\r\n    #booking-widget-wrapper .modal-overlay {\r\n        position: fixed; top: 0; left: 0; width: 100%; height: 100%;\r\n        background: rgba(0,0,0,0.6); z-index: 9999;\r\n        display: none; justify-content: center; align-items: center;\r\n        backdrop-filter: blur(2px);\r\n    }\r\n    #booking-widget-wrapper .modal-overlay.open { display: flex; }\r\n\r\n    #booking-widget-wrapper .modal-box {\r\n        background: white; padding: 25px; border-radius: 12px;\r\n        width: 90%; max-width: 450px; position: relative; border: 1px solid #ddd;\r\n    }\r\n\r\n    #booking-widget-wrapper .close-icon {\r\n        position: absolute; left: 20px; top: 20px; font-size: 28px; cursor: pointer; color: #333; line-height: 1;\r\n    }\r\n\r\n    /* \u0628\u0627\u06a9\u0633 \u0627\u0637\u0644\u0627\u0639\u0627\u062a */\r\n    #booking-widget-wrapper .info-box {\r\n        background: #f2f9ff; padding: 15px; border-radius: 8px; \r\n        margin-bottom: 25px; font-size: 1rem; color: #444; border: 1px solid #e6f2fa;\r\n    }\r\n    #booking-widget-wrapper .info-row { display: flex; justify-content: space-between; margin-bottom: 8px; }\r\n    \r\n    #booking-widget-wrapper .price-row {\r\n        color: #0070BB; border-top: 1px solid #ddd; padding-top: 10px; margin-top: 10px; margin-bottom: 0; font-size: 1.1em;\r\n    }\r\n\r\n    /* \u0641\u0631\u0645 */\r\n    #booking-widget-wrapper .inp-group { margin-bottom: 18px; }\r\n    #booking-widget-wrapper .inp-label { display: block; margin-bottom: 8px; font-weight: bold; font-size: 1rem; color: #333; }\r\n    #booking-widget-wrapper .inp-field {\r\n        width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 8px; \r\n        font-size: 16px; background: #fff; font-family: inherit;\r\n    }\r\n    #booking-widget-wrapper .inp-field:focus { outline: none; border-color: #0070BB; }\r\n    \r\n    #booking-widget-wrapper .final-btn {\r\n        width: 100%; padding: 14px; background: #0070BB; color: white; \r\n        border: none; border-radius: 8px; cursor: pointer; \r\n        font-size: 1.1rem; font-weight: bold; margin-top: 10px;\r\n    }\r\n    #booking-widget-wrapper .final-btn:disabled { background: #999; cursor: default; }\r\n    #booking-widget-wrapper .err-txt { color: #d32f2f; font-size: 0.9rem; display: none; margin-top: 5px; }\r\n    #booking-widget-wrapper h3 { font-size: 1.3rem; margin-bottom: 20px; color: #333; }\r\n  </style>\r\n\r\n  <div class="trigger-container">\r\n    <button id="bookBtn" class="trigger-btn" disabled>\u062b\u0628\u062a \u062f\u0631\u062e\u0648\u0627\u0633\u062a \u0631\u0632\u0631\u0648</button>\r\n  </div>\r\n\r\n  <div class="modal-overlay" id="modalOverlay">\r\n    <div class="modal-box">\r\n      <div class="close-icon" id="closeModal">&times;</div>\r\n      <h3 style="margin-top:0; border-bottom:2px solid #0070BB; display:inline-block; padding-bottom:10px;">\u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0631\u0632\u0631\u0648</h3>\r\n      \r\n      <div class="info-box">\r\n          <div class="info-row"><span>\u062a\u0627\u0631\u06cc\u062e \u0648\u0631\u0648\u062f:</span> <span id="sStart" style="font-weight:bold">-</span></div>\r\n          <div class="info-row"><span>\u062a\u0627\u0631\u06cc\u062e \u062e\u0631\u0648\u062c:</span> <span id="sEnd" style="font-weight:bold">-</span></div>\r\n          <div class="info-row"><span>\u0645\u062f\u062a \u0627\u0642\u0627\u0645\u062a:</span> <span id="sNights" style="font-weight:bold">0 \u0634\u0628</span></div>\r\n          \r\n          <div class="info-row price-row">\r\n             <span style="font-weight:bold">\u0645\u0628\u0644\u063a \u0642\u0627\u0628\u0644 \u067e\u0631\u062f\u0627\u062e\u062a:</span> \r\n             <span id="sTotalPrice" style="font-weight:bold;">0 \u062a\u0648\u0645\u0627\u0646</span>\r\n          </div>\r\n      </div>\r\n\r\n      <form id="reqForm">\r\n        <div class="inp-group">\r\n          <label class="inp-label">\u0646\u0627\u0645 \u0648 \u0646\u0627\u0645 \u062e\u0627\u0646\u0648\u0627\u062f\u06af\u06cc</label>\r\n          <input type="text" id="nameInp" class="inp-field" placeholder="\u0645\u062b\u0627\u0644: \u0639\u0644\u06cc \u0645\u062d\u0645\u062f\u06cc" required>\r\n        </div>\r\n        <div class="inp-group">\r\n          <label class="inp-label">\u0634\u0645\u0627\u0631\u0647 \u0647\u0645\u0631\u0627\u0647</label>\r\n          <input type="tel" id="phoneInp" class="inp-field" placeholder="0912..." required>\r\n        </div>\r\n        <div class="inp-group">\r\n          <label class="inp-label">\u062a\u0639\u062f\u0627\u062f \u0646\u0641\u0631\u0627\u062a</label>\r\n          <input type="number" id="guestInp" class="inp-field" min="1" value="1" required>\r\n        </div>\r\n        <button type="submit" id="finalBtn" class="final-btn">\u062b\u0628\u062a \u0646\u0647\u0627\u06cc\u06cc \u062f\u0631\u062e\u0648\u0627\u0633\u062a</button>\r\n      </form>\r\n    </div>\r\n  </div>\r\n</div>\r\n\r\n<script>\r\n(function() {\r\n  var bookBtn = document.getElementById(\'bookBtn\');\r\n  var modal = document.getElementById(\'modalOverlay\');\r\n  var close = document.getElementById(\'closeModal\');\r\n  var form = document.getElementById(\'reqForm\');\r\n  var finalBtn = document.getElementById(\'finalBtn\');\r\n  var guestInp = document.getElementById(\'guestInp\');\r\n  \r\n  var sStart = document.getElementById(\'sStart\');\r\n  var sEnd = document.getElementById(\'sEnd\');\r\n  var sNights = document.getElementById(\'sNights\');\r\n  var sTotalPrice = document.getElementById(\'sTotalPrice\');\r\n\r\n  var bookingState = {};\r\n  \r\n  function formatMoney(num) {\r\n      if(!num) return \'0\';\r\n      return num.toString().replace(/\\B(?=(\\d{3})+(?!\\d))/g, ",");\r\n  }\r\n\r\n  // \u062f\u0631\u06cc\u0627\u0641\u062a \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0627\u0632 \u062a\u0642\u0648\u06cc\u0645\r\n  window.addEventListener(\'calendar-update\', function(e) {\r\n    bookingState = e.detail;\r\n    if(bookingState.startDate && bookingState.endDate && bookingState.nightsCount > 0) {\r\n        bookBtn.disabled = false;\r\n        sStart.innerText = bookingState.startDate;\r\n        sEnd.innerText = bookingState.endDate;\r\n        sNights.innerText = bookingState.nightsCount + \' \u0634\u0628\';\r\n        \r\n        var total = bookingState.totalPrice || 0;\r\n        sTotalPrice.innerText = formatMoney(total) + \' \u062a\u0648\u0645\u0627\u0646\';\r\n    } else {\r\n        bookBtn.disabled = true;\r\n    }\r\n  });\r\n\r\n  bookBtn.onclick = function() { modal.className += \' open\'; };\r\n  function closeModalFunc() { modal.className = modal.className.replace(\' open\', \'\'); }\r\n  close.onclick = closeModalFunc;\r\n  modal.onclick = function(e) { if(e.target === modal) closeModalFunc(); };\r\n  \r\n  // \u0627\u0631\u0633\u0627\u0644 \u0641\u0631\u0645\r\n  form.onsubmit = function(e) {\r\n    e.preventDefault();\r\n\r\n    // 1. \u062c\u0645\u0639\u200c\u0622\u0648\u0631\u06cc \u062f\u0627\u062f\u0647\u200c\u0647\u0627\r\n    var guestName = document.getElementById(\'nameInp\').value;\r\n    var guestPhone = document.getElementById(\'phoneInp\').value;\r\n    var guestCount = document.getElementById(\'guestInp\').value;\r\n\r\n    // 2. \u0633\u0627\u062e\u062a \u067e\u0650\u06cc\u0644\u0648\u062f (Body) \u0628\u0627 \u0627\u0636\u0627\u0641\u0647 \u06a9\u0631\u062f\u0646 property_id\r\n    var apiPayload = {\r\n        property_id: "${$ctx.params.property_id}", // \u0634\u0646\u0627\u0633\u0647 \u0645\u0644\u06a9\r\n        name: guestName,\r\n        phone: guestPhone,\r\n        count: guestCount,\r\n        startDate: bookingState.startDate,\r\n        endDate: bookingState.endDate,\r\n        totalPrice: bookingState.totalPrice,\r\n        nights: bookingState.nightsCount\r\n    };\r\n\r\n    // \u062a\u063a\u06cc\u06cc\u0631 \u0648\u0636\u0639\u06cc\u062a \u062f\u06a9\u0645\u0647\r\n    finalBtn.innerText = \'\u062f\u0631 \u062d\u0627\u0644 \u0627\u0631\u0633\u0627\u0644...\';\r\n    finalBtn.disabled = true;\r\n    finalBtn.style.opacity = \'0.7\';\r\n\r\n    // 3. \u0627\u0631\u0633\u0627\u0644 \u062f\u0631\u062e\u0648\u0627\u0633\u062a POST \u0648\u0627\u0642\u0639\u06cc\r\n    fetch(\'https://automation.rentamon.com/webhook/direct-booking/booking\', {\r\n        method: \'POST\',\r\n        headers: {\r\n            \'Content-Type\': \'application/json\'\r\n        },\r\n        body: JSON.stringify(apiPayload)\r\n    })\r\n    .then(function(response) {\r\n        if (response.ok) {\r\n            // \u0645\u0648\u0641\u0642\u06cc\u062a\r\n            finalBtn.innerText = \'\u062f\u0631\u062e\u0648\u0627\u0633\u062a \u0628\u0627 \u0645\u0648\u0641\u0642\u06cc\u062a \u062b\u0628\u062a \u0634\u062f\';\r\n            finalBtn.style.background = \'#4CAF50\';\r\n            finalBtn.style.opacity = \'1\';\r\n            \r\n            setTimeout(function() {\r\n                closeModalFunc();\r\n                finalBtn.innerText = \'\u062b\u0628\u062a \u0646\u0647\u0627\u06cc\u06cc \u062f\u0631\u062e\u0648\u0627\u0633\u062a\';\r\n                finalBtn.style.background = \'#0070BB\';\r\n                finalBtn.disabled = false;\r\n                form.reset();\r\n            }, 2000);\r\n        } else {\r\n            // \u062e\u0637\u0627\u06cc \u0633\u0631\u0648\u0631\r\n            throw new Error(\'Server Error\');\r\n        }\r\n    })\r\n    .catch(function(error) {\r\n        // \u062e\u0637\u0627\u06cc \u0634\u0628\u06a9\u0647 \u06cc\u0627 \u0633\u0631\u0648\u0631\r\n        console.error(\'Error:\', error);\r\n        finalBtn.innerText = \'\u062e\u0637\u0627 \u062f\u0631 \u0627\u0631\u0633\u0627\u0644. \u0645\u062c\u062f\u062f \u062a\u0644\u0627\u0634 \u06a9\u0646\u06cc\u062f\';\r\n        finalBtn.style.background = \'#d32f2f\';\r\n        finalBtn.style.opacity = \'1\';\r\n        \r\n        setTimeout(function() {\r\n            finalBtn.innerText = \'\u062b\u0628\u062a \u0646\u0647\u0627\u06cc\u06cc \u062f\u0631\u062e\u0648\u0627\u0633\u062a\';\r\n            finalBtn.style.background = \'#0070BB\';\r\n            finalBtn.disabled = false;\r\n        }, 3000);\r\n    });\r\n  };\r\n})();\r\n</script>'
                       }
                     />
                   </div>
@@ -727,11 +961,12 @@ window.smartCal = (function() {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "main", "profile2", "img", "apiRequest2"],
-  main: ["main", "profile2", "img", "apiRequest2"],
+  root: ["root", "main", "profile2", "img", "apiRequest2", "apiRequest"],
+  main: ["main", "profile2", "img", "apiRequest2", "apiRequest"],
   profile2: ["profile2", "img"],
   img: ["img"],
-  apiRequest2: ["apiRequest2"]
+  apiRequest2: ["apiRequest2", "apiRequest"],
+  apiRequest: ["apiRequest"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -742,6 +977,7 @@ type NodeDefaultElementType = {
   profile2: typeof ApiRequest;
   img: typeof PlasmicImg__;
   apiRequest2: typeof ApiRequest;
+  apiRequest: typeof ApiRequest;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -810,6 +1046,7 @@ export const PlasmicDirectBooking = Object.assign(
     profile2: makeNodeComponent("profile2"),
     img: makeNodeComponent("img"),
     apiRequest2: makeNodeComponent("apiRequest2"),
+    apiRequest: makeNodeComponent("apiRequest"),
 
     // Metadata about props expected for PlasmicDirectBooking
     internalVariantProps: PlasmicDirectBooking__VariantProps,

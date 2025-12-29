@@ -243,6 +243,24 @@
     min-width: 0;
   }
 }
+.apiRequest:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+}
+.text__yEdBu {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  min-width: 0;
+}
+.text__sivcu {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  min-width: 0;
+}
 .embedHtml__qCmh3:global(.__wab_instance) {
   animation: none;
   max-width: 100%;
