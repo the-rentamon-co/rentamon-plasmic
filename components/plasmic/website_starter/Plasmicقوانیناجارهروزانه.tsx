@@ -96,6 +96,7 @@ export type Plasmicقوانیناجارهروزانه__OverridesType = {
   strDefinition?: Flex__<"div">;
   ownership?: Flex__<"div">;
   ownershipDesc?: Flex__<"div">;
+  ownershipDesc2?: Flex__<"div">;
   outlines?: Flex__<"div">;
   bot?: Flex__<"div">;
   more?: Flex__<"div">;
@@ -397,7 +398,7 @@ function Plasmicقوانیناجارهروزانه__RenderFunc(props: {
                   )}
                 >
                   {
-                    "\u0622\u06cc\u0627 \u0641\u0642\u0637 \u0645\u0627\u0644\u06a9 \u0645\u06cc\u200c\u062a\u0648\u0646\u0647 \u062e\u0648\u0646\u0647 \u0631\u0648 \u0627\u062c\u0627\u0631\u0647 \u0628\u062f\u0647\u061f"
+                    "\u0627\u06cc\u0627 \u0627\u062c\u0627\u0631\u0647 \u062f\u0627\u062f\u0646 \u0631\u0648\u0632\u0627\u0646\u0647 \u062e\u0627\u0646\u0647 \u062c\u0631\u0645 \u0627\u0633\u062a\u061f"
                   }
                 </h2>
                 <div
@@ -405,6 +406,35 @@ function Plasmicقوانیناجارهروزانه__RenderFunc(props: {
                     projectcss.all,
                     projectcss.__wab_text,
                     sty.text__lWiIg
+                  )}
+                >
+                  {
+                    "\u0628\u0647\u200c\u0637\u0648\u0631 \u06a9\u0644\u06cc \u00ab\u0627\u062c\u0627\u0631\u0647 \u062f\u0627\u062f\u0646 \u0631\u0648\u0632\u0627\u0646\u0647 \u062e\u0648\u0646\u0647 \u062c\u0631\u0645 \u0645\u062d\u0633\u0648\u0628 \u0646\u0645\u06cc\u200c\u0634\u0647\u00bb. \u0627\u0645\u0627 \u0648\u0627\u0642\u0639\u06cc\u062a \u0627\u06cc\u0646\u0647 \u06a9\u0647 \u062f\u0631 \u0627\u06cc\u0631\u0627\u0646 \u0628\u0631\u0627\u0634 \u06cc\u06a9 \u0642\u0627\u0646\u0648\u0646 \u0634\u0641\u0627\u0641 \u0648 \u0633\u0631\u0627\u0633\u0631\u06cc \u0648\u062c\u0648\u062f \u0646\u062f\u0627\u0631\u0647. \u06cc\u0639\u0646\u06cc \u062a\u0627 \u0648\u0642\u062a\u06cc \u0645\u0634\u06a9\u0644 \u0627\u0645\u0646\u06cc\u062a\u06cc\u060c \u0634\u06a9\u0627\u06cc\u062a \u0647\u0645\u0633\u0627\u06cc\u0647\u200c\u0647\u0627 \u06cc\u0627 \u0648\u0631\u0648\u062f \u0646\u0647\u0627\u062f\u0647\u0627\u06cc \u0646\u0638\u0627\u0631\u062a\u06cc \u067e\u06cc\u0634 \u0646\u06cc\u0627\u062f\u060c \u0645\u0639\u0645\u0648\u0644\u0627\u064b \u062d\u0633\u0627\u0633\u06cc\u062a\u06cc \u0631\u0648\u0634 \u0646\u06cc\u0633\u062a\u061b \u0648\u0644\u06cc \u0627\u06af\u0631 \u0645\u0634\u06a9\u0644 \u062e\u06cc\u0644\u06cc \u062c\u062f\u06cc \u067e\u06cc\u0634 \u0628\u06cc\u0627\u062f \u0648 \u06cc\u0627 \u0628\u0647 \u0645\u0648\u0627\u0631\u062f \u0641\u0648\u0642 \u0628\u062e\u0648\u0631\u0647\u060c \u0645\u0645\u06a9\u0646\u0647 \u0627\u0632\u062a \u0645\u062c\u0648\u0632 \u0628\u062e\u0648\u0627\u0646 \u06cc\u0627 \u0633\u0639\u06cc \u06a9\u0646\u0646 \u062c\u0644\u0648\u06cc \u06a9\u0627\u0631\u062a \u0631\u0648 \u0628\u06af\u06cc\u0631\u0646. \u0628\u0627 \u062a\u0648\u062c\u0647 \u0628\u0647 \u0633\u0627\u0628\u0642\u0647\u200c\u06cc \u06af\u0633\u062a\u0631\u0634  \u06a9\u0633\u0628\u200c\u0648\u06a9\u0627\u0631\u0647\u0627\u06cc \u0645\u0634\u0627\u0628\u0647 (\u0645\u062b\u0644 \u0627\u0633\u0646\u067e) \u0627\u06cc\u0646 \u06a9\u0627\u0631 \u0647\u0645 \u062f\u0631 \u0627\u06cc\u0631\u0627\u0646 \u0641\u0631\u0627\u06af\u06cc\u0631 \u0645\u06cc\u200c\u0634\u0647 \u0648 \u0628\u0639\u06cc\u062f\u0647 \u0645\u0634\u06a9\u0644\u06cc \u067e\u06cc\u0634 \u0628\u06cc\u0627\u062f. \u0645\u062b\u0644 \u0633\u0627\u06cc\u0631 \u06a9\u0634\u0648\u0631\u0647\u0627\u06cc \u062f\u0646\u06cc\u0627.\r"
+                  }
+                </div>
+              </div>
+              <div
+                data-plasmic-name={"ownershipDesc2"}
+                data-plasmic-override={overrides.ownershipDesc2}
+                className={classNames(projectcss.all, sty.ownershipDesc2)}
+              >
+                <h2
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.h2,
+                    projectcss.__wab_text,
+                    sty.h2__jxA4Z
+                  )}
+                >
+                  {
+                    "\u0622\u06cc\u0627 \u0641\u0642\u0637 \u0645\u0627\u0644\u06a9 \u0645\u06cc\u200c\u062a\u0648\u0646\u0647 \u062e\u0648\u0646\u0647 \u0631\u0648 \u0627\u062c\u0627\u0631\u0647 \u0628\u062f\u0647\u061f"
+                  }
+                </h2>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__cViLk
                   )}
                 >
                   {
@@ -1153,6 +1183,7 @@ const PlasmicDescendants = {
     "strDefinition",
     "ownership",
     "ownershipDesc",
+    "ownershipDesc2",
     "outlines",
     "bot",
     "more",
@@ -1184,6 +1215,7 @@ const PlasmicDescendants = {
     "strDefinition",
     "ownership",
     "ownershipDesc",
+    "ownershipDesc2",
     "outlines",
     "bot",
     "more",
@@ -1207,8 +1239,9 @@ const PlasmicDescendants = {
   introDesc: ["introDesc"],
   str: ["str", "strDefinition"],
   strDefinition: ["strDefinition"],
-  ownership: ["ownership", "ownershipDesc", "outlines"],
+  ownership: ["ownership", "ownershipDesc", "ownershipDesc2", "outlines"],
   ownershipDesc: ["ownershipDesc"],
+  ownershipDesc2: ["ownershipDesc2"],
   outlines: ["outlines"],
   bot: [
     "bot",
@@ -1265,6 +1298,7 @@ type NodeDefaultElementType = {
   strDefinition: "div";
   ownership: "div";
   ownershipDesc: "div";
+  ownershipDesc2: "div";
   outlines: "div";
   bot: "div";
   more: "div";
@@ -1359,6 +1393,7 @@ export const Plasmicقوانیناجارهروزانه = Object.assign(
     strDefinition: makeNodeComponent("strDefinition"),
     ownership: makeNodeComponent("ownership"),
     ownershipDesc: makeNodeComponent("ownershipDesc"),
+    ownershipDesc2: makeNodeComponent("ownershipDesc2"),
     outlines: makeNodeComponent("outlines"),
     bot: makeNodeComponent("bot"),
     more: makeNodeComponent("more"),

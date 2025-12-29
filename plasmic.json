@@ -3179,6 +3179,46 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/splash-divar"
+        },
+        {
+          "id": "j7oGOpzHZuqJ",
+          "name": "AvailabilityCalendar",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicAvailabilityCalendar.tsx",
+          "importSpec": {
+            "modulePath": "AvailabilityCalendar.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicAvailabilityCalendar.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "NNR58lJR0oX5",
+          "name": "BookableCalendar",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicBookableCalendar.tsx",
+          "importSpec": {
+            "modulePath": "BookableCalendar.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicBookableCalendar.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "b6PQkKJ78XCS",
+          "name": "DirectBooking",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicDirectBooking.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/Direct-booking/[property_id].tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicDirectBooking.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/Direct-booking/[property_id]"
         }
       ],
       "icons": [
