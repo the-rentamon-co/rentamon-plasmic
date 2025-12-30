@@ -365,12 +365,7 @@ function PlasmicProCalendar2__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) =>
           (() => {
             try {
-              return (
-                // const isMiaan = window.location.hostname.includes("miaan.ir");
-
-                // isMiaan
-                false
-              );
+              return false;
             } catch (e) {
               if (
                 e instanceof TypeError ||
