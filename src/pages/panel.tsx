@@ -55,14 +55,13 @@ return (
         <meta name="application-name" content="رنتامون" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-title" content="رنتامون" />
-        <meta name="theme-color" content="#7444BC" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
         <link rel="manifest" href="/manifest.json" />
         <link rel="apple-touch-icon" href="https://media.rentamon.com/icon%2Fapp-icon-1080.png" />
         <meta property="og:title" content="رنتامون" />
         <meta property="og:description" content="برنامه مدیریت اقامتگاه" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://app.rentamon.com/" />
+        <meta property="og:url" content="https://miaan.ir" />
         <meta property="og:image" content="https://media.rentamon.com/icon%2Fapp-icon-1080.png" />
       </Head>
 
