@@ -1721,15 +1721,7 @@ function PlasmicBookings2__RenderFunc(props: {
                   >
                     {(() => {
                       try {
-                        return (() => {
-                          if (
-                            !document.cookie.includes("bookings_filter_test")
-                          ) {
-                            return true;
-                          } else {
-                            return false;
-                          }
-                        })();
+                        return false;
                       } catch (e) {
                         if (
                           e instanceof TypeError ||

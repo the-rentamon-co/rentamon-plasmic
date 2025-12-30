@@ -362,20 +362,7 @@ function PlasmicProCalendar2__RenderFunc(props: {
         path: "modal.open",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) =>
-          (() => {
-            try {
-              return false;
-            } catch (e) {
-              if (
-                e instanceof TypeError ||
-                e?.plasmicType === "PlasmicUndefinedDataError"
-              ) {
-                return false;
-              }
-              throw e;
-            }
-          })()
+        initFunc: ({ $props, $state, $queries, $ctx }) => false
       },
       {
         path: "variable2",
@@ -854,13 +841,13 @@ function PlasmicProCalendar2__RenderFunc(props: {
                   await $steps["invokeGlobalAction2"];
               }
 
-              $steps["runCode"] = false
+              $steps["runCode"] = true
                 ? (() => {
                     const actionArgs = {
                       customFunction: async () => {
                         return (() => {
-                          if (!document.cookie.includes("miaan")) {
-                            return ($state.alertModal.open = true);
+                          if (!document.cookie.includes("homsa_modal")) {
+                            return ($state.modal.open = true);
                           }
                         })();
                       }
@@ -2617,7 +2604,7 @@ function PlasmicProCalendar2__RenderFunc(props: {
               >
                 {hasVariant(globalVariants, "screen", "smallMobile")
                   ? "\u26a0\ufe0f\r\n\u0628\u0647 \u062f\u0644\u06cc\u0644 \u0627\u062e\u062a\u0644\u0627\u0644 \u0633\u0631\u0627\u0633\u0631\u06cc \u0631\u0648\u06cc \u0627\u06cc\u0646\u062a\u0631\u0646\u062a \u06a9\u0634\u0648\u0631\u060c \u0645\u0645\u06a9\u0646\u0647 \u0628\u0639\u0636\u06cc \u062a\u063a\u06cc\u06cc\u0631\u0627\u062a \u0628\u0627 \u062e\u0637\u0627 \u0645\u0648\u0627\u062c\u0647 \u0628\u0634\u0646"
-                  : "\u26a0\ufe0f\r\n\u0628\u0647 \u0639\u0644\u062a \u0627\u062e\u062a\u0644\u0627\u0644 \u062f\u0631 \u0633\u0627\u06cc\u062a \u062c\u0627\u0628\u0627\u0645\u0627 \u0645\u0645\u06a9\u0646\u0647 \u0628\u0639\u0636\u06cc \u0627\u0632 \u062a\u063a\u06cc\u06cc\u0631\u0627\u062a \u0627\u0639\u0645\u0627\u0644 \u0646\u0634\u0647"}
+                  : "\u26a0\ufe0f\r\n\u0628\u0647 \u0639\u0644\u062a \u0627\u062e\u062a\u0644\u0627\u0644 \u062f\u0631 \u0633\u0627\u06cc\u062a \u0647\u0648\u0645\u0633\u0627 \u0645\u0645\u06a9\u0646\u0647 \u0628\u0639\u0636\u06cc \u0627\u0632 \u062a\u063a\u06cc\u06cc\u0631\u0627\u062a \u0627\u0639\u0645\u0627\u0644 \u0646\u0634\u0647"}
               </div>
             </div>
             <div
@@ -2656,6 +2643,44 @@ function PlasmicProCalendar2__RenderFunc(props: {
                   typeof $steps["updateModalOpen"].then === "function"
                 ) {
                   $steps["updateModalOpen"] = await $steps["updateModalOpen"];
+                }
+
+                $steps["runCode"] = true
+                  ? (() => {
+                      const actionArgs = {
+                        customFunction: async () => {
+                          return (() => {
+                            function setCookie(name, value, hours) {
+                              let expires = "";
+                              if (hours) {
+                                const date = new Date();
+                                date.setTime(
+                                  date.getTime() + hours * 60 * 60 * 1000
+                                );
+                                expires = "; expires=" + date.toUTCString();
+                              }
+                              document.cookie =
+                                name +
+                                "=" +
+                                (value || "") +
+                                expires +
+                                "; path=/";
+                            }
+                            return setCookie("homsa_modal", "true", 24);
+                          })();
+                        }
+                      };
+                      return (({ customFunction }) => {
+                        return customFunction();
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+                if (
+                  $steps["runCode"] != null &&
+                  typeof $steps["runCode"] === "object" &&
+                  typeof $steps["runCode"].then === "function"
+                ) {
+                  $steps["runCode"] = await $steps["runCode"];
                 }
               }}
             >
