@@ -4,23 +4,23 @@ import * as React from "react";
 import { PageParamsProvider as PageParamsProvider__ } from "@plasmicapp/react-web/lib/host";
 import GlobalContextsProvider from "../../components/plasmic/website_starter/PlasmicGlobalContextsProvider";
 
-import { PlasmicAnalyticsAbolhasani } from "../../components/plasmic/website_starter/PlasmicAnalyticsAbolhasani";
+import { Plasmicافزایشدرآمداقامتگاه } from "../../components/plasmic/website_starter/Plasmic\u0627\u0641\u0632\u0627\u06CC\u0634\u062F\u0631\u0622\u0645\u062F\u0627\u0642\u0627\u0645\u062A\u06AF\u0627\u0647";
 import { useRouter } from "next/router";
 
-function AnalyticsAbolhasani() {
-  // Use PlasmicAnalyticsAbolhasani to render this component as it was
+function افزایشدرآمداقامتگاه() {
+  // Use Plasmicافزایشدرآمداقامتگاه to render this component as it was
   // designed in Plasmic, by activating the appropriate variants,
   // attaching the appropriate event handlers, etc.  You
   // can also install whatever React hooks you need here to manage state or
   // fetch data.
   //
-  // Props you can pass into PlasmicAnalyticsAbolhasani are:
+  // Props you can pass into Plasmicافزایشدرآمداقامتگاه are:
   // 1. Variants you want to activate,
   // 2. Contents for slots you want to fill,
   // 3. Overrides for any named node in the component to attach behavior and data,
   // 4. Props to set on the root node.
   //
-  // By default, PlasmicAnalyticsAbolhasani is wrapped by your project's global
+  // By default, Plasmicافزایشدرآمداقامتگاه is wrapped by your project's global
   // variant context providers. These wrappers may be moved to
   // Next.js Custom App component
   // (https://nextjs.org/docs/advanced-features/custom-app).
@@ -32,10 +32,10 @@ function AnalyticsAbolhasani() {
         params={useRouter()?.query}
         query={useRouter()?.query}
       >
-        <PlasmicAnalyticsAbolhasani />
+        <Plasmicافزایشدرآمداقامتگاه />
       </PageParamsProvider__>
     </GlobalContextsProvider>
   );
 }
 
-export default AnalyticsAbolhasani;
+export default افزایشدرآمداقامتگاه;

@@ -841,7 +841,7 @@ function PlasmicProCalendar2__RenderFunc(props: {
                   await $steps["invokeGlobalAction2"];
               }
 
-              $steps["runCode"] = true
+              $steps["runCode"] = false
                 ? (() => {
                     const actionArgs = {
                       customFunction: async () => {

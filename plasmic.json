@@ -2835,20 +2835,6 @@
           "path": "/download"
         },
         {
-          "id": "PIuPeXS1JEWe",
-          "name": "AnalyticsAbolhasani",
-          "type": "managed",
-          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
-          "renderModuleFilePath": "plasmic/website_starter/PlasmicAnalyticsAbolhasani.tsx",
-          "importSpec": {
-            "modulePath": "../src/pages/analytics-2.tsx"
-          },
-          "cssFilePath": "plasmic/website_starter/PlasmicAnalyticsAbolhasani.module.css",
-          "scheme": "blackbox",
-          "componentType": "page",
-          "path": "/analytics-2"
-        },
-        {
           "id": "j6VTnWC37glE",
           "name": "Gw",
           "type": "managed",
@@ -2977,7 +2963,7 @@
           "projectId": "7SNMkB8UMukVgcWJYokeAQ",
           "renderModuleFilePath": "plasmic/website_starter/PlasmicGuestCalendar.tsx",
           "importSpec": {
-            "modulePath": "../src/pages/calendar/[property_id].tsx"
+            "modulePath": "../src/pages/calendar/[property_id]/[sub-resource].tsx"
           },
           "cssFilePath": "plasmic/website_starter/PlasmicGuestCalendar.module.css",
           "scheme": "blackbox",
@@ -3219,6 +3205,34 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/Direct-booking/[property_id]"
+        },
+        {
+          "id": "3c04PcWRpz7c",
+          "name": "افزایشدرآمداقامتگاه",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/Plasmicافزایشدرآمداقامتگاه.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/increase-villa-income-tips.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/Plasmicافزایشدرآمداقامتگاه.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/increase-villa-income-tips"
+        },
+        {
+          "id": "n9L7ZTN9ZWVp",
+          "name": "آموزشمبلهکردنخونهشیکوارزان",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/Plasmicآموزشمبلهکردنخونهشیکوارزان.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/low-cost-furnishing-guide.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/Plasmicآموزشمبلهکردنخونهشیکوارزان.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/low-cost-furnishing-guide"
         }
       ],
       "icons": [
@@ -5550,11 +5564,6 @@
           "filePath": "../public/plasmic/website_starter/images/group.svg"
         },
         {
-          "id": "8VtL2hbWw2Ow",
-          "name": "image 152",
-          "filePath": "../public/plasmic/website_starter/images/image152.svg"
-        },
-        {
           "id": "AmepQ_frqL2s",
           "name": "image 153",
           "filePath": "../public/plasmic/website_starter/images/image153.svg"
@@ -6033,6 +6042,16 @@
           "id": "LvZbrkez176R",
           "name": "x-new-twitter-logo-free-png.webp",
           "filePath": "../public/plasmic/website_starter/images/xNewTwitterLogoFreePngWebp.webp"
+        },
+        {
+          "id": "8VtL2hbWw2Ow",
+          "name": "image 152",
+          "filePath": "../public/plasmic/website_starter/images/image152.svg"
+        },
+        {
+          "id": "K1NFLjRWZ96g",
+          "name": "image 196",
+          "filePath": "../public/plasmic/website_starter/images/image196.png"
         }
       ],
       "indirect": false,

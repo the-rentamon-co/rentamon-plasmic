@@ -60,6 +60,8 @@ import {
 } from "@plasmicapp/react-web/lib/host";
 
 import AvailabilityCalendar from "../../AvailabilityCalendar"; // plasmic-import: j7oGOpzHZuqJ/component
+import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
+import { Embed } from "@plasmicpkgs/plasmic-basic-components";
 import { _useGlobalVariants } from "./plasmic"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectModule
 import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/styleTokensProvider
 
@@ -82,6 +84,11 @@ export const PlasmicGuestCalendar__ArgProps = new Array<ArgPropType>();
 export type PlasmicGuestCalendar__OverridesType = {
   root?: Flex__<"div">;
   availabilityCalendar?: Flex__<typeof AvailabilityCalendar>;
+  main?: Flex__<"div">;
+  profile2?: Flex__<typeof ApiRequest>;
+  img?: Flex__<typeof PlasmicImg__>;
+  apiRequest2?: Flex__<typeof ApiRequest>;
+  apiRequest?: Flex__<typeof ApiRequest>;
 };
 
 export interface DefaultGuestCalendarProps {}
@@ -127,6 +134,90 @@ function PlasmicGuestCalendar__RenderFunc(props: {
 
   const globalVariants = _useGlobalVariants();
 
+  const stateSpecs: Parameters<typeof useDollarState>[0] = React.useMemo(
+    () => [
+      {
+        path: "profile2.data",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "profile2"
+      },
+      {
+        path: "profile2.error",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "profile2"
+      },
+      {
+        path: "profile2.loading",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "profile2"
+      },
+      {
+        path: "apiRequest2.data",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "apiRequest2"
+      },
+      {
+        path: "apiRequest2.error",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "apiRequest2"
+      },
+      {
+        path: "apiRequest2.loading",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "apiRequest2"
+      },
+      {
+        path: "apiRequest.data",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "apiRequest"
+      },
+      {
+        path: "apiRequest.error",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "apiRequest"
+      },
+      {
+        path: "apiRequest.loading",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "apiRequest"
+      }
+    ],
+    [$props, $ctx, $refs]
+  );
+  const $state = useDollarState(stateSpecs, {
+    $props,
+    $ctx,
+    $queries: {},
+    $refs
+  });
+
   const styleTokensClassNames = _useStyleTokens();
 
   return (
@@ -167,11 +258,992 @@ function PlasmicGuestCalendar__RenderFunc(props: {
             sty.root
           )}
         >
-          <AvailabilityCalendar
-            data-plasmic-name={"availabilityCalendar"}
-            data-plasmic-override={overrides.availabilityCalendar}
-            className={classNames("__wab_instance", sty.availabilityCalendar)}
-          />
+          {(
+            hasVariant(globalVariants, "screen", "mobile")
+              ? (() => {
+                  try {
+                    return $ctx.params["sub-resource"] == "availability";
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return true;
+                    }
+                    throw e;
+                  }
+                })()
+              : (() => {
+                  try {
+                    return $ctx.params["sub-resource"] == "availability";
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return false;
+                    }
+                    throw e;
+                  }
+                })()
+          ) ? (
+            <AvailabilityCalendar
+              data-plasmic-name={"availabilityCalendar"}
+              data-plasmic-override={overrides.availabilityCalendar}
+              className={classNames("__wab_instance", sty.availabilityCalendar)}
+            />
+          ) : null}
+          {(
+            hasVariant(globalVariants, "screen", "mobile")
+              ? (() => {
+                  try {
+                    return $ctx.params["sub-resource"] == "booking";
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return true;
+                    }
+                    throw e;
+                  }
+                })()
+              : (() => {
+                  try {
+                    return $ctx.params["sub-resource"] == "booking";
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return false;
+                    }
+                    throw e;
+                  }
+                })()
+          ) ? (
+            <div
+              data-plasmic-name={"main"}
+              data-plasmic-override={overrides.main}
+              className={classNames(projectcss.all, sty.main)}
+            >
+              <div className={classNames(projectcss.all, sty.freeBox__igYn)}>
+                <div className={classNames(projectcss.all, sty.freeBox__zCrVo)}>
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox___0GSiN)}
+                  >
+                    <ApiRequest
+                      data-plasmic-name={"profile2"}
+                      data-plasmic-override={overrides.profile2}
+                      className={classNames("__wab_instance", sty.profile2)}
+                      errorDisplay={null}
+                      loadingDisplay={null}
+                      method={"GET"}
+                      onError={async (...eventArgs: any) => {
+                        generateStateOnChangeProp($state, [
+                          "profile2",
+                          "error"
+                        ]).apply(null, eventArgs);
+                      }}
+                      onLoading={async (...eventArgs: any) => {
+                        generateStateOnChangeProp($state, [
+                          "profile2",
+                          "loading"
+                        ]).apply(null, eventArgs);
+                      }}
+                      onSuccess={async (...eventArgs: any) => {
+                        generateStateOnChangeProp($state, [
+                          "profile2",
+                          "data"
+                        ]).apply(null, eventArgs);
+                      }}
+                      ref={ref => {
+                        $refs["profile2"] = ref;
+                      }}
+                      url={
+                        hasVariant(globalVariants, "screen", "mobile")
+                          ? (() => {
+                              try {
+                                return `https://automation.miaan.ir/webhook/profile?property_id=${$ctx.params.property_id}`;
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
+                                }
+                                throw e;
+                              }
+                            })()
+                          : (() => {
+                              try {
+                                return `https://automation.miaan.ir/webhook/profile?property_id=${$ctx.params.property_id}`;
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
+                                }
+                                throw e;
+                              }
+                            })()
+                      }
+                    >
+                      <div
+                        className={classNames(projectcss.all, sty.freeBox__beO)}
+                      >
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            sty.freeBox__lPfxN
+                          )}
+                        >
+                          <PlasmicImg__
+                            data-plasmic-name={"img"}
+                            data-plasmic-override={overrides.img}
+                            alt={""}
+                            className={classNames(sty.img)}
+                            displayHeight={"auto"}
+                            displayMaxHeight={"none"}
+                            displayMaxWidth={"100%"}
+                            displayMinHeight={"0"}
+                            displayMinWidth={"0"}
+                            displayWidth={"auto"}
+                            loading={"lazy"}
+                            src={
+                              hasVariant(globalVariants, "screen", "mobile")
+                                ? $state.profile2.data.profile_pic
+                                : (() => {
+                                    try {
+                                      return $state.profile2.data.profile_pic;
+                                    } catch (e) {
+                                      if (
+                                        e instanceof TypeError ||
+                                        e?.plasmicType ===
+                                          "PlasmicUndefinedDataError"
+                                      ) {
+                                        return undefined;
+                                      }
+                                      throw e;
+                                    }
+                                  })()
+                            }
+                          />
+                        </div>
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            sty.freeBox__v1Es5
+                          )}
+                        >
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__fGyFp
+                            )}
+                          >
+                            <React.Fragment>
+                              {(() => {
+                                try {
+                                  return (
+                                    "نام میزبان: " +
+                                    $state.profile2.data.first_name +
+                                    " " +
+                                    $state.profile2.data.last_name
+                                  );
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return "";
+                                  }
+                                  throw e;
+                                }
+                              })()}
+                            </React.Fragment>
+                          </div>
+                        </div>
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            sty.freeBox__eMum9
+                          )}
+                        >
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__aAXi1
+                            )}
+                          >
+                            {""}
+                          </div>
+                        </div>
+                      </div>
+                    </ApiRequest>
+                  </div>
+                </div>
+              </div>
+              <ApiRequest
+                data-plasmic-name={"apiRequest2"}
+                data-plasmic-override={overrides.apiRequest2}
+                className={classNames("__wab_instance", sty.apiRequest2)}
+                errorDisplay={null}
+                loadingDisplay={null}
+                method={"GET"}
+                onError={async (...eventArgs: any) => {
+                  generateStateOnChangeProp($state, [
+                    "apiRequest2",
+                    "error"
+                  ]).apply(null, eventArgs);
+                }}
+                onLoading={async (...eventArgs: any) => {
+                  generateStateOnChangeProp($state, [
+                    "apiRequest2",
+                    "loading"
+                  ]).apply(null, eventArgs);
+                }}
+                onSuccess={async (...eventArgs: any) => {
+                  generateStateOnChangeProp($state, [
+                    "apiRequest2",
+                    "data"
+                  ]).apply(null, eventArgs);
+                }}
+                ref={ref => {
+                  $refs["apiRequest2"] = ref;
+                }}
+                url={(() => {
+                  try {
+                    return (() => {
+                      return `https://automation.miaan.ir/webhook/calendar/blocked-dates?property_id=${$ctx.params.property_id}`;
+                    })();
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return undefined;
+                    }
+                    throw e;
+                  }
+                })()}
+              >
+                <div
+                  className={classNames(projectcss.all, sty.freeBox___4XXp2)}
+                >
+                  <ApiRequest
+                    data-plasmic-name={"apiRequest"}
+                    data-plasmic-override={overrides.apiRequest}
+                    className={classNames("__wab_instance", sty.apiRequest)}
+                    errorDisplay={null}
+                    loadingDisplay={null}
+                    method={"GET"}
+                    onError={async (...eventArgs: any) => {
+                      generateStateOnChangeProp($state, [
+                        "apiRequest",
+                        "error"
+                      ]).apply(null, eventArgs);
+                    }}
+                    onLoading={async (...eventArgs: any) => {
+                      generateStateOnChangeProp($state, [
+                        "apiRequest",
+                        "loading"
+                      ]).apply(null, eventArgs);
+                    }}
+                    onSuccess={async (...eventArgs: any) => {
+                      generateStateOnChangeProp($state, [
+                        "apiRequest",
+                        "data"
+                      ]).apply(null, eventArgs);
+                    }}
+                    ref={ref => {
+                      $refs["apiRequest"] = ref;
+                    }}
+                    url={(() => {
+                      try {
+                        return `https://automation.rentamon.com/webhook/calendar/price?property_id=${$ctx.params.property_id}`;
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return undefined;
+                        }
+                        throw e;
+                      }
+                    })()}
+                  >
+                    <Embed
+                      className={classNames(
+                        "__wab_instance",
+                        sty.embedHtml__rsIbj
+                      )}
+                      code={(() => {
+                        try {
+                          return `<div id="smart-calendar-widget">
+  <style>
+    #smart-calendar-widget {
+      --cal-main: #0070BB;
+      --cal-bg-range: #e6f2fa;
+      --cal-blocked: #e2e2e2;
+      --cal-blocked-text: #ccc;
+      --radius: 8px;
+      
+      direction: rtl; 
+      width: 100%; max-width: 400px; padding: 10px; margin: 0 auto;
+      background: #fff; border-radius: 12px;
+      box-sizing: border-box;
+      border: 1px solid #eee;
+      font-size: 16px;
+    }
+    #smart-calendar-widget * { box-sizing: border-box; }
+
+    /* Header */
+    #smart-calendar-widget .header { 
+        display: flex; justify-content: space-between; align-items: center; 
+        margin-bottom: 20px; font-weight: bold; color: #333; 
+        font-size: 1.2rem;
+    }
+    
+    #smart-calendar-widget .nav-btn { 
+        background: none; border: none; cursor: pointer; 
+        font-size: 1.5rem; color: #000; padding: 5px 15px; transition: opacity 0.3s; 
+    }
+    #smart-calendar-widget .nav-btn:disabled { opacity: 0.2; cursor: default; }
+
+    /* Grids */
+    #smart-calendar-widget .weekdays { 
+        display: grid; grid-template-columns: repeat(7, 1fr); text-align: center; 
+        margin-bottom: 10px; font-size: 0.9rem; color: #666; font-weight: normal;
+    }
+    #smart-calendar-widget .days-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; min-height: 250px; }
+
+    /* Cells */
+    #smart-calendar-widget .day-cell { 
+        aspect-ratio: 1; border-radius: var(--radius); 
+        display: flex; flex-direction: column; justify-content: center; align-items: center; 
+        cursor: pointer; border: 1px solid #ddd;
+        transition: all 0.2s; position: relative; background: #fff; color: #333;
+        padding: 2px;
+    }
+    
+    #smart-calendar-widget .day-num { font-size: 1.1rem; font-weight: bold; line-height: 1.2; }
+    
+    /* استایل قیمت (ریز شده) */
+    #smart-calendar-widget .day-price { 
+        font-size: 0.7em; color: #888; margin-top: 1px; letter-spacing: -0.5px;
+    }
+    
+    #smart-calendar-widget .day-cell:hover:not(.past-day):not(.blocked) { border-color: var(--cal-main); transform: scale(1.05); }
+    #smart-calendar-widget .day-cell:hover:not(.past-day):not(.blocked) .day-num { color: var(--cal-main); }
+    
+    #smart-calendar-widget .past-day { opacity: 0; pointer-events: none; }
+    
+    #smart-calendar-widget .blocked { 
+        background-color: var(--cal-blocked) !important; 
+        border-color: var(--cal-blocked) !important;
+        color: var(--cal-blocked-text) !important; 
+        cursor: default !important; 
+        pointer-events: none; 
+    }
+    
+    /* انتخاب شده */
+    #smart-calendar-widget .selected { background-color: var(--cal-main); color: #fff !important; border-color: var(--cal-main); }
+    #smart-calendar-widget .selected .day-num { color: #fff !important; }
+    #smart-calendar-widget .selected .day-price { color: #e0e0e0 !important; }
+
+    #smart-calendar-widget .in-range { background-color: var(--cal-bg-range); border-color: var(--cal-bg-range); }
+    #smart-calendar-widget .in-range .day-num { color: var(--cal-main); }
+    #smart-calendar-widget .in-range .day-price { color: var(--cal-main); opacity: 0.8; }
+    
+    #smart-calendar-widget .range-start { border-radius: 0 8px 8px 0; }
+    #smart-calendar-widget .range-end { border-radius: 8px 0 0 8px; }
+    #smart-calendar-widget .selected:not(.range-start):not(.range-end) { border-radius: 8px; }
+
+    /* Footer */
+    #smart-calendar-widget .cal-footer {
+        margin-top: 20px; padding-top: 15px; border-top: 1px solid #eee;
+        display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;
+        font-size: 0.85rem; color: #555; gap: 10px;
+    }
+    #smart-calendar-widget .footer-item { display: flex; flex-direction: column; align-items: center; gap: 3px; min-width: 60px; }
+    #smart-calendar-widget .footer-label { font-size: 0.8em; color: #999; }
+    #smart-calendar-widget .footer-value { font-weight: bold; color: #333; font-size: 1.1em; }
+    #smart-calendar-widget .footer-value.highlight { color: var(--cal-main); }
+
+    /* Status */
+    #smart-calendar-widget .status-msg { grid-column: 1 / -1; text-align: center; padding: 40px; color: #666; font-size: 1rem; }
+    #smart-calendar-widget .error-text { color: red; display: block; margin-top: 5px; font-size: 0.9em; }
+  </style>
+
+  <div class="header">
+    <button id="cal-prev-btn" class="nav-btn" type="button" onclick="window.smartCal.changeMonth(-1)">&#10094;</button> 
+    <span id="cal-month-label">...</span>
+    <button id="cal-next-btn" class="nav-btn" type="button" onclick="window.smartCal.changeMonth(1)">&#10095;</button>
+  </div>
+  
+  <div class="weekdays"><div>ش</div><div>ی</div><div>د</div><div>س</div><div>چ</div><div>پ</div><div>ج</div></div>
+  
+  <div class="days-grid" id="cal-days-grid">
+    <div class="status-msg" id="cal-status">درحال دریافت اطلاعات...</div>
+  </div>
+
+  <div class="cal-footer">
+      <div class="footer-item">
+          <span class="footer-label">ورود</span>
+          <span class="footer-value" id="lbl-start">-</span>
+      </div>
+      <div class="footer-item">
+          <span class="footer-label">خروج</span>
+          <span class="footer-value" id="lbl-end">-</span>
+      </div>
+      <div class="footer-item">
+          <span class="footer-label">مدت</span>
+          <span class="footer-value" id="lbl-nights">۰ شب</span>
+      </div>
+      <div class="footer-item" style="flex-grow: 1; align-items: flex-end; padding-right: 10px; border-right: 1px solid #eee;">
+          <span class="footer-label">قیمت کل</span>
+          <span class="footer-value highlight" id="lbl-total">۰ تومان</span>
+      </div>
+  </div>
+</div>
+
+<script>
+window.smartCal = (function() {
+  // --- تنظیمات و داده‌ها ---
+  
+  // دریافت داده‌ها از متغیرهای داینامیک
+  var API_BOOKED_DATES = ${JSON.stringify($state.apiRequest2?.data?.dates ?? [])};
+  var API_PRICES_RAW = ${JSON.stringify($state.apiRequest?.data ?? [])};
+
+  var PERSIAN_MONTHS = ['فروردین', 'اردیبهشت', 'خرداد', 'تیر', 'مرداد', 'شهریور', 'مهر', 'آبان', 'آذر', 'دی', 'بهمن', 'اسفند'];
+  var MAX_MONTHS_AHEAD = 3; 
+
+  var bookedSet = new Set(API_BOOKED_DATES || []);
+  var priceMap = {}; 
+
+  if (API_PRICES_RAW && Array.isArray(API_PRICES_RAW)) {
+      API_PRICES_RAW.forEach(function(item) {
+          if(item.price_date && item.price) {
+              priceMap[item.price_date] = item.price;
+          }
+      });
+  }
+
+  var state = { todayJ: null, currYear: null, currMonth: null, selStart: null, selEnd: null };
+
+  // --- توابع کمکی ---
+  function getJDateStr(y, m, d) { return y + '-' + String(m).padStart(2, '0') + '-' + String(d).padStart(2, '0'); }
+  
+  function formatNumber(num) {
+      if(!num && num !== 0) return '';
+      return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  }
+
+  function compareJDates(d1, d2) {
+      if(!d1 || !d2) return null;
+      if(d1.jy !== d2.jy) return d1.jy - d2.jy;
+      if(d1.jm !== d2.jm) return d1.jm - d2.jm;
+      return d1.jd - d2.jd;
+  }
+
+  function calcTotal(start, end) {
+      if(!start || !end) return 0;
+      var total = 0;
+      var gStart = jalaali.toGregorian(start.jy, start.jm, start.jd);
+      var gEnd = jalaali.toGregorian(end.jy, end.jm, end.jd);
+      
+      var dStart = new Date(gStart.gy, gStart.gm - 1, gStart.gd);
+      var dEnd = new Date(gEnd.gy, gEnd.gm - 1, gEnd.gd);
+      
+      if(dStart > dEnd) { var temp = dStart; dStart = dEnd; dEnd = temp; }
+      
+      var curr = new Date(dStart);
+      // حلقه تا روز قبل از خروج
+      while(curr < dEnd) {
+          var j = jalaali.toJalaali(curr);
+          var str = getJDateStr(j.jy, j.jm, j.jd);
+          var p = priceMap[str];
+          if(p) total += parseInt(p);
+          curr.setDate(curr.getDate() + 1);
+      }
+      return total;
+  }
+  
+  function calcNights(start, end) {
+      if(!start || !end) return 0;
+      var gStart = jalaali.toGregorian(start.jy, start.jm, start.jd);
+      var gEnd = jalaali.toGregorian(end.jy, end.jm, end.jd);
+      var d1 = new Date(gStart.gy, gStart.gm-1, gStart.gd);
+      var d2 = new Date(gEnd.gy, gEnd.gm-1, gEnd.gd);
+      return Math.ceil(Math.abs(d2 - d1) / (1000 * 60 * 60 * 24));
+  }
+
+  function hasBlockedInBetween(start, end) {
+      if(!start || !end) return false;
+      var gStart = jalaali.toGregorian(start.jy, start.jm, start.jd);
+      var gEnd = jalaali.toGregorian(end.jy, end.jm, end.jd);
+      var d1 = new Date(gStart.gy, gStart.gm - 1, gStart.gd);
+      var d2 = new Date(gEnd.gy, gEnd.gm - 1, gEnd.gd);
+      if(d1 > d2) { var temp = d1; d1 = d2; d2 = temp; }
+
+      var curr = new Date(d1);
+      while(curr <= d2) {
+          var j = jalaali.toJalaali(curr);
+          var str = getJDateStr(j.jy, j.jm, j.jd);
+          if(bookedSet.has(str)) return true;
+          curr.setDate(curr.getDate() + 1);
+      }
+      return false;
+  }
+
+  // --- رندر ---
+  function render() {
+    try {
+        var grid = document.getElementById('cal-days-grid');
+        var label = document.getElementById('cal-month-label');
+        if(!grid) return;
+
+        grid.innerHTML = ''; 
+        label.innerText = PERSIAN_MONTHS[state.currMonth - 1] + ' ' + state.currYear;
+        updateNavButtons();
+
+        var daysLen = jalaali.jalaaliMonthLength(state.currYear, state.currMonth);
+        var gDate = jalaali.toGregorian(state.currYear, state.currMonth, 1);
+        var startDay = new Date(gDate.gy, gDate.gm - 1, gDate.gd).getDay() + 1;
+        if (startDay === 7) startDay = 0;
+
+        for(var i=0; i<startDay; i++) grid.appendChild(document.createElement('div'));
+
+        for(var d=1; d<=daysLen; d++) {
+            (function(dayNum) {
+                var cell = document.createElement('div');
+                var dateObj = { jy: state.currYear, jm: state.currMonth, jd: dayNum };
+                var dateStr = getJDateStr(state.currYear, state.currMonth, dayNum);
+                
+                var cls = 'day-cell';
+                var isBlocked = bookedSet.has(dateStr);
+                var isPast = compareJDates(dateObj, state.todayJ) < 0;
+                
+                var isStart = compareJDates(dateObj, state.selStart) === 0;
+                var isEnd = compareJDates(dateObj, state.selEnd) === 0;
+                var inRange = state.selStart && state.selEnd && 
+                              compareJDates(dateObj, state.selStart) > 0 && 
+                              compareJDates(dateObj, state.selEnd) < 0;
+
+                if (isPast) cls += ' past-day';
+                else if (isBlocked) cls += ' blocked';
+                else if (isStart) cls += ' selected range-start';
+                else if (isEnd) cls += ' selected range-end';
+                else if (inRange) cls += ' in-range';
+
+                cell.className = cls;
+                
+                // HTML محتوای سلول
+                var htmlContent = '<span class="day-num">' + dayNum + '</span>';
+                
+                // نمایش قیمت (تقسیم بر 1000)
+                var priceVal = priceMap[dateStr];
+                if(priceVal && !isBlocked && !isPast) {
+                    // محاسبه قیمت خلاصه شده (مثلا 4500000 -> 4,500)
+                    var shortPrice = Math.floor(parseInt(priceVal) / 1000);
+                    htmlContent += '<span class="day-price">' + formatNumber(shortPrice) + '</span>';
+                }
+                
+                cell.innerHTML = htmlContent;
+
+                if(!isBlocked && !isPast) {
+                    cell.onclick = function() { handleDateClick(dateObj); };
+                }
+                grid.appendChild(cell);
+            })(d);
+        }
+    } catch(err) {
+        showError(err.message);
+    }
+  }
+
+  function handleDateClick(date) {
+    if (!state.selStart) {
+        state.selStart = date;
+    } else if (compareJDates(date, state.selStart) === 0 && !state.selEnd) {
+        state.selStart = null;
+    } else if (!state.selEnd) {
+        if (hasBlockedInBetween(state.selStart, date)) {
+            state.selStart = date;
+            state.selEnd = null;
+        } else {
+            if (compareJDates(date, state.selStart) < 0) {
+                 state.selStart = date; 
+            } else {
+                 state.selEnd = date;
+            }
+        }
+    } else {
+        state.selStart = date;
+        state.selEnd = null;
+    }
+    broadcast();
+    render();
+  }
+
+  function broadcast() {
+    var nights = (state.selStart && state.selEnd) ? calcNights(state.selStart, state.selEnd) : 0;
+    var totalPrice = (state.selStart && state.selEnd) ? calcTotal(state.selStart, state.selEnd) : 0;
+    
+    var sStr = state.selStart ? getJDateStr(state.selStart.jy, state.selStart.jm, state.selStart.jd) : null;
+    var eStr = state.selEnd ? getJDateStr(state.selEnd.jy, state.selEnd.jm, state.selEnd.jd) : null;
+
+    var elStart = document.getElementById('lbl-start');
+    var elEnd = document.getElementById('lbl-end');
+    var elNights = document.getElementById('lbl-nights');
+    var elTotal = document.getElementById('lbl-total');
+
+    if(elStart) elStart.innerText = sStr ? sStr : '-';
+    if(elEnd) elEnd.innerText = eStr ? eStr : '-';
+    if(elNights) elNights.innerText = nights + ' شب';
+    
+    // نمایش قیمت کل به صورت کامل (تومان)
+    if(elTotal) elTotal.innerText = totalPrice > 0 ? formatNumber(totalPrice) + ' تومان' : '۰ تومان';
+
+    var data = { 
+        startDate: sStr, 
+        endDate: eStr, 
+        nightsCount: nights,
+        totalPrice: totalPrice 
+    };
+    window.dispatchEvent(new CustomEvent('calendar-update', { detail: data }));
+  }
+
+  function updateNavButtons() {
+    var prevBtn = document.getElementById('cal-prev-btn');
+    var nextBtn = document.getElementById('cal-next-btn');
+    var diff = (state.currYear - state.todayJ.jy) * 12 + (state.currMonth - state.todayJ.jm);
+
+    if (diff <= 0) prevBtn.disabled = true;
+    else prevBtn.disabled = false;
+
+    if (diff >= MAX_MONTHS_AHEAD) nextBtn.disabled = true;
+    else nextBtn.disabled = false;
+  }
+
+  function changeMonth(dir) {
+    var diff = (state.currYear - state.todayJ.jy) * 12 + (state.currMonth - state.todayJ.jm);
+    if (dir === -1 && diff <= 0) return;
+    if (dir === 1 && diff >= MAX_MONTHS_AHEAD) return;
+
+    state.currMonth += dir;
+    if(state.currMonth > 12) { state.currMonth = 1; state.currYear++; }
+    if(state.currMonth < 1) { state.currMonth = 12; state.currYear--; }
+    render();
+  }
+
+  function showError(msg) {
+    var el = document.getElementById('cal-status');
+    if(el) el.innerHTML = '<span class="error-text">' + msg + '</span>';
+  }
+
+  function init() {
+    if (typeof jalaali === 'undefined') {
+        var script = document.createElement('script');
+        script.src = 'https://cdn.jsdelivr.net/npm/jalaali-js/dist/jalaali.js';
+        script.onload = function() { startLogic(); };
+        script.onerror = function() { showError("کتابخانه تقویم لود نشد."); };
+        document.head.appendChild(script);
+    } else {
+        startLogic();
+    }
+  }
+
+  function startLogic() {
+    try {
+        state.todayJ = jalaali.toJalaali(new Date());
+        state.currYear = state.todayJ.jy;
+        state.currMonth = state.todayJ.jm;
+        render();
+    } catch(e) {
+        showError(e.message);
+    }
+  }
+
+  setTimeout(init, 100);
+  return { changeMonth: changeMonth };
+})();
+</script>
+`;
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return "";
+                          }
+                          throw e;
+                        }
+                      })()}
+                    />
+                  </ApiRequest>
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__iARnn)}
+                  >
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__qnFsX)}
+                    >
+                      <Embed
+                        className={classNames(
+                          "__wab_instance",
+                          sty.embedHtml__wHMtN
+                        )}
+                        code={(() => {
+                          try {
+                            return `
+<div id="booking-widget-wrapper">
+  <style>
+    /* تنظیمات کلی */
+    #booking-widget-wrapper { direction: rtl; }
+    #booking-widget-wrapper * { box-sizing: border-box; }
+
+    /* دکمه اصلی */
+    #booking-widget-wrapper .trigger-container { text-align: center; margin-top: 8px; }
+    
+    #booking-widget-wrapper .trigger-btn {
+        background: #0070BB; color: white; padding: 14px 40px; border: none; border-radius: 8px; 
+        cursor: pointer; font-size: 1.2rem; font-weight: bold; transition: 0.3s; width: 100%; max-width: 400px;
+    }
+    #booking-widget-wrapper .trigger-btn:disabled { background: #ccc; cursor: not-allowed; opacity: 0.7; }
+    #booking-widget-wrapper .trigger-btn:hover:not(:disabled) { background: #005a96; }
+
+    /* مودال */
+    #booking-widget-wrapper .modal-overlay {
+        position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+        background: rgba(0,0,0,0.6); z-index: 9999;
+        display: none; justify-content: center; align-items: center;
+        backdrop-filter: blur(2px);
+    }
+    #booking-widget-wrapper .modal-overlay.open { display: flex; }
+
+    #booking-widget-wrapper .modal-box {
+        background: white; padding: 25px; border-radius: 12px;
+        width: 90%; max-width: 450px; position: relative; border: 1px solid #ddd;
+    }
+
+    #booking-widget-wrapper .close-icon {
+        position: absolute; left: 20px; top: 20px; font-size: 28px; cursor: pointer; color: #333; line-height: 1;
+    }
+
+    /* باکس اطلاعات */
+    #booking-widget-wrapper .info-box {
+        background: #f2f9ff; padding: 15px; border-radius: 8px; 
+        margin-bottom: 25px; font-size: 1rem; color: #444; border: 1px solid #e6f2fa;
+    }
+    #booking-widget-wrapper .info-row { display: flex; justify-content: space-between; margin-bottom: 8px; }
+    
+    #booking-widget-wrapper .price-row {
+        color: #0070BB; border-top: 1px solid #ddd; padding-top: 10px; margin-top: 10px; margin-bottom: 0; font-size: 1.1em;
+    }
+
+    /* فرم */
+    #booking-widget-wrapper .inp-group { margin-bottom: 18px; }
+    #booking-widget-wrapper .inp-label { display: block; margin-bottom: 8px; font-weight: bold; font-size: 1rem; color: #333; }
+    #booking-widget-wrapper .inp-field {
+        width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 8px; 
+        font-size: 16px; background: #fff; font-family: inherit;
+    }
+    #booking-widget-wrapper .inp-field:focus { outline: none; border-color: #0070BB; }
+    
+    #booking-widget-wrapper .final-btn {
+        width: 100%; padding: 14px; background: #0070BB; color: white; 
+        border: none; border-radius: 8px; cursor: pointer; 
+        font-size: 1.1rem; font-weight: bold; margin-top: 10px;
+    }
+    #booking-widget-wrapper .final-btn:disabled { background: #999; cursor: default; }
+    #booking-widget-wrapper .err-txt { color: #d32f2f; font-size: 0.9rem; display: none; margin-top: 5px; }
+    #booking-widget-wrapper h3 { font-size: 1.3rem; margin-bottom: 20px; color: #333; }
+  </style>
+
+  <div class="trigger-container">
+    <button id="bookBtn" class="trigger-btn" disabled>ثبت درخواست رزرو</button>
+  </div>
+
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal-box">
+      <div class="close-icon" id="closeModal">&times;</div>
+      <h3 style="margin-top:0; border-bottom:2px solid #0070BB; display:inline-block; padding-bottom:10px;">اطلاعات رزرو</h3>
+      
+      <div class="info-box">
+          <div class="info-row"><span>تاریخ ورود:</span> <span id="sStart" style="font-weight:bold">-</span></div>
+          <div class="info-row"><span>تاریخ خروج:</span> <span id="sEnd" style="font-weight:bold">-</span></div>
+          <div class="info-row"><span>مدت اقامت:</span> <span id="sNights" style="font-weight:bold">0 شب</span></div>
+          
+          <div class="info-row price-row">
+             <span style="font-weight:bold">مبلغ قابل پرداخت:</span> 
+             <span id="sTotalPrice" style="font-weight:bold;">0 تومان</span>
+          </div>
+      </div>
+
+      <form id="reqForm">
+        <div class="inp-group">
+          <label class="inp-label">نام و نام خانوادگی</label>
+          <input type="text" id="nameInp" class="inp-field" placeholder="مثال: علی محمدی" required>
+        </div>
+        <div class="inp-group">
+          <label class="inp-label">شماره همراه</label>
+          <input type="tel" id="phoneInp" class="inp-field" placeholder="0912..." required>
+        </div>
+        <div class="inp-group">
+          <label class="inp-label">تعداد نفرات</label>
+          <input type="number" id="guestInp" class="inp-field" min="1" value="1" required>
+        </div>
+        <button type="submit" id="finalBtn" class="final-btn">ثبت نهایی درخواست</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script>
+(function() {
+  var bookBtn = document.getElementById('bookBtn');
+  var modal = document.getElementById('modalOverlay');
+  var close = document.getElementById('closeModal');
+  var form = document.getElementById('reqForm');
+  var finalBtn = document.getElementById('finalBtn');
+  var guestInp = document.getElementById('guestInp');
+  
+  var sStart = document.getElementById('sStart');
+  var sEnd = document.getElementById('sEnd');
+  var sNights = document.getElementById('sNights');
+  var sTotalPrice = document.getElementById('sTotalPrice');
+
+  var bookingState = {};
+  
+  function formatMoney(num) {
+      if(!num) return '0';
+      return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  }
+
+  // دریافت اطلاعات از تقویم
+  window.addEventListener('calendar-update', function(e) {
+    bookingState = e.detail;
+    if(bookingState.startDate && bookingState.endDate && bookingState.nightsCount > 0) {
+        bookBtn.disabled = false;
+        sStart.innerText = bookingState.startDate;
+        sEnd.innerText = bookingState.endDate;
+        sNights.innerText = bookingState.nightsCount + ' شب';
+        
+        var total = bookingState.totalPrice || 0;
+        sTotalPrice.innerText = formatMoney(total) + ' تومان';
+    } else {
+        bookBtn.disabled = true;
+    }
+  });
+
+  // باز و بسته کردن مودال
+  bookBtn.onclick = function() { modal.className += ' open'; };
+  function closeModalFunc() { modal.className = modal.className.replace(' open', ''); }
+  close.onclick = closeModalFunc;
+  modal.onclick = function(e) { if(e.target === modal) closeModalFunc(); };
+  
+  // ارسال فرم
+  form.onsubmit = function(e) {
+    e.preventDefault();
+
+    try {
+        var guestName = document.getElementById('nameInp').value;
+        var guestPhone = document.getElementById('phoneInp').value;
+        var guestCount = document.getElementById('guestInp').value;
+
+        // دریافت شناسه ملک به صورت ایمن
+        var propId = "${$ctx.params.property_id}";
+
+        var apiPayload = {
+            property_id: propId,
+            name: guestName,
+            phone: guestPhone,
+            count: guestCount,
+            startDate: bookingState.startDate,
+            endDate: bookingState.endDate,
+            totalPrice: bookingState.totalPrice,
+            nights: bookingState.nightsCount
+        };
+
+        finalBtn.innerText = 'در حال ارسال...';
+        finalBtn.disabled = true;
+        finalBtn.style.opacity = '0.7';
+
+        fetch('https://automation.rentamon.com/webhook/direct-booking/booking', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(apiPayload)
+        })
+        .then(function(response) {
+            if (response.ok) {
+                finalBtn.innerText = 'درخواست با موفقیت ثبت شد';
+                finalBtn.style.background = '#4CAF50';
+                finalBtn.style.opacity = '1';
+                
+                setTimeout(function() {
+                    closeModalFunc();
+                    finalBtn.innerText = 'ثبت نهایی درخواست';
+                    finalBtn.style.background = '#0070BB';
+                    finalBtn.disabled = false;
+                    form.reset();
+                }, 2000);
+            } else {
+                throw new Error('Server Error');
+            }
+        })
+        .catch(function(error) {
+            console.error('Submission Error:', error);
+            finalBtn.innerText = 'خطا. مجدد تلاش کنید';
+            finalBtn.style.background = '#d32f2f';
+            finalBtn.disabled = false;
+        });
+
+    } catch (err) {
+        console.error('Internal Error:', err);
+        alert('متاسفانه خطایی رخ داد. لطفا صفحه را رفرش کنید.');
+    }
+  };
+})();
+</script>
+`;
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return "";
+                            }
+                            throw e;
+                          }
+                        })()}
+                      />
+                    </div>
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        sty.freeBox___1JsbU
+                      )}
+                    >
+                      <Embed
+                        className={classNames(
+                          "__wab_instance",
+                          sty.embedHtml__pvc7O
+                        )}
+                        code={
+                          '<div style="width: 100%; display: flex; justify-content: center;">\r\n  <style>\r\n    .divar-static-btn {\r\n      /* \u062a\u063a\u06cc\u06cc\u0631\u0627\u062a \u0627\u0635\u0644\u06cc \u0628\u0631\u0627\u06cc \u062d\u0627\u0644\u062a Secondary */\r\n      background-color: white; /* \u067e\u0633\u200c\u0632\u0645\u06cc\u0646\u0647 \u0633\u0641\u06cc\u062f (\u062a\u0648 \u062e\u0627\u0644\u06cc) */\r\n      color: #a62626; /* \u0645\u062a\u0646 \u0642\u0631\u0645\u0632 */\r\n      border: 1px solid #a62626; /* \u0628\u0648\u0631\u062f\u0631 \u0642\u0631\u0645\u0632 */\r\n      \r\n      border-radius: 4px;\r\n      padding: 10px 10px;\r\n      font-size: 14px;\r\n      font-weight: bold;\r\n      width: 100%;\r\n      cursor: pointer;\r\n      font-family: inherit;\r\n      /* \u0633\u0627\u06cc\u0647 \u0631\u0627 \u0628\u0631\u0627\u06cc \u062f\u06a9\u0645\u0647 \u062b\u0627\u0646\u0648\u06cc\u0647 \u062d\u0630\u0641 \u06a9\u0631\u062f\u0645 \u062a\u0627 \u0641\u0644\u062a\u200c\u062a\u0631 \u0628\u0627\u0634\u062f (\u0627\u062e\u062a\u06cc\u0627\u0631\u06cc) */\r\n      box-shadow: none; \r\n      transition: all 0.2s ease;\r\n    }\r\n    \r\n    .divar-static-btn:hover {\r\n      /* \u062d\u0627\u0644\u062a \u0647\u0627\u0648\u0631: \u06cc\u06a9 \u067e\u0633\u200c\u0632\u0645\u06cc\u0646\u0647 \u062e\u06cc\u0644\u06cc \u0631\u0648\u0634\u0646 \u0642\u0631\u0645\u0632 \u0648 \u062a\u06cc\u0631\u0647\u200c\u062a\u0631 \u0634\u062f\u0646 \u0628\u0648\u0631\u062f\u0631 */\r\n      background-color: #fcf2f2; \r\n      border-color: #851e1e;\r\n      color: #851e1e;\r\n    }\r\n    \r\n    .divar-static-btn:active {\r\n      transform: scale(0.98);\r\n      background-color: #fceceb; /* \u0631\u0646\u06af \u06a9\u0645\u06cc \u062a\u06cc\u0631\u0647\u200c\u062a\u0631 \u0645\u0648\u0642\u0639 \u06a9\u0644\u06cc\u06a9 */\r\n    }\r\n  </style>\r\n\r\n  <button onclick="window.location.href=\'https://open-platform-redirect.divar.ir/completion\'" class="divar-static-btn">\r\n\u0628\u0627\u0632\u06af\u0634\u062a  </button>\r\n</div>'
+                        }
+                      />
+                    </div>
+                  </div>
+                </div>
+              </ApiRequest>
+            </div>
+          ) : null}
         </div>
       </div>
     </React.Fragment>
@@ -179,8 +1251,21 @@ function PlasmicGuestCalendar__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "availabilityCalendar"],
-  availabilityCalendar: ["availabilityCalendar"]
+  root: [
+    "root",
+    "availabilityCalendar",
+    "main",
+    "profile2",
+    "img",
+    "apiRequest2",
+    "apiRequest"
+  ],
+  availabilityCalendar: ["availabilityCalendar"],
+  main: ["main", "profile2", "img", "apiRequest2", "apiRequest"],
+  profile2: ["profile2", "img"],
+  img: ["img"],
+  apiRequest2: ["apiRequest2", "apiRequest"],
+  apiRequest: ["apiRequest"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -188,6 +1273,11 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   availabilityCalendar: typeof AvailabilityCalendar;
+  main: "div";
+  profile2: typeof ApiRequest;
+  img: typeof PlasmicImg__;
+  apiRequest2: typeof ApiRequest;
+  apiRequest: typeof ApiRequest;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -253,6 +1343,11 @@ export const PlasmicGuestCalendar = Object.assign(
   {
     // Helper components rendering sub-elements
     availabilityCalendar: makeNodeComponent("availabilityCalendar"),
+    main: makeNodeComponent("main"),
+    profile2: makeNodeComponent("profile2"),
+    img: makeNodeComponent("img"),
+    apiRequest2: makeNodeComponent("apiRequest2"),
+    apiRequest: makeNodeComponent("apiRequest"),
 
     // Metadata about props expected for PlasmicGuestCalendar
     internalVariantProps: PlasmicGuestCalendar__VariantProps,

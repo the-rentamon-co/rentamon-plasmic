@@ -790,7 +790,7 @@ function Plasmicمشکلاتاجارهروزانهدرایران__RenderFunc(pro
                             sty.link__wcBza
                           )}
                           component={Link}
-                          href={"https://rentamon.com/list-your-property/"}
+                          href={`/list-your-property`}
                           platform={"nextjs"}
                         >
                           <React.Fragment>
@@ -851,7 +851,7 @@ function Plasmicمشکلاتاجارهروزانهدرایران__RenderFunc(pro
                             sty.link__cTYh
                           )}
                           component={Link}
-                          href={"rentamon.com/short-term-rental"}
+                          href={`/short-term-rental`}
                           platform={"nextjs"}
                         >
                           {
