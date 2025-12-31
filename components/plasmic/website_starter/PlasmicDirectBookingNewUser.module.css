@@ -257,6 +257,37 @@
     font-size: 16px;
   }
 }
+.text__jZuuS {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 700;
+  color: #5b6771;
+  padding-top: 16px;
+  margin-bottom: 0px;
+  min-width: 0;
+}
+@media (max-width: 1200px) {
+  .text__jZuuS {
+    font-size: 20px;
+  }
+}
+@media (max-width: 500px) {
+  .text__jZuuS {
+    font-size: 13px;
+    padding-top: 12px;
+    color: #203647;
+    font-weight: 500;
+  }
+}
+@media (max-width: 350px) {
+  .text__jZuuS {
+    font-size: 16px;
+  }
+}
 .link {
   animation: none;
   display: flex;

@@ -457,7 +457,7 @@ function PlasmicAvailabilityCalendar__RenderFunc(props: {
   
   <div class="legend" id="legend-section" style="display:none;">
     <div class="legend-item"><div class="legend-box box-free"></div><span>خالی</span></div>
-    <div class="legend-item"><div class="legend-box box-blocked"></div><span>غیرفعال / پر</span></div>
+    <div class="legend-item"><div class="legend-box box-blocked"></div><span>پر</span></div>
   </div>
 </div>
 

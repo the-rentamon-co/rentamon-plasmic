@@ -305,8 +305,19 @@ function PlasmicDirectBookingNewUser__RenderFunc(props: {
                   )}
                 >
                   {hasVariant(globalVariants, "screen", "mobile")
-                    ? "\u0628\u0631\u0627\u06cc \u0641\u0639\u0627\u0644 \u06a9\u0631\u062f\u0646 \u0627\u0641\u0632\u0648\u0646\u0647 \u0644\u0627\u0632\u0645\u0647 \u062f\u0627\u062e\u0644 \u0645\u06cc\u0627\u0646 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u0631\u0648 \u062b\u0628\u062a \u06a9\u0646\u06cc!"
-                    : "\u0628\u0631\u0627\u06cc \u0641\u0639\u0627\u0644 \u06a9\u0631\u062f\u0646 \u0627\u0641\u0632\u0648\u0646\u0647 \u0644\u0627\u0632\u0645\u0647 \u062f\u0627\u062e\u0644 \u0645\u06cc\u0627\u0646 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u0631\u0648 \u062b\u0628\u062a \u06a9\u0646\u06cc!"}
+                    ? "\u0628\u0631\u0627\u06cc \u0641\u0639\u0627\u0644 \u06a9\u0631\u062f\u0646 \u0627\u0628\u0632\u0627\u0631\u06a9\u060c \u0644\u0627\u0632\u0645\u0647 \u062f\u0631 \u00ab\u0645\u06cc\u0627\u0646\u00bb \u062b\u0628\u062a\u200c\u0646\u0627\u0645 \u06a9\u0646\u06cc"
+                    : "\u0628\u0631\u0627\u06cc \u0641\u0639\u0627\u0644 \u06a9\u0631\u062f\u0646 \u0627\u0628\u0632\u0627\u0631\u06a9\u060c \u0644\u0627\u0632\u0645\u0647 \u062f\u0631 \u00ab\u0645\u06cc\u0627\u0646\u00bb \u062b\u0628\u062a\u200c\u0646\u0627\u0645 \u06a9\u0646\u06cc"}
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__jZuuS
+                  )}
+                >
+                  {hasVariant(globalVariants, "screen", "mobile")
+                    ? "\u0628\u0639\u062f \u0627\u0632 \u0641\u0639\u0627\u0644 \u0634\u062f\u0646 \u062f\u0631 \u00ab\u0645\u06cc\u0627\u0646\u00bb \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u0627\u06cc\u0646 \u0627\u0628\u0632\u0627\u0631\u06a9 \u0631\u0648 \u0641\u0639\u0627\u0644 \u06a9\u0646\u06cc\u060c \u062a\u0627 \u0631\u0648\u0632\u0647\u0627\u06cc \u062e\u0627\u0644\u06cc \u062a\u0642\u0648\u06cc\u0645 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0634\u0645\u0627 \u0628\u0647 \u0645\u0647\u0645\u0627\u0646\u0627\u0646 \u062f\u06cc\u0648\u0627\u0631 \u0646\u0645\u0627\u06cc\u0634 \u062f\u0627\u062f\u0647 \u0628\u0634\u0647."
+                    : "\u0628\u0639\u062f \u0627\u0632 \u0641\u0639\u0627\u0644 \u0634\u062f\u0646 \u062f\u0631 \u00ab\u0645\u06cc\u0627\u0646\u00bb \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u0627\u06cc\u0646 \u0627\u0628\u0632\u0627\u0631\u06a9 \u0631\u0648 \u0641\u0639\u0627\u0644 \u06a9\u0646\u06cc\u060c \u062a\u0627 \u0631\u0648\u0632\u0647\u0627\u06cc \u062e\u0627\u0644\u06cc \u062a\u0642\u0648\u06cc\u0645 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0634\u0645\u0627 \u0628\u0647 \u0645\u0647\u0645\u0627\u0646\u0627\u0646 \u062f\u06cc\u0648\u0627\u0631 \u0646\u0645\u0627\u06cc\u0634 \u062f\u0627\u062f\u0647 \u0628\u0634\u0647."}
                 </div>
               </div>
             </div>
@@ -335,7 +346,7 @@ function PlasmicDirectBookingNewUser__RenderFunc(props: {
                       ? (() => {
                           const actionArgs = {
                             customFunction: async () => {
-                              return window.open(
+                              return window.location.replace(
                                 "https://sso.miaan.ir/web/index.html?callback=https://miaan.ir/panel/"
                               );
                             }
@@ -381,9 +392,8 @@ function PlasmicDirectBookingNewUser__RenderFunc(props: {
                       ? (() => {
                           const actionArgs = {
                             customFunction: async () => {
-                              return window.open(
-                                "https://open-platform-redirect.divar.ir/completion"
-                              );
+                              return (window.location.href =
+                                "https://open-platform-redirect.divar.ir/completion");
                             }
                           };
                           return (({ customFunction }) => {

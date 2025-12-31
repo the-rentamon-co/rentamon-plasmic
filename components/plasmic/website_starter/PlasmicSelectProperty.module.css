@@ -228,7 +228,7 @@
 }
 @media (max-width: 500px) {
   .freeBox__zxxOc {
-    display: flex;
+    display: none;
   }
 }
 .freeBox__q5W0 {
