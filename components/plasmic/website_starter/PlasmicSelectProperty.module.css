@@ -157,7 +157,6 @@
   overflow: hidden;
 }
 .freeBox__zxxOc {
-  display: flex;
   flex-direction: column;
   position: relative;
   width: 100%;
@@ -170,9 +169,15 @@
   outline-style: dashed;
   outline-color: #dfdfdf;
   min-width: 0;
+  display: none;
   border-radius: 8px;
   padding: 8px;
   margin: 8px;
+}
+@media (max-width: 500px) {
+  .freeBox__zxxOc {
+    display: flex;
+  }
 }
 .freeBox__q5W0 {
   display: flex;

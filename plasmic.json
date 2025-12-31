@@ -3233,6 +3233,34 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/low-cost-furnishing-guide"
+        },
+        {
+          "id": "6CFXY27Y4RPh",
+          "name": "NewPage4",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicNewPage4.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/new-page-3.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicNewPage4.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/new-page-3"
+        },
+        {
+          "id": "immtBa3TQWti",
+          "name": "DirectBookingNewUser",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicDirectBookingNewUser.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/direct-booking/select-property/new-user.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicDirectBookingNewUser.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/direct-booking/select-property/new-user"
         }
       ],
       "icons": [

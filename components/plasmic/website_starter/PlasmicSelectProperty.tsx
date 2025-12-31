@@ -736,7 +736,9 @@ function PlasmicSelectProperty__RenderFunc(props: {
                             ? "https://sso.miaan.ir"
                             : "https://sso.rentamon.com";
                           const currentUrl = window.location.href;
-                          const redirectUrl = `${ssoBase}/web/index.html?callback=${encodeURIComponent(currentUrl)}`;
+                          const ssoLoginUrl = `${ssoBase}/web/index.html?callback=${encodeURIComponent(currentUrl)}`;
+                          const newUserRedirect =
+                            "https://miaan.ir/direct-booking/select-property/new-user";
                           const refreshUrl = `${ssoBase}/auth/refresh`;
                           async function refreshToken() {
                             if (isPlasmicStudio) return;
@@ -787,9 +789,9 @@ function PlasmicSelectProperty__RenderFunc(props: {
                           if (!ussoAccessAvailable && !isPlasmicStudio) {
                             if (!ussoRefreshAvailable) {
                               console.log(
-                                "No refresh token, redirecting to SSO..."
+                                "No refresh token, redirecting to New User Page..."
                               );
-                              return (window.location.href = redirectUrl);
+                              return (window.location.href = newUserRedirect);
                             } else {
                               console.log("Attempting to refresh token...");
                               return fetch(refreshUrl, {
@@ -814,7 +816,7 @@ function PlasmicSelectProperty__RenderFunc(props: {
                                     "Error refreshing token, redirecting:",
                                     error
                                   );
-                                  window.location.href = redirectUrl;
+                                  window.location.href = ssoLoginUrl;
                                 });
                             }
                           }
