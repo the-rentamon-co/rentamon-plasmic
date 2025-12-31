@@ -1290,6 +1290,7 @@
 @media (max-width: 500px) {
   .roadmap {
     animation: none;
+    display: flex;
   }
 }
 .roadmapmodal:global(.__wab_instance) {
