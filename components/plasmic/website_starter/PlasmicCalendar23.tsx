@@ -223,7 +223,7 @@ function PlasmicCalendar23__RenderFunc(props: {
     () =>
       Object.assign(
         {
-          isFirstVisit: true,
+          isFirstVisit: false,
           reservationsMode: false
         },
         Object.fromEntries(
