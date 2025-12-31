@@ -2,9 +2,9 @@
 // This file is owned by you, feel free to edit as you see fit.
 import * as React from "react";
 import { PageParamsProvider as PageParamsProvider__ } from "@plasmicapp/react-web/lib/host";
-import GlobalContextsProvider from "../../../components/plasmic/website_starter/PlasmicGlobalContextsProvider";
+import GlobalContextsProvider from "../../../../components/plasmic/website_starter/PlasmicGlobalContextsProvider";
 
-import { PlasmicGuestCalendar } from "../../../components/plasmic/website_starter/PlasmicGuestCalendar";
+import { PlasmicGuestCalendar } from "../../../../components/plasmic/website_starter/PlasmicGuestCalendar";
 import { useRouter } from "next/router";
 
 function GuestCalendar() {
