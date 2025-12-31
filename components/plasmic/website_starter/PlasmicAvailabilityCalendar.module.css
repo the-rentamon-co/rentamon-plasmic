@@ -49,6 +49,24 @@
     min-width: 0;
   }
 }
+.apiRequest:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+}
+.text__kdGc0 {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  min-width: 0;
+}
+.text__tqcsw {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  min-width: 0;
+}
 .embedHtml___6Hk5Q:global(.__wab_instance) {
   animation: none;
   max-width: 100%;
@@ -58,6 +76,7 @@
   min-width: 0;
 }
 .freeBox__zsDpO {
+  display: flex;
   flex-direction: row;
   position: relative;
   width: 100%;
@@ -66,7 +85,6 @@
   justify-content: center;
   align-items: center;
   min-width: 0;
-  display: none;
   padding: 8px;
 }
 .freeBox__nQcpA {
