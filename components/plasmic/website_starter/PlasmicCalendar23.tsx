@@ -71,7 +71,6 @@ import { Input } from "@/fragment/components/input"; // plasmic-import: fpBkcjHl
 import { AntdInputNumber } from "@plasmicpkgs/antd5/skinny/registerInput";
 import { AntdButton } from "@plasmicpkgs/antd5/skinny/registerButton";
 import { Textarea } from "@/fragment/components/textarea"; // plasmic-import: kolEMmvCWkE1/codeComponent
-import { Embed } from "@plasmicpkgs/plasmic-basic-components";
 import Select from "../../Select"; // plasmic-import: GgjLI5qwOqwu/component
 import { _useGlobalVariants } from "./plasmic"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectModule
 import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/styleTokensProvider
@@ -163,9 +162,6 @@ export type PlasmicCalendar23__OverridesType = {
   buttonYes?: Flex__<"div">;
   newDiscountModal?: Flex__<typeof AntdModal>;
   textInput4?: Flex__<typeof TextInput>;
-  roadmap?: Flex__<"div">;
-  roadmapmodal?: Flex__<typeof AntdModal>;
-  embedHtml?: Flex__<typeof Embed>;
   tourguide?: Flex__<"div">;
   block3?: Flex__<"div">;
   color?: Flex__<"div">;
@@ -815,25 +811,6 @@ function PlasmicCalendar23__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
 
         refName: "reserveData"
-      },
-      {
-        path: "roadmapmodal.open",
-        type: "private",
-        variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) =>
-          (() => {
-            try {
-              return $props.isFirstVisit === true;
-            } catch (e) {
-              if (
-                e instanceof TypeError ||
-                e?.plasmicType === "PlasmicUndefinedDataError"
-              ) {
-                return true;
-              }
-              throw e;
-            }
-          })()
       }
     ],
     [$props, $ctx, $refs]
@@ -9923,354 +9900,6 @@ function PlasmicCalendar23__RenderFunc(props: {
           </div>
         </AntdModal>
       </div>
-      <div
-        data-plasmic-name={"roadmap"}
-        data-plasmic-override={overrides.roadmap}
-        className={classNames(projectcss.all, sty.roadmap)}
-      >
-        <AntdModal
-          data-plasmic-name={"roadmapmodal"}
-          data-plasmic-override={overrides.roadmapmodal}
-          className={classNames("__wab_instance", sty.roadmapmodal)}
-          defaultStylesClassName={classNames(
-            projectcss.root_reset,
-            projectcss.plasmic_default_styles,
-            projectcss.plasmic_mixins,
-            styleTokensClassNames
-          )}
-          hideFooter={true}
-          maskClosable={false}
-          modalContentClassName={classNames({
-            [sty["pcls__VZurawZeGiJ"]]: true
-          })}
-          modalScopeClassName={sty["roadmapmodal__modal"]}
-          onOpenChange={async (...eventArgs: any) => {
-            generateStateOnChangeProp($state, ["roadmapmodal", "open"]).apply(
-              null,
-              eventArgs
-            );
-          }}
-          open={generateStateValueProp($state, ["roadmapmodal", "open"])}
-          title={
-            <div className={classNames(projectcss.all, sty.freeBox__uTrQd)}>
-              <PlasmicImg__
-                alt={""}
-                className={classNames(sty.img__y7UA6)}
-                displayHeight={"20px"}
-                displayMaxHeight={"none"}
-                displayMaxWidth={"100%"}
-                displayMinHeight={"0"}
-                displayMinWidth={"0"}
-                displayWidth={"auto"}
-                loading={"lazy"}
-                onClick={async event => {
-                  const $steps = {};
-
-                  $steps["updateAlertModalOpen"] = true
-                    ? (() => {
-                        const actionArgs = {
-                          variable: {
-                            objRoot: $state,
-                            variablePath: ["roadmapmodal", "open"]
-                          },
-                          operation: 0
-                        };
-                        return (({
-                          variable,
-                          value,
-                          startIndex,
-                          deleteCount
-                        }) => {
-                          if (!variable) {
-                            return;
-                          }
-                          const { objRoot, variablePath } = variable;
-
-                          $stateSet(objRoot, variablePath, value);
-                          return value;
-                        })?.apply(null, [actionArgs]);
-                      })()
-                    : undefined;
-                  if (
-                    $steps["updateAlertModalOpen"] != null &&
-                    typeof $steps["updateAlertModalOpen"] === "object" &&
-                    typeof $steps["updateAlertModalOpen"].then === "function"
-                  ) {
-                    $steps["updateAlertModalOpen"] =
-                      await $steps["updateAlertModalOpen"];
-                  }
-                }}
-                src={{
-                  src: "/plasmic/website_starter/images/image48.svg",
-                  fullWidth: 18,
-                  fullHeight: 18,
-                  aspectRatio: 1
-                }}
-              />
-            </div>
-          }
-          trigger={null}
-          width={"400"}
-          wrapClassName={classNames({ [sty["pcls_QwgxvhyGcYAr"]]: true })}
-        >
-          <div
-            className={classNames(projectcss.all, sty.freeBox__jDwt)}
-            onClick={async event => {
-              const $steps = {};
-            }}
-          >
-            <div
-              className={classNames(projectcss.all, sty.freeBox__dsTvu)}
-              onClick={async event => {
-                const $steps = {};
-
-                $steps["updateAlertModalOpen"] = true
-                  ? (() => {
-                      const actionArgs = {
-                        variable: {
-                          objRoot: $state,
-                          variablePath: ["roadmapmodal", "open"]
-                        },
-                        operation: 0
-                      };
-                      return (({
-                        variable,
-                        value,
-                        startIndex,
-                        deleteCount
-                      }) => {
-                        if (!variable) {
-                          return;
-                        }
-                        const { objRoot, variablePath } = variable;
-
-                        $stateSet(objRoot, variablePath, value);
-                        return value;
-                      })?.apply(null, [actionArgs]);
-                    })()
-                  : undefined;
-                if (
-                  $steps["updateAlertModalOpen"] != null &&
-                  typeof $steps["updateAlertModalOpen"] === "object" &&
-                  typeof $steps["updateAlertModalOpen"].then === "function"
-                ) {
-                  $steps["updateAlertModalOpen"] =
-                    await $steps["updateAlertModalOpen"];
-                }
-
-                $steps["runCode"] = true
-                  ? (() => {
-                      const actionArgs = {
-                        customFunction: async () => {
-                          return (() => {
-                            function setCookie(name, value, hours) {
-                              let expires = "";
-                              if (hours) {
-                                const date = new Date();
-                                date.setTime(
-                                  date.getTime() + hours * 60 * 60 * 1000
-                                );
-                                expires = "; expires=" + date.toUTCString();
-                              }
-                              document.cookie =
-                                name +
-                                "=" +
-                                (value || "") +
-                                expires +
-                                "; path=/";
-                            }
-                            return setCookie("miaan", "true", 24);
-                          })();
-                        }
-                      };
-                      return (({ customFunction }) => {
-                        return customFunction();
-                      })?.apply(null, [actionArgs]);
-                    })()
-                  : undefined;
-                if (
-                  $steps["runCode"] != null &&
-                  typeof $steps["runCode"] === "object" &&
-                  typeof $steps["runCode"].then === "function"
-                ) {
-                  $steps["runCode"] = await $steps["runCode"];
-                }
-              }}
-            >
-              <PlasmicImg__
-                alt={""}
-                className={classNames(sty.img__xM4LT)}
-                displayHeight={"auto"}
-                displayMaxHeight={"none"}
-                displayMaxWidth={"100%"}
-                displayMinHeight={"0"}
-                displayMinWidth={"0"}
-                displayWidth={"16px"}
-                loading={"lazy"}
-                src={{
-                  src: "/plasmic/website_starter/images/image24.svg",
-                  fullWidth: 20,
-                  fullHeight: 18,
-                  aspectRatio: 1.111111
-                }}
-              />
-            </div>
-          </div>
-          <div className={classNames(projectcss.all, sty.freeBox___4C0Bj)}>
-            <div className={classNames(projectcss.all, sty.freeBox__hDd9)}>
-              <Embed
-                data-plasmic-name={"embedHtml"}
-                data-plasmic-override={overrides.embedHtml}
-                className={classNames("__wab_instance", sty.embedHtml)}
-                code={
-                  '<div class="miaan-wrapper">\r\n  \r\n  <div class="miaan-header">\r\n    <h3>\u0633\u0641\u0631\u062a \u0631\u0648 \u062f\u0631 \u00ab\u0645\u06cc\u0627\u0646\u00bb \u0634\u0631\u0648\u0639 \u06a9\u0646</h3>\r\n    <p>\u06f6 \u0642\u062f\u0645 \u0633\u0627\u062f\u0647 \u062a\u0627 \u0645\u062f\u06cc\u0631\u06cc\u062a \u0631\u0627\u062d\u062a \u0648 \u0628\u06cc\u200c\u062f\u0631\u062f\u0633\u0631</p>\r\n  </div>\r\n\r\n  <div class="miaan-progress-section">\r\n    <div class="progress-info">\r\n      <span id="progressText">\u0645\u0631\u062d\u0644\u0647 \u06f2 \u0627\u0632 \u06f6</span>\r\n      <span id="progressPercent">\u06f3\u06f3\u066a</span>\r\n    </div>\r\n    <div class="progress-track">\r\n      <div class="progress-fill" id="miaanProgressBar" style="width: 33%;"></div>\r\n    </div>\r\n  </div>\r\n\r\n  <div class="miaan-container">\r\n    \r\n    <div class="miaan-card completed" onclick="toggleMiaanStep(this, 1)">\r\n      <div class="card-head">\r\n        <div class="step-badge">\r\n          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">\r\n            <polyline points="20 6 9 17 4 12"></polyline>\r\n          </svg>\r\n        </div>\r\n        <span class="step-label">\u062b\u0628\u062a \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647</span>\r\n      </div>\r\n      <div class="card-content">\r\n        <div class="content-inner">\r\n          <p>\u062a\u0648\u06cc \u06a9\u0645\u062a\u0631 \u0627\u0632 \u06cc\u0647 \u062f\u0642\u06cc\u0642\u0647 \u0627\u0633\u0645 \u0648 \u0639\u06a9\u0633 \u0648\u0627\u062d\u062f\u062a\u0648 \u0628\u0630\u0627\u0631 \u062a\u0627 \u0628\u0647 \u0628\u0631\u0646\u0627\u0645\u0647 \u00ab\u0645\u06cc\u0627\u0646\u00bb \u0627\u0636\u0627\u0641\u0647 \u0634\u0647.</p>\r\n          <a href="https://miaan.ir/properties/" target="_blank" class="miaan-btn">\u0628\u0632\u0646 \u0628\u0631\u06cc\u0645</a>\r\n        </div>\r\n      </div>\r\n    </div>\r\n\r\n    <div class="miaan-card active" onclick="toggleMiaanStep(this, 2)">\r\n      <div class="card-head">\r\n        <div class="step-badge">\u06f2</div>\r\n        <span class="step-label">\u0627\u062a\u0635\u0627\u0644 \u0628\u0647 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627</span>\r\n      </div>\r\n      <div class="card-content">\r\n        <div class="content-inner">\r\n          <p>\u06a9\u062f \u0648\u0631\u0648\u062f \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0631\u0648 \u0648\u0627\u0631\u062f \u06a9\u0646 \u062a\u0627 \u0647\u0645\u0647 \u0686\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0647\u0645\u0647 \u062c\u0627 \u0634\u0628\u06cc\u0647 \u0647\u0645 \u0628\u0634\u0647.</p>\r\n          <a href="https://miaan.ir/websites/" target="_blank" class="miaan-btn">\u0627\u062a\u0635\u0627\u0644 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627</a>\r\n        </div>\r\n      </div>\r\n    </div>\r\n\r\n    <div class="miaan-card" onclick="toggleMiaanStep(this, 3)">\r\n      <div class="card-head">\r\n        <div class="step-badge">\u06f3</div>\r\n        <span class="step-label">\u0631\u0632\u0631\u0648 \u0622\u0646\u06cc</span>\r\n      </div>\r\n      <div class="card-content">\r\n        <div class="content-inner">\r\n          <p>\u062e\u06cc\u0627\u0644\u062a \u0631\u0627\u062d\u062a! \u062a\u0627\u06cc\u06cc\u062f \u0631\u0648 \u0628\u0631\u062f\u0627\u0631 \u062a\u0627 \u0645\u0633\u0627\u0641\u0631 \u0622\u0646\u06cc \u0631\u0632\u0631\u0648 \u06a9\u0646\u0647\u060c \u0645\u06cc\u0627\u0646 \u0647\u0645 \u0646\u0645\u06cc\u200c\u0630\u0627\u0631\u0647 \u062a\u062f\u0627\u062e\u0644\u06cc \u067e\u06cc\u0634 \u0628\u06cc\u0627\u062f.</p>\r\n          <a href="https://miaan.ir/instant/" target="_blank" class="miaan-btn">\u0622\u0646\u06cc \u06a9\u0646</a>\r\n        </div>\r\n      </div>\r\n    </div>\r\n\r\n    <div class="miaan-card" onclick="toggleMiaanStep(this, 4)">\r\n      <div class="card-head">\r\n        <div class="step-badge">\u06f4</div>\r\n        <span class="step-label">\u0645\u062f\u06cc\u0631\u06cc\u062a \u0631\u0632\u0631\u0648\u0647\u0627</span>\r\n      </div>\r\n      <div class="card-content">\r\n        <div class="content-inner">\r\n          <p>\u0628\u0628\u06cc\u0646 \u06a9\u06cc \u0645\u06cc\u0627\u062f\u060c \u06a9\u06cc \u0645\u06cc\u200c\u0631\u0647\u060c \u067e\u0648\u0644\u0634 \u062a\u0633\u0648\u06cc\u0647 \u0634\u062f\u0647 \u06cc\u0627 \u0646\u0647. \u0647\u0645\u0647 \u0686\u06cc \u0632\u06cc\u0631 \u0646\u0638\u0631\u062a\u0647.</p>\r\n          <a href="https://miaan.ir/bookings/#today" target="_blank" class="miaan-btn">\u0628\u0631\u0631\u0633\u06cc \u0631\u0632\u0631\u0648\u0647\u0627</a>\r\n        </div>\r\n      </div>\r\n    </div>\r\n\r\n    <div class="miaan-card" onclick="toggleMiaanStep(this, 5)">\r\n      <div class="card-head">\r\n        <div class="step-badge">\u06f5</div>\r\n        <span class="step-label">\u0622\u067e\u062f\u06cc\u062a \u062a\u0642\u0648\u06cc\u0645</span>\r\n      </div>\r\n      <div class="card-content">\r\n        <div class="content-inner">\r\n          <p>\u0642\u06cc\u0645\u062a \u06cc\u0627 \u067e\u0631 \u0648 \u062e\u0627\u0644\u06cc \u0628\u0648\u062f\u0646 \u0631\u0648 \u0627\u06cc\u0646\u200c\u062c\u0627 \u062a\u063a\u06cc\u06cc\u0631 \u0628\u062f\u06cc\u060c \u062f\u0631 \u0647\u0645\u0647 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u0627\u0639\u0645\u0627\u0644 \u0645\u06cc\u200c\u0634\u0647.</p>\r\n          <a href="https://miaan.ir/panel/" target="_blank" class="miaan-btn">\u062a\u0642\u0648\u06cc\u0645 \u0645\u0646</a>\r\n        </div>\r\n      </div>\r\n    </div>\r\n\r\n    <div class="miaan-card" onclick="toggleMiaanStep(this, 6)">\r\n      <div class="card-head">\r\n        <div class="step-badge">\u06f6</div>\r\n        <span class="step-label">\u06af\u0648\u0634\u200c\u0628\u0647\u200c\u0632\u0646\u06af \u0628\u0627\u0634</span>\r\n      </div>\r\n      <div class="card-content">\r\n        <div class="content-inner">\r\n          <p>\u0631\u0628\u0627\u062a \u0631\u0648 \u0631\u0648\u0634\u0646 \u06a9\u0646 \u062a\u0627 \u062a\u0648\u06cc \u062a\u0644\u06af\u0631\u0627\u0645 \u06cc\u0627 \u0628\u0644\u0647\u060c \u0647\u0645\u0648\u0646 \u0644\u062d\u0638\u0647 \u0627\u0632 \u0631\u0632\u0631\u0648\u0647\u0627 \u0648 \u062a\u0633\u0648\u06cc\u0647\u200c\u0647\u0627 \u0628\u0627\u062e\u0628\u0631 \u0628\u0634\u06cc.</p>\r\n          <a href="https://t.me/rentamon_notification_bot" target="_blank" class="miaan-btn">\u0641\u0639\u0627\u0644\u200c\u0633\u0627\u0632\u06cc \u0631\u0628\u0627\u062a</a>\r\n        </div>\r\n      </div>\r\n    </div>\r\n\r\n  </div>\r\n</div>\r\n\r\n<style>\r\n  /* --- Global Reset & Fonts --- */\r\n  .miaan-wrapper * {\r\n    box-sizing: border-box;\r\n  }\r\n  .miaan-wrapper {\r\n    font-family: \'Estedad\', \'Tahoma\', sans-serif;\r\n    direction: rtl;\r\n    width: 100%;\r\n    max-width: 800px;\r\n    margin: 0 auto;\r\n    padding: 20px;\r\n  }\r\n\r\n  /* --- Header --- */\r\n  .miaan-header {\r\n    text-align: center;\r\n    margin-bottom: 20px;\r\n  }\r\n  .miaan-header h3 {\r\n    margin: 0 0 10px;\r\n    font-size: 1.5rem;\r\n    color: #333;\r\n    font-weight: 800;\r\n  }\r\n  .miaan-header p {\r\n    margin: 0;\r\n    color: #666;\r\n  }\r\n\r\n  /* --- Progress Bar Styles --- */\r\n  .miaan-progress-section {\r\n    margin-bottom: 30px;\r\n  }\r\n  \r\n  .progress-info {\r\n    display: flex;\r\n    justify-content: space-between;\r\n    font-size: 0.9rem;\r\n    font-weight: 700;\r\n    color: #0000F7;\r\n    margin-bottom: 8px;\r\n  }\r\n\r\n  .progress-track {\r\n    width: 100%;\r\n    height: 12px;\r\n    background-color: #e0e0e0;\r\n    border-radius: 30px;\r\n    overflow: hidden;\r\n  }\r\n\r\n  .progress-fill {\r\n    height: 100%;\r\n    background-color: #0000F7;\r\n    border-radius: 30px;\r\n    transition: width 0.5s cubic-bezier(0.25, 1, 0.5, 1);\r\n  }\r\n\r\n  /* --- Container Layout --- */\r\n  .miaan-container {\r\n    display: flex;\r\n    flex-direction: column;\r\n    gap: 15px;\r\n  }\r\n\r\n  /* --- Card Styling --- */\r\n  .miaan-card {\r\n    background: #f8f9fa;\r\n    border: 1px solid #e1e4e8;\r\n    border-radius: 30px;\r\n    overflow: hidden;\r\n    cursor: pointer;\r\n    transition: all 0.4s ease;\r\n    \r\n    width: 100%;\r\n    padding: 15px 25px;\r\n    display: flex;\r\n    flex-direction: column;\r\n    max-height: 70px;\r\n  }\r\n\r\n  /* Active State */\r\n  .miaan-card.active {\r\n    background: #fff;\r\n    border-color: #0000F7;\r\n    box-shadow: 0 5px 20px rgba(0, 0, 247, 0.08);\r\n    max-height: 400px;\r\n    padding: 25px;\r\n  }\r\n\r\n  /* --- Card Header --- */\r\n  .card-head {\r\n    display: flex;\r\n    align-items: center;\r\n    width: 100%;\r\n    margin-bottom: 0;\r\n    transition: margin 0.3s;\r\n  }\r\n  \r\n  .miaan-card.active .card-head {\r\n    margin-bottom: 15px;\r\n    border-bottom: 1px solid #f0f0f0;\r\n    padding-bottom: 15px;\r\n  }\r\n\r\n  .step-badge {\r\n    width: 32px;\r\n    height: 32px;\r\n    border-radius: 50%;\r\n    border: 2px solid #ccc;\r\n    color: #999;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    font-weight: bold;\r\n    font-size: 1rem;\r\n    margin-left: 15px;\r\n    transition: 0.3s;\r\n    background: transparent;\r\n    flex-shrink: 0;\r\n  }\r\n\r\n  .miaan-card.active .step-badge {\r\n    background: #0000F7;\r\n    border-color: #0000F7;\r\n    color: white;\r\n  }\r\n\r\n  /* --- New Style: Completed Step --- */\r\n  .miaan-card.completed .step-badge {\r\n    background: #0000F7; /* \u0631\u0646\u06af \u0622\u0628\u06cc \u0628\u0631\u0627\u06cc \u062d\u0627\u0644\u062a \u0627\u0646\u062c\u0627\u0645 \u0634\u062f\u0647 */\r\n    border-color: #0000F7;\r\n    color: white;\r\n  }\r\n\r\n  .step-label {\r\n    font-size: 1.05rem;\r\n    font-weight: 700;\r\n    color: #555;\r\n    transition: 0.3s;\r\n  }\r\n\r\n  .miaan-card.active .step-label {\r\n    color: #0000F7;\r\n  }\r\n  \r\n  /* \u0631\u0646\u06af \u0644\u06cc\u0628\u0644 \u0628\u0631\u0627\u06cc \u0645\u0631\u0627\u062d\u0644 \u062a\u06a9\u0645\u06cc\u0644 \u0634\u062f\u0647 \u0647\u0645 \u0645\u06cc\u200c\u062a\u0648\u0627\u0646\u062f \u0622\u0628\u06cc \u06cc\u0627 \u0645\u0634\u06a9\u06cc \u0628\u0627\u0634\u062f */\r\n  .miaan-card.completed .step-label {\r\n    color: #333; /* \u06cc\u0627 \u0622\u0628\u06cc: #0000F7 */\r\n  }\r\n\r\n  /* --- Content --- */\r\n  .card-content {\r\n    opacity: 0;\r\n    visibility: hidden;\r\n    transition: opacity 0.3s ease 0.1s;\r\n  }\r\n  \r\n  .miaan-card.active .card-content {\r\n    opacity: 1;\r\n    visibility: visible;\r\n  }\r\n\r\n  .card-content p {\r\n    font-size: 0.95rem;\r\n    line-height: 1.8;\r\n    color: #555;\r\n    margin: 0 0 20px 0;\r\n  }\r\n\r\n  .miaan-btn {\r\n    display: inline-block;\r\n    background-color: #0000F7;\r\n    color: #fff;\r\n    text-decoration: none;\r\n    padding: 10px 24px;\r\n    border-radius: 30px;\r\n    font-size: 0.9rem;\r\n    font-weight: 500;\r\n    transition: background 0.3s;\r\n    float: left;\r\n  }\r\n  .miaan-btn:hover {\r\n    background-color: #0000c4;\r\n  }\r\n\r\n</style>\r\n\r\n<script>\r\n  // Utility function to convert English numbers to Persian\r\n  function toPersianNum(num) {\r\n    const persianDigits = [\'\u06f0\', \'\u06f1\', \'\u06f2\', \'\u06f3\', \'\u06f4\', \'\u06f5\', \'\u06f6\', \'\u06f7\', \'\u06f8\', \'\u06f9\'];\r\n    return num.toString().replace(/\\d/g, x => persianDigits[x]);\r\n  }\r\n\r\n  function toggleMiaanStep(element, stepNumber) {\r\n    // 1. Layout Update\r\n    const allCards = document.querySelectorAll(\'.miaan-card\');\r\n    allCards.forEach(card => {\r\n      // \u0641\u0642\u0637 \u0627\u06af\u0631 \u06a9\u0627\u0631\u062a\u06cc \u06a9\u0647 \u06a9\u0644\u06cc\u06a9 \u0634\u062f\u0647 "\u0646\u06cc\u0633\u062a" \u0631\u0627 \u0628\u0628\u0646\u062f\u060c \u0645\u06af\u0631 \u0627\u06cc\u0646\u06a9\u0647 \u0628\u062e\u0648\u0627\u06cc\u0645 \u0686\u0646\u062f\u062a\u0627 \u0628\u0627\u0632 \u0628\u0645\u0648\u0646\u0647\r\n      // \u062f\u0631 \u0627\u06cc\u0646\u062c\u0627 \u0645\u0646\u0637\u0642 \u0622\u06a9\u0627\u0631\u062f\u0626\u0648\u0646\u06cc \u062d\u0641\u0638 \u0634\u062f\u0647 \u0627\u0633\u062a\r\n      if(card !== element) {\r\n        card.classList.remove(\'active\');\r\n      }\r\n    });\r\n    \r\n    // \u0627\u06af\u0631 \u0631\u0648\u06cc \u06a9\u0627\u0631\u062a \u06a9\u0644\u06cc\u06a9 \u0634\u062f\u060c \u0628\u0627\u0632 \u0634\u0648\u062f (\u06cc\u0627 \u0627\u06af\u0631 \u0628\u0627\u0632 \u0628\u0648\u062f \u0628\u0633\u062a\u0647 \u0646\u0634\u0648\u062f\u060c \u0637\u0628\u0642 \u0645\u0646\u0637\u0642 \u0642\u0628\u0644\u06cc \u0641\u0642\u0637 \u06a9\u0644\u0627\u0633 \u0627\u0636\u0627\u0641\u0647 \u0645\u06cc\u06a9\u0646\u062f)\r\n    element.classList.add(\'active\');\r\n\r\n    // 2. Progress Calculation\r\n    const totalSteps = 6;\r\n    const percentage = Math.round((stepNumber / totalSteps) * 100);\r\n    \r\n    // 3. Update Visuals\r\n    const progressBar = document.getElementById(\'miaanProgressBar\');\r\n    if (progressBar) {\r\n      progressBar.style.width = percentage + \'%\';\r\n    }\r\n\r\n    // 4. Update Text with Persian Numbers\r\n    const progressText = document.getElementById(\'progressText\');\r\n    const progressPercent = document.getElementById(\'progressPercent\');\r\n    \r\n    if (progressText) {\r\n      // "\u0645\u0631\u062d\u0644\u0647 \u06f4 \u0627\u0632 \u06f6"\r\n      progressText.innerText = \'\u0645\u0631\u062d\u0644\u0647 \' + toPersianNum(stepNumber) + \' \u0627\u0632 \' + toPersianNum(totalSteps);\r\n    }\r\n    if (progressPercent) {\r\n      // "\u06f6\u06f7\u066a"\r\n      progressPercent.innerText = toPersianNum(percentage) + \'\u066a\';\r\n    }\r\n  }\r\n</script>'
-                }
-              />
-            </div>
-            <div className={classNames(projectcss.all, sty.freeBox__mgjlM)}>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  sty.freeBox__luAcQ,
-                  hasVariant(globalVariants, "screen", "smallMobile")
-                    ? "clickable"
-                    : undefined
-                )}
-                onClick={async event => {
-                  const $steps = {};
-
-                  $steps["updateAlertModalOpen"] = true
-                    ? (() => {
-                        const actionArgs = {
-                          variable: {
-                            objRoot: $state,
-                            variablePath: ["roadmapmodal", "open"]
-                          },
-                          operation: 0,
-                          value: false
-                        };
-                        return (({
-                          variable,
-                          value,
-                          startIndex,
-                          deleteCount
-                        }) => {
-                          if (!variable) {
-                            return;
-                          }
-                          const { objRoot, variablePath } = variable;
-
-                          $stateSet(objRoot, variablePath, value);
-                          return value;
-                        })?.apply(null, [actionArgs]);
-                      })()
-                    : undefined;
-                  if (
-                    $steps["updateAlertModalOpen"] != null &&
-                    typeof $steps["updateAlertModalOpen"] === "object" &&
-                    typeof $steps["updateAlertModalOpen"].then === "function"
-                  ) {
-                    $steps["updateAlertModalOpen"] =
-                      await $steps["updateAlertModalOpen"];
-                  }
-                }}
-              >
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__jVwzC
-                  )}
-                >
-                  {"\u062e\u06cc\u0644\u06cc \u062e\u0628"}
-                </div>
-              </div>
-            </div>
-            <Button
-              className={classNames("__wab_instance", sty.button__qCuB)}
-              onClick={async event => {
-                const $steps = {};
-
-                $steps["runCode"] = true
-                  ? (() => {
-                      const actionArgs = {
-                        customFunction: async () => {
-                          return (() => {
-                            function setCookie(name, value, hours) {
-                              let expires = "";
-                              if (hours) {
-                                const date = new Date();
-                                date.setTime(
-                                  date.getTime() + hours * 60 * 60 * 1000
-                                );
-                                expires = "; expires=" + date.toUTCString();
-                              }
-                              document.cookie =
-                                name +
-                                "=" +
-                                (value || "") +
-                                expires +
-                                "; path=/";
-                            }
-                            return setCookie("alertModal", "true", 24);
-                          })();
-                        }
-                      };
-                      return (({ customFunction }) => {
-                        return customFunction();
-                      })?.apply(null, [actionArgs]);
-                    })()
-                  : undefined;
-                if (
-                  $steps["runCode"] != null &&
-                  typeof $steps["runCode"] === "object" &&
-                  typeof $steps["runCode"].then === "function"
-                ) {
-                  $steps["runCode"] = await $steps["runCode"];
-                }
-              }}
-            >
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text___50Om8
-                )}
-                onClick={async event => {
-                  const $steps = {};
-
-                  $steps["runCode"] = true
-                    ? (() => {
-                        const actionArgs = {
-                          customFunction: async () => {
-                            return (() => {
-                              return window.open(
-                                "https://app.rentamon.com/ai-assistant/",
-                                "_blank"
-                              );
-                            })();
-                          }
-                        };
-                        return (({ customFunction }) => {
-                          return customFunction();
-                        })?.apply(null, [actionArgs]);
-                      })()
-                    : undefined;
-                  if (
-                    $steps["runCode"] != null &&
-                    typeof $steps["runCode"] === "object" &&
-                    typeof $steps["runCode"].then === "function"
-                  ) {
-                    $steps["runCode"] = await $steps["runCode"];
-                  }
-                }}
-              >
-                {"\u0628\u0627\u0634\u0647"}
-              </div>
-            </Button>
-          </div>
-        </AntdModal>
-      </div>
       {(
         hasVariant(globalVariants, "screen", "mobile")
           ? (() => {
@@ -11920,9 +11549,6 @@ const PlasmicDescendants = {
     "buttonYes",
     "newDiscountModal",
     "textInput4",
-    "roadmap",
-    "roadmapmodal",
-    "embedHtml",
     "tourguide",
     "block3",
     "color",
@@ -12048,9 +11674,6 @@ const PlasmicDescendants = {
   buttonYes: ["buttonYes"],
   newDiscountModal: ["newDiscountModal", "textInput4"],
   textInput4: ["textInput4"],
-  roadmap: ["roadmap", "roadmapmodal", "embedHtml"],
-  roadmapmodal: ["roadmapmodal", "embedHtml"],
-  embedHtml: ["embedHtml"],
   tourguide: [
     "tourguide",
     "block3",
@@ -12178,9 +11801,6 @@ type NodeDefaultElementType = {
   buttonYes: "div";
   newDiscountModal: typeof AntdModal;
   textInput4: typeof TextInput;
-  roadmap: "div";
-  roadmapmodal: typeof AntdModal;
-  embedHtml: typeof Embed;
   tourguide: "div";
   block3: "div";
   color: "div";
@@ -12326,9 +11946,6 @@ export const PlasmicCalendar23 = Object.assign(
     buttonYes: makeNodeComponent("buttonYes"),
     newDiscountModal: makeNodeComponent("newDiscountModal"),
     textInput4: makeNodeComponent("textInput4"),
-    roadmap: makeNodeComponent("roadmap"),
-    roadmapmodal: makeNodeComponent("roadmapmodal"),
-    embedHtml: makeNodeComponent("embedHtml"),
     tourguide: makeNodeComponent("tourguide"),
     block3: makeNodeComponent("block3"),
     color: makeNodeComponent("color"),

@@ -1604,6 +1604,7 @@ function PlasmicProperties__RenderFunc(props: {
                     const actionArgs = {
                       customFunction: async () => {
                         return (() => {
+                          console.log("here");
                           function getCookieValue(cookieName) {
                             const cookies = document.cookie
                               .split(";")
