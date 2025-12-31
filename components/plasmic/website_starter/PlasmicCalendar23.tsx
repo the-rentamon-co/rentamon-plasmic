@@ -5131,7 +5131,7 @@ function PlasmicCalendar23__RenderFunc(props: {
                     return (
                       $state.input.value <= 99999 ||
                       $state.input.value == null ||
-                      $state.input.value >= 30000000
+                      $state.input.value >= 50000000
                     );
                   } catch (e) {
                     if (

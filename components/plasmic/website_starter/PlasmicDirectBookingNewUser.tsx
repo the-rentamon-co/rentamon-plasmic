@@ -92,12 +92,9 @@ export type PlasmicDirectBookingNewUser__OverridesType = {
   profile2?: Flex__<typeof ApiRequest>;
   mainContents?: Flex__<"div">;
   link?: Flex__<"div">;
-  title?: Flex__<"div">;
-  h2?: Flex__<"h2">;
   downloadLinks?: Flex__<"div">;
   directDl?: Flex__<"div">;
   text?: Flex__<"div">;
-  icon?: Flex__<"div">;
   iOs?: Flex__<"div">;
   text2?: Flex__<"div">;
   icon2?: Flex__<"div">;
@@ -306,25 +303,6 @@ function PlasmicDirectBookingNewUser__RenderFunc(props: {
             data-plasmic-override={overrides.mainContents}
             className={classNames(projectcss.all, sty.mainContents)}
           >
-            <div className={classNames(projectcss.all, sty.freeBox__qxeOc)}>
-              <PlasmicImg__
-                alt={""}
-                className={classNames(sty.img___6F9LD)}
-                displayHeight={"auto"}
-                displayMaxHeight={"none"}
-                displayMaxWidth={"100%"}
-                displayMinHeight={"0"}
-                displayMinWidth={"0"}
-                displayWidth={"auto"}
-                loading={"lazy"}
-                src={{
-                  src: "/plasmic/website_starter/images/_404Png2.png",
-                  fullWidth: 442,
-                  fullHeight: 299,
-                  aspectRatio: undefined
-                }}
-              />
-            </div>
             <div className={classNames(projectcss.all, sty.freeBox__znTaS)}>
               <div className={classNames(projectcss.all, sty.freeBox__dOzRb)}>
                 <div
@@ -345,53 +323,6 @@ function PlasmicDirectBookingNewUser__RenderFunc(props: {
               data-plasmic-override={overrides.link}
               className={classNames(projectcss.all, sty.link)}
             >
-              <div className={classNames(projectcss.all, sty.freeBox___3GdG)}>
-                <PlasmicImg__
-                  alt={""}
-                  className={classNames(sty.img__zn1Ck)}
-                  displayHeight={"auto"}
-                  displayMaxHeight={"none"}
-                  displayMaxWidth={
-                    hasVariant(globalVariants, "screen", "mobile")
-                      ? "16%"
-                      : "10%"
-                  }
-                  displayMinHeight={"0"}
-                  displayMinWidth={"0"}
-                  displayWidth={"auto"}
-                  loading={"lazy"}
-                  src={{
-                    src: "/plasmic/website_starter/images/image89.gif",
-                    fullWidth: 480,
-                    fullHeight: 432,
-                    aspectRatio: undefined
-                  }}
-                />
-              </div>
-              <div
-                data-plasmic-name={"title"}
-                data-plasmic-override={overrides.title}
-                className={classNames(projectcss.all, sty.title)}
-              >
-                <div
-                  className={classNames(projectcss.all, sty.freeBox___0Xb20)}
-                >
-                  <h2
-                    data-plasmic-name={"h2"}
-                    data-plasmic-override={overrides.h2}
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.h2,
-                      projectcss.__wab_text,
-                      sty.h2
-                    )}
-                  >
-                    {
-                      "\u0644\u06cc\u0646\u06a9\u200c\u0647\u0627\u06cc \u062f\u0627\u0646\u0644\u0648\u062f \u0628\u0631\u0646\u0627\u0645\u0647 \u0645\u06cc\u0627\u0646"
-                    }
-                  </h2>
-                </div>
-              </div>
               <div
                 data-plasmic-name={"downloadLinks"}
                 data-plasmic-override={overrides.downloadLinks}
@@ -477,33 +408,6 @@ function PlasmicDirectBookingNewUser__RenderFunc(props: {
                         "\u0646\u0633\u062e\u0647 \u0627\u0646\u062f\u0631\u0648\u06cc\u062f"
                       }
                     </div>
-                  </div>
-                  <div
-                    data-plasmic-name={"icon"}
-                    data-plasmic-override={overrides.icon}
-                    className={classNames(projectcss.all, sty.icon)}
-                  >
-                    <PlasmicImg__
-                      alt={""}
-                      className={classNames(sty.img__k47RB)}
-                      displayHeight={"auto"}
-                      displayMaxHeight={"none"}
-                      displayMaxWidth={"100%"}
-                      displayMinHeight={"0"}
-                      displayMinWidth={"36px"}
-                      displayWidth={
-                        hasVariant(globalVariants, "screen", "mobile")
-                          ? "36px"
-                          : "auto"
-                      }
-                      loading={"lazy"}
-                      src={{
-                        src: "/plasmic/website_starter/images/image57.svg",
-                        fullWidth: 46,
-                        fullHeight: 46,
-                        aspectRatio: 1
-                      }}
-                    />
                   </div>
                 </div>
                 <div
@@ -807,12 +711,9 @@ const PlasmicDescendants = {
     "profile2",
     "mainContents",
     "link",
-    "title",
-    "h2",
     "downloadLinks",
     "directDl",
     "text",
-    "icon",
     "iOs",
     "text2",
     "icon2",
@@ -833,12 +734,9 @@ const PlasmicDescendants = {
   mainContents: [
     "mainContents",
     "link",
-    "title",
-    "h2",
     "downloadLinks",
     "directDl",
     "text",
-    "icon",
     "iOs",
     "text2",
     "icon2",
@@ -851,12 +749,9 @@ const PlasmicDescendants = {
   ],
   link: [
     "link",
-    "title",
-    "h2",
     "downloadLinks",
     "directDl",
     "text",
-    "icon",
     "iOs",
     "text2",
     "icon2",
@@ -867,13 +762,10 @@ const PlasmicDescendants = {
     "text5",
     "icon5"
   ],
-  title: ["title", "h2"],
-  h2: ["h2"],
   downloadLinks: [
     "downloadLinks",
     "directDl",
     "text",
-    "icon",
     "iOs",
     "text2",
     "icon2",
@@ -884,9 +776,8 @@ const PlasmicDescendants = {
     "text5",
     "icon5"
   ],
-  directDl: ["directDl", "text", "icon"],
+  directDl: ["directDl", "text"],
   text: ["text"],
-  icon: ["icon"],
   iOs: ["iOs", "text2", "icon2"],
   text2: ["text2"],
   icon2: ["icon2"],
@@ -911,12 +802,9 @@ type NodeDefaultElementType = {
   profile2: typeof ApiRequest;
   mainContents: "div";
   link: "div";
-  title: "div";
-  h2: "h2";
   downloadLinks: "div";
   directDl: "div";
   text: "div";
-  icon: "div";
   iOs: "div";
   text2: "div";
   icon2: "div";
@@ -999,12 +887,9 @@ export const PlasmicDirectBookingNewUser = Object.assign(
     profile2: makeNodeComponent("profile2"),
     mainContents: makeNodeComponent("mainContents"),
     link: makeNodeComponent("link"),
-    title: makeNodeComponent("title"),
-    h2: makeNodeComponent("h2"),
     downloadLinks: makeNodeComponent("downloadLinks"),
     directDl: makeNodeComponent("directDl"),
     text: makeNodeComponent("text"),
-    icon: makeNodeComponent("icon"),
     iOs: makeNodeComponent("iOs"),
     text2: makeNodeComponent("text2"),
     icon2: makeNodeComponent("icon2"),
