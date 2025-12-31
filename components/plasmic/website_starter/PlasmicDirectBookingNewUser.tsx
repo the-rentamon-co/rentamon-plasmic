@@ -95,15 +95,7 @@ export type PlasmicDirectBookingNewUser__OverridesType = {
   downloadLinks?: Flex__<"div">;
   directDl?: Flex__<"div">;
   text?: Flex__<"div">;
-  iOs?: Flex__<"div">;
-  text2?: Flex__<"div">;
-  icon2?: Flex__<"div">;
-  cafeBazar?: Flex__<"div">;
-  text4?: Flex__<"div">;
-  icon4?: Flex__<"div">;
   myket?: Flex__<"div">;
-  text5?: Flex__<"div">;
-  icon5?: Flex__<"div">;
   rentamonFooter?: Flex__<typeof RentamonFooter>;
   navbarRntFooter?: Flex__<typeof NavbarRntFooter>;
   clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
@@ -339,45 +331,26 @@ function PlasmicDirectBookingNewUser__RenderFunc(props: {
                   onClick={async event => {
                     const $steps = {};
 
-                    $steps[
-                      "goToHttpsRentamonLibraryS3IrThrAt1ArvanstorageIrApk2FmiaanV201600ApkVersionId"
-                    ] = true
+                    $steps["runCode"] = true
                       ? (() => {
                           const actionArgs = {
-                            destination:
-                              "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/apk%2Fmiaan-v20-1.6.0.0.apk?versionId="
-                          };
-                          return (({ destination }) => {
-                            if (
-                              typeof destination === "string" &&
-                              destination.startsWith("#")
-                            ) {
-                              document
-                                .getElementById(destination.substr(1))
-                                .scrollIntoView({ behavior: "smooth" });
-                            } else {
-                              __nextRouter?.push(destination);
+                            customFunction: async () => {
+                              return window.open(
+                                "https://sso.miaan.ir/web/index.html?callback=https://miaan.ir/panel/"
+                              );
                             }
+                          };
+                          return (({ customFunction }) => {
+                            return customFunction();
                           })?.apply(null, [actionArgs]);
                         })()
                       : undefined;
                     if (
-                      $steps[
-                        "goToHttpsRentamonLibraryS3IrThrAt1ArvanstorageIrApk2FmiaanV201600ApkVersionId"
-                      ] != null &&
-                      typeof $steps[
-                        "goToHttpsRentamonLibraryS3IrThrAt1ArvanstorageIrApk2FmiaanV201600ApkVersionId"
-                      ] === "object" &&
-                      typeof $steps[
-                        "goToHttpsRentamonLibraryS3IrThrAt1ArvanstorageIrApk2FmiaanV201600ApkVersionId"
-                      ].then === "function"
+                      $steps["runCode"] != null &&
+                      typeof $steps["runCode"] === "object" &&
+                      typeof $steps["runCode"].then === "function"
                     ) {
-                      $steps[
-                        "goToHttpsRentamonLibraryS3IrThrAt1ArvanstorageIrApk2FmiaanV201600ApkVersionId"
-                      ] =
-                        await $steps[
-                          "goToHttpsRentamonLibraryS3IrThrAt1ArvanstorageIrApk2FmiaanV201600ApkVersionId"
-                        ];
+                      $steps["runCode"] = await $steps["runCode"];
                     }
                   }}
                 >
@@ -393,204 +366,8 @@ function PlasmicDirectBookingNewUser__RenderFunc(props: {
                         sty.text__nBqy
                       )}
                     >
-                      {
-                        "\u062f\u0627\u0646\u0644\u0648\u062f \u0645\u0633\u062a\u0642\u06cc\u0645"
-                      }
+                      {"\u062b\u0628\u062a \u0646\u0627\u0645"}
                     </div>
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__rBOot
-                      )}
-                    >
-                      {
-                        "\u0646\u0633\u062e\u0647 \u0627\u0646\u062f\u0631\u0648\u06cc\u062f"
-                      }
-                    </div>
-                  </div>
-                </div>
-                <div
-                  data-plasmic-name={"iOs"}
-                  data-plasmic-override={overrides.iOs}
-                  className={classNames(projectcss.all, sty.iOs, "clickable")}
-                  onClick={async event => {
-                    const $steps = {};
-
-                    $steps["goToSplash"] = true
-                      ? (() => {
-                          const actionArgs = {
-                            destination: `/splash?src=${"web"}`
-                          };
-                          return (({ destination }) => {
-                            if (
-                              typeof destination === "string" &&
-                              destination.startsWith("#")
-                            ) {
-                              document
-                                .getElementById(destination.substr(1))
-                                .scrollIntoView({ behavior: "smooth" });
-                            } else {
-                              __nextRouter?.push(destination);
-                            }
-                          })?.apply(null, [actionArgs]);
-                        })()
-                      : undefined;
-                    if (
-                      $steps["goToSplash"] != null &&
-                      typeof $steps["goToSplash"] === "object" &&
-                      typeof $steps["goToSplash"].then === "function"
-                    ) {
-                      $steps["goToSplash"] = await $steps["goToSplash"];
-                    }
-                  }}
-                >
-                  <div
-                    data-plasmic-name={"text2"}
-                    data-plasmic-override={overrides.text2}
-                    className={classNames(projectcss.all, sty.text2)}
-                  >
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__g4DwL
-                      )}
-                    >
-                      {
-                        "\u0646\u0633\u062e\u0647 \u0648\u0628\u200c\u0627\u067e\u0644\u06cc\u06a9\u06cc\u0634\u0646"
-                      }
-                    </div>
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__ezrM
-                      )}
-                    >
-                      {
-                        "\u067e\u06cc\u0634\u0646\u0647\u0627\u062f \u0628\u0631\u0627\u06cc \u06a9\u0627\u0631\u0628\u0631\u0627\u0646 iOS"
-                      }
-                    </div>
-                  </div>
-                  <div
-                    data-plasmic-name={"icon2"}
-                    data-plasmic-override={overrides.icon2}
-                    className={classNames(projectcss.all, sty.icon2)}
-                  >
-                    <PlasmicImg__
-                      alt={""}
-                      className={classNames(sty.img__wraI4)}
-                      displayHeight={"auto"}
-                      displayMaxHeight={"none"}
-                      displayMaxWidth={
-                        hasVariant(globalVariants, "screen", "mobile")
-                          ? "32px"
-                          : hasVariant(globalVariants, "screen", "tablet")
-                            ? "26px"
-                            : "100%"
-                      }
-                      displayMinHeight={"0"}
-                      displayMinWidth={
-                        hasVariant(globalVariants, "screen", "tablet")
-                          ? "26px"
-                          : "30px"
-                      }
-                      displayWidth={
-                        hasVariant(globalVariants, "screen", "mobile")
-                          ? "100%"
-                          : "auto"
-                      }
-                      loading={"lazy"}
-                      src={{
-                        src: "/plasmic/website_starter/images/image58.svg",
-                        fullWidth: 15,
-                        fullHeight: 15,
-                        aspectRatio: 1
-                      }}
-                    />
-                  </div>
-                </div>
-                <div
-                  data-plasmic-name={"cafeBazar"}
-                  data-plasmic-override={overrides.cafeBazar}
-                  className={classNames(
-                    projectcss.all,
-                    sty.cafeBazar,
-                    "clickable"
-                  )}
-                  onClick={async event => {
-                    const $steps = {};
-
-                    $steps["runCode"] = true
-                      ? (() => {
-                          const actionArgs = {
-                            customFunction: async () => {
-                              return (() => {
-                                return window.open(
-                                  "https://cafebazaar.ir/app/com.rentamon.webview",
-                                  "_blank"
-                                );
-                              })();
-                            }
-                          };
-                          return (({ customFunction }) => {
-                            return customFunction();
-                          })?.apply(null, [actionArgs]);
-                        })()
-                      : undefined;
-                    if (
-                      $steps["runCode"] != null &&
-                      typeof $steps["runCode"] === "object" &&
-                      typeof $steps["runCode"].then === "function"
-                    ) {
-                      $steps["runCode"] = await $steps["runCode"];
-                    }
-                  }}
-                >
-                  <div
-                    data-plasmic-name={"text4"}
-                    data-plasmic-override={overrides.text4}
-                    className={classNames(projectcss.all, sty.text4)}
-                  >
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text___4M0P0
-                      )}
-                    >
-                      {"\u062f\u0631\u06cc\u0627\u0641\u062a \u0627\u0632"}
-                    </div>
-                  </div>
-                  <div
-                    data-plasmic-name={"icon4"}
-                    data-plasmic-override={overrides.icon4}
-                    className={classNames(projectcss.all, sty.icon4)}
-                  >
-                    <PlasmicImg__
-                      alt={""}
-                      className={classNames(sty.img__jGKvx)}
-                      displayHeight={"auto"}
-                      displayMaxHeight={"none"}
-                      displayMaxWidth={"100%"}
-                      displayMinHeight={"0"}
-                      displayMinWidth={"0"}
-                      displayWidth={
-                        hasVariant(globalVariants, "screen", "smallMobile")
-                          ? "110px"
-                          : hasVariant(globalVariants, "screen", "mobile")
-                            ? "114px"
-                            : "auto"
-                      }
-                      loading={"lazy"}
-                      src={{
-                        src: "/plasmic/website_starter/images/image59.svg",
-                        fullWidth: 117,
-                        fullHeight: 52,
-                        aspectRatio: 2.25
-                      }}
-                    />
                   </div>
                 </div>
                 <div
@@ -604,12 +381,9 @@ function PlasmicDirectBookingNewUser__RenderFunc(props: {
                       ? (() => {
                           const actionArgs = {
                             customFunction: async () => {
-                              return (() => {
-                                return window.open(
-                                  "https://myket.ir/app/com.rentamon.webview",
-                                  "_blank"
-                                );
-                              })();
+                              return window.open(
+                                "https://open-platform-redirect.divar.ir/completion"
+                              );
                             }
                           };
                           return (({ customFunction }) => {
@@ -627,46 +401,15 @@ function PlasmicDirectBookingNewUser__RenderFunc(props: {
                   }}
                 >
                   <div
-                    data-plasmic-name={"text5"}
-                    data-plasmic-override={overrides.text5}
-                    className={classNames(projectcss.all, sty.text5)}
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__tFb5U
+                    )}
                   >
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__tFb5U
-                      )}
-                    >
-                      {"\u062f\u0631\u06cc\u0627\u0641\u062a \u0627\u0632"}
-                    </div>
-                  </div>
-                  <div
-                    data-plasmic-name={"icon5"}
-                    data-plasmic-override={overrides.icon5}
-                    className={classNames(projectcss.all, sty.icon5)}
-                  >
-                    <PlasmicImg__
-                      alt={""}
-                      className={classNames(sty.img__aQUy7)}
-                      displayHeight={"auto"}
-                      displayMaxHeight={"none"}
-                      displayMaxWidth={"100%"}
-                      displayMinHeight={"0"}
-                      displayMinWidth={"0"}
-                      displayWidth={
-                        hasVariant(globalVariants, "screen", "mobile")
-                          ? "114px"
-                          : "auto"
-                      }
-                      loading={"lazy"}
-                      src={{
-                        src: "/plasmic/website_starter/images/image60.svg",
-                        fullWidth: 109,
-                        fullHeight: 44,
-                        aspectRatio: 2.477273
-                      }}
-                    />
+                    {
+                      "\u0628\u0627\u0632\u06af\u0634\u062a \u0628\u0647 \u062f\u06cc\u0648\u0627\u0631"
+                    }
                   </div>
                 </div>
               </div>
@@ -714,15 +457,7 @@ const PlasmicDescendants = {
     "downloadLinks",
     "directDl",
     "text",
-    "iOs",
-    "text2",
-    "icon2",
-    "cafeBazar",
-    "text4",
-    "icon4",
     "myket",
-    "text5",
-    "icon5",
     "rentamonFooter",
     "navbarRntFooter",
     "clarityRntComponent",
@@ -737,56 +472,13 @@ const PlasmicDescendants = {
     "downloadLinks",
     "directDl",
     "text",
-    "iOs",
-    "text2",
-    "icon2",
-    "cafeBazar",
-    "text4",
-    "icon4",
-    "myket",
-    "text5",
-    "icon5"
+    "myket"
   ],
-  link: [
-    "link",
-    "downloadLinks",
-    "directDl",
-    "text",
-    "iOs",
-    "text2",
-    "icon2",
-    "cafeBazar",
-    "text4",
-    "icon4",
-    "myket",
-    "text5",
-    "icon5"
-  ],
-  downloadLinks: [
-    "downloadLinks",
-    "directDl",
-    "text",
-    "iOs",
-    "text2",
-    "icon2",
-    "cafeBazar",
-    "text4",
-    "icon4",
-    "myket",
-    "text5",
-    "icon5"
-  ],
+  link: ["link", "downloadLinks", "directDl", "text", "myket"],
+  downloadLinks: ["downloadLinks", "directDl", "text", "myket"],
   directDl: ["directDl", "text"],
   text: ["text"],
-  iOs: ["iOs", "text2", "icon2"],
-  text2: ["text2"],
-  icon2: ["icon2"],
-  cafeBazar: ["cafeBazar", "text4", "icon4"],
-  text4: ["text4"],
-  icon4: ["icon4"],
-  myket: ["myket", "text5", "icon5"],
-  text5: ["text5"],
-  icon5: ["icon5"],
+  myket: ["myket"],
   rentamonFooter: ["rentamonFooter"],
   navbarRntFooter: ["navbarRntFooter"],
   clarityRntComponent: ["clarityRntComponent"],
@@ -805,15 +497,7 @@ type NodeDefaultElementType = {
   downloadLinks: "div";
   directDl: "div";
   text: "div";
-  iOs: "div";
-  text2: "div";
-  icon2: "div";
-  cafeBazar: "div";
-  text4: "div";
-  icon4: "div";
   myket: "div";
-  text5: "div";
-  icon5: "div";
   rentamonFooter: typeof RentamonFooter;
   navbarRntFooter: typeof NavbarRntFooter;
   clarityRntComponent: typeof ClarityRntComponent;
@@ -890,15 +574,7 @@ export const PlasmicDirectBookingNewUser = Object.assign(
     downloadLinks: makeNodeComponent("downloadLinks"),
     directDl: makeNodeComponent("directDl"),
     text: makeNodeComponent("text"),
-    iOs: makeNodeComponent("iOs"),
-    text2: makeNodeComponent("text2"),
-    icon2: makeNodeComponent("icon2"),
-    cafeBazar: makeNodeComponent("cafeBazar"),
-    text4: makeNodeComponent("text4"),
-    icon4: makeNodeComponent("icon4"),
     myket: makeNodeComponent("myket"),
-    text5: makeNodeComponent("text5"),
-    icon5: makeNodeComponent("icon5"),
     rentamonFooter: makeNodeComponent("rentamonFooter"),
     navbarRntFooter: makeNodeComponent("navbarRntFooter"),
     clarityRntComponent: makeNodeComponent("clarityRntComponent"),
