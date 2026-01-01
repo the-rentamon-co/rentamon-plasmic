@@ -2340,6 +2340,16 @@
     min-width: 0;
   }
 }
+@media (max-width: 500px) {
+  .li__ywE0D {
+    color: #444444;
+  }
+}
+@media (max-width: 500px) {
+  .li__dPlPa {
+    color: #444444;
+  }
+}
 .li__stWhX {
   padding-bottom: 0px;
 }
@@ -2348,6 +2358,11 @@
 }
 @media (max-width: 500px) {
   .li__puCGq {
+    color: #444444;
+  }
+}
+@media (max-width: 500px) {
+  .li__k8J4V {
     color: #444444;
   }
 }
@@ -2579,28 +2594,6 @@
 @media (max-width: 350px) {
   .apidog {
     padding-top: 14px;
-  }
-}
-.h2__t2Pgn {
-  padding-top: 12px;
-  font-size: 17px;
-  font-weight: 500;
-  color: #444444;
-}
-@media (max-width: 500px) {
-  .h2__t2Pgn {
-    text-align: center;
-    font-size: 16px;
-  }
-}
-@media (max-width: 350px) {
-  .h2__t2Pgn {
-    line-height: 1.9;
-    font-size: 15px;
-    letter-spacing: 0px;
-    margin-bottom: 0px;
-    padding-top: 16px;
-    padding-bottom: 16px;
   }
 }
 .requestDemo {
