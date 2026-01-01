@@ -3261,6 +3261,20 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/direct-booking/select-property/new-user"
+        },
+        {
+          "id": "WavKunY9bKkc",
+          "name": "Adm",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicAdm.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/adm.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicAdm.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/adm"
         }
       ],
       "icons": [

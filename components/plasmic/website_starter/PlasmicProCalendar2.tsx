@@ -384,7 +384,7 @@ function PlasmicProCalendar2__RenderFunc(props: {
         type: "private",
         variableType: "boolean",
         initFunc: ({ $props, $state, $queries, $ctx }) =>
-          hasVariant(globalVariants, "screen", "mobile") ? false : true
+          hasVariant(globalVariants, "screen", "mobile") ? false : false
       }
     ],
     [$props, $ctx, $refs]
@@ -2703,23 +2703,7 @@ function PlasmicProCalendar2__RenderFunc(props: {
               </div>
             </div>
           </AntdModal>
-          {(
-            hasVariant(globalVariants, "screen", "mobile")
-              ? true
-              : (() => {
-                  try {
-                    return $props.isFirstVisit === true;
-                  } catch (e) {
-                    if (
-                      e instanceof TypeError ||
-                      e?.plasmicType === "PlasmicUndefinedDataError"
-                    ) {
-                      return true;
-                    }
-                    throw e;
-                  }
-                })()
-          ) ? (
+          {(hasVariant(globalVariants, "screen", "mobile") ? true : false) ? (
             <div
               data-plasmic-name={"roadmap"}
               data-plasmic-override={overrides.roadmap}
