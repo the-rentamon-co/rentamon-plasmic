@@ -120,7 +120,7 @@
     margin: 0px;
   }
 }
-.text__u7Oi {
+.text {
   animation: none;
   width: 100%;
   height: auto;
@@ -132,7 +132,7 @@
   min-width: 0;
 }
 @media (max-width: 500px) {
-  .text__u7Oi {
+  .text {
     animation: none;
     max-width: 113.24%;
     font-size: 18px;
@@ -154,16 +154,6 @@
   align-items: center;
   min-width: 0;
   padding: 8px;
-}
-.text__uLfWy {
-  animation: none;
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  font-size: 16px;
-  text-align: center;
-  min-width: 0;
 }
 .freeBox__vaKeo {
   animation: none;
@@ -223,9 +213,4 @@
     flex-direction: column;
     column-gap: 0px;
   }
-}
-.sideEffect:global(.__wab_instance) {
-  animation: none;
-  max-width: 100%;
-  object-fit: cover;
 }

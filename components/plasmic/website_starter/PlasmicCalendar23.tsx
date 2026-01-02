@@ -5250,7 +5250,7 @@ function PlasmicCalendar23__RenderFunc(props: {
                         const actionArgs = {
                           args: [
                             "POST",
-                            "https://replica-api-v2.darkube.app/api/setprice",
+                            "https://api-v2.rentamon.com/api/setprice",
                             undefined,
                             (() => {
                               try {
@@ -9776,7 +9776,7 @@ function PlasmicCalendar23__RenderFunc(props: {
                         const actionArgs = {
                           args: [
                             "POST",
-                            "https://replica-api-v2.darkube.app/api/setdiscount",
+                            "https://api-v2.rentamon.com/api/setdiscount",
                             undefined,
                             (() => {
                               try {

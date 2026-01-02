@@ -60,7 +60,6 @@ import {
 } from "@plasmicapp/react-web/lib/host";
 
 import { Embed } from "@plasmicpkgs/plasmic-basic-components";
-import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
 import { _useGlobalVariants } from "./plasmic"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectModule
 import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/styleTokensProvider
 
@@ -83,9 +82,9 @@ export const PlasmicDivarSuccess__ArgProps = new Array<ArgPropType>();
 export type PlasmicDivarSuccess__OverridesType = {
   root?: Flex__<"div">;
   successful?: Flex__<typeof PlasmicImg__>;
+  text?: Flex__<"div">;
   embedHtml?: Flex__<typeof Embed>;
   button?: Flex__<"div">;
-  sideEffect?: Flex__<typeof SideEffect>;
 };
 
 export interface DefaultDivarSuccessProps {}
@@ -186,10 +185,12 @@ function PlasmicDivarSuccess__RenderFunc(props: {
             </div>
             <div className={classNames(projectcss.all, sty.freeBox__hV0I7)}>
               <div
+                data-plasmic-name={"text"}
+                data-plasmic-override={overrides.text}
                 className={classNames(
                   projectcss.all,
                   projectcss.__wab_text,
-                  sty.text__u7Oi
+                  sty.text
                 )}
               >
                 {hasVariant(globalVariants, "screen", "mobile")
@@ -198,17 +199,6 @@ function PlasmicDivarSuccess__RenderFunc(props: {
               </div>
             </div>
             <div className={classNames(projectcss.all, sty.freeBox__aiXp)}>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__uLfWy
-                )}
-              >
-                {hasVariant(globalVariants, "screen", "mobile")
-                  ? "\u062f\u0631 \u062d\u0627\u0644 \u0627\u0646\u062a\u0642\u0627\u0644 \u0628\u0647 \u062f\u06cc\u0648\u0627\u0631..."
-                  : "\u062f\u0631 \u062d\u0627\u0644 \u0627\u0646\u062a\u0642\u0627\u0644 \u0628\u0647 \u062f\u06cc\u0648\u0627\u0631"}
-              </div>
               <div className={classNames(projectcss.all, sty.freeBox__vaKeo)}>
                 <Embed
                   data-plasmic-name={"embedHtml"}
@@ -226,36 +216,6 @@ function PlasmicDivarSuccess__RenderFunc(props: {
               className={classNames(projectcss.all, sty.button)}
             />
           </div>
-          <SideEffect
-            data-plasmic-name={"sideEffect"}
-            data-plasmic-override={overrides.sideEffect}
-            className={classNames("__wab_instance", sty.sideEffect)}
-            onMount={async () => {
-              const $steps = {};
-
-              $steps["runCode"] = true
-                ? (() => {
-                    const actionArgs = {
-                      customFunction: async () => {
-                        return setTimeout(() => {
-                          window.location.href = `https://open-platform-redirect.divar.ir/completion`;
-                        }, 10000);
-                      }
-                    };
-                    return (({ customFunction }) => {
-                      return customFunction();
-                    })?.apply(null, [actionArgs]);
-                  })()
-                : undefined;
-              if (
-                $steps["runCode"] != null &&
-                typeof $steps["runCode"] === "object" &&
-                typeof $steps["runCode"].then === "function"
-              ) {
-                $steps["runCode"] = await $steps["runCode"];
-              }
-            }}
-          />
         </div>
       </div>
     </React.Fragment>
@@ -263,11 +223,11 @@ function PlasmicDivarSuccess__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "successful", "embedHtml", "button", "sideEffect"],
+  root: ["root", "successful", "text", "embedHtml", "button"],
   successful: ["successful"],
+  text: ["text"],
   embedHtml: ["embedHtml"],
-  button: ["button"],
-  sideEffect: ["sideEffect"]
+  button: ["button"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -275,9 +235,9 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   successful: typeof PlasmicImg__;
+  text: "div";
   embedHtml: typeof Embed;
   button: "div";
-  sideEffect: typeof SideEffect;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -343,9 +303,9 @@ export const PlasmicDivarSuccess = Object.assign(
   {
     // Helper components rendering sub-elements
     successful: makeNodeComponent("successful"),
+    text: makeNodeComponent("text"),
     embedHtml: makeNodeComponent("embedHtml"),
     button: makeNodeComponent("button"),
-    sideEffect: makeNodeComponent("sideEffect"),
 
     // Metadata about props expected for PlasmicDivarSuccess
     internalVariantProps: PlasmicDivarSuccess__VariantProps,

@@ -384,11 +384,9 @@ function PlasmicSelectProperty__RenderFunc(props: {
                         await $steps["invokeGlobalAction"];
                     }
 
-                    $steps["goToPaymentSuccess"] = true
+                    $steps["goToDivarSuccess"] = true
                       ? (() => {
-                          const actionArgs = {
-                            destination: `/payment-success`
-                          };
+                          const actionArgs = { destination: `/divar/success` };
                           return (({ destination }) => {
                             if (
                               typeof destination === "string" &&
@@ -404,12 +402,12 @@ function PlasmicSelectProperty__RenderFunc(props: {
                         })()
                       : undefined;
                     if (
-                      $steps["goToPaymentSuccess"] != null &&
-                      typeof $steps["goToPaymentSuccess"] === "object" &&
-                      typeof $steps["goToPaymentSuccess"].then === "function"
+                      $steps["goToDivarSuccess"] != null &&
+                      typeof $steps["goToDivarSuccess"] === "object" &&
+                      typeof $steps["goToDivarSuccess"].then === "function"
                     ) {
-                      $steps["goToPaymentSuccess"] =
-                        await $steps["goToPaymentSuccess"];
+                      $steps["goToDivarSuccess"] =
+                        await $steps["goToDivarSuccess"];
                     }
                   }}
                 >
@@ -419,7 +417,7 @@ function PlasmicSelectProperty__RenderFunc(props: {
                       sty.embedHtml__uhh6B
                     )}
                     code={
-                      '<div style="width: 100%; display: flex; justify-content: center;">\r\n  \r\n  <style>\r\n    /* \u0627\u0633\u062a\u0627\u06cc\u0644 \u062f\u06a9\u0645\u0647 \u0622\u0628\u06cc */\r\n    .divar-blue-btn {\r\n      background-color: #2727ea; \r\n      color: white; \r\n      border: none; \r\n      border-radius: 8px;\r\n      padding: 12px 24px; \r\n      font-size: 16px; \r\n      font-weight: bold; \r\n      width: 100%;\r\n      cursor: pointer; \r\n      font-family: inherit; \r\n      box-shadow: 0 4px 6px rgba(39, 39, 234, 0.2);\r\n      transition: all 0.2s ease; \r\n      display: flex; \r\n      align-items: center; \r\n      justify-content: center;\r\n    }\r\n    .divar-blue-btn:hover { background-color: #1a1ab8; }\r\n    .divar-blue-btn:active { transform: scale(0.98); }\r\n  </style>\r\n\r\n  <button type="button" onclick="window.goBackToDivar()" class="divar-blue-btn">\r\n    \u062b\u0628\u062a\r\n  </button>\r\n\r\n</div>\r\n\r\n<script>\r\n  window.goBackToDivar = function() {\r\n    // 1. \u062e\u0648\u0627\u0646\u062f\u0646 return_url \u0627\u0632 \u0622\u062f\u0631\u0633 \u0645\u0631\u0648\u0631\u06af\u0631\r\n    var urlParams = new URLSearchParams(window.location.search);\r\n    var returnUrl = urlParams.get(\'return_url\');\r\n\r\n    // 2. \u0644\u06cc\u0646\u06a9 \u0627\u0633\u062a\u0627\u0646\u062f\u0627\u0631\u062f \u0641\u0627\u0644\u200c\u0628\u06a9 (\u0645\u062d\u0636 \u0627\u062d\u062a\u06cc\u0627\u0637)\r\n    var fallbackUrl = "https://open-platform-redirect.divar.ir/completion";\r\n\r\n    console.log("Redirecting to:", returnUrl || fallbackUrl);\r\n\r\n    if (returnUrl) {\r\n        // \u0627\u06af\u0631 \u062f\u06cc\u0648\u0627\u0631 \u0644\u06cc\u0646\u06a9 \u062f\u0627\u062f\u0647 \u0628\u0648\u062f\u060c \u0628\u0647 \u0647\u0645\u0627\u0646 \u0628\u0631\u06af\u0631\u062f\r\n        // decodeURIComponent \u0628\u0631\u0627\u06cc \u0627\u0637\u0645\u06cc\u0646\u0627\u0646 \u0627\u0632 \u0627\u06cc\u0646\u06a9\u0647 \u0622\u062f\u0631\u0633 \u0627\u0646\u06a9\u062f \u0634\u062f\u0647 \u062f\u0631\u0633\u062a \u06a9\u0627\u0631 \u06a9\u0646\u062f\r\n        window.location.href = decodeURIComponent(returnUrl);\r\n    } else {\r\n        // \u0627\u06af\u0631 \u0646\u0628\u0648\u062f\u060c \u0628\u0647 \u0644\u06cc\u0646\u06a9 \u0639\u0645\u0648\u0645\u06cc \u062f\u06cc\u0648\u0627\u0631 \u0628\u0631\u0648\r\n        window.location.href = fallbackUrl;\r\n    }\r\n  };\r\n</script>'
+                      '<div style="width: 100%; display: flex; justify-content: center;">\r\n  \r\n  <style>\r\n    /* \u0627\u0633\u062a\u0627\u06cc\u0644 \u062f\u06a9\u0645\u0647 \u0622\u0628\u06cc */\r\n    .divar-blue-btn {\r\n      background-color: #2727ea; \r\n      color: white; \r\n      border: none; \r\n      border-radius: 8px;\r\n      padding: 12px 24px; \r\n      font-size: 16px; \r\n      font-weight: bold; \r\n      width: 100%;\r\n      cursor: pointer; \r\n      font-family: inherit; \r\n      box-shadow: 0 4px 6px rgba(39, 39, 234, 0.2);\r\n      transition: all 0.2s ease; \r\n      display: flex; \r\n      align-items: center; \r\n      justify-content: center;\r\n    }\r\n    .divar-blue-btn:hover { background-color: #1a1ab8; }\r\n    .divar-blue-btn:active { transform: scale(0.98); }\r\n  </style>\r\n\r\n  <button type="button" onclick="window.goBackToDivar()" class="divar-blue-btn">\r\n    \u062b\u0628\u062a\r\n  </button>\r\n\r\n</div>\r\n'
                     }
                   />
                 </div>
