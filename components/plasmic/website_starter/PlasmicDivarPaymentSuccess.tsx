@@ -59,7 +59,6 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
-import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
 import { Embed } from "@plasmicpkgs/plasmic-basic-components";
 import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
 import { _useGlobalVariants } from "./plasmic"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectModule
@@ -85,8 +84,6 @@ export const PlasmicDivarPaymentSuccess__ArgProps = new Array<ArgPropType>();
 export type PlasmicDivarPaymentSuccess__OverridesType = {
   root?: Flex__<"div">;
   successful?: Flex__<typeof PlasmicImg__>;
-  apiRequest?: Flex__<typeof ApiRequest>;
-  img?: Flex__<typeof PlasmicImg__>;
   embedHtml?: Flex__<typeof Embed>;
   button?: Flex__<"div">;
   sideEffect?: Flex__<typeof SideEffect>;
@@ -134,42 +131,6 @@ function PlasmicDivarPaymentSuccess__RenderFunc(props: {
   const $refs = refsRef.current;
 
   const globalVariants = _useGlobalVariants();
-
-  const stateSpecs: Parameters<typeof useDollarState>[0] = React.useMemo(
-    () => [
-      {
-        path: "apiRequest.data",
-        type: "private",
-        variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
-
-        refName: "apiRequest"
-      },
-      {
-        path: "apiRequest.error",
-        type: "private",
-        variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
-
-        refName: "apiRequest"
-      },
-      {
-        path: "apiRequest.loading",
-        type: "private",
-        variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
-
-        refName: "apiRequest"
-      }
-    ],
-    [$props, $ctx, $refs]
-  );
-  const $state = useDollarState(stateSpecs, {
-    $props,
-    $ctx,
-    $queries: {},
-    $refs
-  });
 
   const styleTokensClassNames = _useStyleTokens();
 
@@ -233,101 +194,10 @@ function PlasmicDivarPaymentSuccess__RenderFunc(props: {
                 )}
               >
                 {hasVariant(globalVariants, "screen", "mobile")
-                  ? "\u067e\u0631\u062f\u0627\u062e\u062a \u0628\u0627 \u0645\u0648\u0641\u0642\u06cc\u062a \u0627\u0646\u062c\u0627\u0645 \u0634\u062f"
-                  : "\u067e\u0631\u062f\u0627\u062e\u062a \u0634\u0645\u0627 \u0628\u0627 \u0645\u0648\u0641\u0642\u06cc\u062a \u0627\u0646\u062c\u0627\u0645 \u0634\u062f"}
+                  ? "\u0627\u0628\u0632\u0627\u0631\u06a9 \u0628\u0631\u0627\u06cc \u0634\u0645\u0627 \u0641\u0639\u0627\u0644 \u0634\u062f"
+                  : "\u0627\u0628\u0632\u0627\u0631\u06a9 \u0628\u0631\u0627\u06cc \u0634\u0645\u0627 \u0641\u0639\u0627\u0644 \u0634\u062f"}
               </div>
             </div>
-            <ApiRequest
-              data-plasmic-name={"apiRequest"}
-              data-plasmic-override={overrides.apiRequest}
-              body={(() => {
-                try {
-                  return $ctx.query.pid;
-                } catch (e) {
-                  if (
-                    e instanceof TypeError ||
-                    e?.plasmicType === "PlasmicUndefinedDataError"
-                  ) {
-                    return undefined;
-                  }
-                  throw e;
-                }
-              })()}
-              children={null}
-              className={classNames("__wab_instance", sty.apiRequest)}
-              errorDisplay={
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__y6Dyx
-                  )}
-                >
-                  {"Error fetching data"}
-                </div>
-              }
-              loadingDisplay={
-                <PlasmicImg__
-                  data-plasmic-name={"img"}
-                  data-plasmic-override={overrides.img}
-                  alt={""}
-                  className={classNames(sty.img)}
-                  displayHeight={"76px"}
-                  displayMaxHeight={"none"}
-                  displayMaxWidth={"100%"}
-                  displayMinHeight={"0"}
-                  displayMinWidth={"0"}
-                  displayWidth={"auto"}
-                  loading={"lazy"}
-                  src={
-                    "https://rentamon.com/wp-content/uploads/2024/03/loading-1.gif"
-                  }
-                />
-              }
-              method={"POST"}
-              onError={async (...eventArgs: any) => {
-                generateStateOnChangeProp($state, [
-                  "apiRequest",
-                  "error"
-                ]).apply(null, eventArgs);
-              }}
-              onLoading={async (...eventArgs: any) => {
-                generateStateOnChangeProp($state, [
-                  "apiRequest",
-                  "loading"
-                ]).apply(null, eventArgs);
-              }}
-              onSuccess={async (...eventArgs: any) => {
-                generateStateOnChangeProp($state, ["apiRequest", "data"]).apply(
-                  null,
-                  eventArgs
-                );
-              }}
-              ref={ref => {
-                $refs["apiRequest"] = ref;
-              }}
-              url={(() => {
-                try {
-                  return (() => {
-                    const isMiaan =
-                      window.location.hostname.includes("miaan.ir");
-                    const gatewayBase = isMiaan
-                      ? "https://gateway.miaan.ir"
-                      : "https://gateway.rentamon.com";
-                    return `${gatewayBase}/webhook/4aee429f-0a3e-4306-a4d7-eddbd49cfea5`;
-                  })();
-                } catch (e) {
-                  if (
-                    e instanceof TypeError ||
-                    e?.plasmicType === "PlasmicUndefinedDataError"
-                  ) {
-                    return undefined;
-                  }
-                  throw e;
-                }
-              })()}
-            />
-
             <div className={classNames(projectcss.all, sty.freeBox__aiXp)}>
               <div
                 className={classNames(
@@ -368,11 +238,9 @@ function PlasmicDivarPaymentSuccess__RenderFunc(props: {
                 ? (() => {
                     const actionArgs = {
                       customFunction: async () => {
-                        return (() => {
-                          return setTimeout(() => {
-                            window.location.href = `https://open-platform-redirect.divar.ir/completion`;
-                          }, 10000);
-                        })();
+                        return setTimeout(() => {
+                          window.location.href = `https://open-platform-redirect.divar.ir/completion`;
+                        }, 10000);
                       }
                     };
                     return (({ customFunction }) => {
@@ -396,18 +264,8 @@ function PlasmicDivarPaymentSuccess__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: [
-    "root",
-    "successful",
-    "apiRequest",
-    "img",
-    "embedHtml",
-    "button",
-    "sideEffect"
-  ],
+  root: ["root", "successful", "embedHtml", "button", "sideEffect"],
   successful: ["successful"],
-  apiRequest: ["apiRequest", "img"],
-  img: ["img"],
   embedHtml: ["embedHtml"],
   button: ["button"],
   sideEffect: ["sideEffect"]
@@ -418,8 +276,6 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   successful: typeof PlasmicImg__;
-  apiRequest: typeof ApiRequest;
-  img: typeof PlasmicImg__;
   embedHtml: typeof Embed;
   button: "div";
   sideEffect: typeof SideEffect;
@@ -488,8 +344,6 @@ export const PlasmicDivarPaymentSuccess = Object.assign(
   {
     // Helper components rendering sub-elements
     successful: makeNodeComponent("successful"),
-    apiRequest: makeNodeComponent("apiRequest"),
-    img: makeNodeComponent("img"),
     embedHtml: makeNodeComponent("embedHtml"),
     button: makeNodeComponent("button"),
     sideEffect: makeNodeComponent("sideEffect"),
