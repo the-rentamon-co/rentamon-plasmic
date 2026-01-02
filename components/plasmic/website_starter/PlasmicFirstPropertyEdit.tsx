@@ -1465,7 +1465,7 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
                           const cookies = document.cookie.split(";");
                           for (let i = 0; i < cookies.length; i++) {
                             const [key, value] = cookies[i].trim().split("=");
-                            if (key === "source" && value === "divar") {
+                            if (key === "from" && value === "divar") {
                               return true;
                             }
                           }
@@ -1786,7 +1786,7 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
                                   const [key, value] = cookies[i]
                                     .trim()
                                     .split("=");
-                                  if (key === "source" && value === "divar") {
+                                  if (key === "from" && value === "divar") {
                                     return true;
                                   }
                                 }
