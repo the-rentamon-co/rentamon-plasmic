@@ -383,6 +383,34 @@ function PlasmicSelectProperty__RenderFunc(props: {
                       $steps["invokeGlobalAction"] =
                         await $steps["invokeGlobalAction"];
                     }
+
+                    $steps["goToPaymentSuccess"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            destination: `/payment-success`
+                          };
+                          return (({ destination }) => {
+                            if (
+                              typeof destination === "string" &&
+                              destination.startsWith("#")
+                            ) {
+                              document
+                                .getElementById(destination.substr(1))
+                                .scrollIntoView({ behavior: "smooth" });
+                            } else {
+                              __nextRouter?.push(destination);
+                            }
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["goToPaymentSuccess"] != null &&
+                      typeof $steps["goToPaymentSuccess"] === "object" &&
+                      typeof $steps["goToPaymentSuccess"].then === "function"
+                    ) {
+                      $steps["goToPaymentSuccess"] =
+                        await $steps["goToPaymentSuccess"];
+                    }
                   }}
                 >
                   <Embed
