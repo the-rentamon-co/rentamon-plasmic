@@ -45,26 +45,6 @@
     grid-column: 4;
   }
 }
-.embedHtml:global(.__wab_instance) {
-  animation: none;
-  max-width: 100%;
-  object-fit: cover;
-}
-@media (max-width: 1200px) {
-  .embedHtml:global(.__wab_instance) {
-    animation: none;
-  }
-}
-@media (max-width: 500px) {
-  .embedHtml:global(.__wab_instance) {
-    animation: none;
-  }
-}
-@media (max-width: 350px) {
-  .embedHtml:global(.__wab_instance) {
-    animation: none;
-  }
-}
 .freeBox__btynj {
   display: flex;
   flex-direction: row;
@@ -581,4 +561,8 @@
 .faviconRntComponent:global(.__wab_instance):global(.__wab_instance) {
   max-width: 100%;
   display: none;
+}
+.embedHtml:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
 }

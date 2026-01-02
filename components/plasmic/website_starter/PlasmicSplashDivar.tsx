@@ -59,7 +59,7 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
-import { Embed } from "@plasmicpkgs/plasmic-basic-components";
+import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
 import { _useGlobalVariants } from "./plasmic"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectModule
 import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/styleTokensProvider
 
@@ -85,7 +85,7 @@ export type PlasmicSplashDivar__OverridesType = {
   root?: Flex__<"div">;
   center?: Flex__<"div">;
   svg?: Flex__<"svg">;
-  embedHtml?: Flex__<typeof Embed>;
+  sideEffect?: Flex__<typeof SideEffect>;
 };
 
 export interface DefaultSplashDivarProps {}
@@ -366,13 +366,48 @@ function PlasmicSplashDivar__RenderFunc(props: {
               </div>
             </div>
           </div>
-          <Embed
-            data-plasmic-name={"embedHtml"}
-            data-plasmic-override={overrides.embedHtml}
-            className={classNames("__wab_instance", sty.embedHtml)}
-            code={
-              "<div id=\"auth-loader\" style=\"position:fixed; inset:0; background:white; z-index:9999; display:flex; flex-direction:column; align-items:center; justify-content:center; font-family:sans-serif;\">\r\n  <div style=\"width:40px; height:40px; border:4px solid #eee; border-top-color:#2727ea; border-radius:50%; animation:spin 1s linear infinite;\"></div>\r\n  <p style=\"margin-top:20px; color:#666; font-size:12px;\">\u062f\u0631 \u062d\u0627\u0644 \u0627\u0646\u062a\u0642\u0627\u0644...</p>\r\n</div>\r\n<style>@keyframes spin { 100% { transform: rotate(360deg); } }</style>\r\n\r\n<script>\r\n(async function() {\r\n    if (window.isDivarAuthProcessing) return;\r\n    window.isDivarAuthProcessing = true;\r\n\r\n    const BASE_N8N = \"https://automation.miaan.ir\"; \r\n    const INITIATOR_URL = `${BASE_N8N}/webhook/api/divar`; \r\n    const CALLBACK_URL  = `${BASE_N8N}/webhook/api/divar/auth-callback`;\r\n\r\n    function getCookie(name) {\r\n        const value = `; ${document.cookie}`;\r\n        const parts = value.split(`; ${name}=`);\r\n        if (parts.length === 2) return parts.pop().split(\";\").shift();\r\n        return null;\r\n    }\r\n\r\n    function setSSOCookie(token, userId) {\r\n        const date = new Date();\r\n        date.setTime(date.getTime() + (30 * 24 * 60 * 60 * 1000)); \r\n        const expires = date.toUTCString();\r\n        const commonOptions = `domain=.miaan.ir; path=/; expires=${expires}`;\r\n\r\n        document.cookie = `usso_refresh_token=${token}; ${commonOptions}; Secure; SameSite=Lax`;\r\n        document.cookie = `usso_refresh_available=true; ${commonOptions}`;\r\n        document.cookie = `usso_access_available=true; ${commonOptions}`;\r\n        document.cookie = `source=divar; ${commonOptions}; Secure; SameSite=Lax`;\r\n        if(userId) document.cookie = `usso_user_id=${userId}; ${commonOptions}; Secure; SameSite=Lax`;\r\n    }\r\n\r\n    function getPostToken() {\r\n        const params = new URLSearchParams(window.location.search);\r\n        if (params.has('post_token')) return params.get('post_token');\r\n        const state = params.get('state');\r\n        if (state) {\r\n            const match = state.match(/post_token=([^,]+)/);\r\n            if (match && match[1]) return decodeURIComponent(match[1]);\r\n        }\r\n        return null;\r\n    }\r\n\r\n    try {\r\n        const params = new URLSearchParams(window.location.search);\r\n        const code = params.get('code'); \r\n        const postToken = params.get('post_token');\r\n        const returnUrl = params.get('return_url');\r\n        \r\n        // \u0686\u06a9 \u06a9\u0631\u062f\u0646 \u0644\u0627\u06af\u06cc\u0646 \u0641\u0639\u0644\u06cc\r\n        const currentRefreshToken = getCookie(\"usso_refresh_token\");\r\n        const isLoggedIn = currentRefreshToken && currentRefreshToken.length > 20;\r\n\r\n        const currentPostToken = getPostToken() || postToken;\r\n        const queryParam = currentPostToken ? `?post_token=${currentPostToken}` : '';\r\n        const selectPropertyUrl = `https://miaan.ir/direct-booking/select-property${queryParam}`;\r\n\r\n        // \u06f1. \u0628\u0627\u0632\u06af\u0634\u062a \u0627\u0632 \u062f\u06cc\u0648\u0627\u0631 (\u0627\u0648\u0644\u0648\u06cc\u062a \u0627\u0635\u0644\u06cc)\r\n        if (code) {\r\n            const response = await fetch(CALLBACK_URL, {\r\n                method: 'POST',\r\n                headers: {'Content-Type': 'application/json'},\r\n                body: JSON.stringify({ code: code })\r\n            });\r\n\r\n            const result = await response.json();\r\n            \r\n            if (result.status === 'success' && result.refresh_token) {\r\n                setSSOCookie(result.refresh_token, result.user_id);\r\n                // \u0633\u062a \u06a9\u0631\u062f\u0646 localStorage \u0628\u0631\u0627\u06cc \u0627\u0637\u0645\u06cc\u0646\u0627\u0646 \u0628\u06cc\u0634\u062a\u0631\r\n                localStorage.setItem('is_logged_in', 'true');\r\n                \r\n                // \ud83d\udd25 \u0645\u06a9\u062b \u06a9\u0648\u062a\u0627\u0647 \u0628\u0631\u0627\u06cc \u0627\u0637\u0645\u06cc\u0646\u0627\u0646 \u0627\u0632 \u0633\u062a \u0634\u062f\u0646 \u06a9\u0648\u06a9\u06cc \u062f\u0631 \u0645\u0631\u0648\u0631\u06af\u0631\r\n                setTimeout(() => {\r\n                    window.location.href = selectPropertyUrl;\r\n                }, 300);\r\n            } else {\r\n                window.location.href = `https://miaan.ir/activation/1/${window.location.search}`;\r\n            }\r\n            return;\r\n        }\r\n\r\n        // \u06f2. \u0627\u06af\u0631 \u0627\u0632 \u0642\u0628\u0644 \u0644\u0627\u06af\u06cc\u0646 \u0627\u0633\u062a\r\n        if (isLoggedIn) {\r\n            window.location.href = selectPropertyUrl;\r\n            return;\r\n        }\r\n\r\n        // \u06f3. \u0634\u0631\u0648\u0639 \u067e\u0631\u0648\u0633\u0647\r\n        if (postToken) {\r\n            const response = await fetch(INITIATOR_URL, {\r\n                method: 'POST',\r\n                headers: {'Content-Type': 'application/json'},\r\n                body: JSON.stringify({\r\n                    post_token: postToken,\r\n                    return_url: returnUrl,\r\n                    source: \"DEMAND_POST\"\r\n                })\r\n            });\r\n            const data = await response.json();\r\n            if (data && data.url) { \r\n                window.location.href = data.url;\r\n                return;\r\n            }\r\n        }\r\n\r\n        // \u06f4. \u0641\u0627\u0644\u200c\u0628\u06a9\r\n        window.location.href = `https://miaan.ir/activation/1/${window.location.search}`;\r\n\r\n    } catch (error) {\r\n        console.error(\"Error:\", error);\r\n        window.location.href = \"https://miaan.ir/activation/1/\";\r\n    }\r\n})();\r\n</script>"
-            }
+          <SideEffect
+            data-plasmic-name={"sideEffect"}
+            data-plasmic-override={overrides.sideEffect}
+            className={classNames("__wab_instance", sty.sideEffect)}
+            onMount={async () => {
+              const $steps = {};
+
+              $steps["runCode"] = true
+                ? (() => {
+                    const actionArgs = {
+                      customFunction: async () => {
+                        return (() => {
+                          function getCookie(name) {
+                            const value = `; ${document.cookie}`;
+                            const parts = value.split(`; ${name}=`);
+                            if (parts.length === 2)
+                              return parts.pop().split(";").shift();
+                          }
+                          const hasToken = getCookie("usso_access_available");
+                          const currentSearchParams = window.location.search;
+                          if (hasToken) {
+                            return (window.location.href =
+                              "https://miaan.ir/direct-booking/select-property");
+                          } else {
+                            return (window.location.href = `https://miaan.ir/activation/1${currentSearchParams}`);
+                          }
+                        })();
+                      }
+                    };
+                    return (({ customFunction }) => {
+                      return customFunction();
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["runCode"] != null &&
+                typeof $steps["runCode"] === "object" &&
+                typeof $steps["runCode"].then === "function"
+              ) {
+                $steps["runCode"] = await $steps["runCode"];
+              }
+            }}
           />
         </div>
       </div>
@@ -381,10 +416,10 @@ function PlasmicSplashDivar__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "center", "svg", "embedHtml"],
+  root: ["root", "center", "svg", "sideEffect"],
   center: ["center", "svg"],
   svg: ["svg"],
-  embedHtml: ["embedHtml"]
+  sideEffect: ["sideEffect"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -393,7 +428,7 @@ type NodeDefaultElementType = {
   root: "div";
   center: "div";
   svg: "svg";
-  embedHtml: typeof Embed;
+  sideEffect: typeof SideEffect;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -460,7 +495,7 @@ export const PlasmicSplashDivar = Object.assign(
     // Helper components rendering sub-elements
     center: makeNodeComponent("center"),
     svg: makeNodeComponent("svg"),
-    embedHtml: makeNodeComponent("embedHtml"),
+    sideEffect: makeNodeComponent("sideEffect"),
 
     // Metadata about props expected for PlasmicSplashDivar
     internalVariantProps: PlasmicSplashDivar__VariantProps,
