@@ -387,8 +387,7 @@ function PlasmicSplashDivar__RenderFunc(props: {
                           const hasToken = getCookie("usso_access_available");
                           const currentSearchParams = window.location.search;
                           if (hasToken) {
-                            return (window.location.href =
-                              "https://miaan.ir/direct-booking/select-property");
+                            return (window.location.href = `https://miaan.ir/direct-booking/select-property${currentSearchParams}`);
                           } else {
                             return (window.location.href = `https://miaan.ir/activation/1${currentSearchParams}`);
                           }
