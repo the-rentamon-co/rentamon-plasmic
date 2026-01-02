@@ -384,12 +384,31 @@ function PlasmicSplashDivar__RenderFunc(props: {
                             if (parts.length === 2)
                               return parts.pop().split(";").shift();
                           }
+                          function getPostToken() {
+                            const params = new URLSearchParams(
+                              window.location.search
+                            );
+                            if (params.has("post_token")) {
+                              return params.get("post_token");
+                            }
+                            const state = params.get("state");
+                            if (state) {
+                              const match = state.match(/post_token=([^,]+)/);
+                              if (match && match[1]) {
+                                return match[1];
+                              }
+                            }
+                            return "";
+                          }
                           const hasToken = getCookie("usso_access_available");
-                          const currentSearchParams = window.location.search;
+                          const token = getPostToken();
+                          const cleanQueryParam = token
+                            ? `?post_token=${token}`
+                            : "";
                           if (hasToken) {
-                            return (window.location.href = `https://miaan.ir/direct-booking/select-property${currentSearchParams}`);
+                            return (window.location.href = `https://miaan.ir/direct-booking/select-property${cleanQueryParam}`);
                           } else {
-                            return (window.location.href = `https://miaan.ir/activation/1${currentSearchParams}`);
+                            return (window.location.href = `https://miaan.ir/activation/1${window.location.search}`);
                           }
                         })();
                       }
