@@ -616,7 +616,7 @@ function PlasmicSideBar2__RenderFunc(props: {
                 await $steps["updateModalSidebarOpen"];
             }
 
-            $steps["updateModalSidebarOpen2"] = true
+            $steps["goToکیفپول"] = true
               ? (() => {
                   const actionArgs = { destination: `/wallet` };
                   return (({ destination }) => {
@@ -634,12 +634,11 @@ function PlasmicSideBar2__RenderFunc(props: {
                 })()
               : undefined;
             if (
-              $steps["updateModalSidebarOpen2"] != null &&
-              typeof $steps["updateModalSidebarOpen2"] === "object" &&
-              typeof $steps["updateModalSidebarOpen2"].then === "function"
+              $steps["goToکیفپول"] != null &&
+              typeof $steps["goToکیفپول"] === "object" &&
+              typeof $steps["goToکیفپول"].then === "function"
             ) {
-              $steps["updateModalSidebarOpen2"] =
-                await $steps["updateModalSidebarOpen2"];
+              $steps["goToکیفپول"] = await $steps["goToکیفپول"];
             }
           }}
         >
@@ -894,7 +893,7 @@ function PlasmicSideBar2__RenderFunc(props: {
                   await $steps["updateModalSidebarOpen"];
               }
 
-              $steps["updateModalSidebarOpen2"] = true
+              $steps["goToChannelManager"] = true
                 ? (() => {
                     const actionArgs = { destination: `/channel-manager` };
                     return (({ destination }) => {
@@ -912,12 +911,12 @@ function PlasmicSideBar2__RenderFunc(props: {
                   })()
                 : undefined;
               if (
-                $steps["updateModalSidebarOpen2"] != null &&
-                typeof $steps["updateModalSidebarOpen2"] === "object" &&
-                typeof $steps["updateModalSidebarOpen2"].then === "function"
+                $steps["goToChannelManager"] != null &&
+                typeof $steps["goToChannelManager"] === "object" &&
+                typeof $steps["goToChannelManager"].then === "function"
               ) {
-                $steps["updateModalSidebarOpen2"] =
-                  await $steps["updateModalSidebarOpen2"];
+                $steps["goToChannelManager"] =
+                  await $steps["goToChannelManager"];
               }
             }}
           >
@@ -977,7 +976,7 @@ function PlasmicSideBar2__RenderFunc(props: {
 
             $steps["goToPanelCalendar"] = true
               ? (() => {
-                  const actionArgs = { destination: `/panel-4` };
+                  const actionArgs = {};
                   return (({ destination }) => {
                     if (
                       typeof destination === "string" &&
@@ -1135,7 +1134,7 @@ function PlasmicSideBar2__RenderFunc(props: {
                 await $steps["updateModalSidebarOpen"];
             }
 
-            $steps["updateModalSidebarOpen2"] = true
+            $steps["goToContacts"] = true
               ? (() => {
                   const actionArgs = { destination: `/contacts` };
                   return (({ destination }) => {
@@ -1153,12 +1152,11 @@ function PlasmicSideBar2__RenderFunc(props: {
                 })()
               : undefined;
             if (
-              $steps["updateModalSidebarOpen2"] != null &&
-              typeof $steps["updateModalSidebarOpen2"] === "object" &&
-              typeof $steps["updateModalSidebarOpen2"].then === "function"
+              $steps["goToContacts"] != null &&
+              typeof $steps["goToContacts"] === "object" &&
+              typeof $steps["goToContacts"].then === "function"
             ) {
-              $steps["updateModalSidebarOpen2"] =
-                await $steps["updateModalSidebarOpen2"];
+              $steps["goToContacts"] = await $steps["goToContacts"];
             }
           }}
         >
@@ -1322,7 +1320,7 @@ function PlasmicSideBar2__RenderFunc(props: {
                   await $steps["updateModalSidebarOpen"];
               }
 
-              $steps["goToSetting"] = true
+              $steps["goToSettings"] = true
                 ? (() => {
                     const actionArgs = { destination: `/settings` };
                     return (({ destination }) => {
@@ -1340,11 +1338,11 @@ function PlasmicSideBar2__RenderFunc(props: {
                   })()
                 : undefined;
               if (
-                $steps["goToSetting"] != null &&
-                typeof $steps["goToSetting"] === "object" &&
-                typeof $steps["goToSetting"].then === "function"
+                $steps["goToSettings"] != null &&
+                typeof $steps["goToSettings"] === "object" &&
+                typeof $steps["goToSettings"].then === "function"
               ) {
-                $steps["goToSetting"] = await $steps["goToSetting"];
+                $steps["goToSettings"] = await $steps["goToSettings"];
               }
             }}
           >

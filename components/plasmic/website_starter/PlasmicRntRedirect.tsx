@@ -188,7 +188,7 @@ function PlasmicRntRedirect__RenderFunc(props: {
 
               $steps["goToProCalendar"] = true
                 ? (() => {
-                    const actionArgs = { destination: `/panel-4` };
+                    const actionArgs = {};
                     return (({ destination }) => {
                       if (
                         typeof destination === "string" &&

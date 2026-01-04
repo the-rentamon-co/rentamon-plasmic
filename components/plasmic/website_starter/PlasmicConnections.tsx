@@ -812,7 +812,7 @@ function PlasmicConnections__RenderFunc(props: {
                             onClick={async () => {
                               const $steps = {};
 
-                              $steps["goToActivationDuplicateConnection"] =
+                              $steps["goToConnections"] =
                                 $state.jabamaSendOtp.value !== undefined &&
                                 $state.jabamaSendOtp.value.length >= 11
                                   ? (() => {
@@ -838,19 +838,13 @@ function PlasmicConnections__RenderFunc(props: {
                                     })()
                                   : undefined;
                               if (
-                                $steps["goToActivationDuplicateConnection"] !=
-                                  null &&
-                                typeof $steps[
-                                  "goToActivationDuplicateConnection"
-                                ] === "object" &&
-                                typeof $steps[
-                                  "goToActivationDuplicateConnection"
-                                ].then === "function"
+                                $steps["goToConnections"] != null &&
+                                typeof $steps["goToConnections"] === "object" &&
+                                typeof $steps["goToConnections"].then ===
+                                  "function"
                               ) {
-                                $steps["goToActivationDuplicateConnection"] =
-                                  await $steps[
-                                    "goToActivationDuplicateConnection"
-                                  ];
+                                $steps["goToConnections"] =
+                                  await $steps["goToConnections"];
                               }
 
                               $steps["jabamaSend"] =
@@ -1638,7 +1632,7 @@ function PlasmicConnections__RenderFunc(props: {
                             onClick={async () => {
                               const $steps = {};
 
-                              $steps["goToActivationDuplicateConnection"] =
+                              $steps["goToConnections"] =
                                 $state.jajigaSend.value !== undefined &&
                                 $state.jajigaSend.value.length >= 11
                                   ? (() => {
@@ -1664,19 +1658,13 @@ function PlasmicConnections__RenderFunc(props: {
                                     })()
                                   : undefined;
                               if (
-                                $steps["goToActivationDuplicateConnection"] !=
-                                  null &&
-                                typeof $steps[
-                                  "goToActivationDuplicateConnection"
-                                ] === "object" &&
-                                typeof $steps[
-                                  "goToActivationDuplicateConnection"
-                                ].then === "function"
+                                $steps["goToConnections"] != null &&
+                                typeof $steps["goToConnections"] === "object" &&
+                                typeof $steps["goToConnections"].then ===
+                                  "function"
                               ) {
-                                $steps["goToActivationDuplicateConnection"] =
-                                  await $steps[
-                                    "goToActivationDuplicateConnection"
-                                  ];
+                                $steps["goToConnections"] =
+                                  await $steps["goToConnections"];
                               }
 
                               $steps["jajigaSend"] =
@@ -2334,7 +2322,7 @@ function PlasmicConnections__RenderFunc(props: {
                             onClick={async () => {
                               const $steps = {};
 
-                              $steps["goToActivationDuplicateConnection"] =
+                              $steps["goToConnections"] =
                                 $state.snappSend.value !== undefined &&
                                 $state.snappSend.value.length >= 11
                                   ? (() => {
@@ -2360,19 +2348,13 @@ function PlasmicConnections__RenderFunc(props: {
                                     })()
                                   : undefined;
                               if (
-                                $steps["goToActivationDuplicateConnection"] !=
-                                  null &&
-                                typeof $steps[
-                                  "goToActivationDuplicateConnection"
-                                ] === "object" &&
-                                typeof $steps[
-                                  "goToActivationDuplicateConnection"
-                                ].then === "function"
+                                $steps["goToConnections"] != null &&
+                                typeof $steps["goToConnections"] === "object" &&
+                                typeof $steps["goToConnections"].then ===
+                                  "function"
                               ) {
-                                $steps["goToActivationDuplicateConnection"] =
-                                  await $steps[
-                                    "goToActivationDuplicateConnection"
-                                  ];
+                                $steps["goToConnections"] =
+                                  await $steps["goToConnections"];
                               }
 
                               $steps["snappSend"] =
@@ -3040,7 +3022,7 @@ function PlasmicConnections__RenderFunc(props: {
                             onClick={async () => {
                               const $steps = {};
 
-                              $steps["goToActivationDuplicateConnection"] =
+                              $steps["goToConnections"] =
                                 $state.shabOtpSend.value !== undefined &&
                                 $state.shabOtpSend.value.length >= 11
                                   ? (() => {
@@ -3066,19 +3048,13 @@ function PlasmicConnections__RenderFunc(props: {
                                     })()
                                   : undefined;
                               if (
-                                $steps["goToActivationDuplicateConnection"] !=
-                                  null &&
-                                typeof $steps[
-                                  "goToActivationDuplicateConnection"
-                                ] === "object" &&
-                                typeof $steps[
-                                  "goToActivationDuplicateConnection"
-                                ].then === "function"
+                                $steps["goToConnections"] != null &&
+                                typeof $steps["goToConnections"] === "object" &&
+                                typeof $steps["goToConnections"].then ===
+                                  "function"
                               ) {
-                                $steps["goToActivationDuplicateConnection"] =
-                                  await $steps[
-                                    "goToActivationDuplicateConnection"
-                                  ];
+                                $steps["goToConnections"] =
+                                  await $steps["goToConnections"];
                               }
 
                               $steps["shabSend"] =
@@ -3908,7 +3884,7 @@ function PlasmicConnections__RenderFunc(props: {
                             onClick={async () => {
                               const $steps = {};
 
-                              $steps["goToActivationDuplicateConnection"] =
+                              $steps["goToConnections"] =
                                 $state.otaghakSendOtp.value !== undefined &&
                                 $state.otaghakSendOtp.value.length >= 11
                                   ? (() => {
@@ -3934,19 +3910,13 @@ function PlasmicConnections__RenderFunc(props: {
                                     })()
                                   : undefined;
                               if (
-                                $steps["goToActivationDuplicateConnection"] !=
-                                  null &&
-                                typeof $steps[
-                                  "goToActivationDuplicateConnection"
-                                ] === "object" &&
-                                typeof $steps[
-                                  "goToActivationDuplicateConnection"
-                                ].then === "function"
+                                $steps["goToConnections"] != null &&
+                                typeof $steps["goToConnections"] === "object" &&
+                                typeof $steps["goToConnections"].then ===
+                                  "function"
                               ) {
-                                $steps["goToActivationDuplicateConnection"] =
-                                  await $steps[
-                                    "goToActivationDuplicateConnection"
-                                  ];
+                                $steps["goToConnections"] =
+                                  await $steps["goToConnections"];
                               }
 
                               $steps["otaghakSend"] =
@@ -5145,9 +5115,7 @@ function PlasmicConnections__RenderFunc(props: {
                                 $state.form.value.mihmanshophone.length >= 11 &&
                                 $state.form.value.mihmanshoPass !== undefined
                                   ? (() => {
-                                      const actionArgs = {
-                                        destination: `/panel-4`
-                                      };
+                                      const actionArgs = {};
                                       return (({ destination }) => {
                                         if (
                                           typeof destination === "string" &&

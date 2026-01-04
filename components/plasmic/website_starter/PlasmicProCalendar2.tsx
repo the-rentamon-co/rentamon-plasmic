@@ -61,8 +61,6 @@ import {
 
 import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
 import SideBar2 from "../../SideBar2"; // plasmic-import: 03ZPQfFyBXgI/component
-import { AntdModal } from "@plasmicpkgs/antd5/skinny/registerModal";
-import Button from "../../Button"; // plasmic-import: U5bKCJ5DYhib/component
 import Select from "../../Select"; // plasmic-import: GgjLI5qwOqwu/component
 import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
 import Calendar23 from "../../Calendar23"; // plasmic-import: 9y5OemMhUNlV/component
@@ -70,7 +68,9 @@ import { Iframe } from "@plasmicpkgs/plasmic-basic-components";
 import NavbarRntFooter from "../../NavbarRntFooter"; // plasmic-import: y37kcAs9RXYg/component
 import ClarityRntComponent from "../../ClarityRntComponent"; // plasmic-import: J5D8c7V05ty1/component
 import FaviconRntComponent from "../../FaviconRntComponent"; // plasmic-import: 2Chy9NeUIB9Q/component
+import { AntdModal } from "@plasmicpkgs/antd5/skinny/registerModal";
 import { Embed } from "@plasmicpkgs/plasmic-basic-components";
+import Button from "../../Button"; // plasmic-import: U5bKCJ5DYhib/component
 import { _useGlobalVariants } from "./plasmic"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectModule
 import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/styleTokensProvider
 
@@ -97,7 +97,6 @@ export type PlasmicProCalendar2__OverridesType = {
   root?: Flex__<"div">;
   header2?: Flex__<"div">;
   sideBar2?: Flex__<typeof SideBar2>;
-  alertModal?: Flex__<typeof AntdModal>;
   headerMobileNew?: Flex__<"div">;
   header?: Flex__<"div">;
   right?: Flex__<"div">;
@@ -120,6 +119,7 @@ export type PlasmicProCalendar2__OverridesType = {
   roadmap?: Flex__<"div">;
   roadmapmodal?: Flex__<typeof AntdModal>;
   embedHtml?: Flex__<typeof Embed>;
+  button?: Flex__<typeof Button>;
 };
 
 export interface DefaultProCalendar2Props {}
@@ -294,28 +294,6 @@ function PlasmicProCalendar2__RenderFunc(props: {
           reservation: false,
           auto_sync: false
         })
-      },
-      {
-        path: "alertModal.open",
-        type: "private",
-        variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) =>
-          (() => {
-            try {
-              return (() => {
-                const isMiaan = window.location.hostname.includes("miaan.ir");
-                return !isMiaan;
-              })();
-            } catch (e) {
-              if (
-                e instanceof TypeError ||
-                e?.plasmicType === "PlasmicUndefinedDataError"
-              ) {
-                return false;
-              }
-              throw e;
-            }
-          })()
       },
       {
         path: "aiShow",
@@ -904,549 +882,6 @@ function PlasmicProCalendar2__RenderFunc(props: {
 
             <div className={classNames(projectcss.all, sty.freeBox__wmsyM)} />
           </div>
-          {(() => {
-            const child$Props = {
-              className: classNames("__wab_instance", sty.alertModal),
-              defaultStylesClassName: classNames(
-                projectcss.root_reset,
-                projectcss.plasmic_default_styles,
-                projectcss.plasmic_mixins,
-                styleTokensClassNames
-              ),
-              hideFooter: true,
-              maskClosable: false,
-              modalContentClassName: classNames({
-                [sty["pcls_VK_2FYBFKUfs"]]: true
-              }),
-              modalScopeClassName: sty["alertModal__modal"],
-              onOpenChange: async (...eventArgs: any) => {
-                generateStateOnChangeProp($state, ["alertModal", "open"]).apply(
-                  null,
-                  eventArgs
-                );
-              },
-              open: generateStateValueProp($state, ["alertModal", "open"]),
-              title: (
-                <div
-                  className={classNames(projectcss.all, sty.freeBox___1YdYp)}
-                >
-                  <PlasmicImg__
-                    alt={""}
-                    className={classNames(sty.img__m3Ads)}
-                    displayHeight={"20px"}
-                    displayMaxHeight={"none"}
-                    displayMaxWidth={"100%"}
-                    displayMinHeight={"0"}
-                    displayMinWidth={"0"}
-                    displayWidth={"auto"}
-                    loading={"lazy"}
-                    onClick={async event => {
-                      const $steps = {};
-
-                      $steps["updateAlertModalOpen"] = true
-                        ? (() => {
-                            const actionArgs = {
-                              variable: {
-                                objRoot: $state,
-                                variablePath: ["alertModal", "open"]
-                              },
-                              operation: 0
-                            };
-                            return (({
-                              variable,
-                              value,
-                              startIndex,
-                              deleteCount
-                            }) => {
-                              if (!variable) {
-                                return;
-                              }
-                              const { objRoot, variablePath } = variable;
-
-                              $stateSet(objRoot, variablePath, value);
-                              return value;
-                            })?.apply(null, [actionArgs]);
-                          })()
-                        : undefined;
-                      if (
-                        $steps["updateAlertModalOpen"] != null &&
-                        typeof $steps["updateAlertModalOpen"] === "object" &&
-                        typeof $steps["updateAlertModalOpen"].then ===
-                          "function"
-                      ) {
-                        $steps["updateAlertModalOpen"] =
-                          await $steps["updateAlertModalOpen"];
-                      }
-                    }}
-                    src={{
-                      src: "/plasmic/website_starter/images/image48.svg",
-                      fullWidth: 18,
-                      fullHeight: 18,
-                      aspectRatio: 1
-                    }}
-                  />
-                </div>
-              ),
-              trigger: null,
-              width: "400",
-              wrapClassName: classNames({ [sty["pcls_f5hNP65Srox7"]]: true })
-            };
-            initializeCodeComponentStates(
-              $state,
-              [
-                {
-                  name: "open",
-                  plasmicStateName: "alertModal.open"
-                }
-              ],
-              [],
-              undefined ?? {},
-              child$Props
-            );
-            initializePlasmicStates(
-              $state,
-              [
-                {
-                  name: "alertModal.open",
-                  initFunc: ({ $props, $state, $queries }) =>
-                    (() => {
-                      try {
-                        return (() => {
-                          const isMiaan =
-                            window.location.hostname.includes("miaan.ir");
-                          return !isMiaan;
-                        })();
-                      } catch (e) {
-                        if (
-                          e instanceof TypeError ||
-                          e?.plasmicType === "PlasmicUndefinedDataError"
-                        ) {
-                          return false;
-                        }
-                        throw e;
-                      }
-                    })()
-                }
-              ],
-              []
-            );
-            return (
-              <AntdModal
-                data-plasmic-name={"alertModal"}
-                data-plasmic-override={overrides.alertModal}
-                {...child$Props}
-              >
-                <div
-                  className={classNames(projectcss.all, sty.freeBox__atQjk)}
-                  onClick={async event => {
-                    const $steps = {};
-                  }}
-                >
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__flfxo)}
-                    onClick={async event => {
-                      const $steps = {};
-
-                      $steps["updateAlertModalOpen"] = true
-                        ? (() => {
-                            const actionArgs = {
-                              variable: {
-                                objRoot: $state,
-                                variablePath: ["alertModal", "open"]
-                              },
-                              operation: 0
-                            };
-                            return (({
-                              variable,
-                              value,
-                              startIndex,
-                              deleteCount
-                            }) => {
-                              if (!variable) {
-                                return;
-                              }
-                              const { objRoot, variablePath } = variable;
-
-                              $stateSet(objRoot, variablePath, value);
-                              return value;
-                            })?.apply(null, [actionArgs]);
-                          })()
-                        : undefined;
-                      if (
-                        $steps["updateAlertModalOpen"] != null &&
-                        typeof $steps["updateAlertModalOpen"] === "object" &&
-                        typeof $steps["updateAlertModalOpen"].then ===
-                          "function"
-                      ) {
-                        $steps["updateAlertModalOpen"] =
-                          await $steps["updateAlertModalOpen"];
-                      }
-
-                      $steps["runCode"] = true
-                        ? (() => {
-                            const actionArgs = {
-                              customFunction: async () => {
-                                return (() => {
-                                  function setCookie(name, value, hours) {
-                                    let expires = "";
-                                    if (hours) {
-                                      const date = new Date();
-                                      date.setTime(
-                                        date.getTime() + hours * 60 * 60 * 1000
-                                      );
-                                      expires =
-                                        "; expires=" + date.toUTCString();
-                                    }
-                                    document.cookie =
-                                      name +
-                                      "=" +
-                                      (value || "") +
-                                      expires +
-                                      "; path=/";
-                                  }
-                                  return setCookie("miaan", "true", 24);
-                                })();
-                              }
-                            };
-                            return (({ customFunction }) => {
-                              return customFunction();
-                            })?.apply(null, [actionArgs]);
-                          })()
-                        : undefined;
-                      if (
-                        $steps["runCode"] != null &&
-                        typeof $steps["runCode"] === "object" &&
-                        typeof $steps["runCode"].then === "function"
-                      ) {
-                        $steps["runCode"] = await $steps["runCode"];
-                      }
-                    }}
-                  >
-                    <PlasmicImg__
-                      alt={""}
-                      className={classNames(sty.img__sKueE)}
-                      displayHeight={"auto"}
-                      displayMaxHeight={"none"}
-                      displayMaxWidth={"100%"}
-                      displayMinHeight={"0"}
-                      displayMinWidth={"0"}
-                      displayWidth={"16px"}
-                      loading={"lazy"}
-                      src={{
-                        src: "/plasmic/website_starter/images/image24.svg",
-                        fullWidth: 20,
-                        fullHeight: 18,
-                        aspectRatio: 1.111111
-                      }}
-                    />
-                  </div>
-                </div>
-                <div className={classNames(projectcss.all, sty.freeBox__uWtg0)}>
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__uDdnc)}
-                  >
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        sty.freeBox___6XYgW
-                      )}
-                    >
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          sty.freeBox__zfedk
-                        )}
-                      >
-                        <PlasmicImg__
-                          alt={""}
-                          className={classNames(sty.img__pvSt5)}
-                          displayHeight={"auto"}
-                          displayMaxHeight={"none"}
-                          displayMaxWidth={"100%"}
-                          displayMinHeight={"0"}
-                          displayMinWidth={"0"}
-                          displayWidth={
-                            hasVariant(globalVariants, "screen", "smallMobile")
-                              ? "60px"
-                              : "80px"
-                          }
-                          loading={"lazy"}
-                          src={{
-                            src: "/plasmic/website_starter/images/image195.svg",
-                            fullWidth: 24,
-                            fullHeight: 24,
-                            aspectRatio: 1
-                          }}
-                        />
-
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text__ki9Gp
-                          )}
-                        >
-                          {
-                            "\u0628\u0631\u0627\u06cc \u0627\u062f\u0627\u0645\u0647 \u0627\u0633\u062a\u0641\u0627\u062f\u0647\u060c \u0644\u0627\u0632\u0645\u0647 \u0628\u0631\u0646\u0627\u0645\u0647 \u0628\u0647\u200c\u0631\u0648\u0632 \u0628\u0634\u0647"
-                          }
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__nNosa)}
-                  >
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        sty.freeBox__uVyxK,
-                        hasVariant(globalVariants, "screen", "smallMobile")
-                          ? "clickable"
-                          : undefined
-                      )}
-                      onClick={async event => {
-                        const $steps = {};
-
-                        $steps["runCode"] = false
-                          ? (() => {
-                              const actionArgs = {
-                                customFunction: async () => {
-                                  return (() => {
-                                    function setCookie(name, value, hours) {
-                                      let expires = "";
-                                      if (hours) {
-                                        const date = new Date();
-                                        date.setTime(
-                                          date.getTime() +
-                                            hours * 60 * 60 * 1000
-                                        );
-                                        expires =
-                                          "; expires=" + date.toUTCString();
-                                      }
-                                      document.cookie =
-                                        name +
-                                        "=" +
-                                        (value || "") +
-                                        expires +
-                                        "; path=/";
-                                    }
-                                    return setCookie("miaan", "true", 9);
-                                  })();
-                                }
-                              };
-                              return (({ customFunction }) => {
-                                return customFunction();
-                              })?.apply(null, [actionArgs]);
-                            })()
-                          : undefined;
-                        if (
-                          $steps["runCode"] != null &&
-                          typeof $steps["runCode"] === "object" &&
-                          typeof $steps["runCode"].then === "function"
-                        ) {
-                          $steps["runCode"] = await $steps["runCode"];
-                        }
-
-                        $steps["updateAlertModalOpen"] = false
-                          ? (() => {
-                              const actionArgs = {
-                                variable: {
-                                  objRoot: $state,
-                                  variablePath: ["alertModal", "open"]
-                                },
-                                operation: 0
-                              };
-                              return (({
-                                variable,
-                                value,
-                                startIndex,
-                                deleteCount
-                              }) => {
-                                if (!variable) {
-                                  return;
-                                }
-                                const { objRoot, variablePath } = variable;
-
-                                $stateSet(objRoot, variablePath, value);
-                                return value;
-                              })?.apply(null, [actionArgs]);
-                            })()
-                          : undefined;
-                        if (
-                          $steps["updateAlertModalOpen"] != null &&
-                          typeof $steps["updateAlertModalOpen"] === "object" &&
-                          typeof $steps["updateAlertModalOpen"].then ===
-                            "function"
-                        ) {
-                          $steps["updateAlertModalOpen"] =
-                            await $steps["updateAlertModalOpen"];
-                        }
-
-                        $steps["goToدانلوداپلیکیشنموبایلمیان"] = true
-                          ? (() => {
-                              const actionArgs = { destination: `/download` };
-                              return (({ destination }) => {
-                                if (
-                                  typeof destination === "string" &&
-                                  destination.startsWith("#")
-                                ) {
-                                  document
-                                    .getElementById(destination.substr(1))
-                                    .scrollIntoView({ behavior: "smooth" });
-                                } else {
-                                  __nextRouter?.push(destination);
-                                }
-                              })?.apply(null, [actionArgs]);
-                            })()
-                          : undefined;
-                        if (
-                          $steps["goToدانلوداپلیکیشنموبایلمیان"] != null &&
-                          typeof $steps["goToدانلوداپلیکیشنموبایلمیان"] ===
-                            "object" &&
-                          typeof $steps["goToدانلوداپلیکیشنموبایلمیان"].then ===
-                            "function"
-                        ) {
-                          $steps["goToدانلوداپلیکیشنموبایلمیان"] =
-                            await $steps["goToدانلوداپلیکیشنموبایلمیان"];
-                        }
-                      }}
-                    >
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text__zNuXv
-                        )}
-                      >
-                        {
-                          "\u0628\u0631\u06cc\u0645 \u0635\u0641\u062d\u0647 \u0628\u0631\u0648\u0632 \u0631\u0633\u0627\u0646\u06cc"
-                        }
-                      </div>
-                    </div>
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__k3F4V
-                      )}
-                      onClick={async event => {
-                        const $steps = {};
-
-                        $steps["runCode"] = true
-                          ? (() => {
-                              const actionArgs = {
-                                customFunction: async () => {
-                                  return (() => {
-                                    return window.open(`tel:${2191096227}`);
-                                  })();
-                                }
-                              };
-                              return (({ customFunction }) => {
-                                return customFunction();
-                              })?.apply(null, [actionArgs]);
-                            })()
-                          : undefined;
-                        if (
-                          $steps["runCode"] != null &&
-                          typeof $steps["runCode"] === "object" &&
-                          typeof $steps["runCode"].then === "function"
-                        ) {
-                          $steps["runCode"] = await $steps["runCode"];
-                        }
-                      }}
-                    >
-                      {
-                        "\u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc \u06f0\u06f2\u06f1\u06f9\u06f1\u06f0\u06f9\u06f6\u06f2\u06f2\u06f7"
-                      }
-                    </div>
-                  </div>
-                  <Button
-                    className={classNames("__wab_instance", sty.button__qcrF8)}
-                    onClick={async event => {
-                      const $steps = {};
-
-                      $steps["runCode"] = true
-                        ? (() => {
-                            const actionArgs = {
-                              customFunction: async () => {
-                                return (() => {
-                                  function setCookie(name, value, hours) {
-                                    let expires = "";
-                                    if (hours) {
-                                      const date = new Date();
-                                      date.setTime(
-                                        date.getTime() + hours * 60 * 60 * 1000
-                                      );
-                                      expires =
-                                        "; expires=" + date.toUTCString();
-                                    }
-                                    document.cookie =
-                                      name +
-                                      "=" +
-                                      (value || "") +
-                                      expires +
-                                      "; path=/";
-                                  }
-                                  return setCookie("alertModal", "true", 24);
-                                })();
-                              }
-                            };
-                            return (({ customFunction }) => {
-                              return customFunction();
-                            })?.apply(null, [actionArgs]);
-                          })()
-                        : undefined;
-                      if (
-                        $steps["runCode"] != null &&
-                        typeof $steps["runCode"] === "object" &&
-                        typeof $steps["runCode"].then === "function"
-                      ) {
-                        $steps["runCode"] = await $steps["runCode"];
-                      }
-                    }}
-                  >
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__y4K0M
-                      )}
-                      onClick={async event => {
-                        const $steps = {};
-
-                        $steps["runCode"] = true
-                          ? (() => {
-                              const actionArgs = {
-                                customFunction: async () => {
-                                  return (() => {
-                                    return window.open(
-                                      "https://app.rentamon.com/ai-assistant/",
-                                      "_blank"
-                                    );
-                                  })();
-                                }
-                              };
-                              return (({ customFunction }) => {
-                                return customFunction();
-                              })?.apply(null, [actionArgs]);
-                            })()
-                          : undefined;
-                        if (
-                          $steps["runCode"] != null &&
-                          typeof $steps["runCode"] === "object" &&
-                          typeof $steps["runCode"].then === "function"
-                        ) {
-                          $steps["runCode"] = await $steps["runCode"];
-                        }
-                      }}
-                    >
-                      {"\u0628\u0627\u0634\u0647"}
-                    </div>
-                  </Button>
-                </div>
-              </AntdModal>
-            );
-          })()}
           {(() => {
             try {
               return $state.isTheFirstVisit === false;
@@ -2579,131 +2014,133 @@ function PlasmicProCalendar2__RenderFunc(props: {
               className={classNames("__wab_instance", sty.faviconRntComponent)}
             />
           </div>
-          <AntdModal
-            data-plasmic-name={"modal"}
-            data-plasmic-override={overrides.modal}
-            className={classNames("__wab_instance", sty.modal)}
-            defaultStylesClassName={classNames(
-              projectcss.root_reset,
-              projectcss.plasmic_default_styles,
-              projectcss.plasmic_mixins,
-              styleTokensClassNames
-            )}
-            hideFooter={true}
-            maskClosable={false}
-            modalScopeClassName={sty["modal__modal"]}
-            onOpenChange={async (...eventArgs: any) => {
-              generateStateOnChangeProp($state, ["modal", "open"]).apply(
-                null,
-                eventArgs
-              );
-            }}
-            open={generateStateValueProp($state, ["modal", "open"])}
-            title={null}
-            trigger={null}
-          >
-            <div className={classNames(projectcss.all, sty.freeBox__cBdpD)}>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__ltJJt
-                )}
-              >
-                {hasVariant(globalVariants, "screen", "smallMobile")
-                  ? "\u26a0\ufe0f\r\n\u0628\u0647 \u062f\u0644\u06cc\u0644 \u0627\u062e\u062a\u0644\u0627\u0644 \u0633\u0631\u0627\u0633\u0631\u06cc \u0631\u0648\u06cc \u0627\u06cc\u0646\u062a\u0631\u0646\u062a \u06a9\u0634\u0648\u0631\u060c \u0645\u0645\u06a9\u0646\u0647 \u0628\u0639\u0636\u06cc \u062a\u063a\u06cc\u06cc\u0631\u0627\u062a \u0628\u0627 \u062e\u0637\u0627 \u0645\u0648\u0627\u062c\u0647 \u0628\u0634\u0646"
-                  : "\u26a0\ufe0f\r\n\u0628\u0647 \u0639\u0644\u062a \u0627\u062e\u062a\u0644\u0627\u0644 \u062f\u0631 \u0633\u0627\u06cc\u062a \u0647\u0648\u0645\u0633\u0627 \u0645\u0645\u06a9\u0646\u0647 \u0628\u0639\u0636\u06cc \u0627\u0632 \u062a\u063a\u06cc\u06cc\u0631\u0627\u062a \u0627\u0639\u0645\u0627\u0644 \u0646\u0634\u0647"}
-              </div>
-            </div>
-            <div
-              className={classNames(projectcss.all, sty.freeBox___3KmGf)}
-              onClick={async event => {
-                const $steps = {};
-
-                $steps["updateModalOpen"] = true
-                  ? (() => {
-                      const actionArgs = {
-                        variable: {
-                          objRoot: $state,
-                          variablePath: ["modal", "open"]
-                        },
-                        operation: 0
-                      };
-                      return (({
-                        variable,
-                        value,
-                        startIndex,
-                        deleteCount
-                      }) => {
-                        if (!variable) {
-                          return;
-                        }
-                        const { objRoot, variablePath } = variable;
-
-                        $stateSet(objRoot, variablePath, value);
-                        return value;
-                      })?.apply(null, [actionArgs]);
-                    })()
-                  : undefined;
-                if (
-                  $steps["updateModalOpen"] != null &&
-                  typeof $steps["updateModalOpen"] === "object" &&
-                  typeof $steps["updateModalOpen"].then === "function"
-                ) {
-                  $steps["updateModalOpen"] = await $steps["updateModalOpen"];
-                }
-
-                $steps["runCode"] = true
-                  ? (() => {
-                      const actionArgs = {
-                        customFunction: async () => {
-                          return (() => {
-                            function setCookie(name, value, hours) {
-                              let expires = "";
-                              if (hours) {
-                                const date = new Date();
-                                date.setTime(
-                                  date.getTime() + hours * 60 * 60 * 1000
-                                );
-                                expires = "; expires=" + date.toUTCString();
-                              }
-                              document.cookie =
-                                name +
-                                "=" +
-                                (value || "") +
-                                expires +
-                                "; path=/";
-                            }
-                            return setCookie("homsa_modal", "true", 24);
-                          })();
-                        }
-                      };
-                      return (({ customFunction }) => {
-                        return customFunction();
-                      })?.apply(null, [actionArgs]);
-                    })()
-                  : undefined;
-                if (
-                  $steps["runCode"] != null &&
-                  typeof $steps["runCode"] === "object" &&
-                  typeof $steps["runCode"].then === "function"
-                ) {
-                  $steps["runCode"] = await $steps["runCode"];
-                }
+          {false ? (
+            <AntdModal
+              data-plasmic-name={"modal"}
+              data-plasmic-override={overrides.modal}
+              className={classNames("__wab_instance", sty.modal)}
+              defaultStylesClassName={classNames(
+                projectcss.root_reset,
+                projectcss.plasmic_default_styles,
+                projectcss.plasmic_mixins,
+                styleTokensClassNames
+              )}
+              hideFooter={true}
+              maskClosable={false}
+              modalScopeClassName={sty["modal__modal"]}
+              onOpenChange={async (...eventArgs: any) => {
+                generateStateOnChangeProp($state, ["modal", "open"]).apply(
+                  null,
+                  eventArgs
+                );
               }}
+              open={generateStateValueProp($state, ["modal", "open"])}
+              title={null}
+              trigger={null}
             >
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text___9Tx8C
-                )}
-              >
-                {"\u0628\u0627\u0634\u0647"}
+              <div className={classNames(projectcss.all, sty.freeBox__cBdpD)}>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__ltJJt
+                  )}
+                >
+                  {hasVariant(globalVariants, "screen", "smallMobile")
+                    ? "\u26a0\ufe0f\r\n\u0628\u0647 \u062f\u0644\u06cc\u0644 \u0627\u062e\u062a\u0644\u0627\u0644 \u0633\u0631\u0627\u0633\u0631\u06cc \u0631\u0648\u06cc \u0627\u06cc\u0646\u062a\u0631\u0646\u062a \u06a9\u0634\u0648\u0631\u060c \u0645\u0645\u06a9\u0646\u0647 \u0628\u0639\u0636\u06cc \u062a\u063a\u06cc\u06cc\u0631\u0627\u062a \u0628\u0627 \u062e\u0637\u0627 \u0645\u0648\u0627\u062c\u0647 \u0628\u0634\u0646"
+                    : "\u26a0\ufe0f\r\n\u0628\u0647 \u0639\u0644\u062a \u0627\u062e\u062a\u0644\u0627\u0644 \u062f\u0631 \u0633\u0627\u06cc\u062a \u0647\u0648\u0645\u0633\u0627 \u0645\u0645\u06a9\u0646\u0647 \u0628\u0639\u0636\u06cc \u0627\u0632 \u062a\u063a\u06cc\u06cc\u0631\u0627\u062a \u0627\u0639\u0645\u0627\u0644 \u0646\u0634\u0647"}
+                </div>
               </div>
-            </div>
-          </AntdModal>
-          {(hasVariant(globalVariants, "screen", "mobile") ? true : false) ? (
+              <div
+                className={classNames(projectcss.all, sty.freeBox___3KmGf)}
+                onClick={async event => {
+                  const $steps = {};
+
+                  $steps["updateModalOpen"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          variable: {
+                            objRoot: $state,
+                            variablePath: ["modal", "open"]
+                          },
+                          operation: 0
+                        };
+                        return (({
+                          variable,
+                          value,
+                          startIndex,
+                          deleteCount
+                        }) => {
+                          if (!variable) {
+                            return;
+                          }
+                          const { objRoot, variablePath } = variable;
+
+                          $stateSet(objRoot, variablePath, value);
+                          return value;
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["updateModalOpen"] != null &&
+                    typeof $steps["updateModalOpen"] === "object" &&
+                    typeof $steps["updateModalOpen"].then === "function"
+                  ) {
+                    $steps["updateModalOpen"] = await $steps["updateModalOpen"];
+                  }
+
+                  $steps["runCode"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          customFunction: async () => {
+                            return (() => {
+                              function setCookie(name, value, hours) {
+                                let expires = "";
+                                if (hours) {
+                                  const date = new Date();
+                                  date.setTime(
+                                    date.getTime() + hours * 60 * 60 * 1000
+                                  );
+                                  expires = "; expires=" + date.toUTCString();
+                                }
+                                document.cookie =
+                                  name +
+                                  "=" +
+                                  (value || "") +
+                                  expires +
+                                  "; path=/";
+                              }
+                              return setCookie("homsa_modal", "true", 24);
+                            })();
+                          }
+                        };
+                        return (({ customFunction }) => {
+                          return customFunction();
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["runCode"] != null &&
+                    typeof $steps["runCode"] === "object" &&
+                    typeof $steps["runCode"].then === "function"
+                  ) {
+                    $steps["runCode"] = await $steps["runCode"];
+                  }
+                }}
+              >
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text___9Tx8C
+                  )}
+                >
+                  {"\u0628\u0627\u0634\u0647"}
+                </div>
+              </div>
+            </AntdModal>
+          ) : null}
+          {(hasVariant(globalVariants, "screen", "mobile") ? false : false) ? (
             <div
               data-plasmic-name={"roadmap"}
               data-plasmic-override={overrides.roadmap}
@@ -2978,7 +2415,9 @@ function PlasmicProCalendar2__RenderFunc(props: {
                     </div>
                   </div>
                   <Button
-                    className={classNames("__wab_instance", sty.button__eIboa)}
+                    data-plasmic-name={"button"}
+                    data-plasmic-override={overrides.button}
+                    className={classNames("__wab_instance", sty.button)}
                     onClick={async event => {
                       const $steps = {};
 
@@ -3075,7 +2514,6 @@ const PlasmicDescendants = {
     "root",
     "header2",
     "sideBar2",
-    "alertModal",
     "headerMobileNew",
     "header",
     "right",
@@ -3097,11 +2535,11 @@ const PlasmicDescendants = {
     "modal",
     "roadmap",
     "roadmapmodal",
-    "embedHtml"
+    "embedHtml",
+    "button"
   ],
   header2: ["header2", "sideBar2"],
   sideBar2: ["sideBar2"],
-  alertModal: ["alertModal"],
   headerMobileNew: [
     "headerMobileNew",
     "header",
@@ -3154,9 +2592,10 @@ const PlasmicDescendants = {
   clarityRntComponent: ["clarityRntComponent"],
   faviconRntComponent: ["faviconRntComponent"],
   modal: ["modal"],
-  roadmap: ["roadmap", "roadmapmodal", "embedHtml"],
-  roadmapmodal: ["roadmapmodal", "embedHtml"],
-  embedHtml: ["embedHtml"]
+  roadmap: ["roadmap", "roadmapmodal", "embedHtml", "button"],
+  roadmapmodal: ["roadmapmodal", "embedHtml", "button"],
+  embedHtml: ["embedHtml"],
+  button: ["button"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -3165,7 +2604,6 @@ type NodeDefaultElementType = {
   root: "div";
   header2: "div";
   sideBar2: typeof SideBar2;
-  alertModal: typeof AntdModal;
   headerMobileNew: "div";
   header: "div";
   right: "div";
@@ -3188,6 +2626,7 @@ type NodeDefaultElementType = {
   roadmap: "div";
   roadmapmodal: typeof AntdModal;
   embedHtml: typeof Embed;
+  button: typeof Button;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -3254,7 +2693,6 @@ export const PlasmicProCalendar2 = Object.assign(
     // Helper components rendering sub-elements
     header2: makeNodeComponent("header2"),
     sideBar2: makeNodeComponent("sideBar2"),
-    alertModal: makeNodeComponent("alertModal"),
     headerMobileNew: makeNodeComponent("headerMobileNew"),
     header: makeNodeComponent("header"),
     right: makeNodeComponent("right"),
@@ -3277,6 +2715,7 @@ export const PlasmicProCalendar2 = Object.assign(
     roadmap: makeNodeComponent("roadmap"),
     roadmapmodal: makeNodeComponent("roadmapmodal"),
     embedHtml: makeNodeComponent("embedHtml"),
+    button: makeNodeComponent("button"),
 
     // Metadata about props expected for PlasmicProCalendar2
     internalVariantProps: PlasmicProCalendar2__VariantProps,

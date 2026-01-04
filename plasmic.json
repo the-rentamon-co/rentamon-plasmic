@@ -1468,20 +1468,6 @@
           "componentType": "component"
         },
         {
-          "id": "ssh21My6pq8y",
-          "name": "ProCalendar",
-          "type": "managed",
-          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
-          "renderModuleFilePath": "plasmic/website_starter/PlasmicProCalendar.tsx",
-          "importSpec": {
-            "modulePath": "../src/pages/panel-4.tsx"
-          },
-          "cssFilePath": "plasmic/website_starter/PlasmicProCalendar.module.css",
-          "scheme": "blackbox",
-          "componentType": "page",
-          "path": "/panel"
-        },
-        {
           "id": "XZmf7ZlhFOgx",
           "name": "Calendar4",
           "type": "managed",
