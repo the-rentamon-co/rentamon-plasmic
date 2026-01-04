@@ -62,7 +62,6 @@ import {
 import { Embed } from "@plasmicpkgs/plasmic-basic-components";
 import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
 import { DatePicker } from "@/fragment/components/date-picker"; // plasmic-import: MR9MOBuvKPN3/codeComponent
-import Button from "../../Button"; // plasmic-import: U5bKCJ5DYhib/component
 import { Fetcher } from "@plasmicapp/react-web/lib/data-sources";
 import { _useGlobalVariants } from "./plasmic"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectModule
 import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/styleTokensProvider
@@ -71,9 +70,6 @@ import "@plasmicapp/react-web/lib/plasmic.css";
 
 import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicTst.module.css"; // plasmic-import: kZSAE7HA3zLq/css
-
-import CheckSvgIcon from "./icons/PlasmicIcon__CheckSvg"; // plasmic-import: aHRi_lZjzHt3/icon
-import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: nPWd30PDwgwm/icon
 
 createPlasmicElementProxy;
 
@@ -91,6 +87,7 @@ export type PlasmicTst__OverridesType = {
   progressbar?: Flex__<"div">;
   progressbar2?: Flex__<"div">;
   spacer?: Flex__<"div">;
+  freeBox?: Flex__<"div">;
   apiRequest2?: Flex__<typeof ApiRequest>;
   apiRequest3?: Flex__<typeof ApiRequest>;
   apiRequest4?: Flex__<typeof ApiRequest>;
@@ -98,8 +95,6 @@ export type PlasmicTst__OverridesType = {
   profile2?: Flex__<typeof ApiRequest>;
   twat?: Flex__<"div">;
   firebase?: Flex__<typeof Embed>;
-  testTimeout?: Flex__<typeof Embed>;
-  tset?: Flex__<typeof Button>;
 };
 
 export interface DefaultTstProps {}
@@ -144,8 +139,6 @@ function PlasmicTst__RenderFunc(props: {
   const $refs = refsRef.current;
 
   const globalVariants = _useGlobalVariants();
-
-  const $globalActions = useGlobalActions?.();
 
   const stateSpecs: Parameters<typeof useDollarState>[0] = React.useMemo(
     () => [
@@ -344,7 +337,11 @@ function PlasmicTst__RenderFunc(props: {
             className={classNames(projectcss.all, sty.spacer)}
           />
 
-          <div className={classNames(projectcss.all, sty.freeBox___1WkQu)}>
+          <div
+            data-plasmic-name={"freeBox"}
+            data-plasmic-override={overrides.freeBox}
+            className={classNames(projectcss.all, sty.freeBox)}
+          >
             <div
               className={classNames(
                 projectcss.all,
@@ -699,95 +696,10 @@ function PlasmicTst__RenderFunc(props: {
               data-plasmic-override={overrides.firebase}
               className={classNames("__wab_instance", sty.firebase)}
               code={
-                '<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>\r\n<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-messaging-compat.js"></script>\r\n\r\n<script>\r\n  // \u062a\u0646\u0638\u06cc\u0645\u0627\u062a Firebase\r\n  var firebaseConfig = { \r\n    apiKey: "AIzaSyCwfbUiQNPQSyL48d0It3MgFOoTwF6AHN4",\r\n    authDomain: "miaan-notify-mn5436.firebaseapp.com",\r\n    databaseURL: "https://miaan-notify-mn5436.firebaseio.com",\r\n    projectId: "miaan-notify-mn5436",\r\n    storageBucket: "miaan-notify-mn5436.firebasestorage.app",\r\n    messagingSenderId: "553708011126",\r\n    appId: "1:553708011126:web:dcdff7eacd0ea7b3296957",\r\n    measurementId: "G-9TELS8G020"\r\n  };\r\n\r\n  // Initialize Firebase\r\n  firebase.initializeApp(firebaseConfig);\r\n  const messaging = firebase.messaging();\r\n\r\n  // \u06af\u0631\u0641\u062a\u0646 \u062a\u0648\u06a9\u0646 \u0628\u062f\u0648\u0646 \u062f\u0631\u062e\u0648\u0627\u0633\u062a Permission\r\n  function getAndSendTokenSilently() {\r\n    messaging.getToken({\r\n      vapidKey: "BPBCMzaOwuDnklPI_8EXu6x30lu0-eq0fcZ058u1fXWbHxicUr0fn8MdpyLFdP5QQIOgiIg9zZtVsyCrr7rV15k"\r\n    })\r\n    .then((currentToken) => {\r\n      if (currentToken) {\r\n        sendTokenToServer(currentToken);\r\n      } else {\r\n        console.log("\u2139\ufe0f \u062a\u0648\u06a9\u0646\u06cc \u0648\u062c\u0648\u062f \u0646\u062f\u0627\u0631\u062f (Permission \u0647\u0646\u0648\u0632 \u062f\u0627\u062f\u0647 \u0646\u0634\u062f\u0647)");\r\n      }\r\n    })\r\n    .catch((err) => {\r\n      console.log("\u274c \u062e\u0637\u0627 \u062f\u0631 \u062f\u0631\u06cc\u0627\u0641\u062a \u062a\u0648\u06a9\u0646:", err);\r\n    });\r\n  }\r\n\r\n  // \u0627\u0631\u0633\u0627\u0644 \u062a\u0648\u06a9\u0646 \u0628\u0647 \u0628\u06a9\u200c\u0627\u0646\u062f\r\n  function sendTokenToServer(token) {\r\n    // \u0630\u062e\u06cc\u0631\u0647 \u062a\u0648\u06a9\u0646 \u062f\u0631 \u06a9\u0648\u06a9\u06cc\r\n    document.cookie =\r\n      "fcm_token=" + token +\r\n      "; path=/; max-age=31536000; secure; samesite=lax";\r\n\r\n    // \u062e\u0648\u0627\u0646\u062f\u0646 \u06a9\u0648\u06a9\u06cc usso_access_token\r\n    function getCookie(name) {\r\n      var match = document.cookie.match(new RegExp(\'(^| )\' + name + \'=([^;]+)\'));\r\n      return match ? match[2] : null;\r\n    }\r\n\r\n    var userToken = getCookie("usso_access_token");\r\n\r\n    // timeout 2 \u062b\u0627\u0646\u06cc\u0647\r\n    const controller = new AbortController();\r\n    const timeoutId = setTimeout(() => {\r\n      controller.abort();\r\n    }, 2000);\r\n\r\n    fetch("https://second-n8n.darkube.app/webhook/v1/devices/sync", {\r\n      method: "POST",\r\n      signal: controller.signal,\r\n      headers: {\r\n        "Content-Type": "application/json",\r\n        "Authorization": userToken ? "Bearer " + userToken : "",\r\n        "fcm-token": token\r\n      },\r\n      body: JSON.stringify({ status: "synced" })\r\n    })\r\n    .then(response => {\r\n      clearTimeout(timeoutId);\r\n      console.log("\u2705 Token sent. Status:", response.status);\r\n    })\r\n    .catch(error => {\r\n      clearTimeout(timeoutId);\r\n      if (error.name === "AbortError") {\r\n        console.warn("\u23f1\ufe0f Request timeout after 2 seconds");\r\n      } else {\r\n        console.error("\u274c Request error:", error);\r\n      }\r\n    });\r\n  }\r\n\r\n  // \u067e\u06cc\u0627\u0645 Foreground\r\n  messaging.onMessage((payload) => {\r\n    console.log("\ud83d\udce9 Foreground message:", payload);\r\n\r\n    const title = payload.notification?.title || "";\r\n    const action = payload.data?.action || null;\r\n\r\n    const notification = new Notification(title, {\r\n      body: payload.notification?.body || "",\r\n      icon: payload.data?.image ||\r\n        "https://media.rentamon.com/img%2Flogo-miaan%2Fsign-blue-small.png",\r\n      data: { action }\r\n    });\r\n\r\n    notification.onclick = function (event) {\r\n      event.preventDefault();\r\n      window.location.href = action || "/";\r\n    };\r\n  });\r\n\r\n  // \u062b\u0628\u062a Service Worker\r\n  if ("serviceWorker" in navigator) {\r\n    navigator.serviceWorker\r\n      .register("https://miaan.ir/firebase-messaging-sw.js")\r\n      .then(reg => {\r\n        console.log("\u2705 Service Worker registered:", reg);\r\n        // \u0628\u0639\u062f \u0627\u0632 \u0631\u062c\u06cc\u0633\u062a\u0631 \u0634\u062f\u0646\u060c \u0633\u0627\u06cc\u0644\u0646\u062a \u062a\u0648\u06a9\u0646 \u0628\u06af\u06cc\u0631\r\n        getAndSendTokenSilently();\r\n      })\r\n      .catch(err => {\r\n        console.log("\u274c SW register error:", err);\r\n      });\r\n  }\r\n</script>\r\n'
+                '<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>\r\n<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-messaging-compat.js"></script>\r\n\r\n<script>\r\n  // \u062a\u0646\u0638\u06cc\u0645\u0627\u062a Firebase\r\n  var firebaseConfig = { \r\n    apiKey: "AIzaSyCwfbUiQNPQSyL48d0It3MgFOoTwF6AHN4",\r\n    authDomain: "miaan-notify-mn5436.firebaseapp.com",\r\n    databaseURL: "https://miaan-notify-mn5436.firebaseio.com",\r\n    projectId: "miaan-notify-mn5436",\r\n    storageBucket: "miaan-notify-mn5436.firebasestorage.app",\r\n    messagingSenderId: "553708011126",\r\n    appId: "1:553708011126:web:dcdff7eacd0ea7b3296957",\r\n    measurementId: "G-9TELS8G020"\r\n  };\r\n\r\n  // Initialize Firebase\r\n  firebase.initializeApp(firebaseConfig);\r\n  const messaging = firebase.messaging();\r\n\r\n  // \u06af\u0631\u0641\u062a\u0646 \u062a\u0648\u06a9\u0646 \u0628\u062f\u0648\u0646 \u062f\u0631\u062e\u0648\u0627\u0633\u062a Permission\r\n  function getAndSendTokenSilently() {\r\n    messaging.getToken({\r\n      vapidKey: "BPBCMzaOwuDnklPI_8EXu6x30lu0-eq0fcZ058u1fXWbHxicUr0fn8MdpyLFdP5QQIOgiIg9zZtVsyCrr7rV15k"\r\n    })\r\n    .then((currentToken) => {\r\n      if (currentToken) {\r\n        sendTokenToServer(currentToken);\r\n      } else {\r\n        console.log("\u2139\ufe0f \u062a\u0648\u06a9\u0646\u06cc \u0648\u062c\u0648\u062f \u0646\u062f\u0627\u0631\u062f (Permission \u0647\u0646\u0648\u0632 \u062f\u0627\u062f\u0647 \u0646\u0634\u062f\u0647)");\r\n      }\r\n    })\r\n    .catch((err) => {\r\n      console.log("\u274c \u062e\u0637\u0627 \u062f\u0631 \u062f\u0631\u06cc\u0627\u0641\u062a \u062a\u0648\u06a9\u0646:", err);\r\n    });\r\n  }\r\n\r\n  // \u0627\u0631\u0633\u0627\u0644 \u062a\u0648\u06a9\u0646 \u0628\u0647 \u0628\u06a9\u200c\u0627\u0646\u062f \u0628\u0627 \u062a\u0627\u06cc\u0645\u200c\u0627\u0648\u062a\r\n  function sendTokenToServer(token) {\r\n    // \u0630\u062e\u06cc\u0631\u0647 \u062a\u0648\u06a9\u0646 \u062f\u0631 \u06a9\u0648\u06a9\u06cc\r\n    document.cookie = "fcm_token=" + token + "; path=/; max-age=31536000; secure; samesite=lax";\r\n\r\n    // \u062e\u0648\u0627\u0646\u062f\u0646 \u06a9\u0648\u06a9\u06cc usso_access_token\r\n    function getCookie(name) {\r\n      var match = document.cookie.match(new RegExp(\'(^| )\' + name + \'=([^;]+)\'));\r\n      return match ? match[2] : null;\r\n    }\r\n\r\n    var userToken = getCookie("usso_access_token");\r\n\r\n    // \u0627\u06cc\u062c\u0627\u062f \u062a\u0627\u06cc\u0645\u200c\u0627\u0648\u062a \u06f2 \u062b\u0627\u0646\u06cc\u0647\r\n    const controller = new AbortController();\r\n    const timeoutId = setTimeout(() => controller.abort(), 2000);\r\n\r\n    fetch("https://second-n8n.darkube.app/webhook/v1/devices/sync", {\r\n      method: "POST",\r\n      signal: controller.signal,\r\n      headers: {\r\n        "Content-Type": "application/json",\r\n        "Authorization": userToken ? "Bearer " + userToken : "",\r\n        "fcm-token": token\r\n      },\r\n      body: JSON.stringify({ status: "synced" })\r\n    })\r\n    .then(response => {\r\n      clearTimeout(timeoutId);\r\n      console.log("\u2705 Token sent. Status:", response.status);\r\n    })\r\n    .catch(error => {\r\n      clearTimeout(timeoutId);\r\n      if (error.name === "AbortError") {\r\n        console.warn("\u23f1\ufe0f Request timeout after 2 seconds");\r\n      } else {\r\n        console.error("\u274c Request error:", error);\r\n      }\r\n    });\r\n  }\r\n\r\n  // \u067e\u06cc\u0627\u0645 Foreground \u0628\u062f\u0648\u0646 \u062f\u0631\u062e\u0648\u0627\u0633\u062a \u0627\u062c\u0627\u0632\u0647\r\n  messaging.onMessage((payload) => {\r\n    console.log("\ud83d\udce9 Foreground message:", payload);\r\n    // \u0641\u0642\u0637 \u0644\u0627\u06af \u0645\u06cc\u200c\u0632\u0646\u06cc\u0645\u060c \u0646\u0648\u062a\u06cc\u0641\u06cc\u06a9\u06cc\u0634\u0646 \u0646\u0645\u0627\u06cc\u0634 \u0646\u0645\u06cc\u200c\u062f\u0647\u06cc\u0645\r\n  });\r\n\r\n  // \u062b\u0628\u062a Service Worker \u0648 \u06af\u0631\u0641\u062a\u0646 \u062a\u0648\u06a9\u0646\r\n  if ("serviceWorker" in navigator) {\r\n    navigator.serviceWorker\r\n      .register("https://miaan.ir/firebase-messaging-sw.js")\r\n      .then(reg => {\r\n        console.log("\u2705 Service Worker registered:", reg);\r\n        getAndSendTokenSilently(); // \u0628\u062f\u0648\u0646 \u067e\u0646\u062c\u0631\u0647 \u0627\u062c\u0627\u0632\u0647\r\n      })\r\n      .catch(err => console.log("\u274c SW register error:", err));\r\n  }\r\n</script>\r\n'
               }
             />
-
-            <Embed
-              data-plasmic-name={"testTimeout"}
-              data-plasmic-override={overrides.testTimeout}
-              className={classNames("__wab_instance", sty.testTimeout)}
-              code={
-                '<script>\r\n  function testTimeout() {\r\n    const controller = new AbortController();\r\n    const timeoutId = setTimeout(() => {\r\n      controller.abort();\r\n    }, 2000); // \u23f1 2 \u062b\u0627\u0646\u06cc\u0647\r\n\r\n    fetch("https://second-n8n.darkube.app/webhook/a55a41d4-68a6-4102-9ddf-e2d729ee7e41", {\r\n      method: "GET",\r\n      signal: controller.signal,\r\n      headers: { "Content-Type": "application/json" },\r\n      body: JSON.stringify({ test: "timeout check" })\r\n    })\r\n    .then(response => {\r\n      clearTimeout(timeoutId);\r\n      console.log("\u2705 Request finished:", response.status);\r\n      return response.text();\r\n    })\r\n    .then(text => console.log("Response body:", text))\r\n    .catch(error => {\r\n      clearTimeout(timeoutId);\r\n      if (error.name === "AbortError") {\r\n        console.warn("\u23f1\ufe0f Request timed out after 2 seconds (working!)");\r\n      } else {\r\n        console.error("\u274c Request error:", error);\r\n      }\r\n    });\r\n  }\r\n\r\n  // \u0627\u062c\u0631\u0627\u06cc \u062a\u0633\u062a\r\n  testTimeout();\r\n</script>\r\n'
-              }
-            />
-
-            <Button
-              data-plasmic-name={"tset"}
-              data-plasmic-override={overrides.tset}
-              className={classNames("__wab_instance", sty.tset)}
-              onClick={async event => {
-                const $steps = {};
-
-                $steps["runCode"] = true
-                  ? (() => {
-                      const actionArgs = {
-                        customFunction: async () => {
-                          return window.requestNotificationPermission();
-                        }
-                      };
-                      return (({ customFunction }) => {
-                        return customFunction();
-                      })?.apply(null, [actionArgs]);
-                    })()
-                  : undefined;
-                if (
-                  $steps["runCode"] != null &&
-                  typeof $steps["runCode"] === "object" &&
-                  typeof $steps["runCode"].then === "function"
-                ) {
-                  $steps["runCode"] = await $steps["runCode"];
-                }
-              }}
-            >
-              {"mmm"}
-            </Button>
           </div>
-          <div
-            className={classNames(projectcss.all, sty.freeBox__nuKAm)}
-            onClick={async event => {
-              const $steps = {};
-
-              $steps["invokeGlobalAction"] = true
-                ? (() => {
-                    const actionArgs = {
-                      args: [
-                        "POST",
-                        "https://api-v3.miaan.ir/webhook/reservations/calendar/block",
-                        undefined,
-                        (() => {
-                          try {
-                            return {
-                              test: "cors"
-                            };
-                          } catch (e) {
-                            if (
-                              e instanceof TypeError ||
-                              e?.plasmicType === "PlasmicUndefinedDataError"
-                            ) {
-                              return undefined;
-                            }
-                            throw e;
-                          }
-                        })(),
-                        undefined
-                      ]
-                    };
-                    return $globalActions["Fragment.apiRequest"]?.apply(null, [
-                      ...actionArgs.args
-                    ]);
-                  })()
-                : undefined;
-              if (
-                $steps["invokeGlobalAction"] != null &&
-                typeof $steps["invokeGlobalAction"] === "object" &&
-                typeof $steps["invokeGlobalAction"].then === "function"
-              ) {
-                $steps["invokeGlobalAction"] =
-                  await $steps["invokeGlobalAction"];
-              }
-            }}
-          />
         </div>
       </div>
     </React.Fragment>
@@ -800,28 +712,32 @@ const PlasmicDescendants = {
     "progressbar",
     "progressbar2",
     "spacer",
+    "freeBox",
     "apiRequest2",
     "apiRequest3",
     "apiRequest4",
     "datePicker",
     "profile2",
     "twat",
-    "firebase",
-    "testTimeout",
-    "tset"
+    "firebase"
   ],
   progressbar: ["progressbar"],
   progressbar2: ["progressbar2"],
   spacer: ["spacer"],
+  freeBox: [
+    "freeBox",
+    "apiRequest2",
+    "apiRequest3",
+    "apiRequest4",
+    "datePicker"
+  ],
   apiRequest2: ["apiRequest2"],
   apiRequest3: ["apiRequest3"],
   apiRequest4: ["apiRequest4"],
   datePicker: ["datePicker"],
   profile2: ["profile2"],
-  twat: ["twat", "firebase", "testTimeout", "tset"],
-  firebase: ["firebase"],
-  testTimeout: ["testTimeout"],
-  tset: ["tset"]
+  twat: ["twat", "firebase"],
+  firebase: ["firebase"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -831,6 +747,7 @@ type NodeDefaultElementType = {
   progressbar: "div";
   progressbar2: "div";
   spacer: "div";
+  freeBox: "div";
   apiRequest2: typeof ApiRequest;
   apiRequest3: typeof ApiRequest;
   apiRequest4: typeof ApiRequest;
@@ -838,8 +755,6 @@ type NodeDefaultElementType = {
   profile2: typeof ApiRequest;
   twat: "div";
   firebase: typeof Embed;
-  testTimeout: typeof Embed;
-  tset: typeof Button;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -907,6 +822,7 @@ export const PlasmicTst = Object.assign(
     progressbar: makeNodeComponent("progressbar"),
     progressbar2: makeNodeComponent("progressbar2"),
     spacer: makeNodeComponent("spacer"),
+    freeBox: makeNodeComponent("freeBox"),
     apiRequest2: makeNodeComponent("apiRequest2"),
     apiRequest3: makeNodeComponent("apiRequest3"),
     apiRequest4: makeNodeComponent("apiRequest4"),
@@ -914,8 +830,6 @@ export const PlasmicTst = Object.assign(
     profile2: makeNodeComponent("profile2"),
     twat: makeNodeComponent("twat"),
     firebase: makeNodeComponent("firebase"),
-    testTimeout: makeNodeComponent("testTimeout"),
-    tset: makeNodeComponent("tset"),
 
     // Metadata about props expected for PlasmicTst
     internalVariantProps: PlasmicTst__VariantProps,
