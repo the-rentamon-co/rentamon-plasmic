@@ -95,15 +95,12 @@ export type PlasmicIntegrations__OverridesType = {
   platformsTitle?: Flex__<"div">;
   platforms?: Flex__<"div">;
   names?: Flex__<"div">;
-  site?: Flex__<"div">;
-  platformNames23?: Flex__<"div">;
-  platformNames24?: Flex__<"div">;
   jajiga?: Flex__<"div">;
   platformNames5?: Flex__<"div">;
-  platformNames6?: Flex__<"div">;
-  shab?: Flex__<"div">;
-  platformNames2?: Flex__<"div">;
-  platformNames3?: Flex__<"div">;
+  platformNames25?: Flex__<"div">;
+  mihmansho?: Flex__<"div">;
+  platformNames20?: Flex__<"div">;
+  platformNames21?: Flex__<"div">;
   jabama?: Flex__<"div">;
   platformNames8?: Flex__<"div">;
   platformNames9?: Flex__<"div">;
@@ -119,9 +116,12 @@ export type PlasmicIntegrations__OverridesType = {
   mizboon?: Flex__<"div">;
   platformNames17?: Flex__<"div">;
   platformNames18?: Flex__<"div">;
-  mihmansho?: Flex__<"div">;
-  platformNames20?: Flex__<"div">;
-  platformNames21?: Flex__<"div">;
+  shab?: Flex__<"div">;
+  platformNames2?: Flex__<"div">;
+  platformNames3?: Flex__<"div">;
+  site?: Flex__<"div">;
+  platformNames23?: Flex__<"div">;
+  platformNames24?: Flex__<"div">;
   benefits?: Flex__<"div">;
   benefitsTitle?: Flex__<"div">;
   benefitsCaption?: Flex__<"div">;
@@ -131,8 +131,8 @@ export type PlasmicIntegrations__OverridesType = {
   bot?: Flex__<"div">;
   apiAccess?: Flex__<"div">;
   moreDecs?: Flex__<"div">;
-  moreDecs2?: Flex__<"div">;
   requestDemo?: Flex__<"div">;
+  moreDecs2?: Flex__<"div">;
   rentamonFooter?: Flex__<typeof RentamonFooter>;
   clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
   faviconRntComponent?: Flex__<typeof FaviconRntComponent>;
@@ -346,78 +346,6 @@ function PlasmicIntegrations__RenderFunc(props: {
                 className={classNames(projectcss.all, sty.names)}
               >
                 <div
-                  data-plasmic-name={"site"}
-                  data-plasmic-override={overrides.site}
-                  className={classNames(projectcss.all, sty.site)}
-                >
-                  <div
-                    data-plasmic-name={"platformNames23"}
-                    data-plasmic-override={overrides.platformNames23}
-                    className={classNames(projectcss.all, sty.platformNames23)}
-                  >
-                    <PlasmicImg__
-                      alt={""}
-                      className={classNames(sty.img__t8UvM)}
-                      displayHeight={
-                        hasVariant(globalVariants, "screen", "smallMobile")
-                          ? "100%"
-                          : hasVariant(globalVariants, "screen", "mobile")
-                            ? "50px"
-                            : "70px"
-                      }
-                      displayMaxHeight={
-                        hasVariant(globalVariants, "screen", "smallMobile")
-                          ? "50px"
-                          : hasVariant(globalVariants, "screen", "mobile")
-                            ? "50px"
-                            : "70px"
-                      }
-                      displayMaxWidth={
-                        hasVariant(globalVariants, "screen", "smallMobile")
-                          ? "100%"
-                          : hasVariant(globalVariants, "screen", "mobile")
-                            ? "100%"
-                            : "100%"
-                      }
-                      displayMinHeight={
-                        hasVariant(globalVariants, "screen", "smallMobile")
-                          ? "30px"
-                          : hasVariant(globalVariants, "screen", "mobile")
-                            ? "50px"
-                            : "70px"
-                      }
-                      displayMinWidth={"0"}
-                      displayWidth={
-                        hasVariant(globalVariants, "screen", "smallMobile")
-                          ? "100%"
-                          : "auto"
-                      }
-                      loading={"lazy"}
-                      src={{
-                        src: "/plasmic/website_starter/images/websitePng.png",
-                        fullWidth: 512,
-                        fullHeight: 512,
-                        aspectRatio: undefined
-                      }}
-                    />
-                  </div>
-                  <div
-                    data-plasmic-name={"platformNames24"}
-                    data-plasmic-override={overrides.platformNames24}
-                    className={classNames(projectcss.all, sty.platformNames24)}
-                  >
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text___3Ip9N
-                      )}
-                    >
-                      {"\u0633\u0627\u06cc\u062a \u0634\u0645\u0627"}
-                    </div>
-                  </div>
-                </div>
-                <div
                   data-plasmic-name={"jajiga"}
                   data-plasmic-override={overrides.jajiga}
                   className={classNames(projectcss.all, sty.jajiga)}
@@ -472,34 +400,38 @@ function PlasmicIntegrations__RenderFunc(props: {
                     />
                   </div>
                   <div
-                    data-plasmic-name={"platformNames6"}
-                    data-plasmic-override={overrides.platformNames6}
-                    className={classNames(projectcss.all, sty.platformNames6)}
+                    data-plasmic-name={"platformNames25"}
+                    data-plasmic-override={overrides.platformNames25}
+                    className={classNames(projectcss.all, sty.platformNames25)}
                   >
                     <div
                       className={classNames(
                         projectcss.all,
                         projectcss.__wab_text,
-                        sty.text__rBkM2
+                        sty.text___4Yfgo
                       )}
                     >
-                      {"\u062c\u0627\u062c\u06cc\u06af\u0627"}
+                      {hasVariant(globalVariants, "screen", "smallMobile")
+                        ? "\u062c\u0627\u062c\u06cc\u06af\u0627"
+                        : hasVariant(globalVariants, "screen", "mobile")
+                          ? "\u062c\u0627\u062c\u06cc\u06af\u0627"
+                          : "\u062c\u0627\u062c\u06cc\u06af\u0627"}
                     </div>
                   </div>
                 </div>
                 <div
-                  data-plasmic-name={"shab"}
-                  data-plasmic-override={overrides.shab}
-                  className={classNames(projectcss.all, sty.shab)}
+                  data-plasmic-name={"mihmansho"}
+                  data-plasmic-override={overrides.mihmansho}
+                  className={classNames(projectcss.all, sty.mihmansho)}
                 >
                   <div
-                    data-plasmic-name={"platformNames2"}
-                    data-plasmic-override={overrides.platformNames2}
-                    className={classNames(projectcss.all, sty.platformNames2)}
+                    data-plasmic-name={"platformNames20"}
+                    data-plasmic-override={overrides.platformNames20}
+                    className={classNames(projectcss.all, sty.platformNames20)}
                   >
                     <PlasmicImg__
                       alt={""}
-                      className={classNames(sty.img___15Tro)}
+                      className={classNames(sty.img__lgixk)}
                       displayHeight={
                         hasVariant(globalVariants, "screen", "smallMobile")
                           ? "100%"
@@ -536,26 +468,26 @@ function PlasmicIntegrations__RenderFunc(props: {
                       }
                       loading={"lazy"}
                       src={{
-                        src: "/plasmic/website_starter/images/image63.png",
-                        fullWidth: 360,
-                        fullHeight: 360,
+                        src: "/plasmic/website_starter/images/image68.png",
+                        fullWidth: 512,
+                        fullHeight: 512,
                         aspectRatio: undefined
                       }}
                     />
                   </div>
                   <div
-                    data-plasmic-name={"platformNames3"}
-                    data-plasmic-override={overrides.platformNames3}
-                    className={classNames(projectcss.all, sty.platformNames3)}
+                    data-plasmic-name={"platformNames21"}
+                    data-plasmic-override={overrides.platformNames21}
+                    className={classNames(projectcss.all, sty.platformNames21)}
                   >
                     <div
                       className={classNames(
                         projectcss.all,
                         projectcss.__wab_text,
-                        sty.text__h9EO
+                        sty.text__nDaYf
                       )}
                     >
-                      {"\u0634\u0628"}
+                      {"\u0645\u06cc\u0647\u0645\u0627\u0646\u0634\u0648"}
                     </div>
                   </div>
                 </div>
@@ -920,18 +852,18 @@ function PlasmicIntegrations__RenderFunc(props: {
                   </div>
                 </div>
                 <div
-                  data-plasmic-name={"mihmansho"}
-                  data-plasmic-override={overrides.mihmansho}
-                  className={classNames(projectcss.all, sty.mihmansho)}
+                  data-plasmic-name={"shab"}
+                  data-plasmic-override={overrides.shab}
+                  className={classNames(projectcss.all, sty.shab)}
                 >
                   <div
-                    data-plasmic-name={"platformNames20"}
-                    data-plasmic-override={overrides.platformNames20}
-                    className={classNames(projectcss.all, sty.platformNames20)}
+                    data-plasmic-name={"platformNames2"}
+                    data-plasmic-override={overrides.platformNames2}
+                    className={classNames(projectcss.all, sty.platformNames2)}
                   >
                     <PlasmicImg__
                       alt={""}
-                      className={classNames(sty.img__lgixk)}
+                      className={classNames(sty.img___15Tro)}
                       displayHeight={
                         hasVariant(globalVariants, "screen", "smallMobile")
                           ? "100%"
@@ -968,7 +900,79 @@ function PlasmicIntegrations__RenderFunc(props: {
                       }
                       loading={"lazy"}
                       src={{
-                        src: "/plasmic/website_starter/images/image68.png",
+                        src: "/plasmic/website_starter/images/image63.png",
+                        fullWidth: 360,
+                        fullHeight: 360,
+                        aspectRatio: undefined
+                      }}
+                    />
+                  </div>
+                  <div
+                    data-plasmic-name={"platformNames3"}
+                    data-plasmic-override={overrides.platformNames3}
+                    className={classNames(projectcss.all, sty.platformNames3)}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__h9EO
+                      )}
+                    >
+                      {"\u0634\u0628"}
+                    </div>
+                  </div>
+                </div>
+                <div
+                  data-plasmic-name={"site"}
+                  data-plasmic-override={overrides.site}
+                  className={classNames(projectcss.all, sty.site)}
+                >
+                  <div
+                    data-plasmic-name={"platformNames23"}
+                    data-plasmic-override={overrides.platformNames23}
+                    className={classNames(projectcss.all, sty.platformNames23)}
+                  >
+                    <PlasmicImg__
+                      alt={""}
+                      className={classNames(sty.img__t8UvM)}
+                      displayHeight={
+                        hasVariant(globalVariants, "screen", "smallMobile")
+                          ? "100%"
+                          : hasVariant(globalVariants, "screen", "mobile")
+                            ? "50px"
+                            : "70px"
+                      }
+                      displayMaxHeight={
+                        hasVariant(globalVariants, "screen", "smallMobile")
+                          ? "50px"
+                          : hasVariant(globalVariants, "screen", "mobile")
+                            ? "50px"
+                            : "70px"
+                      }
+                      displayMaxWidth={
+                        hasVariant(globalVariants, "screen", "smallMobile")
+                          ? "100%"
+                          : hasVariant(globalVariants, "screen", "mobile")
+                            ? "100%"
+                            : "100%"
+                      }
+                      displayMinHeight={
+                        hasVariant(globalVariants, "screen", "smallMobile")
+                          ? "30px"
+                          : hasVariant(globalVariants, "screen", "mobile")
+                            ? "50px"
+                            : "70px"
+                      }
+                      displayMinWidth={"0"}
+                      displayWidth={
+                        hasVariant(globalVariants, "screen", "smallMobile")
+                          ? "100%"
+                          : "auto"
+                      }
+                      loading={"lazy"}
+                      src={{
+                        src: "/plasmic/website_starter/images/websitePng.png",
                         fullWidth: 512,
                         fullHeight: 512,
                         aspectRatio: undefined
@@ -976,18 +980,18 @@ function PlasmicIntegrations__RenderFunc(props: {
                     />
                   </div>
                   <div
-                    data-plasmic-name={"platformNames21"}
-                    data-plasmic-override={overrides.platformNames21}
-                    className={classNames(projectcss.all, sty.platformNames21)}
+                    data-plasmic-name={"platformNames24"}
+                    data-plasmic-override={overrides.platformNames24}
+                    className={classNames(projectcss.all, sty.platformNames24)}
                   >
                     <div
                       className={classNames(
                         projectcss.all,
                         projectcss.__wab_text,
-                        sty.text__nDaYf
+                        sty.text___3Ip9N
                       )}
                     >
-                      {"\u0645\u06cc\u0647\u0645\u0627\u0646\u0634\u0648"}
+                      {"\u0633\u0627\u06cc\u062a \u0634\u0645\u0627"}
                     </div>
                   </div>
                 </div>
@@ -1224,34 +1228,6 @@ function PlasmicIntegrations__RenderFunc(props: {
                 </div>
               </div>
               <div
-                data-plasmic-name={"moreDecs2"}
-                data-plasmic-override={overrides.moreDecs2}
-                className={classNames(projectcss.all, sty.moreDecs2)}
-              >
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__wBPyM
-                  )}
-                >
-                  {
-                    "\u0645\u06cc\u0627\u0646 \u0628\u0647\u200c\u0635\u0648\u0631\u062a \u062e\u0648\u062f\u06a9\u0627\u0631 \u062a\u063a\u06cc\u06cc\u0631\u0627\u062a \u062a\u0642\u0648\u06cc\u0645 \u0647\u0631 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0631\u0648 \u0630\u062e\u06cc\u0631\u0647 \u0645\u06cc\u200c\u06a9\u0646\u0647. \u0628\u0639\u062f \u0627AP \u0628\u0644\u0627\u0641\u0627\u0635\u0644\u0647 \u0627\u0632 \u0637\u0631\u06cc\u0642 \u0648\u0628\u200c\u0647\u0648\u06a9\u200c\u0647\u0627\u060c \u0634\u0645\u0627 \u0631\u0648 \u0627\u0632 \u0627\u06cc\u0646 \u062a\u063a\u06cc\u06cc\u0631\u0627\u062a \u0645\u0637\u0644\u0639 \u0645\u06cc\u200c\u06a9\u0646\u0647 \u062a\u0627 \u0628\u062a\u0648\u0646\u06cc\u062f \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0645\u0631\u0628\u0648\u0637\u0647 \u0631\u0648 \u062f\u0631 \u0633\u06cc\u0633\u062a\u0645 \u062e\u0648\u062f\u062a\u0648\u0646 \u0628\u0647\u200c\u0631\u0648\u0632 \u06a9\u0646\u06cc\u062f.\n\r"
-                  }
-                </div>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__wcvtr
-                  )}
-                >
-                  {
-                    "\u0627\u06cc\u0646 \u0641\u0631\u0622\u06cc\u0646\u062f \u062a\u0636\u0645\u06cc\u0646 \u0645\u06cc\u200c\u06a9\u0646\u0647 \u06a9\u0647 \u062f\u0627\u062f\u0647\u200c\u0647\u0627\u06cc \u0634\u0645\u0627 \u0647\u0645\u06cc\u0634\u0647 \u0628\u0627 \u0622\u062e\u0631\u06cc\u0646 \u0648\u0636\u0639\u06cc\u062a \u06a9\u0644\u06cc\u0647\u200c\u06cc \u06a9\u0627\u0646\u0627\u0644\u200c\u0647\u0627\u06cc \u0641\u0631\u0648\u0634 \u0647\u0645\u0627\u0647\u0646\u06af \u0628\u0627\u0634\u0647."
-                  }
-                </div>
-              </div>
-              <div
                 data-plasmic-name={"requestDemo"}
                 data-plasmic-override={overrides.requestDemo}
                 className={classNames(projectcss.all, sty.requestDemo)}
@@ -1303,6 +1279,23 @@ function PlasmicIntegrations__RenderFunc(props: {
                   }
                 </div>
               </div>
+              <div
+                data-plasmic-name={"moreDecs2"}
+                data-plasmic-override={overrides.moreDecs2}
+                className={classNames(projectcss.all, sty.moreDecs2)}
+              >
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__wcvtr
+                  )}
+                >
+                  {
+                    "\u0628\u0631\u0627\u06cc \u062f\u0631\u06cc\u0627\u0641\u062a \u0631\u0627\u0647\u06a9\u0627\u0631 \u0627\u062e\u062a\u0635\u0627\u0635\u06cc \u06a9\u0633\u0628\u200c\u0648\u06a9\u0627\u0631 \u062e\u0648\u062f\u062a\u0648\u0646 \u0628\u0627 \u0645\u0627 \u062f\u0631 \u062a\u0645\u0627\u0633 \u0628\u0627\u0634\u06cc\u062f."
+                  }
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -1342,15 +1335,12 @@ const PlasmicDescendants = {
     "platformsTitle",
     "platforms",
     "names",
-    "site",
-    "platformNames23",
-    "platformNames24",
     "jajiga",
     "platformNames5",
-    "platformNames6",
-    "shab",
-    "platformNames2",
-    "platformNames3",
+    "platformNames25",
+    "mihmansho",
+    "platformNames20",
+    "platformNames21",
     "jabama",
     "platformNames8",
     "platformNames9",
@@ -1366,9 +1356,12 @@ const PlasmicDescendants = {
     "mizboon",
     "platformNames17",
     "platformNames18",
-    "mihmansho",
-    "platformNames20",
-    "platformNames21",
+    "shab",
+    "platformNames2",
+    "platformNames3",
+    "site",
+    "platformNames23",
+    "platformNames24",
     "benefits",
     "benefitsTitle",
     "benefitsCaption",
@@ -1378,8 +1371,8 @@ const PlasmicDescendants = {
     "bot",
     "apiAccess",
     "moreDecs",
-    "moreDecs2",
     "requestDemo",
+    "moreDecs2",
     "rentamonFooter",
     "clarityRntComponent",
     "faviconRntComponent"
@@ -1394,15 +1387,12 @@ const PlasmicDescendants = {
     "platformsTitle",
     "platforms",
     "names",
-    "site",
-    "platformNames23",
-    "platformNames24",
     "jajiga",
     "platformNames5",
-    "platformNames6",
-    "shab",
-    "platformNames2",
-    "platformNames3",
+    "platformNames25",
+    "mihmansho",
+    "platformNames20",
+    "platformNames21",
     "jabama",
     "platformNames8",
     "platformNames9",
@@ -1418,9 +1408,12 @@ const PlasmicDescendants = {
     "mizboon",
     "platformNames17",
     "platformNames18",
-    "mihmansho",
-    "platformNames20",
-    "platformNames21",
+    "shab",
+    "platformNames2",
+    "platformNames3",
+    "site",
+    "platformNames23",
+    "platformNames24",
     "benefits",
     "benefitsTitle",
     "benefitsCaption",
@@ -1430,8 +1423,8 @@ const PlasmicDescendants = {
     "bot",
     "apiAccess",
     "moreDecs",
-    "moreDecs2",
-    "requestDemo"
+    "requestDemo",
+    "moreDecs2"
   ],
   introApi: [
     "introApi",
@@ -1441,15 +1434,12 @@ const PlasmicDescendants = {
     "platformsTitle",
     "platforms",
     "names",
-    "site",
-    "platformNames23",
-    "platformNames24",
     "jajiga",
     "platformNames5",
-    "platformNames6",
-    "shab",
-    "platformNames2",
-    "platformNames3",
+    "platformNames25",
+    "mihmansho",
+    "platformNames20",
+    "platformNames21",
     "jabama",
     "platformNames8",
     "platformNames9",
@@ -1465,9 +1455,12 @@ const PlasmicDescendants = {
     "mizboon",
     "platformNames17",
     "platformNames18",
-    "mihmansho",
-    "platformNames20",
-    "platformNames21"
+    "shab",
+    "platformNames2",
+    "platformNames3",
+    "site",
+    "platformNames23",
+    "platformNames24"
   ],
   introApiTitle: ["introApiTitle", "h1"],
   h1: ["h1"],
@@ -1476,15 +1469,12 @@ const PlasmicDescendants = {
   platforms: [
     "platforms",
     "names",
-    "site",
-    "platformNames23",
-    "platformNames24",
     "jajiga",
     "platformNames5",
-    "platformNames6",
-    "shab",
-    "platformNames2",
-    "platformNames3",
+    "platformNames25",
+    "mihmansho",
+    "platformNames20",
+    "platformNames21",
     "jabama",
     "platformNames8",
     "platformNames9",
@@ -1500,21 +1490,21 @@ const PlasmicDescendants = {
     "mizboon",
     "platformNames17",
     "platformNames18",
-    "mihmansho",
-    "platformNames20",
-    "platformNames21"
+    "shab",
+    "platformNames2",
+    "platformNames3",
+    "site",
+    "platformNames23",
+    "platformNames24"
   ],
   names: [
     "names",
-    "site",
-    "platformNames23",
-    "platformNames24",
     "jajiga",
     "platformNames5",
-    "platformNames6",
-    "shab",
-    "platformNames2",
-    "platformNames3",
+    "platformNames25",
+    "mihmansho",
+    "platformNames20",
+    "platformNames21",
     "jabama",
     "platformNames8",
     "platformNames9",
@@ -1530,19 +1520,19 @@ const PlasmicDescendants = {
     "mizboon",
     "platformNames17",
     "platformNames18",
-    "mihmansho",
-    "platformNames20",
-    "platformNames21"
+    "shab",
+    "platformNames2",
+    "platformNames3",
+    "site",
+    "platformNames23",
+    "platformNames24"
   ],
-  site: ["site", "platformNames23", "platformNames24"],
-  platformNames23: ["platformNames23"],
-  platformNames24: ["platformNames24"],
-  jajiga: ["jajiga", "platformNames5", "platformNames6"],
+  jajiga: ["jajiga", "platformNames5", "platformNames25"],
   platformNames5: ["platformNames5"],
-  platformNames6: ["platformNames6"],
-  shab: ["shab", "platformNames2", "platformNames3"],
-  platformNames2: ["platformNames2"],
-  platformNames3: ["platformNames3"],
+  platformNames25: ["platformNames25"],
+  mihmansho: ["mihmansho", "platformNames20", "platformNames21"],
+  platformNames20: ["platformNames20"],
+  platformNames21: ["platformNames21"],
   jabama: ["jabama", "platformNames8", "platformNames9"],
   platformNames8: ["platformNames8"],
   platformNames9: ["platformNames9"],
@@ -1558,9 +1548,12 @@ const PlasmicDescendants = {
   mizboon: ["mizboon", "platformNames17", "platformNames18"],
   platformNames17: ["platformNames17"],
   platformNames18: ["platformNames18"],
-  mihmansho: ["mihmansho", "platformNames20", "platformNames21"],
-  platformNames20: ["platformNames20"],
-  platformNames21: ["platformNames21"],
+  shab: ["shab", "platformNames2", "platformNames3"],
+  platformNames2: ["platformNames2"],
+  platformNames3: ["platformNames3"],
+  site: ["site", "platformNames23", "platformNames24"],
+  platformNames23: ["platformNames23"],
+  platformNames24: ["platformNames24"],
   benefits: [
     "benefits",
     "benefitsTitle",
@@ -1574,11 +1567,11 @@ const PlasmicDescendants = {
   ul: ["ul"],
   autoSyncGif: ["autoSyncGif", "htmlVideo"],
   htmlVideo: ["htmlVideo"],
-  bot: ["bot", "apiAccess", "moreDecs", "moreDecs2", "requestDemo"],
-  apiAccess: ["apiAccess", "moreDecs", "moreDecs2", "requestDemo"],
+  bot: ["bot", "apiAccess", "moreDecs", "requestDemo", "moreDecs2"],
+  apiAccess: ["apiAccess", "moreDecs", "requestDemo", "moreDecs2"],
   moreDecs: ["moreDecs"],
-  moreDecs2: ["moreDecs2"],
   requestDemo: ["requestDemo"],
+  moreDecs2: ["moreDecs2"],
   rentamonFooter: ["rentamonFooter"],
   clarityRntComponent: ["clarityRntComponent"],
   faviconRntComponent: ["faviconRntComponent"]
@@ -1597,15 +1590,12 @@ type NodeDefaultElementType = {
   platformsTitle: "div";
   platforms: "div";
   names: "div";
-  site: "div";
-  platformNames23: "div";
-  platformNames24: "div";
   jajiga: "div";
   platformNames5: "div";
-  platformNames6: "div";
-  shab: "div";
-  platformNames2: "div";
-  platformNames3: "div";
+  platformNames25: "div";
+  mihmansho: "div";
+  platformNames20: "div";
+  platformNames21: "div";
   jabama: "div";
   platformNames8: "div";
   platformNames9: "div";
@@ -1621,9 +1611,12 @@ type NodeDefaultElementType = {
   mizboon: "div";
   platformNames17: "div";
   platformNames18: "div";
-  mihmansho: "div";
-  platformNames20: "div";
-  platformNames21: "div";
+  shab: "div";
+  platformNames2: "div";
+  platformNames3: "div";
+  site: "div";
+  platformNames23: "div";
+  platformNames24: "div";
   benefits: "div";
   benefitsTitle: "div";
   benefitsCaption: "div";
@@ -1633,8 +1626,8 @@ type NodeDefaultElementType = {
   bot: "div";
   apiAccess: "div";
   moreDecs: "div";
-  moreDecs2: "div";
   requestDemo: "div";
+  moreDecs2: "div";
   rentamonFooter: typeof RentamonFooter;
   clarityRntComponent: typeof ClarityRntComponent;
   faviconRntComponent: typeof FaviconRntComponent;
@@ -1711,15 +1704,12 @@ export const PlasmicIntegrations = Object.assign(
     platformsTitle: makeNodeComponent("platformsTitle"),
     platforms: makeNodeComponent("platforms"),
     names: makeNodeComponent("names"),
-    site: makeNodeComponent("site"),
-    platformNames23: makeNodeComponent("platformNames23"),
-    platformNames24: makeNodeComponent("platformNames24"),
     jajiga: makeNodeComponent("jajiga"),
     platformNames5: makeNodeComponent("platformNames5"),
-    platformNames6: makeNodeComponent("platformNames6"),
-    shab: makeNodeComponent("shab"),
-    platformNames2: makeNodeComponent("platformNames2"),
-    platformNames3: makeNodeComponent("platformNames3"),
+    platformNames25: makeNodeComponent("platformNames25"),
+    mihmansho: makeNodeComponent("mihmansho"),
+    platformNames20: makeNodeComponent("platformNames20"),
+    platformNames21: makeNodeComponent("platformNames21"),
     jabama: makeNodeComponent("jabama"),
     platformNames8: makeNodeComponent("platformNames8"),
     platformNames9: makeNodeComponent("platformNames9"),
@@ -1735,9 +1725,12 @@ export const PlasmicIntegrations = Object.assign(
     mizboon: makeNodeComponent("mizboon"),
     platformNames17: makeNodeComponent("platformNames17"),
     platformNames18: makeNodeComponent("platformNames18"),
-    mihmansho: makeNodeComponent("mihmansho"),
-    platformNames20: makeNodeComponent("platformNames20"),
-    platformNames21: makeNodeComponent("platformNames21"),
+    shab: makeNodeComponent("shab"),
+    platformNames2: makeNodeComponent("platformNames2"),
+    platformNames3: makeNodeComponent("platformNames3"),
+    site: makeNodeComponent("site"),
+    platformNames23: makeNodeComponent("platformNames23"),
+    platformNames24: makeNodeComponent("platformNames24"),
     benefits: makeNodeComponent("benefits"),
     benefitsTitle: makeNodeComponent("benefitsTitle"),
     benefitsCaption: makeNodeComponent("benefitsCaption"),
@@ -1747,8 +1740,8 @@ export const PlasmicIntegrations = Object.assign(
     bot: makeNodeComponent("bot"),
     apiAccess: makeNodeComponent("apiAccess"),
     moreDecs: makeNodeComponent("moreDecs"),
-    moreDecs2: makeNodeComponent("moreDecs2"),
     requestDemo: makeNodeComponent("requestDemo"),
+    moreDecs2: makeNodeComponent("moreDecs2"),
     rentamonFooter: makeNodeComponent("rentamonFooter"),
     clarityRntComponent: makeNodeComponent("clarityRntComponent"),
     faviconRntComponent: makeNodeComponent("faviconRntComponent"),
