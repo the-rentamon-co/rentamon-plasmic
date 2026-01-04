@@ -201,7 +201,11 @@
   max-width: 100%;
   min-width: 0;
 }
-.embedHtml__sD2Gc:global(.__wab_instance) {
+.firebase:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+}
+.testTimeout:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
 }
