@@ -7509,7 +7509,7 @@ function PlasmicCalendar23__RenderFunc(props: {
                       const actionArgs = {
                         args: [
                           "POST",
-                          "https://replica-api-v2.darkube.app/api/setblock",
+                          "https://api-v2.rentamon.com/api/setblock",
                           undefined,
                           (() => {
                             try {
