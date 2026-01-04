@@ -82,7 +82,7 @@ export const PlasmicDivarSuccess__ArgProps = new Array<ArgPropType>();
 export type PlasmicDivarSuccess__OverridesType = {
   root?: Flex__<"div">;
   successful?: Flex__<typeof PlasmicImg__>;
-  text?: Flex__<"div">;
+  embedHtml?: Flex__<typeof Embed>;
   button?: Flex__<"div">;
 };
 
@@ -184,12 +184,10 @@ function PlasmicDivarSuccess__RenderFunc(props: {
             </div>
             <div className={classNames(projectcss.all, sty.freeBox__hV0I7)}>
               <div
-                data-plasmic-name={"text"}
-                data-plasmic-override={overrides.text}
                 className={classNames(
                   projectcss.all,
                   projectcss.__wab_text,
-                  sty.text
+                  sty.text__u7Oi
                 )}
               >
                 {hasVariant(globalVariants, "screen", "mobile")
@@ -199,22 +197,52 @@ function PlasmicDivarSuccess__RenderFunc(props: {
             </div>
             <div className={classNames(projectcss.all, sty.freeBox__aiXp)}>
               <div className={classNames(projectcss.all, sty.freeBox__vaKeo)}>
-                <Embed
+                <div
                   className={classNames(
-                    "__wab_instance",
-                    sty.embedHtml___6TaCd
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__bRfUa
                   )}
-                  code={
-                    "<style>\r\n  .divar-blue-btn {\r\n    background-color: #2727ea; \r\n    color: white; \r\n    border: none; \r\n    border-radius: 8px;\r\n    padding: 12px 24px; \r\n    font-size: 16px; \r\n    font-weight: bold; \r\n    width: 100%; /* \u0639\u0631\u0636 \u06a9\u0627\u0645\u0644 */\r\n    cursor: pointer; \r\n    font-family: inherit; \r\n    transition: all 0.2s ease; \r\n    display: flex; \r\n    align-items: center; \r\n    justify-content: center;\r\n    min-height: 48px;\r\n    text-decoration: none;\r\n    box-sizing: border-box; /* \u0628\u0631\u0627\u06cc \u062c\u0644\u0648\u06af\u06cc\u0631\u06cc \u0627\u0632 \u0628\u06cc\u0631\u0648\u0646\u200c\u0632\u062f\u06af\u06cc \u0628\u0647 \u062f\u0644\u06cc\u0644 \u067e\u062f\u06cc\u0646\u06af */\r\n  }\r\n\r\n  .divar-blue-btn:hover {\r\n    background-color: #1a1ab8;\r\n    box-shadow: 0 6px 12px rgba(39, 39, 234, 0.3);\r\n  }\r\n\r\n  .divar-blue-btn:active {\r\n    transform: scale(0.99); /* \u0645\u0642\u06cc\u0627\u0633 \u06a9\u0648\u0686\u06a9\u200c\u062a\u0631 \u0628\u0631\u0627\u06cc \u062d\u0633 \u06a9\u0644\u06cc\u06a9 \u062f\u0631 \u062d\u0627\u0644\u062a \u0639\u0631\u06cc\u0636 */\r\n  }\r\n\r\n  .divar-blue-btn:disabled {\r\n    background-color: #8c8cef;\r\n    cursor: not-allowed;\r\n    box-shadow: none;\r\n  }\r\n\r\n  .loader-spinner {\r\n    width: 40px; /* \u0627\u0628\u0639\u0627\u062f \u0644\u0648\u062f\u0631 */\r\n    height: 20px;\r\n    border: 3px solid rgba(255,255,255,0.3);\r\n    border-top-color: #fff;\r\n    border-radius: 50%;\r\n    animation: btn-spin 0.8s linear infinite;\r\n    display: none; \r\n    margin-right: 10px; /* \u0641\u0627\u0635\u0644\u0647 \u0627\u0632 \u0645\u062a\u0646 \u062f\u0631 \u062d\u0627\u0644\u062a RTL */\r\n  }\r\n\r\n  @keyframes btn-spin {\r\n    to { transform: rotate(360deg); }\r\n  }\r\n</style>\r\n\r\n<button type=\"button\" id=\"main-auth-btn\" class=\"divar-blue-btn\" onclick=\"startAuthProcess()\">\r\n  <div id=\"btn-loader\" class=\"loader-spinner\"></div>\r\n  <span id=\"btn-text\">\u0628\u0631\u0648\u0632 \u06a9\u0631\u062f\u0646 \u062a\u0642\u0648\u06cc\u0645</span>\r\n</button>\r\n\r\n<script>\r\nasync function startAuthProcess() {\r\n    const btn = document.getElementById('main-auth-btn');\r\n    const loader = document.getElementById('btn-loader');\r\n    const text = document.getElementById('btn-text');\r\n\r\n    btn.disabled = true;\r\n    loader.style.display = 'block';\r\n    text.innerText = '\u062f\u0631 \u062d\u0627\u0644 \u0627\u0646\u062a\u0642\u0627\u0644...';\r\n\r\n    try {\r\n        const params = new URLSearchParams(window.location.search);\r\n        const postToken = params.get('post_token');\r\n        const returnUrl = params.get('return_url') || \"https://open-platform-redirect.divar.ir/completion\";\r\n\r\n        if (!postToken) {\r\n            alert('\u062e\u0637\u0627: \u0645\u0634\u062e\u0635\u0627\u062a \u0622\u06af\u0647\u06cc \u06cc\u0627\u0641\u062a \u0646\u0634\u062f.');\r\n            resetBtn();\r\n            return;\r\n        }\r\n\r\n        const response = await fetch(\"https://automation.miaan.ir/webhook/api/divar\", {\r\n            method: 'POST',\r\n            headers: {'Content-Type': 'application/json'},\r\n            body: JSON.stringify({\r\n                post_token: postToken,\r\n                return_url: returnUrl,\r\n                source: \"DEMAND_POST\"\r\n            })\r\n        });\r\n\r\n        const data = await response.json();\r\n        if (data && data.url) {\r\n            window.location.href = data.url;\r\n        } else {\r\n            throw new Error(\"Invalid response from server\");\r\n        }\r\n\r\n    } catch (error) {\r\n        console.error(\"Auth Error:\", error);\r\n        alert('\u062f\u0631 \u0627\u062a\u0635\u0627\u0644 \u0628\u0647 \u062f\u06cc\u0648\u0627\u0631 \u0645\u0634\u06a9\u0644\u06cc \u067e\u06cc\u0634 \u0622\u0645\u062f. \u0644\u0637\u0641\u0627 \u062f\u0648\u0628\u0627\u0631\u0647 \u062a\u0644\u0627\u0634 \u06a9\u0646\u06cc\u062f.');\r\n        resetBtn();\r\n    }\r\n\r\n    function resetBtn() {\r\n        btn.disabled = false;\r\n        loader.style.display = 'none';\r\n        text.innerText = '\u0628\u0631\u0648\u0632 \u06a9\u0631\u062f\u0646 \u062a\u0642\u0648\u06cc\u0645';\r\n    }\r\n}\r\n</script>"
+                  onClick={async event => {
+                    const $steps = {};
+
+                    $steps["goToProCalendar2"] = true
+                      ? (() => {
+                          const actionArgs = { destination: `/panel` };
+                          return (({ destination }) => {
+                            if (
+                              typeof destination === "string" &&
+                              destination.startsWith("#")
+                            ) {
+                              document
+                                .getElementById(destination.substr(1))
+                                .scrollIntoView({ behavior: "smooth" });
+                            } else {
+                              __nextRouter?.push(destination);
+                            }
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["goToProCalendar2"] != null &&
+                      typeof $steps["goToProCalendar2"] === "object" &&
+                      typeof $steps["goToProCalendar2"].then === "function"
+                    ) {
+                      $steps["goToProCalendar2"] =
+                        await $steps["goToProCalendar2"];
+                    }
+                  }}
+                >
+                  {
+                    "\u0628\u0631\u0648\u0632 \u06a9\u0631\u062f\u0646 \u062a\u0642\u0648\u06cc\u0645"
                   }
-                />
+                </div>
               </div>
               <div className={classNames(projectcss.all, sty.freeBox__jzd2Z)}>
                 <Embed
-                  className={classNames(
-                    "__wab_instance",
-                    sty.embedHtml___4BGqX
-                  )}
+                  data-plasmic-name={"embedHtml"}
+                  data-plasmic-override={overrides.embedHtml}
+                  className={classNames("__wab_instance", sty.embedHtml)}
                   code={
                     hasVariant(globalVariants, "screen", "mobile")
                       ? '<div style="width: 100%; display: flex; justify-content: center;">\r\n  <style>\r\n    .divar-static-btn {\r\n      /* \u062a\u063a\u06cc\u06cc\u0631\u0627\u062a \u0627\u0635\u0644\u06cc \u0628\u0631\u0627\u06cc \u062d\u0627\u0644\u062a Secondary */\r\n      background-color: white; /* \u067e\u0633\u200c\u0632\u0645\u06cc\u0646\u0647 \u0633\u0641\u06cc\u062f (\u062a\u0648 \u062e\u0627\u0644\u06cc) */\r\n      color: #a62626; /* \u0645\u062a\u0646 \u0642\u0631\u0645\u0632 */\r\n      border: 1px solid #a62626; /* \u0628\u0648\u0631\u062f\u0631 \u0642\u0631\u0645\u0632 */\r\n      \r\n      border-radius: 4px;\r\n      padding: 10px 10px;\r\n      font-size: 14px;\r\n      font-weight: bold;\r\n      width: 100%;\r\n      cursor: pointer;\r\n      font-family: inherit;\r\n      /* \u0633\u0627\u06cc\u0647 \u0631\u0627 \u0628\u0631\u0627\u06cc \u062f\u06a9\u0645\u0647 \u062b\u0627\u0646\u0648\u06cc\u0647 \u062d\u0630\u0641 \u06a9\u0631\u062f\u0645 \u062a\u0627 \u0641\u0644\u062a\u200c\u062a\u0631 \u0628\u0627\u0634\u062f (\u0627\u062e\u062a\u06cc\u0627\u0631\u06cc) */\r\n      box-shadow: none; \r\n      transition: all 0.2s ease;\r\n    }\r\n    \r\n    .divar-static-btn:hover {\r\n      /* \u062d\u0627\u0644\u062a \u0647\u0627\u0648\u0631: \u06cc\u06a9 \u067e\u0633\u200c\u0632\u0645\u06cc\u0646\u0647 \u062e\u06cc\u0644\u06cc \u0631\u0648\u0634\u0646 \u0642\u0631\u0645\u0632 \u0648 \u062a\u06cc\u0631\u0647\u200c\u062a\u0631 \u0634\u062f\u0646 \u0628\u0648\u0631\u062f\u0631 */\r\n      background-color: #fcf2f2; \r\n      border-color: #851e1e;\r\n      color: #851e1e;\r\n    }\r\n    \r\n    .divar-static-btn:active {\r\n      transform: scale(0.98);\r\n      background-color: #fceceb; /* \u0631\u0646\u06af \u06a9\u0645\u06cc \u062a\u06cc\u0631\u0647\u200c\u062a\u0631 \u0645\u0648\u0642\u0639 \u06a9\u0644\u06cc\u06a9 */\r\n    }\r\n  </style>\r\n\r\n  <button onclick="window.location.href=\'https://open-platform-redirect.divar.ir/completion\'" class="divar-static-btn">\r\n    \u0628\u0627\u0632\u06af\u0634\u062a \u0628\u0647 \u062f\u06cc\u0648\u0627\u0631\r\n  </button>\r\n</div>'
@@ -236,9 +264,9 @@ function PlasmicDivarSuccess__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "successful", "text", "button"],
+  root: ["root", "successful", "embedHtml", "button"],
   successful: ["successful"],
-  text: ["text"],
+  embedHtml: ["embedHtml"],
   button: ["button"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -247,7 +275,7 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   successful: typeof PlasmicImg__;
-  text: "div";
+  embedHtml: typeof Embed;
   button: "div";
 };
 
@@ -314,7 +342,7 @@ export const PlasmicDivarSuccess = Object.assign(
   {
     // Helper components rendering sub-elements
     successful: makeNodeComponent("successful"),
-    text: makeNodeComponent("text"),
+    embedHtml: makeNodeComponent("embedHtml"),
     button: makeNodeComponent("button"),
 
     // Metadata about props expected for PlasmicDivarSuccess

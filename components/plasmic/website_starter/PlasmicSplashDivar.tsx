@@ -384,6 +384,25 @@ function PlasmicSplashDivar__RenderFunc(props: {
                             if (parts.length === 2)
                               return parts.pop().split(";").shift();
                           }
+                          function savePostToken() {
+                            const params = new URLSearchParams(
+                              window.location.search
+                            );
+                            let token = params.get("post_token");
+                            if (!token) {
+                              const state = params.get("state");
+                              if (state) {
+                                const match = state.match(/post_token=([^,]+)/);
+                                if (match && match[1]) {
+                                  token = decodeURIComponent(match[1]);
+                                }
+                              }
+                            }
+                            if (token) {
+                              localStorage.setItem("divar_post_token", token);
+                            }
+                          }
+                          savePostToken();
                           const hasToken = getCookie("usso_access_available");
                           const currentSearchParams = window.location.search;
                           if (hasToken) {
