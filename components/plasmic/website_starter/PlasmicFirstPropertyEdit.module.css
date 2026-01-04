@@ -1003,11 +1003,6 @@
   border-radius: 50px;
   padding: 8px;
 }
-@media (max-width: 500px) {
-  .divarEdition {
-    display: flex;
-  }
-}
 .img__csBhy {
   object-fit: cover;
   max-width: 100%;

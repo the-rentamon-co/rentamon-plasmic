@@ -414,42 +414,6 @@ function PlasmicIntegrations__RenderFunc(props: {
                       >
                         {"\u062c\u0627\u062c\u06cc\u06af\u0627"}
                       </div>
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text___6Fzm
-                        )}
-                      >
-                        <React.Fragment>
-                          <React.Fragment>{""}</React.Fragment>
-                          {
-                            <PlasmicLink__
-                              className={classNames(
-                                projectcss.all,
-                                projectcss.a,
-                                projectcss.__wab_text,
-                                projectcss.plasmic_default__inline,
-                                sty.link__bxhI3
-                              )}
-                              component={Link}
-                              href={
-                                hasVariant(
-                                  globalVariants,
-                                  "screen",
-                                  "smallMobile"
-                                )
-                                  ? "https://jajiga.com"
-                                  : "https://jajiga.com"
-                              }
-                              platform={"nextjs"}
-                            >
-                              {"jajiga.com\r"}
-                            </PlasmicLink__>
-                          }
-                          <React.Fragment>{""}</React.Fragment>
-                        </React.Fragment>
-                      </div>
                     </div>
                   </div>
                   <div
@@ -522,42 +486,6 @@ function PlasmicIntegrations__RenderFunc(props: {
                       >
                         {"\u0634\u0628"}
                       </div>
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text__jvk5F
-                        )}
-                      >
-                        <React.Fragment>
-                          <React.Fragment>{""}</React.Fragment>
-                          {
-                            <PlasmicLink__
-                              className={classNames(
-                                projectcss.all,
-                                projectcss.a,
-                                projectcss.__wab_text,
-                                projectcss.plasmic_default__inline,
-                                sty.link__vbk3N
-                              )}
-                              component={Link}
-                              href={
-                                hasVariant(
-                                  globalVariants,
-                                  "screen",
-                                  "smallMobile"
-                                )
-                                  ? "https://shab.ir"
-                                  : "https://shab.ir"
-                              }
-                              platform={"nextjs"}
-                            >
-                              {"shab.ir"}
-                            </PlasmicLink__>
-                          }
-                          <React.Fragment>{""}</React.Fragment>
-                        </React.Fragment>
-                      </div>
                     </div>
                   </div>
                   <div
@@ -629,42 +557,6 @@ function PlasmicIntegrations__RenderFunc(props: {
                         )}
                       >
                         {"\u062c\u0627\u0628\u0627\u0645\u0627"}
-                      </div>
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text__lxHv
-                        )}
-                      >
-                        <React.Fragment>
-                          <React.Fragment>{""}</React.Fragment>
-                          {
-                            <PlasmicLink__
-                              className={classNames(
-                                projectcss.all,
-                                projectcss.a,
-                                projectcss.__wab_text,
-                                projectcss.plasmic_default__inline,
-                                sty.link___50Fcn
-                              )}
-                              component={Link}
-                              href={
-                                hasVariant(
-                                  globalVariants,
-                                  "screen",
-                                  "smallMobile"
-                                )
-                                  ? "https://jabama.com \u00a0"
-                                  : "https://jabama.com"
-                              }
-                              platform={"nextjs"}
-                            >
-                              {"jabama.com\r"}
-                            </PlasmicLink__>
-                          }
-                          <React.Fragment>{""}</React.Fragment>
-                        </React.Fragment>
                       </div>
                     </div>
                   </div>
@@ -746,34 +638,6 @@ function PlasmicIntegrations__RenderFunc(props: {
                           "\u0627\u0633\u0646\u067e\u200c\u062a\u0631\u06cc\u067e"
                         }
                       </div>
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text__gL05T
-                        )}
-                      >
-                        <React.Fragment>
-                          <React.Fragment>{""}</React.Fragment>
-                          {
-                            <PlasmicLink__
-                              className={classNames(
-                                projectcss.all,
-                                projectcss.a,
-                                projectcss.__wab_text,
-                                projectcss.plasmic_default__inline,
-                                sty.link__cl6Cd
-                              )}
-                              component={Link}
-                              href={"https://www.snapptrip.com/"}
-                              platform={"nextjs"}
-                            >
-                              {"snapptrip.com"}
-                            </PlasmicLink__>
-                          }
-                          <React.Fragment>{""}</React.Fragment>
-                        </React.Fragment>
-                      </div>
                     </div>
                   </div>
                   <div
@@ -851,42 +715,6 @@ function PlasmicIntegrations__RenderFunc(props: {
                         )}
                       >
                         {"\u0627\u062a\u0627\u0642\u06a9"}
-                      </div>
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text__aRhW1
-                        )}
-                      >
-                        <React.Fragment>
-                          <React.Fragment>{""}</React.Fragment>
-                          {
-                            <PlasmicLink__
-                              className={classNames(
-                                projectcss.all,
-                                projectcss.a,
-                                projectcss.__wab_text,
-                                projectcss.plasmic_default__inline,
-                                sty.link__mkyS9
-                              )}
-                              component={Link}
-                              href={
-                                hasVariant(
-                                  globalVariants,
-                                  "screen",
-                                  "smallMobile"
-                                )
-                                  ? "https://otaghak.com"
-                                  : "https://otaghak.com"
-                              }
-                              platform={"nextjs"}
-                            >
-                              {"otaghak.com"}
-                            </PlasmicLink__>
-                          }
-                          <React.Fragment>{""}</React.Fragment>
-                        </React.Fragment>
                       </div>
                     </div>
                   </div>

@@ -1747,65 +1747,32 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
                       </div>
                     </div>
                   ) : null}
-                  {(
-                    hasVariant(globalVariants, "screen", "mobile")
-                      ? (() => {
-                          try {
-                            return (() => {
-                              function checkDivarSource() {
-                                const cookies = document.cookie.split(";");
-                                for (let i = 0; i < cookies.length; i++) {
-                                  const [key, value] = cookies[i]
-                                    .trim()
-                                    .split("=");
-                                  if (key === "source" && value === "divar") {
-                                    return true;
-                                  }
-                                }
-                                return false;
-                              }
-                              const isDivar = checkDivarSource();
-                              return isDivar;
-                            })();
-                          } catch (e) {
-                            if (
-                              e instanceof TypeError ||
-                              e?.plasmicType === "PlasmicUndefinedDataError"
-                            ) {
-                              return false;
-                            }
-                            throw e;
-                          }
-                        })()
-                      : (() => {
-                          try {
-                            return (() => {
-                              function checkDivarSource() {
-                                const cookies = document.cookie.split(";");
-                                for (let i = 0; i < cookies.length; i++) {
-                                  const [key, value] = cookies[i]
-                                    .trim()
-                                    .split("=");
-                                  if (key === "from" && value === "divar") {
-                                    return true;
-                                  }
-                                }
-                                return false;
-                              }
-                              const isDivar = checkDivarSource();
-                              return isDivar;
-                            })();
-                          } catch (e) {
-                            if (
-                              e instanceof TypeError ||
-                              e?.plasmicType === "PlasmicUndefinedDataError"
-                            ) {
+                  {(() => {
+                    try {
+                      return (() => {
+                        function checkDivarSource() {
+                          const cookies = document.cookie.split(";");
+                          for (let i = 0; i < cookies.length; i++) {
+                            const [key, value] = cookies[i].trim().split("=");
+                            if (key === "from" && value === "divar") {
                               return true;
                             }
-                            throw e;
                           }
-                        })()
-                  ) ? (
+                          return false;
+                        }
+                        const isDivar = checkDivarSource();
+                        return isDivar;
+                      })();
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return true;
+                      }
+                      throw e;
+                    }
+                  })() ? (
                     <div
                       data-plasmic-name={"divarEdition"}
                       data-plasmic-override={overrides.divarEdition}
