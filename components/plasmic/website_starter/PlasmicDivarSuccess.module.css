@@ -178,6 +178,7 @@
   font-weight: 800;
   background: var(--token-8nedppYkGVaH);
   color: var(--token-8R7jjC_-F9FF);
+  cursor: pointer;
   min-width: 0;
   border-radius: 100px;
   padding: 12px 8px;
