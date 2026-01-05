@@ -83,8 +83,6 @@ export const PlasmicDirectBooking__ArgProps = new Array<ArgPropType>();
 export type PlasmicDirectBooking__OverridesType = {
   root?: Flex__<"div">;
   main?: Flex__<"div">;
-  profile2?: Flex__<typeof ApiRequest>;
-  img?: Flex__<typeof PlasmicImg__>;
   apiRequest2?: Flex__<typeof ApiRequest>;
   apiRequest?: Flex__<typeof ApiRequest>;
 };
@@ -134,30 +132,6 @@ function PlasmicDirectBooking__RenderFunc(props: {
 
   const stateSpecs: Parameters<typeof useDollarState>[0] = React.useMemo(
     () => [
-      {
-        path: "profile2.data",
-        type: "private",
-        variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
-
-        refName: "profile2"
-      },
-      {
-        path: "profile2.error",
-        type: "private",
-        variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
-
-        refName: "profile2"
-      },
-      {
-        path: "profile2.loading",
-        type: "private",
-        variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
-
-        refName: "profile2"
-      },
       {
         path: "apiRequest2.data",
         type: "private",
@@ -248,164 +222,6 @@ function PlasmicDirectBooking__RenderFunc(props: {
             data-plasmic-override={overrides.main}
             className={classNames(projectcss.all, sty.main)}
           >
-            <div className={classNames(projectcss.all, sty.freeBox__qPh1L)}>
-              <div className={classNames(projectcss.all, sty.freeBox__de6Fk)}>
-                <div className={classNames(projectcss.all, sty.freeBox__dGt4W)}>
-                  <ApiRequest
-                    data-plasmic-name={"profile2"}
-                    data-plasmic-override={overrides.profile2}
-                    className={classNames("__wab_instance", sty.profile2)}
-                    errorDisplay={null}
-                    loadingDisplay={null}
-                    method={"GET"}
-                    onError={async (...eventArgs: any) => {
-                      generateStateOnChangeProp($state, [
-                        "profile2",
-                        "error"
-                      ]).apply(null, eventArgs);
-                    }}
-                    onLoading={async (...eventArgs: any) => {
-                      generateStateOnChangeProp($state, [
-                        "profile2",
-                        "loading"
-                      ]).apply(null, eventArgs);
-                    }}
-                    onSuccess={async (...eventArgs: any) => {
-                      generateStateOnChangeProp($state, [
-                        "profile2",
-                        "data"
-                      ]).apply(null, eventArgs);
-                    }}
-                    ref={ref => {
-                      $refs["profile2"] = ref;
-                    }}
-                    url={
-                      hasVariant(globalVariants, "screen", "mobile")
-                        ? (() => {
-                            try {
-                              return `https://automation.miaan.ir/webhook/profile?property_id=${$ctx.params.property_id}`;
-                            } catch (e) {
-                              if (
-                                e instanceof TypeError ||
-                                e?.plasmicType === "PlasmicUndefinedDataError"
-                              ) {
-                                return undefined;
-                              }
-                              throw e;
-                            }
-                          })()
-                        : (() => {
-                            try {
-                              return `https://automation.miaan.ir/webhook/profile?property_id=${$ctx.params.property_id}`;
-                            } catch (e) {
-                              if (
-                                e instanceof TypeError ||
-                                e?.plasmicType === "PlasmicUndefinedDataError"
-                              ) {
-                                return undefined;
-                              }
-                              throw e;
-                            }
-                          })()
-                    }
-                  >
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__ef0Yb)}
-                    >
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          sty.freeBox__lTjJa
-                        )}
-                      >
-                        <PlasmicImg__
-                          data-plasmic-name={"img"}
-                          data-plasmic-override={overrides.img}
-                          alt={""}
-                          className={classNames(sty.img)}
-                          displayHeight={"auto"}
-                          displayMaxHeight={"none"}
-                          displayMaxWidth={"100%"}
-                          displayMinHeight={"0"}
-                          displayMinWidth={"0"}
-                          displayWidth={"auto"}
-                          loading={"lazy"}
-                          src={
-                            hasVariant(globalVariants, "screen", "mobile")
-                              ? $state.profile2.data.profile_pic
-                              : (() => {
-                                  try {
-                                    return $state.profile2.data.profile_pic;
-                                  } catch (e) {
-                                    if (
-                                      e instanceof TypeError ||
-                                      e?.plasmicType ===
-                                        "PlasmicUndefinedDataError"
-                                    ) {
-                                      return undefined;
-                                    }
-                                    throw e;
-                                  }
-                                })()
-                          }
-                        />
-                      </div>
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          sty.freeBox__eznaN
-                        )}
-                      >
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text__tGCaP
-                          )}
-                        >
-                          <React.Fragment>
-                            {(() => {
-                              try {
-                                return (
-                                  "نام میزبان: " +
-                                  $state.profile2.data.first_name +
-                                  " " +
-                                  $state.profile2.data.last_name
-                                );
-                              } catch (e) {
-                                if (
-                                  e instanceof TypeError ||
-                                  e?.plasmicType === "PlasmicUndefinedDataError"
-                                ) {
-                                  return "";
-                                }
-                                throw e;
-                              }
-                            })()}
-                          </React.Fragment>
-                        </div>
-                      </div>
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          sty.freeBox__aTjQc
-                        )}
-                      >
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text__juF9I
-                          )}
-                        >
-                          {""}
-                        </div>
-                      </div>
-                    </div>
-                  </ApiRequest>
-                </div>
-              </div>
-            </div>
             <ApiRequest
               data-plasmic-name={"apiRequest2"}
               data-plasmic-override={overrides.apiRequest2}
@@ -1161,10 +977,8 @@ window.smartCal = (function() {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "main", "profile2", "img", "apiRequest2", "apiRequest"],
-  main: ["main", "profile2", "img", "apiRequest2", "apiRequest"],
-  profile2: ["profile2", "img"],
-  img: ["img"],
+  root: ["root", "main", "apiRequest2", "apiRequest"],
+  main: ["main", "apiRequest2", "apiRequest"],
   apiRequest2: ["apiRequest2", "apiRequest"],
   apiRequest: ["apiRequest"]
 } as const;
@@ -1174,8 +988,6 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   main: "div";
-  profile2: typeof ApiRequest;
-  img: typeof PlasmicImg__;
   apiRequest2: typeof ApiRequest;
   apiRequest: typeof ApiRequest;
 };
@@ -1243,8 +1055,6 @@ export const PlasmicDirectBooking = Object.assign(
   {
     // Helper components rendering sub-elements
     main: makeNodeComponent("main"),
-    profile2: makeNodeComponent("profile2"),
-    img: makeNodeComponent("img"),
     apiRequest2: makeNodeComponent("apiRequest2"),
     apiRequest: makeNodeComponent("apiRequest"),
 

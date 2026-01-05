@@ -3103,7 +3103,7 @@
           "projectId": "7SNMkB8UMukVgcWJYokeAQ",
           "renderModuleFilePath": "plasmic/website_starter/PlasmicPropertyAnalytics.tsx",
           "importSpec": {
-            "modulePath": "../src/pages/property/[id].tsx"
+            "modulePath": "../src/pages/property-3/[id].tsx"
           },
           "cssFilePath": "plasmic/website_starter/PlasmicPropertyAnalytics.module.css",
           "scheme": "blackbox",
@@ -3261,6 +3261,20 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/divar/success"
+        },
+        {
+          "id": "aIjCviR8E9Fa",
+          "name": "NewPage5",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicNewPage5.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/property/[property_id].tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicNewPage5.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/property/[property_id]"
         }
       ],
       "icons": [

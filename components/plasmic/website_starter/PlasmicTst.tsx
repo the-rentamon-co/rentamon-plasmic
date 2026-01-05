@@ -95,6 +95,7 @@ export type PlasmicTst__OverridesType = {
   profile2?: Flex__<typeof ApiRequest>;
   twat?: Flex__<"div">;
   firebase?: Flex__<typeof Embed>;
+  test?: Flex__<typeof Embed>;
 };
 
 export interface DefaultTstProps {}
@@ -699,6 +700,15 @@ function PlasmicTst__RenderFunc(props: {
                 '<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>\r\n<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-messaging-compat.js"></script>\r\n\r\n<script>\r\n  // \u062a\u0646\u0638\u06cc\u0645\u0627\u062a Firebase\r\n  var firebaseConfig = { \r\n    apiKey: "AIzaSyCwfbUiQNPQSyL48d0It3MgFOoTwF6AHN4",\r\n    authDomain: "miaan-notify-mn5436.firebaseapp.com",\r\n    databaseURL: "https://miaan-notify-mn5436.firebaseio.com",\r\n    projectId: "miaan-notify-mn5436",\r\n    storageBucket: "miaan-notify-mn5436.firebasestorage.app",\r\n    messagingSenderId: "553708011126",\r\n    appId: "1:553708011126:web:dcdff7eacd0ea7b3296957",\r\n    measurementId: "G-9TELS8G020"\r\n  };\r\n\r\n  // Initialize Firebase\r\n  firebase.initializeApp(firebaseConfig);\r\n  const messaging = firebase.messaging();\r\n\r\n  // \u06af\u0631\u0641\u062a\u0646 \u062a\u0648\u06a9\u0646 \u0628\u062f\u0648\u0646 \u062f\u0631\u062e\u0648\u0627\u0633\u062a Permission\r\n  function getAndSendTokenSilently() {\r\n    messaging.getToken({\r\n      vapidKey: "BPBCMzaOwuDnklPI_8EXu6x30lu0-eq0fcZ058u1fXWbHxicUr0fn8MdpyLFdP5QQIOgiIg9zZtVsyCrr7rV15k"\r\n    })\r\n    .then((currentToken) => {\r\n      if (currentToken) {\r\n        sendTokenToServer(currentToken);\r\n      } else {\r\n        console.log("\u2139\ufe0f \u062a\u0648\u06a9\u0646\u06cc \u0648\u062c\u0648\u062f \u0646\u062f\u0627\u0631\u062f (Permission \u0647\u0646\u0648\u0632 \u062f\u0627\u062f\u0647 \u0646\u0634\u062f\u0647)");\r\n      }\r\n    })\r\n    .catch((err) => {\r\n      console.log("\u274c \u062e\u0637\u0627 \u062f\u0631 \u062f\u0631\u06cc\u0627\u0641\u062a \u062a\u0648\u06a9\u0646:", err);\r\n    });\r\n  }\r\n\r\n  // \u0627\u0631\u0633\u0627\u0644 \u062a\u0648\u06a9\u0646 \u0628\u0647 \u0628\u06a9\u200c\u0627\u0646\u062f \u0628\u0627 \u062a\u0627\u06cc\u0645\u200c\u0627\u0648\u062a\r\n  function sendTokenToServer(token) {\r\n    // \u0630\u062e\u06cc\u0631\u0647 \u062a\u0648\u06a9\u0646 \u062f\u0631 \u06a9\u0648\u06a9\u06cc\r\n    document.cookie = "fcm_token=" + token + "; path=/; max-age=31536000; secure; samesite=lax";\r\n\r\n    // \u062e\u0648\u0627\u0646\u062f\u0646 \u06a9\u0648\u06a9\u06cc usso_access_token\r\n    function getCookie(name) {\r\n      var match = document.cookie.match(new RegExp(\'(^| )\' + name + \'=([^;]+)\'));\r\n      return match ? match[2] : null;\r\n    }\r\n\r\n    var userToken = getCookie("usso_access_token");\r\n\r\n    // \u0627\u06cc\u062c\u0627\u062f \u062a\u0627\u06cc\u0645\u200c\u0627\u0648\u062a \u06f2 \u062b\u0627\u0646\u06cc\u0647\r\n    const controller = new AbortController();\r\n    const timeoutId = setTimeout(() => controller.abort(), 2000);\r\n\r\n    fetch("https://second-n8n.darkube.app/webhook/v1/devices/sync", {\r\n      method: "POST",\r\n      signal: controller.signal,\r\n      headers: {\r\n        "Content-Type": "application/json",\r\n        "Authorization": userToken ? "Bearer " + userToken : "",\r\n        "fcm-token": token\r\n      },\r\n      body: JSON.stringify({ status: "synced" })\r\n    })\r\n    .then(response => {\r\n      clearTimeout(timeoutId);\r\n      console.log("\u2705 Token sent. Status:", response.status);\r\n    })\r\n    .catch(error => {\r\n      clearTimeout(timeoutId);\r\n      if (error.name === "AbortError") {\r\n        console.warn("\u23f1\ufe0f Request timeout after 2 seconds");\r\n      } else {\r\n        console.error("\u274c Request error:", error);\r\n      }\r\n    });\r\n  }\r\n\r\n  // \u067e\u06cc\u0627\u0645 Foreground \u0628\u062f\u0648\u0646 \u062f\u0631\u062e\u0648\u0627\u0633\u062a \u0627\u062c\u0627\u0632\u0647\r\n  messaging.onMessage((payload) => {\r\n    console.log("\ud83d\udce9 Foreground message:", payload);\r\n    // \u0641\u0642\u0637 \u0644\u0627\u06af \u0645\u06cc\u200c\u0632\u0646\u06cc\u0645\u060c \u0646\u0648\u062a\u06cc\u0641\u06cc\u06a9\u06cc\u0634\u0646 \u0646\u0645\u0627\u06cc\u0634 \u0646\u0645\u06cc\u200c\u062f\u0647\u06cc\u0645\r\n  });\r\n\r\n  // \u062b\u0628\u062a Service Worker \u0648 \u06af\u0631\u0641\u062a\u0646 \u062a\u0648\u06a9\u0646\r\n  if ("serviceWorker" in navigator) {\r\n    navigator.serviceWorker\r\n      .register("https://miaan.ir/firebase-messaging-sw.js")\r\n      .then(reg => {\r\n        console.log("\u2705 Service Worker registered:", reg);\r\n        getAndSendTokenSilently(); // \u0628\u062f\u0648\u0646 \u067e\u0646\u062c\u0631\u0647 \u0627\u062c\u0627\u0632\u0647\r\n      })\r\n      .catch(err => console.log("\u274c SW register error:", err));\r\n  }\r\n</script>\r\n'
               }
             />
+
+            <Embed
+              data-plasmic-name={"test"}
+              data-plasmic-override={overrides.test}
+              className={classNames("__wab_instance", sty.test)}
+              code={
+                'function sendTokenToServer(token) {\r\n  console.time("sendToken"); // \u0634\u0631\u0648\u0639 \u0627\u0646\u062f\u0627\u0632\u0647 \u06af\u06cc\u0631\u06cc \u0632\u0645\u0627\u0646\r\n\r\n  document.cookie = "fcm_token=" + token + "; path=/; max-age=31536000; secure; samesite=lax";\r\n\r\n  const controller = new AbortController();\r\n  const timeoutId = setTimeout(() => controller.abort(), 2000);\r\n\r\n  fetch("https://second-n8n.darkube.app/webhook/a55a41d4-68a6-4102-9ddf-e2d729ee7e41", {\r\n    method: "POST",\r\n    signal: controller.signal,\r\n    headers: {\r\n      "Content-Type": "application/json",\r\n      "fcm-token": token\r\n    },\r\n    body: JSON.stringify({ status: "synced" })\r\n  })\r\n  .then(response => {\r\n    clearTimeout(timeoutId);\r\n    console.timeEnd("sendToken"); // \u067e\u0627\u06cc\u0627\u0646 \u0627\u0646\u062f\u0627\u0632\u0647 \u06af\u06cc\u0631\u06cc \u0648 \u0686\u0627\u067e \u0645\u062f\u062a \u0632\u0645\u0627\u0646\r\n    console.log("\u2705 Token sent. Status:", response.status);\r\n  })\r\n  .catch(error => {\r\n    clearTimeout(timeoutId);\r\n    console.timeEnd("sendToken");\r\n    if (error.name === "AbortError") {\r\n      console.warn("\u23f1\ufe0f Request timeout after 2 seconds");\r\n    } else {\r\n      console.error("\u274c Request error:", error);\r\n    }\r\n  });\r\n}\r\n'
+              }
+            />
           </div>
         </div>
       </div>
@@ -719,7 +729,8 @@ const PlasmicDescendants = {
     "datePicker",
     "profile2",
     "twat",
-    "firebase"
+    "firebase",
+    "test"
   ],
   progressbar: ["progressbar"],
   progressbar2: ["progressbar2"],
@@ -736,8 +747,9 @@ const PlasmicDescendants = {
   apiRequest4: ["apiRequest4"],
   datePicker: ["datePicker"],
   profile2: ["profile2"],
-  twat: ["twat", "firebase"],
-  firebase: ["firebase"]
+  twat: ["twat", "firebase", "test"],
+  firebase: ["firebase"],
+  test: ["test"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -755,6 +767,7 @@ type NodeDefaultElementType = {
   profile2: typeof ApiRequest;
   twat: "div";
   firebase: typeof Embed;
+  test: typeof Embed;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -830,6 +843,7 @@ export const PlasmicTst = Object.assign(
     profile2: makeNodeComponent("profile2"),
     twat: makeNodeComponent("twat"),
     firebase: makeNodeComponent("firebase"),
+    test: makeNodeComponent("test"),
 
     // Metadata about props expected for PlasmicTst
     internalVariantProps: PlasmicTst__VariantProps,
