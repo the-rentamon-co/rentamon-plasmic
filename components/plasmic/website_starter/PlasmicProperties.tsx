@@ -96,6 +96,7 @@ export type PlasmicProperties__OverridesType = {
   apiRequest?: Flex__<typeof ApiRequest>;
   localStorage?: Flex__<"div">;
   propGuide?: Flex__<"div">;
+  divar?: Flex__<"div">;
   sideEffect?: Flex__<typeof SideEffect>;
   clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
   faviconRntComponent?: Flex__<typeof FaviconRntComponent>;
@@ -1391,6 +1392,72 @@ function PlasmicProperties__RenderFunc(props: {
                         </div>
                       </div>
                     ) : null}
+                    {(
+                      hasVariant(globalVariants, "screen", "mobile")
+                        ? (() => {
+                            try {
+                              return (
+                                typeof document !== "undefined" &&
+                                document.cookie.includes("from=divar")
+                              );
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return false;
+                              }
+                              throw e;
+                            }
+                          })()
+                        : false
+                    ) ? (
+                      <div
+                        data-plasmic-name={"divar"}
+                        data-plasmic-override={overrides.divar}
+                        className={classNames(
+                          projectcss.all,
+                          sty.divar,
+                          "clickable"
+                        )}
+                        onClick={async event => {
+                          const $steps = {};
+
+                          $steps["runCode"] = true
+                            ? (() => {
+                                const actionArgs = {
+                                  customFunction: async () => {
+                                    return (window.location.href =
+                                      "https://open-platform-redirect.divar.ir/completion");
+                                  }
+                                };
+                                return (({ customFunction }) => {
+                                  return customFunction();
+                                })?.apply(null, [actionArgs]);
+                              })()
+                            : undefined;
+                          if (
+                            $steps["runCode"] != null &&
+                            typeof $steps["runCode"] === "object" &&
+                            typeof $steps["runCode"].then === "function"
+                          ) {
+                            $steps["runCode"] = await $steps["runCode"];
+                          }
+                        }}
+                      >
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__h2Fvz
+                          )}
+                        >
+                          {
+                            "\u0628\u0627\u0632\u06af\u0634\u062a \u0628\u0647 \u062f\u06cc\u0648\u0627\u0631"
+                          }
+                        </div>
+                      </div>
+                    ) : null}
                   </div>
                 </ApiRequest>
               </div>
@@ -1675,6 +1742,7 @@ const PlasmicDescendants = {
     "apiRequest",
     "localStorage",
     "propGuide",
+    "divar",
     "sideEffect",
     "clarityRntComponent",
     "faviconRntComponent"
@@ -1684,10 +1752,11 @@ const PlasmicDescendants = {
   sideBar2: ["sideBar2"],
   sidebarLite: ["sidebarLite"],
   profile2: ["profile2"],
-  property: ["property", "apiRequest", "localStorage", "propGuide"],
-  apiRequest: ["apiRequest", "localStorage", "propGuide"],
+  property: ["property", "apiRequest", "localStorage", "propGuide", "divar"],
+  apiRequest: ["apiRequest", "localStorage", "propGuide", "divar"],
   localStorage: ["localStorage"],
   propGuide: ["propGuide"],
+  divar: ["divar"],
   sideEffect: ["sideEffect"],
   clarityRntComponent: ["clarityRntComponent"],
   faviconRntComponent: ["faviconRntComponent"]
@@ -1706,6 +1775,7 @@ type NodeDefaultElementType = {
   apiRequest: typeof ApiRequest;
   localStorage: "div";
   propGuide: "div";
+  divar: "div";
   sideEffect: typeof SideEffect;
   clarityRntComponent: typeof ClarityRntComponent;
   faviconRntComponent: typeof FaviconRntComponent;
@@ -1782,6 +1852,7 @@ export const PlasmicProperties = Object.assign(
     apiRequest: makeNodeComponent("apiRequest"),
     localStorage: makeNodeComponent("localStorage"),
     propGuide: makeNodeComponent("propGuide"),
+    divar: makeNodeComponent("divar"),
     sideEffect: makeNodeComponent("sideEffect"),
     clarityRntComponent: makeNodeComponent("clarityRntComponent"),
     faviconRntComponent: makeNodeComponent("faviconRntComponent"),
