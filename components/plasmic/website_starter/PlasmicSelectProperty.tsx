@@ -204,7 +204,7 @@ function PlasmicSelectProperty__RenderFunc(props: {
         />
         <meta
           key="twitter:title"
-          name="twitter:title"
+          property="twitter:title"
           content={PlasmicSelectProperty.pageMetadata.title}
         />
       </Head>

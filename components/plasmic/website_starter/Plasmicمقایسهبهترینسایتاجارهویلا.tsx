@@ -203,12 +203,12 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
         />
         <meta
           key="twitter:title"
-          name="twitter:title"
+          property="twitter:title"
           content={Plasmicمقایسهبهترینسایتاجارهویلا.pageMetadata.title}
         />
         <meta
           key="description"
-          name="description"
+          property="description"
           content={Plasmicمقایسهبهترینسایتاجارهویلا.pageMetadata.description}
         />
         <meta
@@ -218,7 +218,7 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
         />
         <meta
           key="twitter:description"
-          name="twitter:description"
+          property="twitter:description"
           content={Plasmicمقایسهبهترینسایتاجارهویلا.pageMetadata.description}
         />
         <meta
@@ -228,7 +228,7 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
         />
         <meta
           key="twitter:image"
-          name="twitter:image"
+          property="twitter:image"
           content={Plasmicمقایسهبهترینسایتاجارهویلا.pageMetadata.ogImageSrc}
         />
       </Head>

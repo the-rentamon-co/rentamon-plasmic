@@ -190,12 +190,12 @@ function Plasmicآموزشمبلهکردنخونهشیکوارزان__RenderFunc
         />
         <meta
           key="twitter:title"
-          name="twitter:title"
+          property="twitter:title"
           content={Plasmicآموزشمبلهکردنخونهشیکوارزان.pageMetadata.title}
         />
         <meta
           key="description"
-          name="description"
+          property="description"
           content={Plasmicآموزشمبلهکردنخونهشیکوارزان.pageMetadata.description}
         />
         <meta
@@ -205,7 +205,7 @@ function Plasmicآموزشمبلهکردنخونهشیکوارزان__RenderFunc
         />
         <meta
           key="twitter:description"
-          name="twitter:description"
+          property="twitter:description"
           content={Plasmicآموزشمبلهکردنخونهشیکوارزان.pageMetadata.description}
         />
         <meta
@@ -215,7 +215,7 @@ function Plasmicآموزشمبلهکردنخونهشیکوارزان__RenderFunc
         />
         <meta
           key="twitter:image"
-          name="twitter:image"
+          property="twitter:image"
           content={Plasmicآموزشمبلهکردنخونهشیکوارزان.pageMetadata.ogImageSrc}
         />
       </Head>

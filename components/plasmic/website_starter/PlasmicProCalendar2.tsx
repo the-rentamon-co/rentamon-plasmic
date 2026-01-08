@@ -372,12 +372,12 @@ function PlasmicProCalendar2__RenderFunc(props: {
         />
         <meta
           key="twitter:title"
-          name="twitter:title"
+          property="twitter:title"
           content={PlasmicProCalendar2.pageMetadata.title}
         />
         <meta
           key="description"
-          name="description"
+          property="description"
           content={PlasmicProCalendar2.pageMetadata.description}
         />
         <meta
@@ -387,7 +387,7 @@ function PlasmicProCalendar2__RenderFunc(props: {
         />
         <meta
           key="twitter:description"
-          name="twitter:description"
+          property="twitter:description"
           content={PlasmicProCalendar2.pageMetadata.description}
         />
         <meta
@@ -397,7 +397,7 @@ function PlasmicProCalendar2__RenderFunc(props: {
         />
         <meta
           key="twitter:image"
-          name="twitter:image"
+          property="twitter:image"
           content={PlasmicProCalendar2.pageMetadata.ogImageSrc}
         />
         <link

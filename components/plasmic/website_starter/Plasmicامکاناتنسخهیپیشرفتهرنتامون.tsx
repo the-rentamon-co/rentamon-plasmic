@@ -163,12 +163,12 @@ function Plasmicامکاناتنسخهیپیشرفتهرنتامون__RenderFunc
         />
         <meta
           key="twitter:title"
-          name="twitter:title"
+          property="twitter:title"
           content={Plasmicامکاناتنسخهیپیشرفتهرنتامون.pageMetadata.title}
         />
         <meta
           key="description"
-          name="description"
+          property="description"
           content={Plasmicامکاناتنسخهیپیشرفتهرنتامون.pageMetadata.description}
         />
         <meta
@@ -178,7 +178,7 @@ function Plasmicامکاناتنسخهیپیشرفتهرنتامون__RenderFunc
         />
         <meta
           key="twitter:description"
-          name="twitter:description"
+          property="twitter:description"
           content={Plasmicامکاناتنسخهیپیشرفتهرنتامون.pageMetadata.description}
         />
         <meta
@@ -188,7 +188,7 @@ function Plasmicامکاناتنسخهیپیشرفتهرنتامون__RenderFunc
         />
         <meta
           key="twitter:image"
-          name="twitter:image"
+          property="twitter:image"
           content={Plasmicامکاناتنسخهیپیشرفتهرنتامون.pageMetadata.ogImageSrc}
         />
       </Head>

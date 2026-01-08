@@ -193,12 +193,12 @@ function Plasmicقوانیناجارهروزانه__RenderFunc(props: {
         />
         <meta
           key="twitter:title"
-          name="twitter:title"
+          property="twitter:title"
           content={Plasmicقوانیناجارهروزانه.pageMetadata.title}
         />
         <meta
           key="description"
-          name="description"
+          property="description"
           content={Plasmicقوانیناجارهروزانه.pageMetadata.description}
         />
         <meta
@@ -208,7 +208,7 @@ function Plasmicقوانیناجارهروزانه__RenderFunc(props: {
         />
         <meta
           key="twitter:description"
-          name="twitter:description"
+          property="twitter:description"
           content={Plasmicقوانیناجارهروزانه.pageMetadata.description}
         />
         <meta
@@ -218,7 +218,7 @@ function Plasmicقوانیناجارهروزانه__RenderFunc(props: {
         />
         <meta
           key="twitter:image"
-          name="twitter:image"
+          property="twitter:image"
           content={Plasmicقوانیناجارهروزانه.pageMetadata.ogImageSrc}
         />
       </Head>

@@ -199,12 +199,12 @@ function Plasmicمشکلاتاجارهروزانهدرایران__RenderFunc(pro
         />
         <meta
           key="twitter:title"
-          name="twitter:title"
+          property="twitter:title"
           content={Plasmicمشکلاتاجارهروزانهدرایران.pageMetadata.title}
         />
         <meta
           key="description"
-          name="description"
+          property="description"
           content={Plasmicمشکلاتاجارهروزانهدرایران.pageMetadata.description}
         />
         <meta
@@ -214,7 +214,7 @@ function Plasmicمشکلاتاجارهروزانهدرایران__RenderFunc(pro
         />
         <meta
           key="twitter:description"
-          name="twitter:description"
+          property="twitter:description"
           content={Plasmicمشکلاتاجارهروزانهدرایران.pageMetadata.description}
         />
         <meta
@@ -224,7 +224,7 @@ function Plasmicمشکلاتاجارهروزانهدرایران__RenderFunc(pro
         />
         <meta
           key="twitter:image"
-          name="twitter:image"
+          property="twitter:image"
           content={Plasmicمشکلاتاجارهروزانهدرایران.pageMetadata.ogImageSrc}
         />
       </Head>

@@ -180,12 +180,12 @@ function Plasmicنگهداریوسایلدراجارهروزانه__RenderFunc(p
         />
         <meta
           key="twitter:title"
-          name="twitter:title"
+          property="twitter:title"
           content={Plasmicنگهداریوسایلدراجارهروزانه.pageMetadata.title}
         />
         <meta
           key="description"
-          name="description"
+          property="description"
           content={Plasmicنگهداریوسایلدراجارهروزانه.pageMetadata.description}
         />
         <meta
@@ -195,7 +195,7 @@ function Plasmicنگهداریوسایلدراجارهروزانه__RenderFunc(p
         />
         <meta
           key="twitter:description"
-          name="twitter:description"
+          property="twitter:description"
           content={Plasmicنگهداریوسایلدراجارهروزانه.pageMetadata.description}
         />
         <meta
@@ -205,7 +205,7 @@ function Plasmicنگهداریوسایلدراجارهروزانه__RenderFunc(p
         />
         <meta
           key="twitter:image"
-          name="twitter:image"
+          property="twitter:image"
           content={Plasmicنگهداریوسایلدراجارهروزانه.pageMetadata.ogImageSrc}
         />
       </Head>

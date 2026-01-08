@@ -177,7 +177,7 @@ function Plasmicدستیارهوشمصنوعیرنتامون__RenderFunc(props: 
         />
         <meta
           key="twitter:title"
-          name="twitter:title"
+          property="twitter:title"
           content={Plasmicدستیارهوشمصنوعیرنتامون.pageMetadata.title}
         />
       </Head>

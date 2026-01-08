@@ -178,7 +178,7 @@ function Plasmicقوانینومقرراتاستفادهازرنتامون__Rend
         />
         <meta
           key="twitter:title"
-          name="twitter:title"
+          property="twitter:title"
           content={Plasmicقوانینومقرراتاستفادهازرنتامون.pageMetadata.title}
         />
       </Head>

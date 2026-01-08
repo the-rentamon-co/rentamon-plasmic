@@ -358,7 +358,7 @@ function Plasmicتالار__RenderFunc(props: {
         />
         <meta
           key="twitter:title"
-          name="twitter:title"
+          property="twitter:title"
           content={Plasmicتالار.pageMetadata.title}
         />
       </Head>
@@ -1907,7 +1907,34 @@ function Plasmicتالار__RenderFunc(props: {
                 </div>
               ) : null}
               {(
-                hasVariant(globalVariants, "screen", "mobile") ? true : false
+                hasVariant(globalVariants, "screen", "mobile")
+                  ? (() => {
+                      try {
+                        return (() => {
+                          function checkDivarSource() {
+                            const cookies = document.cookie.split(";");
+                            for (let i = 0; i < cookies.length; i++) {
+                              const [key, value] = cookies[i].trim().split("=");
+                              if (key === "from" && value === "divar") {
+                                return true;
+                              }
+                            }
+                            return false;
+                          }
+                          const isDivar = checkDivarSource();
+                          return !isDivar;
+                        })();
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return true;
+                        }
+                        throw e;
+                      }
+                    })()
+                  : false
               ) ? (
                 <div
                   data-plasmic-name={"homePage"}

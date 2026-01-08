@@ -191,12 +191,12 @@ function Plasmicمدیریتاقامتگاه__RenderFunc(props: {
         />
         <meta
           key="twitter:title"
-          name="twitter:title"
+          property="twitter:title"
           content={Plasmicمدیریتاقامتگاه.pageMetadata.title}
         />
         <meta
           key="description"
-          name="description"
+          property="description"
           content={Plasmicمدیریتاقامتگاه.pageMetadata.description}
         />
         <meta
@@ -206,7 +206,7 @@ function Plasmicمدیریتاقامتگاه__RenderFunc(props: {
         />
         <meta
           key="twitter:description"
-          name="twitter:description"
+          property="twitter:description"
           content={Plasmicمدیریتاقامتگاه.pageMetadata.description}
         />
         <meta
@@ -216,7 +216,7 @@ function Plasmicمدیریتاقامتگاه__RenderFunc(props: {
         />
         <meta
           key="twitter:image"
-          name="twitter:image"
+          property="twitter:image"
           content={Plasmicمدیریتاقامتگاه.pageMetadata.ogImageSrc}
         />
       </Head>

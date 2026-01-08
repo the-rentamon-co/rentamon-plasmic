@@ -188,12 +188,12 @@ function Plasmicبرنامهمدیریتویلا__RenderFunc(props: {
         />
         <meta
           key="twitter:title"
-          name="twitter:title"
+          property="twitter:title"
           content={Plasmicبرنامهمدیریتویلا.pageMetadata.title}
         />
         <meta
           key="description"
-          name="description"
+          property="description"
           content={Plasmicبرنامهمدیریتویلا.pageMetadata.description}
         />
         <meta
@@ -203,7 +203,7 @@ function Plasmicبرنامهمدیریتویلا__RenderFunc(props: {
         />
         <meta
           key="twitter:description"
-          name="twitter:description"
+          property="twitter:description"
           content={Plasmicبرنامهمدیریتویلا.pageMetadata.description}
         />
         <meta
@@ -213,7 +213,7 @@ function Plasmicبرنامهمدیریتویلا__RenderFunc(props: {
         />
         <meta
           key="twitter:image"
-          name="twitter:image"
+          property="twitter:image"
           content={Plasmicبرنامهمدیریتویلا.pageMetadata.ogImageSrc}
         />
       </Head>

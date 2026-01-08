@@ -195,12 +195,12 @@ function Plasmicدربارهما__RenderFunc(props: {
         />
         <meta
           key="twitter:title"
-          name="twitter:title"
+          property="twitter:title"
           content={Plasmicدربارهما.pageMetadata.title}
         />
         <meta
           key="description"
-          name="description"
+          property="description"
           content={Plasmicدربارهما.pageMetadata.description}
         />
         <meta
@@ -210,7 +210,7 @@ function Plasmicدربارهما__RenderFunc(props: {
         />
         <meta
           key="twitter:description"
-          name="twitter:description"
+          property="twitter:description"
           content={Plasmicدربارهما.pageMetadata.description}
         />
         <meta
@@ -220,7 +220,7 @@ function Plasmicدربارهما__RenderFunc(props: {
         />
         <meta
           key="twitter:image"
-          name="twitter:image"
+          property="twitter:image"
           content={Plasmicدربارهما.pageMetadata.ogImageSrc}
         />
         <link rel="canonical" href={Plasmicدربارهما.pageMetadata.canonical} />

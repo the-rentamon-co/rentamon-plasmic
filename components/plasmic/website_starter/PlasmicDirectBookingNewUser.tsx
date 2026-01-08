@@ -203,7 +203,7 @@ function PlasmicDirectBookingNewUser__RenderFunc(props: {
         />
         <meta
           key="twitter:title"
-          name="twitter:title"
+          property="twitter:title"
           content={PlasmicDirectBookingNewUser.pageMetadata.title}
         />
       </Head>

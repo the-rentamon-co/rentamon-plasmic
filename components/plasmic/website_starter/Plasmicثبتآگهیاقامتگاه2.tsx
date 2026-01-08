@@ -136,7 +136,7 @@ function Plasmicثبتآگهیاقامتگاه2__RenderFunc(props: {
 
         <meta
           key="description"
-          name="description"
+          property="description"
           content={Plasmicثبتآگهیاقامتگاه2.pageMetadata.description}
         />
         <meta
@@ -146,7 +146,7 @@ function Plasmicثبتآگهیاقامتگاه2__RenderFunc(props: {
         />
         <meta
           key="twitter:description"
-          name="twitter:description"
+          property="twitter:description"
           content={Plasmicثبتآگهیاقامتگاه2.pageMetadata.description}
         />
       </Head>

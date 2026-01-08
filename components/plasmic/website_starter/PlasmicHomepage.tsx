@@ -306,12 +306,12 @@ function PlasmicHomepage__RenderFunc(props: {
         />
         <meta
           key="twitter:title"
-          name="twitter:title"
+          property="twitter:title"
           content={PlasmicHomepage.pageMetadata.title}
         />
         <meta
           key="description"
-          name="description"
+          property="description"
           content={PlasmicHomepage.pageMetadata.description}
         />
         <meta
@@ -321,7 +321,7 @@ function PlasmicHomepage__RenderFunc(props: {
         />
         <meta
           key="twitter:description"
-          name="twitter:description"
+          property="twitter:description"
           content={PlasmicHomepage.pageMetadata.description}
         />
         <meta
@@ -331,7 +331,7 @@ function PlasmicHomepage__RenderFunc(props: {
         />
         <meta
           key="twitter:image"
-          name="twitter:image"
+          property="twitter:image"
           content={PlasmicHomepage.pageMetadata.ogImageSrc}
         />
       </Head>

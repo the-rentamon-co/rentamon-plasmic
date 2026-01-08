@@ -207,12 +207,12 @@ function Plasmicمعرفیبرندجدید__RenderFunc(props: {
         />
         <meta
           key="twitter:title"
-          name="twitter:title"
+          property="twitter:title"
           content={Plasmicمعرفیبرندجدید.pageMetadata.title}
         />
         <meta
           key="description"
-          name="description"
+          property="description"
           content={Plasmicمعرفیبرندجدید.pageMetadata.description}
         />
         <meta
@@ -222,7 +222,7 @@ function Plasmicمعرفیبرندجدید__RenderFunc(props: {
         />
         <meta
           key="twitter:description"
-          name="twitter:description"
+          property="twitter:description"
           content={Plasmicمعرفیبرندجدید.pageMetadata.description}
         />
         <meta
@@ -232,7 +232,7 @@ function Plasmicمعرفیبرندجدید__RenderFunc(props: {
         />
         <meta
           key="twitter:image"
-          name="twitter:image"
+          property="twitter:image"
           content={Plasmicمعرفیبرندجدید.pageMetadata.ogImageSrc}
         />
       </Head>

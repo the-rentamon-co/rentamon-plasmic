@@ -196,7 +196,7 @@ function Plasmic_404__RenderFunc(props: {
         />
         <meta
           key="twitter:title"
-          name="twitter:title"
+          property="twitter:title"
           content={Plasmic_404.pageMetadata.title}
         />
       </Head>

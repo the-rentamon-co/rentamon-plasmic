@@ -186,12 +186,12 @@ function Plasmicراهنمایجامعدرآمدازاجارهویلا__RenderFu
         />
         <meta
           key="twitter:title"
-          name="twitter:title"
+          property="twitter:title"
           content={Plasmicراهنمایجامعدرآمدازاجارهویلا.pageMetadata.title}
         />
         <meta
           key="description"
-          name="description"
+          property="description"
           content={Plasmicراهنمایجامعدرآمدازاجارهویلا.pageMetadata.description}
         />
         <meta
@@ -201,7 +201,7 @@ function Plasmicراهنمایجامعدرآمدازاجارهویلا__RenderFu
         />
         <meta
           key="twitter:description"
-          name="twitter:description"
+          property="twitter:description"
           content={Plasmicراهنمایجامعدرآمدازاجارهویلا.pageMetadata.description}
         />
         <meta
@@ -211,7 +211,7 @@ function Plasmicراهنمایجامعدرآمدازاجارهویلا__RenderFu
         />
         <meta
           key="twitter:image"
-          name="twitter:image"
+          property="twitter:image"
           content={Plasmicراهنمایجامعدرآمدازاجارهویلا.pageMetadata.ogImageSrc}
         />
       </Head>

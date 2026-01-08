@@ -213,12 +213,12 @@ function PlasmicIntegrations__RenderFunc(props: {
         />
         <meta
           key="twitter:title"
-          name="twitter:title"
+          property="twitter:title"
           content={PlasmicIntegrations.pageMetadata.title}
         />
         <meta
           key="description"
-          name="description"
+          property="description"
           content={PlasmicIntegrations.pageMetadata.description}
         />
         <meta
@@ -228,7 +228,7 @@ function PlasmicIntegrations__RenderFunc(props: {
         />
         <meta
           key="twitter:description"
-          name="twitter:description"
+          property="twitter:description"
           content={PlasmicIntegrations.pageMetadata.description}
         />
       </Head>

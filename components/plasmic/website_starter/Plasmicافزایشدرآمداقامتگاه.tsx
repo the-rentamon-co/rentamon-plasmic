@@ -197,7 +197,7 @@ function Plasmicافزایشدرآمداقامتگاه__RenderFunc(props: {
         />
         <meta
           key="twitter:title"
-          name="twitter:title"
+          property="twitter:title"
           content={Plasmicافزایشدرآمداقامتگاه.pageMetadata.title}
         />
 
@@ -208,7 +208,7 @@ function Plasmicافزایشدرآمداقامتگاه__RenderFunc(props: {
         />
         <meta
           key="twitter:image"
-          name="twitter:image"
+          property="twitter:image"
           content={Plasmicافزایشدرآمداقامتگاه.pageMetadata.ogImageSrc}
         />
       </Head>

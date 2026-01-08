@@ -257,12 +257,12 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
         />
         <meta
           key="twitter:title"
-          name="twitter:title"
+          property="twitter:title"
           content={Plasmicثبتآگهیاقامتگاه.pageMetadata.title}
         />
         <meta
           key="description"
-          name="description"
+          property="description"
           content={Plasmicثبتآگهیاقامتگاه.pageMetadata.description}
         />
         <meta
@@ -272,7 +272,7 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
         />
         <meta
           key="twitter:description"
-          name="twitter:description"
+          property="twitter:description"
           content={Plasmicثبتآگهیاقامتگاه.pageMetadata.description}
         />
         <meta
@@ -282,7 +282,7 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
         />
         <meta
           key="twitter:image"
-          name="twitter:image"
+          property="twitter:image"
           content={Plasmicثبتآگهیاقامتگاه.pageMetadata.ogImageSrc}
         />
       </Head>

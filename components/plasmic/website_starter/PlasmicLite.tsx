@@ -233,12 +233,12 @@ function PlasmicLite__RenderFunc(props: {
         />
         <meta
           key="twitter:title"
-          name="twitter:title"
+          property="twitter:title"
           content={PlasmicLite.pageMetadata.title}
         />
         <meta
           key="description"
-          name="description"
+          property="description"
           content={PlasmicLite.pageMetadata.description}
         />
         <meta
@@ -248,7 +248,7 @@ function PlasmicLite__RenderFunc(props: {
         />
         <meta
           key="twitter:description"
-          name="twitter:description"
+          property="twitter:description"
           content={PlasmicLite.pageMetadata.description}
         />
         <meta
@@ -258,7 +258,7 @@ function PlasmicLite__RenderFunc(props: {
         />
         <meta
           key="twitter:image"
-          name="twitter:image"
+          property="twitter:image"
           content={PlasmicLite.pageMetadata.ogImageSrc}
         />
       </Head>

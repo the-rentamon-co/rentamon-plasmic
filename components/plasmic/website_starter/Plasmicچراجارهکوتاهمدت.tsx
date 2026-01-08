@@ -185,12 +185,12 @@ function Plasmicچراجارهکوتاهمدت__RenderFunc(props: {
         />
         <meta
           key="twitter:title"
-          name="twitter:title"
+          property="twitter:title"
           content={Plasmicچراجارهکوتاهمدت.pageMetadata.title}
         />
         <meta
           key="description"
-          name="description"
+          property="description"
           content={Plasmicچراجارهکوتاهمدت.pageMetadata.description}
         />
         <meta
@@ -200,7 +200,7 @@ function Plasmicچراجارهکوتاهمدت__RenderFunc(props: {
         />
         <meta
           key="twitter:description"
-          name="twitter:description"
+          property="twitter:description"
           content={Plasmicچراجارهکوتاهمدت.pageMetadata.description}
         />
         <meta
@@ -210,7 +210,7 @@ function Plasmicچراجارهکوتاهمدت__RenderFunc(props: {
         />
         <meta
           key="twitter:image"
-          name="twitter:image"
+          property="twitter:image"
           content={Plasmicچراجارهکوتاهمدت.pageMetadata.ogImageSrc}
         />
       </Head>

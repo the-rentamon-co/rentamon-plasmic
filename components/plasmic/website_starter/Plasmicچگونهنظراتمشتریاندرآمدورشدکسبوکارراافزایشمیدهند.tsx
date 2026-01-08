@@ -206,7 +206,7 @@ function Plasmicچگونهنظراتمشتریاندرآمدورشدکسبوکا
         />
         <meta
           key="twitter:title"
-          name="twitter:title"
+          property="twitter:title"
           content={
             Plasmicچگونهنظراتمشتریاندرآمدورشدکسبوکارراافزایشمیدهند.pageMetadata
               .title
@@ -214,7 +214,7 @@ function Plasmicچگونهنظراتمشتریاندرآمدورشدکسبوکا
         />
         <meta
           key="description"
-          name="description"
+          property="description"
           content={
             Plasmicچگونهنظراتمشتریاندرآمدورشدکسبوکارراافزایشمیدهند.pageMetadata
               .description
@@ -230,7 +230,7 @@ function Plasmicچگونهنظراتمشتریاندرآمدورشدکسبوکا
         />
         <meta
           key="twitter:description"
-          name="twitter:description"
+          property="twitter:description"
           content={
             Plasmicچگونهنظراتمشتریاندرآمدورشدکسبوکارراافزایشمیدهند.pageMetadata
               .description
@@ -246,7 +246,7 @@ function Plasmicچگونهنظراتمشتریاندرآمدورشدکسبوکا
         />
         <meta
           key="twitter:image"
-          name="twitter:image"
+          property="twitter:image"
           content={
             Plasmicچگونهنظراتمشتریاندرآمدورشدکسبوکارراافزایشمیدهند.pageMetadata
               .ogImageSrc
