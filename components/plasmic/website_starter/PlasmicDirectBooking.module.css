@@ -21,6 +21,11 @@
 .root > * {
   grid-column: 4;
 }
+@media (max-width: 500px) {
+  .root > * {
+    grid-column: 4;
+  }
+}
 .main {
   animation: none;
   display: flex;

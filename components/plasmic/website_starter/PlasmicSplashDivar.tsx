@@ -377,40 +377,40 @@ function PlasmicSplashDivar__RenderFunc(props: {
                 ? (() => {
                     const actionArgs = {
                       customFunction: async () => {
-                        return (() => {
+                        return (function () {
                           function getCookie(name) {
                             const value = `; ${document.cookie}`;
                             const parts = value.split(`; ${name}=`);
                             if (parts.length === 2)
                               return parts.pop().split(";").shift();
                           }
-                          function savePostToken() {
+                          function checkAndHandleError() {
                             const params = new URLSearchParams(
                               window.location.search
                             );
-                            let token = params.get("post_token");
-                            if (!token) {
-                              const state = params.get("state");
-                              if (state) {
-                                const match = state.match(/post_token=([^,]+)/);
-                                if (match && match[1]) {
-                                  token = decodeURIComponent(match[1]);
-                                }
-                              }
+                            const error = params.get("error");
+                            if (
+                              error === "consent request denied" ||
+                              error === "access_denied"
+                            ) {
+                              window.location.href =
+                                "https://open-platform-redirect.divar.ir/completion";
+                              return true;
                             }
-                            if (token) {
-                              localStorage.setItem("divar_post_token", token);
+                            return false;
+                          }
+                          function handleRouting() {
+                            if (checkAndHandleError()) return;
+                            const hasToken = getCookie("usso_access_available");
+                            const currentSearchParams = window.location.search;
+                            if (hasToken) {
+                              window.location.href =
+                                "https://miaan.ir/direct-booking/select-property";
+                            } else {
+                              window.location.href = `https://miaan.ir/activation/1${currentSearchParams}`;
                             }
                           }
-                          savePostToken();
-                          const hasToken = getCookie("usso_access_available");
-                          const currentSearchParams = window.location.search;
-                          if (hasToken) {
-                            return (window.location.href =
-                              "https://miaan.ir/direct-booking/select-property");
-                          } else {
-                            return (window.location.href = `https://miaan.ir/activation/1${currentSearchParams}`);
-                          }
+                          handleRouting();
                         })();
                       }
                     };
