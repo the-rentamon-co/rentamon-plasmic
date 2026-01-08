@@ -204,12 +204,28 @@ function Plasmicقوانینومقرراتاستفادهازرنتامون__Rend
             sty.root
           )}
         >
-          <NavbarRntHeader
-            data-plasmic-name={"navbarRntHeader"}
-            data-plasmic-override={overrides.navbarRntHeader}
-            className={classNames("__wab_instance", sty.navbarRntHeader)}
-          />
-
+          {(() => {
+            try {
+              return (
+                typeof document !== "undefined" &&
+                !document.cookie.includes("from=divar")
+              );
+            } catch (e) {
+              if (
+                e instanceof TypeError ||
+                e?.plasmicType === "PlasmicUndefinedDataError"
+              ) {
+                return true;
+              }
+              throw e;
+            }
+          })() ? (
+            <NavbarRntHeader
+              data-plasmic-name={"navbarRntHeader"}
+              data-plasmic-override={overrides.navbarRntHeader}
+              className={classNames("__wab_instance", sty.navbarRntHeader)}
+            />
+          ) : null}
           <ClarityRntComponent
             data-plasmic-name={"clarityRntComponent"}
             data-plasmic-override={overrides.clarityRntComponent}
@@ -1325,12 +1341,28 @@ function Plasmicقوانینومقرراتاستفادهازرنتامون__Rend
               </div>
             </div>
           </div>
-          <RentamonFooter
-            data-plasmic-name={"rentamonFooter"}
-            data-plasmic-override={overrides.rentamonFooter}
-            className={classNames("__wab_instance", sty.rentamonFooter)}
-          />
-
+          {(() => {
+            try {
+              return (
+                typeof document !== "undefined" &&
+                !document.cookie.includes("from=divar")
+              );
+            } catch (e) {
+              if (
+                e instanceof TypeError ||
+                e?.plasmicType === "PlasmicUndefinedDataError"
+              ) {
+                return true;
+              }
+              throw e;
+            }
+          })() ? (
+            <RentamonFooter
+              data-plasmic-name={"rentamonFooter"}
+              data-plasmic-override={overrides.rentamonFooter}
+              className={classNames("__wab_instance", sty.rentamonFooter)}
+            />
+          ) : null}
           <FaviconRntComponent
             data-plasmic-name={"faviconRntComponent"}
             data-plasmic-override={overrides.faviconRntComponent}

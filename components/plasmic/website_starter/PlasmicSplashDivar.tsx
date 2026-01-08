@@ -384,6 +384,12 @@ function PlasmicSplashDivar__RenderFunc(props: {
                             if (parts.length === 2)
                               return parts.pop().split(";").shift();
                           }
+                          function setDivarSourceCookie() {
+                            const date = new Date();
+                            date.setTime(date.getTime() + 24 * 60 * 60 * 1000);
+                            const expires = date.toUTCString();
+                            document.cookie = `from=divar; expires=${expires}; domain=.miaan.ir; path=/; Secure; SameSite=None`;
+                          }
                           function checkAndHandleError() {
                             const params = new URLSearchParams(
                               window.location.search
@@ -401,6 +407,7 @@ function PlasmicSplashDivar__RenderFunc(props: {
                           }
                           function handleRouting() {
                             if (checkAndHandleError()) return;
+                            setDivarSourceCookie();
                             const hasToken = getCookie("usso_access_available");
                             const currentSearchParams = window.location.search;
                             if (hasToken) {
