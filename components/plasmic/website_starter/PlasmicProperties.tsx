@@ -1708,6 +1708,36 @@ function PlasmicProperties__RenderFunc(props: {
                 $steps["checkPropTourCookie"] =
                   await $steps["checkPropTourCookie"];
               }
+
+              $steps["updateStep3"] = true
+                ? (() => {
+                    const actionArgs = {
+                      customFunction: async () => {
+                        return (() => {
+                          if (Array.isArray($state?.apiRequest)) {
+                            const hasOtherProperty = $state.apiRequest.some(
+                              item => item.property_name !== "اقامتگاه 1"
+                            );
+                            if (hasOtherProperty) {
+                              return (window.location.href =
+                                "https://miaan.ir/direct-booking/select-property/");
+                            }
+                          }
+                        })();
+                      }
+                    };
+                    return (({ customFunction }) => {
+                      return customFunction();
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["updateStep3"] != null &&
+                typeof $steps["updateStep3"] === "object" &&
+                typeof $steps["updateStep3"].then === "function"
+              ) {
+                $steps["updateStep3"] = await $steps["updateStep3"];
+              }
             }}
           />
 
