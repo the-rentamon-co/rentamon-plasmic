@@ -493,7 +493,7 @@ function PlasmicHomepage__RenderFunc(props: {
                         loop={true}
                         muted={true}
                         src={
-                          "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/video%2Fali-kermani.mp4?versionId="
+                          "https://media.rentamon.com/video%2Fali-kermani.mp4"
                         }
                       />
                     </div>

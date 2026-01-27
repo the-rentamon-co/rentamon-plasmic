@@ -3275,6 +3275,20 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/property/[property_id]"
+        },
+        {
+          "id": "Q-HDp8ZxsV2r",
+          "name": "اهمیتحضوردراینترنت",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/Plasmicاهمیتحضوردراینترنت.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/villa-digital-presence.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/Plasmicاهمیتحضوردراینترنت.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/villa-digital-presence"
         }
       ],
       "icons": [
@@ -6241,6 +6255,6 @@
   "nextjsConfig": {
     "pagesDir": "../src/pages"
   },
-  "cliVersion": "0.1.350",
-  "$schema": "https://unpkg.com/@plasmicapp/cli@0.1.350/dist/plasmic.schema.json"
+  "cliVersion": "0.1.354",
+  "$schema": "https://unpkg.com/@plasmicapp/cli@0.1.354/dist/plasmic.schema.json"
 }
