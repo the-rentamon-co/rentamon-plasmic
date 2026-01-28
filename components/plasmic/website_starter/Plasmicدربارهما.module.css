@@ -694,6 +694,11 @@
   line-height: 2;
   padding-bottom: 0px;
 }
+@media (max-width: 350px) {
+  .text__eiQcw {
+    line-height: 1.8;
+  }
+}
 .address {
   display: flex;
   flex-direction: row;

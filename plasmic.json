@@ -2739,20 +2739,6 @@
           "path": "/websites"
         },
         {
-          "id": "7xoX8eHI85Zt",
-          "name": "ProCalendar2",
-          "type": "managed",
-          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
-          "renderModuleFilePath": "plasmic/website_starter/PlasmicProCalendar2.tsx",
-          "importSpec": {
-            "modulePath": "../src/pages/panel.tsx"
-          },
-          "cssFilePath": "plasmic/website_starter/PlasmicProCalendar2.module.css",
-          "scheme": "blackbox",
-          "componentType": "page",
-          "path": "/panel-2"
-        },
-        {
           "id": "9y5OemMhUNlV",
           "name": "Calendar23",
           "type": "managed",
@@ -3289,6 +3275,20 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/villa-digital-presence"
+        },
+        {
+          "id": "7xoX8eHI85Zt",
+          "name": "ProCalendar",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicProCalendar.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/panel.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicProCalendar.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/panel"
         }
       ],
       "icons": [

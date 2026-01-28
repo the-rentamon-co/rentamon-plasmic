@@ -408,6 +408,30 @@ function PlasmicSplashDivar__RenderFunc(props: {
                           function handleRouting() {
                             if (checkAndHandleError()) return;
                             setDivarSourceCookie();
+                            try {
+                              const params = new URLSearchParams(
+                                window.location.search
+                              );
+                              let postToken = params.get("post_token");
+                              if (!postToken) {
+                                const state = params.get("state");
+                                if (state) {
+                                  const match =
+                                    state.match(/post_token=([^,]+)/);
+                                  if (match && match[1]) {
+                                    postToken = decodeURIComponent(match[1]);
+                                  }
+                                }
+                              }
+                              if (postToken) {
+                                localStorage.setItem(
+                                  "divar_post_token",
+                                  postToken
+                                );
+                              }
+                            } catch (e) {
+                              console.error("Error saving token:", e);
+                            }
                             const hasToken = getCookie("usso_access_available");
                             const currentSearchParams = window.location.search;
                             if (hasToken) {

@@ -628,7 +628,7 @@ function Plasmicدربارهما__RenderFunc(props: {
                   <React.Fragment>
                     <React.Fragment>
                       {
-                        "\u0641\u0631\u0635\u062a\u200c\u0647\u0627\u06cc \u0634\u063a\u0644\u06cc \u0645\u06cc\u0627\u0646 \u0631\u0648\u00a0"
+                        "\u0627\u06cc\u0646\u062c\u0627 \u0647\u0645\u06cc\u0634\u0647 \u0628\u0631\u06cc \u0627\u0641\u0631\u0627\u062f \u062c\u062f\u06cc\u062f \u062c\u0627 \u0647\u0633\u062a. \u0641\u0631\u0635\u062a\u200c\u0647\u0627\u06cc \u0634\u063a\u0644\u06cc \u0645\u06cc\u0627\u0646 \u0631\u0648\u00a0"
                       }
                     </React.Fragment>
                     {
