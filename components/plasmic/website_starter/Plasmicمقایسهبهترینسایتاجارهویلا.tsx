@@ -324,21 +324,6 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
                     </DataCtxReader__>
                   }
                   errorName={"fetchError"}
-                  headers={(() => {
-                    try {
-                      return {
-                        "xc-token": "Uf73uC4qliAaPeDYzVEkbQnVuQ-tU1EwZ8T1Eq-A"
-                      };
-                    } catch (e) {
-                      if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
-                      ) {
-                        return undefined;
-                      }
-                      throw e;
-                    }
-                  })()}
                   loadingDisplay={
                     <DataCtxReader__>
                       {$ctx => (
@@ -368,19 +353,9 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
                   }
                   method={"GET"}
                   noLayout={false}
-                  url={(() => {
-                    try {
-                      return "https://app.nocodb.com/api/v2/tables/mdgs7ivtncz7kit/records?limit=25&shuffle=0&offset=0";
-                    } catch (e) {
-                      if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
-                      ) {
-                        return undefined;
-                      }
-                      throw e;
-                    }
-                  })()}
+                  url={
+                    "https://second-n8n.darkube.app/webhook/rental_platform_comparisons"
+                  }
                 >
                   <DataCtxReader__>
                     {$ctx => (
@@ -556,7 +531,7 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
                             !_par ? [] : Array.isArray(_par) ? _par : [_par])(
                             (() => {
                               try {
-                                return $ctx.fetchedData.list;
+                                return $ctx.fetchedData;
                               } catch (e) {
                                 if (
                                   e instanceof TypeError ||
@@ -596,7 +571,7 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
                                     <React.Fragment>
                                       {(() => {
                                         try {
-                                          return currentItem.platform;
+                                          return currentItem.name;
                                         } catch (e) {
                                           if (
                                             e instanceof TypeError ||
@@ -627,7 +602,7 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
                                     <React.Fragment>
                                       {(() => {
                                         try {
-                                          return currentItem.visit;
+                                          return currentItem.visitors;
                                         } catch (e) {
                                           if (
                                             e instanceof TypeError ||
@@ -689,7 +664,7 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
                                     <React.Fragment>
                                       {(() => {
                                         try {
-                                          return currentItem.commission;
+                                          return currentItem.commissionrate;
                                         } catch (e) {
                                           if (
                                             e instanceof TypeError ||
@@ -720,7 +695,7 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
                                     <React.Fragment>
                                       {(() => {
                                         try {
-                                          return currentItem.support;
+                                          return currentItem.supportscore;
                                         } catch (e) {
                                           if (
                                             e instanceof TypeError ||
@@ -902,39 +877,14 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
                     </DataCtxReader__>
                   }
                   errorName={"fetchError"}
-                  headers={(() => {
-                    try {
-                      return {
-                        "xc-token": "Uf73uC4qliAaPeDYzVEkbQnVuQ-tU1EwZ8T1Eq-A"
-                      };
-                    } catch (e) {
-                      if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
-                      ) {
-                        return undefined;
-                      }
-                      throw e;
-                    }
-                  })()}
                   loadingDisplay={
                     <DataCtxReader__>{$ctx => "Loading..."}</DataCtxReader__>
                   }
                   method={"GET"}
                   noLayout={false}
-                  url={(() => {
-                    try {
-                      return "https://app.nocodb.com/api/v2/tables/mdgs7ivtncz7kit/records?limit=25&shuffle=0&offset=0";
-                    } catch (e) {
-                      if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
-                      ) {
-                        return undefined;
-                      }
-                      throw e;
-                    }
-                  })()}
+                  url={
+                    "https://second-n8n.darkube.app/webhook/rental_platform_comparisons"
+                  }
                 >
                   <DataCtxReader__>
                     {$ctx => (
@@ -999,7 +949,7 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
                             !_par ? [] : Array.isArray(_par) ? _par : [_par])(
                             (() => {
                               try {
-                                return $ctx.fetchedData.list;
+                                return $ctx.fetchedData;
                               } catch (e) {
                                 if (
                                   e instanceof TypeError ||
@@ -1039,7 +989,7 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
                                     <React.Fragment>
                                       {(() => {
                                         try {
-                                          return currentItem.platform;
+                                          return currentItem.name;
                                         } catch (e) {
                                           if (
                                             e instanceof TypeError ||
@@ -1070,7 +1020,7 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
                                     <React.Fragment>
                                       {(() => {
                                         try {
-                                          return currentItem.commission;
+                                          return currentItem.commissionrate;
                                         } catch (e) {
                                           if (
                                             e instanceof TypeError ||
@@ -1258,39 +1208,14 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
                     </DataCtxReader__>
                   }
                   errorName={"fetchError"}
-                  headers={(() => {
-                    try {
-                      return {
-                        "xc-token": "Uf73uC4qliAaPeDYzVEkbQnVuQ-tU1EwZ8T1Eq-A"
-                      };
-                    } catch (e) {
-                      if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
-                      ) {
-                        return undefined;
-                      }
-                      throw e;
-                    }
-                  })()}
                   loadingDisplay={
                     <DataCtxReader__>{$ctx => "Loading..."}</DataCtxReader__>
                   }
                   method={"GET"}
                   noLayout={false}
-                  url={(() => {
-                    try {
-                      return "https://app.nocodb.com/api/v2/tables/mdgs7ivtncz7kit/records?limit=25&shuffle=0&offset=0";
-                    } catch (e) {
-                      if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
-                      ) {
-                        return undefined;
-                      }
-                      throw e;
-                    }
-                  })()}
+                  url={
+                    "https://second-n8n.darkube.app/webhook/rental_platform_comparisons"
+                  }
                 >
                   <DataCtxReader__>
                     {$ctx => (
@@ -1357,7 +1282,7 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
                             !_par ? [] : Array.isArray(_par) ? _par : [_par])(
                             (() => {
                               try {
-                                return $ctx.fetchedData.list;
+                                return $ctx.fetchedData;
                               } catch (e) {
                                 if (
                                   e instanceof TypeError ||
@@ -1397,7 +1322,7 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
                                     <React.Fragment>
                                       {(() => {
                                         try {
-                                          return currentItem.platform;
+                                          return currentItem.name;
                                         } catch (e) {
                                           if (
                                             e instanceof TypeError ||
@@ -1544,29 +1469,7 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
                       className={"plasmic_default__all plasmic_default__span"}
                       style={{ fontWeight: 700 }}
                     >
-                      {"\u0634\u0628 \u2b503"}
-                    </span>
-                    <React.Fragment>
-                      {
-                        "\n\u062a\u0645\u0627\u0633 \u0648 \u0686\u062a \u0622\u0646\u0644\u0627\u06cc\u0646 \u0627\u0632 \u06f9 \u0635\u0628\u062d \u062a\u0627 \u06f1 \u0634\u0628 \u2013 \u0627\u062e\u06cc\u0631\u0627 \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627 \u0627\u0632 \u06a9\u06cc\u0641\u06cc\u062a \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc \u0631\u0627\u0636\u06cc \u0646\u06cc\u0633\u062a\u0646\u062f\r\n"
-                      }
-                    </React.Fragment>
-                    <span
-                      className={"plasmic_default__all plasmic_default__span"}
-                      style={{ fontWeight: 700 }}
-                    >
-                      {"\u0647\u0648\u0645\u0633\u0627 \u2b50\u06f4\r"}
-                    </span>
-                    <React.Fragment>
-                      {
-                        "\n\u062a\u0645\u0627\u0633 \u0648 \u062a\u06cc\u06a9\u062a \u0622\u0646\u0644\u0627\u06cc\u0646 \u0627\u0632 \u06f1\u06f0 \u0635\u0628\u062d \u062a\u0627 \u06f6 \u0639\u0635\u0631\n"
-                      }
-                    </React.Fragment>
-                    <span
-                      className={"plasmic_default__all plasmic_default__span"}
-                      style={{ fontWeight: 700 }}
-                    >
-                      {"\u0627\u062a\u0627\u0642\u06a9 \u2b50\u06f4\r"}
+                      {"\u0627\u062a\u0627\u0642\u06a9 \u2b504.5\r"}
                     </span>
                     <React.Fragment>
                       {
@@ -1590,9 +1493,7 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
                       className={"plasmic_default__all plasmic_default__span"}
                       style={{ fontWeight: 700 }}
                     >
-                      {
-                        "\u062c\u0627\u0628\u0627\u0645\u0627 \u2b50\u06f3.\u06f5"
-                      }
+                      {"\u062c\u0627\u0628\u0627\u0645\u0627 \u2b50\u06f3"}
                     </span>
                     <React.Fragment>
                       {
@@ -1603,13 +1504,35 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
                       className={"plasmic_default__all plasmic_default__span"}
                       style={{ fontWeight: 700 }}
                     >
+                      {"\u0634\u0628 \u2b501.5"}
+                    </span>
+                    <React.Fragment>
                       {
-                        "\u0645\u06cc\u0632\u0628\u0648\u0646 \u2b50\u06f3.\u06f5"
+                        "\n\u062a\u0645\u0627\u0633 \u0648 \u0686\u062a \u0622\u0646\u0644\u0627\u06cc\u0646 \u0627\u0632 \u06f9 \u0635\u0628\u062d \u062a\u0627 \u06f1 \u0634\u0628 \u2013 \u0627\u062e\u06cc\u0631\u0627 \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627 \u0627\u0632 \u06a9\u06cc\u0641\u06cc\u062a \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc \u0631\u0627\u0636\u06cc \u0646\u06cc\u0633\u062a\u0646\u062f\n"
+                      }
+                    </React.Fragment>
+                    <span
+                      className={"plasmic_default__all plasmic_default__span"}
+                      style={{ fontWeight: 700 }}
+                    >
+                      {
+                        "\u0627\u0633\u0646\u067e\u200c\u062a\u0631\u06cc\u067e \u2b501\u00a0"
                       }
                     </span>
                     <React.Fragment>
                       {
-                        "\r\n\u0639\u0645\u0644\u0627 \u0628\u0627\u06cc\u062f \u06cc\u0647 \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc \u0633\u0627\u06cc\u062a \u0627\u0642\u0627\u0645\u062a \u06f2\u06f4 \u0632\u0646\u06af \u0628\u0632\u0646\u06cc\u062f \u0648 \u062f\u0633\u062a\u0631\u0633\u06cc \u0628\u0647 \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc\u200c\u0634\u0648\u0646 \u0633\u0631 \u0631\u0627\u0633\u062a \u0646\u06cc\u0633\u062a."
+                        "\n\r\u0639\u0645\u0644\u0627 \u0628\u0627\u06cc\u062f \u06cc\u0647 \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc \u0633\u0627\u06cc\u062a \u0627\u0642\u0627\u0645\u062a \u06f2\u06f4 \u0632\u0646\u06af \u0628\u0632\u0646\u06cc\u062f \u0648 \u062f\u0633\u062a\u0631\u0633\u06cc \u0628\u0647 \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc\u200c\u0634\u0648\u0646 \u0633\u0631 \u0631\u0627\u0633\u062a \u0646\u06cc\u0633\u062a.\n\r\u00a0"
+                      }
+                    </React.Fragment>
+                    <span
+                      className={"plasmic_default__all plasmic_default__span"}
+                      style={{ fontWeight: 700 }}
+                    >
+                      {"\u0647\u0648\u0645\u0633\u0627 \u2b501"}
+                    </span>
+                    <React.Fragment>
+                      {
+                        "\r\u00a0\n\u062a\u0645\u0627\u0633 \u0648 \u062a\u06cc\u06a9\u062a \u0622\u0646\u0644\u0627\u06cc\u0646 \u0627\u0632 \u06f1\u06f0 \u0635\u0628\u062d \u062a\u0627 \u06f6 \u0639\u0635\u0631"
                       }
                     </React.Fragment>
                   </React.Fragment>
@@ -1680,9 +1603,9 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
                     displayWidth={"auto"}
                     loading={"lazy"}
                     src={{
-                      src: "/plasmic/website_starter/images/shareChartPng.png",
-                      fullWidth: 455,
-                      fullHeight: 363,
+                      src: "/plasmic/website_starter/images/geminiGeneratedImageQ3Utrqq3Utrqq3UtPng.png",
+                      fullWidth: 2336,
+                      fullHeight: 1824,
                       aspectRatio: undefined
                     }}
                   />
@@ -1706,9 +1629,9 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
                     displayWidth={"auto"}
                     loading={"lazy"}
                     src={{
-                      src: "/plasmic/website_starter/images/shareTablePng.png",
-                      fullWidth: 371,
-                      fullHeight: 363,
+                      src: "/plasmic/website_starter/images/geminiGeneratedImageLahjrslahjrslahjPng.png",
+                      fullWidth: 2144,
+                      fullHeight: 1984,
                       aspectRatio: undefined
                     }}
                   />
@@ -1850,9 +1773,9 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
                     }
                     loading={"lazy"}
                     src={{
-                      src: "/plasmic/website_starter/images/chatPng.png",
-                      fullWidth: 601,
-                      fullHeight: 601,
+                      src: "/plasmic/website_starter/images/geminiGeneratedImageQlz5Dhqlz5Dhqlz5Png.png",
+                      fullWidth: 495,
+                      fullHeight: 482,
                       aspectRatio: undefined
                     }}
                   />

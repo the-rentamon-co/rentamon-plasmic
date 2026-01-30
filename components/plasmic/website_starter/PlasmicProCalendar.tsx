@@ -2347,7 +2347,7 @@ export const PlasmicProCalendar = Object.assign(
       description:
         "با تقویم هوشمند رنتامون، تاریخ‌ها، قیمت و وضعیت رزرو اقامتگاه‌ خود را در پلتفرم‌هایی مثل جاجیگا، شب، اتاقک و جاباما از یک پنل مرکزی مدیریت کنید. ساده، سریع و بدون خطا.",
       ogImageSrc:
-        "https://site-assets.plasmic.app/ee3ed0fb1a4e40e832c91ea8bd51e58b.jpg",
+        "https://miaan.ir/plasmic/website_starter/images/image109.png",
       canonical: "https://app.rentamon.com/panel"
     }
   }

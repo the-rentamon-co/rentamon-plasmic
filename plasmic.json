@@ -6108,6 +6108,26 @@
           "id": "K1NFLjRWZ96g",
           "name": "image 196",
           "filePath": "../public/plasmic/website_starter/images/image196.png"
+        },
+        {
+          "id": "HN2KTZsGfJ29",
+          "name": "Gemini_Generated_Image_lahjrslahjrslahj.png",
+          "filePath": "../public/plasmic/website_starter/images/geminiGeneratedImageLahjrslahjrslahjPng.png"
+        },
+        {
+          "id": "uqVn_N6M_99y",
+          "name": "Gemini_Generated_Image_q3utrqq3utrqq3ut.png",
+          "filePath": "../public/plasmic/website_starter/images/geminiGeneratedImageQ3Utrqq3Utrqq3UtPng.png"
+        },
+        {
+          "id": "-F9u1zXOLCAr",
+          "name": "Gemini_Generated_Image_sl30k0sl30k0sl30.png",
+          "filePath": "../public/plasmic/website_starter/images/geminiGeneratedImageSl30K0Sl30K0Sl30Png.png"
+        },
+        {
+          "id": "c0S-v6frywJv",
+          "name": "Gemini_Generated_Image_qlz5dhqlz5dhqlz5.png",
+          "filePath": "../public/plasmic/website_starter/images/geminiGeneratedImageQlz5Dhqlz5Dhqlz5Png.png"
         }
       ],
       "indirect": false,
