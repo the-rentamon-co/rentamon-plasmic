@@ -966,12 +966,10 @@ function PlasmicSupport__RenderFunc(props: {
                             ? (() => {
                                 const actionArgs = {
                                   customFunction: async () => {
-                                    return (() => {
-                                      return window.open(
-                                        "https://ble.ir/miaan_support",
-                                        "_blank"
-                                      );
-                                    })();
+                                    return window.open(
+                                      "https://ble.ir/miaan_support_bot",
+                                      "_blank"
+                                    );
                                   }
                                 };
                                 return (({ customFunction }) => {

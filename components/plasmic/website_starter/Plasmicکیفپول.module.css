@@ -335,10 +335,6 @@
     border-width: 2px;
   }
 }
-.sideEffect__dzfLp:global(.__wab_instance) {
-  max-width: 100%;
-  object-fit: cover;
-}
 .modal:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
@@ -1411,10 +1407,6 @@
   padding-top: 0px;
   background: none;
   color: #fcfcfc;
-}
-.sideEffect__dzLm:global(.__wab_instance) {
-  max-width: 100%;
-  object-fit: cover;
 }
 .freeBox__uAXxy {
   display: flex;

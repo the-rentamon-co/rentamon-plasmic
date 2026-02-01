@@ -61,7 +61,6 @@ import {
 
 import SideBar2 from "../../SideBar2"; // plasmic-import: 03ZPQfFyBXgI/component
 import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
-import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
 import { AntdModal } from "@plasmicpkgs/antd5/skinny/registerModal";
 import Button from "../../Button"; // plasmic-import: U5bKCJ5DYhib/component
 import { Input } from "@/fragment/components/input"; // plasmic-import: fpBkcjHl6n0Y/codeComponent
@@ -71,6 +70,7 @@ import { AntdAccordionItem } from "@plasmicpkgs/antd5/skinny/registerCollapse";
 import ClarityRntComponent from "../../ClarityRntComponent"; // plasmic-import: J5D8c7V05ty1/component
 import FaviconRntComponent from "../../FaviconRntComponent"; // plasmic-import: 2Chy9NeUIB9Q/component
 import MiaanFooter from "../../MiaanFooter"; // plasmic-import: DSdlo5kdtbOe/component
+import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
 import NavbarMnFooter from "../../NavbarMnFooter"; // plasmic-import: y37kcAs9RXYg/component
 import { _useGlobalVariants } from "./plasmic"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectModule
 import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/styleTokensProvider
@@ -539,6 +539,35 @@ function Plasmicکیفپول__RenderFunc(props: {
                 ) {
                   $steps["goToTransactions"] = await $steps["goToTransactions"];
                 }
+
+                $steps["log"] = true
+                  ? (() => {
+                      const actionArgs = {
+                        args: [
+                          "POST",
+                          "https://nb.miaan.ir/webhook/wallet-log",
+                          undefined,
+                          {
+                            event_type: "button_click",
+                            event_name: "wallet_report_click",
+                            metadata: { page: "wallet" },
+                            source: "page"
+                          }
+                        ]
+                      };
+                      return $globalActions["Fragment.apiRequest"]?.apply(
+                        null,
+                        [...actionArgs.args]
+                      );
+                    })()
+                  : undefined;
+                if (
+                  $steps["log"] != null &&
+                  typeof $steps["log"] === "object" &&
+                  typeof $steps["log"].then === "function"
+                ) {
+                  $steps["log"] = await $steps["log"];
+                }
               }}
             >
               <div
@@ -557,41 +586,6 @@ function Plasmicکیفپول__RenderFunc(props: {
                   "\u06af\u0632\u0627\u0631\u0634 \u0645\u0635\u0631\u0641 \u0627\u0639\u062a\u0628\u0627\u0631"
                 }
               </div>
-              <SideEffect
-                className={classNames("__wab_instance", sty.sideEffect__dzfLp)}
-                onMount={async () => {
-                  const $steps = {};
-
-                  $steps["log"] = true
-                    ? (() => {
-                        const actionArgs = {
-                          args: [
-                            "POST",
-                            "https://nb.miaan.ir/webhook/wallet-log",
-                            undefined,
-                            {
-                              event_type: "button_click",
-                              event_name: "wallet_report_click",
-                              metadata: { page: "wallet" },
-                              source: "page"
-                            }
-                          ]
-                        };
-                        return $globalActions["Fragment.apiRequest"]?.apply(
-                          null,
-                          [...actionArgs.args]
-                        );
-                      })()
-                    : undefined;
-                  if (
-                    $steps["log"] != null &&
-                    typeof $steps["log"] === "object" &&
-                    typeof $steps["log"].then === "function"
-                  ) {
-                    $steps["log"] = await $steps["log"];
-                  }
-                }}
-              />
             </div>
           </div>
           <AntdModal
@@ -1467,6 +1461,35 @@ function Plasmicکیفپول__RenderFunc(props: {
                       await $steps["invokeGlobalAction"];
                   }
 
+                  $steps["log"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          args: [
+                            "POST",
+                            "https://nb.miaan.ir/webhook/wallet-log",
+                            undefined,
+                            {
+                              event_type: "button_click",
+                              event_name: "wallet_pay_click",
+                              metadata: { page: "wallet" },
+                              source: "page"
+                            }
+                          ]
+                        };
+                        return $globalActions["Fragment.apiRequest"]?.apply(
+                          null,
+                          [...actionArgs.args]
+                        );
+                      })()
+                    : undefined;
+                  if (
+                    $steps["log"] != null &&
+                    typeof $steps["log"] === "object" &&
+                    typeof $steps["log"].then === "function"
+                  ) {
+                    $steps["log"] = await $steps["log"];
+                  }
+
                   $steps["updateAccordionMainActivePanelId"] =
                     $state.input2.value >= 100000
                       ? (() => {
@@ -1655,41 +1678,6 @@ function Plasmicکیفپول__RenderFunc(props: {
                   {"\u067e\u0631\u062f\u0627\u062e\u062a"}
                 </div>
               </div>
-              <SideEffect
-                className={classNames("__wab_instance", sty.sideEffect__dzLm)}
-                onMount={async () => {
-                  const $steps = {};
-
-                  $steps["log"] = true
-                    ? (() => {
-                        const actionArgs = {
-                          args: [
-                            "POST",
-                            "https://nb.miaan.ir/webhook/wallet-log",
-                            undefined,
-                            {
-                              event_type: "button_click",
-                              event_name: "wallet_pay_click",
-                              metadata: { page: "wallet" },
-                              source: "page"
-                            }
-                          ]
-                        };
-                        return $globalActions["Fragment.apiRequest"]?.apply(
-                          null,
-                          [...actionArgs.args]
-                        );
-                      })()
-                    : undefined;
-                  if (
-                    $steps["log"] != null &&
-                    typeof $steps["log"] === "object" &&
-                    typeof $steps["log"].then === "function"
-                  ) {
-                    $steps["log"] = await $steps["log"];
-                  }
-                }}
-              />
             </div>
             <div className={classNames(projectcss.all, sty.freeBox__uAXxy)}>
               <div
