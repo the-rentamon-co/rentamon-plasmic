@@ -61,6 +61,7 @@ import {
 
 import SideBar2 from "../../SideBar2"; // plasmic-import: 03ZPQfFyBXgI/component
 import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
+import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
 import { AntdModal } from "@plasmicpkgs/antd5/skinny/registerModal";
 import Button from "../../Button"; // plasmic-import: U5bKCJ5DYhib/component
 import { Input } from "@/fragment/components/input"; // plasmic-import: fpBkcjHl6n0Y/codeComponent
@@ -69,9 +70,8 @@ import { accordionHelpers as AntdAccordion_Helpers } from "@plasmicpkgs/antd5/sk
 import { AntdAccordionItem } from "@plasmicpkgs/antd5/skinny/registerCollapse";
 import ClarityRntComponent from "../../ClarityRntComponent"; // plasmic-import: J5D8c7V05ty1/component
 import FaviconRntComponent from "../../FaviconRntComponent"; // plasmic-import: 2Chy9NeUIB9Q/component
-import RentamonFooter from "../../RentamonFooter"; // plasmic-import: DSdlo5kdtbOe/component
-import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
-import NavbarRntFooter from "../../NavbarRntFooter"; // plasmic-import: y37kcAs9RXYg/component
+import MiaanFooter from "../../MiaanFooter"; // plasmic-import: DSdlo5kdtbOe/component
+import NavbarMnFooter from "../../NavbarMnFooter"; // plasmic-import: y37kcAs9RXYg/component
 import { _useGlobalVariants } from "./plasmic"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectModule
 import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/styleTokensProvider
 
@@ -135,9 +135,8 @@ export type Plasmicکیفپول__OverridesType = {
   html?: Flex__<"div">;
   clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
   faviconRntComponent?: Flex__<typeof FaviconRntComponent>;
-  rentamonFooter?: Flex__<typeof RentamonFooter>;
-  sideEffect?: Flex__<typeof SideEffect>;
-  navbarRntFooter?: Flex__<typeof NavbarRntFooter>;
+  miaanFooter?: Flex__<typeof MiaanFooter>;
+  navbarMnFooter?: Flex__<typeof NavbarMnFooter>;
   apiRequest?: Flex__<typeof ApiRequest>;
 };
 
@@ -558,6 +557,41 @@ function Plasmicکیفپول__RenderFunc(props: {
                   "\u06af\u0632\u0627\u0631\u0634 \u0645\u0635\u0631\u0641 \u0627\u0639\u062a\u0628\u0627\u0631"
                 }
               </div>
+              <SideEffect
+                className={classNames("__wab_instance", sty.sideEffect__dzfLp)}
+                onMount={async () => {
+                  const $steps = {};
+
+                  $steps["log"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          args: [
+                            "POST",
+                            "https://nb.miaan.ir/webhook/wallet-log",
+                            undefined,
+                            {
+                              event_type: "button_click",
+                              event_name: "wallet_report_click",
+                              metadata: { page: "wallet" },
+                              source: "page"
+                            }
+                          ]
+                        };
+                        return $globalActions["Fragment.apiRequest"]?.apply(
+                          null,
+                          [...actionArgs.args]
+                        );
+                      })()
+                    : undefined;
+                  if (
+                    $steps["log"] != null &&
+                    typeof $steps["log"] === "object" &&
+                    typeof $steps["log"].then === "function"
+                  ) {
+                    $steps["log"] = await $steps["log"];
+                  }
+                }}
+              />
             </div>
           </div>
           <AntdModal
@@ -1621,6 +1655,41 @@ function Plasmicکیفپول__RenderFunc(props: {
                   {"\u067e\u0631\u062f\u0627\u062e\u062a"}
                 </div>
               </div>
+              <SideEffect
+                className={classNames("__wab_instance", sty.sideEffect__dzLm)}
+                onMount={async () => {
+                  const $steps = {};
+
+                  $steps["log"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          args: [
+                            "POST",
+                            "https://nb.miaan.ir/webhook/wallet-log",
+                            undefined,
+                            {
+                              event_type: "button_click",
+                              event_name: "wallet_pay_click",
+                              metadata: { page: "wallet" },
+                              source: "page"
+                            }
+                          ]
+                        };
+                        return $globalActions["Fragment.apiRequest"]?.apply(
+                          null,
+                          [...actionArgs.args]
+                        );
+                      })()
+                    : undefined;
+                  if (
+                    $steps["log"] != null &&
+                    typeof $steps["log"] === "object" &&
+                    typeof $steps["log"].then === "function"
+                  ) {
+                    $steps["log"] = await $steps["log"];
+                  }
+                }}
+              />
             </div>
             <div className={classNames(projectcss.all, sty.freeBox__uAXxy)}>
               <div
@@ -2179,16 +2248,14 @@ function Plasmicکیفپول__RenderFunc(props: {
               </div>
             </div>
           </div>
-          <RentamonFooter
-            data-plasmic-name={"rentamonFooter"}
-            data-plasmic-override={overrides.rentamonFooter}
-            className={classNames("__wab_instance", sty.rentamonFooter)}
+          <MiaanFooter
+            data-plasmic-name={"miaanFooter"}
+            data-plasmic-override={overrides.miaanFooter}
+            className={classNames("__wab_instance", sty.miaanFooter)}
           />
 
           <SideEffect
-            data-plasmic-name={"sideEffect"}
-            data-plasmic-override={overrides.sideEffect}
-            className={classNames("__wab_instance", sty.sideEffect)}
+            className={classNames("__wab_instance", sty.sideEffect__kLlHs)}
             onMount={async () => {
               const $steps = {};
 
@@ -2298,10 +2365,10 @@ function Plasmicکیفپول__RenderFunc(props: {
             }}
           />
 
-          <NavbarRntFooter
-            data-plasmic-name={"navbarRntFooter"}
-            data-plasmic-override={overrides.navbarRntFooter}
-            className={classNames("__wab_instance", sty.navbarRntFooter)}
+          <NavbarMnFooter
+            data-plasmic-name={"navbarMnFooter"}
+            data-plasmic-override={overrides.navbarMnFooter}
+            className={classNames("__wab_instance", sty.navbarMnFooter)}
             userType={
               hasVariant(globalVariants, "screen", "mobile")
                 ? (() => {
@@ -2353,6 +2420,41 @@ function Plasmicکیفپول__RenderFunc(props: {
             }}
             url={"https://prod.miaan.ir/webhook/wallet/balance"}
           />
+
+          <SideEffect
+            className={classNames("__wab_instance", sty.sideEffect__oyAi8)}
+            onMount={async () => {
+              const $steps = {};
+
+              $steps["log"] = true
+                ? (() => {
+                    const actionArgs = {
+                      args: [
+                        "POST",
+                        "https://nb.miaan.ir/webhook/wallet-log",
+                        undefined,
+                        {
+                          event_type: "page_view",
+                          event_name: "wallet_page_open",
+                          metadata: { page: "wallet" },
+                          source: "page"
+                        }
+                      ]
+                    };
+                    return $globalActions["Fragment.apiRequest"]?.apply(null, [
+                      ...actionArgs.args
+                    ]);
+                  })()
+                : undefined;
+              if (
+                $steps["log"] != null &&
+                typeof $steps["log"] === "object" &&
+                typeof $steps["log"].then === "function"
+              ) {
+                $steps["log"] = await $steps["log"];
+              }
+            }}
+          />
         </div>
       </div>
     </React.Fragment>
@@ -2401,9 +2503,8 @@ const PlasmicDescendants = {
     "html",
     "clarityRntComponent",
     "faviconRntComponent",
-    "rentamonFooter",
-    "sideEffect",
-    "navbarRntFooter",
+    "miaanFooter",
+    "navbarMnFooter",
     "apiRequest"
   ],
   header: ["header", "sideBar2", "profile2"],
@@ -2480,9 +2581,8 @@ const PlasmicDescendants = {
   html: ["html", "clarityRntComponent", "faviconRntComponent"],
   clarityRntComponent: ["clarityRntComponent"],
   faviconRntComponent: ["faviconRntComponent"],
-  rentamonFooter: ["rentamonFooter"],
-  sideEffect: ["sideEffect"],
-  navbarRntFooter: ["navbarRntFooter"],
+  miaanFooter: ["miaanFooter"],
+  navbarMnFooter: ["navbarMnFooter"],
   apiRequest: ["apiRequest"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -2529,9 +2629,8 @@ type NodeDefaultElementType = {
   html: "div";
   clarityRntComponent: typeof ClarityRntComponent;
   faviconRntComponent: typeof FaviconRntComponent;
-  rentamonFooter: typeof RentamonFooter;
-  sideEffect: typeof SideEffect;
-  navbarRntFooter: typeof NavbarRntFooter;
+  miaanFooter: typeof MiaanFooter;
+  navbarMnFooter: typeof NavbarMnFooter;
   apiRequest: typeof ApiRequest;
 };
 
@@ -2636,9 +2735,8 @@ export const Plasmicکیفپول = Object.assign(
     html: makeNodeComponent("html"),
     clarityRntComponent: makeNodeComponent("clarityRntComponent"),
     faviconRntComponent: makeNodeComponent("faviconRntComponent"),
-    rentamonFooter: makeNodeComponent("rentamonFooter"),
-    sideEffect: makeNodeComponent("sideEffect"),
-    navbarRntFooter: makeNodeComponent("navbarRntFooter"),
+    miaanFooter: makeNodeComponent("miaanFooter"),
+    navbarMnFooter: makeNodeComponent("navbarMnFooter"),
     apiRequest: makeNodeComponent("apiRequest"),
 
     // Metadata about props expected for Plasmicکیفپول

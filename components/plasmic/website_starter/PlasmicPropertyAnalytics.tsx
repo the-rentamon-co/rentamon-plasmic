@@ -63,7 +63,7 @@ import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-impor
 import { Chart } from "@/fragment/components/chart"; // plasmic-import: AKmMZITDmA8F/codeComponent
 import ClarityRntComponent from "../../ClarityRntComponent"; // plasmic-import: J5D8c7V05ty1/component
 import FaviconRntComponent from "../../FaviconRntComponent"; // plasmic-import: 2Chy9NeUIB9Q/component
-import NavbarRntFooter from "../../NavbarRntFooter"; // plasmic-import: y37kcAs9RXYg/component
+import NavbarMnFooter from "../../NavbarMnFooter"; // plasmic-import: y37kcAs9RXYg/component
 import { _useGlobalVariants } from "./plasmic"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectModule
 import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/styleTokensProvider
 
@@ -107,7 +107,7 @@ export type PlasmicPropertyAnalytics__OverridesType = {
   spacer?: Flex__<"div">;
   clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
   faviconRntComponent?: Flex__<typeof FaviconRntComponent>;
-  navbarRntFooter?: Flex__<typeof NavbarRntFooter>;
+  navbarMnFooter?: Flex__<typeof NavbarMnFooter>;
 };
 
 export interface DefaultPropertyAnalyticsProps {}
@@ -1623,10 +1623,10 @@ function PlasmicPropertyAnalytics__RenderFunc(props: {
               className={classNames("__wab_instance", sty.faviconRntComponent)}
             />
           </div>
-          <NavbarRntFooter
-            data-plasmic-name={"navbarRntFooter"}
-            data-plasmic-override={overrides.navbarRntFooter}
-            className={classNames("__wab_instance", sty.navbarRntFooter)}
+          <NavbarMnFooter
+            data-plasmic-name={"navbarMnFooter"}
+            data-plasmic-override={overrides.navbarMnFooter}
+            className={classNames("__wab_instance", sty.navbarMnFooter)}
             userType={
               hasVariant(globalVariants, "screen", "mobile")
                 ? (() => {
@@ -1677,7 +1677,7 @@ const PlasmicDescendants = {
     "spacer",
     "clarityRntComponent",
     "faviconRntComponent",
-    "navbarRntFooter"
+    "navbarMnFooter"
   ],
   main: ["main", "apiRequest", "coverImage", "propertyName"],
   apiRequest: ["apiRequest", "coverImage", "propertyName"],
@@ -1726,7 +1726,7 @@ const PlasmicDescendants = {
   spacer: ["spacer"],
   clarityRntComponent: ["clarityRntComponent"],
   faviconRntComponent: ["faviconRntComponent"],
-  navbarRntFooter: ["navbarRntFooter"]
+  navbarMnFooter: ["navbarMnFooter"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -1754,7 +1754,7 @@ type NodeDefaultElementType = {
   spacer: "div";
   clarityRntComponent: typeof ClarityRntComponent;
   faviconRntComponent: typeof FaviconRntComponent;
-  navbarRntFooter: typeof NavbarRntFooter;
+  navbarMnFooter: typeof NavbarMnFooter;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -1840,7 +1840,7 @@ export const PlasmicPropertyAnalytics = Object.assign(
     spacer: makeNodeComponent("spacer"),
     clarityRntComponent: makeNodeComponent("clarityRntComponent"),
     faviconRntComponent: makeNodeComponent("faviconRntComponent"),
-    navbarRntFooter: makeNodeComponent("navbarRntFooter"),
+    navbarMnFooter: makeNodeComponent("navbarMnFooter"),
 
     // Metadata about props expected for PlasmicPropertyAnalytics
     internalVariantProps: PlasmicPropertyAnalytics__VariantProps,

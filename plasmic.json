@@ -2009,19 +2009,6 @@
           "path": "/pricing"
         },
         {
-          "id": "DSdlo5kdtbOe",
-          "name": "RentamonFooter",
-          "type": "managed",
-          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
-          "renderModuleFilePath": "plasmic/website_starter/PlasmicRentamonFooter.tsx",
-          "importSpec": {
-            "modulePath": "RentamonFooter.tsx"
-          },
-          "cssFilePath": "plasmic/website_starter/PlasmicRentamonFooter.module.css",
-          "scheme": "blackbox",
-          "componentType": "component"
-        },
-        {
           "id": "cQPw0-BlyPGu",
           "name": "Contacts",
           "type": "managed",
@@ -2407,19 +2394,6 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/property/create"
-        },
-        {
-          "id": "y37kcAs9RXYg",
-          "name": "NavbarRntFooter",
-          "type": "managed",
-          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
-          "renderModuleFilePath": "plasmic/website_starter/PlasmicNavbarRntFooter.tsx",
-          "importSpec": {
-            "modulePath": "NavbarRntFooter.tsx"
-          },
-          "cssFilePath": "plasmic/website_starter/PlasmicNavbarRntFooter.module.css",
-          "scheme": "blackbox",
-          "componentType": "component"
         },
         {
           "id": "awYJCWS6HouC",
@@ -3289,6 +3263,32 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/panel"
+        },
+        {
+          "id": "DSdlo5kdtbOe",
+          "name": "MiaanFooter",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicMiaanFooter.tsx",
+          "importSpec": {
+            "modulePath": "MiaanFooter.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicMiaanFooter.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "y37kcAs9RXYg",
+          "name": "NavbarMnFooter",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicNavbarMnFooter.tsx",
+          "importSpec": {
+            "modulePath": "NavbarMnFooter.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicNavbarMnFooter.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
         }
       ],
       "icons": [

@@ -64,9 +64,9 @@ import { Embed } from "@plasmicpkgs/plasmic-basic-components";
 import TextInput from "../../TextInput"; // plasmic-import: 7KjdVT2JykAk/component
 import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
 import { AntdModal } from "@plasmicpkgs/antd5/skinny/registerModal";
-import RentamonFooter from "../../RentamonFooter"; // plasmic-import: DSdlo5kdtbOe/component
+import MiaanFooter from "../../MiaanFooter"; // plasmic-import: DSdlo5kdtbOe/component
 import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
-import NavbarRntFooter from "../../NavbarRntFooter"; // plasmic-import: y37kcAs9RXYg/component
+import NavbarMnFooter from "../../NavbarMnFooter"; // plasmic-import: y37kcAs9RXYg/component
 import ClarityRntComponent from "../../ClarityRntComponent"; // plasmic-import: J5D8c7V05ty1/component
 import FaviconRntComponent from "../../FaviconRntComponent"; // plasmic-import: 2Chy9NeUIB9Q/component
 import { _useGlobalVariants } from "./plasmic"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectModule
@@ -117,8 +117,8 @@ export type PlasmicReferral__OverridesType = {
   rules?: Flex__<"div">;
   smsImage?: Flex__<"div">;
   tips?: Flex__<"div">;
-  rentamonFooter?: Flex__<typeof RentamonFooter>;
-  navbarRntFooter?: Flex__<typeof NavbarRntFooter>;
+  miaanFooter?: Flex__<typeof MiaanFooter>;
+  navbarMnFooter?: Flex__<typeof NavbarMnFooter>;
   clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
   faviconRntComponent?: Flex__<typeof FaviconRntComponent>;
 };
@@ -2050,10 +2050,10 @@ ${$state.textInput.value}
               )}
             </div>
           </div>
-          <RentamonFooter
-            data-plasmic-name={"rentamonFooter"}
-            data-plasmic-override={overrides.rentamonFooter}
-            className={classNames("__wab_instance", sty.rentamonFooter)}
+          <MiaanFooter
+            data-plasmic-name={"miaanFooter"}
+            data-plasmic-override={overrides.miaanFooter}
+            className={classNames("__wab_instance", sty.miaanFooter)}
           />
 
           <SideEffect
@@ -2167,10 +2167,10 @@ ${$state.textInput.value}
             }}
           />
 
-          <NavbarRntFooter
-            data-plasmic-name={"navbarRntFooter"}
-            data-plasmic-override={overrides.navbarRntFooter}
-            className={classNames("__wab_instance", sty.navbarRntFooter)}
+          <NavbarMnFooter
+            data-plasmic-name={"navbarMnFooter"}
+            data-plasmic-override={overrides.navbarMnFooter}
+            className={classNames("__wab_instance", sty.navbarMnFooter)}
             userType={
               hasVariant(globalVariants, "screen", "mobile")
                 ? (() => {
@@ -2280,8 +2280,8 @@ const PlasmicDescendants = {
     "rules",
     "smsImage",
     "tips",
-    "rentamonFooter",
-    "navbarRntFooter",
+    "miaanFooter",
+    "navbarMnFooter",
     "clarityRntComponent",
     "faviconRntComponent"
   ],
@@ -2354,8 +2354,8 @@ const PlasmicDescendants = {
   rules: ["rules"],
   smsImage: ["smsImage"],
   tips: ["tips"],
-  rentamonFooter: ["rentamonFooter"],
-  navbarRntFooter: ["navbarRntFooter"],
+  miaanFooter: ["miaanFooter"],
+  navbarMnFooter: ["navbarMnFooter"],
   clarityRntComponent: ["clarityRntComponent"],
   faviconRntComponent: ["faviconRntComponent"]
 } as const;
@@ -2387,8 +2387,8 @@ type NodeDefaultElementType = {
   rules: "div";
   smsImage: "div";
   tips: "div";
-  rentamonFooter: typeof RentamonFooter;
-  navbarRntFooter: typeof NavbarRntFooter;
+  miaanFooter: typeof MiaanFooter;
+  navbarMnFooter: typeof NavbarMnFooter;
   clarityRntComponent: typeof ClarityRntComponent;
   faviconRntComponent: typeof FaviconRntComponent;
 };
@@ -2478,8 +2478,8 @@ export const PlasmicReferral = Object.assign(
     rules: makeNodeComponent("rules"),
     smsImage: makeNodeComponent("smsImage"),
     tips: makeNodeComponent("tips"),
-    rentamonFooter: makeNodeComponent("rentamonFooter"),
-    navbarRntFooter: makeNodeComponent("navbarRntFooter"),
+    miaanFooter: makeNodeComponent("miaanFooter"),
+    navbarMnFooter: makeNodeComponent("navbarMnFooter"),
     clarityRntComponent: makeNodeComponent("clarityRntComponent"),
     faviconRntComponent: makeNodeComponent("faviconRntComponent"),
 

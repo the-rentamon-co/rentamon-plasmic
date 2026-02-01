@@ -63,7 +63,7 @@ import NavbarRntHeader from "../../NavbarRntHeader"; // plasmic-import: gWac1FMb
 import { Video } from "@plasmicpkgs/plasmic-basic-components";
 import ClarityRntComponent from "../../ClarityRntComponent"; // plasmic-import: J5D8c7V05ty1/component
 import FaviconRntComponent from "../../FaviconRntComponent"; // plasmic-import: 2Chy9NeUIB9Q/component
-import RentamonFooter from "../../RentamonFooter"; // plasmic-import: DSdlo5kdtbOe/component
+import MiaanFooter from "../../MiaanFooter"; // plasmic-import: DSdlo5kdtbOe/component
 import { _useGlobalVariants } from "./plasmic"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectModule
 import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/styleTokensProvider
 
@@ -125,7 +125,7 @@ export type Plasmicدانلوداپلیکیشنموبایلمیان__OverridesTy
   introCalendarRight7?: Flex__<"div">;
   clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
   faviconRntComponent?: Flex__<typeof FaviconRntComponent>;
-  rentamonFooter?: Flex__<typeof RentamonFooter>;
+  miaanFooter?: Flex__<typeof MiaanFooter>;
 };
 
 export interface DefaultدانلوداپلیکیشنموبایلمیانProps {}
@@ -941,10 +941,10 @@ function Plasmicدانلوداپلیکیشنموبایلمیان__RenderFunc(pro
               />
             </div>
           </div>
-          <RentamonFooter
-            data-plasmic-name={"rentamonFooter"}
-            data-plasmic-override={overrides.rentamonFooter}
-            className={classNames("__wab_instance", sty.rentamonFooter)}
+          <MiaanFooter
+            data-plasmic-name={"miaanFooter"}
+            data-plasmic-override={overrides.miaanFooter}
+            className={classNames("__wab_instance", sty.miaanFooter)}
           />
         </div>
       </div>
@@ -993,7 +993,7 @@ const PlasmicDescendants = {
     "introCalendarRight7",
     "clarityRntComponent",
     "faviconRntComponent",
-    "rentamonFooter"
+    "miaanFooter"
   ],
   navbarRntHeader: ["navbarRntHeader"],
   mainContents: [
@@ -1134,7 +1134,7 @@ const PlasmicDescendants = {
   introCalendarRight7: ["introCalendarRight7"],
   clarityRntComponent: ["clarityRntComponent"],
   faviconRntComponent: ["faviconRntComponent"],
-  rentamonFooter: ["rentamonFooter"]
+  miaanFooter: ["miaanFooter"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -1179,7 +1179,7 @@ type NodeDefaultElementType = {
   introCalendarRight7: "div";
   clarityRntComponent: typeof ClarityRntComponent;
   faviconRntComponent: typeof FaviconRntComponent;
-  rentamonFooter: typeof RentamonFooter;
+  miaanFooter: typeof MiaanFooter;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -1288,7 +1288,7 @@ export const Plasmicدانلوداپلیکیشنموبایلمیان = Object.as
     introCalendarRight7: makeNodeComponent("introCalendarRight7"),
     clarityRntComponent: makeNodeComponent("clarityRntComponent"),
     faviconRntComponent: makeNodeComponent("faviconRntComponent"),
-    rentamonFooter: makeNodeComponent("rentamonFooter"),
+    miaanFooter: makeNodeComponent("miaanFooter"),
 
     // Metadata about props expected for Plasmicدانلوداپلیکیشنموبایلمیان
     internalVariantProps: Plasmicدانلوداپلیکیشنموبایلمیان__VariantProps,

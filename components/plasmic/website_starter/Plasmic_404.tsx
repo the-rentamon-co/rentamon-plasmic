@@ -61,8 +61,8 @@ import {
 
 import SideBar2 from "../../SideBar2"; // plasmic-import: 03ZPQfFyBXgI/component
 import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
-import RentamonFooter from "../../RentamonFooter"; // plasmic-import: DSdlo5kdtbOe/component
-import NavbarRntFooter from "../../NavbarRntFooter"; // plasmic-import: y37kcAs9RXYg/component
+import MiaanFooter from "../../MiaanFooter"; // plasmic-import: DSdlo5kdtbOe/component
+import NavbarMnFooter from "../../NavbarMnFooter"; // plasmic-import: y37kcAs9RXYg/component
 import ClarityRntComponent from "../../ClarityRntComponent"; // plasmic-import: J5D8c7V05ty1/component
 import FaviconRntComponent from "../../FaviconRntComponent"; // plasmic-import: 2Chy9NeUIB9Q/component
 import { _useGlobalVariants } from "./plasmic"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectModule
@@ -91,8 +91,8 @@ export type Plasmic_404__OverridesType = {
   profile2?: Flex__<typeof ApiRequest>;
   mainContents?: Flex__<"div">;
   img?: Flex__<typeof PlasmicImg__>;
-  rentamonFooter?: Flex__<typeof RentamonFooter>;
-  navbarRntFooter?: Flex__<typeof NavbarRntFooter>;
+  miaanFooter?: Flex__<typeof MiaanFooter>;
+  navbarMnFooter?: Flex__<typeof NavbarMnFooter>;
   clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
   faviconRntComponent?: Flex__<typeof FaviconRntComponent>;
 };
@@ -516,16 +516,16 @@ function Plasmic_404__RenderFunc(props: {
               </div>
             </div>
           </div>
-          <RentamonFooter
-            data-plasmic-name={"rentamonFooter"}
-            data-plasmic-override={overrides.rentamonFooter}
-            className={classNames("__wab_instance", sty.rentamonFooter)}
+          <MiaanFooter
+            data-plasmic-name={"miaanFooter"}
+            data-plasmic-override={overrides.miaanFooter}
+            className={classNames("__wab_instance", sty.miaanFooter)}
           />
 
-          <NavbarRntFooter
-            data-plasmic-name={"navbarRntFooter"}
-            data-plasmic-override={overrides.navbarRntFooter}
-            className={classNames("__wab_instance", sty.navbarRntFooter)}
+          <NavbarMnFooter
+            data-plasmic-name={"navbarMnFooter"}
+            data-plasmic-override={overrides.navbarMnFooter}
+            className={classNames("__wab_instance", sty.navbarMnFooter)}
           />
 
           <div className={classNames(projectcss.all, sty.freeBox__mmxHh)}>
@@ -555,8 +555,8 @@ const PlasmicDescendants = {
     "profile2",
     "mainContents",
     "img",
-    "rentamonFooter",
-    "navbarRntFooter",
+    "miaanFooter",
+    "navbarMnFooter",
     "clarityRntComponent",
     "faviconRntComponent"
   ],
@@ -565,8 +565,8 @@ const PlasmicDescendants = {
   profile2: ["profile2"],
   mainContents: ["mainContents", "img"],
   img: ["img"],
-  rentamonFooter: ["rentamonFooter"],
-  navbarRntFooter: ["navbarRntFooter"],
+  miaanFooter: ["miaanFooter"],
+  navbarMnFooter: ["navbarMnFooter"],
   clarityRntComponent: ["clarityRntComponent"],
   faviconRntComponent: ["faviconRntComponent"]
 } as const;
@@ -580,8 +580,8 @@ type NodeDefaultElementType = {
   profile2: typeof ApiRequest;
   mainContents: "div";
   img: typeof PlasmicImg__;
-  rentamonFooter: typeof RentamonFooter;
-  navbarRntFooter: typeof NavbarRntFooter;
+  miaanFooter: typeof MiaanFooter;
+  navbarMnFooter: typeof NavbarMnFooter;
   clarityRntComponent: typeof ClarityRntComponent;
   faviconRntComponent: typeof FaviconRntComponent;
 };
@@ -653,8 +653,8 @@ export const Plasmic_404 = Object.assign(
     profile2: makeNodeComponent("profile2"),
     mainContents: makeNodeComponent("mainContents"),
     img: makeNodeComponent("img"),
-    rentamonFooter: makeNodeComponent("rentamonFooter"),
-    navbarRntFooter: makeNodeComponent("navbarRntFooter"),
+    miaanFooter: makeNodeComponent("miaanFooter"),
+    navbarMnFooter: makeNodeComponent("navbarMnFooter"),
     clarityRntComponent: makeNodeComponent("clarityRntComponent"),
     faviconRntComponent: makeNodeComponent("faviconRntComponent"),
 

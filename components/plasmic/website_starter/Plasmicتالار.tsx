@@ -60,7 +60,7 @@ import {
 } from "@plasmicapp/react-web/lib/host";
 
 import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
-import NavbarRntFooter from "../../NavbarRntFooter"; // plasmic-import: y37kcAs9RXYg/component
+import NavbarMnFooter from "../../NavbarMnFooter"; // plasmic-import: y37kcAs9RXYg/component
 import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
 import ClarityRntComponent from "../../ClarityRntComponent"; // plasmic-import: J5D8c7V05ty1/component
 import FaviconRntComponent from "../../FaviconRntComponent"; // plasmic-import: 2Chy9NeUIB9Q/component
@@ -156,7 +156,7 @@ export type Plasmicتالار__OverridesType = {
   mid11?: Flex__<"div">;
   getUserWebsite?: Flex__<typeof ApiRequest>;
   getUserBalance?: Flex__<typeof ApiRequest>;
-  navbarRntFooter?: Flex__<typeof NavbarRntFooter>;
+  navbarMnFooter?: Flex__<typeof NavbarMnFooter>;
   sideEffect?: Flex__<typeof SideEffect>;
   clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
   faviconRntComponent?: Flex__<typeof FaviconRntComponent>;
@@ -2343,10 +2343,10 @@ function Plasmicتالار__RenderFunc(props: {
           </div>
           <div className={classNames(projectcss.all, sty.freeBox__sgL9C)} />
 
-          <NavbarRntFooter
-            data-plasmic-name={"navbarRntFooter"}
-            data-plasmic-override={overrides.navbarRntFooter}
-            className={classNames("__wab_instance", sty.navbarRntFooter)}
+          <NavbarMnFooter
+            data-plasmic-name={"navbarMnFooter"}
+            data-plasmic-override={overrides.navbarMnFooter}
+            className={classNames("__wab_instance", sty.navbarMnFooter)}
             navPage={"menu"}
             userType={(() => {
               try {
@@ -3084,7 +3084,7 @@ const PlasmicDescendants = {
     "mid11",
     "getUserWebsite",
     "getUserBalance",
-    "navbarRntFooter",
+    "navbarMnFooter",
     "sideEffect",
     "clarityRntComponent",
     "faviconRntComponent",
@@ -3266,7 +3266,7 @@ const PlasmicDescendants = {
   mid11: ["mid11"],
   getUserWebsite: ["getUserWebsite"],
   getUserBalance: ["getUserBalance"],
-  navbarRntFooter: ["navbarRntFooter"],
+  navbarMnFooter: ["navbarMnFooter"],
   sideEffect: ["sideEffect"],
   clarityRntComponent: ["clarityRntComponent"],
   faviconRntComponent: ["faviconRntComponent"],
@@ -3339,7 +3339,7 @@ type NodeDefaultElementType = {
   mid11: "div";
   getUserWebsite: typeof ApiRequest;
   getUserBalance: typeof ApiRequest;
-  navbarRntFooter: typeof NavbarRntFooter;
+  navbarMnFooter: typeof NavbarMnFooter;
   sideEffect: typeof SideEffect;
   clarityRntComponent: typeof ClarityRntComponent;
   faviconRntComponent: typeof FaviconRntComponent;
@@ -3470,7 +3470,7 @@ export const Plasmicتالار = Object.assign(
     mid11: makeNodeComponent("mid11"),
     getUserWebsite: makeNodeComponent("getUserWebsite"),
     getUserBalance: makeNodeComponent("getUserBalance"),
-    navbarRntFooter: makeNodeComponent("navbarRntFooter"),
+    navbarMnFooter: makeNodeComponent("navbarMnFooter"),
     sideEffect: makeNodeComponent("sideEffect"),
     clarityRntComponent: makeNodeComponent("clarityRntComponent"),
     faviconRntComponent: makeNodeComponent("faviconRntComponent"),

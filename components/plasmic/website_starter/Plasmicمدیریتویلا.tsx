@@ -61,7 +61,7 @@ import {
 
 import NavbarRntHeader from "../../NavbarRntHeader"; // plasmic-import: gWac1FMbIJat/component
 import { Embed } from "@plasmicpkgs/plasmic-basic-components";
-import RentamonFooter from "../../RentamonFooter"; // plasmic-import: DSdlo5kdtbOe/component
+import MiaanFooter from "../../MiaanFooter"; // plasmic-import: DSdlo5kdtbOe/component
 import ClarityRntComponent from "../../ClarityRntComponent"; // plasmic-import: J5D8c7V05ty1/component
 import FaviconRntComponent from "../../FaviconRntComponent"; // plasmic-import: 2Chy9NeUIB9Q/component
 import { Fetcher } from "@plasmicapp/react-web/lib/data-sources";
@@ -104,7 +104,7 @@ export type Plasmicمدیریتویلا__OverridesType = {
   efforts?: Flex__<"div">;
   handsOn?: Flex__<"div">;
   button?: Flex__<"div">;
-  rentamonFooter?: Flex__<typeof RentamonFooter>;
+  miaanFooter?: Flex__<typeof MiaanFooter>;
   clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
   faviconRntComponent?: Flex__<typeof FaviconRntComponent>;
 };
@@ -675,10 +675,10 @@ function Plasmicمدیریتویلا__RenderFunc(props: {
             }
           </div>
         </div>
-        <RentamonFooter
-          data-plasmic-name={"rentamonFooter"}
-          data-plasmic-override={overrides.rentamonFooter}
-          className={classNames("__wab_instance", sty.rentamonFooter)}
+        <MiaanFooter
+          data-plasmic-name={"miaanFooter"}
+          data-plasmic-override={overrides.miaanFooter}
+          className={classNames("__wab_instance", sty.miaanFooter)}
         />
 
         <div className={classNames(projectcss.all, sty.freeBox__snm9Z)}>
@@ -720,7 +720,7 @@ const PlasmicDescendants = {
     "efforts",
     "handsOn",
     "button",
-    "rentamonFooter",
+    "miaanFooter",
     "clarityRntComponent",
     "faviconRntComponent"
   ],
@@ -769,7 +769,7 @@ const PlasmicDescendants = {
   efforts: ["efforts", "handsOn"],
   handsOn: ["handsOn"],
   button: ["button"],
-  rentamonFooter: ["rentamonFooter"],
+  miaanFooter: ["miaanFooter"],
   clarityRntComponent: ["clarityRntComponent"],
   faviconRntComponent: ["faviconRntComponent"]
 } as const;
@@ -796,7 +796,7 @@ type NodeDefaultElementType = {
   efforts: "div";
   handsOn: "div";
   button: "div";
-  rentamonFooter: typeof RentamonFooter;
+  miaanFooter: typeof MiaanFooter;
   clarityRntComponent: typeof ClarityRntComponent;
   faviconRntComponent: typeof FaviconRntComponent;
 };
@@ -882,7 +882,7 @@ export const Plasmicمدیریتویلا = Object.assign(
     efforts: makeNodeComponent("efforts"),
     handsOn: makeNodeComponent("handsOn"),
     button: makeNodeComponent("button"),
-    rentamonFooter: makeNodeComponent("rentamonFooter"),
+    miaanFooter: makeNodeComponent("miaanFooter"),
     clarityRntComponent: makeNodeComponent("clarityRntComponent"),
     faviconRntComponent: makeNodeComponent("faviconRntComponent"),
 

@@ -67,7 +67,7 @@ import { Embed } from "@plasmicpkgs/plasmic-basic-components";
 import { AntdAccordion } from "@plasmicpkgs/antd5/skinny/registerCollapse";
 import { accordionHelpers as AntdAccordion_Helpers } from "@plasmicpkgs/antd5/skinny/registerCollapse";
 import { AntdAccordionItem } from "@plasmicpkgs/antd5/skinny/registerCollapse";
-import RentamonFooter from "../../RentamonFooter"; // plasmic-import: DSdlo5kdtbOe/component
+import MiaanFooter from "../../MiaanFooter"; // plasmic-import: DSdlo5kdtbOe/component
 import ClarityRntComponent from "../../ClarityRntComponent"; // plasmic-import: J5D8c7V05ty1/component
 import FaviconRntComponent from "../../FaviconRntComponent"; // plasmic-import: 2Chy9NeUIB9Q/component
 import { _useGlobalVariants } from "./plasmic"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectModule
@@ -117,7 +117,7 @@ export type PlasmicInvite__OverridesType = {
   _7?: Flex__<typeof AntdAccordionItem>;
   _10?: Flex__<typeof AntdAccordionItem>;
   _11?: Flex__<typeof AntdAccordionItem>;
-  rentamonFooter?: Flex__<typeof RentamonFooter>;
+  miaanFooter?: Flex__<typeof MiaanFooter>;
   clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
   faviconRntComponent?: Flex__<typeof FaviconRntComponent>;
 };
@@ -1415,10 +1415,10 @@ function PlasmicInvite__RenderFunc(props: {
             </div>
           </div>
           <div className={classNames(projectcss.all, sty.freeBox__rh9Bm)}>
-            <RentamonFooter
-              data-plasmic-name={"rentamonFooter"}
-              data-plasmic-override={overrides.rentamonFooter}
-              className={classNames("__wab_instance", sty.rentamonFooter)}
+            <MiaanFooter
+              data-plasmic-name={"miaanFooter"}
+              data-plasmic-override={overrides.miaanFooter}
+              className={classNames("__wab_instance", sty.miaanFooter)}
             />
           </div>
           <div className={classNames(projectcss.all, sty.freeBox__xiW2W)}>
@@ -1466,7 +1466,7 @@ const PlasmicDescendants = {
     "_7",
     "_10",
     "_11",
-    "rentamonFooter",
+    "miaanFooter",
     "clarityRntComponent",
     "faviconRntComponent"
   ],
@@ -1512,7 +1512,7 @@ const PlasmicDescendants = {
   _7: ["_7"],
   _10: ["_10"],
   _11: ["_11"],
-  rentamonFooter: ["rentamonFooter"],
+  miaanFooter: ["miaanFooter"],
   clarityRntComponent: ["clarityRntComponent"],
   faviconRntComponent: ["faviconRntComponent"]
 } as const;
@@ -1544,7 +1544,7 @@ type NodeDefaultElementType = {
   _7: typeof AntdAccordionItem;
   _10: typeof AntdAccordionItem;
   _11: typeof AntdAccordionItem;
-  rentamonFooter: typeof RentamonFooter;
+  miaanFooter: typeof MiaanFooter;
   clarityRntComponent: typeof ClarityRntComponent;
   faviconRntComponent: typeof FaviconRntComponent;
 };
@@ -1634,7 +1634,7 @@ export const PlasmicInvite = Object.assign(
     _7: makeNodeComponent("_7"),
     _10: makeNodeComponent("_10"),
     _11: makeNodeComponent("_11"),
-    rentamonFooter: makeNodeComponent("rentamonFooter"),
+    miaanFooter: makeNodeComponent("miaanFooter"),
     clarityRntComponent: makeNodeComponent("clarityRntComponent"),
     faviconRntComponent: makeNodeComponent("faviconRntComponent"),
 

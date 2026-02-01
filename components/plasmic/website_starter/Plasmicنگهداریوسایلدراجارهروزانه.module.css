@@ -2052,7 +2052,7 @@
     min-width: 0;
   }
 }
-.rentamonFooter:global(.__wab_instance) {
+.miaanFooter:global(.__wab_instance) {
   animation: none;
   max-width: 100%;
 }

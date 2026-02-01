@@ -69,7 +69,7 @@ import TextInput from "../../TextInput"; // plasmic-import: 7KjdVT2JykAk/compone
 import { AntdModal } from "@plasmicpkgs/antd5/skinny/registerModal";
 import ReservationsRecordList from "../../ReservationsRecordList"; // plasmic-import: dDeToLEgGJS_/component
 import ReservationsRecordList2 from "../../ReservationsRecordList2"; // plasmic-import: V9-w7OjDK6vb/component
-import NavbarRntFooter from "../../NavbarRntFooter"; // plasmic-import: y37kcAs9RXYg/component
+import NavbarMnFooter from "../../NavbarMnFooter"; // plasmic-import: y37kcAs9RXYg/component
 import { AntdPagination } from "@plasmicpkgs/antd5/skinny/registerPagination";
 import { paginationHelpers as AntdPagination_Helpers } from "@plasmicpkgs/antd5/skinny/registerPagination";
 import ClarityRntComponent from "../../ClarityRntComponent"; // plasmic-import: J5D8c7V05ty1/component
@@ -133,7 +133,7 @@ export type PlasmicReservations__OverridesType = {
   reservationsRecordList2?: Flex__<typeof ReservationsRecordList2>;
   reserveData?: Flex__<typeof ApiRequest>;
   بیخیال?: Flex__<"div">;
-  navbarRntFooter?: Flex__<typeof NavbarRntFooter>;
+  navbarMnFooter?: Flex__<typeof NavbarMnFooter>;
   pagination2?: Flex__<"div">;
   pagination?: Flex__<typeof AntdPagination>;
   intro?: Flex__<"div">;
@@ -3693,10 +3693,10 @@ function PlasmicReservations__RenderFunc(props: {
               ) : null}
             </div>
           </div>
-          <NavbarRntFooter
-            data-plasmic-name={"navbarRntFooter"}
-            data-plasmic-override={overrides.navbarRntFooter}
-            className={classNames("__wab_instance", sty.navbarRntFooter)}
+          <NavbarMnFooter
+            data-plasmic-name={"navbarMnFooter"}
+            data-plasmic-override={overrides.navbarMnFooter}
+            className={classNames("__wab_instance", sty.navbarMnFooter)}
             navPage={"reservations"}
             userType={(() => {
               try {
@@ -7776,7 +7776,7 @@ const PlasmicDescendants = {
     "reservationsRecordList2",
     "reserveData",
     "\u0628\u06cc\u062e\u06cc\u0627\u0644",
-    "navbarRntFooter",
+    "navbarMnFooter",
     "pagination2",
     "pagination",
     "intro",
@@ -7897,7 +7897,7 @@ const PlasmicDescendants = {
   reservationsRecordList2: ["reservationsRecordList2"],
   reserveData: ["reserveData"],
   بیخیال: ["\u0628\u06cc\u062e\u06cc\u0627\u0644"],
-  navbarRntFooter: ["navbarRntFooter"],
+  navbarMnFooter: ["navbarMnFooter"],
   pagination2: ["pagination2", "pagination"],
   pagination: ["pagination"],
   intro: ["intro"],
@@ -8019,7 +8019,7 @@ type NodeDefaultElementType = {
   reservationsRecordList2: typeof ReservationsRecordList2;
   reserveData: typeof ApiRequest;
   بیخیال: "div";
-  navbarRntFooter: typeof NavbarRntFooter;
+  navbarMnFooter: typeof NavbarMnFooter;
   pagination2: "div";
   pagination: typeof AntdPagination;
   intro: "div";
@@ -8155,7 +8155,7 @@ export const PlasmicReservations = Object.assign(
     reservationsRecordList2: makeNodeComponent("reservationsRecordList2"),
     reserveData: makeNodeComponent("reserveData"),
     بیخیال: makeNodeComponent("\u0628\u06cc\u062e\u06cc\u0627\u0644"),
-    navbarRntFooter: makeNodeComponent("navbarRntFooter"),
+    navbarMnFooter: makeNodeComponent("navbarMnFooter"),
     pagination2: makeNodeComponent("pagination2"),
     pagination: makeNodeComponent("pagination"),
     intro: makeNodeComponent("intro"),

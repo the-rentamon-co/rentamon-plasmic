@@ -64,7 +64,7 @@ import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-impor
 import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
 import { AntdModal } from "@plasmicpkgs/antd5/skinny/registerModal";
 import Button from "../../Button"; // plasmic-import: U5bKCJ5DYhib/component
-import NavbarRntFooter from "../../NavbarRntFooter"; // plasmic-import: y37kcAs9RXYg/component
+import NavbarMnFooter from "../../NavbarMnFooter"; // plasmic-import: y37kcAs9RXYg/component
 import ClarityRntComponent from "../../ClarityRntComponent"; // plasmic-import: J5D8c7V05ty1/component
 import FaviconRntComponent from "../../FaviconRntComponent"; // plasmic-import: 2Chy9NeUIB9Q/component
 import { _useGlobalVariants } from "./plasmic"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectModule
@@ -104,7 +104,7 @@ export type PlasmicTransactions__OverridesType = {
   comment?: Flex__<"div">;
   deposit?: Flex__<typeof AntdModal>;
   comment2?: Flex__<"div">;
-  navbarRntFooter?: Flex__<typeof NavbarRntFooter>;
+  navbarMnFooter?: Flex__<typeof NavbarMnFooter>;
   clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
   faviconRntComponent?: Flex__<typeof FaviconRntComponent>;
   withdraw2?: Flex__<"div">;
@@ -2295,10 +2295,10 @@ function PlasmicTransactions__RenderFunc(props: {
               </Button>
             </div>
           </AntdModal>
-          <NavbarRntFooter
-            data-plasmic-name={"navbarRntFooter"}
-            data-plasmic-override={overrides.navbarRntFooter}
-            className={classNames("__wab_instance", sty.navbarRntFooter)}
+          <NavbarMnFooter
+            data-plasmic-name={"navbarMnFooter"}
+            data-plasmic-override={overrides.navbarMnFooter}
+            className={classNames("__wab_instance", sty.navbarMnFooter)}
             userType={(() => {
               try {
                 return (() => {
@@ -3812,7 +3812,7 @@ const PlasmicDescendants = {
     "comment",
     "deposit",
     "comment2",
-    "navbarRntFooter",
+    "navbarMnFooter",
     "clarityRntComponent",
     "faviconRntComponent",
     "withdraw2",
@@ -3846,7 +3846,7 @@ const PlasmicDescendants = {
   comment: ["comment"],
   deposit: ["deposit", "comment2"],
   comment2: ["comment2"],
-  navbarRntFooter: ["navbarRntFooter"],
+  navbarMnFooter: ["navbarMnFooter"],
   clarityRntComponent: ["clarityRntComponent"],
   faviconRntComponent: ["faviconRntComponent"],
   withdraw2: [
@@ -3904,7 +3904,7 @@ type NodeDefaultElementType = {
   comment: "div";
   deposit: typeof AntdModal;
   comment2: "div";
-  navbarRntFooter: typeof NavbarRntFooter;
+  navbarMnFooter: typeof NavbarMnFooter;
   clarityRntComponent: typeof ClarityRntComponent;
   faviconRntComponent: typeof FaviconRntComponent;
   withdraw2: "div";
@@ -4001,7 +4001,7 @@ export const PlasmicTransactions = Object.assign(
     comment: makeNodeComponent("comment"),
     deposit: makeNodeComponent("deposit"),
     comment2: makeNodeComponent("comment2"),
-    navbarRntFooter: makeNodeComponent("navbarRntFooter"),
+    navbarMnFooter: makeNodeComponent("navbarMnFooter"),
     clarityRntComponent: makeNodeComponent("clarityRntComponent"),
     faviconRntComponent: makeNodeComponent("faviconRntComponent"),
     withdraw2: makeNodeComponent("withdraw2"),

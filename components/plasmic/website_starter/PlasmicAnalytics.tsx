@@ -65,7 +65,7 @@ import { Chart } from "@/fragment/components/chart"; // plasmic-import: AKmMZITD
 import { Embed } from "@plasmicpkgs/plasmic-basic-components";
 import ClarityRntComponent from "../../ClarityRntComponent"; // plasmic-import: J5D8c7V05ty1/component
 import FaviconRntComponent from "../../FaviconRntComponent"; // plasmic-import: 2Chy9NeUIB9Q/component
-import RentamonFooter from "../../RentamonFooter"; // plasmic-import: DSdlo5kdtbOe/component
+import MiaanFooter from "../../MiaanFooter"; // plasmic-import: DSdlo5kdtbOe/component
 import { _useGlobalVariants } from "./plasmic"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectModule
 import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/styleTokensProvider
 
@@ -111,7 +111,7 @@ export type PlasmicAnalytics__OverridesType = {
   goftino?: Flex__<typeof Embed>;
   clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
   faviconRntComponent?: Flex__<typeof FaviconRntComponent>;
-  rentamonFooter?: Flex__<typeof RentamonFooter>;
+  miaanFooter?: Flex__<typeof MiaanFooter>;
 };
 
 export interface DefaultAnalyticsProps {}
@@ -1160,10 +1160,10 @@ function PlasmicAnalytics__RenderFunc(props: {
               />
             </div>
           </div>
-          <RentamonFooter
-            data-plasmic-name={"rentamonFooter"}
-            data-plasmic-override={overrides.rentamonFooter}
-            className={classNames("__wab_instance", sty.rentamonFooter)}
+          <MiaanFooter
+            data-plasmic-name={"miaanFooter"}
+            data-plasmic-override={overrides.miaanFooter}
+            className={classNames("__wab_instance", sty.miaanFooter)}
           />
         </div>
       </div>
@@ -1198,7 +1198,7 @@ const PlasmicDescendants = {
     "goftino",
     "clarityRntComponent",
     "faviconRntComponent",
-    "rentamonFooter"
+    "miaanFooter"
   ],
   header: ["header", "sideBar2", "profile2"],
   sideBar2: ["sideBar2"],
@@ -1254,7 +1254,7 @@ const PlasmicDescendants = {
   goftino: ["goftino"],
   clarityRntComponent: ["clarityRntComponent"],
   faviconRntComponent: ["faviconRntComponent"],
-  rentamonFooter: ["rentamonFooter"]
+  miaanFooter: ["miaanFooter"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -1285,7 +1285,7 @@ type NodeDefaultElementType = {
   goftino: typeof Embed;
   clarityRntComponent: typeof ClarityRntComponent;
   faviconRntComponent: typeof FaviconRntComponent;
-  rentamonFooter: typeof RentamonFooter;
+  miaanFooter: typeof MiaanFooter;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -1374,7 +1374,7 @@ export const PlasmicAnalytics = Object.assign(
     goftino: makeNodeComponent("goftino"),
     clarityRntComponent: makeNodeComponent("clarityRntComponent"),
     faviconRntComponent: makeNodeComponent("faviconRntComponent"),
-    rentamonFooter: makeNodeComponent("rentamonFooter"),
+    miaanFooter: makeNodeComponent("miaanFooter"),
 
     // Metadata about props expected for PlasmicAnalytics
     internalVariantProps: PlasmicAnalytics__VariantProps,

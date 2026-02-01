@@ -60,7 +60,7 @@ import {
 } from "@plasmicapp/react-web/lib/host";
 
 import NavbarRntHeader from "../../NavbarRntHeader"; // plasmic-import: gWac1FMbIJat/component
-import RentamonFooter from "../../RentamonFooter"; // plasmic-import: DSdlo5kdtbOe/component
+import MiaanFooter from "../../MiaanFooter"; // plasmic-import: DSdlo5kdtbOe/component
 import ClarityRntComponent from "../../ClarityRntComponent"; // plasmic-import: J5D8c7V05ty1/component
 import FaviconRntComponent from "../../FaviconRntComponent"; // plasmic-import: 2Chy9NeUIB9Q/component
 import { Fetcher } from "@plasmicapp/react-web/lib/data-sources";
@@ -108,7 +108,7 @@ export type Plasmicبرنامهمدیریتویلا__OverridesType = {
   benefitsTitle6?: Flex__<"div">;
   cta?: Flex__<"div">;
   button?: Flex__<"div">;
-  rentamonFooter?: Flex__<typeof RentamonFooter>;
+  miaanFooter?: Flex__<typeof MiaanFooter>;
   clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
   faviconRntComponent?: Flex__<typeof FaviconRntComponent>;
 };
@@ -820,10 +820,10 @@ function Plasmicبرنامهمدیریتویلا__RenderFunc(props: {
               </div>
             </div>
           </div>
-          <RentamonFooter
-            data-plasmic-name={"rentamonFooter"}
-            data-plasmic-override={overrides.rentamonFooter}
-            className={classNames("__wab_instance", sty.rentamonFooter)}
+          <MiaanFooter
+            data-plasmic-name={"miaanFooter"}
+            data-plasmic-override={overrides.miaanFooter}
+            className={classNames("__wab_instance", sty.miaanFooter)}
           />
 
           <div className={classNames(projectcss.all, sty.freeBox__p4L0Q)}>
@@ -870,7 +870,7 @@ const PlasmicDescendants = {
     "benefitsTitle6",
     "cta",
     "button",
-    "rentamonFooter",
+    "miaanFooter",
     "clarityRntComponent",
     "faviconRntComponent"
   ],
@@ -931,7 +931,7 @@ const PlasmicDescendants = {
   benefitsTitle6: ["benefitsTitle6"],
   cta: ["cta", "button"],
   button: ["button"],
-  rentamonFooter: ["rentamonFooter"],
+  miaanFooter: ["miaanFooter"],
   clarityRntComponent: ["clarityRntComponent"],
   faviconRntComponent: ["faviconRntComponent"]
 } as const;
@@ -962,7 +962,7 @@ type NodeDefaultElementType = {
   benefitsTitle6: "div";
   cta: "div";
   button: "div";
-  rentamonFooter: typeof RentamonFooter;
+  miaanFooter: typeof MiaanFooter;
   clarityRntComponent: typeof ClarityRntComponent;
   faviconRntComponent: typeof FaviconRntComponent;
 };
@@ -1052,7 +1052,7 @@ export const Plasmicبرنامهمدیریتویلا = Object.assign(
     benefitsTitle6: makeNodeComponent("benefitsTitle6"),
     cta: makeNodeComponent("cta"),
     button: makeNodeComponent("button"),
-    rentamonFooter: makeNodeComponent("rentamonFooter"),
+    miaanFooter: makeNodeComponent("miaanFooter"),
     clarityRntComponent: makeNodeComponent("clarityRntComponent"),
     faviconRntComponent: makeNodeComponent("faviconRntComponent"),
 

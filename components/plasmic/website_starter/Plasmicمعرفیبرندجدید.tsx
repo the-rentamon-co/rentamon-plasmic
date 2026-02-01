@@ -66,7 +66,7 @@ import { accordionHelpers as AntdAccordion_Helpers } from "@plasmicpkgs/antd5/sk
 import { AntdAccordionItem } from "@plasmicpkgs/antd5/skinny/registerCollapse";
 import ClarityRntComponent from "../../ClarityRntComponent"; // plasmic-import: J5D8c7V05ty1/component
 import FaviconRntComponent from "../../FaviconRntComponent"; // plasmic-import: 2Chy9NeUIB9Q/component
-import RentamonFooter from "../../RentamonFooter"; // plasmic-import: DSdlo5kdtbOe/component
+import MiaanFooter from "../../MiaanFooter"; // plasmic-import: DSdlo5kdtbOe/component
 import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
 import { _useGlobalVariants } from "./plasmic"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectModule
 import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/styleTokensProvider
@@ -117,7 +117,7 @@ export type Plasmicمعرفیبرندجدید__OverridesType = {
   reg?: Flex__<"div">;
   html?: Flex__<"div">;
   goftino?: Flex__<typeof Embed>;
-  rentamonFooter?: Flex__<typeof RentamonFooter>;
+  miaanFooter?: Flex__<typeof MiaanFooter>;
   sideEffect?: Flex__<typeof SideEffect>;
 };
 
@@ -1529,10 +1529,10 @@ function Plasmicمعرفیبرندجدید__RenderFunc(props: {
               />
             </div>
           </div>
-          <RentamonFooter
-            data-plasmic-name={"rentamonFooter"}
-            data-plasmic-override={overrides.rentamonFooter}
-            className={classNames("__wab_instance", sty.rentamonFooter)}
+          <MiaanFooter
+            data-plasmic-name={"miaanFooter"}
+            data-plasmic-override={overrides.miaanFooter}
+            className={classNames("__wab_instance", sty.miaanFooter)}
           />
 
           <SideEffect
@@ -1616,7 +1616,7 @@ const PlasmicDescendants = {
     "reg",
     "html",
     "goftino",
-    "rentamonFooter",
+    "miaanFooter",
     "sideEffect"
   ],
   navbarRntHeader: ["navbarRntHeader"],
@@ -1706,7 +1706,7 @@ const PlasmicDescendants = {
   reg: ["reg"],
   html: ["html", "goftino"],
   goftino: ["goftino"],
-  rentamonFooter: ["rentamonFooter"],
+  miaanFooter: ["miaanFooter"],
   sideEffect: ["sideEffect"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -1742,7 +1742,7 @@ type NodeDefaultElementType = {
   reg: "div";
   html: "div";
   goftino: typeof Embed;
-  rentamonFooter: typeof RentamonFooter;
+  miaanFooter: typeof MiaanFooter;
   sideEffect: typeof SideEffect;
 };
 
@@ -1841,7 +1841,7 @@ export const Plasmicمعرفیبرندجدید = Object.assign(
     reg: makeNodeComponent("reg"),
     html: makeNodeComponent("html"),
     goftino: makeNodeComponent("goftino"),
-    rentamonFooter: makeNodeComponent("rentamonFooter"),
+    miaanFooter: makeNodeComponent("miaanFooter"),
     sideEffect: makeNodeComponent("sideEffect"),
 
     // Metadata about props expected for Plasmicمعرفیبرندجدید

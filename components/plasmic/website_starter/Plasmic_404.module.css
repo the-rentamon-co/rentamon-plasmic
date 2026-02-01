@@ -625,15 +625,15 @@
     font-size: 15px;
   }
 }
-.rentamonFooter:global(.__wab_instance) {
+.miaanFooter:global(.__wab_instance) {
   max-width: 100%;
 }
-.navbarRntFooter:global(.__wab_instance) {
+.navbarMnFooter:global(.__wab_instance) {
   max-width: 100%;
   display: none;
 }
 @media (max-width: 500px) {
-  .navbarRntFooter:global(.__wab_instance) {
+  .navbarMnFooter:global(.__wab_instance) {
     display: none;
   }
 }

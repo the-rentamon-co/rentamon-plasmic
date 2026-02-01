@@ -1924,12 +1924,12 @@
     font-size: 16px;
   }
 }
-.navbarRntFooter:global(.__wab_instance) {
+.navbarMnFooter:global(.__wab_instance) {
   max-width: 100%;
   display: none;
 }
 @media (max-width: 500px) {
-  .navbarRntFooter:global(.__wab_instance) {
+  .navbarMnFooter:global(.__wab_instance) {
     display: flex;
   }
 }

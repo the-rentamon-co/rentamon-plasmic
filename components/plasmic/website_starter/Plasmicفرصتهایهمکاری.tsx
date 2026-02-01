@@ -72,7 +72,7 @@ import MiaanAddress from "../../MiaanAddress"; // plasmic-import: WMV6AnpBtswg/c
 import { Embed } from "@plasmicpkgs/plasmic-basic-components";
 import ClarityRntComponent from "../../ClarityRntComponent"; // plasmic-import: J5D8c7V05ty1/component
 import FaviconRntComponent from "../../FaviconRntComponent"; // plasmic-import: 2Chy9NeUIB9Q/component
-import RentamonFooter from "../../RentamonFooter"; // plasmic-import: DSdlo5kdtbOe/component
+import MiaanFooter from "../../MiaanFooter"; // plasmic-import: DSdlo5kdtbOe/component
 import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
 import { _useGlobalVariants } from "./plasmic"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectModule
 import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/styleTokensProvider
@@ -147,7 +147,7 @@ export type Plasmicفرصتهایهمکاری__OverridesType = {
   nimchat?: Flex__<typeof Embed>;
   clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
   faviconRntComponent?: Flex__<typeof FaviconRntComponent>;
-  rentamonFooter?: Flex__<typeof RentamonFooter>;
+  miaanFooter?: Flex__<typeof MiaanFooter>;
   sideEffect?: Flex__<typeof SideEffect>;
 };
 
@@ -3222,10 +3222,10 @@ function Plasmicفرصتهایهمکاری__RenderFunc(props: {
               />
             </div>
           </div>
-          <RentamonFooter
-            data-plasmic-name={"rentamonFooter"}
-            data-plasmic-override={overrides.rentamonFooter}
-            className={classNames("__wab_instance", sty.rentamonFooter)}
+          <MiaanFooter
+            data-plasmic-name={"miaanFooter"}
+            data-plasmic-override={overrides.miaanFooter}
+            className={classNames("__wab_instance", sty.miaanFooter)}
           />
 
           <SideEffect
@@ -3333,7 +3333,7 @@ const PlasmicDescendants = {
     "nimchat",
     "clarityRntComponent",
     "faviconRntComponent",
-    "rentamonFooter",
+    "miaanFooter",
     "sideEffect"
   ],
   navbarRntHeader: ["navbarRntHeader"],
@@ -3532,7 +3532,7 @@ const PlasmicDescendants = {
   nimchat: ["nimchat"],
   clarityRntComponent: ["clarityRntComponent"],
   faviconRntComponent: ["faviconRntComponent"],
-  rentamonFooter: ["rentamonFooter"],
+  miaanFooter: ["miaanFooter"],
   sideEffect: ["sideEffect"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -3592,7 +3592,7 @@ type NodeDefaultElementType = {
   nimchat: typeof Embed;
   clarityRntComponent: typeof ClarityRntComponent;
   faviconRntComponent: typeof FaviconRntComponent;
-  rentamonFooter: typeof RentamonFooter;
+  miaanFooter: typeof MiaanFooter;
   sideEffect: typeof SideEffect;
 };
 
@@ -3713,7 +3713,7 @@ export const Plasmicفرصتهایهمکاری = Object.assign(
     nimchat: makeNodeComponent("nimchat"),
     clarityRntComponent: makeNodeComponent("clarityRntComponent"),
     faviconRntComponent: makeNodeComponent("faviconRntComponent"),
-    rentamonFooter: makeNodeComponent("rentamonFooter"),
+    miaanFooter: makeNodeComponent("miaanFooter"),
     sideEffect: makeNodeComponent("sideEffect"),
 
     // Metadata about props expected for Plasmicفرصتهایهمکاری

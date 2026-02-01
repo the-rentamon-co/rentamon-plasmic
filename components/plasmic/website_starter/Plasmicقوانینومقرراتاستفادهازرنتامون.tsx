@@ -61,7 +61,7 @@ import {
 
 import NavbarRntHeader from "../../NavbarRntHeader"; // plasmic-import: gWac1FMbIJat/component
 import ClarityRntComponent from "../../ClarityRntComponent"; // plasmic-import: J5D8c7V05ty1/component
-import RentamonFooter from "../../RentamonFooter"; // plasmic-import: DSdlo5kdtbOe/component
+import MiaanFooter from "../../MiaanFooter"; // plasmic-import: DSdlo5kdtbOe/component
 import FaviconRntComponent from "../../FaviconRntComponent"; // plasmic-import: 2Chy9NeUIB9Q/component
 import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
 import { _useGlobalVariants } from "./plasmic"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectModule
@@ -94,7 +94,7 @@ export type Plasmicقوانینومقرراتاستفادهازرنتامون__O
   introTitle?: Flex__<"div">;
   introduction?: Flex__<"div">;
   introduction2?: Flex__<"div">;
-  rentamonFooter?: Flex__<typeof RentamonFooter>;
+  miaanFooter?: Flex__<typeof MiaanFooter>;
   faviconRntComponent?: Flex__<typeof FaviconRntComponent>;
   sideEffect?: Flex__<typeof SideEffect>;
 };
@@ -1357,10 +1357,10 @@ function Plasmicقوانینومقرراتاستفادهازرنتامون__Rend
               throw e;
             }
           })() ? (
-            <RentamonFooter
-              data-plasmic-name={"rentamonFooter"}
-              data-plasmic-override={overrides.rentamonFooter}
-              className={classNames("__wab_instance", sty.rentamonFooter)}
+            <MiaanFooter
+              data-plasmic-name={"miaanFooter"}
+              data-plasmic-override={overrides.miaanFooter}
+              className={classNames("__wab_instance", sty.miaanFooter)}
             />
           ) : null}
           <FaviconRntComponent
@@ -1414,7 +1414,7 @@ const PlasmicDescendants = {
     "introTitle",
     "introduction",
     "introduction2",
-    "rentamonFooter",
+    "miaanFooter",
     "faviconRntComponent",
     "sideEffect"
   ],
@@ -1431,7 +1431,7 @@ const PlasmicDescendants = {
   introTitle: ["introTitle"],
   introduction: ["introduction"],
   introduction2: ["introduction2"],
-  rentamonFooter: ["rentamonFooter"],
+  miaanFooter: ["miaanFooter"],
   faviconRntComponent: ["faviconRntComponent"],
   sideEffect: ["sideEffect"]
 } as const;
@@ -1447,7 +1447,7 @@ type NodeDefaultElementType = {
   introTitle: "div";
   introduction: "div";
   introduction2: "div";
-  rentamonFooter: typeof RentamonFooter;
+  miaanFooter: typeof MiaanFooter;
   faviconRntComponent: typeof FaviconRntComponent;
   sideEffect: typeof SideEffect;
 };
@@ -1526,7 +1526,7 @@ export const Plasmicقوانینومقرراتاستفادهازرنتامون =
     introTitle: makeNodeComponent("introTitle"),
     introduction: makeNodeComponent("introduction"),
     introduction2: makeNodeComponent("introduction2"),
-    rentamonFooter: makeNodeComponent("rentamonFooter"),
+    miaanFooter: makeNodeComponent("miaanFooter"),
     faviconRntComponent: makeNodeComponent("faviconRntComponent"),
     sideEffect: makeNodeComponent("sideEffect"),
 

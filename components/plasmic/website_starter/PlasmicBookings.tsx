@@ -68,7 +68,7 @@ import Select from "../../Select"; // plasmic-import: GgjLI5qwOqwu/component
 import { AntdInputNumber } from "@plasmicpkgs/antd5/skinny/registerInput";
 import { Input } from "@/fragment/components/input"; // plasmic-import: fpBkcjHl6n0Y/codeComponent
 import TextInput from "../../TextInput"; // plasmic-import: 7KjdVT2JykAk/component
-import NavbarRntFooter from "../../NavbarRntFooter"; // plasmic-import: y37kcAs9RXYg/component
+import NavbarMnFooter from "../../NavbarMnFooter"; // plasmic-import: y37kcAs9RXYg/component
 import ClarityRntComponent from "../../ClarityRntComponent"; // plasmic-import: J5D8c7V05ty1/component
 import FaviconRntComponent from "../../FaviconRntComponent"; // plasmic-import: 2Chy9NeUIB9Q/component
 import { _useGlobalVariants } from "./plasmic"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectModule
@@ -199,7 +199,7 @@ export type PlasmicBookings__OverridesType = {
   cancelManualReserve?: Flex__<typeof AntdModal>;
   cancelledBtn?: Flex__<typeof AntdButton>;
   tour?: Flex__<"div">;
-  navbarRntFooter?: Flex__<typeof NavbarRntFooter>;
+  navbarMnFooter?: Flex__<typeof NavbarMnFooter>;
   profile?: Flex__<typeof ApiRequest>;
   html?: Flex__<"div">;
   clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
@@ -13977,10 +13977,10 @@ function PlasmicBookings__RenderFunc(props: {
               ) : null}
             </ApiRequest>
           </div>
-          <NavbarRntFooter
-            data-plasmic-name={"navbarRntFooter"}
-            data-plasmic-override={overrides.navbarRntFooter}
-            className={classNames("__wab_instance", sty.navbarRntFooter)}
+          <NavbarMnFooter
+            data-plasmic-name={"navbarMnFooter"}
+            data-plasmic-override={overrides.navbarMnFooter}
+            className={classNames("__wab_instance", sty.navbarMnFooter)}
             navPage={``}
             userType={"1"}
           />
@@ -15402,7 +15402,7 @@ const PlasmicDescendants = {
     "cancelManualReserve",
     "cancelledBtn",
     "tour",
-    "navbarRntFooter",
+    "navbarMnFooter",
     "profile",
     "html",
     "clarityRntComponent",
@@ -15823,7 +15823,7 @@ const PlasmicDescendants = {
   cancelManualReserve: ["cancelManualReserve", "cancelledBtn"],
   cancelledBtn: ["cancelledBtn"],
   tour: ["tour"],
-  navbarRntFooter: ["navbarRntFooter"],
+  navbarMnFooter: ["navbarMnFooter"],
   profile: ["profile"],
   html: ["html", "clarityRntComponent", "faviconRntComponent"],
   clarityRntComponent: ["clarityRntComponent"],
@@ -15957,7 +15957,7 @@ type NodeDefaultElementType = {
   cancelManualReserve: typeof AntdModal;
   cancelledBtn: typeof AntdButton;
   tour: "div";
-  navbarRntFooter: typeof NavbarRntFooter;
+  navbarMnFooter: typeof NavbarMnFooter;
   profile: typeof ApiRequest;
   html: "div";
   clarityRntComponent: typeof ClarityRntComponent;
@@ -16136,7 +16136,7 @@ export const PlasmicBookings = Object.assign(
     cancelManualReserve: makeNodeComponent("cancelManualReserve"),
     cancelledBtn: makeNodeComponent("cancelledBtn"),
     tour: makeNodeComponent("tour"),
-    navbarRntFooter: makeNodeComponent("navbarRntFooter"),
+    navbarMnFooter: makeNodeComponent("navbarMnFooter"),
     profile: makeNodeComponent("profile"),
     html: makeNodeComponent("html"),
     clarityRntComponent: makeNodeComponent("clarityRntComponent"),

@@ -1307,12 +1307,12 @@
   text-overflow: clip;
   min-width: 0;
 }
-.navbarRntFooter:global(.__wab_instance) {
+.navbarMnFooter:global(.__wab_instance) {
   max-width: 100%;
   display: none;
 }
 @media (max-width: 500px) {
-  .navbarRntFooter:global(.__wab_instance) {
+  .navbarMnFooter:global(.__wab_instance) {
     display: flex;
   }
 }

@@ -61,7 +61,7 @@ import {
 
 import NavbarRntHeader from "../../NavbarRntHeader"; // plasmic-import: gWac1FMbIJat/component
 import { Video } from "@plasmicpkgs/plasmic-basic-components";
-import RentamonFooter from "../../RentamonFooter"; // plasmic-import: DSdlo5kdtbOe/component
+import MiaanFooter from "../../MiaanFooter"; // plasmic-import: DSdlo5kdtbOe/component
 import { Embed } from "@plasmicpkgs/plasmic-basic-components";
 import ClarityRntComponent from "../../ClarityRntComponent"; // plasmic-import: J5D8c7V05ty1/component
 import FaviconRntComponent from "../../FaviconRntComponent"; // plasmic-import: 2Chy9NeUIB9Q/component
@@ -97,7 +97,7 @@ export type Plasmicامکاناتنسخهیپیشرفتهرنتامون__Overrid
   why?: Flex__<"div">;
   img?: Flex__<typeof PlasmicImg__>;
   cta?: Flex__<"div">;
-  rentamonFooter?: Flex__<typeof RentamonFooter>;
+  miaanFooter?: Flex__<typeof MiaanFooter>;
   html?: Flex__<"div">;
   goftino?: Flex__<typeof Embed>;
   clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
@@ -724,10 +724,10 @@ function Plasmicامکاناتنسخهیپیشرفتهرنتامون__RenderFunc
                 : "\u0645\u0634\u0627\u0647\u062f\u0647 \u062a\u0639\u0631\u0641\u0647 \u0628\u0631\u0646\u0627\u0645\u0647"}
             </div>
           </div>
-          <RentamonFooter
-            data-plasmic-name={"rentamonFooter"}
-            data-plasmic-override={overrides.rentamonFooter}
-            className={classNames("__wab_instance", sty.rentamonFooter)}
+          <MiaanFooter
+            data-plasmic-name={"miaanFooter"}
+            data-plasmic-override={overrides.miaanFooter}
+            className={classNames("__wab_instance", sty.miaanFooter)}
           />
 
           <div
@@ -782,7 +782,7 @@ const PlasmicDescendants = {
     "why",
     "img",
     "cta",
-    "rentamonFooter",
+    "miaanFooter",
     "html",
     "goftino",
     "clarityRntComponent",
@@ -797,7 +797,7 @@ const PlasmicDescendants = {
   why: ["why", "img"],
   img: ["img"],
   cta: ["cta"],
-  rentamonFooter: ["rentamonFooter"],
+  miaanFooter: ["miaanFooter"],
   html: ["html", "goftino", "clarityRntComponent", "faviconRntComponent"],
   goftino: ["goftino"],
   clarityRntComponent: ["clarityRntComponent"],
@@ -817,7 +817,7 @@ type NodeDefaultElementType = {
   why: "div";
   img: typeof PlasmicImg__;
   cta: "div";
-  rentamonFooter: typeof RentamonFooter;
+  miaanFooter: typeof MiaanFooter;
   html: "div";
   goftino: typeof Embed;
   clarityRntComponent: typeof ClarityRntComponent;
@@ -897,7 +897,7 @@ export const Plasmicامکاناتنسخهیپیشرفتهرنتامون = Objec
     why: makeNodeComponent("why"),
     img: makeNodeComponent("img"),
     cta: makeNodeComponent("cta"),
-    rentamonFooter: makeNodeComponent("rentamonFooter"),
+    miaanFooter: makeNodeComponent("miaanFooter"),
     html: makeNodeComponent("html"),
     goftino: makeNodeComponent("goftino"),
     clarityRntComponent: makeNodeComponent("clarityRntComponent"),

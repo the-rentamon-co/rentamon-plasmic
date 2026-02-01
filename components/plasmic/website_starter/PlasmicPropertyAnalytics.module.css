@@ -1507,6 +1507,6 @@
   max-width: 100%;
   display: none;
 }
-.navbarRntFooter:global(.__wab_instance) {
+.navbarMnFooter:global(.__wab_instance) {
   max-width: 100%;
 }

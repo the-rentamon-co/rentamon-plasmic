@@ -61,8 +61,8 @@ import {
 
 import SideBar2 from "../../SideBar2"; // plasmic-import: 03ZPQfFyBXgI/component
 import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
-import RentamonFooter from "../../RentamonFooter"; // plasmic-import: DSdlo5kdtbOe/component
-import NavbarRntFooter from "../../NavbarRntFooter"; // plasmic-import: y37kcAs9RXYg/component
+import MiaanFooter from "../../MiaanFooter"; // plasmic-import: DSdlo5kdtbOe/component
+import NavbarMnFooter from "../../NavbarMnFooter"; // plasmic-import: y37kcAs9RXYg/component
 import ClarityRntComponent from "../../ClarityRntComponent"; // plasmic-import: J5D8c7V05ty1/component
 import FaviconRntComponent from "../../FaviconRntComponent"; // plasmic-import: 2Chy9NeUIB9Q/component
 import { _useGlobalVariants } from "./plasmic"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectModule
@@ -96,8 +96,8 @@ export type PlasmicDirectBookingNewUser__OverridesType = {
   directDl?: Flex__<"div">;
   text?: Flex__<"div">;
   myket?: Flex__<"div">;
-  rentamonFooter?: Flex__<typeof RentamonFooter>;
-  navbarRntFooter?: Flex__<typeof NavbarRntFooter>;
+  miaanFooter?: Flex__<typeof MiaanFooter>;
+  navbarMnFooter?: Flex__<typeof NavbarMnFooter>;
   clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
   faviconRntComponent?: Flex__<typeof FaviconRntComponent>;
 };
@@ -427,16 +427,16 @@ function PlasmicDirectBookingNewUser__RenderFunc(props: {
               </div>
             </div>
           </div>
-          <RentamonFooter
-            data-plasmic-name={"rentamonFooter"}
-            data-plasmic-override={overrides.rentamonFooter}
-            className={classNames("__wab_instance", sty.rentamonFooter)}
+          <MiaanFooter
+            data-plasmic-name={"miaanFooter"}
+            data-plasmic-override={overrides.miaanFooter}
+            className={classNames("__wab_instance", sty.miaanFooter)}
           />
 
-          <NavbarRntFooter
-            data-plasmic-name={"navbarRntFooter"}
-            data-plasmic-override={overrides.navbarRntFooter}
-            className={classNames("__wab_instance", sty.navbarRntFooter)}
+          <NavbarMnFooter
+            data-plasmic-name={"navbarMnFooter"}
+            data-plasmic-override={overrides.navbarMnFooter}
+            className={classNames("__wab_instance", sty.navbarMnFooter)}
           />
 
           <div className={classNames(projectcss.all, sty.freeBox__kNtFb)}>
@@ -470,8 +470,8 @@ const PlasmicDescendants = {
     "directDl",
     "text",
     "myket",
-    "rentamonFooter",
-    "navbarRntFooter",
+    "miaanFooter",
+    "navbarMnFooter",
     "clarityRntComponent",
     "faviconRntComponent"
   ],
@@ -491,8 +491,8 @@ const PlasmicDescendants = {
   directDl: ["directDl", "text"],
   text: ["text"],
   myket: ["myket"],
-  rentamonFooter: ["rentamonFooter"],
-  navbarRntFooter: ["navbarRntFooter"],
+  miaanFooter: ["miaanFooter"],
+  navbarMnFooter: ["navbarMnFooter"],
   clarityRntComponent: ["clarityRntComponent"],
   faviconRntComponent: ["faviconRntComponent"]
 } as const;
@@ -510,8 +510,8 @@ type NodeDefaultElementType = {
   directDl: "div";
   text: "div";
   myket: "div";
-  rentamonFooter: typeof RentamonFooter;
-  navbarRntFooter: typeof NavbarRntFooter;
+  miaanFooter: typeof MiaanFooter;
+  navbarMnFooter: typeof NavbarMnFooter;
   clarityRntComponent: typeof ClarityRntComponent;
   faviconRntComponent: typeof FaviconRntComponent;
 };
@@ -587,8 +587,8 @@ export const PlasmicDirectBookingNewUser = Object.assign(
     directDl: makeNodeComponent("directDl"),
     text: makeNodeComponent("text"),
     myket: makeNodeComponent("myket"),
-    rentamonFooter: makeNodeComponent("rentamonFooter"),
-    navbarRntFooter: makeNodeComponent("navbarRntFooter"),
+    miaanFooter: makeNodeComponent("miaanFooter"),
+    navbarMnFooter: makeNodeComponent("navbarMnFooter"),
     clarityRntComponent: makeNodeComponent("clarityRntComponent"),
     faviconRntComponent: makeNodeComponent("faviconRntComponent"),
 

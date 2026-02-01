@@ -61,7 +61,7 @@ import {
 
 import NavbarRntHeader from "../../NavbarRntHeader"; // plasmic-import: gWac1FMbIJat/component
 import { Video } from "@plasmicpkgs/plasmic-basic-components";
-import RentamonFooter from "../../RentamonFooter"; // plasmic-import: DSdlo5kdtbOe/component
+import MiaanFooter from "../../MiaanFooter"; // plasmic-import: DSdlo5kdtbOe/component
 import ClarityRntComponent from "../../ClarityRntComponent"; // plasmic-import: J5D8c7V05ty1/component
 import FaviconRntComponent from "../../FaviconRntComponent"; // plasmic-import: 2Chy9NeUIB9Q/component
 import { Fetcher } from "@plasmicapp/react-web/lib/data-sources";
@@ -133,7 +133,7 @@ export type PlasmicIntegrations__OverridesType = {
   moreDecs?: Flex__<"div">;
   requestDemo?: Flex__<"div">;
   moreDecs2?: Flex__<"div">;
-  rentamonFooter?: Flex__<typeof RentamonFooter>;
+  miaanFooter?: Flex__<typeof MiaanFooter>;
   clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
   faviconRntComponent?: Flex__<typeof FaviconRntComponent>;
 };
@@ -1299,10 +1299,10 @@ function PlasmicIntegrations__RenderFunc(props: {
             </div>
           </div>
         </div>
-        <RentamonFooter
-          data-plasmic-name={"rentamonFooter"}
-          data-plasmic-override={overrides.rentamonFooter}
-          className={classNames("__wab_instance", sty.rentamonFooter)}
+        <MiaanFooter
+          data-plasmic-name={"miaanFooter"}
+          data-plasmic-override={overrides.miaanFooter}
+          className={classNames("__wab_instance", sty.miaanFooter)}
         />
 
         <div className={classNames(projectcss.all, sty.freeBox__mFxUc)}>
@@ -1373,7 +1373,7 @@ const PlasmicDescendants = {
     "moreDecs",
     "requestDemo",
     "moreDecs2",
-    "rentamonFooter",
+    "miaanFooter",
     "clarityRntComponent",
     "faviconRntComponent"
   ],
@@ -1572,7 +1572,7 @@ const PlasmicDescendants = {
   moreDecs: ["moreDecs"],
   requestDemo: ["requestDemo"],
   moreDecs2: ["moreDecs2"],
-  rentamonFooter: ["rentamonFooter"],
+  miaanFooter: ["miaanFooter"],
   clarityRntComponent: ["clarityRntComponent"],
   faviconRntComponent: ["faviconRntComponent"]
 } as const;
@@ -1628,7 +1628,7 @@ type NodeDefaultElementType = {
   moreDecs: "div";
   requestDemo: "div";
   moreDecs2: "div";
-  rentamonFooter: typeof RentamonFooter;
+  miaanFooter: typeof MiaanFooter;
   clarityRntComponent: typeof ClarityRntComponent;
   faviconRntComponent: typeof FaviconRntComponent;
 };
@@ -1742,7 +1742,7 @@ export const PlasmicIntegrations = Object.assign(
     moreDecs: makeNodeComponent("moreDecs"),
     requestDemo: makeNodeComponent("requestDemo"),
     moreDecs2: makeNodeComponent("moreDecs2"),
-    rentamonFooter: makeNodeComponent("rentamonFooter"),
+    miaanFooter: makeNodeComponent("miaanFooter"),
     clarityRntComponent: makeNodeComponent("clarityRntComponent"),
     faviconRntComponent: makeNodeComponent("faviconRntComponent"),
 

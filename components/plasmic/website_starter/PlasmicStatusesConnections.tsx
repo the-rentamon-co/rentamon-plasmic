@@ -59,7 +59,7 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
-import NavbarRntFooter from "../../NavbarRntFooter"; // plasmic-import: y37kcAs9RXYg/component
+import NavbarMnFooter from "../../NavbarMnFooter"; // plasmic-import: y37kcAs9RXYg/component
 import SideBar2 from "../../SideBar2"; // plasmic-import: 03ZPQfFyBXgI/component
 import SidebarLite from "../../SidebarLite"; // plasmic-import: NKEuaTqYxvdh/component
 import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
@@ -88,7 +88,7 @@ export const PlasmicStatusesConnections__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicStatusesConnections__OverridesType = {
   root?: Flex__<"div">;
-  navbarRntFooter?: Flex__<typeof NavbarRntFooter>;
+  navbarMnFooter?: Flex__<typeof NavbarMnFooter>;
   header?: Flex__<"div">;
   sideBar2?: Flex__<typeof SideBar2>;
   sidebarLite?: Flex__<typeof SidebarLite>;
@@ -261,10 +261,10 @@ function PlasmicStatusesConnections__RenderFunc(props: {
           )}
         >
           {(hasVariant(globalVariants, "screen", "mobile") ? true : false) ? (
-            <NavbarRntFooter
-              data-plasmic-name={"navbarRntFooter"}
-              data-plasmic-override={overrides.navbarRntFooter}
-              className={classNames("__wab_instance", sty.navbarRntFooter)}
+            <NavbarMnFooter
+              data-plasmic-name={"navbarMnFooter"}
+              data-plasmic-override={overrides.navbarMnFooter}
+              className={classNames("__wab_instance", sty.navbarMnFooter)}
               navPage={``}
               userType={(() => {
                 try {
@@ -1893,7 +1893,7 @@ function PlasmicStatusesConnections__RenderFunc(props: {
 const PlasmicDescendants = {
   root: [
     "root",
-    "navbarRntFooter",
+    "navbarMnFooter",
     "header",
     "sideBar2",
     "sidebarLite",
@@ -1914,7 +1914,7 @@ const PlasmicDescendants = {
     "clarityRntComponent",
     "faviconRntComponent"
   ],
-  navbarRntFooter: ["navbarRntFooter"],
+  navbarMnFooter: ["navbarMnFooter"],
   header: ["header", "sideBar2", "sidebarLite", "profile2"],
   sideBar2: ["sideBar2"],
   sidebarLite: ["sidebarLite"],
@@ -1983,7 +1983,7 @@ type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
-  navbarRntFooter: typeof NavbarRntFooter;
+  navbarMnFooter: typeof NavbarMnFooter;
   header: "div";
   sideBar2: typeof SideBar2;
   sidebarLite: typeof SidebarLite;
@@ -2067,7 +2067,7 @@ export const PlasmicStatusesConnections = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    navbarRntFooter: makeNodeComponent("navbarRntFooter"),
+    navbarMnFooter: makeNodeComponent("navbarMnFooter"),
     header: makeNodeComponent("header"),
     sideBar2: makeNodeComponent("sideBar2"),
     sidebarLite: makeNodeComponent("sidebarLite"),

@@ -69,7 +69,7 @@ import TextInput from "../../TextInput"; // plasmic-import: 7KjdVT2JykAk/compone
 import { AntdModal } from "@plasmicpkgs/antd5/skinny/registerModal";
 import ReservationsRecordList from "../../ReservationsRecordList"; // plasmic-import: dDeToLEgGJS_/component
 import ReservationsRecordList2 from "../../ReservationsRecordList2"; // plasmic-import: V9-w7OjDK6vb/component
-import NavbarRntFooter from "../../NavbarRntFooter"; // plasmic-import: y37kcAs9RXYg/component
+import NavbarMnFooter from "../../NavbarMnFooter"; // plasmic-import: y37kcAs9RXYg/component
 import ClarityRntComponent from "../../ClarityRntComponent"; // plasmic-import: J5D8c7V05ty1/component
 import FaviconRntComponent from "../../FaviconRntComponent"; // plasmic-import: 2Chy9NeUIB9Q/component
 import Button from "../../Button"; // plasmic-import: U5bKCJ5DYhib/component
@@ -134,7 +134,7 @@ export type PlasmicBookings2__OverridesType = {
   dates?: Flex__<"div">;
   بیخیال?: Flex__<"div">;
   reserveFilterStack2?: Flex__<"div">;
-  navbarRntFooter?: Flex__<typeof NavbarRntFooter>;
+  navbarMnFooter?: Flex__<typeof NavbarMnFooter>;
   intro?: Flex__<"div">;
   returnButton?: Flex__<"div">;
   clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
@@ -4403,10 +4403,10 @@ function PlasmicBookings2__RenderFunc(props: {
               </div>
             ) : null}
           </div>
-          <NavbarRntFooter
-            data-plasmic-name={"navbarRntFooter"}
-            data-plasmic-override={overrides.navbarRntFooter}
-            className={classNames("__wab_instance", sty.navbarRntFooter)}
+          <NavbarMnFooter
+            data-plasmic-name={"navbarMnFooter"}
+            data-plasmic-override={overrides.navbarMnFooter}
+            className={classNames("__wab_instance", sty.navbarMnFooter)}
             navPage={"reservations"}
             userType={(() => {
               try {
@@ -7971,7 +7971,7 @@ const PlasmicDescendants = {
     "dates",
     "\u0628\u06cc\u062e\u06cc\u0627\u0644",
     "reserveFilterStack2",
-    "navbarRntFooter",
+    "navbarMnFooter",
     "intro",
     "returnButton",
     "clarityRntComponent",
@@ -8095,7 +8095,7 @@ const PlasmicDescendants = {
   dates: ["dates"],
   بیخیال: ["\u0628\u06cc\u062e\u06cc\u0627\u0644"],
   reserveFilterStack2: ["reserveFilterStack2"],
-  navbarRntFooter: ["navbarRntFooter"],
+  navbarMnFooter: ["navbarMnFooter"],
   intro: ["intro"],
   returnButton: ["returnButton"],
   clarityRntComponent: ["clarityRntComponent"],
@@ -8218,7 +8218,7 @@ type NodeDefaultElementType = {
   dates: "div";
   بیخیال: "div";
   reserveFilterStack2: "div";
-  navbarRntFooter: typeof NavbarRntFooter;
+  navbarMnFooter: typeof NavbarMnFooter;
   intro: "div";
   returnButton: "div";
   clarityRntComponent: typeof ClarityRntComponent;
@@ -8355,7 +8355,7 @@ export const PlasmicBookings2 = Object.assign(
     dates: makeNodeComponent("dates"),
     بیخیال: makeNodeComponent("\u0628\u06cc\u062e\u06cc\u0627\u0644"),
     reserveFilterStack2: makeNodeComponent("reserveFilterStack2"),
-    navbarRntFooter: makeNodeComponent("navbarRntFooter"),
+    navbarMnFooter: makeNodeComponent("navbarMnFooter"),
     intro: makeNodeComponent("intro"),
     returnButton: makeNodeComponent("returnButton"),
     clarityRntComponent: makeNodeComponent("clarityRntComponent"),

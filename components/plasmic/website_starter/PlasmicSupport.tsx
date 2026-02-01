@@ -64,8 +64,9 @@ import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-impor
 import MiaanAddress from "../../MiaanAddress"; // plasmic-import: WMV6AnpBtswg/component
 import FaviconRntComponent from "../../FaviconRntComponent"; // plasmic-import: 2Chy9NeUIB9Q/component
 import ClarityRntComponent from "../../ClarityRntComponent"; // plasmic-import: J5D8c7V05ty1/component
-import RentamonFooter from "../../RentamonFooter"; // plasmic-import: DSdlo5kdtbOe/component
-import NavbarRntFooter from "../../NavbarRntFooter"; // plasmic-import: y37kcAs9RXYg/component
+import { Embed } from "@plasmicpkgs/plasmic-basic-components";
+import MiaanFooter from "../../MiaanFooter"; // plasmic-import: DSdlo5kdtbOe/component
+import NavbarMnFooter from "../../NavbarMnFooter"; // plasmic-import: y37kcAs9RXYg/component
 import { _useGlobalVariants } from "./plasmic"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectModule
 import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/styleTokensProvider
 
@@ -105,7 +106,7 @@ export type PlasmicSupport__OverridesType = {
   title6?: Flex__<"div">;
   caption6?: Flex__<"div">;
   chat?: Flex__<"div">;
-  goftino?: Flex__<"div">;
+  nimChat2?: Flex__<"div">;
   icon10?: Flex__<"div">;
   title10?: Flex__<"div">;
   caption10?: Flex__<"div">;
@@ -128,8 +129,9 @@ export type PlasmicSupport__OverridesType = {
   html?: Flex__<"div">;
   faviconRntComponent?: Flex__<typeof FaviconRntComponent>;
   clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
-  rentamonFooter?: Flex__<typeof RentamonFooter>;
-  navbarRntFooter?: Flex__<typeof NavbarRntFooter>;
+  nimChat?: Flex__<typeof Embed>;
+  miaanFooter?: Flex__<typeof MiaanFooter>;
+  navbarMnFooter?: Flex__<typeof NavbarMnFooter>;
 };
 
 export interface DefaultSupportProps {}
@@ -577,11 +579,11 @@ function PlasmicSupport__RenderFunc(props: {
                       className={classNames(projectcss.all, sty.chat)}
                     >
                       <div
-                        data-plasmic-name={"goftino"}
-                        data-plasmic-override={overrides.goftino}
+                        data-plasmic-name={"nimChat2"}
+                        data-plasmic-override={overrides.nimChat2}
                         className={classNames(
                           projectcss.all,
-                          sty.goftino,
+                          sty.nimChat2,
                           "clickable"
                         )}
                         onClick={async event => {
@@ -591,12 +593,10 @@ function PlasmicSupport__RenderFunc(props: {
                             ? (() => {
                                 const actionArgs = {
                                   customFunction: async () => {
-                                    return (() => {
-                                      return window.open(
-                                        "https://miaan.ir/?nimchat",
-                                        "_blank"
-                                      );
-                                    })();
+                                    return window.open(
+                                      "https://miaan.ir/support/?nimchat",
+                                      "_blank"
+                                    );
                                   }
                                 };
                                 return (({ customFunction }) => {
@@ -1244,17 +1244,26 @@ function PlasmicSupport__RenderFunc(props: {
               data-plasmic-override={overrides.clarityRntComponent}
               className={classNames("__wab_instance", sty.clarityRntComponent)}
             />
+
+            <Embed
+              data-plasmic-name={"nimChat"}
+              data-plasmic-override={overrides.nimChat}
+              className={classNames("__wab_instance", sty.nimChat)}
+              code={
+                '<script>\r\n  window.nimchatSettings = {"position":"right","launcherTitle":"\u0633\u0644\u0627\u0645. \u0686\u0637\u0648\u0631 \u0645\u06cc\u200c\u062a\u0648\u0646\u0645 \u06a9\u0645\u06a9\u062a\u0648\u0646 \u06a9\u0646\u0645\u061f ","type":"standard","locale":"fa"};\r\n  (function(d,t) {\r\n    var BASE_URL="https://app.nim.chat";\r\n    var g=d.createElement(t),s=d.getElementsByTagName(t)[0];\r\n    g.src=BASE_URL+"/packs/js/sdk.js";\r\n    g.defer = true;\r\n    g.async = true;\r\n    s.parentNode.insertBefore(g,s);\r\n    g.onload=function(){\r\n      window.nimchatSDK.run({\r\n        websiteToken: \'KHb1NR6R7zCqPb8r5uaU8JiN\',\r\n        baseUrl: BASE_URL\r\n      })\r\n    }\r\n  })(document,"script");\r\n</script>\r\n'
+              }
+            />
           </div>
-          <RentamonFooter
-            data-plasmic-name={"rentamonFooter"}
-            data-plasmic-override={overrides.rentamonFooter}
-            className={classNames("__wab_instance", sty.rentamonFooter)}
+          <MiaanFooter
+            data-plasmic-name={"miaanFooter"}
+            data-plasmic-override={overrides.miaanFooter}
+            className={classNames("__wab_instance", sty.miaanFooter)}
           />
 
-          <NavbarRntFooter
-            data-plasmic-name={"navbarRntFooter"}
-            data-plasmic-override={overrides.navbarRntFooter}
-            className={classNames("__wab_instance", sty.navbarRntFooter)}
+          <NavbarMnFooter
+            data-plasmic-name={"navbarMnFooter"}
+            data-plasmic-override={overrides.navbarMnFooter}
+            className={classNames("__wab_instance", sty.navbarMnFooter)}
           />
         </div>
       </div>
@@ -1280,7 +1289,7 @@ const PlasmicDescendants = {
     "title6",
     "caption6",
     "chat",
-    "goftino",
+    "nimChat2",
     "icon10",
     "title10",
     "caption10",
@@ -1303,8 +1312,9 @@ const PlasmicDescendants = {
     "html",
     "faviconRntComponent",
     "clarityRntComponent",
-    "rentamonFooter",
-    "navbarRntFooter"
+    "nimChat",
+    "miaanFooter",
+    "navbarMnFooter"
   ],
   header: ["header", "sideBar2", "profile2"],
   sideBar2: ["sideBar2"],
@@ -1322,7 +1332,7 @@ const PlasmicDescendants = {
     "title6",
     "caption6",
     "chat",
-    "goftino",
+    "nimChat2",
     "icon10",
     "title10",
     "caption10",
@@ -1355,7 +1365,7 @@ const PlasmicDescendants = {
     "title6",
     "caption6",
     "chat",
-    "goftino",
+    "nimChat2",
     "icon10",
     "title10",
     "caption10",
@@ -1382,7 +1392,7 @@ const PlasmicDescendants = {
     "title6",
     "caption6",
     "chat",
-    "goftino",
+    "nimChat2",
     "icon10",
     "title10",
     "caption10",
@@ -1404,8 +1414,8 @@ const PlasmicDescendants = {
   icon6: ["icon6"],
   title6: ["title6"],
   caption6: ["caption6"],
-  chat: ["chat", "goftino", "icon10", "title10", "caption10"],
-  goftino: ["goftino", "icon10", "title10", "caption10"],
+  chat: ["chat", "nimChat2", "icon10", "title10", "caption10"],
+  nimChat2: ["nimChat2", "icon10", "title10", "caption10"],
   icon10: ["icon10"],
   title10: ["title10"],
   caption10: ["caption10"],
@@ -1425,11 +1435,12 @@ const PlasmicDescendants = {
   sectionTitle2: ["sectionTitle2"],
   address: ["address", "miaanAddress"],
   miaanAddress: ["miaanAddress"],
-  html: ["html", "faviconRntComponent", "clarityRntComponent"],
+  html: ["html", "faviconRntComponent", "clarityRntComponent", "nimChat"],
   faviconRntComponent: ["faviconRntComponent"],
   clarityRntComponent: ["clarityRntComponent"],
-  rentamonFooter: ["rentamonFooter"],
-  navbarRntFooter: ["navbarRntFooter"]
+  nimChat: ["nimChat"],
+  miaanFooter: ["miaanFooter"],
+  navbarMnFooter: ["navbarMnFooter"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -1451,7 +1462,7 @@ type NodeDefaultElementType = {
   title6: "div";
   caption6: "div";
   chat: "div";
-  goftino: "div";
+  nimChat2: "div";
   icon10: "div";
   title10: "div";
   caption10: "div";
@@ -1474,8 +1485,9 @@ type NodeDefaultElementType = {
   html: "div";
   faviconRntComponent: typeof FaviconRntComponent;
   clarityRntComponent: typeof ClarityRntComponent;
-  rentamonFooter: typeof RentamonFooter;
-  navbarRntFooter: typeof NavbarRntFooter;
+  nimChat: typeof Embed;
+  miaanFooter: typeof MiaanFooter;
+  navbarMnFooter: typeof NavbarMnFooter;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -1555,7 +1567,7 @@ export const PlasmicSupport = Object.assign(
     title6: makeNodeComponent("title6"),
     caption6: makeNodeComponent("caption6"),
     chat: makeNodeComponent("chat"),
-    goftino: makeNodeComponent("goftino"),
+    nimChat2: makeNodeComponent("nimChat2"),
     icon10: makeNodeComponent("icon10"),
     title10: makeNodeComponent("title10"),
     caption10: makeNodeComponent("caption10"),
@@ -1578,8 +1590,9 @@ export const PlasmicSupport = Object.assign(
     html: makeNodeComponent("html"),
     faviconRntComponent: makeNodeComponent("faviconRntComponent"),
     clarityRntComponent: makeNodeComponent("clarityRntComponent"),
-    rentamonFooter: makeNodeComponent("rentamonFooter"),
-    navbarRntFooter: makeNodeComponent("navbarRntFooter"),
+    nimChat: makeNodeComponent("nimChat"),
+    miaanFooter: makeNodeComponent("miaanFooter"),
+    navbarMnFooter: makeNodeComponent("navbarMnFooter"),
 
     // Metadata about props expected for PlasmicSupport
     internalVariantProps: PlasmicSupport__VariantProps,

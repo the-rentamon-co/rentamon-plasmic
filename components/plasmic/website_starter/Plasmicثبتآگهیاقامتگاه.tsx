@@ -70,7 +70,7 @@ import { inputHelpers as AntdTextArea_Helpers } from "@plasmicpkgs/antd5/skinny/
 import { AntdButton } from "@plasmicpkgs/antd5/skinny/registerButton";
 import { AntdModal } from "@plasmicpkgs/antd5/skinny/registerModal";
 import { Video } from "@plasmicpkgs/plasmic-basic-components";
-import RentamonFooter from "../../RentamonFooter"; // plasmic-import: DSdlo5kdtbOe/component
+import MiaanFooter from "../../MiaanFooter"; // plasmic-import: DSdlo5kdtbOe/component
 import ClarityRntComponent from "../../ClarityRntComponent"; // plasmic-import: J5D8c7V05ty1/component
 import FaviconRntComponent from "../../FaviconRntComponent"; // plasmic-import: 2Chy9NeUIB9Q/component
 import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
@@ -125,7 +125,7 @@ export type Plasmicثبتآگهیاقامتگاه__OverridesType = {
   benefitsTitle2?: Flex__<"div">;
   benefitsCaption2?: Flex__<"div">;
   button2?: Flex__<"div">;
-  rentamonFooter?: Flex__<typeof RentamonFooter>;
+  miaanFooter?: Flex__<typeof MiaanFooter>;
   clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
   faviconRntComponent?: Flex__<typeof FaviconRntComponent>;
   sideEffect?: Flex__<typeof SideEffect>;
@@ -1986,10 +1986,10 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
               </div>
             </div>
           </div>
-          <RentamonFooter
-            data-plasmic-name={"rentamonFooter"}
-            data-plasmic-override={overrides.rentamonFooter}
-            className={classNames("__wab_instance", sty.rentamonFooter)}
+          <MiaanFooter
+            data-plasmic-name={"miaanFooter"}
+            data-plasmic-override={overrides.miaanFooter}
+            className={classNames("__wab_instance", sty.miaanFooter)}
           />
 
           <div className={classNames(projectcss.all, sty.freeBox__n5NpO)}>
@@ -2050,7 +2050,7 @@ const PlasmicDescendants = {
     "benefitsTitle2",
     "benefitsCaption2",
     "button2",
-    "rentamonFooter",
+    "miaanFooter",
     "clarityRntComponent",
     "faviconRntComponent",
     "sideEffect"
@@ -2137,7 +2137,7 @@ const PlasmicDescendants = {
   benefitsTitle2: ["benefitsTitle2"],
   benefitsCaption2: ["benefitsCaption2", "button2"],
   button2: ["button2"],
-  rentamonFooter: ["rentamonFooter"],
+  miaanFooter: ["miaanFooter"],
   clarityRntComponent: ["clarityRntComponent"],
   faviconRntComponent: ["faviconRntComponent"],
   sideEffect: ["sideEffect"]
@@ -2175,7 +2175,7 @@ type NodeDefaultElementType = {
   benefitsTitle2: "div";
   benefitsCaption2: "div";
   button2: "div";
-  rentamonFooter: typeof RentamonFooter;
+  miaanFooter: typeof MiaanFooter;
   clarityRntComponent: typeof ClarityRntComponent;
   faviconRntComponent: typeof FaviconRntComponent;
   sideEffect: typeof SideEffect;
@@ -2272,7 +2272,7 @@ export const Plasmicثبتآگهیاقامتگاه = Object.assign(
     benefitsTitle2: makeNodeComponent("benefitsTitle2"),
     benefitsCaption2: makeNodeComponent("benefitsCaption2"),
     button2: makeNodeComponent("button2"),
-    rentamonFooter: makeNodeComponent("rentamonFooter"),
+    miaanFooter: makeNodeComponent("miaanFooter"),
     clarityRntComponent: makeNodeComponent("clarityRntComponent"),
     faviconRntComponent: makeNodeComponent("faviconRntComponent"),
     sideEffect: makeNodeComponent("sideEffect"),

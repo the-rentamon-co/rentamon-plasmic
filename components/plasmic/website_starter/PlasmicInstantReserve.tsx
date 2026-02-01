@@ -65,7 +65,7 @@ import Select from "../../Select"; // plasmic-import: GgjLI5qwOqwu/component
 import { Switch } from "@/fragment/components/switch"; // plasmic-import: fYS4AeYPi-91/codeComponent
 import { Embed } from "@plasmicpkgs/plasmic-basic-components";
 import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
-import NavbarRntFooter from "../../NavbarRntFooter"; // plasmic-import: y37kcAs9RXYg/component
+import NavbarMnFooter from "../../NavbarMnFooter"; // plasmic-import: y37kcAs9RXYg/component
 import ClarityRntComponent from "../../ClarityRntComponent"; // plasmic-import: J5D8c7V05ty1/component
 import FaviconRntComponent from "../../FaviconRntComponent"; // plasmic-import: 2Chy9NeUIB9Q/component
 import { AntdModal } from "@plasmicpkgs/antd5/skinny/registerModal";
@@ -121,7 +121,7 @@ export type PlasmicInstantReserve__OverridesType = {
   desc?: Flex__<"div">;
   sideEffect?: Flex__<typeof SideEffect>;
   returnButton?: Flex__<"div">;
-  navbarRntFooter?: Flex__<typeof NavbarRntFooter>;
+  navbarMnFooter?: Flex__<typeof NavbarMnFooter>;
   clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
   faviconRntComponent?: Flex__<typeof FaviconRntComponent>;
   jajigaModal?: Flex__<typeof AntdModal>;
@@ -3685,10 +3685,10 @@ function PlasmicInstantReserve__RenderFunc(props: {
               </div>
             </div>
           </div>
-          <NavbarRntFooter
-            data-plasmic-name={"navbarRntFooter"}
-            data-plasmic-override={overrides.navbarRntFooter}
-            className={classNames("__wab_instance", sty.navbarRntFooter)}
+          <NavbarMnFooter
+            data-plasmic-name={"navbarMnFooter"}
+            data-plasmic-override={overrides.navbarMnFooter}
+            className={classNames("__wab_instance", sty.navbarMnFooter)}
             userType={(() => {
               try {
                 return (() => {
@@ -4059,7 +4059,7 @@ const PlasmicDescendants = {
     "desc",
     "sideEffect",
     "returnButton",
-    "navbarRntFooter",
+    "navbarMnFooter",
     "clarityRntComponent",
     "faviconRntComponent",
     "jajigaModal",
@@ -4134,7 +4134,7 @@ const PlasmicDescendants = {
   desc: ["desc"],
   sideEffect: ["sideEffect"],
   returnButton: ["returnButton"],
-  navbarRntFooter: ["navbarRntFooter"],
+  navbarMnFooter: ["navbarMnFooter"],
   clarityRntComponent: ["clarityRntComponent"],
   faviconRntComponent: ["faviconRntComponent"],
   jajigaModal: ["jajigaModal", "active4"],
@@ -4177,7 +4177,7 @@ type NodeDefaultElementType = {
   desc: "div";
   sideEffect: typeof SideEffect;
   returnButton: "div";
-  navbarRntFooter: typeof NavbarRntFooter;
+  navbarMnFooter: typeof NavbarMnFooter;
   clarityRntComponent: typeof ClarityRntComponent;
   faviconRntComponent: typeof FaviconRntComponent;
   jajigaModal: typeof AntdModal;
@@ -4278,7 +4278,7 @@ export const PlasmicInstantReserve = Object.assign(
     desc: makeNodeComponent("desc"),
     sideEffect: makeNodeComponent("sideEffect"),
     returnButton: makeNodeComponent("returnButton"),
-    navbarRntFooter: makeNodeComponent("navbarRntFooter"),
+    navbarMnFooter: makeNodeComponent("navbarMnFooter"),
     clarityRntComponent: makeNodeComponent("clarityRntComponent"),
     faviconRntComponent: makeNodeComponent("faviconRntComponent"),
     jajigaModal: makeNodeComponent("jajigaModal"),
