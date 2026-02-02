@@ -3289,6 +3289,33 @@
           "cssFilePath": "plasmic/website_starter/PlasmicNavbarMnFooter.module.css",
           "scheme": "blackbox",
           "componentType": "component"
+        },
+        {
+          "id": "Sbe_BqY3Yw-T",
+          "name": "Calendar24",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicCalendar24.tsx",
+          "importSpec": {
+            "modulePath": "Calendar24.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicCalendar24.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "9iGaaZlYRc7S",
+          "name": "ProCalendar2",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicProCalendar2.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/panel-2.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicProCalendar2.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/panel-2"
         }
       ],
       "icons": [

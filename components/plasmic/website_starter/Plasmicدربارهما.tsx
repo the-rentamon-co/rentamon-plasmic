@@ -628,7 +628,7 @@ function Plasmicدربارهما__RenderFunc(props: {
                   <React.Fragment>
                     <React.Fragment>
                       {
-                        "\u0627\u06cc\u0646\u062c\u0627 \u0647\u0645\u06cc\u0634\u0647 \u0628\u0631\u06cc \u0627\u0641\u0631\u0627\u062f \u062c\u062f\u06cc\u062f \u062c\u0627 \u0647\u0633\u062a. \u0641\u0631\u0635\u062a\u200c\u0647\u0627\u06cc \u0634\u063a\u0644\u06cc \u0645\u06cc\u0627\u0646 \u0631\u0648\u00a0"
+                        "\u0627\u06cc\u0646\u062c\u0627 \u0647\u0645\u06cc\u0634\u0647 \u0628\u0631\u0627\u06cc \u0627\u0641\u0631\u0627\u062f \u062c\u062f\u06cc\u062f \u062c\u0627 \u0647\u0633\u062a. \u0641\u0631\u0635\u062a\u200c\u0647\u0627\u06cc \u0634\u063a\u0644\u06cc \u0645\u06cc\u0627\u0646 \u0631\u0648\u00a0"
                       }
                     </React.Fragment>
                     {
@@ -678,7 +678,7 @@ function Plasmicدربارهما__RenderFunc(props: {
               data-plasmic-override={overrides.nimChat}
               className={classNames("__wab_instance", sty.nimChat)}
               code={
-                '<script>\r\n  window.nimchatSettings = {"position":"right","launcherTitle":"\u0633\u0644\u0627\u0645. \u0686\u0637\u0648\u0631 \u0645\u06cc\u200c\u062a\u0648\u0646\u0645 \u06a9\u0645\u06a9\u062a\u0648\u0646 \u06a9\u0646\u0645\u061f ","type":"standard","locale":"fa"};\r\n  (function(d,t) {\r\n    var BASE_URL="https://app.nim.chat";\r\n    var g=d.createElement(t),s=d.getElementsByTagName(t)[0];\r\n    g.src=BASE_URL+"/packs/js/sdk.js";\r\n    g.defer = true;\r\n    g.async = true;\r\n    s.parentNode.insertBefore(g,s);\r\n    g.onload=function(){\r\n      window.nimchatSDK.run({\r\n        websiteToken: \'KHb1NR6R7zCqPb8r5uaU8JiN\',\r\n        baseUrl: BASE_URL\r\n      })\r\n    }\r\n  })(document,"script");\r\n</script>\r\n'
+                '<script>\r\n  window.nimchatSettings = {"position":"right","launcherTitle":"\u0633\u0644\u0627\u0645. \u0686\u0637\u0648\u0631 \u0645\u06cc\u200c\u062a\u0648\u0646\u0645 \u06a9\u0645\u06a9\u062a\u0648\u0646 \u06a9\u0646\u0645\u061f ","type":"standard","locale":"fa"};\r\n  (function(d,t) {\r\n    var BASE_URL="https://app.nim.chat";\r\n    var g=d.createElement(t),s=d.getElementsByTagName(t)[0];\r\n    g.src=BASE_URL+"/packs/js/sdk.js";\r\n    g.defer = true;\r\n    g.async = true;\r\n    s.parentNode.insertBefore(g,s);\r\n    \r\n    // \u06cc\u06a9 \u0648\u0642\u0641\u0647 \u06a9\u0648\u062a\u0627\u0647 \u0628\u0631\u0627\u06cc \u0627\u0637\u0645\u06cc\u0646\u0627\u0646 \u0627\u0632 \u0631\u0646\u062f\u0631 \u0634\u062f\u0646 \u06a9\u0644\u0627\u0633\u200c\u0647\u0627\u06cc Chatwoot\r\n    var checkExist = setInterval(function() {\r\n       var element = d.querySelector(\'.woot-widget-bubble\');\r\n       if (element) {\r\n          element.style.setProperty(\'transform\', \'scale(0.9)\', \'important\');\r\n          element.style.setProperty(\'bottom\', \'70px\', \'important\');\r\n          clearInterval(checkExist);\r\n       }\r\n    }, 100); \r\n  })(document,"script");\r\n</script>'
               }
             />
 
