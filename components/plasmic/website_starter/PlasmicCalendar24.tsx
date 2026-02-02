@@ -141,6 +141,7 @@ export type PlasmicCalendar24__OverridesType = {
   textInput?: Flex__<typeof TextInput>;
   numberInput2?: Flex__<typeof AntdInputNumber>;
   changedFetchModal?: Flex__<typeof AntdModal>;
+  editResult2?: Flex__<"div">;
   fetchModal?: Flex__<typeof AntdModal>;
   getJabamaSmartPriceStatus2?: Flex__<typeof ApiRequest>;
   userPlatform2?: Flex__<typeof ApiRequest>;
@@ -5654,63 +5655,11 @@ function PlasmicCalendar24__RenderFunc(props: {
                 "changedFetchModal",
                 "open"
               ]),
-              title: (() => {
-                try {
-                  return !$props.isFirstVisit;
-                } catch (e) {
-                  if (
-                    e instanceof TypeError ||
-                    e?.plasmicType === "PlasmicUndefinedDataError"
-                  ) {
-                    return true;
-                  }
-                  throw e;
-                }
-              })() ? (
-                <div
-                  className={classNames(projectcss.all, sty.freeBox__viMrn)}
-                  onClick={async event => {
-                    const $steps = {};
-
-                    $steps["updateUpdateStyle"] = true
-                      ? (() => {
-                          const actionArgs = {
-                            variable: {
-                              objRoot: $state,
-                              variablePath: ["updateStyle"]
-                            },
-                            operation: 0,
-                            value: ($state.updateStyle = $state.updateStyle + 1)
-                          };
-                          return (({
-                            variable,
-                            value,
-                            startIndex,
-                            deleteCount
-                          }) => {
-                            if (!variable) {
-                              return;
-                            }
-                            const { objRoot, variablePath } = variable;
-
-                            $stateSet(objRoot, variablePath, value);
-                            return value;
-                          })?.apply(null, [actionArgs]);
-                        })()
-                      : undefined;
-                    if (
-                      $steps["updateUpdateStyle"] != null &&
-                      typeof $steps["updateUpdateStyle"] === "object" &&
-                      typeof $steps["updateUpdateStyle"].then === "function"
-                    ) {
-                      $steps["updateUpdateStyle"] =
-                        await $steps["updateUpdateStyle"];
-                    }
-                  }}
-                >
+              title: (
+                <React.Fragment>
                   {(() => {
                     try {
-                      return Object.keys($state.platformRequestStatus).length;
+                      return !$props.isFirstVisit;
                     } catch (e) {
                       if (
                         e instanceof TypeError ||
@@ -5721,13 +5670,96 @@ function PlasmicCalendar24__RenderFunc(props: {
                       throw e;
                     }
                   })() ? (
-                    <Icon23Icon
-                      className={classNames(projectcss.all, sty.svg__fqIL, ``)}
-                      role={"img"}
-                    />
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__viMrn)}
+                      onClick={async event => {
+                        const $steps = {};
+
+                        $steps["updateUpdateStyle"] = true
+                          ? (() => {
+                              const actionArgs = {
+                                variable: {
+                                  objRoot: $state,
+                                  variablePath: ["updateStyle"]
+                                },
+                                operation: 0,
+                                value: ($state.updateStyle =
+                                  $state.updateStyle + 1)
+                              };
+                              return (({
+                                variable,
+                                value,
+                                startIndex,
+                                deleteCount
+                              }) => {
+                                if (!variable) {
+                                  return;
+                                }
+                                const { objRoot, variablePath } = variable;
+
+                                $stateSet(objRoot, variablePath, value);
+                                return value;
+                              })?.apply(null, [actionArgs]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["updateUpdateStyle"] != null &&
+                          typeof $steps["updateUpdateStyle"] === "object" &&
+                          typeof $steps["updateUpdateStyle"].then === "function"
+                        ) {
+                          $steps["updateUpdateStyle"] =
+                            await $steps["updateUpdateStyle"];
+                        }
+                      }}
+                    >
+                      {(() => {
+                        try {
+                          return Object.keys($state.platformRequestStatus)
+                            .length;
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return true;
+                          }
+                          throw e;
+                        }
+                      })() ? (
+                        <Icon23Icon
+                          className={classNames(
+                            projectcss.all,
+                            sty.svg__fqIL,
+                            ``
+                          )}
+                          role={"img"}
+                        />
+                      ) : null}
+                    </div>
                   ) : null}
-                </div>
-              ) : null,
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__xk5EO)}
+                  >
+                    <div
+                      data-plasmic-name={"editResult2"}
+                      data-plasmic-override={overrides.editResult2}
+                      className={classNames(projectcss.all, sty.editResult2)}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text___6MiAy
+                        )}
+                      >
+                        {
+                          "\u0646\u062a\u06cc\u062c\u0647 \u0648\u06cc\u0631\u0627\u06cc\u0634"
+                        }
+                      </div>
+                    </div>
+                  </div>
+                </React.Fragment>
+              ),
               trigger: null,
               width: hasVariant(globalVariants, "screen", "smallMobile")
                 ? "320"
@@ -5826,6 +5858,39 @@ function PlasmicCalendar24__RenderFunc(props: {
               [sty["pcls_zblgWI78X8sB"]]: true
             })}
             modalScopeClassName={sty["fetchModal__modal"]}
+            onCancel={async () => {
+              const $steps = {};
+
+              $steps["updateSelectedDay"] = true
+                ? (() => {
+                    const actionArgs = {
+                      variable: {
+                        objRoot: $state,
+                        variablePath: ["selectedDay"]
+                      },
+                      operation: 0,
+                      value: ($state.selectedDay =
+                        $state.fragmentDatePicker.values)
+                    };
+                    return (({ variable, value, startIndex, deleteCount }) => {
+                      if (!variable) {
+                        return;
+                      }
+                      const { objRoot, variablePath } = variable;
+
+                      $stateSet(objRoot, variablePath, value);
+                      return value;
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["updateSelectedDay"] != null &&
+                typeof $steps["updateSelectedDay"] === "object" &&
+                typeof $steps["updateSelectedDay"].then === "function"
+              ) {
+                $steps["updateSelectedDay"] = await $steps["updateSelectedDay"];
+              }
+            }}
             onOpenChange={async (...eventArgs: any) => {
               generateStateOnChangeProp($state, ["fetchModal", "open"]).apply(
                 null,
@@ -5885,6 +5950,41 @@ function PlasmicCalendar24__RenderFunc(props: {
                     ) {
                       $steps["updateUpdateStyle"] =
                         await $steps["updateUpdateStyle"];
+                    }
+
+                    $steps["updateFetchModalOpen"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            variable: {
+                              objRoot: $state,
+                              variablePath: ["fetchModal", "open"]
+                            },
+                            operation: 0,
+                            value: false
+                          };
+                          return (({
+                            variable,
+                            value,
+                            startIndex,
+                            deleteCount
+                          }) => {
+                            if (!variable) {
+                              return;
+                            }
+                            const { objRoot, variablePath } = variable;
+
+                            $stateSet(objRoot, variablePath, value);
+                            return value;
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["updateFetchModalOpen"] != null &&
+                      typeof $steps["updateFetchModalOpen"] === "object" &&
+                      typeof $steps["updateFetchModalOpen"].then === "function"
+                    ) {
+                      $steps["updateFetchModalOpen"] =
+                        await $steps["updateFetchModalOpen"];
                     }
                   }}
                 >
@@ -10661,7 +10761,23 @@ function PlasmicCalendar24__RenderFunc(props: {
                     throw e;
                   }
                 })()
-              : true
+              : (() => {
+                  try {
+                    return (
+                      (!!$state.platformRequestStatus &&
+                        !!$state.platformRequestStatus.isLoading) ||
+                      $state.manualResultShow
+                    );
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return true;
+                    }
+                    throw e;
+                  }
+                })()
           ) ? (
             <div
               data-plasmic-name={"editResult"}
@@ -12214,6 +12330,7 @@ const PlasmicDescendants = {
     "textInput",
     "numberInput2",
     "changedFetchModal",
+    "editResult2",
     "fetchModal",
     "getJabamaSmartPriceStatus2",
     "userPlatform2",
@@ -12312,7 +12429,8 @@ const PlasmicDescendants = {
   input: ["input"],
   textInput: ["textInput"],
   numberInput2: ["numberInput2"],
-  changedFetchModal: ["changedFetchModal"],
+  changedFetchModal: ["changedFetchModal", "editResult2"],
+  editResult2: ["editResult2"],
   fetchModal: [
     "fetchModal",
     "getJabamaSmartPriceStatus2",
@@ -12470,6 +12588,7 @@ type NodeDefaultElementType = {
   textInput: typeof TextInput;
   numberInput2: typeof AntdInputNumber;
   changedFetchModal: typeof AntdModal;
+  editResult2: "div";
   fetchModal: typeof AntdModal;
   getJabamaSmartPriceStatus2: typeof ApiRequest;
   userPlatform2: typeof ApiRequest;
@@ -12617,6 +12736,7 @@ export const PlasmicCalendar24 = Object.assign(
     textInput: makeNodeComponent("textInput"),
     numberInput2: makeNodeComponent("numberInput2"),
     changedFetchModal: makeNodeComponent("changedFetchModal"),
+    editResult2: makeNodeComponent("editResult2"),
     fetchModal: makeNodeComponent("fetchModal"),
     getJabamaSmartPriceStatus2: makeNodeComponent("getJabamaSmartPriceStatus2"),
     userPlatform2: makeNodeComponent("userPlatform2"),
