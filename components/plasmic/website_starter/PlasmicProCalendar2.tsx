@@ -1798,6 +1798,19 @@ function PlasmicProCalendar2__RenderFunc(props: {
             data-plasmic-name={"calendar24"}
             data-plasmic-override={overrides.calendar24}
             className={classNames("__wab_instance", sty.calendar24)}
+            isFirstVisit={(() => {
+              try {
+                return $state.isTheFirstVisit == true;
+              } catch (e) {
+                if (
+                  e instanceof TypeError ||
+                  e?.plasmicType === "PlasmicUndefinedDataError"
+                ) {
+                  return false;
+                }
+                throw e;
+              }
+            })()}
             isGlobalLoading={generateStateValueProp($state, [
               "calendar24",
               "isGlobalLoading"
@@ -1816,6 +1829,20 @@ function PlasmicProCalendar2__RenderFunc(props: {
                 return;
               }
             }}
+            propertyId={(() => {
+              try {
+                return $state.propId;
+              } catch (e) {
+                if (
+                  e instanceof TypeError ||
+                  e?.plasmicType === "PlasmicUndefinedDataError"
+                ) {
+                  return 1;
+                }
+                throw e;
+              }
+            })()}
+            reservationsMode={true}
           />
 
           <div
