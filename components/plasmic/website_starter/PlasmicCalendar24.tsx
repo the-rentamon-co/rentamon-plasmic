@@ -10641,23 +10641,7 @@ function PlasmicCalendar24__RenderFunc(props: {
         data-plasmic-override={overrides.submitChange}
         className={classNames(projectcss.all, sty.submitChange)}
       >
-        {(() => {
-          try {
-            return (
-              (!!$state.platformRequestStatus &&
-                !!$state.platformRequestStatus.isLoading) ||
-              $state.manualResultShow
-            );
-          } catch (e) {
-            if (
-              e instanceof TypeError ||
-              e?.plasmicType === "PlasmicUndefinedDataError"
-            ) {
-              return false;
-            }
-            throw e;
-          }
-        })() ? (
+        <div className={classNames(projectcss.all, sty.freeBox___4G6Tz)}>
           <div
             data-plasmic-name={"editResult"}
             data-plasmic-override={overrides.editResult}
@@ -10744,7 +10728,7 @@ function PlasmicCalendar24__RenderFunc(props: {
               }
             </div>
           </div>
-        ) : null}
+        </div>
         <div
           className={classNames(
             projectcss.all,
