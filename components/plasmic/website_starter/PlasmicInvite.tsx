@@ -1387,7 +1387,8 @@ function PlasmicInvite__RenderFunc(props: {
                           ["accordionMain2", "activePanelId"],
                           AntdAccordion_Helpers
                         ).apply(null, eventArgs);
-                      }
+                      },
+                      rotationAngle: 90
                     };
                     initializeCodeComponentStates(
                       $state,

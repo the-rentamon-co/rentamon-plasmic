@@ -2311,7 +2311,8 @@ function PlasmicHomepage__RenderFunc(props: {
                       ["accordionMain", "activePanelId"],
                       AntdAccordion_Helpers
                     ).apply(null, eventArgs);
-                  }
+                  },
+                  rotationAngle: 90
                 };
                 initializeCodeComponentStates(
                   $state,

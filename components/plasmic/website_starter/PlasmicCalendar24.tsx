@@ -5656,109 +5656,25 @@ function PlasmicCalendar24__RenderFunc(props: {
                 "open"
               ]),
               title: (
-                <React.Fragment>
-                  {(() => {
-                    try {
-                      return !$props.isFirstVisit;
-                    } catch (e) {
-                      if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
-                      ) {
-                        return true;
-                      }
-                      throw e;
-                    }
-                  })() ? (
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__viMrn)}
-                      onClick={async event => {
-                        const $steps = {};
-
-                        $steps["updateUpdateStyle"] = true
-                          ? (() => {
-                              const actionArgs = {
-                                variable: {
-                                  objRoot: $state,
-                                  variablePath: ["updateStyle"]
-                                },
-                                operation: 0,
-                                value: ($state.updateStyle =
-                                  $state.updateStyle + 1)
-                              };
-                              return (({
-                                variable,
-                                value,
-                                startIndex,
-                                deleteCount
-                              }) => {
-                                if (!variable) {
-                                  return;
-                                }
-                                const { objRoot, variablePath } = variable;
-
-                                $stateSet(objRoot, variablePath, value);
-                                return value;
-                              })?.apply(null, [actionArgs]);
-                            })()
-                          : undefined;
-                        if (
-                          $steps["updateUpdateStyle"] != null &&
-                          typeof $steps["updateUpdateStyle"] === "object" &&
-                          typeof $steps["updateUpdateStyle"].then === "function"
-                        ) {
-                          $steps["updateUpdateStyle"] =
-                            await $steps["updateUpdateStyle"];
-                        }
-                      }}
-                    >
-                      {(() => {
-                        try {
-                          return Object.keys($state.platformRequestStatus)
-                            .length;
-                        } catch (e) {
-                          if (
-                            e instanceof TypeError ||
-                            e?.plasmicType === "PlasmicUndefinedDataError"
-                          ) {
-                            return true;
-                          }
-                          throw e;
-                        }
-                      })() ? (
-                        <Icon23Icon
-                          className={classNames(
-                            projectcss.all,
-                            sty.svg__fqIL,
-                            ``
-                          )}
-                          role={"img"}
-                        />
-                      ) : null}
-                    </div>
-                  ) : null}
+                <div className={classNames(projectcss.all, sty.freeBox__xk5EO)}>
                   <div
-                    className={classNames(projectcss.all, sty.freeBox__xk5EO)}
+                    data-plasmic-name={"editResult2"}
+                    data-plasmic-override={overrides.editResult2}
+                    className={classNames(projectcss.all, sty.editResult2)}
                   >
                     <div
-                      data-plasmic-name={"editResult2"}
-                      data-plasmic-override={overrides.editResult2}
-                      className={classNames(projectcss.all, sty.editResult2)}
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text___6MiAy
+                      )}
                     >
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text___6MiAy
-                        )}
-                      >
-                        {
-                          "\u0646\u062a\u06cc\u062c\u0647 \u0648\u06cc\u0631\u0627\u06cc\u0634"
-                        }
-                      </div>
+                      {
+                        "\u0646\u062a\u06cc\u062c\u0647 \u0648\u06cc\u0631\u0627\u06cc\u0634"
+                      }
                     </div>
                   </div>
-                </React.Fragment>
+                </div>
               ),
               trigger: null,
               width: hasVariant(globalVariants, "screen", "smallMobile")

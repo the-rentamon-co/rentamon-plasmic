@@ -1627,6 +1627,9 @@
     padding-left: 0px;
   }
 }
+.li__edbLc {
+  padding-right: 0px;
+}
 .freeBox__xp20C {
   display: flex;
   flex-direction: column;

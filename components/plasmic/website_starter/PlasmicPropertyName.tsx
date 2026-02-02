@@ -643,6 +643,7 @@ function PlasmicPropertyName__RenderFunc(props: {
                   ).apply(null, eventArgs);
                 },
                 open: generateStateValueProp($state, ["collapse", "open"]),
+                rotationAngle: 90,
                 showArrow: true
               };
               initializeCodeComponentStates(
