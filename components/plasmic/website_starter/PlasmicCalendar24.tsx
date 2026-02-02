@@ -10642,23 +10642,79 @@ function PlasmicCalendar24__RenderFunc(props: {
         className={classNames(projectcss.all, sty.submitChange)}
       >
         <div className={classNames(projectcss.all, sty.freeBox___4G6Tz)}>
-          <div
-            data-plasmic-name={"editResult"}
-            data-plasmic-override={overrides.editResult}
-            className={classNames(projectcss.all, sty.editResult)}
-            onClick={async event => {
-              const $steps = {};
+          {(
+            hasVariant(globalVariants, "screen", "mobile")
+              ? (() => {
+                  try {
+                    return (
+                      (!!$state.platformRequestStatus &&
+                        !!$state.platformRequestStatus.isLoading) ||
+                      $state.manualResultShow
+                    );
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return false;
+                    }
+                    throw e;
+                  }
+                })()
+              : true
+          ) ? (
+            <div
+              data-plasmic-name={"editResult"}
+              data-plasmic-override={overrides.editResult}
+              className={classNames(projectcss.all, sty.editResult)}
+              onClick={async event => {
+                const $steps = {};
 
-              $steps["updateFetchModalOpen"] =
-                $props.calendarType == "pro"
+                $steps["updateFetchModalOpen"] =
+                  $props.calendarType == "pro"
+                    ? (() => {
+                        const actionArgs = {
+                          variable: {
+                            objRoot: $state,
+                            variablePath: ["fetchModal", "open"]
+                          },
+                          operation: 0,
+                          value: true
+                        };
+                        return (({
+                          variable,
+                          value,
+                          startIndex,
+                          deleteCount
+                        }) => {
+                          if (!variable) {
+                            return;
+                          }
+                          const { objRoot, variablePath } = variable;
+
+                          $stateSet(objRoot, variablePath, value);
+                          return value;
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                if (
+                  $steps["updateFetchModalOpen"] != null &&
+                  typeof $steps["updateFetchModalOpen"] === "object" &&
+                  typeof $steps["updateFetchModalOpen"].then === "function"
+                ) {
+                  $steps["updateFetchModalOpen"] =
+                    await $steps["updateFetchModalOpen"];
+                }
+
+                $steps["updateManualResultShow"] = true
                   ? (() => {
                       const actionArgs = {
                         variable: {
                           objRoot: $state,
-                          variablePath: ["fetchModal", "open"]
+                          variablePath: ["manualResultShow"]
                         },
                         operation: 0,
-                        value: true
+                        value: false
                       };
                       return (({
                         variable,
@@ -10676,58 +10732,29 @@ function PlasmicCalendar24__RenderFunc(props: {
                       })?.apply(null, [actionArgs]);
                     })()
                   : undefined;
-              if (
-                $steps["updateFetchModalOpen"] != null &&
-                typeof $steps["updateFetchModalOpen"] === "object" &&
-                typeof $steps["updateFetchModalOpen"].then === "function"
-              ) {
-                $steps["updateFetchModalOpen"] =
-                  await $steps["updateFetchModalOpen"];
-              }
-
-              $steps["updateManualResultShow"] = true
-                ? (() => {
-                    const actionArgs = {
-                      variable: {
-                        objRoot: $state,
-                        variablePath: ["manualResultShow"]
-                      },
-                      operation: 0,
-                      value: false
-                    };
-                    return (({ variable, value, startIndex, deleteCount }) => {
-                      if (!variable) {
-                        return;
-                      }
-                      const { objRoot, variablePath } = variable;
-
-                      $stateSet(objRoot, variablePath, value);
-                      return value;
-                    })?.apply(null, [actionArgs]);
-                  })()
-                : undefined;
-              if (
-                $steps["updateManualResultShow"] != null &&
-                typeof $steps["updateManualResultShow"] === "object" &&
-                typeof $steps["updateManualResultShow"].then === "function"
-              ) {
-                $steps["updateManualResultShow"] =
-                  await $steps["updateManualResultShow"];
-              }
-            }}
-          >
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__p8HL
-              )}
+                if (
+                  $steps["updateManualResultShow"] != null &&
+                  typeof $steps["updateManualResultShow"] === "object" &&
+                  typeof $steps["updateManualResultShow"].then === "function"
+                ) {
+                  $steps["updateManualResultShow"] =
+                    await $steps["updateManualResultShow"];
+                }
+              }}
             >
-              {
-                "\u0646\u062a\u06cc\u062c\u0647 \u0648\u06cc\u0631\u0627\u06cc\u0634"
-              }
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__p8HL
+                )}
+              >
+                {
+                  "\u0646\u062a\u06cc\u062c\u0647 \u0648\u06cc\u0631\u0627\u06cc\u0634"
+                }
+              </div>
             </div>
-          </div>
+          ) : null}
         </div>
         <div
           className={classNames(
