@@ -5971,17 +5971,7 @@ function PlasmicCalendar24__RenderFunc(props: {
               data-plasmic-name={"userPlatform2"}
               data-plasmic-override={overrides.userPlatform2}
               className={classNames("__wab_instance", sty.userPlatform2)}
-              errorDisplay={
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__m2Tz2
-                  )}
-                >
-                  {"Error fetching data"}
-                </div>
-              }
+              errorDisplay={null}
               loadingDisplay={
                 <div
                   className={classNames(projectcss.all, sty.freeBox___0Pmkf)}
@@ -7092,6 +7082,42 @@ function PlasmicCalendar24__RenderFunc(props: {
                       ) {
                         $steps["updateFragmentDatePickerValue4"] =
                           await $steps["updateFragmentDatePickerValue4"];
+                      }
+
+                      $steps["updateFetchModalOpen"] = true
+                        ? (() => {
+                            const actionArgs = {
+                              variable: {
+                                objRoot: $state,
+                                variablePath: ["fetchModal", "open"]
+                              },
+                              operation: 0,
+                              value: false
+                            };
+                            return (({
+                              variable,
+                              value,
+                              startIndex,
+                              deleteCount
+                            }) => {
+                              if (!variable) {
+                                return;
+                              }
+                              const { objRoot, variablePath } = variable;
+
+                              $stateSet(objRoot, variablePath, value);
+                              return value;
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
+                      if (
+                        $steps["updateFetchModalOpen"] != null &&
+                        typeof $steps["updateFetchModalOpen"] === "object" &&
+                        typeof $steps["updateFetchModalOpen"].then ===
+                          "function"
+                      ) {
+                        $steps["updateFetchModalOpen"] =
+                          await $steps["updateFetchModalOpen"];
                       }
                     }}
                   >

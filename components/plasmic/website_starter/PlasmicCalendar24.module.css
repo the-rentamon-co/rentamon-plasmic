@@ -1343,13 +1343,6 @@
 .loading3 > picture > img {
   object-fit: cover;
 }
-.text__m2Tz2 {
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  min-width: 0;
-}
 .freeBox__y3KL {
   display: flex;
   flex-direction: column;
