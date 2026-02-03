@@ -181,8 +181,11 @@ export type PlasmicCalendar24__OverridesType = {
   text3?: Flex__<"div">;
   note?: Flex__<"div">;
   text4?: Flex__<"div">;
-  submitChange?: Flex__<"div">;
   editResult?: Flex__<"div">;
+  ok7?: Flex__<typeof PlasmicImg__>;
+  fail3?: Flex__<typeof PlasmicImg__>;
+  loading5?: Flex__<typeof PlasmicImg__>;
+  submitChange?: Flex__<"div">;
   addingGuestInfo?: Flex__<typeof AntdModal>;
   form?: Flex__<"div">;
   p4?: Flex__<"div">;
@@ -860,6 +863,18 @@ function PlasmicCalendar24__RenderFunc(props: {
         type: "private",
         variableType: "boolean",
         initFunc: ({ $props, $state, $queries, $ctx }) => false
+      },
+      {
+        path: "variable2",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => ""
+      },
+      {
+        path: "submittedDates",
+        type: "private",
+        variableType: "array",
+        initFunc: ({ $props, $state, $queries, $ctx }) => []
       }
     ],
     [$props, $ctx, $refs]
@@ -1646,10 +1661,8 @@ function PlasmicCalendar24__RenderFunc(props: {
                         "Calendar updated with changes:",
                         updatedCalendar
                       );
-                      $state.platformRequestStatus = [];
-                      $state.requestdata = [];
-                      $state.fragmentDatePicker.values = [];
                       $state.textInput.value = 0;
+                      $state.fragmentDatePicker.values = [];
                       $state.textInput2.value = 0;
                       $state.textInput4.value = 0;
                       return ($state.selectedItem = []);
@@ -4524,6 +4537,77 @@ function PlasmicCalendar24__RenderFunc(props: {
                     await $steps["updateStateVariable2"];
                 }
 
+                $steps["updateUpdateStyle"] = true
+                  ? (() => {
+                      const actionArgs = {
+                        variable: {
+                          objRoot: $state,
+                          variablePath: ["updateStyle"]
+                        },
+                        operation: 0,
+                        value: ($state.updateStyle = $state.updateStyle + 1)
+                      };
+                      return (({
+                        variable,
+                        value,
+                        startIndex,
+                        deleteCount
+                      }) => {
+                        if (!variable) {
+                          return;
+                        }
+                        const { objRoot, variablePath } = variable;
+
+                        $stateSet(objRoot, variablePath, value);
+                        return value;
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+                if (
+                  $steps["updateUpdateStyle"] != null &&
+                  typeof $steps["updateUpdateStyle"] === "object" &&
+                  typeof $steps["updateUpdateStyle"].then === "function"
+                ) {
+                  $steps["updateUpdateStyle"] =
+                    await $steps["updateUpdateStyle"];
+                }
+
+                $steps["updateSelectedDay"] = true
+                  ? (() => {
+                      const actionArgs = {
+                        variable: {
+                          objRoot: $state,
+                          variablePath: ["selectedDay"]
+                        },
+                        operation: 0,
+                        value: ($state.selectedDay =
+                          $state.fragmentDatePicker.values)
+                      };
+                      return (({
+                        variable,
+                        value,
+                        startIndex,
+                        deleteCount
+                      }) => {
+                        if (!variable) {
+                          return;
+                        }
+                        const { objRoot, variablePath } = variable;
+
+                        $stateSet(objRoot, variablePath, value);
+                        return value;
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+                if (
+                  $steps["updateSelectedDay"] != null &&
+                  typeof $steps["updateSelectedDay"] === "object" &&
+                  typeof $steps["updateSelectedDay"].then === "function"
+                ) {
+                  $steps["updateSelectedDay"] =
+                    await $steps["updateSelectedDay"];
+                }
+
                 $steps["setUnblock"] = (() => {
                   const calendar = $state.selectedItem;
                   const platforms = [
@@ -5418,6 +5502,77 @@ function PlasmicCalendar24__RenderFunc(props: {
                   ) {
                     $steps["updateStateVariable2"] =
                       await $steps["updateStateVariable2"];
+                  }
+
+                  $steps["updateSelectedDay"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          variable: {
+                            objRoot: $state,
+                            variablePath: ["selectedDay"]
+                          },
+                          operation: 0,
+                          value: ($state.selectedDay =
+                            $state.fragmentDatePicker.values)
+                        };
+                        return (({
+                          variable,
+                          value,
+                          startIndex,
+                          deleteCount
+                        }) => {
+                          if (!variable) {
+                            return;
+                          }
+                          const { objRoot, variablePath } = variable;
+
+                          $stateSet(objRoot, variablePath, value);
+                          return value;
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["updateSelectedDay"] != null &&
+                    typeof $steps["updateSelectedDay"] === "object" &&
+                    typeof $steps["updateSelectedDay"].then === "function"
+                  ) {
+                    $steps["updateSelectedDay"] =
+                      await $steps["updateSelectedDay"];
+                  }
+
+                  $steps["updateUpdateStyle"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          variable: {
+                            objRoot: $state,
+                            variablePath: ["updateStyle"]
+                          },
+                          operation: 0,
+                          value: ($state.updateStyle = $state.updateStyle + 1)
+                        };
+                        return (({
+                          variable,
+                          value,
+                          startIndex,
+                          deleteCount
+                        }) => {
+                          if (!variable) {
+                            return;
+                          }
+                          const { objRoot, variablePath } = variable;
+
+                          $stateSet(objRoot, variablePath, value);
+                          return value;
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["updateUpdateStyle"] != null &&
+                    typeof $steps["updateUpdateStyle"] === "object" &&
+                    typeof $steps["updateUpdateStyle"].then === "function"
+                  ) {
+                    $steps["updateUpdateStyle"] =
+                      await $steps["updateUpdateStyle"];
                   }
 
                   $steps["setPrice"] = true
@@ -7019,13 +7174,7 @@ function PlasmicCalendar24__RenderFunc(props: {
                           await $steps["updateFragmentDatePickerValue3"];
                       }
 
-                      $steps["updateFragmentDatePickerValue2"] = (() => {
-                        if ($state.requestdata.request_for == "reserve") {
-                          return true;
-                        } else {
-                          return false;
-                        }
-                      })()
+                      $steps["updateFragmentDatePickerValue2"] = false
                         ? (() => {
                             const actionArgs = {
                               variable: {
@@ -7147,19 +7296,13 @@ function PlasmicCalendar24__RenderFunc(props: {
                       <React.Fragment>
                         {(() => {
                           try {
-                            return (() => {
-                              if ($state.requestdata.request_for == "reserve") {
-                                return "ثبت اطلاعات مهمان";
-                              } else {
-                                return "باشه";
-                              }
-                            })();
+                            return "باشه";
                           } catch (e) {
                             if (
                               e instanceof TypeError ||
                               e?.plasmicType === "PlasmicUndefinedDataError"
                             ) {
-                              return "\u0628\u0627\u0634\u0647";
+                              return "";
                             }
                             throw e;
                           }
@@ -7476,6 +7619,36 @@ function PlasmicCalendar24__RenderFunc(props: {
                   await $steps["updateStateVariable"];
               }
 
+              $steps["updateAddingGuestInfoOpen"] = true
+                ? (() => {
+                    const actionArgs = {
+                      variable: {
+                        objRoot: $state,
+                        variablePath: ["addingGuestInfo", "open"]
+                      },
+                      operation: 0,
+                      value: true
+                    };
+                    return (({ variable, value, startIndex, deleteCount }) => {
+                      if (!variable) {
+                        return;
+                      }
+                      const { objRoot, variablePath } = variable;
+
+                      $stateSet(objRoot, variablePath, value);
+                      return value;
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["updateAddingGuestInfoOpen"] != null &&
+                typeof $steps["updateAddingGuestInfoOpen"] === "object" &&
+                typeof $steps["updateAddingGuestInfoOpen"].then === "function"
+              ) {
+                $steps["updateAddingGuestInfoOpen"] =
+                  await $steps["updateAddingGuestInfoOpen"];
+              }
+
               $steps["updatePlatformRequestStatus"] = true
                 ? (() => {
                     const actionArgs = {
@@ -7547,6 +7720,62 @@ function PlasmicCalendar24__RenderFunc(props: {
               ) {
                 $steps["updateFetchModalOpen"] =
                   await $steps["updateFetchModalOpen"];
+              }
+
+              $steps["updateStateVariable2"] = true
+                ? (() => {
+                    const actionArgs = {
+                      operation: 0,
+                      value: ($state.updateStyle = $state.updateStyle + 1)
+                    };
+                    return (({ variable, value, startIndex, deleteCount }) => {
+                      if (!variable) {
+                        return;
+                      }
+                      const { objRoot, variablePath } = variable;
+
+                      $stateSet(objRoot, variablePath, value);
+                      return value;
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["updateStateVariable2"] != null &&
+                typeof $steps["updateStateVariable2"] === "object" &&
+                typeof $steps["updateStateVariable2"].then === "function"
+              ) {
+                $steps["updateStateVariable2"] =
+                  await $steps["updateStateVariable2"];
+              }
+
+              $steps["updateSelectedDay"] = true
+                ? (() => {
+                    const actionArgs = {
+                      variable: {
+                        objRoot: $state,
+                        variablePath: ["selectedDay"]
+                      },
+                      operation: 0,
+                      value: ($state.selectedDay =
+                        $state.fragmentDatePicker.values)
+                    };
+                    return (({ variable, value, startIndex, deleteCount }) => {
+                      if (!variable) {
+                        return;
+                      }
+                      const { objRoot, variablePath } = variable;
+
+                      $stateSet(objRoot, variablePath, value);
+                      return value;
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["updateSelectedDay"] != null &&
+                typeof $steps["updateSelectedDay"] === "object" &&
+                typeof $steps["updateSelectedDay"].then === "function"
+              ) {
+                $steps["updateSelectedDay"] = await $steps["updateSelectedDay"];
               }
 
               $steps["setBlock"] =
@@ -7682,38 +7911,6 @@ function PlasmicCalendar24__RenderFunc(props: {
                 typeof $steps["runCode"].then === "function"
               ) {
                 $steps["runCode"] = await $steps["runCode"];
-              }
-
-              $steps["updateStateVariable2"] =
-                $props.calendarType == "lite" && $steps.checkConsecutive
-                  ? (() => {
-                      const actionArgs = {
-                        operation: 0,
-                        value: ($state.updateStyle = $state.updateStyle + 1)
-                      };
-                      return (({
-                        variable,
-                        value,
-                        startIndex,
-                        deleteCount
-                      }) => {
-                        if (!variable) {
-                          return;
-                        }
-                        const { objRoot, variablePath } = variable;
-
-                        $stateSet(objRoot, variablePath, value);
-                        return value;
-                      })?.apply(null, [actionArgs]);
-                    })()
-                  : undefined;
-              if (
-                $steps["updateStateVariable2"] != null &&
-                typeof $steps["updateStateVariable2"] === "object" &&
-                typeof $steps["updateStateVariable2"].then === "function"
-              ) {
-                $steps["updateStateVariable2"] =
-                  await $steps["updateStateVariable2"];
               }
 
               $steps["createAManualReserve"] = true
@@ -8052,6 +8249,152 @@ function PlasmicCalendar24__RenderFunc(props: {
                 ) {
                   $steps["updateStateVariable2"] =
                     await $steps["updateStateVariable2"];
+                }
+
+                $steps["updateSelectedDay"] = true
+                  ? (() => {
+                      const actionArgs = {
+                        variable: {
+                          objRoot: $state,
+                          variablePath: ["selectedDay"]
+                        },
+                        operation: 0,
+                        value: ($state.selectedDay =
+                          $state.fragmentDatePicker.values)
+                      };
+                      return (({
+                        variable,
+                        value,
+                        startIndex,
+                        deleteCount
+                      }) => {
+                        if (!variable) {
+                          return;
+                        }
+                        const { objRoot, variablePath } = variable;
+
+                        $stateSet(objRoot, variablePath, value);
+                        return value;
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+                if (
+                  $steps["updateSelectedDay"] != null &&
+                  typeof $steps["updateSelectedDay"] === "object" &&
+                  typeof $steps["updateSelectedDay"].then === "function"
+                ) {
+                  $steps["updateSelectedDay"] =
+                    await $steps["updateSelectedDay"];
+                }
+
+                $steps["updateFragmentDatePickerValue"] = true
+                  ? (() => {
+                      const actionArgs = {
+                        variable: {
+                          objRoot: $state,
+                          variablePath: ["fragmentDatePicker", "value"]
+                        },
+                        operation: 1
+                      };
+                      return (({
+                        variable,
+                        value,
+                        startIndex,
+                        deleteCount
+                      }) => {
+                        if (!variable) {
+                          return;
+                        }
+                        const { objRoot, variablePath } = variable;
+
+                        $stateSet(objRoot, variablePath, undefined);
+                        return undefined;
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+                if (
+                  $steps["updateFragmentDatePickerValue"] != null &&
+                  typeof $steps["updateFragmentDatePickerValue"] === "object" &&
+                  typeof $steps["updateFragmentDatePickerValue"].then ===
+                    "function"
+                ) {
+                  $steps["updateFragmentDatePickerValue"] =
+                    await $steps["updateFragmentDatePickerValue"];
+                }
+
+                $steps["updateFragmentDatePickerValue2"] = true
+                  ? (() => {
+                      const actionArgs = {
+                        variable: {
+                          objRoot: $state,
+                          variablePath: ["selectedDay"]
+                        },
+                        operation: 0,
+                        value: ($state.selectedDay =
+                          $state.fragmentDatePicker.values)
+                      };
+                      return (({
+                        variable,
+                        value,
+                        startIndex,
+                        deleteCount
+                      }) => {
+                        if (!variable) {
+                          return;
+                        }
+                        const { objRoot, variablePath } = variable;
+
+                        $stateSet(objRoot, variablePath, value);
+                        return value;
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+                if (
+                  $steps["updateFragmentDatePickerValue2"] != null &&
+                  typeof $steps["updateFragmentDatePickerValue2"] ===
+                    "object" &&
+                  typeof $steps["updateFragmentDatePickerValue2"].then ===
+                    "function"
+                ) {
+                  $steps["updateFragmentDatePickerValue2"] =
+                    await $steps["updateFragmentDatePickerValue2"];
+                }
+
+                $steps["updateFragmentDatePickerValue3"] = true
+                  ? (() => {
+                      const actionArgs = {
+                        operation: 0,
+                        value: ($state.updateStyle = $state.updateStyle + 1),
+                        variable: {
+                          objRoot: $state,
+                          variablePath: ["updateStyle"]
+                        }
+                      };
+                      return (({
+                        variable,
+                        value,
+                        startIndex,
+                        deleteCount
+                      }) => {
+                        if (!variable) {
+                          return;
+                        }
+                        const { objRoot, variablePath } = variable;
+
+                        $stateSet(objRoot, variablePath, value);
+                        return value;
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+                if (
+                  $steps["updateFragmentDatePickerValue3"] != null &&
+                  typeof $steps["updateFragmentDatePickerValue3"] ===
+                    "object" &&
+                  typeof $steps["updateFragmentDatePickerValue3"].then ===
+                    "function"
+                ) {
+                  $steps["updateFragmentDatePickerValue3"] =
+                    await $steps["updateFragmentDatePickerValue3"];
                 }
 
                 $steps["setBlock"] = true
@@ -10363,6 +10706,77 @@ function PlasmicCalendar24__RenderFunc(props: {
                       await $steps["updateFetchModalOpen"];
                   }
 
+                  $steps["updateSelectedDay"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          variable: {
+                            objRoot: $state,
+                            variablePath: ["selectedDay"]
+                          },
+                          operation: 0,
+                          value: ($state.selectedDay =
+                            $state.fragmentDatePicker.values)
+                        };
+                        return (({
+                          variable,
+                          value,
+                          startIndex,
+                          deleteCount
+                        }) => {
+                          if (!variable) {
+                            return;
+                          }
+                          const { objRoot, variablePath } = variable;
+
+                          $stateSet(objRoot, variablePath, value);
+                          return value;
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["updateSelectedDay"] != null &&
+                    typeof $steps["updateSelectedDay"] === "object" &&
+                    typeof $steps["updateSelectedDay"].then === "function"
+                  ) {
+                    $steps["updateSelectedDay"] =
+                      await $steps["updateSelectedDay"];
+                  }
+
+                  $steps["updateUpdateStyle"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          variable: {
+                            objRoot: $state,
+                            variablePath: ["updateStyle"]
+                          },
+                          operation: 0,
+                          value: ($state.updateStyle = $state.updateStyle + 1)
+                        };
+                        return (({
+                          variable,
+                          value,
+                          startIndex,
+                          deleteCount
+                        }) => {
+                          if (!variable) {
+                            return;
+                          }
+                          const { objRoot, variablePath } = variable;
+
+                          $stateSet(objRoot, variablePath, value);
+                          return value;
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["updateUpdateStyle"] != null &&
+                    typeof $steps["updateUpdateStyle"] === "object" &&
+                    typeof $steps["updateUpdateStyle"].then === "function"
+                  ) {
+                    $steps["updateUpdateStyle"] =
+                      await $steps["updateUpdateStyle"];
+                  }
+
                   $steps["setDiscout"] = true
                     ? (() => {
                         const actionArgs = {
@@ -10492,171 +10906,167 @@ function PlasmicCalendar24__RenderFunc(props: {
           </div>
         </AntdModal>
       </div>
-      {(
-        hasVariant(globalVariants, "screen", "mobile")
-          ? (() => {
-              try {
-                return $props.isFirstVisit === false;
-              } catch (e) {
-                if (
-                  e instanceof TypeError ||
-                  e?.plasmicType === "PlasmicUndefinedDataError"
-                ) {
-                  return true;
+      <div className={classNames(projectcss.all, sty.freeBox___93YnJ)}>
+        {(
+          hasVariant(globalVariants, "screen", "mobile")
+            ? (() => {
+                try {
+                  return $props.isFirstVisit === false;
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return true;
+                  }
+                  throw e;
                 }
-                throw e;
-              }
-            })()
-          : (() => {
-              try {
-                return $props.isFirstVisit === false;
-              } catch (e) {
-                if (
-                  e instanceof TypeError ||
-                  e?.plasmicType === "PlasmicUndefinedDataError"
-                ) {
-                  return true;
+              })()
+            : (() => {
+                try {
+                  return $props.isFirstVisit === false;
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return true;
+                  }
+                  throw e;
                 }
-                throw e;
-              }
-            })()
-      ) ? (
-        <div
-          data-plasmic-name={"tourguide"}
-          data-plasmic-override={overrides.tourguide}
-          className={classNames(projectcss.all, sty.tourguide)}
-        >
+              })()
+        ) ? (
           <div
-            data-plasmic-name={"block3"}
-            data-plasmic-override={overrides.block3}
-            className={classNames(projectcss.all, sty.block3)}
+            data-plasmic-name={"tourguide"}
+            data-plasmic-override={overrides.tourguide}
+            className={classNames(projectcss.all, sty.tourguide)}
           >
             <div
-              data-plasmic-name={"color"}
-              data-plasmic-override={overrides.color}
-              className={classNames(projectcss.all, sty.color)}
-            />
-
-            <div
-              data-plasmic-name={"text"}
-              data-plasmic-override={overrides.text}
-              className={classNames(projectcss.all, sty.text)}
+              data-plasmic-name={"block3"}
+              data-plasmic-override={overrides.block3}
+              className={classNames(projectcss.all, sty.block3)}
             >
               <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__kcShW
-                )}
+                data-plasmic-name={"color"}
+                data-plasmic-override={overrides.color}
+                className={classNames(projectcss.all, sty.color)}
+              />
+
+              <div
+                data-plasmic-name={"text"}
+                data-plasmic-override={overrides.text}
+                className={classNames(projectcss.all, sty.text)}
               >
-                {
-                  "\u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u0628\u0633\u062a\u0647"
-                }
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__kcShW
+                  )}
+                >
+                  {
+                    "\u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u0628\u0633\u062a\u0647"
+                  }
+                </div>
+              </div>
+            </div>
+            <div
+              data-plasmic-name={"smartBookings"}
+              data-plasmic-override={overrides.smartBookings}
+              className={classNames(projectcss.all, sty.smartBookings)}
+            >
+              <div
+                data-plasmic-name={"color2"}
+                data-plasmic-override={overrides.color2}
+                className={classNames(projectcss.all, sty.color2)}
+              />
+
+              <div
+                data-plasmic-name={"text2"}
+                data-plasmic-override={overrides.text2}
+                className={classNames(projectcss.all, sty.text2)}
+              >
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__y6SYi
+                  )}
+                >
+                  {
+                    "\u0631\u0632\u0631\u0648 \u0647\u0648\u0634\u0645\u0646\u062f"
+                  }
+                </div>
+              </div>
+            </div>
+            <div
+              data-plasmic-name={"discount"}
+              data-plasmic-override={overrides.discount}
+              className={classNames(projectcss.all, sty.discount)}
+            >
+              <div
+                data-plasmic-name={"color3"}
+                data-plasmic-override={overrides.color3}
+                className={classNames(projectcss.all, sty.color3)}
+              />
+
+              <div
+                data-plasmic-name={"text3"}
+                data-plasmic-override={overrides.text3}
+                className={classNames(projectcss.all, sty.text3)}
+              >
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__jqHrL
+                  )}
+                >
+                  {"\u062a\u062e\u0641\u06cc\u0641"}
+                </div>
+              </div>
+            </div>
+            <div
+              data-plasmic-name={"note"}
+              data-plasmic-override={overrides.note}
+              className={classNames(projectcss.all, sty.note)}
+            >
+              <PlasmicImg__
+                alt={""}
+                className={classNames(sty.img___4TCQo)}
+                displayHeight={"9px"}
+                displayMaxHeight={"none"}
+                displayMaxWidth={"100%"}
+                displayMinHeight={"0"}
+                displayMinWidth={"0"}
+                displayWidth={"auto"}
+                loading={"lazy"}
+                src={{
+                  src: "/plasmic/website_starter/images/image188.svg",
+                  fullWidth: 8,
+                  fullHeight: 8,
+                  aspectRatio: undefined
+                }}
+              />
+
+              <div
+                data-plasmic-name={"text4"}
+                data-plasmic-override={overrides.text4}
+                className={classNames(projectcss.all, sty.text4)}
+              >
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__wy9Po
+                  )}
+                >
+                  {"\u06cc\u0627\u062f\u062f\u0627\u0634\u062a"}
+                </div>
               </div>
             </div>
           </div>
-          <div
-            data-plasmic-name={"smartBookings"}
-            data-plasmic-override={overrides.smartBookings}
-            className={classNames(projectcss.all, sty.smartBookings)}
-          >
-            <div
-              data-plasmic-name={"color2"}
-              data-plasmic-override={overrides.color2}
-              className={classNames(projectcss.all, sty.color2)}
-            />
-
-            <div
-              data-plasmic-name={"text2"}
-              data-plasmic-override={overrides.text2}
-              className={classNames(projectcss.all, sty.text2)}
-            >
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__y6SYi
-                )}
-              >
-                {
-                  "\u0631\u0632\u0631\u0648 \u0647\u0648\u0634\u0645\u0646\u062f"
-                }
-              </div>
-            </div>
-          </div>
-          <div
-            data-plasmic-name={"discount"}
-            data-plasmic-override={overrides.discount}
-            className={classNames(projectcss.all, sty.discount)}
-          >
-            <div
-              data-plasmic-name={"color3"}
-              data-plasmic-override={overrides.color3}
-              className={classNames(projectcss.all, sty.color3)}
-            />
-
-            <div
-              data-plasmic-name={"text3"}
-              data-plasmic-override={overrides.text3}
-              className={classNames(projectcss.all, sty.text3)}
-            >
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__jqHrL
-                )}
-              >
-                {"\u062a\u062e\u0641\u06cc\u0641"}
-              </div>
-            </div>
-          </div>
-          <div
-            data-plasmic-name={"note"}
-            data-plasmic-override={overrides.note}
-            className={classNames(projectcss.all, sty.note)}
-          >
-            <PlasmicImg__
-              alt={""}
-              className={classNames(sty.img___4TCQo)}
-              displayHeight={"9px"}
-              displayMaxHeight={"none"}
-              displayMaxWidth={"100%"}
-              displayMinHeight={"0"}
-              displayMinWidth={"0"}
-              displayWidth={"auto"}
-              loading={"lazy"}
-              src={{
-                src: "/plasmic/website_starter/images/image188.svg",
-                fullWidth: 8,
-                fullHeight: 8,
-                aspectRatio: undefined
-              }}
-            />
-
-            <div
-              data-plasmic-name={"text4"}
-              data-plasmic-override={overrides.text4}
-              className={classNames(projectcss.all, sty.text4)}
-            >
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__wy9Po
-                )}
-              >
-                {"\u06cc\u0627\u062f\u062f\u0627\u0634\u062a"}
-              </div>
-            </div>
-          </div>
-        </div>
-      ) : null}
-      <div
-        data-plasmic-name={"submitChange"}
-        data-plasmic-override={overrides.submitChange}
-        className={classNames(projectcss.all, sty.submitChange)}
-      >
+        ) : null}
         <div className={classNames(projectcss.all, sty.freeBox___4G6Tz)}>
           {(
             hasVariant(globalVariants, "screen", "mobile")
@@ -10664,7 +11074,8 @@ function PlasmicCalendar24__RenderFunc(props: {
                   try {
                     return (
                       (!!$state.platformRequestStatus &&
-                        !!$state.platformRequestStatus.isLoading) ||
+                        (!!$state.platformRequestStatus.isLoading ||
+                          !!$state.platformRequestStatus.data)) ||
                       $state.manualResultShow
                     );
                   } catch (e) {
@@ -10681,7 +11092,8 @@ function PlasmicCalendar24__RenderFunc(props: {
                   try {
                     return (
                       (!!$state.platformRequestStatus &&
-                        !!$state.platformRequestStatus.isLoading) ||
+                        (!!$state.platformRequestStatus.isLoading ||
+                          !!$state.platformRequestStatus.data)) ||
                       $state.manualResultShow
                     );
                   } catch (e) {
@@ -10689,7 +11101,7 @@ function PlasmicCalendar24__RenderFunc(props: {
                       e instanceof TypeError ||
                       e?.plasmicType === "PlasmicUndefinedDataError"
                     ) {
-                      return true;
+                      return false;
                     }
                     throw e;
                   }
@@ -10774,20 +11186,192 @@ function PlasmicCalendar24__RenderFunc(props: {
                 }
               }}
             >
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__p8HL
-                )}
-              >
-                {
-                  "\u0646\u062a\u06cc\u062c\u0647 \u0648\u06cc\u0631\u0627\u06cc\u0634"
-                }
+              <div className={classNames(projectcss.all, sty.freeBox___48Nrb)}>
+                {(() => {
+                  try {
+                    return (() => {
+                      if (
+                        !$state.platformRequestStatus ||
+                        !$state.platformRequestStatus.data ||
+                        Object.keys($state.platformRequestStatus.data)
+                          .length === 0
+                      ) {
+                        return false;
+                      }
+                      const platforms = $state.platformRequestStatus.data;
+                      const keys = Object.keys(platforms);
+                      const jabama_smart_price =
+                        $state.getJabamaSmartPriceStatus2?.data;
+                      const isJabamaConflict =
+                        jabama_smart_price?.[0]?.status === true &&
+                        ($state.requestdata?.discount != null ||
+                          $state.requestdata?.price != null);
+                      return keys.every(key => {
+                        if (key === "jabama" && isJabamaConflict) return false;
+                        const item = platforms[key];
+                        return (
+                          item.final_status === true && item.status_code === 200
+                        );
+                      });
+                    })();
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return true;
+                    }
+                    throw e;
+                  }
+                })() ? (
+                  <PlasmicImg__
+                    data-plasmic-name={"ok7"}
+                    data-plasmic-override={overrides.ok7}
+                    alt={""}
+                    className={classNames(sty.ok7)}
+                    displayHeight={
+                      hasVariant(globalVariants, "screen", "mobile")
+                        ? "30px"
+                        : "30px"
+                    }
+                    displayMaxHeight={"none"}
+                    displayMaxWidth={"100%"}
+                    displayMinHeight={"0"}
+                    displayMinWidth={"0"}
+                    displayWidth={"auto"}
+                    loading={
+                      hasVariant(globalVariants, "screen", "mobile")
+                        ? "lazy"
+                        : "eager"
+                    }
+                    src={{
+                      src: "/plasmic/website_starter/images/image27.svg",
+                      fullWidth: 26,
+                      fullHeight: 26,
+                      aspectRatio: 1
+                    }}
+                  />
+                ) : null}
+                {(() => {
+                  try {
+                    return (() => {
+                      if (
+                        !$state.platformRequestStatus ||
+                        !$state.platformRequestStatus.data ||
+                        Object.keys($state.platformRequestStatus.data)
+                          .length === 0
+                      ) {
+                        return false;
+                      }
+                      const platforms = $state.platformRequestStatus.data;
+                      const keys = Object.keys(platforms);
+                      const jabama_smart_price =
+                        $state.getJabamaSmartPriceStatus2?.data;
+                      const isJabamaConflict =
+                        jabama_smart_price?.[0]?.status === true &&
+                        ($state.requestdata?.discount != null ||
+                          $state.requestdata?.price != null);
+                      return keys.some(key => {
+                        if (key === "jabama" && isJabamaConflict) return false;
+                        const item = platforms[key];
+                        return (
+                          item.final_status === false ||
+                          item.status_code !== 200
+                        );
+                      });
+                    })();
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return true;
+                    }
+                    throw e;
+                  }
+                })() ? (
+                  <PlasmicImg__
+                    data-plasmic-name={"fail3"}
+                    data-plasmic-override={overrides.fail3}
+                    alt={""}
+                    className={classNames(sty.fail3, "element")}
+                    displayHeight={
+                      hasVariant(globalVariants, "screen", "mobile")
+                        ? "30px"
+                        : "30px"
+                    }
+                    displayMaxHeight={"none"}
+                    displayMaxWidth={"100%"}
+                    displayMinHeight={"0"}
+                    displayMinWidth={"0"}
+                    displayWidth={"auto"}
+                    loading={
+                      hasVariant(globalVariants, "screen", "mobile")
+                        ? "lazy"
+                        : "eager"
+                    }
+                    src={{
+                      src: "/plasmic/website_starter/images/image28.svg",
+                      fullWidth: 26,
+                      fullHeight: 26,
+                      aspectRatio: 1
+                    }}
+                  />
+                ) : null}
+                {(() => {
+                  try {
+                    return (() => {
+                      if (
+                        !$state.platformRequestStatus ||
+                        !$state.platformRequestStatus.data ||
+                        Object.keys($state.platformRequestStatus.data)
+                          .length === 0
+                      ) {
+                        return true;
+                      } else {
+                        return false;
+                      }
+                    })();
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return true;
+                    }
+                    throw e;
+                  }
+                })() ? (
+                  <PlasmicImg__
+                    data-plasmic-name={"loading5"}
+                    data-plasmic-override={overrides.loading5}
+                    alt={""}
+                    className={classNames(sty.loading5)}
+                    displayHeight={"34px"}
+                    displayMaxHeight={"none"}
+                    displayMaxWidth={"100%"}
+                    displayMinHeight={"0"}
+                    displayMinWidth={"0"}
+                    displayWidth={"auto"}
+                    loading={"lazy"}
+                    src={{
+                      src: "/plasmic/website_starter/images/image140.gif",
+                      fullWidth: 500,
+                      fullHeight: 500,
+                      aspectRatio: undefined
+                    }}
+                  />
+                ) : null}
               </div>
             </div>
           ) : null}
         </div>
+      </div>
+      <div
+        data-plasmic-name={"submitChange"}
+        data-plasmic-override={overrides.submitChange}
+        className={classNames(projectcss.all, sty.submitChange)}
+      >
         <div
           className={classNames(
             projectcss.all,
@@ -10872,6 +11456,41 @@ function PlasmicCalendar24__RenderFunc(props: {
                   typeof $steps["runCode"].then === "function"
                 ) {
                   $steps["runCode"] = await $steps["runCode"];
+                }
+
+                $steps["updateSubmittedDates"] = true
+                  ? (() => {
+                      const actionArgs = {
+                        variable: {
+                          objRoot: $state,
+                          variablePath: ["submittedDates"]
+                        },
+                        operation: 0,
+                        value: $state.fragmentDatePicker.values
+                      };
+                      return (({
+                        variable,
+                        value,
+                        startIndex,
+                        deleteCount
+                      }) => {
+                        if (!variable) {
+                          return;
+                        }
+                        const { objRoot, variablePath } = variable;
+
+                        $stateSet(objRoot, variablePath, value);
+                        return value;
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+                if (
+                  $steps["updateSubmittedDates"] != null &&
+                  typeof $steps["updateSubmittedDates"] === "object" &&
+                  typeof $steps["updateSubmittedDates"].then === "function"
+                ) {
+                  $steps["updateSubmittedDates"] =
+                    await $steps["updateSubmittedDates"];
                 }
 
                 $steps["updateModalOpen"] = (() => {
@@ -12286,8 +12905,11 @@ const PlasmicDescendants = {
     "text3",
     "note",
     "text4",
-    "submitChange",
     "editResult",
+    "ok7",
+    "fail3",
+    "loading5",
+    "submitChange",
     "addingGuestInfo",
     "form",
     "p4",
@@ -12427,8 +13049,11 @@ const PlasmicDescendants = {
   text3: ["text3"],
   note: ["note", "text4"],
   text4: ["text4"],
-  submitChange: ["submitChange", "editResult"],
-  editResult: ["editResult"],
+  editResult: ["editResult", "ok7", "fail3", "loading5"],
+  ok7: ["ok7"],
+  fail3: ["fail3"],
+  loading5: ["loading5"],
+  submitChange: ["submitChange"],
   addingGuestInfo: [
     "addingGuestInfo",
     "form",
@@ -12544,8 +13169,11 @@ type NodeDefaultElementType = {
   text3: "div";
   note: "div";
   text4: "div";
-  submitChange: "div";
   editResult: "div";
+  ok7: typeof PlasmicImg__;
+  fail3: typeof PlasmicImg__;
+  loading5: typeof PlasmicImg__;
+  submitChange: "div";
   addingGuestInfo: typeof AntdModal;
   form: "div";
   p4: "div";
@@ -12692,8 +13320,11 @@ export const PlasmicCalendar24 = Object.assign(
     text3: makeNodeComponent("text3"),
     note: makeNodeComponent("note"),
     text4: makeNodeComponent("text4"),
-    submitChange: makeNodeComponent("submitChange"),
     editResult: makeNodeComponent("editResult"),
+    ok7: makeNodeComponent("ok7"),
+    fail3: makeNodeComponent("fail3"),
+    loading5: makeNodeComponent("loading5"),
+    submitChange: makeNodeComponent("submitChange"),
     addingGuestInfo: makeNodeComponent("addingGuestInfo"),
     form: makeNodeComponent("form"),
     p4: makeNodeComponent("p4"),
