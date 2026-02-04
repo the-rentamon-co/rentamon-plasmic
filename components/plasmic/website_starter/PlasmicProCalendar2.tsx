@@ -1815,20 +1815,6 @@ function PlasmicProCalendar2__RenderFunc(props: {
               "calendar24",
               "isGlobalLoading"
             ])}
-            onIsGlobalLoadingChange={async (...eventArgs: any) => {
-              generateStateOnChangeProp($state, [
-                "calendar24",
-                "isGlobalLoading"
-              ]).apply(null, eventArgs);
-
-              if (
-                eventArgs.length > 1 &&
-                eventArgs[1] &&
-                eventArgs[1]._plasmic_state_init_
-              ) {
-                return;
-              }
-            }}
             propertyId={(() => {
               try {
                 return $state.propId;
@@ -1843,6 +1829,20 @@ function PlasmicProCalendar2__RenderFunc(props: {
               }
             })()}
             reservationsMode={true}
+            showTutorial={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, [
+                "calendar24",
+                "isGlobalLoading"
+              ]).apply(null, eventArgs);
+
+              if (
+                eventArgs.length > 1 &&
+                eventArgs[1] &&
+                eventArgs[1]._plasmic_state_init_
+              ) {
+                return;
+              }
+            }}
           />
 
           <div

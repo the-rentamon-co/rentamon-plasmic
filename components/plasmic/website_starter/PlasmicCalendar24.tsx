@@ -104,7 +104,7 @@ export type PlasmicCalendar24__ArgsType = {
   isFirstVisit?: boolean;
   reservationsMode?: boolean;
   isGlobalLoading?: boolean;
-  onIsGlobalLoadingChange?: (val: string) => void;
+  showTutorial?: (val: string) => void;
 };
 type ArgPropType = keyof PlasmicCalendar24__ArgsType;
 export const PlasmicCalendar24__ArgProps = new Array<ArgPropType>(
@@ -114,7 +114,7 @@ export const PlasmicCalendar24__ArgProps = new Array<ArgPropType>(
   "isFirstVisit",
   "reservationsMode",
   "isGlobalLoading",
-  "onIsGlobalLoadingChange"
+  "showTutorial"
 );
 
 export type PlasmicCalendar24__OverridesType = {
@@ -140,8 +140,10 @@ export type PlasmicCalendar24__OverridesType = {
   input?: Flex__<typeof Input>;
   textInput?: Flex__<typeof TextInput>;
   numberInput2?: Flex__<typeof AntdInputNumber>;
+  fetchModals?: Flex__<"div">;
   changedFetchModal?: Flex__<typeof AntdModal>;
   editResult2?: Flex__<"div">;
+  loading6?: Flex__<typeof PlasmicImg__>;
   fetchModal?: Flex__<typeof AntdModal>;
   getJabamaSmartPriceStatus2?: Flex__<typeof ApiRequest>;
   userPlatform2?: Flex__<typeof ApiRequest>;
@@ -211,7 +213,7 @@ export interface DefaultCalendar24Props {
   isFirstVisit?: boolean;
   reservationsMode?: boolean;
   isGlobalLoading?: boolean;
-  onIsGlobalLoadingChange?: (val: string) => void;
+  showTutorial?: (val: string) => void;
   className?: string;
 }
 
@@ -349,24 +351,33 @@ function PlasmicCalendar24__RenderFunc(props: {
         type: "private",
         variableType: "boolean",
         initFunc: ({ $props, $state, $queries, $ctx }) =>
-          (() => {
-            try {
-              return (
-                $props.open &&
-                (typeof window !== "undefined"
-                  ? !document.cookie.includes("modalSeen=true")
-                  : false)
-              );
-            } catch (e) {
-              if (
-                e instanceof TypeError ||
-                e?.plasmicType === "PlasmicUndefinedDataError"
-              ) {
-                return false;
-              }
-              throw e;
-            }
-          })()
+          hasVariant(globalVariants, "screen", "mobile")
+            ? (() => {
+                try {
+                  return $state.showTutorial2;
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return false;
+                  }
+                  throw e;
+                }
+              })()
+            : (() => {
+                try {
+                  return $state.showTutorial2;
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return false;
+                  }
+                  throw e;
+                }
+              })()
       },
       {
         path: "variable3",
@@ -856,7 +867,7 @@ function PlasmicCalendar24__RenderFunc(props: {
         variableType: "boolean",
 
         valueProp: "isGlobalLoading",
-        onChangeProp: "onIsGlobalLoadingChange"
+        onChangeProp: "showTutorial"
       },
       {
         path: "manualResultShow",
@@ -875,6 +886,12 @@ function PlasmicCalendar24__RenderFunc(props: {
         type: "private",
         variableType: "array",
         initFunc: ({ $props, $state, $queries, $ctx }) => []
+      },
+      {
+        path: "showTutorial2",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => false
       }
     ],
     [$props, $ctx, $refs]
@@ -1242,6 +1259,75 @@ function PlasmicCalendar24__RenderFunc(props: {
           ) {
             $steps["updateFragmentDatePickerValue"] =
               await $steps["updateFragmentDatePickerValue"];
+          }
+        }}
+      />
+
+      <SideEffect
+        className={classNames("__wab_instance", sty.sideEffect__oTryM)}
+        onMount={async () => {
+          const $steps = {};
+
+          $steps["runCode"] = true
+            ? (() => {
+                const actionArgs = {
+                  customFunction: async () => {
+                    return (() => {
+                      if (
+                        typeof window !== "undefined" &&
+                        !document.cookie.includes("modalSeen=true")
+                      ) {
+                        return ($state.showTutorial2 = true);
+                      }
+                    })();
+                  }
+                };
+                return (({ customFunction }) => {
+                  return customFunction();
+                })?.apply(null, [actionArgs]);
+              })()
+            : undefined;
+          if (
+            $steps["runCode"] != null &&
+            typeof $steps["runCode"] === "object" &&
+            typeof $steps["runCode"].then === "function"
+          ) {
+            $steps["runCode"] = await $steps["runCode"];
+          }
+
+          $steps["runCode2"] = true
+            ? (() => {
+                const actionArgs = {
+                  customFunction: async () => {
+                    return (() => {
+                      const savedData =
+                        sessionStorage.getItem("saved_request_data");
+                      const savedPayload = sessionStorage.getItem(
+                        "saved_request_payload"
+                      );
+                      if (savedPayload) {
+                        $state.requestdata = JSON.parse(savedPayload);
+                      }
+                      if (savedData) {
+                        return ($state.platformRequestStatus = {
+                          data: JSON.parse(savedData),
+                          isLoading: false
+                        });
+                      }
+                    })();
+                  }
+                };
+                return (({ customFunction }) => {
+                  return customFunction();
+                })?.apply(null, [actionArgs]);
+              })()
+            : undefined;
+          if (
+            $steps["runCode2"] != null &&
+            typeof $steps["runCode2"] === "object" &&
+            typeof $steps["runCode2"].then === "function"
+          ) {
+            $steps["runCode2"] = await $steps["runCode2"];
           }
         }}
       />
@@ -4755,6 +4841,42 @@ function PlasmicCalendar24__RenderFunc(props: {
                 ) {
                   $steps["runCode2"] = await $steps["runCode2"];
                 }
+
+                $steps["runCode"] = true
+                  ? (() => {
+                      const actionArgs = {
+                        customFunction: async () => {
+                          return (() => {
+                            if (
+                              $state.platformRequestStatus &&
+                              $state.platformRequestStatus.data
+                            ) {
+                              sessionStorage.setItem(
+                                "saved_request_data",
+                                JSON.stringify(
+                                  $state.platformRequestStatus.data
+                                )
+                              );
+                              return sessionStorage.setItem(
+                                "saved_request_payload",
+                                JSON.stringify($state.requestdata)
+                              );
+                            }
+                          })();
+                        }
+                      };
+                      return (({ customFunction }) => {
+                        return customFunction();
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+                if (
+                  $steps["runCode"] != null &&
+                  typeof $steps["runCode"] === "object" &&
+                  typeof $steps["runCode"].then === "function"
+                ) {
+                  $steps["runCode"] = await $steps["runCode"];
+                }
               }}
             >
               <div
@@ -5696,6 +5818,42 @@ function PlasmicCalendar24__RenderFunc(props: {
                   ) {
                     $steps["runCode2"] = await $steps["runCode2"];
                   }
+
+                  $steps["runCode"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          customFunction: async () => {
+                            return (() => {
+                              if (
+                                $state.platformRequestStatus &&
+                                $state.platformRequestStatus.data
+                              ) {
+                                sessionStorage.setItem(
+                                  "saved_request_data",
+                                  JSON.stringify(
+                                    $state.platformRequestStatus.data
+                                  )
+                                );
+                                return sessionStorage.setItem(
+                                  "saved_request_payload",
+                                  JSON.stringify($state.requestdata)
+                                );
+                              }
+                            })();
+                          }
+                        };
+                        return (({ customFunction }) => {
+                          return customFunction();
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["runCode"] != null &&
+                    typeof $steps["runCode"] === "object" &&
+                    typeof $steps["runCode"].then === "function"
+                  ) {
+                    $steps["runCode"] = await $steps["runCode"];
+                  }
                 }}
               >
                 <div
@@ -5713,29 +5871,148 @@ function PlasmicCalendar24__RenderFunc(props: {
             </div>
           </div>
         </AntdModal>
-        <div className={classNames(projectcss.all, sty.freeBox__vzh4, ``)}>
-          {(() => {
-            const child$Props = {
-              className: classNames("__wab_instance", sty.changedFetchModal),
-              defaultStylesClassName: classNames(
-                projectcss.root_reset,
-                projectcss.plasmic_default_styles,
-                projectcss.plasmic_mixins,
-                styleTokensClassNames
-              ),
-              hideFooter: true,
-              maskClosable: true,
-              modalContentClassName: classNames({
-                [sty["pcls_ztF8RSkRJoo8"]]: true
-              }),
-              modalScopeClassName: sty["changedFetchModal__modal"],
-              onOpenChange: async (...eventArgs: any) => {
-                generateStateOnChangeProp($state, [
-                  "changedFetchModal",
-                  "open"
-                ]).apply(null, eventArgs);
+        <div
+          data-plasmic-name={"fetchModals"}
+          data-plasmic-override={overrides.fetchModals}
+          className={classNames(projectcss.all, sty.fetchModals, ``)}
+        >
+          <AntdModal
+            data-plasmic-name={"changedFetchModal"}
+            data-plasmic-override={overrides.changedFetchModal}
+            className={classNames("__wab_instance", sty.changedFetchModal)}
+            defaultStylesClassName={classNames(
+              projectcss.root_reset,
+              projectcss.plasmic_default_styles,
+              projectcss.plasmic_mixins,
+              styleTokensClassNames
+            )}
+            hideFooter={true}
+            maskClosable={false}
+            modalContentClassName={classNames({
+              [sty["pcls_ztF8RSkRJoo8"]]: true
+            })}
+            modalScopeClassName={sty["changedFetchModal__modal"]}
+            onOpenChange={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, [
+                "changedFetchModal",
+                "open"
+              ]).apply(null, eventArgs);
 
-                (async open => {
+              (async open => {
+                const $steps = {};
+
+                $steps["updateManualResultShow"] = true
+                  ? (() => {
+                      const actionArgs = {
+                        variable: {
+                          objRoot: $state,
+                          variablePath: ["manualResultShow"]
+                        },
+                        operation: 0,
+                        value: true
+                      };
+                      return (({
+                        variable,
+                        value,
+                        startIndex,
+                        deleteCount
+                      }) => {
+                        if (!variable) {
+                          return;
+                        }
+                        const { objRoot, variablePath } = variable;
+
+                        $stateSet(objRoot, variablePath, value);
+                        return value;
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+                if (
+                  $steps["updateManualResultShow"] != null &&
+                  typeof $steps["updateManualResultShow"] === "object" &&
+                  typeof $steps["updateManualResultShow"].then === "function"
+                ) {
+                  $steps["updateManualResultShow"] =
+                    await $steps["updateManualResultShow"];
+                }
+              }).apply(null, eventArgs);
+            }}
+            open={generateStateValueProp($state, ["changedFetchModal", "open"])}
+            title={
+              <div className={classNames(projectcss.all, sty.freeBox__xk5EO)}>
+                <div
+                  data-plasmic-name={"editResult2"}
+                  data-plasmic-override={overrides.editResult2}
+                  className={classNames(projectcss.all, sty.editResult2)}
+                  onClick={async event => {
+                    const $steps = {};
+                  }}
+                >
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__wUrJx)}
+                  >
+                    <PlasmicImg__
+                      data-plasmic-name={"loading6"}
+                      data-plasmic-override={overrides.loading6}
+                      alt={""}
+                      className={classNames(sty.loading6)}
+                      displayHeight={"34px"}
+                      displayMaxHeight={"none"}
+                      displayMaxWidth={"100%"}
+                      displayMinHeight={"0"}
+                      displayMinWidth={"0"}
+                      displayWidth={"auto"}
+                      loading={"lazy"}
+                      src={{
+                        src: "/plasmic/website_starter/images/image140.gif",
+                        fullWidth: 500,
+                        fullHeight: 500,
+                        aspectRatio: undefined
+                      }}
+                    />
+                  </div>
+                </div>
+              </div>
+            }
+            trigger={null}
+            width={
+              hasVariant(globalVariants, "screen", "smallMobile")
+                ? "320"
+                : hasVariant(globalVariants, "screen", "mobile")
+                  ? "340"
+                  : hasVariant(globalVariants, "screen", "tablet")
+                    ? "320px"
+                    : "350"
+            }
+            wrapClassName={classNames({ [sty["pcls_3wZ0Zk9YgNRd"]]: true })}
+          >
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__w1EHt
+              )}
+            >
+              <React.Fragment>
+                {(() => {
+                  try {
+                    return "برای دیدن نتیجه‌ی \xABویرایش تقویم\xBB روی این دکمه بزن";
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return "";
+                    }
+                    throw e;
+                  }
+                })()}
+              </React.Fragment>
+            </div>
+            <div className={classNames(projectcss.all, sty.freeBox__vhF4O)}>
+              <Button
+                className={classNames("__wab_instance", sty.button__o0Nfm)}
+                onClick={async event => {
                   const $steps = {};
 
                   $steps["runCode"] = true
@@ -5770,15 +6047,15 @@ function PlasmicCalendar24__RenderFunc(props: {
                     $steps["runCode"] = await $steps["runCode"];
                   }
 
-                  $steps["updateManualResultShow"] = true
+                  $steps["updateChangedFetchModalOpen"] = true
                     ? (() => {
                         const actionArgs = {
                           variable: {
                             objRoot: $state,
-                            variablePath: ["manualResultShow"]
+                            variablePath: ["changedFetchModal", "open"]
                           },
                           operation: 0,
-                          value: true
+                          value: false
                         };
                         return (({
                           variable,
@@ -5797,107 +6074,27 @@ function PlasmicCalendar24__RenderFunc(props: {
                       })()
                     : undefined;
                   if (
-                    $steps["updateManualResultShow"] != null &&
-                    typeof $steps["updateManualResultShow"] === "object" &&
-                    typeof $steps["updateManualResultShow"].then === "function"
+                    $steps["updateChangedFetchModalOpen"] != null &&
+                    typeof $steps["updateChangedFetchModalOpen"] === "object" &&
+                    typeof $steps["updateChangedFetchModalOpen"].then ===
+                      "function"
                   ) {
-                    $steps["updateManualResultShow"] =
-                      await $steps["updateManualResultShow"];
+                    $steps["updateChangedFetchModalOpen"] =
+                      await $steps["updateChangedFetchModalOpen"];
                   }
-                }).apply(null, eventArgs);
-              },
-              open: generateStateValueProp($state, [
-                "changedFetchModal",
-                "open"
-              ]),
-              title: (
-                <div className={classNames(projectcss.all, sty.freeBox__xk5EO)}>
-                  <div
-                    data-plasmic-name={"editResult2"}
-                    data-plasmic-override={overrides.editResult2}
-                    className={classNames(projectcss.all, sty.editResult2)}
-                  >
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text___6MiAy
-                      )}
-                    >
-                      {
-                        "\u0646\u062a\u06cc\u062c\u0647 \u0648\u06cc\u0631\u0627\u06cc\u0634"
-                      }
-                    </div>
-                  </div>
-                </div>
-              ),
-              trigger: null,
-              width: hasVariant(globalVariants, "screen", "smallMobile")
-                ? "320"
-                : hasVariant(globalVariants, "screen", "mobile")
-                  ? "340"
-                  : hasVariant(globalVariants, "screen", "tablet")
-                    ? "320px"
-                    : "350",
-              wrapClassName: classNames({ [sty["pcls_3wZ0Zk9YgNRd"]]: true })
-            };
-            initializeCodeComponentStates(
-              $state,
-              [
-                {
-                  name: "open",
-                  plasmicStateName: "changedFetchModal.open"
-                }
-              ],
-              [],
-              undefined ?? {},
-              child$Props
-            );
-            initializePlasmicStates(
-              $state,
-              [
-                {
-                  name: "changedFetchModal.open",
-                  initFunc: ({ $props, $state, $queries }) =>
-                    (() => {
-                      try {
-                        return (
-                          $props.open &&
-                          (typeof window !== "undefined"
-                            ? !document.cookie.includes("modalSeen=true")
-                            : false)
-                        );
-                      } catch (e) {
-                        if (
-                          e instanceof TypeError ||
-                          e?.plasmicType === "PlasmicUndefinedDataError"
-                        ) {
-                          return false;
-                        }
-                        throw e;
-                      }
-                    })()
-                }
-              ],
-              []
-            );
-            return (
-              <AntdModal
-                data-plasmic-name={"changedFetchModal"}
-                data-plasmic-override={overrides.changedFetchModal}
-                {...child$Props}
+                }}
               >
                 <div
                   className={classNames(
                     projectcss.all,
                     projectcss.__wab_text,
-                    sty.text__w1EHt
+                    sty.text__nClRy
                   )}
                 >
                   <React.Fragment>
                     {(() => {
                       try {
-                        return "از به بعد میتونی با دکمه نتیجه ویرایش\u060C نتیجه ویرایشی که انجام دادی رو ببینی";
+                        return "باشه";
                       } catch (e) {
                         if (
                           e instanceof TypeError ||
@@ -5910,9 +6107,9 @@ function PlasmicCalendar24__RenderFunc(props: {
                     })()}
                   </React.Fragment>
                 </div>
-              </AntdModal>
-            );
-          })()}
+              </Button>
+            </div>
+          </AntdModal>
           <AntdModal
             data-plasmic-name={"fetchModal"}
             data-plasmic-override={overrides.fetchModal}
@@ -7913,6 +8110,40 @@ function PlasmicCalendar24__RenderFunc(props: {
                 $steps["runCode"] = await $steps["runCode"];
               }
 
+              $steps["runCode3"] = true
+                ? (() => {
+                    const actionArgs = {
+                      customFunction: async () => {
+                        return (() => {
+                          if (
+                            $state.platformRequestStatus &&
+                            $state.platformRequestStatus.data
+                          ) {
+                            sessionStorage.setItem(
+                              "saved_request_data",
+                              JSON.stringify($state.platformRequestStatus.data)
+                            );
+                            return sessionStorage.setItem(
+                              "saved_request_payload",
+                              JSON.stringify($state.requestdata)
+                            );
+                          }
+                        })();
+                      }
+                    };
+                    return (({ customFunction }) => {
+                      return customFunction();
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["runCode3"] != null &&
+                typeof $steps["runCode3"] === "object" &&
+                typeof $steps["runCode3"].then === "function"
+              ) {
+                $steps["runCode3"] = await $steps["runCode3"];
+              }
+
               $steps["createAManualReserve"] = true
                 ? (() => {
                     const actionArgs = {
@@ -8529,6 +8760,45 @@ function PlasmicCalendar24__RenderFunc(props: {
                   typeof $steps["runCode"].then === "function"
                 ) {
                   $steps["runCode"] = await $steps["runCode"];
+                }
+
+                $steps["updateFragmentDatePickerValue4"] = true
+                  ? (() => {
+                      const actionArgs = {
+                        customFunction: async () => {
+                          return (() => {
+                            if (
+                              $state.platformRequestStatus &&
+                              $state.platformRequestStatus.data
+                            ) {
+                              sessionStorage.setItem(
+                                "saved_request_data",
+                                JSON.stringify(
+                                  $state.platformRequestStatus.data
+                                )
+                              );
+                              return sessionStorage.setItem(
+                                "saved_request_payload",
+                                JSON.stringify($state.requestdata)
+                              );
+                            }
+                          })();
+                        }
+                      };
+                      return (({ customFunction }) => {
+                        return customFunction();
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+                if (
+                  $steps["updateFragmentDatePickerValue4"] != null &&
+                  typeof $steps["updateFragmentDatePickerValue4"] ===
+                    "object" &&
+                  typeof $steps["updateFragmentDatePickerValue4"].then ===
+                    "function"
+                ) {
+                  $steps["updateFragmentDatePickerValue4"] =
+                    await $steps["updateFragmentDatePickerValue4"];
                 }
 
                 $steps["toast"] = ($props.isFirstVisit ? true : false)
@@ -10898,6 +11168,42 @@ function PlasmicCalendar24__RenderFunc(props: {
                   ) {
                     $steps["runCode2"] = await $steps["runCode2"];
                   }
+
+                  $steps["runCode"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          customFunction: async () => {
+                            return (() => {
+                              if (
+                                $state.platformRequestStatus &&
+                                $state.platformRequestStatus.data
+                              ) {
+                                sessionStorage.setItem(
+                                  "saved_request_data",
+                                  JSON.stringify(
+                                    $state.platformRequestStatus.data
+                                  )
+                                );
+                                return sessionStorage.setItem(
+                                  "saved_request_payload",
+                                  JSON.stringify($state.requestdata)
+                                );
+                              }
+                            })();
+                          }
+                        };
+                        return (({ customFunction }) => {
+                          return customFunction();
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["runCode"] != null &&
+                    typeof $steps["runCode"] === "object" &&
+                    typeof $steps["runCode"].then === "function"
+                  ) {
+                    $steps["runCode"] = await $steps["runCode"];
+                  }
                 }}
               >
                 {"\u062b\u0628\u062a "}
@@ -12864,8 +13170,10 @@ const PlasmicDescendants = {
     "input",
     "textInput",
     "numberInput2",
+    "fetchModals",
     "changedFetchModal",
     "editResult2",
+    "loading6",
     "fetchModal",
     "getJabamaSmartPriceStatus2",
     "userPlatform2",
@@ -12967,8 +13275,29 @@ const PlasmicDescendants = {
   input: ["input"],
   textInput: ["textInput"],
   numberInput2: ["numberInput2"],
-  changedFetchModal: ["changedFetchModal", "editResult2"],
-  editResult2: ["editResult2"],
+  fetchModals: [
+    "fetchModals",
+    "changedFetchModal",
+    "editResult2",
+    "loading6",
+    "fetchModal",
+    "getJabamaSmartPriceStatus2",
+    "userPlatform2",
+    "loading3",
+    "oaghak2",
+    "homsa2",
+    "snapp2",
+    "shab2",
+    "jajiga2",
+    "ok4",
+    "ok5",
+    "fail2",
+    "loading4",
+    "ok6"
+  ],
+  changedFetchModal: ["changedFetchModal", "editResult2", "loading6"],
+  editResult2: ["editResult2", "loading6"],
+  loading6: ["loading6"],
   fetchModal: [
     "fetchModal",
     "getJabamaSmartPriceStatus2",
@@ -13128,8 +13457,10 @@ type NodeDefaultElementType = {
   input: typeof Input;
   textInput: typeof TextInput;
   numberInput2: typeof AntdInputNumber;
+  fetchModals: "div";
   changedFetchModal: typeof AntdModal;
   editResult2: "div";
+  loading6: typeof PlasmicImg__;
   fetchModal: typeof AntdModal;
   getJabamaSmartPriceStatus2: typeof ApiRequest;
   userPlatform2: typeof ApiRequest;
@@ -13279,8 +13610,10 @@ export const PlasmicCalendar24 = Object.assign(
     input: makeNodeComponent("input"),
     textInput: makeNodeComponent("textInput"),
     numberInput2: makeNodeComponent("numberInput2"),
+    fetchModals: makeNodeComponent("fetchModals"),
     changedFetchModal: makeNodeComponent("changedFetchModal"),
     editResult2: makeNodeComponent("editResult2"),
+    loading6: makeNodeComponent("loading6"),
     fetchModal: makeNodeComponent("fetchModal"),
     getJabamaSmartPriceStatus2: makeNodeComponent("getJabamaSmartPriceStatus2"),
     userPlatform2: makeNodeComponent("userPlatform2"),
