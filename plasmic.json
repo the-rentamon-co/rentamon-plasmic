@@ -3317,6 +3317,20 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/panel-2"
+        },
+        {
+          "id": "-bjQjdFCWABt",
+          "name": "Gds",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicGds.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/gds.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicGds.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/gds"
         }
       ],
       "icons": [
@@ -6156,6 +6170,11 @@
           "id": "c0S-v6frywJv",
           "name": "Gemini_Generated_Image_qlz5dhqlz5dhqlz5.png",
           "filePath": "../public/plasmic/website_starter/images/geminiGeneratedImageQlz5Dhqlz5Dhqlz5Png.png"
+        },
+        {
+          "id": "cb8Vi6wJNd5C",
+          "name": "Gemini_Generated_Image_h3x5a8h3x5a8h3x5.png",
+          "filePath": "../public/plasmic/website_starter/images/geminiGeneratedImageH3X5A8H3X5A8H3X5Png.png"
         }
       ],
       "indirect": false,

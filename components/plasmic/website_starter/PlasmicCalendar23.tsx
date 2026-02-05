@@ -4412,7 +4412,7 @@ function PlasmicCalendar23__RenderFunc(props: {
                       const actionArgs = {
                         args: [
                           "POST",
-                          "https://api-v2.rentamon.com/api/setunblock",
+                          "https://replica-api-v2.darkube.app/api/setunblock",
                           undefined,
                           (() => {
                             try {
@@ -5250,7 +5250,7 @@ function PlasmicCalendar23__RenderFunc(props: {
                         const actionArgs = {
                           args: [
                             "POST",
-                            "https://api-v2.rentamon.com/api/setprice",
+                            "https://replica-api-v2.darkube.app/api/setprice",
                             undefined,
                             (() => {
                               try {
@@ -7047,7 +7047,7 @@ function PlasmicCalendar23__RenderFunc(props: {
                       const actionArgs = {
                         args: [
                           "POST",
-                          "https://api-v2.rentamon.com/api/setblock",
+                          "https://replica-api-v2.darkube.app/api/setblock",
                           undefined,
                           (() => {
                             try {
@@ -7509,7 +7509,7 @@ function PlasmicCalendar23__RenderFunc(props: {
                       const actionArgs = {
                         args: [
                           "POST",
-                          "https://api-v2.rentamon.com/api/setblock",
+                          "https://replica-api-v2.darkube.app/api/setblock",
                           undefined,
                           (() => {
                             try {
@@ -9776,7 +9776,7 @@ function PlasmicCalendar23__RenderFunc(props: {
                         const actionArgs = {
                           args: [
                             "POST",
-                            "https://api-v2.rentamon.com/api/setdiscount",
+                            "https://replica-api-v2.darkube.app/api/setdiscount",
                             undefined,
                             (() => {
                               try {

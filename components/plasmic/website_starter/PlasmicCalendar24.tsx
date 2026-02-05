@@ -1261,13 +1261,16 @@ function PlasmicCalendar24__RenderFunc(props: {
               await $steps["updateFragmentDatePickerValue"];
           }
 
-          $steps["updateFragmentDatePickerValue2"] = true
+          $steps["updateFragmentDatePickerValue2"] = false
             ? (() => {
                 const actionArgs = {
                   customFunction: async () => {
                     return (() => {
+                      sessionStorage.removeItem("saved_request_data");
+                      sessionStorage.removeItem("saved_request_payload");
                       $state.platformRequestStatus = null;
-                      return ($state.manualResultShow = false);
+                      $state.manualResultShow = false;
+                      return ($state.requestdata = null);
                     })();
                   }
                 };
@@ -1324,27 +1327,19 @@ function PlasmicCalendar24__RenderFunc(props: {
                 const actionArgs = {
                   customFunction: async () => {
                     return (() => {
-                      $state.platformRequestStatus = null;
-                      if (typeof window !== "undefined") {
-                        const savedPayloadStr = sessionStorage.getItem(
-                          "saved_request_payload"
-                        );
-                        const savedDataStr =
-                          sessionStorage.getItem("saved_request_data");
-                        if (savedPayloadStr && savedDataStr) {
-                          try {
-                            const payload = JSON.parse(savedPayloadStr);
-                            if (payload.property_id == $props.propertyId) {
-                              $state.requestdata = payload;
-                              return ($state.platformRequestStatus = {
-                                data: JSON.parse(savedDataStr),
-                                isLoading: false
-                              });
-                            }
-                          } catch (e) {
-                            return console.error("Error parsing saved data", e);
-                          }
-                        }
+                      const savedData =
+                        sessionStorage.getItem("saved_request_data");
+                      const savedPayload = sessionStorage.getItem(
+                        "saved_request_payload"
+                      );
+                      if (savedPayload) {
+                        $state.requestdata = JSON.parse(savedPayload);
+                      }
+                      if (savedData) {
+                        return ($state.platformRequestStatus = {
+                          data: JSON.parse(savedData),
+                          isLoading: false
+                        });
                       }
                     })();
                   }
@@ -4854,7 +4849,7 @@ function PlasmicCalendar24__RenderFunc(props: {
                 }
 
                 $steps["runCode2"] =
-                  $state.propId == $state.requestdata.property_id
+                  $props.propertyId == $state.requestdata.property_id
                     ? (() => {
                         const actionArgs = {
                           customFunction: async () => {
@@ -5832,7 +5827,7 @@ function PlasmicCalendar24__RenderFunc(props: {
                   }
 
                   $steps["runCode2"] =
-                    $state.propId == $state.requestdata.property_id
+                    $props.propertyId == $state.requestdata.property_id
                       ? (() => {
                           const actionArgs = {
                             customFunction: async () => {
@@ -8124,7 +8119,7 @@ function PlasmicCalendar24__RenderFunc(props: {
               }
 
               $steps["runCode"] =
-                $state.propId == $state.requestdata.property_id
+                $props.propertyId == $state.requestdata.property_id
                   ? (() => {
                       const actionArgs = {
                         customFunction: async () => {
@@ -8777,7 +8772,7 @@ function PlasmicCalendar24__RenderFunc(props: {
                 }
 
                 $steps["runCode"] =
-                  $state.propId == $state.requestdata.property_id
+                  $props.propertyId == $state.requestdata.property_id
                     ? (() => {
                         const actionArgs = {
                           customFunction: async () => {
@@ -11185,7 +11180,7 @@ function PlasmicCalendar24__RenderFunc(props: {
                   }
 
                   $steps["runCode2"] =
-                    $state.propId == $state.requestdata.property_id
+                    $props.propertyId == $state.requestdata.property_id
                       ? (() => {
                           const actionArgs = {
                             customFunction: async () => {
@@ -11661,57 +11656,30 @@ function PlasmicCalendar24__RenderFunc(props: {
                     }}
                   />
                 ) : null}
-                {(
-                  hasVariant(globalVariants, "screen", "mobile")
-                    ? (() => {
-                        try {
-                          return (() => {
-                            if (
-                              !$state.platformRequestStatus ||
-                              !$state.platformRequestStatus.data ||
-                              Object.keys($state.platformRequestStatus.data)
-                                .length === 0
-                            ) {
-                              return true;
-                            } else {
-                              return false;
-                            }
-                          })();
-                        } catch (e) {
-                          if (
-                            e instanceof TypeError ||
-                            e?.plasmicType === "PlasmicUndefinedDataError"
-                          ) {
-                            return true;
-                          }
-                          throw e;
-                        }
-                      })()
-                    : (() => {
-                        try {
-                          return (() => {
-                            if (
-                              !$state.platformRequestStatus ||
-                              !$state.platformRequestStatus.data ||
-                              Object.keys($state.platformRequestStatus.data)
-                                .length === 0
-                            ) {
-                              return true;
-                            } else {
-                              return false;
-                            }
-                          })();
-                        } catch (e) {
-                          if (
-                            e instanceof TypeError ||
-                            e?.plasmicType === "PlasmicUndefinedDataError"
-                          ) {
-                            return true;
-                          }
-                          throw e;
-                        }
-                      })()
-                ) ? (
+                {(() => {
+                  try {
+                    return (() => {
+                      if (
+                        !$state.platformRequestStatus ||
+                        !$state.platformRequestStatus.data ||
+                        Object.keys($state.platformRequestStatus.data)
+                          .length === 0
+                      ) {
+                        return true;
+                      } else {
+                        return false;
+                      }
+                    })();
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return true;
+                    }
+                    throw e;
+                  }
+                })() ? (
                   <PlasmicImg__
                     data-plasmic-name={"loading5"}
                     data-plasmic-override={overrides.loading5}

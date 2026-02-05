@@ -161,7 +161,7 @@
   --plasmic-token-destructive-destructive-soft-foreground: var(
     --token-q2yPGgIMfo_f
   );
-  --token-nCyS8fyroW2i: #d7d7d7;
+  --token-nCyS8fyroW2i: var(--token-hrGkLn5-w5KL);
   --plasmic-token-basic-border: var(--token-nCyS8fyroW2i);
   --token-5bGEKqn06x_E: #e5e7eb;
   --plasmic-token-muted-muted-soft-hover: var(--token-5bGEKqn06x_E);

@@ -2820,11 +2820,6 @@
   .freeBox___93YnJ {
     top: auto;
     left: auto;
-    justify-content: flex-start;
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-    row-gap: 0px;
   }
 }
 .tourguide {
@@ -3065,11 +3060,6 @@
   font-family: "Estedad";
   min-width: 0;
 }
-@media (max-width: 500px) {
-  .text__y6SYi {
-    padding-left: 0px;
-  }
-}
 @media (max-width: 350px) {
   .text__y6SYi {
     font-size: 10px;
@@ -3296,12 +3286,6 @@
   max-width: 100%;
   padding: 0px;
 }
-@media (max-width: 500px) {
-  .freeBox___4G6Tz {
-    justify-content: flex-end;
-    align-items: center;
-  }
-}
 .editResult {
   animation: fadeInLeft4B8ZYZskL8T 1s ease 0s 1 normal none running;
   display: flex;
@@ -3328,10 +3312,7 @@
 @media (max-width: 500px) {
   .editResult {
     animation: fadeInLeft4B8ZYZskL8T 1s ease 0s 1 normal none running;
-    width: 60px;
-    padding-left: 0px;
-    justify-content: center;
-    align-items: center;
+    width: 70px;
     flex-shrink: 0;
     display: flex;
   }
@@ -3405,11 +3386,6 @@
 }
 .loading5 > picture > img {
   object-fit: cover;
-}
-@media (max-width: 500px) {
-  .loading5 {
-    display: block;
-  }
 }
 .submitChange {
   display: flex;
