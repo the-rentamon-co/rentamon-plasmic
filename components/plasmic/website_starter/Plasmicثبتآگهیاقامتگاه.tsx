@@ -1123,12 +1123,9 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                           displayMinWidth={"0"}
                           displayWidth={"auto"}
                           loading={"lazy"}
-                          src={{
-                            src: "/plasmic/website_starter/images/handsOnAppPng2.png",
-                            fullWidth: 456,
-                            fullHeight: 600,
-                            aspectRatio: undefined
-                          }}
+                          src={
+                            "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2FmobileAppPng.png"
+                          }
                         />
                       </div>
                       <div
@@ -1147,161 +1144,30 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                           onClick={async event => {
                             const $steps = {};
 
-                            $steps["runCode"] = true
+                            $steps["goToHomepage2"] = true
                               ? (() => {
-                                  const actionArgs = {
-                                    customFunction: async () => {
-                                      return setTimeout(() => {
-                                        window.location.href =
-                                          "https://sso.rentamon.com/web/index.html?callback=https://rentamon.com/panel/";
-                                      }, 4000);
+                                  const actionArgs = { destination: `/` };
+                                  return (({ destination }) => {
+                                    if (
+                                      typeof destination === "string" &&
+                                      destination.startsWith("#")
+                                    ) {
+                                      document
+                                        .getElementById(destination.substr(1))
+                                        .scrollIntoView({ behavior: "smooth" });
+                                    } else {
+                                      __nextRouter?.push(destination);
                                     }
-                                  };
-                                  return (({ customFunction }) => {
-                                    return customFunction();
                                   })?.apply(null, [actionArgs]);
                                 })()
                               : undefined;
                             if (
-                              $steps["runCode"] != null &&
-                              typeof $steps["runCode"] === "object" &&
-                              typeof $steps["runCode"].then === "function"
+                              $steps["goToHomepage2"] != null &&
+                              typeof $steps["goToHomepage2"] === "object" &&
+                              typeof $steps["goToHomepage2"].then === "function"
                             ) {
-                              $steps["runCode"] = await $steps["runCode"];
-                            }
-
-                            $steps["invokeGlobalAction2"] = false
-                              ? (() => {
-                                  const actionArgs = {
-                                    args: [
-                                      undefined,
-                                      (() => {
-                                        try {
-                                          return "مشخصات ثبت شد و بزودی تماس می‌گیریم :) بریم روی تقویم آنلاین";
-                                        } catch (e) {
-                                          if (
-                                            e instanceof TypeError ||
-                                            e?.plasmicType ===
-                                              "PlasmicUndefinedDataError"
-                                          ) {
-                                            return undefined;
-                                          }
-                                          throw e;
-                                        }
-                                      })(),
-                                      "top-center",
-                                      5000
-                                    ]
-                                  };
-                                  return $globalActions[
-                                    "Fragment.showToast"
-                                  ]?.apply(null, [...actionArgs.args]);
-                                })()
-                              : undefined;
-                            if (
-                              $steps["invokeGlobalAction2"] != null &&
-                              typeof $steps["invokeGlobalAction2"] ===
-                                "object" &&
-                              typeof $steps["invokeGlobalAction2"].then ===
-                                "function"
-                            ) {
-                              $steps["invokeGlobalAction2"] =
-                                await $steps["invokeGlobalAction2"];
-                            }
-
-                            $steps["invokeGlobalAction"] = false
-                              ? (() => {
-                                  const actionArgs = {
-                                    args: [
-                                      "POST",
-                                      "https://gateway.rentamon.com/webhook/cross-listing-smf",
-                                      undefined,
-                                      (() => {
-                                        try {
-                                          return $state.form.value;
-                                        } catch (e) {
-                                          if (
-                                            e instanceof TypeError ||
-                                            e?.plasmicType ===
-                                              "PlasmicUndefinedDataError"
-                                          ) {
-                                            return undefined;
-                                          }
-                                          throw e;
-                                        }
-                                      })()
-                                    ]
-                                  };
-                                  return $globalActions[
-                                    "Fragment.apiRequest"
-                                  ]?.apply(null, [...actionArgs.args]);
-                                })()
-                              : undefined;
-                            if (
-                              $steps["invokeGlobalAction"] != null &&
-                              typeof $steps["invokeGlobalAction"] ===
-                                "object" &&
-                              typeof $steps["invokeGlobalAction"].then ===
-                                "function"
-                            ) {
-                              $steps["invokeGlobalAction"] =
-                                await $steps["invokeGlobalAction"];
-                            }
-
-                            $steps["invokeGlobalAction3"] = false
-                              ? (() => {
-                                  const actionArgs = { args: [] };
-                                  return $globalActions["Fragment.wait"]?.apply(
-                                    null,
-                                    [...actionArgs.args]
-                                  );
-                                })()
-                              : undefined;
-                            if (
-                              $steps["invokeGlobalAction3"] != null &&
-                              typeof $steps["invokeGlobalAction3"] ===
-                                "object" &&
-                              typeof $steps["invokeGlobalAction3"].then ===
-                                "function"
-                            ) {
-                              $steps["invokeGlobalAction3"] =
-                                await $steps["invokeGlobalAction3"];
-                            }
-
-                            $steps["updateModalOpen"] = false
-                              ? (() => {
-                                  const actionArgs = {
-                                    variable: {
-                                      objRoot: $state,
-                                      variablePath: ["modal", "open"]
-                                    },
-                                    operation: 0,
-                                    value: true
-                                  };
-                                  return (({
-                                    variable,
-                                    value,
-                                    startIndex,
-                                    deleteCount
-                                  }) => {
-                                    if (!variable) {
-                                      return;
-                                    }
-                                    const { objRoot, variablePath } = variable;
-
-                                    $stateSet(objRoot, variablePath, value);
-                                    return value;
-                                  })?.apply(null, [actionArgs]);
-                                })()
-                              : undefined;
-                            if (
-                              $steps["updateModalOpen"] != null &&
-                              typeof $steps["updateModalOpen"] === "object" &&
-                              typeof $steps["updateModalOpen"].then ===
-                                "function"
-                            ) {
-                              $steps["updateModalOpen"] =
-                                await $steps["updateModalOpen"];
+                              $steps["goToHomepage2"] =
+                                await $steps["goToHomepage2"];
                             }
                           }}
                         >
