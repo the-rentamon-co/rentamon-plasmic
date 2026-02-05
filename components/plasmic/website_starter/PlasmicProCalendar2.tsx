@@ -615,7 +615,10 @@ function PlasmicProCalendar2__RenderFunc(props: {
                             vt = parseInt(vtRaw, 10);
                             $state.vtStatus = vt;
                             if (vt === 2) {
-                              return (window.location.href = `${baseUrl}/panel-lite/`);
+                              window.location.href = `${baseUrl}/panel-lite/`;
+                            }
+                            if (vt == 1) {
+                              return (window.location.href = `${baseUrl}/panel`);
                             }
                           }
                         })();
@@ -686,7 +689,10 @@ function PlasmicProCalendar2__RenderFunc(props: {
                         if (isCurrentNaN || isFlagDifferent) {
                           setCookie("vt", flag.toString(), 0.3333);
                           if (flag === 2) {
-                            return (window.location.href = `${baseUrl}/panel-lite/`);
+                            window.location.href = `${baseUrl}/panel-lite/`;
+                          }
+                          if (flag == 1) {
+                            return (window.location.href = `${baseUrl}/panel/`);
                           }
                         }
                       })()

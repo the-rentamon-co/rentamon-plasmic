@@ -511,7 +511,7 @@ function PlasmicNavbarMnFooter__RenderFunc(props: {
                 $state.userType2 == null ||
                 $state.userType2 == ""
                   ? (() => {
-                      const actionArgs = { destination: `/panel` };
+                      const actionArgs = { destination: `/panel-2` };
                       return (({ destination }) => {
                         if (
                           typeof destination === "string" &&
