@@ -1266,11 +1266,26 @@ function PlasmicCalendar24__RenderFunc(props: {
                 const actionArgs = {
                   customFunction: async () => {
                     return (() => {
-                      sessionStorage.removeItem("saved_request_data");
-                      sessionStorage.removeItem("saved_request_payload");
-                      $state.platformRequestStatus = null;
-                      $state.manualResultShow = false;
-                      return ($state.requestdata = null);
+                      const savedPayloadStr = sessionStorage.getItem(
+                        "saved_request_payload"
+                      );
+                      if (savedPayloadStr) {
+                        try {
+                          const payload = JSON.parse(savedPayloadStr);
+                          if (payload.property_id != $props.propertyId) {
+                            sessionStorage.removeItem("saved_request_data");
+                            sessionStorage.removeItem("saved_request_payload");
+                            $state.platformRequestStatus = null;
+                            $state.manualResultShow = false;
+                            return ($state.requestdata = null);
+                          }
+                        } catch (e) {
+                          sessionStorage.removeItem("saved_request_data");
+                          return sessionStorage.removeItem(
+                            "saved_request_payload"
+                          );
+                        }
+                      }
                     })();
                   }
                 };
