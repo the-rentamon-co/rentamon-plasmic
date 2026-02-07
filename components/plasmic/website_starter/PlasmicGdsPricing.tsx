@@ -1509,6 +1509,48 @@ function PlasmicGdsPricing__RenderFunc(props: {
                     $steps["invokeGlobalAction2"] =
                       await $steps["invokeGlobalAction2"];
                   }
+
+                  $steps["invokeGlobalAction3"] = true
+                    ? (() => {
+                        const actionArgs = { args: [500] };
+                        return $globalActions["Fragment.wait"]?.apply(null, [
+                          ...actionArgs.args
+                        ]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["invokeGlobalAction3"] != null &&
+                    typeof $steps["invokeGlobalAction3"] === "object" &&
+                    typeof $steps["invokeGlobalAction3"].then === "function"
+                  ) {
+                    $steps["invokeGlobalAction3"] =
+                      await $steps["invokeGlobalAction3"];
+                  }
+
+                  $steps["goToتالار"] = true
+                    ? (() => {
+                        const actionArgs = { destination: `/menu` };
+                        return (({ destination }) => {
+                          if (
+                            typeof destination === "string" &&
+                            destination.startsWith("#")
+                          ) {
+                            document
+                              .getElementById(destination.substr(1))
+                              .scrollIntoView({ behavior: "smooth" });
+                          } else {
+                            __nextRouter?.push(destination);
+                          }
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["goToتالار"] != null &&
+                    typeof $steps["goToتالار"] === "object" &&
+                    typeof $steps["goToتالار"].then === "function"
+                  ) {
+                    $steps["goToتالار"] = await $steps["goToتالار"];
+                  }
                 }}
               >
                 {
