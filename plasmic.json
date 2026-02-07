@@ -3325,7 +3325,7 @@
           "projectId": "7SNMkB8UMukVgcWJYokeAQ",
           "renderModuleFilePath": "plasmic/website_starter/PlasmicGds.tsx",
           "importSpec": {
-            "modulePath": "../src/pages/GDS.tsx"
+            "modulePath": "../src/pages/gds.tsx"
           },
           "cssFilePath": "plasmic/website_starter/PlasmicGds.module.css",
           "scheme": "blackbox",
@@ -3339,7 +3339,7 @@
           "projectId": "7SNMkB8UMukVgcWJYokeAQ",
           "renderModuleFilePath": "plasmic/website_starter/PlasmicGdsPricing.tsx",
           "importSpec": {
-            "modulePath": "../src/pages/GDS/pricing.tsx"
+            "modulePath": "../src/pages/gds/pricing.tsx"
           },
           "cssFilePath": "plasmic/website_starter/PlasmicGdsPricing.module.css",
           "scheme": "blackbox",

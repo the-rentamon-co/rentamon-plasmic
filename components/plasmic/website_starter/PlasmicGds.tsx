@@ -282,7 +282,7 @@ function PlasmicGds__RenderFunc(props: {
 
                   $steps["goToGdsPricing"] = true
                     ? (() => {
-                        const actionArgs = { destination: `/GDS/pricing` };
+                        const actionArgs = { destination: `/gds/pricing` };
                         return (({ destination }) => {
                           if (
                             typeof destination === "string" &&
