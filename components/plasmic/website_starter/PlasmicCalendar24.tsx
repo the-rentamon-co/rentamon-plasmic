@@ -105,6 +105,7 @@ export type PlasmicCalendar24__ArgsType = {
   reservationsMode?: boolean;
   isGlobalLoading?: boolean;
   showTutorial?: (val: string) => void;
+  propertyName?: string;
 };
 type ArgPropType = keyof PlasmicCalendar24__ArgsType;
 export const PlasmicCalendar24__ArgProps = new Array<ArgPropType>(
@@ -114,7 +115,8 @@ export const PlasmicCalendar24__ArgProps = new Array<ArgPropType>(
   "isFirstVisit",
   "reservationsMode",
   "isGlobalLoading",
-  "showTutorial"
+  "showTutorial",
+  "propertyName"
 );
 
 export type PlasmicCalendar24__OverridesType = {
@@ -214,6 +216,7 @@ export interface DefaultCalendar24Props {
   reservationsMode?: boolean;
   isGlobalLoading?: boolean;
   showTutorial?: (val: string) => void;
+  propertyName?: string;
   className?: string;
 }
 
@@ -1261,29 +1264,41 @@ function PlasmicCalendar24__RenderFunc(props: {
               await $steps["updateFragmentDatePickerValue"];
           }
 
-          $steps["updateFragmentDatePickerValue2"] = false
+          $steps["updateFragmentDatePickerValue2"] = true
             ? (() => {
                 const actionArgs = {
                   customFunction: async () => {
                     return (() => {
-                      const savedPayloadStr = sessionStorage.getItem(
-                        "saved_request_payload"
-                      );
-                      if (savedPayloadStr) {
-                        try {
-                          const payload = JSON.parse(savedPayloadStr);
-                          if (payload.property_id != $props.propertyId) {
-                            sessionStorage.removeItem("saved_request_data");
-                            sessionStorage.removeItem("saved_request_payload");
-                            $state.platformRequestStatus = null;
-                            $state.manualResultShow = false;
-                            return ($state.requestdata = null);
+                      $state.platformRequestStatus = null;
+                      $state.manualResultShow = false;
+                      $state.requestdata = null;
+                      if (typeof window !== "undefined") {
+                        const savedPayloadStr = sessionStorage.getItem(
+                          "saved_request_payload"
+                        );
+                        const savedDataStr =
+                          sessionStorage.getItem("saved_request_data");
+                        if (savedPayloadStr && savedDataStr) {
+                          try {
+                            const payload = JSON.parse(savedPayloadStr);
+                            if (payload.property_id == $props.propertyId) {
+                              $state.requestdata = payload;
+                              const savedData = JSON.parse(savedDataStr);
+                              if (savedData.isLoading) {
+                                $state.platformRequestStatus = {
+                                  isLoading: true
+                                };
+                              } else {
+                                $state.platformRequestStatus = {
+                                  data: savedData,
+                                  isLoading: false
+                                };
+                              }
+                              return ($state.manualResultShow = true);
+                            }
+                          } catch (e) {
+                            return console.error("Error restoring data", e);
                           }
-                        } catch (e) {
-                          sessionStorage.removeItem("saved_request_data");
-                          return sessionStorage.removeItem(
-                            "saved_request_payload"
-                          );
                         }
                       }
                     })();

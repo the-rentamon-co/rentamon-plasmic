@@ -86,6 +86,7 @@ export const PlasmicGds__ArgProps = new Array<ArgPropType>();
 export type PlasmicGds__OverridesType = {
   root?: Flex__<"div">;
   navbarRntHeader?: Flex__<typeof NavbarRntHeader>;
+  intro?: Flex__<"div">;
   img?: Flex__<typeof PlasmicImg__>;
   textInput?: Flex__<typeof TextInput>;
   textInput2?: Flex__<typeof TextInput>;
@@ -189,7 +190,11 @@ function PlasmicGds__RenderFunc(props: {
             className={classNames("__wab_instance", sty.navbarRntHeader)}
           />
 
-          <div className={classNames(projectcss.all, sty.freeBox__i1F3O)}>
+          <div
+            data-plasmic-name={"intro"}
+            data-plasmic-override={overrides.intro}
+            className={classNames(projectcss.all, sty.intro)}
+          >
             <div className={classNames(projectcss.all, sty.freeBox__bTspa)}>
               <div
                 className={classNames(
@@ -373,8 +378,9 @@ function PlasmicGds__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "navbarRntHeader", "img", "textInput", "textInput2"],
+  root: ["root", "navbarRntHeader", "intro", "img", "textInput", "textInput2"],
   navbarRntHeader: ["navbarRntHeader"],
+  intro: ["intro", "img"],
   img: ["img"],
   textInput: ["textInput"],
   textInput2: ["textInput2"]
@@ -385,6 +391,7 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   navbarRntHeader: typeof NavbarRntHeader;
+  intro: "div";
   img: typeof PlasmicImg__;
   textInput: typeof TextInput;
   textInput2: typeof TextInput;
@@ -453,6 +460,7 @@ export const PlasmicGds = Object.assign(
   {
     // Helper components rendering sub-elements
     navbarRntHeader: makeNodeComponent("navbarRntHeader"),
+    intro: makeNodeComponent("intro"),
     img: makeNodeComponent("img"),
     textInput: makeNodeComponent("textInput"),
     textInput2: makeNodeComponent("textInput2"),

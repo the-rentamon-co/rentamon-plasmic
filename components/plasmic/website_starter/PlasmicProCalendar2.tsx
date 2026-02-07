@@ -1050,6 +1050,36 @@ function PlasmicProCalendar2__RenderFunc(props: {
                               $steps["invokeGlobalAction"] =
                                 await $steps["invokeGlobalAction"];
                             }
+
+                            $steps["runCode"] = true
+                              ? (() => {
+                                  const actionArgs = {
+                                    customFunction: async () => {
+                                      return (() => {
+                                        sessionStorage.removeItem(
+                                          "saved_request_data"
+                                        );
+                                        sessionStorage.removeItem(
+                                          "saved_request_payload"
+                                        );
+                                        return console.log(
+                                          "\uD83E\uDDF9 Storage Wiped by Header!"
+                                        );
+                                      })();
+                                    }
+                                  };
+                                  return (({ customFunction }) => {
+                                    return customFunction();
+                                  })?.apply(null, [actionArgs]);
+                                })()
+                              : undefined;
+                            if (
+                              $steps["runCode"] != null &&
+                              typeof $steps["runCode"] === "object" &&
+                              typeof $steps["runCode"].then === "function"
+                            ) {
+                              $steps["runCode"] = await $steps["runCode"];
+                            }
                           }).apply(null, eventArgs);
                         }}
                         options={
