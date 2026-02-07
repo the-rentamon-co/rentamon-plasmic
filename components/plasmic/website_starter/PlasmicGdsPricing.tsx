@@ -1281,6 +1281,23 @@ function PlasmicGdsPricing__RenderFunc(props: {
                     "\u0642\u06cc\u0645\u062a \u0627\u06cc\u0627\u0645 \u067e\u06cc\u06a9"
                   }
                 </div>
+                <Input
+                  data-plasmic-name={"holiday"}
+                  data-plasmic-override={overrides.holiday}
+                  className={classNames("__wab_instance", sty.holiday)}
+                  onChange={async (...eventArgs: any) => {
+                    generateStateOnChangeProp($state, [
+                      "holiday",
+                      "value"
+                    ]).apply(null, eventArgs);
+                  }}
+                  placeholder={
+                    "\u0645\u062b\u0644\u0627 \u06f3\u060c\u06f0\u06f0\u06f0\u060c\u06f0\u06f0\u06f0"
+                  }
+                  type={"number"}
+                  value={generateStateValueProp($state, ["holiday", "value"])}
+                />
+
                 <div
                   className={classNames(
                     projectcss.all,
@@ -1426,22 +1443,6 @@ function PlasmicGdsPricing__RenderFunc(props: {
                     })()}
                   </React.Fragment>
                 </div>
-                <Input
-                  data-plasmic-name={"holiday"}
-                  data-plasmic-override={overrides.holiday}
-                  className={classNames("__wab_instance", sty.holiday)}
-                  onChange={async (...eventArgs: any) => {
-                    generateStateOnChangeProp($state, [
-                      "holiday",
-                      "value"
-                    ]).apply(null, eventArgs);
-                  }}
-                  placeholder={
-                    "\u0645\u062b\u0644\u0627 \u06f3\u060c\u06f0\u06f0\u06f0\u060c\u06f0\u06f0\u06f0"
-                  }
-                  type={"number"}
-                  value={generateStateValueProp($state, ["holiday", "value"])}
-                />
               </div>
             </div>
             <div className={classNames(projectcss.all, sty.freeBox__i5WzH)}>
