@@ -3325,12 +3325,26 @@
           "projectId": "7SNMkB8UMukVgcWJYokeAQ",
           "renderModuleFilePath": "plasmic/website_starter/PlasmicGds.tsx",
           "importSpec": {
-            "modulePath": "../src/pages/gds.tsx"
+            "modulePath": "../src/pages/GDS.tsx"
           },
           "cssFilePath": "plasmic/website_starter/PlasmicGds.module.css",
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/gds"
+        },
+        {
+          "id": "ughXhz3-XBs4",
+          "name": "GdsPricing",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicGdsPricing.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/GDS/pricing.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicGdsPricing.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/GDS/pricing"
         }
       ],
       "icons": [
@@ -6175,6 +6189,21 @@
           "id": "cb8Vi6wJNd5C",
           "name": "Gemini_Generated_Image_h3x5a8h3x5a8h3x5.png",
           "filePath": "../public/plasmic/website_starter/images/geminiGeneratedImageH3X5A8H3X5A8H3X5Png.png"
+        },
+        {
+          "id": "LRGYn5fpoZS-",
+          "name": "error.png",
+          "filePath": "../public/plasmic/website_starter/images/errorPng.png"
+        },
+        {
+          "id": "KXGhE6yqgEgl",
+          "name": "error-svgrepo-com.svg",
+          "filePath": "../public/plasmic/website_starter/images/errorSvgrepoComSvg.svg"
+        },
+        {
+          "id": "8yI51i8pxiLM",
+          "name": "error-svgrepo-com (1).svg",
+          "filePath": "../public/plasmic/website_starter/images/errorSvgrepoCom1Svg.svg"
         }
       ],
       "indirect": false,

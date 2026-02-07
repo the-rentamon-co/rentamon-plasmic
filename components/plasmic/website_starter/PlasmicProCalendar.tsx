@@ -61,6 +61,7 @@ import {
 
 import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
 import SideBar2 from "../../SideBar2"; // plasmic-import: 03ZPQfFyBXgI/component
+import ToastMessageRnt from "../../ToastMessageRnt"; // plasmic-import: _mkSLPxHmSdr/component
 import Select from "../../Select"; // plasmic-import: GgjLI5qwOqwu/component
 import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
 import Calendar23 from "../../Calendar23"; // plasmic-import: 9y5OemMhUNlV/component
@@ -92,6 +93,7 @@ export type PlasmicProCalendar__OverridesType = {
   root?: Flex__<"div">;
   header2?: Flex__<"div">;
   sideBar2?: Flex__<typeof SideBar2>;
+  toastMessageRnt?: Flex__<typeof ToastMessageRnt>;
   headerMobileNew?: Flex__<"div">;
   header?: Flex__<"div">;
   right?: Flex__<"div">;
@@ -111,6 +113,7 @@ export type PlasmicProCalendar__OverridesType = {
   clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
   faviconRntComponent?: Flex__<typeof FaviconRntComponent>;
   modal?: Flex__<typeof AntdModal>;
+  featureStatusAlert?: Flex__<typeof AntdModal>;
 };
 
 export interface DefaultProCalendarProps {}
@@ -347,6 +350,13 @@ function PlasmicProCalendar__RenderFunc(props: {
         type: "private",
         variableType: "boolean",
         initFunc: ({ $props, $state, $queries, $ctx }) => false
+      },
+      {
+        path: "featureStatusAlert.open",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) =>
+          hasVariant(globalVariants, "screen", "mobile") ? false : false
       }
     ],
     [$props, $ctx, $refs]
@@ -872,6 +882,12 @@ function PlasmicProCalendar__RenderFunc(props: {
 
             <div className={classNames(projectcss.all, sty.freeBox__wmsyM)} />
           </div>
+          <ToastMessageRnt
+            data-plasmic-name={"toastMessageRnt"}
+            data-plasmic-override={overrides.toastMessageRnt}
+            className={classNames("__wab_instance", sty.toastMessageRnt)}
+          />
+
           {(() => {
             try {
               return $state.isTheFirstVisit === false;
@@ -1008,24 +1024,11 @@ function PlasmicProCalendar__RenderFunc(props: {
                                   const actionArgs = {
                                     args: [
                                       "POST",
-                                      "https://gateway.rentamon.com/webhook/process_calendar_followUp",
+                                      "https://prod.miaan.ir/webhook/process_calendar_followUp",
                                       undefined,
                                       (() => {
-                                        try {
-                                          return (() => {
-                                            let a = { prop_id: $state.propId };
-                                            return a;
-                                          })();
-                                        } catch (e) {
-                                          if (
-                                            e instanceof TypeError ||
-                                            e?.plasmicType ===
-                                              "PlasmicUndefinedDataError"
-                                          ) {
-                                            return undefined;
-                                          }
-                                          throw e;
-                                        }
+                                        let a = { prop_id: $state.propId };
+                                        return a;
                                       })()
                                     ]
                                   };
@@ -2128,6 +2131,115 @@ function PlasmicProCalendar__RenderFunc(props: {
               </div>
             </div>
           </AntdModal>
+          <AntdModal
+            data-plasmic-name={"featureStatusAlert"}
+            data-plasmic-override={overrides.featureStatusAlert}
+            className={classNames("__wab_instance", sty.featureStatusAlert)}
+            defaultStylesClassName={classNames(
+              projectcss.root_reset,
+              projectcss.plasmic_default_styles,
+              projectcss.plasmic_mixins,
+              styleTokensClassNames
+            )}
+            hideFooter={true}
+            maskClosable={false}
+            modalScopeClassName={sty["featureStatusAlert__modal"]}
+            onOpenChange={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, [
+                "featureStatusAlert",
+                "open"
+              ]).apply(null, eventArgs);
+            }}
+            open={generateStateValueProp($state, [
+              "featureStatusAlert",
+              "open"
+            ])}
+            title={null}
+            trigger={null}
+          >
+            <div className={classNames(projectcss.all, sty.freeBox__hfnMt)}>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text___3Pjfc
+                )}
+              >
+                {hasVariant(globalVariants, "screen", "smallMobile")
+                  ? "\u26a0\ufe0f\r\n\u0628\u0647 \u062f\u0644\u06cc\u0644 \u0627\u062e\u062a\u0644\u0627\u0644 \u0633\u0631\u0627\u0633\u0631\u06cc \u0631\u0648\u06cc \u0627\u06cc\u0646\u062a\u0631\u0646\u062a \u06a9\u0634\u0648\u0631\u060c \u0645\u0645\u06a9\u0646\u0647 \u0628\u0639\u0636\u06cc \u062a\u063a\u06cc\u06cc\u0631\u0627\u062a \u0628\u0627 \u062e\u0637\u0627 \u0645\u0648\u0627\u062c\u0647 \u0628\u0634\u0646"
+                  : "\u26a0\ufe0f\r\n\u0647\u0634\u062f\u0627\u0631: \u0648\u06cc\u0698\u06af\u06cc \u00ab\u067e\u0627\u0633\u0628\u0627\u0646\u00bb \u062e\u0627\u0645\u0648\u0634\u0647!\n\u0633\u0631\u06cc\u0639\u200c\u062a\u0631 \u0631\u0648\u0634\u0646\u0634 \u06a9\u0646 \u062a\u0627 \u062a\u062f\u0627\u062e\u0644\u06cc \u062f\u0631 \u0631\u0632\u0631\u0648\u0647\u0627\u062a \u067e\u06cc\u0634 \u0646\u06cc\u0627\u062f"}
+              </div>
+            </div>
+            <div
+              className={classNames(projectcss.all, sty.freeBox__vQCjg)}
+              onClick={async event => {
+                const $steps = {};
+
+                $steps["goToSettings"] = true
+                  ? (() => {
+                      const actionArgs = { destination: `/settings` };
+                      return (({ destination }) => {
+                        if (
+                          typeof destination === "string" &&
+                          destination.startsWith("#")
+                        ) {
+                          document
+                            .getElementById(destination.substr(1))
+                            .scrollIntoView({ behavior: "smooth" });
+                        } else {
+                          __nextRouter?.push(destination);
+                        }
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+                if (
+                  $steps["goToSettings"] != null &&
+                  typeof $steps["goToSettings"] === "object" &&
+                  typeof $steps["goToSettings"].then === "function"
+                ) {
+                  $steps["goToSettings"] = await $steps["goToSettings"];
+                }
+              }}
+            >
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__q2K89
+                )}
+                onClick={async event => {
+                  const $steps = {};
+
+                  $steps["goToSettings"] = true
+                    ? (() => {
+                        const actionArgs = { destination: `/settings` };
+                        return (({ destination }) => {
+                          if (
+                            typeof destination === "string" &&
+                            destination.startsWith("#")
+                          ) {
+                            document
+                              .getElementById(destination.substr(1))
+                              .scrollIntoView({ behavior: "smooth" });
+                          } else {
+                            __nextRouter?.push(destination);
+                          }
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["goToSettings"] != null &&
+                    typeof $steps["goToSettings"] === "object" &&
+                    typeof $steps["goToSettings"].then === "function"
+                  ) {
+                    $steps["goToSettings"] = await $steps["goToSettings"];
+                  }
+                }}
+              >
+                {"\u062a\u0646\u0638\u06cc\u0645\u0627\u062a"}
+              </div>
+            </div>
+          </AntdModal>
         </div>
       </div>
     </React.Fragment>
@@ -2139,6 +2251,7 @@ const PlasmicDescendants = {
     "root",
     "header2",
     "sideBar2",
+    "toastMessageRnt",
     "headerMobileNew",
     "header",
     "right",
@@ -2157,10 +2270,12 @@ const PlasmicDescendants = {
     "navbarMnFooter",
     "clarityRntComponent",
     "faviconRntComponent",
-    "modal"
+    "modal",
+    "featureStatusAlert"
   ],
   header2: ["header2", "sideBar2"],
   sideBar2: ["sideBar2"],
+  toastMessageRnt: ["toastMessageRnt"],
   headerMobileNew: [
     "headerMobileNew",
     "header",
@@ -2212,7 +2327,8 @@ const PlasmicDescendants = {
   navbarMnFooter: ["navbarMnFooter"],
   clarityRntComponent: ["clarityRntComponent"],
   faviconRntComponent: ["faviconRntComponent"],
-  modal: ["modal"]
+  modal: ["modal"],
+  featureStatusAlert: ["featureStatusAlert"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -2221,6 +2337,7 @@ type NodeDefaultElementType = {
   root: "div";
   header2: "div";
   sideBar2: typeof SideBar2;
+  toastMessageRnt: typeof ToastMessageRnt;
   headerMobileNew: "div";
   header: "div";
   right: "div";
@@ -2240,6 +2357,7 @@ type NodeDefaultElementType = {
   clarityRntComponent: typeof ClarityRntComponent;
   faviconRntComponent: typeof FaviconRntComponent;
   modal: typeof AntdModal;
+  featureStatusAlert: typeof AntdModal;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -2306,6 +2424,7 @@ export const PlasmicProCalendar = Object.assign(
     // Helper components rendering sub-elements
     header2: makeNodeComponent("header2"),
     sideBar2: makeNodeComponent("sideBar2"),
+    toastMessageRnt: makeNodeComponent("toastMessageRnt"),
     headerMobileNew: makeNodeComponent("headerMobileNew"),
     header: makeNodeComponent("header"),
     right: makeNodeComponent("right"),
@@ -2325,6 +2444,7 @@ export const PlasmicProCalendar = Object.assign(
     clarityRntComponent: makeNodeComponent("clarityRntComponent"),
     faviconRntComponent: makeNodeComponent("faviconRntComponent"),
     modal: makeNodeComponent("modal"),
+    featureStatusAlert: makeNodeComponent("featureStatusAlert"),
 
     // Metadata about props expected for PlasmicProCalendar
     internalVariantProps: PlasmicProCalendar__VariantProps,

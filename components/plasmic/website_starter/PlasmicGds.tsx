@@ -61,6 +61,7 @@ import {
 
 import NavbarRntHeader from "../../NavbarRntHeader"; // plasmic-import: gWac1FMbIJat/component
 import TextInput from "../../TextInput"; // plasmic-import: 7KjdVT2JykAk/component
+import MiaanFooter from "../../MiaanFooter"; // plasmic-import: DSdlo5kdtbOe/component
 import { _useGlobalVariants } from "./plasmic"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectModule
 import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/styleTokensProvider
 
@@ -87,9 +88,9 @@ export type PlasmicGds__OverridesType = {
   root?: Flex__<"div">;
   navbarRntHeader?: Flex__<typeof NavbarRntHeader>;
   intro?: Flex__<"div">;
-  img?: Flex__<typeof PlasmicImg__>;
   textInput?: Flex__<typeof TextInput>;
   textInput2?: Flex__<typeof TextInput>;
+  miaanFooter?: Flex__<typeof MiaanFooter>;
 };
 
 export interface DefaultGdsProps {}
@@ -190,187 +191,221 @@ function PlasmicGds__RenderFunc(props: {
             className={classNames("__wab_instance", sty.navbarRntHeader)}
           />
 
-          <div
-            data-plasmic-name={"intro"}
-            data-plasmic-override={overrides.intro}
-            className={classNames(projectcss.all, sty.intro)}
-          >
-            <div className={classNames(projectcss.all, sty.freeBox__bTspa)}>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__mil54
-                )}
-              >
-                {
-                  "\u0628\u0627\u0632\u062f\u06cc\u062f \u0628\u06cc\u0634\u062a\u0631\u060c \u0632\u062d\u0645\u062a \u06a9\u0645\u062a\u0631"
-                }
-              </div>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__tu0MS
-                )}
-              >
-                {
-                  "\u0628\u0627 \u0645\u06cc\u0627\u0646\u060c \u0628\u0627\u0632\u062f\u06cc\u062f \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u0631\u0648 \u0628\u06cc\u0634\u062a\u0631 \u06a9\u0646\u060c \u0627\u0645\u0627 \u0645\u062f\u06cc\u0631\u06cc\u062a \u0648 \u0632\u062d\u0645\u062a \u06a9\u0627\u0631 \u0631\u0648 \u06a9\u0645\u062a\u0631 \u06a9\u0646"
-                }
-              </div>
-            </div>
-            <div className={classNames(projectcss.all, sty.freeBox__ajxHk)}>
-              <PlasmicImg__
-                data-plasmic-name={"img"}
-                data-plasmic-override={overrides.img}
-                alt={""}
-                className={classNames(sty.img)}
-                displayHeight={"auto"}
-                displayMaxHeight={"none"}
-                displayMaxWidth={"100%"}
-                displayMinHeight={"0"}
-                displayMinWidth={"0"}
-                displayWidth={"auto"}
-                loading={"lazy"}
-                src={{
-                  src: "/plasmic/website_starter/images/geminiGeneratedImageH3X5A8H3X5A8H3X5Png.png",
-                  fullWidth: 2048,
-                  fullHeight: 2048,
-                  aspectRatio: undefined
-                }}
-              />
-            </div>
-          </div>
-          <div className={classNames(projectcss.all, sty.freeBox__sb1Hf)}>
-            <div className={classNames(projectcss.all, sty.freeBox__gjWfp)}>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__a6ZIp
-                )}
-              >
-                {
-                  "\u0628\u0627 \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u0645\u06cc\u0627\u0646\u060c \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u062f\u0631 \u0686\u0646\u062f\u06cc\u0646 \u062c\u0627 \u0646\u0645\u0627\u06cc\u0634 \u062f\u0627\u062f\u0647 \u0645\u06cc\u0634\u0647"
-                }
-              </div>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text___2ANxG
-                )}
-              >
-                {
-                  "\u0645\u06cc\u0627\u0646 \u0622\u06af\u0647\u06cc \u062a\u0648 \u0631\u0648 \u062f\u0631 \u0686\u0646\u062f\u06cc\u0646 \u06a9\u0627\u0646\u0627\u0644 \u0645\u062e\u062a\u0644\u0641 \u0628\u0647 \u0635\u0648\u0631\u062a \u062e\u0648\u062f\u06a9\u0627\u0631 \u062b\u0628\u062a \u0645\u06cc\u0634\u0647 \u0648 \u0627\u06cc\u0646 \u0645\u0648\u0636\u0648\u0639 \u0628\u0627\u0639\u062b \u0627\u0641\u0632\u0627\u06cc\u0634 \u0628\u0627\u0632\u062f\u06cc\u062f \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u062a\u0648\u0633\u0637 \u0645\u0647\u0645\u0627\u0646 \u0647\u0627 \u0645\u06cc\u200c\u0634\u0647. \u0627\u06cc\u0646 \u0641\u0631\u0622\u06cc\u0646\u062f \u0628\u0627\u0639\u062b \u0645\u06cc\u0634\u0647 \u06a9\u0647 \u0628\u0627\u0632\u062f\u06cc\u062f \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a\u060c \u0628\u062f\u0648\u0646 \u0632\u062d\u0645\u062a \u0648 \u0645\u062f\u06cc\u0631\u06cc\u062a\u060c \u0628\u06cc\u0634\u062a\u0631 \u0628\u0634\u0647."
-                }
-              </div>
-            </div>
-          </div>
-          <div className={classNames(projectcss.all, sty.freeBox__wVirp)}>
-            <div className={classNames(projectcss.all, sty.freeBox__jNSj)}>
-              <TextInput
-                data-plasmic-name={"textInput"}
-                data-plasmic-override={overrides.textInput}
-                className={classNames("__wab_instance", sty.textInput)}
-                onChange={async (...eventArgs: any) => {
-                  ((...eventArgs) => {
-                    generateStateOnChangeProp($state, ["textInput", "value"])(
-                      (e => e.target?.value).apply(null, eventArgs)
-                    );
-                  }).apply(null, eventArgs);
-
-                  if (
-                    eventArgs.length > 1 &&
-                    eventArgs[1] &&
-                    eventArgs[1]._plasmic_state_init_
-                  ) {
-                    return;
-                  }
-                }}
-                placeholder={
-                  "\u0646\u0627\u0645 \u0648 \u0646\u0627\u0645 \u062e\u0627\u0646\u0648\u0627\u062f\u06af\u06cc"
-                }
-                value={
-                  generateStateValueProp($state, ["textInput", "value"]) ?? ""
-                }
-              />
-
-              <TextInput
-                data-plasmic-name={"textInput2"}
-                data-plasmic-override={overrides.textInput2}
-                className={classNames("__wab_instance", sty.textInput2)}
-                onChange={async (...eventArgs: any) => {
-                  ((...eventArgs) => {
-                    generateStateOnChangeProp($state, ["textInput2", "value"])(
-                      (e => e.target?.value).apply(null, eventArgs)
-                    );
-                  }).apply(null, eventArgs);
-
-                  if (
-                    eventArgs.length > 1 &&
-                    eventArgs[1] &&
-                    eventArgs[1]._plasmic_state_init_
-                  ) {
-                    return;
-                  }
-                }}
-                placeholder={
-                  "\u0634\u0645\u0627\u0631\u0647 \u0645\u0648\u0628\u0627\u06cc\u0644"
-                }
-                value={
-                  generateStateValueProp($state, ["textInput2", "value"]) ?? ""
-                }
-              />
-
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__wkSm0
-                )}
-              >
-                {"\u0627\u0631\u0633\u0627\u0644"}
-              </div>
-            </div>
+          <div className={classNames(projectcss.all, sty.freeBox__fkBvv)}>
             <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__ypA6W
-              )}
+              data-plasmic-name={"intro"}
+              data-plasmic-override={overrides.intro}
+              className={classNames(projectcss.all, sty.intro)}
             >
-              {
-                "\u062f\u0631\u0635\u0648\u0631\u062a \u0648\u062c\u0648\u062f \u0647\u0631\u06af\u0648\u0646\u0647 \u0633\u0648\u0627\u0644 \u06cc\u0627 \u0627\u0628\u0647\u0627\u0645\u060c \u062a\u0645\u0627\u0633 \u0628\u06af\u06cc\u0631\u06cc\u062f: \u06f9\u06f1\u06f0\u06f9\u06f6\u06f2\u06f2\u06f7-\u06f0\u06f2\u06f1\r\n\u0631\u0648\u0632\u0647\u0627\u06cc \u063a\u06cc\u0631 \u062a\u0639\u0637\u06cc\u0644 \u0627\u0632 \u06f9 \u0627\u0644\u06cc \u06f1\u06f7\r"
-              }
+              <div className={classNames(projectcss.all, sty.freeBox__bTspa)}>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__mil54
+                  )}
+                >
+                  {
+                    "\u0641\u0631\u0648\u0634 \u0627\u0632 \u0637\u0631\u06cc\u0642 \u0645\u06cc\u0627\u0646"
+                  }
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__tu0MS
+                  )}
+                >
+                  {
+                    "\u0628\u0631\u0627\u06cc \u0627\u0641\u0632\u0627\u06cc\u0634 \u0641\u0631\u0648\u0634 \u0648 \u067e\u0631 \u0634\u062f\u0646 \u0638\u0631\u0641\u06cc\u062a \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0634\u0645\u0627\u060c \u00ab\u0645\u06cc\u0627\u0646\u00bb \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0645\u0644\u06a9 \u0634\u0645\u0627 \u0631\u0627 \u062f\u0631 \u0686\u0646\u062f\u06cc\u0646 \u067e\u0644\u062a\u0641\u0631\u0645 \u0645\u0639\u062a\u0628\u0631 (\u0645\u062b\u0644 \u062f\u06cc\u0648\u0627\u0631\u060c \u0633\u0627\u0632\u0645\u0627\u0646\u200c\u0647\u0627\u060c \u0634\u0631\u06a9\u062a\u200c\u0647\u0627 \u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0645\u0634\u0627\u0628\u0647) \u0646\u0645\u0627\u06cc\u0634 \u0645\u06cc\u200c\u062f\u0647\u062f. \u0628\u0627 \u0627\u06cc\u0646 \u06a9\u0627\u0631\u060c \u0634\u0627\u0646\u0633 \u062f\u06cc\u062f\u0647 \u0634\u062f\u0646 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a\u0627\u0646 \u0628\u0647 \u0634\u062f\u062a \u0628\u0627\u0644\u0627 \u0631\u0641\u062a\u0647 \u0648 \u062f\u0631 \u0646\u062a\u06cc\u062c\u0647\u060c \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u0634\u0645\u0627 \u0628\u06cc\u0634\u062a\u0631 \u0645\u06cc\u200c\u0634\u0648\u062f."
+                  }
+                </div>
+              </div>
             </div>
-          </div>
-          <div className={classNames(projectcss.all, sty.freeBox__jEoBv)}>
-            <div className={classNames(projectcss.all, sty.freeBox__rcsR)}>
+            <div className={classNames(projectcss.all, sty.freeBox__sb1Hf)}>
+              <div className={classNames(projectcss.all, sty.freeBox__gjWfp)}>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__a6ZIp
+                  )}
+                >
+                  {
+                    "\u0645\u0647\u0645\u0627\u0646\u0627\u0646\u06cc \u0622\u06af\u0627\u0647 \u0648 \u0642\u0627\u0646\u0648\u0646\u200c\u0645\u062f\u0627\u0631"
+                  }
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text___2ANxG
+                  )}
+                >
+                  {
+                    "\u0645\u0647\u0645\u0627\u0646\u0627\u0646\u06cc \u06a9\u0647 \u0627\u0632 \u0637\u0631\u06cc\u0642 \u0627\u06cc\u0646 \u0634\u0628\u06a9\u0647 \u062c\u0630\u0628 \u0645\u06cc\u200c\u0634\u0648\u0646\u062f\u060c \u067e\u06cc\u0634 \u0627\u0632 \u0631\u0632\u0631\u0648\u060c \u0642\u0648\u0627\u0646\u06cc\u0646 \u062e\u0627\u0635 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0634\u0645\u0627 \u0631\u0627 \u0628\u0647 \u0637\u0648\u0631 \u06a9\u0627\u0645\u0644 \u0645\u0637\u0627\u0644\u0639\u0647 \u0648 \u062a\u0627\u06cc\u06cc\u062f \u0645\u06cc\u200c\u06a9\u0646\u0646\u062f. \u0627\u06cc\u0646 \u06cc\u0639\u0646\u06cc \u062e\u06cc\u0627\u0644\u062a\u0627\u0646 \u0631\u0627\u062d\u062a \u0628\u0627\u0634\u062f \u06a9\u0647 \u0641\u0642\u0637 \u0627\u0641\u0631\u0627\u062f \u0647\u0645\u0627\u0647\u0646\u06af \u0628\u0627 \u0634\u0631\u0627\u06cc\u0637 \u0634\u0645\u0627\u060c \u062f\u0631\u062e\u0648\u0627\u0633\u062a \u0631\u0632\u0631\u0648 \u0645\u06cc\u200c\u062f\u0647\u0646\u062f"
+                  }
+                </div>
+              </div>
+            </div>
+            <div className={classNames(projectcss.all, sty.freeBox__jEoBv)}>
+              <div className={classNames(projectcss.all, sty.freeBox__rcsR)}>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__wNf8V
+                  )}
+                >
+                  {
+                    "\u062a\u0633\u0648\u06cc\u0647 \u062d\u0633\u0627\u0628 \u0633\u0631\u06cc\u0639 \u0648 \u0628\u06cc\u200c\u0646\u0642\u0635"
+                  }
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__aSgcX
+                  )}
+                >
+                  {
+                    "\u00ab\u0645\u06cc\u0627\u0646\u00bb \u062a\u0636\u0645\u06cc\u0646 \u0645\u06cc\u200c\u06a9\u0646\u062f \u06a9\u0647 \u0645\u0628\u0644\u063a \u062e\u0627\u0644\u0635 \u062f\u0631\u06cc\u0627\u0641\u062a\u06cc \u0634\u0645\u0627\u060c \u062a\u0645\u0627\u0645 \u0648 \u06a9\u0645\u0627\u0644 \u0648 \u062f\u0631 \u06a9\u0648\u062a\u0627\u0647\u200c\u062a\u0631\u06cc\u0646 \u0632\u0645\u0627\u0646 \u0628\u0647 \u062d\u0633\u0627\u0628\u062a\u0627\u0646 \u0648\u0627\u0631\u06cc\u0632 \u0634\u0648\u062f. \u0645\u0627 \u062a\u0645\u0627\u0645 \u062f\u063a\u062f\u063a\u0647\u200c\u0647\u0627\u06cc \u0645\u0631\u0628\u0648\u0637 \u0628\u0647 \u0641\u0631\u0622\u06cc\u0646\u062f \u0645\u0627\u0644\u06cc \u0648 \u062a\u0633\u0648\u06cc\u0647 \u062d\u0633\u0627\u0628 \u0631\u0627 \u0627\u0632 \u062f\u0648\u0634 \u0634\u0645\u0627 \u0628\u0631\u0645\u06cc\u200c\u062f\u0627\u0631\u06cc\u0645."
+                  }
+                </div>
+              </div>
+            </div>
+            <div className={classNames(projectcss.all, sty.freeBox___21Gzi)}>
               <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__wNf8V
-                )}
+                className={classNames(projectcss.all, sty.freeBox__xF9A)}
+                onClick={async event => {
+                  const $steps = {};
+
+                  $steps["goToGdsPricing"] = true
+                    ? (() => {
+                        const actionArgs = { destination: `/GDS/pricing` };
+                        return (({ destination }) => {
+                          if (
+                            typeof destination === "string" &&
+                            destination.startsWith("#")
+                          ) {
+                            document
+                              .getElementById(destination.substr(1))
+                              .scrollIntoView({ behavior: "smooth" });
+                          } else {
+                            __nextRouter?.push(destination);
+                          }
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["goToGdsPricing"] != null &&
+                    typeof $steps["goToGdsPricing"] === "object" &&
+                    typeof $steps["goToGdsPricing"].then === "function"
+                  ) {
+                    $steps["goToGdsPricing"] = await $steps["goToGdsPricing"];
+                  }
+                }}
               >
-                {
-                  "\u062f\u0631 \u0686\u0647 \u062c\u0627\u0647\u0627\u06cc\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u0645 \u0628\u0647 \u0646\u0645\u0627\u06cc\u0634 \u06af\u0630\u0627\u0634\u062a\u0647 \u0645\u06cc\u0634\u0647\u061f"
-                }
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__wkSm0
+                  )}
+                >
+                  {
+                    "\u062b\u0628\u062a \u0646\u0631\u062e \u0648 \u0634\u0631\u0648\u0639 \u0641\u0631\u0648\u0634"
+                  }
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text___1UAvH
+                  )}
+                >
+                  {
+                    "\u062f\u0631\u0635\u0648\u0631\u062a \u0648\u062c\u0648\u062f \u0647\u0631\u06af\u0648\u0646\u0647 \u0633\u0648\u0627\u0644 \u06cc\u0627 \u0627\u0628\u0647\u0627\u0645\u060c \u062a\u0645\u0627\u0633 \u0628\u06af\u06cc\u0631\u06cc\u062f: \u06f9\u06f1\u06f0\u06f9\u06f6\u06f2\u06f2\u06f7-\u06f0\u06f2\u06f1\r\n\u0631\u0648\u0632\u0647\u0627\u06cc \u063a\u06cc\u0631 \u062a\u0639\u0637\u06cc\u0644 \u0627\u0632 \u06f9 \u0627\u0644\u06cc \u06f1\u06f7\r"
+                  }
+                </div>
+              </div>
+            </div>
+            <div className={classNames(projectcss.all, sty.freeBox__wVirp)}>
+              <div className={classNames(projectcss.all, sty.freeBox__jNSj)}>
+                <TextInput
+                  data-plasmic-name={"textInput"}
+                  data-plasmic-override={overrides.textInput}
+                  className={classNames("__wab_instance", sty.textInput)}
+                  onChange={async (...eventArgs: any) => {
+                    ((...eventArgs) => {
+                      generateStateOnChangeProp($state, ["textInput", "value"])(
+                        (e => e.target?.value).apply(null, eventArgs)
+                      );
+                    }).apply(null, eventArgs);
+
+                    if (
+                      eventArgs.length > 1 &&
+                      eventArgs[1] &&
+                      eventArgs[1]._plasmic_state_init_
+                    ) {
+                      return;
+                    }
+                  }}
+                  placeholder={
+                    "\u0646\u0627\u0645 \u0648 \u0646\u0627\u0645 \u062e\u0627\u0646\u0648\u0627\u062f\u06af\u06cc"
+                  }
+                  value={
+                    generateStateValueProp($state, ["textInput", "value"]) ?? ""
+                  }
+                />
+
+                <TextInput
+                  data-plasmic-name={"textInput2"}
+                  data-plasmic-override={overrides.textInput2}
+                  className={classNames("__wab_instance", sty.textInput2)}
+                  onChange={async (...eventArgs: any) => {
+                    ((...eventArgs) => {
+                      generateStateOnChangeProp($state, [
+                        "textInput2",
+                        "value"
+                      ])((e => e.target?.value).apply(null, eventArgs));
+                    }).apply(null, eventArgs);
+
+                    if (
+                      eventArgs.length > 1 &&
+                      eventArgs[1] &&
+                      eventArgs[1]._plasmic_state_init_
+                    ) {
+                      return;
+                    }
+                  }}
+                  placeholder={
+                    "\u0634\u0645\u0627\u0631\u0647 \u0645\u0648\u0628\u0627\u06cc\u0644"
+                  }
+                  value={
+                    generateStateValueProp($state, ["textInput2", "value"]) ??
+                    ""
+                  }
+                />
               </div>
               <div
                 className={classNames(
                   projectcss.all,
                   projectcss.__wab_text,
-                  sty.text__aSgcX
+                  sty.text__ypA6W
                 )}
               >
                 {
-                  "\u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0634\u0645\u0627 \u062f\u0631 \u0633\u0627\u06cc\u062a \u0647\u0627 \u0648 \u06a9\u0627\u0646\u0627\u0644 \u0647\u0627\u06cc \u0645\u062e\u062a\u0644\u0641\u06cc \u0645\u062b\u0644 \u0633\u0627\u06cc\u062a \u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u06a9\u0648\u0686\u06cc\u06a9\u200c\u062a\u0631 \u0648 \u0634\u0631\u06a9\u062a \u0647\u0627 \u06cc\u0627 \u0633\u0627\u0632\u0645\u0627\u0646 \u0647\u0627\u06cc\u06cc \u06a9\u0647 \u0642\u0635\u062f \u0627\u06cc\u062c\u0627\u062f \u0637\u0631\u062d \u0647\u0627\u06cc \u0633\u0641\u0631 \u0628\u0631\u0627\u06cc \u06a9\u0627\u0631\u06a9\u0646\u0627\u0646 \u062e\u0648\u062f \u062f\u0627\u0631\u0646"
+                  "\u062f\u0631\u0635\u0648\u0631\u062a \u0648\u062c\u0648\u062f \u0647\u0631\u06af\u0648\u0646\u0647 \u0633\u0648\u0627\u0644 \u06cc\u0627 \u0627\u0628\u0647\u0627\u0645\u060c \u062a\u0645\u0627\u0633 \u0628\u06af\u06cc\u0631\u06cc\u062f: \u06f9\u06f1\u06f0\u06f9\u06f6\u06f2\u06f2\u06f7-\u06f0\u06f2\u06f1\r\n\u0631\u0648\u0632\u0647\u0627\u06cc \u063a\u06cc\u0631 \u062a\u0639\u0637\u06cc\u0644 \u0627\u0632 \u06f9 \u0627\u0644\u06cc \u06f1\u06f7\r"
                 }
               </div>
             </div>
           </div>
+          <MiaanFooter
+            data-plasmic-name={"miaanFooter"}
+            data-plasmic-override={overrides.miaanFooter}
+            className={classNames("__wab_instance", sty.miaanFooter)}
+          />
         </div>
       </div>
     </React.Fragment>
@@ -378,12 +413,19 @@ function PlasmicGds__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "navbarRntHeader", "intro", "img", "textInput", "textInput2"],
+  root: [
+    "root",
+    "navbarRntHeader",
+    "intro",
+    "textInput",
+    "textInput2",
+    "miaanFooter"
+  ],
   navbarRntHeader: ["navbarRntHeader"],
-  intro: ["intro", "img"],
-  img: ["img"],
+  intro: ["intro"],
   textInput: ["textInput"],
-  textInput2: ["textInput2"]
+  textInput2: ["textInput2"],
+  miaanFooter: ["miaanFooter"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -392,9 +434,9 @@ type NodeDefaultElementType = {
   root: "div";
   navbarRntHeader: typeof NavbarRntHeader;
   intro: "div";
-  img: typeof PlasmicImg__;
   textInput: typeof TextInput;
   textInput2: typeof TextInput;
+  miaanFooter: typeof MiaanFooter;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -461,9 +503,9 @@ export const PlasmicGds = Object.assign(
     // Helper components rendering sub-elements
     navbarRntHeader: makeNodeComponent("navbarRntHeader"),
     intro: makeNodeComponent("intro"),
-    img: makeNodeComponent("img"),
     textInput: makeNodeComponent("textInput"),
     textInput2: makeNodeComponent("textInput2"),
+    miaanFooter: makeNodeComponent("miaanFooter"),
 
     // Metadata about props expected for PlasmicGds
     internalVariantProps: PlasmicGds__VariantProps,
