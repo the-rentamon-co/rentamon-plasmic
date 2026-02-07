@@ -386,10 +386,8 @@ function PlasmicLite__RenderFunc(props: {
                           ? (() => {
                               const actionArgs = {
                                 customFunction: async () => {
-                                  return (() => {
-                                    return (window.location.href =
-                                      "https://sso.rentamon.com/web/index.html?callback=https://rentamon.com/splash?src=web");
-                                  })();
+                                  return (window.location.href =
+                                    "https://sso.miaan.ir/web/index.html?callback=https://miaan.ir/splash?src=web");
                                 }
                               };
                               return (({ customFunction }) => {
@@ -817,10 +815,8 @@ function PlasmicLite__RenderFunc(props: {
                     ? (() => {
                         const actionArgs = {
                           customFunction: async () => {
-                            return (() => {
-                              return (window.location.href =
-                                "https://sso.rentamon.com/web/index.html?callback=https://rentamon.com/splash?src=web");
-                            })();
+                            return (window.location.href =
+                              "https://sso.miaan.ir/web/index.html?callback=https://miaan.ir/splash?src=web");
                           }
                         };
                         return (({ customFunction }) => {

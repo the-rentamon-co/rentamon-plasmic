@@ -385,9 +385,9 @@ function PlasmicGdsPricing__RenderFunc(props: {
                   sty.text__wf8Uc
                 )}
               >
-                {
-                  "\u0628\u0631\u0627\u06cc \u0634\u0631\u0648\u0639\u060c \u0646\u06cc\u0627\u0632 \u0647\u0633\u062a\u0634 \u06a9\u0647 \u0646\u0631\u062e \u0647\u0631\u06a9\u062f\u0648\u0645 \u0627\u0632 \u0648\u06cc\u0644\u0627\u0647\u0627\u062a\u0648 \u0628\u0631\u0627\u06cc \u0633\u0647 \u062d\u0627\u0644\u062a \u0631\u0648\u0632 \u0639\u0627\u062f\u06cc\u060c \u0631\u0648\u0632 \u0622\u062e\u0631 \u0647\u0641\u062a\u0647 \u0648 \u0631\u0648\u0632 \u062a\u0639\u0637\u06cc\u0644\u06cc \u0648\u0627\u0631\u062f \u06a9\u0646\u06cc"
-                }
+                {hasVariant(globalVariants, "screen", "mobile")
+                  ? "\u0628\u0631\u0627\u06cc \u0634\u0631\u0648\u0639\u060c \u0644\u0637\u0641\u0627 \u0642\u06cc\u0645\u062a \u0631\u0648\u0632\u0647\u0627\u06cc \u0639\u0627\u062f\u06cc\u060c \u0622\u062e\u0631 \u0647\u0641\u062a\u0647\u200c\u0647\u0627 \u0648 \u0627\u06cc\u0627\u0645 \u067e\u06cc\u06a9 \u0648\u0627\u0631\u062f \u06a9\u0646."
+                  : "\u0628\u0631\u0627\u06cc \u0634\u0631\u0648\u0639\u060c \u0644\u0637\u0641\u0627 \u0646\u0631\u062e  \u0631\u0648\u0632\u0647\u0627\u06cc \u0639\u0627\u062f\u06cc\u060c \u0622\u062e\u0631 \u0647\u0641\u062a\u0647\u200c\u0647\u0627 \u0648 \u0627\u06cc\u0627\u0645 \u067e\u06cc\u06a9 \u0648\u0627\u0631\u062f \u06a9\u0646."}
               </div>
             </div>
             <div
@@ -913,9 +913,9 @@ function PlasmicGdsPricing__RenderFunc(props: {
                   sty.text__fwyEz
                 )}
               >
-                {
-                  "\u062a\u0645\u0627\u0645\u06cc \u0642\u06cc\u0645\u062a \u0647\u0627\u06cc \u0632\u06cc\u0631\u060c \u0642\u06cc\u0645\u062a \u062f\u0631\u06cc\u0627\u0641\u062a\u06cc \u0634\u0645\u0627 (\u0642\u06cc\u0645\u062a \u062e\u0627\u0644\u0635) \u0627\u0633\u062a."
-                }
+                {hasVariant(globalVariants, "screen", "mobile")
+                  ? "\u062a\u0645\u0627\u0645\u06cc \u0642\u06cc\u0645\u062a \u0647\u0627\u06cc \u0632\u06cc\u0631\u060c \u0645\u0628\u0627\u0644\u063a \u062f\u0631\u06cc\u0627\u0641\u062a\u06cc \u0634\u0645\u0627 \u0648 \u0628\u0639\u062f \u0627\u0632 \u062f\u0631\u06cc\u0627\u0641\u062a \u06a9\u0627\u0631\u0645\u0632\u062f \u0648\u0627\u0633\u0637\u0647\u200c\u0647\u0627 \u0627\u0633\u062a."
+                  : "\u062a\u0645\u0627\u0645\u06cc \u0642\u06cc\u0645\u062a \u0647\u0627\u06cc \u0632\u06cc\u0631\u060c \u0645\u0628\u0627\u0644\u063a \u062f\u0631\u06cc\u0627\u0641\u062a\u06cc \u0634\u0645\u0627 \u0648 \u0628\u0639\u062f \u0627\u0632 \u062f\u0631\u06cc\u0627\u0641\u062a \u06a9\u0627\u0631\u0645\u0632\u062f \u0648\u0627\u0633\u0637\u0647\u200c\u0647\u0627 \u0627\u0633\u062a."}
               </div>
             </div>
             <div className={classNames(projectcss.all, sty.freeBox__uVo0)}>
@@ -928,7 +928,7 @@ function PlasmicGdsPricing__RenderFunc(props: {
                   )}
                 >
                   {
-                    "\u0642\u06cc\u0645\u062a \u0631\u0648\u0632 \u0647\u0627\u06cc \u0639\u0627\u062f\u06cc"
+                    "\u0642\u06cc\u0645\u062a \u0631\u0648\u0632\u0647\u0627\u06cc \u0639\u0627\u062f\u06cc"
                   }
                 </div>
                 <Input
@@ -942,7 +942,7 @@ function PlasmicGdsPricing__RenderFunc(props: {
                     ]).apply(null, eventArgs);
                   }}
                   placeholder={
-                    "\u0645\u062b\u0644\u0627 \u06f3\u060c\u06f0\u06f0\u06f0\u060c\u06f0\u06f0\u06f0"
+                    "\u0645\u062b\u0644\u0627 \u06f3\u060c\u06f0\u06f0\u06f0\u060c\u06f0\u06f0\u06f0 \u062a\u0648\u0645\u0627\u0646"
                   }
                   type={"number"}
                   value={generateStateValueProp($state, ["weekday", "value"])}
@@ -1103,7 +1103,7 @@ function PlasmicGdsPricing__RenderFunc(props: {
                   )}
                 >
                   {
-                    "\u0642\u06cc\u0645\u062a \u0631\u0648\u0632 \u0647\u0627\u06cc \u062a\u0639\u0637\u06cc\u0644 (\u0686\u0647\u0627\u0631\u0634\u0646\u0628\u0647 \u0648 \u067e\u0646\u062c\u0634\u0646\u0628\u0647)"
+                    "\u0642\u06cc\u0645\u062a \u0622\u062e\u0631 \u0647\u0641\u062a\u0647 (\u0686\u0647\u0627\u0631\u0634\u0646\u0628\u0647 \u0648 \u067e\u0646\u062c\u0634\u0646\u0628\u0647)"
                   }
                 </div>
                 <Input
@@ -1117,7 +1117,7 @@ function PlasmicGdsPricing__RenderFunc(props: {
                     ]).apply(null, eventArgs);
                   }}
                   placeholder={
-                    "\u0645\u062b\u0644\u0627 \u06f3\u060c\u06f0\u06f0\u06f0\u060c\u06f0\u06f0\u06f0"
+                    "\u0645\u062b\u0644\u0627 \u06f3\u060c\u06f0\u06f0\u06f0\u060c\u06f0\u06f0\u06f0 \u062a\u0648\u0645\u0627\u0646"
                   }
                   type={"number"}
                   value={generateStateValueProp($state, ["weekend", "value"])}
@@ -1278,26 +1278,9 @@ function PlasmicGdsPricing__RenderFunc(props: {
                   )}
                 >
                   {
-                    "\u0642\u06cc\u0645\u062a \u0631\u0648\u0632 \u0647\u0627\u06cc \u062a\u0639\u0637\u06cc\u0644(\u067e\u06cc\u06a9)"
+                    "\u0642\u06cc\u0645\u062a \u0627\u06cc\u0627\u0645 \u067e\u06cc\u06a9"
                   }
                 </div>
-                <Input
-                  data-plasmic-name={"holiday"}
-                  data-plasmic-override={overrides.holiday}
-                  className={classNames("__wab_instance", sty.holiday)}
-                  onChange={async (...eventArgs: any) => {
-                    generateStateOnChangeProp($state, [
-                      "holiday",
-                      "value"
-                    ]).apply(null, eventArgs);
-                  }}
-                  placeholder={
-                    "\u0645\u062b\u0644\u0627 \u06f3\u060c\u06f0\u06f0\u06f0\u060c\u06f0\u06f0\u06f0"
-                  }
-                  type={"number"}
-                  value={generateStateValueProp($state, ["holiday", "value"])}
-                />
-
                 <div
                   className={classNames(
                     projectcss.all,
@@ -1443,6 +1426,22 @@ function PlasmicGdsPricing__RenderFunc(props: {
                     })()}
                   </React.Fragment>
                 </div>
+                <Input
+                  data-plasmic-name={"holiday"}
+                  data-plasmic-override={overrides.holiday}
+                  className={classNames("__wab_instance", sty.holiday)}
+                  onChange={async (...eventArgs: any) => {
+                    generateStateOnChangeProp($state, [
+                      "holiday",
+                      "value"
+                    ]).apply(null, eventArgs);
+                  }}
+                  placeholder={
+                    "\u0645\u062b\u0644\u0627 \u06f3\u060c\u06f0\u06f0\u06f0\u060c\u06f0\u06f0\u06f0"
+                  }
+                  type={"number"}
+                  value={generateStateValueProp($state, ["holiday", "value"])}
+                />
               </div>
             </div>
             <div className={classNames(projectcss.all, sty.freeBox__i5WzH)}>
@@ -1484,6 +1483,30 @@ function PlasmicGdsPricing__RenderFunc(props: {
                   ) {
                     $steps["invokeGlobalAction"] =
                       await $steps["invokeGlobalAction"];
+                  }
+
+                  $steps["invokeGlobalAction2"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          args: [
+                            undefined,
+                            "\u0627\u0637\u0644\u0627\u0639\u0627\u062a \u062b\u0628\u062a \u0634\u062f",
+                            "top-center"
+                          ]
+                        };
+                        return $globalActions["Fragment.showToast"]?.apply(
+                          null,
+                          [...actionArgs.args]
+                        );
+                      })()
+                    : undefined;
+                  if (
+                    $steps["invokeGlobalAction2"] != null &&
+                    typeof $steps["invokeGlobalAction2"] === "object" &&
+                    typeof $steps["invokeGlobalAction2"].then === "function"
+                  ) {
+                    $steps["invokeGlobalAction2"] =
+                      await $steps["invokeGlobalAction2"];
                   }
                 }}
               >
