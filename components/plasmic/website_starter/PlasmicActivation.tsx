@@ -723,21 +723,20 @@ function PlasmicActivation__RenderFunc(props: {
                                 await $steps["invokeGlobalAction2"];
                             }
 
-                            $steps["invokeGlobalAction3"] =
-                              $steps.invokeGlobalAction2.status == 200
-                                ? (() => {
-                                    const actionArgs = {
-                                      args: [
-                                        undefined,
-                                        "\u06a9\u062f \u062f\u0639\u0648\u062a \u0628\u0627 \u0645\u0648\u0641\u0642\u06cc\u062a \u062b\u0628\u062a \u0634\u062f",
-                                        "top-center"
-                                      ]
-                                    };
-                                    return $globalActions[
-                                      "Fragment.showToast"
-                                    ]?.apply(null, [...actionArgs.args]);
-                                  })()
-                                : undefined;
+                            $steps["invokeGlobalAction3"] = false
+                              ? (() => {
+                                  const actionArgs = {
+                                    args: [
+                                      undefined,
+                                      "\u06a9\u062f \u062f\u0639\u0648\u062a \u0628\u0627 \u0645\u0648\u0641\u0642\u06cc\u062a \u062b\u0628\u062a \u0634\u062f",
+                                      "top-center"
+                                    ]
+                                  };
+                                  return $globalActions[
+                                    "Fragment.showToast"
+                                  ]?.apply(null, [...actionArgs.args]);
+                                })()
+                              : undefined;
                             if (
                               $steps["invokeGlobalAction3"] != null &&
                               typeof $steps["invokeGlobalAction3"] ===

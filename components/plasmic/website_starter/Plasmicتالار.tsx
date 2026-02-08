@@ -1300,10 +1300,7 @@ function Plasmicتالار__RenderFunc(props: {
                     (() => {
                       try {
                         return (() => {
-                          var isDivar =
-                            typeof document !== "undefined" &&
-                            document.cookie.includes("from=divar");
-                          if ($state.userType == 2 || isDivar) {
+                          if ($state.userType == 2) {
                             return "display_block clickable";
                           } else {
                             return "hidden clickable";
@@ -1468,12 +1465,10 @@ function Plasmicتالار__RenderFunc(props: {
                       ? (() => {
                           const actionArgs = {
                             customFunction: async () => {
-                              return (() => {
-                                return window.open(
-                                  "https://goftino.com/c/WgsGXv",
-                                  "_blank"
-                                );
-                              })();
+                              return window.open(
+                                "https://miaan.ir/support/?nimchat",
+                                "_blank"
+                              );
                             }
                           };
                           return (({ customFunction }) => {
@@ -1816,10 +1811,7 @@ function Plasmicتالار__RenderFunc(props: {
                     (() => {
                       try {
                         return (() => {
-                          var isDivar =
-                            typeof document !== "undefined" &&
-                            document.cookie.includes("from=divar");
-                          if ($state.userType != 2 && !isDivar) {
+                          if ($state.userType != 2) {
                             return "display_block clickable";
                           } else {
                             return "hidden clickable";

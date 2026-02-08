@@ -124,10 +124,10 @@ export type Plasmicکیفپول__OverridesType = {
   ctaReferral?: Flex__<"div">;
   qA?: Flex__<"div">;
   accordionMain?: Flex__<typeof AntdAccordion>;
-  _2?: Flex__<typeof AntdAccordionItem>;
-  _1?: Flex__<"div">;
   _3?: Flex__<typeof AntdAccordionItem>;
   _7?: Flex__<"div">;
+  _2?: Flex__<typeof AntdAccordionItem>;
+  _1?: Flex__<"div">;
   _4?: Flex__<typeof AntdAccordionItem>;
   _8?: Flex__<typeof AntdAccordionItem>;
   _5?: Flex__<typeof AntdAccordionItem>;
@@ -1260,7 +1260,7 @@ function Plasmicکیفپول__RenderFunc(props: {
                     ? "\u06f2 \u0645\u06cc\u0644\u06cc\u0648\u0646"
                     : hasVariant(globalVariants, "screen", "mobile")
                       ? "\u06f2 \u0645\u06cc\u0644\u06cc\u0648\u0646"
-                      : "\u06f2 \u0645\u06cc\u0644\u06cc\u0648\u0646 \u062a\u0648\u0645\u0627\u0646"}
+                      : "\u06f1 \u0645\u06cc\u0644\u06cc\u0648\u0646 \u062a\u0648\u0645\u0627\u0646"}
                 </div>
                 <div
                   className={classNames(
@@ -1314,7 +1314,7 @@ function Plasmicکیفپول__RenderFunc(props: {
                     ? "\u06f3 \u0645\u06cc\u0644\u06cc\u0648\u0646"
                     : hasVariant(globalVariants, "screen", "mobile")
                       ? "\u06f3 \u0645\u06cc\u0644\u06cc\u0648\u0646"
-                      : "\u06f3 \u0645\u06cc\u0644\u06cc\u0648\u0646 \u062a\u0648\u0645\u0627\u0646"}
+                      : "\u06f2 \u0645\u06cc\u0644\u06cc\u0648\u0646 \u062a\u0648\u0645\u0627\u0646"}
                 </div>
                 <div
                   className={classNames(
@@ -1888,43 +1888,10 @@ function Plasmicکیفپول__RenderFunc(props: {
                     ]),
                     bordered: true,
                     className: classNames("__wab_instance", sty.accordionMain),
+                    expandIconPosition: "start",
                     ghost: true,
                     items: (
                       <React.Fragment>
-                        <AntdAccordionItem
-                          data-plasmic-name={"_2"}
-                          data-plasmic-override={overrides._2}
-                          className={classNames("__wab_instance", sty._2)}
-                          id={"11"}
-                          label2={
-                            <div
-                              data-plasmic-name={"_1"}
-                              data-plasmic-override={overrides._1}
-                              className={classNames(
-                                projectcss.all,
-                                projectcss.__wab_text,
-                                sty._1
-                              )}
-                            >
-                              {
-                                "\u06a9\u06cc\u0641 \u067e\u0648\u0644 \u0686\u0637\u0648\u0631 \u06a9\u0627\u0631 \u0645\u06cc\u200c\u06a9\u0646\u0647\u061f"
-                              }
-                            </div>
-                          }
-                          showArrow={true}
-                        >
-                          <div
-                            className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
-                              sty.text__owfpa
-                            )}
-                          >
-                            {
-                              "\u06a9\u06cc\u0641 \u067e\u0648\u0644 \u0628\u0627\u06cc\u062f \u0628\u0647 \u0635\u0648\u0631\u062a \u0645\u0633\u062a\u0642\u06cc\u0645 \u062a\u0648\u0633\u0637 \u0634\u0645\u0627 \u0634\u0627\u0631\u0698 \u0628\u0634\u0647\u060c \u0648 \u0645\u0648\u062c\u0648\u062f\u06cc \u0627\u0648\u0646 \u0647\u06cc\u0686 \u0627\u0631\u062a\u0628\u0627\u0637\u06cc \u0628\u0627 \u062f\u0631\u0622\u0645\u062f \u0634\u0645\u0627 \u062f\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u0646\u062f\u0627\u0631\u0647."
-                            }
-                          </div>
-                        </AntdAccordionItem>
                         <AntdAccordionItem
                           data-plasmic-name={"_3"}
                           data-plasmic-override={overrides._3}
@@ -1956,6 +1923,40 @@ function Plasmicکیفپول__RenderFunc(props: {
                           >
                             {
                               "\u062f\u0631\u0635\u0648\u0631\u062a\u06cc \u06a9\u0647 \u06cc\u06a9 \u0631\u0632\u0631\u0648 \u00ab\u0646\u0647\u0627\u06cc\u06cc\u00bb \u0628\u0634\u0647\u060c \u0628\u0627\u0628\u062a \u0627\u0648\u0646 \u06a9\u0627\u0631\u0645\u0632\u062f \u06a9\u0633\u0631 \u0645\u06cc\u200c\u0634\u0647."
+                            }
+                          </div>
+                        </AntdAccordionItem>
+                        <AntdAccordionItem
+                          data-plasmic-name={"_2"}
+                          data-plasmic-override={overrides._2}
+                          className={classNames("__wab_instance", sty._2)}
+                          id={"11"}
+                          label2={
+                            <div
+                              data-plasmic-name={"_1"}
+                              data-plasmic-override={overrides._1}
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.__wab_text,
+                                sty._1
+                              )}
+                            >
+                              {
+                                "\u06a9\u06cc\u0641 \u067e\u0648\u0644 \u0686\u0637\u0648\u0631 \u06a9\u0627\u0631 \u0645\u06cc\u200c\u06a9\u0646\u0647\u061f"
+                              }
+                            </div>
+                          }
+                          showArrow={true}
+                        >
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__owfpa
+                            )}
+                          >
+                            {
+                              "\u06a9\u06cc\u0641 \u067e\u0648\u0644 \u0628\u0627\u06cc\u062f \u0628\u0647 \u0635\u0648\u0631\u062a \u0645\u0633\u062a\u0642\u06cc\u0645 \u062a\u0648\u0633\u0637 \u0634\u0645\u0627 \u0634\u0627\u0631\u0698 \u0628\u0634\u0647\u060c \u0648 \u0645\u0648\u062c\u0648\u062f\u06cc \u0627\u0648\u0646 \u0647\u06cc\u0686 \u0627\u0631\u062a\u0628\u0627\u0637\u06cc \u0628\u0627 \u062f\u0631\u0622\u0645\u062f \u0634\u0645\u0627 \u062f\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u0646\u062f\u0627\u0631\u0647."
                             }
                           </div>
                         </AntdAccordionItem>
@@ -2481,10 +2482,10 @@ const PlasmicDescendants = {
     "ctaReferral",
     "qA",
     "accordionMain",
-    "_2",
-    "_1",
     "_3",
     "_7",
+    "_2",
+    "_1",
     "_4",
     "_8",
     "_5",
@@ -2536,10 +2537,10 @@ const PlasmicDescendants = {
   qA: [
     "qA",
     "accordionMain",
-    "_2",
-    "_1",
     "_3",
     "_7",
+    "_2",
+    "_1",
     "_4",
     "_8",
     "_5",
@@ -2550,19 +2551,19 @@ const PlasmicDescendants = {
   ],
   accordionMain: [
     "accordionMain",
-    "_2",
-    "_1",
     "_3",
     "_7",
+    "_2",
+    "_1",
     "_4",
     "_8",
     "_5",
     "_6"
   ],
-  _2: ["_2", "_1"],
-  _1: ["_1"],
   _3: ["_3", "_7"],
   _7: ["_7"],
+  _2: ["_2", "_1"],
+  _1: ["_1"],
   _4: ["_4"],
   _8: ["_8"],
   _5: ["_5"],
@@ -2607,10 +2608,10 @@ type NodeDefaultElementType = {
   ctaReferral: "div";
   qA: "div";
   accordionMain: typeof AntdAccordion;
-  _2: typeof AntdAccordionItem;
-  _1: "div";
   _3: typeof AntdAccordionItem;
   _7: "div";
+  _2: typeof AntdAccordionItem;
+  _1: "div";
   _4: typeof AntdAccordionItem;
   _8: typeof AntdAccordionItem;
   _5: typeof AntdAccordionItem;
@@ -2713,10 +2714,10 @@ export const Plasmicکیفپول = Object.assign(
     ctaReferral: makeNodeComponent("ctaReferral"),
     qA: makeNodeComponent("qA"),
     accordionMain: makeNodeComponent("accordionMain"),
-    _2: makeNodeComponent("_2"),
-    _1: makeNodeComponent("_1"),
     _3: makeNodeComponent("_3"),
     _7: makeNodeComponent("_7"),
+    _2: makeNodeComponent("_2"),
+    _1: makeNodeComponent("_1"),
     _4: makeNodeComponent("_4"),
     _8: makeNodeComponent("_8"),
     _5: makeNodeComponent("_5"),
