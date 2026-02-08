@@ -207,28 +207,6 @@
     margin-bottom: 0px;
   }
 }
-.svg {
-  object-fit: cover;
-  max-width: 100%;
-  color: #fcfcfc;
-  width: 300px;
-  height: 100px;
-  flex-shrink: 0;
-}
-@media (max-width: 500px) {
-  .svg {
-    width: 240px;
-    height: 60px;
-    flex-shrink: 0;
-  }
-}
-@media (max-width: 350px) {
-  .svg {
-    width: 200px;
-    height: 60px;
-    flex-shrink: 0;
-  }
-}
 .freeBox__pwpH {
   flex-direction: column;
   position: relative;

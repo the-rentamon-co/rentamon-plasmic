@@ -69,8 +69,6 @@ import "@plasmicapp/react-web/lib/plasmic.css";
 import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicSplash.module.css"; // plasmic-import: ew-lMhwJhrpF/css
 
-import Icon79Icon from "./icons/PlasmicIcon__Icon79"; // plasmic-import: 8tMAV60HqJyj/icon
-
 createPlasmicElementProxy;
 
 export type PlasmicSplash__VariantMembers = {};
@@ -85,7 +83,6 @@ export const PlasmicSplash__ArgProps = new Array<ArgPropType>();
 export type PlasmicSplash__OverridesType = {
   root?: Flex__<"div">;
   center?: Flex__<"div">;
-  svg?: Flex__<"svg">;
   sideEffect?: Flex__<typeof SideEffect>;
   clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
 };
@@ -331,20 +328,8 @@ function PlasmicSplash__RenderFunc(props: {
                 sty.freeBox__bXpcU,
                 hasVariant(globalVariants, "screen", "mobile") ? `` : undefined
               )}
-            >
-              <Icon79Icon
-                data-plasmic-name={"svg"}
-                data-plasmic-override={overrides.svg}
-                className={classNames(
-                  projectcss.all,
-                  sty.svg,
-                  hasVariant(globalVariants, "screen", "mobile")
-                    ? ``
-                    : "fadeinf"
-                )}
-                role={"img"}
-              />
-            </div>
+            />
+
             <div
               className={classNames(
                 projectcss.all,
@@ -544,9 +529,8 @@ function PlasmicSplash__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "center", "svg", "sideEffect", "clarityRntComponent"],
-  center: ["center", "svg"],
-  svg: ["svg"],
+  root: ["root", "center", "sideEffect", "clarityRntComponent"],
+  center: ["center"],
   sideEffect: ["sideEffect"],
   clarityRntComponent: ["clarityRntComponent"]
 } as const;
@@ -556,7 +540,6 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   center: "div";
-  svg: "svg";
   sideEffect: typeof SideEffect;
   clarityRntComponent: typeof ClarityRntComponent;
 };
@@ -624,7 +607,6 @@ export const PlasmicSplash = Object.assign(
   {
     // Helper components rendering sub-elements
     center: makeNodeComponent("center"),
-    svg: makeNodeComponent("svg"),
     sideEffect: makeNodeComponent("sideEffect"),
     clarityRntComponent: makeNodeComponent("clarityRntComponent"),
 

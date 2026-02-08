@@ -20,14 +20,14 @@
   flex-direction: row;
   width: 100%;
   height: auto;
-  max-width: 70%;
+  max-width: 98%;
   justify-content: space-between;
   align-items: center;
   background: #ff4e4e;
   box-shadow: 2px 5px 16px 0px rgba(0, 0, 0, 0.2);
   min-width: 0;
   border-radius: 10px;
-  padding: 8px;
+  padding: 0px 8px;
 }
 @media (max-width: 1200px) {
   .freeBox {
@@ -45,7 +45,8 @@
 @media (max-width: 350px) {
   .freeBox {
     max-width: 100%;
-    padding: 8px 0px;
+    width: auto;
+    padding: 0px;
   }
 }
 .alertIcon {
@@ -57,7 +58,7 @@
   max-width: 100%;
   justify-content: flex-start;
   align-items: center;
-  padding: 8px;
+  padding: 8px 0px;
 }
 @media (max-width: 1200px) {
   .alertIcon {
@@ -66,14 +67,14 @@
 }
 @media (max-width: 500px) {
   .alertIcon {
-    padding-right: 0px;
-    padding-left: 0px;
+    padding-right: 8px;
+    padding-left: 8px;
     width: auto;
   }
 }
 @media (max-width: 350px) {
   .alertIcon {
-    width: 10%;
+    width: auto;
     padding-right: 4px;
   }
 }
@@ -90,7 +91,7 @@
 @media (max-width: 500px) {
   .img__vVbZm {
     height: 28px;
-    width: 26px;
+    width: 28px;
     flex-shrink: 0;
   }
 }
@@ -98,6 +99,7 @@
   .img__vVbZm {
     height: 26px;
     flex-shrink: 0;
+    margin: 2px;
   }
 }
 .alertText {
@@ -121,9 +123,8 @@
 }
 @media (max-width: 350px) {
   .alertText {
-    width: 100%;
+    width: auto;
     padding-right: 6px;
-    min-width: 0;
   }
 }
 .text__c238 {
@@ -167,17 +168,18 @@
 }
 @media (max-width: 500px) {
   .alertButton {
-    padding-left: 2px;
+    padding-left: 20px;
     padding-right: 2px;
-    width: 24%;
+    width: 26%;
     align-items: flex-start;
     justify-content: center;
-    padding-top: 23px;
+    padding-top: 8px;
   }
 }
 @media (max-width: 350px) {
   .alertButton {
-    padding-left: 4px;
+    padding-left: 20px;
+    width: 27%;
   }
 }
 .button {
@@ -227,13 +229,13 @@
   position: absolute;
   width: auto;
   height: auto;
-  max-width: 100%;
+  max-width: 90%;
   justify-content: flex-start;
   align-items: center;
   left: 0;
   top: 0;
-  right: auto;
   cursor: pointer;
+  right: auto;
   padding: 8px;
 }
 @media (max-width: 500px) {
@@ -250,6 +252,18 @@
 }
 .img___3XJ7 > picture > img {
   object-fit: cover;
+}
+@media (max-width: 1200px) {
+  .img___3XJ7 {
+    height: 14px;
+    flex-shrink: 0;
+  }
+}
+@media (max-width: 350px) {
+  .img___3XJ7 {
+    height: 14px;
+    flex-shrink: 0;
+  }
 }
 .sideEffect:global(.__wab_instance) {
   max-width: 100%;

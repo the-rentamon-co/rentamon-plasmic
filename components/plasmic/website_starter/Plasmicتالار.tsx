@@ -1300,7 +1300,10 @@ function Plasmicتالار__RenderFunc(props: {
                     (() => {
                       try {
                         return (() => {
-                          if ($state.userType == 2) {
+                          var isDivar =
+                            typeof document !== "undefined" &&
+                            document.cookie.includes("from=divar");
+                          if ($state.userType == 2 || isDivar) {
                             return "display_block clickable";
                           } else {
                             return "hidden clickable";
@@ -1813,7 +1816,10 @@ function Plasmicتالار__RenderFunc(props: {
                     (() => {
                       try {
                         return (() => {
-                          if ($state.userType != 2) {
+                          var isDivar =
+                            typeof document !== "undefined" &&
+                            document.cookie.includes("from=divar");
+                          if ($state.userType != 2 && !isDivar) {
                             return "display_block clickable";
                           } else {
                             return "hidden clickable";

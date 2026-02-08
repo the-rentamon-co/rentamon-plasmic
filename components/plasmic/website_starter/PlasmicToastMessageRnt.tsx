@@ -239,7 +239,7 @@ function PlasmicToastMessageRnt__RenderFunc(props: {
               displayMinHeight={"0"}
               displayMinWidth={"0"}
               displayWidth={
-                hasVariant(globalVariants, "screen", "mobile") ? "26px" : "auto"
+                hasVariant(globalVariants, "screen", "mobile") ? "28px" : "auto"
               }
               loading={"lazy"}
               src={(() => {
@@ -460,7 +460,13 @@ function PlasmicToastMessageRnt__RenderFunc(props: {
             <PlasmicImg__
               alt={""}
               className={classNames(sty.img___3XJ7)}
-              displayHeight={"16px"}
+              displayHeight={
+                hasVariant(globalVariants, "screen", "smallMobile")
+                  ? "14px"
+                  : hasVariant(globalVariants, "screen", "tablet")
+                    ? "14px"
+                    : "16px"
+              }
               displayMaxHeight={"none"}
               displayMaxWidth={"100%"}
               displayMinHeight={"0"}
@@ -483,7 +489,7 @@ function PlasmicToastMessageRnt__RenderFunc(props: {
           onMount={async () => {
             const $steps = {};
 
-            $steps["runCode"] = true
+            $steps["runCode"] = false
               ? (() => {
                   const actionArgs = {
                     customFunction: async () => {

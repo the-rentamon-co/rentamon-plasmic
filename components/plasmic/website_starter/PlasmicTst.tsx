@@ -62,6 +62,7 @@ import {
 import { Embed } from "@plasmicpkgs/plasmic-basic-components";
 import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
 import { DatePicker } from "@/fragment/components/date-picker"; // plasmic-import: MR9MOBuvKPN3/codeComponent
+import ToastMessageRnt from "../../ToastMessageRnt"; // plasmic-import: _mkSLPxHmSdr/component
 import { Fetcher } from "@plasmicapp/react-web/lib/data-sources";
 import { _useGlobalVariants } from "./plasmic"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectModule
 import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/styleTokensProvider
@@ -96,6 +97,7 @@ export type PlasmicTst__OverridesType = {
   twat?: Flex__<"div">;
   firebase?: Flex__<typeof Embed>;
   test?: Flex__<typeof Embed>;
+  toastMessageRnt?: Flex__<typeof ToastMessageRnt>;
 };
 
 export interface DefaultTstProps {}
@@ -710,6 +712,19 @@ function PlasmicTst__RenderFunc(props: {
               }
             />
           </div>
+          <ToastMessageRnt
+            data-plasmic-name={"toastMessageRnt"}
+            data-plasmic-override={overrides.toastMessageRnt}
+            buttonText={"\u062c\u0627\u062c\u06cc\u06af\u0627"}
+            className={classNames("__wab_instance", sty.toastMessageRnt)}
+            logo={{
+              src: "/plasmic/website_starter/images/jajigaWebp.webp",
+              fullWidth: 192,
+              fullHeight: 192,
+              aspectRatio: undefined
+            }}
+            message={"\u062c\u0627\u062c\u06cc\u06af\u0627"}
+          />
         </div>
       </div>
     </React.Fragment>
@@ -730,7 +745,8 @@ const PlasmicDescendants = {
     "profile2",
     "twat",
     "firebase",
-    "test"
+    "test",
+    "toastMessageRnt"
   ],
   progressbar: ["progressbar"],
   progressbar2: ["progressbar2"],
@@ -749,7 +765,8 @@ const PlasmicDescendants = {
   profile2: ["profile2"],
   twat: ["twat", "firebase", "test"],
   firebase: ["firebase"],
-  test: ["test"]
+  test: ["test"],
+  toastMessageRnt: ["toastMessageRnt"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -768,6 +785,7 @@ type NodeDefaultElementType = {
   twat: "div";
   firebase: typeof Embed;
   test: typeof Embed;
+  toastMessageRnt: typeof ToastMessageRnt;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -844,6 +862,7 @@ export const PlasmicTst = Object.assign(
     twat: makeNodeComponent("twat"),
     firebase: makeNodeComponent("firebase"),
     test: makeNodeComponent("test"),
+    toastMessageRnt: makeNodeComponent("toastMessageRnt"),
 
     // Metadata about props expected for PlasmicTst
     internalVariantProps: PlasmicTst__VariantProps,

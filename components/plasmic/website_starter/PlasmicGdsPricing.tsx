@@ -507,35 +507,6 @@ function PlasmicGdsPricing__RenderFunc(props: {
                               $steps["updateStateVariable"] =
                                 await $steps["updateStateVariable"];
                             }
-
-                            $steps["invokeGlobalAction"] = true
-                              ? (() => {
-                                  const actionArgs = {
-                                    args: [
-                                      "POST",
-                                      "https://prod.miaan.ir/webhook/process_calendar_followUp",
-                                      undefined,
-                                      (() => {
-                                        let a = { prop_id: $state.propId };
-                                        return a;
-                                      })()
-                                    ]
-                                  };
-                                  return $globalActions[
-                                    "Fragment.apiRequest"
-                                  ]?.apply(null, [...actionArgs.args]);
-                                })()
-                              : undefined;
-                            if (
-                              $steps["invokeGlobalAction"] != null &&
-                              typeof $steps["invokeGlobalAction"] ===
-                                "object" &&
-                              typeof $steps["invokeGlobalAction"].then ===
-                                "function"
-                            ) {
-                              $steps["invokeGlobalAction"] =
-                                await $steps["invokeGlobalAction"];
-                            }
                           }).apply(null, eventArgs);
                         }}
                         options={
@@ -916,6 +887,17 @@ function PlasmicGdsPricing__RenderFunc(props: {
                 {hasVariant(globalVariants, "screen", "mobile")
                   ? "\u062a\u0645\u0627\u0645\u06cc \u0642\u06cc\u0645\u062a \u0647\u0627\u06cc \u0632\u06cc\u0631\u060c \u0645\u0628\u0627\u0644\u063a \u062f\u0631\u06cc\u0627\u0641\u062a\u06cc \u0634\u0645\u0627 \u0648 \u0628\u0639\u062f \u0627\u0632 \u062f\u0631\u06cc\u0627\u0641\u062a \u06a9\u0627\u0631\u0645\u0632\u062f \u0648\u0627\u0633\u0637\u0647\u200c\u0647\u0627 \u0627\u0633\u062a."
                   : "\u062a\u0645\u0627\u0645\u06cc \u0642\u06cc\u0645\u062a \u0647\u0627\u06cc \u0632\u06cc\u0631\u060c \u0645\u0628\u0627\u0644\u063a \u062f\u0631\u06cc\u0627\u0641\u062a\u06cc \u0634\u0645\u0627 \u0648 \u0628\u0639\u062f \u0627\u0632 \u062f\u0631\u06cc\u0627\u0641\u062a \u06a9\u0627\u0631\u0645\u0632\u062f \u0648\u0627\u0633\u0637\u0647\u200c\u0647\u0627 \u0627\u0633\u062a."}
+              </div>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__dtAst
+                )}
+              >
+                {hasVariant(globalVariants, "screen", "mobile")
+                  ? "\u062a\u0645\u0627\u0645\u06cc \u0642\u06cc\u0645\u062a \u0647\u0627\u06cc \u0632\u06cc\u0631\u060c \u0645\u0628\u0627\u0644\u063a \u062f\u0631\u06cc\u0627\u0641\u062a\u06cc \u0634\u0645\u0627 \u0648 \u0628\u0639\u062f \u0627\u0632 \u062f\u0631\u06cc\u0627\u0641\u062a \u06a9\u0627\u0631\u0645\u0632\u062f \u0648\u0627\u0633\u0637\u0647\u200c\u0647\u0627 \u0627\u0633\u062a."
+                  : "\u0627\u06cc\u0646 \u0642\u06cc\u0645\u062a\u200c\u0647\u0627\u060c \u0645\u0633\u062a\u0642\u0644 \u0627\u0632 \u0642\u06cc\u0645\u062a\u200c\u0647\u0627\u06cc \u062a\u0642\u0648\u06cc\u0645 \u06cc\u06a9\u067e\u0627\u0631\u0686\u0647 \u0647\u0633\u062a\u0646\u062f."}
               </div>
             </div>
             <div className={classNames(projectcss.all, sty.freeBox__uVo0)}>

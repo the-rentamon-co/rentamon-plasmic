@@ -879,7 +879,7 @@ function PlasmicBookings2__RenderFunc(props: {
                 $steps["runCode2"] = await $steps["runCode2"];
               }
 
-              $steps["removeSmartBookingAlert"] = true
+              $steps["removeSmartBookingAlert"] = false
                 ? (() => {
                     const actionArgs = {
                       customFunction: async () => {
@@ -1103,98 +1103,6 @@ function PlasmicBookings2__RenderFunc(props: {
               />
             </div>
           </div>
-          <ApiRequest
-            data-plasmic-name={"checkFeatureStatus"}
-            data-plasmic-override={overrides.checkFeatureStatus}
-            className={classNames("__wab_instance", sty.checkFeatureStatus)}
-            errorDisplay={
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__hhNeX
-                )}
-              >
-                {" "}
-              </div>
-            }
-            loadingDisplay={null}
-            method={"GET"}
-            onError={async (...eventArgs: any) => {
-              generateStateOnChangeProp($state, [
-                "checkFeatureStatus",
-                "error"
-              ]).apply(null, eventArgs);
-            }}
-            onLoading={async (...eventArgs: any) => {
-              generateStateOnChangeProp($state, [
-                "checkFeatureStatus",
-                "loading"
-              ]).apply(null, eventArgs);
-            }}
-            onSuccess={async (...eventArgs: any) => {
-              generateStateOnChangeProp($state, [
-                "checkFeatureStatus",
-                "data"
-              ]).apply(null, eventArgs);
-            }}
-            params={{ feature_name: "reservations" }}
-            ref={ref => {
-              $refs["checkFeatureStatus"] = ref;
-            }}
-            url={(() => {
-              try {
-                return "https://api-v3.miaan.ir/webhook/user_access";
-              } catch (e) {
-                if (
-                  e instanceof TypeError ||
-                  e?.plasmicType === "PlasmicUndefinedDataError"
-                ) {
-                  return undefined;
-                }
-                throw e;
-              }
-            })()}
-          >
-            {(() => {
-              try {
-                return (() => {
-                  return (
-                    $state.checkFeatureStatus.data.status !== "ok" &&
-                    $state.userType !== "2" &&
-                    $state.isTheFirstVisit === false
-                  );
-                })();
-              } catch (e) {
-                if (
-                  e instanceof TypeError ||
-                  e?.plasmicType === "PlasmicUndefinedDataError"
-                ) {
-                  return false;
-                }
-                throw e;
-              }
-            })() ? (
-              <div className={classNames(projectcss.all, sty.freeBox___7Vten)}>
-                <ToastMessageRnt
-                  data-plasmic-name={"toastMessageRnt"}
-                  data-plasmic-override={overrides.toastMessageRnt}
-                  buttonLink={`/settings`}
-                  buttonText={"\u062a\u0646\u0638\u06cc\u0645\u0627\u062a"}
-                  className={classNames("__wab_instance", sty.toastMessageRnt)}
-                  logo={{
-                    src: "/plasmic/website_starter/images/image72.svg",
-                    fullWidth: 42,
-                    fullHeight: 42,
-                    aspectRatio: 1
-                  }}
-                  message={
-                    "\u0628\u0631\u0627\u06cc \u0630\u062e\u06cc\u0631\u0647 \u062e\u0648\u062f\u06a9\u0627\u0631 \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a \u0647\u0627\u060c \u00ab\u0631\u0632\u0631\u0648 \u0647\u0648\u0634\u0645\u0646\u062f\u00bb \u0631\u0648 \u0641\u0639\u0627\u0644 \u06a9\u0646"
-                  }
-                />
-              </div>
-            ) : null}
-          </ApiRequest>
           <div
             className={classNames(
               projectcss.all,
@@ -1202,6 +1110,103 @@ function PlasmicBookings2__RenderFunc(props: {
               "sticky-header"
             )}
           >
+            <ApiRequest
+              data-plasmic-name={"checkFeatureStatus"}
+              data-plasmic-override={overrides.checkFeatureStatus}
+              className={classNames("__wab_instance", sty.checkFeatureStatus)}
+              errorDisplay={
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__hhNeX
+                  )}
+                >
+                  {" "}
+                </div>
+              }
+              loadingDisplay={null}
+              method={"GET"}
+              onError={async (...eventArgs: any) => {
+                generateStateOnChangeProp($state, [
+                  "checkFeatureStatus",
+                  "error"
+                ]).apply(null, eventArgs);
+              }}
+              onLoading={async (...eventArgs: any) => {
+                generateStateOnChangeProp($state, [
+                  "checkFeatureStatus",
+                  "loading"
+                ]).apply(null, eventArgs);
+              }}
+              onSuccess={async (...eventArgs: any) => {
+                generateStateOnChangeProp($state, [
+                  "checkFeatureStatus",
+                  "data"
+                ]).apply(null, eventArgs);
+              }}
+              params={{ feature_name: "reservations" }}
+              ref={ref => {
+                $refs["checkFeatureStatus"] = ref;
+              }}
+              url={(() => {
+                try {
+                  return "https://api-v3.miaan.ir/webhook/user_access";
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return undefined;
+                  }
+                  throw e;
+                }
+              })()}
+            >
+              {(() => {
+                try {
+                  return (() => {
+                    return (
+                      $state.checkFeatureStatus.data.status !== "ok" &&
+                      $state.userType !== "2" &&
+                      $state.isTheFirstVisit === false
+                    );
+                  })();
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return false;
+                  }
+                  throw e;
+                }
+              })() ? (
+                <div
+                  className={classNames(projectcss.all, sty.freeBox___7Vten)}
+                >
+                  <ToastMessageRnt
+                    data-plasmic-name={"toastMessageRnt"}
+                    data-plasmic-override={overrides.toastMessageRnt}
+                    buttonLink={`/settings`}
+                    buttonText={"\u062a\u0646\u0638\u06cc\u0645\u0627\u062a"}
+                    className={classNames(
+                      "__wab_instance",
+                      sty.toastMessageRnt
+                    )}
+                    logo={{
+                      src: "/plasmic/website_starter/images/image72.svg",
+                      fullWidth: 42,
+                      fullHeight: 42,
+                      aspectRatio: 1
+                    }}
+                    message={
+                      "\u0628\u0631\u0627\u06cc \u0630\u062e\u06cc\u0631\u0647 \u062e\u0648\u062f\u06a9\u0627\u0631 \u0631\u0632\u0631\u0648 \u0633\u0627\u06cc\u062a \u0647\u0627\u060c \u00ab\u0631\u0632\u0631\u0648 \u0647\u0648\u0634\u0645\u0646\u062f\u00bb \u0631\u0648 \u0641\u0639\u0627\u0644 \u06a9\u0646"
+                    }
+                  />
+                </div>
+              ) : null}
+            </ApiRequest>
             <div
               data-plasmic-name={"filterSection"}
               data-plasmic-override={overrides.filterSection}
