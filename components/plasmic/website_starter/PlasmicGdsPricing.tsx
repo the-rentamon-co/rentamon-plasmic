@@ -96,7 +96,7 @@ export type PlasmicGdsPricing__OverridesType = {
   weekday?: Flex__<typeof Input>;
   weekend?: Flex__<typeof Input>;
   holiday?: Flex__<typeof Input>;
-  apiRequest?: Flex__<typeof ApiRequest>;
+  propretyDetail?: Flex__<typeof ApiRequest>;
 };
 
 export interface DefaultGdsPricingProps {}
@@ -180,23 +180,7 @@ function PlasmicGdsPricing__RenderFunc(props: {
         path: "propId",
         type: "private",
         variableType: "number",
-        initFunc: ({ $props, $state, $queries, $ctx }) =>
-          (() => {
-            try {
-              return (() => {
-                const lastPropId = localStorage.getItem("last_property_id");
-                return lastPropId ? parseInt(lastPropId, 10) : 1;
-              })();
-            } catch (e) {
-              if (
-                e instanceof TypeError ||
-                e?.plasmicType === "PlasmicUndefinedDataError"
-              ) {
-                return 1;
-              }
-              throw e;
-            }
-          })()
+        initFunc: ({ $props, $state, $queries, $ctx }) => 1
       },
       {
         path: "select2.value",
@@ -302,28 +286,34 @@ function PlasmicGdsPricing__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) => ""
       },
       {
-        path: "apiRequest.data",
+        path: "propretyDetail.data",
         type: "private",
         variableType: "object",
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
 
-        refName: "apiRequest"
+        refName: "propretyDetail"
       },
       {
-        path: "apiRequest.error",
+        path: "propretyDetail.error",
         type: "private",
         variableType: "object",
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
 
-        refName: "apiRequest"
+        refName: "propretyDetail"
       },
       {
-        path: "apiRequest.loading",
+        path: "propretyDetail.loading",
         type: "private",
         variableType: "boolean",
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
 
-        refName: "apiRequest"
+        refName: "propretyDetail"
+      },
+      {
+        path: "pricing",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => ({})
       }
     ],
     [$props, $ctx, $refs]
@@ -531,6 +521,26 @@ function PlasmicGdsPricing__RenderFunc(props: {
                             ) {
                               $steps["updateStateVariable"] =
                                 await $steps["updateStateVariable"];
+                            }
+
+                            $steps["runCode"] = true
+                              ? (() => {
+                                  const actionArgs = {
+                                    customFunction: async () => {
+                                      return ($state.pricing = {});
+                                    }
+                                  };
+                                  return (({ customFunction }) => {
+                                    return customFunction();
+                                  })?.apply(null, [actionArgs]);
+                                })()
+                              : undefined;
+                            if (
+                              $steps["runCode"] != null &&
+                              typeof $steps["runCode"] === "object" &&
+                              typeof $steps["runCode"].then === "function"
+                            ) {
+                              $steps["runCode"] = await $steps["runCode"];
                             }
                           }).apply(null, eventArgs);
                         }}
@@ -948,9 +958,23 @@ function PlasmicGdsPricing__RenderFunc(props: {
                       "value"
                     ]).apply(null, eventArgs);
                   }}
-                  placeholder={
-                    "\u0645\u062b\u0644\u0627 \u06f3\u060c\u06f0\u06f0\u06f0\u060c\u06f0\u06f0\u06f0 \u062a\u0648\u0645\u0627\u0646"
-                  }
+                  placeholder={(() => {
+                    try {
+                      return $state.pricing.base_price_weekday
+                        ? (
+                            Number($state.pricing.base_price_weekday) / 10
+                          ).toLocaleString()
+                        : "مثلا ۳\u060C۰۰۰\u060C۰۰۰ تومان";
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return undefined;
+                      }
+                      throw e;
+                    }
+                  })()}
                   type={"number"}
                   value={generateStateValueProp($state, ["weekday", "value"])}
                 />
@@ -1026,12 +1050,17 @@ function PlasmicGdsPricing__RenderFunc(props: {
                               "میلیارد"
                             ];
 
-                            if (num == null || num === "" || num === 0)
+                            if (
+                              num == null ||
+                              num === "" ||
+                              num === 0 ||
+                              isNaN(num)
+                            )
                               return "صفر";
                             const splitNumber = n => {
-                              const str = n.toString();
+                              const str = Math.floor(n).toString();
                               const len = str.length;
-                              if (len <= 3) return [n];
+                              if (len <= 3) return [Number(str)];
                               const groups = [];
                               let i = len;
                               while (i > 0) {
@@ -1053,7 +1082,10 @@ function PlasmicGdsPricing__RenderFunc(props: {
                                 tenUnit = teens[u];
                               } else {
                                 tenUnit =
-                                  tens[t] + (u > 0 ? " و " + units[u] : "");
+                                  tens[t] +
+                                  (u > 0
+                                    ? (tens[t] ? " و " : "") + units[u]
+                                    : "");
                               }
                               return [hundred, tenUnit]
                                 .filter(Boolean)
@@ -1076,24 +1108,41 @@ function PlasmicGdsPricing__RenderFunc(props: {
                               })
                               .filter(Boolean)
                               .join(" و ");
-                            const finalResult = result.startsWith("و ")
-                              ? result.slice(2)
-                              : result;
-                            return finalResult.trim() + " تومان";
+                            return (
+                              (result.startsWith("و ")
+                                ? result.slice(2)
+                                : result
+                              ).trim() + " تومان"
+                            );
                           }
-                          const input = $state.weekday?.value || "";
-                          const output =
-                            input === ""
-                              ? "صفر"
-                              : numberToPersian(Number(input));
-                          return output;
+                          const inputVal = $state.weekday?.value;
+                          const basePrice = $state.pricing?.base_price_weekday;
+                          let finalValue;
+                          if (
+                            inputVal !== "" &&
+                            inputVal !== null &&
+                            inputVal !== undefined
+                          ) {
+                            finalValue = Number(inputVal);
+                          } else if (
+                            basePrice !== "" &&
+                            basePrice !== null &&
+                            basePrice !== undefined
+                          ) {
+                            finalValue = Number(basePrice) / 10;
+                          } else {
+                            finalValue = 0;
+                          }
+                          return finalValue === 0
+                            ? "صفر"
+                            : numberToPersian(finalValue);
                         })();
                       } catch (e) {
                         if (
                           e instanceof TypeError ||
                           e?.plasmicType === "PlasmicUndefinedDataError"
                         ) {
-                          return "\u0642\u06cc\u0645\u062a \u0631\u0648\u0632 \u0647\u0627\u06cc \u0639\u0627\u062f\u06cc";
+                          return " ";
                         }
                         throw e;
                       }
@@ -1123,9 +1172,23 @@ function PlasmicGdsPricing__RenderFunc(props: {
                       "value"
                     ]).apply(null, eventArgs);
                   }}
-                  placeholder={
-                    "\u0645\u062b\u0644\u0627 \u06f3\u060c\u06f0\u06f0\u06f0\u060c\u06f0\u06f0\u06f0 \u062a\u0648\u0645\u0627\u0646"
-                  }
+                  placeholder={(() => {
+                    try {
+                      return $state.pricing.base_price_weekday
+                        ? (
+                            Number($state.pricing.base_price_weekend) / 10
+                          ).toLocaleString()
+                        : "مثلا ۳\u060C۰۰۰\u060C۰۰۰ تومان";
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return undefined;
+                      }
+                      throw e;
+                    }
+                  })()}
                   type={"number"}
                   value={generateStateValueProp($state, ["weekend", "value"])}
                 />
@@ -1201,12 +1264,17 @@ function PlasmicGdsPricing__RenderFunc(props: {
                               "میلیارد"
                             ];
 
-                            if (num == null || num === "" || num === 0)
+                            if (
+                              num == null ||
+                              num === "" ||
+                              num === 0 ||
+                              isNaN(num)
+                            )
                               return "صفر";
                             const splitNumber = n => {
-                              const str = n.toString();
+                              const str = Math.floor(n).toString();
                               const len = str.length;
-                              if (len <= 3) return [n];
+                              if (len <= 3) return [Number(str)];
                               const groups = [];
                               let i = len;
                               while (i > 0) {
@@ -1228,7 +1296,10 @@ function PlasmicGdsPricing__RenderFunc(props: {
                                 tenUnit = teens[u];
                               } else {
                                 tenUnit =
-                                  tens[t] + (u > 0 ? " و " + units[u] : "");
+                                  tens[t] +
+                                  (u > 0
+                                    ? (tens[t] ? " و " : "") + units[u]
+                                    : "");
                               }
                               return [hundred, tenUnit]
                                 .filter(Boolean)
@@ -1251,24 +1322,41 @@ function PlasmicGdsPricing__RenderFunc(props: {
                               })
                               .filter(Boolean)
                               .join(" و ");
-                            const finalResult = result.startsWith("و ")
-                              ? result.slice(2)
-                              : result;
-                            return finalResult.trim() + " تومان";
+                            return (
+                              (result.startsWith("و ")
+                                ? result.slice(2)
+                                : result
+                              ).trim() + " تومان"
+                            );
                           }
-                          const input = $state.weekend?.value || "";
-                          const output =
-                            input === ""
-                              ? "صفر"
-                              : numberToPersian(Number(input));
-                          return output;
+                          const inputVal = $state.weekend?.value;
+                          const basePrice = $state.pricing?.base_price_weekend;
+                          let finalValue;
+                          if (
+                            inputVal !== "" &&
+                            inputVal !== null &&
+                            inputVal !== undefined
+                          ) {
+                            finalValue = Number(inputVal);
+                          } else if (
+                            basePrice !== "" &&
+                            basePrice !== null &&
+                            basePrice !== undefined
+                          ) {
+                            finalValue = Number(basePrice) / 10;
+                          } else {
+                            finalValue = 0;
+                          }
+                          return finalValue === 0
+                            ? "صفر"
+                            : numberToPersian(finalValue);
                         })();
                       } catch (e) {
                         if (
                           e instanceof TypeError ||
                           e?.plasmicType === "PlasmicUndefinedDataError"
                         ) {
-                          return "\u0642\u06cc\u0645\u062a \u0631\u0648\u0632 \u0647\u0627\u06cc \u0639\u0627\u062f\u06cc";
+                          return " ";
                         }
                         throw e;
                       }
@@ -1298,9 +1386,23 @@ function PlasmicGdsPricing__RenderFunc(props: {
                       "value"
                     ]).apply(null, eventArgs);
                   }}
-                  placeholder={
-                    "\u0645\u062b\u0644\u0627 \u06f3\u060c\u06f0\u06f0\u06f0\u060c\u06f0\u06f0\u06f0"
-                  }
+                  placeholder={(() => {
+                    try {
+                      return $state.pricing.base_price_holiday
+                        ? (
+                            Number($state.pricing.base_price_weekend) / 10
+                          ).toLocaleString()
+                        : "مثلا ۳\u060C۰۰۰\u060C۰۰۰ تومان";
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return undefined;
+                      }
+                      throw e;
+                    }
+                  })()}
                   type={"number"}
                   value={generateStateValueProp($state, ["holiday", "value"])}
                 />
@@ -1376,12 +1478,17 @@ function PlasmicGdsPricing__RenderFunc(props: {
                               "میلیارد"
                             ];
 
-                            if (num == null || num === "" || num === 0)
+                            if (
+                              num == null ||
+                              num === "" ||
+                              num === 0 ||
+                              isNaN(num)
+                            )
                               return "صفر";
                             const splitNumber = n => {
-                              const str = n.toString();
+                              const str = Math.floor(n).toString();
                               const len = str.length;
-                              if (len <= 3) return [n];
+                              if (len <= 3) return [Number(str)];
                               const groups = [];
                               let i = len;
                               while (i > 0) {
@@ -1403,7 +1510,10 @@ function PlasmicGdsPricing__RenderFunc(props: {
                                 tenUnit = teens[u];
                               } else {
                                 tenUnit =
-                                  tens[t] + (u > 0 ? " و " + units[u] : "");
+                                  tens[t] +
+                                  (u > 0
+                                    ? (tens[t] ? " و " : "") + units[u]
+                                    : "");
                               }
                               return [hundred, tenUnit]
                                 .filter(Boolean)
@@ -1426,24 +1536,41 @@ function PlasmicGdsPricing__RenderFunc(props: {
                               })
                               .filter(Boolean)
                               .join(" و ");
-                            const finalResult = result.startsWith("و ")
-                              ? result.slice(2)
-                              : result;
-                            return finalResult.trim() + " تومان";
+                            return (
+                              (result.startsWith("و ")
+                                ? result.slice(2)
+                                : result
+                              ).trim() + " تومان"
+                            );
                           }
-                          const input = $state.holiday?.value || "";
-                          const output =
-                            input === ""
-                              ? "صفر"
-                              : numberToPersian(Number(input));
-                          return output;
+                          const inputVal = $state.holiday?.value;
+                          const basePrice = $state.pricing?.base_price_holiday;
+                          let finalValue;
+                          if (
+                            inputVal !== "" &&
+                            inputVal !== null &&
+                            inputVal !== undefined
+                          ) {
+                            finalValue = Number(inputVal);
+                          } else if (
+                            basePrice !== "" &&
+                            basePrice !== null &&
+                            basePrice !== undefined
+                          ) {
+                            finalValue = Number(basePrice) / 10;
+                          } else {
+                            finalValue = 0;
+                          }
+                          return finalValue === 0
+                            ? "صفر"
+                            : numberToPersian(finalValue);
                         })();
                       } catch (e) {
                         if (
                           e instanceof TypeError ||
                           e?.plasmicType === "PlasmicUndefinedDataError"
                         ) {
-                          return "\u0642\u06cc\u0645\u062a \u0631\u0648\u0632 \u0647\u0627\u06cc \u0639\u0627\u062f\u06cc";
+                          return " ";
                         }
                         throw e;
                       }
@@ -1452,36 +1579,71 @@ function PlasmicGdsPricing__RenderFunc(props: {
                 </div>
               </div>
               <ApiRequest
-                data-plasmic-name={"apiRequest"}
-                data-plasmic-override={overrides.apiRequest}
-                className={classNames("__wab_instance", sty.apiRequest)}
+                data-plasmic-name={"propretyDetail"}
+                data-plasmic-override={overrides.propretyDetail}
+                className={classNames("__wab_instance", sty.propretyDetail)}
                 errorDisplay={null}
                 loadingDisplay={null}
                 method={"GET"}
                 onError={async (...eventArgs: any) => {
                   generateStateOnChangeProp($state, [
-                    "apiRequest",
+                    "propretyDetail",
                     "error"
                   ]).apply(null, eventArgs);
                 }}
                 onLoading={async (...eventArgs: any) => {
                   generateStateOnChangeProp($state, [
-                    "apiRequest",
+                    "propretyDetail",
                     "loading"
                   ]).apply(null, eventArgs);
                 }}
                 onSuccess={async (...eventArgs: any) => {
                   generateStateOnChangeProp($state, [
-                    "apiRequest",
+                    "propretyDetail",
                     "data"
                   ]).apply(null, eventArgs);
+
+                  (async data => {
+                    const $steps = {};
+
+                    $steps["runCode"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            customFunction: async () => {
+                              return ($state.pricing =
+                                $state.propretyDetail.data.pricing);
+                            }
+                          };
+                          return (({ customFunction }) => {
+                            return customFunction();
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["runCode"] != null &&
+                      typeof $steps["runCode"] === "object" &&
+                      typeof $steps["runCode"].then === "function"
+                    ) {
+                      $steps["runCode"] = await $steps["runCode"];
+                    }
+                  }).apply(null, eventArgs);
                 }}
                 ref={ref => {
-                  $refs["apiRequest"] = ref;
+                  $refs["propretyDetail"] = ref;
                 }}
-                url={
-                  "https://api-v3.miaan.ir/webhook/c5ac48ad-53b5-4c58-ab77-7ceb520a79f2/v1/properties/1/miaan"
-                }
+                url={(() => {
+                  try {
+                    return `https://api-v3.miaan.ir/webhook/c5ac48ad-53b5-4c58-ab77-7ceb520a79f2/v1/properties/${$state.propId}/miaan`;
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return undefined;
+                    }
+                    throw e;
+                  }
+                })()}
               />
             </div>
             <div className={classNames(projectcss.all, sty.freeBox__i5WzH)}>
@@ -1620,7 +1782,7 @@ const PlasmicDescendants = {
     "weekday",
     "weekend",
     "holiday",
-    "apiRequest"
+    "propretyDetail"
   ],
   headerMobileNew: [
     "headerMobileNew",
@@ -1656,7 +1818,7 @@ const PlasmicDescendants = {
   weekday: ["weekday"],
   weekend: ["weekend"],
   holiday: ["holiday"],
-  apiRequest: ["apiRequest"]
+  propretyDetail: ["propretyDetail"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -1676,7 +1838,7 @@ type NodeDefaultElementType = {
   weekday: typeof Input;
   weekend: typeof Input;
   holiday: typeof Input;
-  apiRequest: typeof ApiRequest;
+  propretyDetail: typeof ApiRequest;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -1754,7 +1916,7 @@ export const PlasmicGdsPricing = Object.assign(
     weekday: makeNodeComponent("weekday"),
     weekend: makeNodeComponent("weekend"),
     holiday: makeNodeComponent("holiday"),
-    apiRequest: makeNodeComponent("apiRequest"),
+    propretyDetail: makeNodeComponent("propretyDetail"),
 
     // Metadata about props expected for PlasmicGdsPricing
     internalVariantProps: PlasmicGdsPricing__VariantProps,

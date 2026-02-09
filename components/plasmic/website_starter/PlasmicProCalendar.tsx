@@ -1802,70 +1802,72 @@ function PlasmicProCalendar__RenderFunc(props: {
               </div>
             </div>
           ) : null}
-          <ApiRequest
-            data-plasmic-name={"featureStatus"}
-            data-plasmic-override={overrides.featureStatus}
-            className={classNames("__wab_instance", sty.featureStatus)}
-            errorDisplay={null}
-            loadingDisplay={null}
-            method={"GET"}
-            onError={async (...eventArgs: any) => {
-              generateStateOnChangeProp($state, [
-                "featureStatus",
-                "error"
-              ]).apply(null, eventArgs);
-            }}
-            onLoading={async (...eventArgs: any) => {
-              generateStateOnChangeProp($state, [
-                "featureStatus",
-                "loading"
-              ]).apply(null, eventArgs);
-            }}
-            onSuccess={async (...eventArgs: any) => {
-              generateStateOnChangeProp($state, [
-                "featureStatus",
-                "data"
-              ]).apply(null, eventArgs);
-            }}
-            ref={ref => {
-              $refs["featureStatus"] = ref;
-            }}
-            url={"https://nb.miaan.ir/webhook/feature-status"}
-          >
-            {(() => {
-              try {
-                return (
-                  $state.featureStatus.data.feature_name == "auto_sync" &&
-                  $state.featureStatus.data.is_active == false
-                );
-              } catch (e) {
-                if (
-                  e instanceof TypeError ||
-                  e?.plasmicType === "PlasmicUndefinedDataError"
-                ) {
-                  return true;
+          <div className={classNames(projectcss.all, sty.freeBox___0ZiMw)}>
+            <ApiRequest
+              data-plasmic-name={"featureStatus"}
+              data-plasmic-override={overrides.featureStatus}
+              className={classNames("__wab_instance", sty.featureStatus)}
+              errorDisplay={null}
+              loadingDisplay={null}
+              method={"GET"}
+              onError={async (...eventArgs: any) => {
+                generateStateOnChangeProp($state, [
+                  "featureStatus",
+                  "error"
+                ]).apply(null, eventArgs);
+              }}
+              onLoading={async (...eventArgs: any) => {
+                generateStateOnChangeProp($state, [
+                  "featureStatus",
+                  "loading"
+                ]).apply(null, eventArgs);
+              }}
+              onSuccess={async (...eventArgs: any) => {
+                generateStateOnChangeProp($state, [
+                  "featureStatus",
+                  "data"
+                ]).apply(null, eventArgs);
+              }}
+              ref={ref => {
+                $refs["featureStatus"] = ref;
+              }}
+              url={"https://nb.miaan.ir/webhook/feature-status"}
+            >
+              {(() => {
+                try {
+                  return (
+                    $state.featureStatus.data.feature_name == "auto_sync" &&
+                    $state.featureStatus.data.is_active == false
+                  );
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return true;
+                  }
+                  throw e;
                 }
-                throw e;
-              }
-            })() ? (
-              <ToastMessageRnt
-                data-plasmic-name={"toastMessageRnt"}
-                data-plasmic-override={overrides.toastMessageRnt}
-                buttonLink={`/settings`}
-                buttonText={"\u062a\u0646\u0638\u06cc\u0645\u0627\u062a"}
-                className={classNames("__wab_instance", sty.toastMessageRnt)}
-                logo={{
-                  src: "/plasmic/website_starter/images/errorSvgrepoCom1Svg.svg",
-                  fullWidth: 800,
-                  fullHeight: 800,
-                  aspectRatio: undefined
-                }}
-                message={
-                  "\u0647\u0634\u062f\u0627\u0631: \u0648\u06cc\u0698\u06af\u06cc \u00ab\u067e\u0627\u0633\u0628\u0627\u0646\u00bb \u062e\u0627\u0645\u0648\u0634\u0647!"
-                }
-              />
-            ) : null}
-          </ApiRequest>
+              })() ? (
+                <ToastMessageRnt
+                  data-plasmic-name={"toastMessageRnt"}
+                  data-plasmic-override={overrides.toastMessageRnt}
+                  buttonLink={`/settings`}
+                  buttonText={"\u062a\u0646\u0638\u06cc\u0645\u0627\u062a"}
+                  className={classNames("__wab_instance", sty.toastMessageRnt)}
+                  logo={{
+                    src: "/plasmic/website_starter/images/errorSvgrepoCom1Svg.svg",
+                    fullWidth: 800,
+                    fullHeight: 800,
+                    aspectRatio: undefined
+                  }}
+                  message={
+                    "\u0647\u0634\u062f\u0627\u0631: \u0648\u06cc\u0698\u06af\u06cc \u00ab\u067e\u0627\u0633\u0628\u0627\u0646\u00bb \u062e\u0627\u0645\u0648\u0634\u0647!"
+                  }
+                />
+              ) : null}
+            </ApiRequest>
+          </div>
           <Calendar23
             data-plasmic-name={"calendar23"}
             data-plasmic-override={overrides.calendar23}

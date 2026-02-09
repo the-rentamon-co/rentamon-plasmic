@@ -138,7 +138,7 @@
   font-size: 16px;
   padding-bottom: 0px;
   user-select: none;
-  font-weight: 500;
+  font-weight: 400;
 }
 @media (max-width: 500px) {
   .text__c238 {
@@ -196,7 +196,7 @@
   align-items: center;
   border-radius: 30px;
   padding: 8px;
-  border: 3px solid #fcfcfc;
+  border: 2px solid #fcfcfc;
 }
 @media (max-width: 500px) {
   .button {
