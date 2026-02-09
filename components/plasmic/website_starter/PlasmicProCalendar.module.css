@@ -652,7 +652,7 @@
   align-items: center;
   justify-self: flex-start;
   min-width: 0;
-  padding: 8px;
+  padding: 0px 8px;
 }
 @media (max-width: 500px) {
   .freeBox___0ZiMw {

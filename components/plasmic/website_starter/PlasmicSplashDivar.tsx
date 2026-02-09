@@ -377,7 +377,9 @@ function PlasmicSplashDivar__RenderFunc(props: {
                 ? (() => {
                     const actionArgs = {
                       customFunction: async () => {
-                        return (function () {
+                        return (async function () {
+                          const PROPERTIES_API =
+                            "https://nb.miaan.ir/webhook/properties";
                           function getCookie(name) {
                             const value = `; ${document.cookie}`;
                             const parts = value.split(`; ${name}=`);
@@ -394,24 +396,7 @@ function PlasmicSplashDivar__RenderFunc(props: {
                             document.cookie = `source=divar; ${commonOptions}`;
                             document.cookie = `from=divar; ${commonOptions}`;
                           }
-                          function checkAndHandleError() {
-                            const params = new URLSearchParams(
-                              window.location.search
-                            );
-                            const error = params.get("error");
-                            if (
-                              error === "consent request denied" ||
-                              error === "access_denied"
-                            ) {
-                              window.location.href =
-                                "https://open-platform-redirect.divar.ir/completion";
-                              return true;
-                            }
-                            return false;
-                          }
-                          function handleRouting() {
-                            if (checkAndHandleError()) return;
-                            setDivarSourceCookie();
+                          function handlePostToken() {
                             try {
                               const params = new URLSearchParams(
                                 window.location.search
@@ -422,24 +407,71 @@ function PlasmicSplashDivar__RenderFunc(props: {
                                 if (state) {
                                   const match =
                                     state.match(/post_token=([^,]+)/);
-                                  if (match && match[1]) {
+                                  if (match && match[1])
                                     postToken = decodeURIComponent(match[1]);
-                                  }
                                 }
                               }
-                              if (postToken) {
+                              if (postToken)
                                 localStorage.setItem(
                                   "divar_post_token",
                                   postToken
                                 );
+                            } catch (e) {
+                              console.error(e);
+                            }
+                          }
+                          async function checkUserHasRealProperty(token) {
+                            try {
+                              const response = await fetch(PROPERTIES_API, {
+                                method: "GET",
+                                headers: {
+                                  Authorization: `Bearer ${token}`,
+                                  "Content-Type": "application/json",
+                                  Accept: "application/json"
+                                }
+                              });
+                              if (response.ok) {
+                                const properties = await response.json();
+                                if (Array.isArray(properties)) {
+                                  const hasReal = properties.some(
+                                    item => item.property_name !== "اقامتگاه ۱"
+                                  );
+                                  return hasReal;
+                                }
                               }
                             } catch (e) {
-                              console.error("Error saving token:", e);
+                              console.error("Property Check failed", e);
                             }
-                            const hasToken = getCookie("usso_access_available");
+                            return false;
+                          }
+                          async function handleRouting() {
+                            const params = new URLSearchParams(
+                              window.location.search
+                            );
+                            const error = params.get("error");
+                            if (
+                              error === "consent request denied" ||
+                              error === "access_denied"
+                            ) {
+                              window.location.href =
+                                "https://open-platform-redirect.divar.ir/completion";
+                              return;
+                            }
+                            setDivarSourceCookie();
+                            handlePostToken();
                             const currentSearchParams = window.location.search;
-                            if (hasToken) {
-                              window.location.href = `https://miaan.ir/direct-booking/select-property${currentSearchParams}`;
+                            const token = getCookie("usso_access_token");
+                            const hasAccess = getCookie(
+                              "usso_access_available"
+                            );
+                            if (token && hasAccess) {
+                              const isEstablishedHost =
+                                await checkUserHasRealProperty(token);
+                              if (isEstablishedHost) {
+                                window.location.href = `https://miaan.ir/direct-booking/select-property${currentSearchParams}`;
+                              } else {
+                                window.location.href = `https://miaan.ir/activation/1${currentSearchParams}`;
+                              }
                             } else {
                               window.location.href = `https://miaan.ir/activation/1${currentSearchParams}`;
                             }
