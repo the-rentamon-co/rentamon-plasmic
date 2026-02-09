@@ -1275,7 +1275,7 @@ function Plasmicکیفپول__RenderFunc(props: {
                     {hasVariant(globalVariants, "screen", "smallMobile")
                       ? "\u06f2 \u0645\u06cc\u0644\u06cc\u0648\u0646"
                       : hasVariant(globalVariants, "screen", "mobile")
-                        ? "\u06f2 \u0645\u06cc\u0644\u06cc\u0648\u0646"
+                        ? "\u06f1 \u0645\u06cc\u0644\u06cc\u0648\u0646"
                         : "\u06f1 \u0645\u06cc\u0644\u06cc\u0648\u0646 \u062a\u0648\u0645\u0627\u0646"}
                   </div>
                 ) : null}
@@ -1345,7 +1345,7 @@ function Plasmicکیفپول__RenderFunc(props: {
                     {hasVariant(globalVariants, "screen", "smallMobile")
                       ? "\u06f2 \u0645\u06cc\u0644\u06cc\u0648\u0646"
                       : hasVariant(globalVariants, "screen", "mobile")
-                        ? "\u06f2 \u0645\u06cc\u0644\u06cc\u0648\u0646"
+                        ? "\u06f1 \u0645\u06cc\u0644\u06cc\u0648\u0646"
                         : "\u06f1 \u0645\u06cc\u0644\u06cc\u0648\u0646 \u062a\u0648\u0645\u0627\u0646"}
                   </div>
                 ) : null}

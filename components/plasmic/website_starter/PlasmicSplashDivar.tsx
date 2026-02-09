@@ -378,13 +378,43 @@ function PlasmicSplashDivar__RenderFunc(props: {
                     const actionArgs = {
                       customFunction: async () => {
                         return (async function () {
+                          const BASE_N8N = "https://automation.miaan.ir";
                           const PROPERTIES_API =
                             "https://nb.miaan.ir/webhook/properties";
+                          const CALLBACK_API = `${BASE_N8N}/webhook/api/divar/auth-callback`;
                           function getCookie(name) {
                             const value = `; ${document.cookie}`;
                             const parts = value.split(`; ${name}=`);
                             if (parts.length === 2)
                               return parts.pop().split(";").shift();
+                          }
+                          function getJwtExp(token) {
+                            try {
+                              const base64 = token
+                                .split(".")[1]
+                                .replace(/-/g, "+")
+                                .replace(/_/g, "/");
+                              const payload = JSON.parse(window.atob(base64));
+                              if (payload.exp)
+                                return new Date(
+                                  payload.exp * 1000
+                                ).toUTCString();
+                            } catch (e) {}
+                            return null;
+                          }
+                          function setSSOCookies(refreshToken, accessToken) {
+                            const commonDomain =
+                              "domain=.miaan.ir; path=/; Secure; SameSite=Lax";
+                            const refreshExp = getJwtExp(refreshToken);
+                            const accessExp = getJwtExp(accessToken);
+                            if (refreshExp) {
+                              document.cookie = `usso_refresh_token=${refreshToken}; expires=${refreshExp}; ${commonDomain}`;
+                              document.cookie = `usso_refresh_available=true; expires=${refreshExp}; ${commonDomain}`;
+                            }
+                            if (accessExp) {
+                              document.cookie = `usso_access_token=${accessToken}; expires=${accessExp}; ${commonDomain}`;
+                              document.cookie = `usso_access_available=true; expires=${accessExp}; ${commonDomain}`;
+                            }
                           }
                           function setDivarSourceCookie() {
                             const date = new Date();
@@ -396,29 +426,32 @@ function PlasmicSplashDivar__RenderFunc(props: {
                             document.cookie = `source=divar; ${commonOptions}`;
                             document.cookie = `from=divar; ${commonOptions}`;
                           }
-                          function handlePostToken() {
+                          async function exchangeCodeForToken(code, postToken) {
                             try {
-                              const params = new URLSearchParams(
-                                window.location.search
-                              );
-                              let postToken = params.get("post_token");
-                              if (!postToken) {
-                                const state = params.get("state");
-                                if (state) {
-                                  const match =
-                                    state.match(/post_token=([^,]+)/);
-                                  if (match && match[1])
-                                    postToken = decodeURIComponent(match[1]);
-                                }
-                              }
-                              if (postToken)
-                                localStorage.setItem(
-                                  "divar_post_token",
-                                  postToken
+                              const response = await fetch(CALLBACK_API, {
+                                method: "POST",
+                                headers: { "Content-Type": "application/json" },
+                                body: JSON.stringify({
+                                  code,
+                                  post_token: postToken
+                                })
+                              });
+                              const result = await response.json();
+                              if (
+                                result.status === "success" &&
+                                result.access_token
+                              ) {
+                                setSSOCookies(
+                                  result.refresh_token,
+                                  result.access_token
                                 );
+                                localStorage.setItem("is_logged_in", "true");
+                                return result.access_token;
+                              }
                             } catch (e) {
-                              console.error(e);
+                              console.error("Auth Callback Failed:", e);
                             }
+                            return null;
                           }
                           async function checkUserHasRealProperty(token) {
                             try {
@@ -433,14 +466,13 @@ function PlasmicSplashDivar__RenderFunc(props: {
                               if (response.ok) {
                                 const properties = await response.json();
                                 if (Array.isArray(properties)) {
-                                  const hasReal = properties.some(
+                                  return properties.some(
                                     item => item.property_name !== "اقامتگاه ۱"
                                   );
-                                  return hasReal;
                                 }
                               }
                             } catch (e) {
-                              console.error("Property Check failed", e);
+                              console.error("Property Check Failed:", e);
                             }
                             return false;
                           }
@@ -449,22 +481,51 @@ function PlasmicSplashDivar__RenderFunc(props: {
                               window.location.search
                             );
                             const error = params.get("error");
-                            if (
-                              error === "consent request denied" ||
-                              error === "access_denied"
-                            ) {
+                            if (error) {
                               window.location.href =
                                 "https://open-platform-redirect.divar.ir/completion";
                               return;
                             }
                             setDivarSourceCookie();
-                            handlePostToken();
+                            let postToken = params.get("post_token");
+                            if (!postToken) {
+                              const state = params.get("state");
+                              if (state) {
+                                const match = state.match(/post_token=([^,]+)/);
+                                if (match && match[1])
+                                  postToken = decodeURIComponent(match[1]);
+                              }
+                              if (!postToken)
+                                postToken =
+                                  localStorage.getItem("divar_post_token");
+                            }
+                            if (postToken)
+                              localStorage.setItem(
+                                "divar_post_token",
+                                postToken
+                              );
+                            let token = getCookie("usso_access_token");
+                            const code = params.get("code");
+                            if (code) {
+                              const newToken = await exchangeCodeForToken(
+                                code,
+                                postToken
+                              );
+                              if (newToken) {
+                                token = newToken;
+                                const cleanUrl =
+                                  window.location.origin +
+                                  window.location.pathname +
+                                  `?post_token=${postToken || ""}`;
+                                window.history.replaceState(
+                                  { path: cleanUrl },
+                                  "",
+                                  cleanUrl
+                                );
+                              }
+                            }
                             const currentSearchParams = window.location.search;
-                            const token = getCookie("usso_access_token");
-                            const hasAccess = getCookie(
-                              "usso_access_available"
-                            );
-                            if (token && hasAccess) {
+                            if (token) {
                               const isEstablishedHost =
                                 await checkUserHasRealProperty(token);
                               if (isEstablishedHost) {
