@@ -96,6 +96,7 @@ export type PlasmicGdsPricing__OverridesType = {
   weekday?: Flex__<typeof Input>;
   weekend?: Flex__<typeof Input>;
   holiday?: Flex__<typeof Input>;
+  apiRequest?: Flex__<typeof ApiRequest>;
 };
 
 export interface DefaultGdsPricingProps {}
@@ -299,6 +300,30 @@ function PlasmicGdsPricing__RenderFunc(props: {
         type: "private",
         variableType: "text",
         initFunc: ({ $props, $state, $queries, $ctx }) => ""
+      },
+      {
+        path: "apiRequest.data",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "apiRequest"
+      },
+      {
+        path: "apiRequest.error",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "apiRequest"
+      },
+      {
+        path: "apiRequest.loading",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        refName: "apiRequest"
       }
     ],
     [$props, $ctx, $refs]
@@ -1426,6 +1451,38 @@ function PlasmicGdsPricing__RenderFunc(props: {
                   </React.Fragment>
                 </div>
               </div>
+              <ApiRequest
+                data-plasmic-name={"apiRequest"}
+                data-plasmic-override={overrides.apiRequest}
+                className={classNames("__wab_instance", sty.apiRequest)}
+                errorDisplay={null}
+                loadingDisplay={null}
+                method={"GET"}
+                onError={async (...eventArgs: any) => {
+                  generateStateOnChangeProp($state, [
+                    "apiRequest",
+                    "error"
+                  ]).apply(null, eventArgs);
+                }}
+                onLoading={async (...eventArgs: any) => {
+                  generateStateOnChangeProp($state, [
+                    "apiRequest",
+                    "loading"
+                  ]).apply(null, eventArgs);
+                }}
+                onSuccess={async (...eventArgs: any) => {
+                  generateStateOnChangeProp($state, [
+                    "apiRequest",
+                    "data"
+                  ]).apply(null, eventArgs);
+                }}
+                ref={ref => {
+                  $refs["apiRequest"] = ref;
+                }}
+                url={
+                  "https://api-v3.miaan.ir/webhook/c5ac48ad-53b5-4c58-ab77-7ceb520a79f2/v1/properties/1/miaan"
+                }
+              />
             </div>
             <div className={classNames(projectcss.all, sty.freeBox__i5WzH)}>
               <div
@@ -1562,7 +1619,8 @@ const PlasmicDescendants = {
     "profile",
     "weekday",
     "weekend",
-    "holiday"
+    "holiday",
+    "apiRequest"
   ],
   headerMobileNew: [
     "headerMobileNew",
@@ -1597,7 +1655,8 @@ const PlasmicDescendants = {
   profile: ["profile"],
   weekday: ["weekday"],
   weekend: ["weekend"],
-  holiday: ["holiday"]
+  holiday: ["holiday"],
+  apiRequest: ["apiRequest"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -1617,6 +1676,7 @@ type NodeDefaultElementType = {
   weekday: typeof Input;
   weekend: typeof Input;
   holiday: typeof Input;
+  apiRequest: typeof ApiRequest;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -1694,6 +1754,7 @@ export const PlasmicGdsPricing = Object.assign(
     weekday: makeNodeComponent("weekday"),
     weekend: makeNodeComponent("weekend"),
     holiday: makeNodeComponent("holiday"),
+    apiRequest: makeNodeComponent("apiRequest"),
 
     // Metadata about props expected for PlasmicGdsPricing
     internalVariantProps: PlasmicGdsPricing__VariantProps,
