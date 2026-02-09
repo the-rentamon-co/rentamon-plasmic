@@ -118,6 +118,7 @@ export type Plasmicکیفپول__OverridesType = {
   left2?: Flex__<"div">;
   packages?: Flex__<"div">;
   p1?: Flex__<"div">;
+  selected?: Flex__<"div">;
   paymentbutton?: Flex__<"div">;
   button?: Flex__<"div">;
   pricing?: Flex__<"div">;
@@ -1228,7 +1229,63 @@ function Plasmicکیفپول__RenderFunc(props: {
                               variablePath: ["input2", "value"]
                             },
                             operation: 0,
-                            value: 2000000
+                            value: 1000000
+                          };
+                          return (({
+                            variable,
+                            value,
+                            startIndex,
+                            deleteCount
+                          }) => {
+                            if (!variable) {
+                              return;
+                            }
+                            const { objRoot, variablePath } = variable;
+
+                            $stateSet(objRoot, variablePath, value);
+                            return value;
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["updateInput2Value"] != null &&
+                      typeof $steps["updateInput2Value"] === "object" &&
+                      typeof $steps["updateInput2Value"].then === "function"
+                    ) {
+                      $steps["updateInput2Value"] =
+                        await $steps["updateInput2Value"];
+                    }
+                  }}
+                >
+                  {hasVariant(globalVariants, "screen", "smallMobile")
+                    ? "\u06f2 \u0645\u06cc\u0644\u06cc\u0648\u0646"
+                    : hasVariant(globalVariants, "screen", "mobile")
+                      ? "\u06f2 \u0645\u06cc\u0644\u06cc\u0648\u0646"
+                      : "\u06f1 \u0645\u06cc\u0644\u06cc\u0648\u0646 \u062a\u0648\u0645\u0627\u0646"}
+                </div>
+                <div
+                  data-plasmic-name={"selected"}
+                  data-plasmic-override={overrides.selected}
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.selected,
+                    hasVariant(globalVariants, "screen", "mobile")
+                      ? "clickable"
+                      : undefined
+                  )}
+                  onClick={async event => {
+                    const $steps = {};
+
+                    $steps["updateInput2Value"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            variable: {
+                              objRoot: $state,
+                              variablePath: ["input2", "value"]
+                            },
+                            operation: 0,
+                            value: 1000000
                           };
                           return (({
                             variable,
@@ -1314,7 +1371,7 @@ function Plasmicکیفپول__RenderFunc(props: {
                     ? "\u06f3 \u0645\u06cc\u0644\u06cc\u0648\u0646"
                     : hasVariant(globalVariants, "screen", "mobile")
                       ? "\u06f3 \u0645\u06cc\u0644\u06cc\u0648\u0646"
-                      : "\u06f2 \u0645\u06cc\u0644\u06cc\u0648\u0646 \u062a\u0648\u0645\u0627\u0646"}
+                      : "\u06f3 \u0645\u06cc\u0644\u06cc\u0648\u0646 \u062a\u0648\u0645\u0627\u0646"}
                 </div>
                 <div
                   className={classNames(
@@ -2476,6 +2533,7 @@ const PlasmicDescendants = {
     "left2",
     "packages",
     "p1",
+    "selected",
     "paymentbutton",
     "button",
     "pricing",
@@ -2528,8 +2586,9 @@ const PlasmicDescendants = {
   intext: ["intext", "right2", "left2"],
   right2: ["right2"],
   left2: ["left2"],
-  packages: ["packages", "p1"],
-  p1: ["p1"],
+  packages: ["packages", "p1", "selected"],
+  p1: ["p1", "selected"],
+  selected: ["selected"],
   paymentbutton: ["paymentbutton", "button"],
   button: ["button"],
   pricing: ["pricing"],
@@ -2602,6 +2661,7 @@ type NodeDefaultElementType = {
   left2: "div";
   packages: "div";
   p1: "div";
+  selected: "div";
   paymentbutton: "div";
   button: "div";
   pricing: "div";
@@ -2708,6 +2768,7 @@ export const Plasmicکیفپول = Object.assign(
     left2: makeNodeComponent("left2"),
     packages: makeNodeComponent("packages"),
     p1: makeNodeComponent("p1"),
+    selected: makeNodeComponent("selected"),
     paymentbutton: makeNodeComponent("paymentbutton"),
     button: makeNodeComponent("button"),
     pricing: makeNodeComponent("pricing"),
