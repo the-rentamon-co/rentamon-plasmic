@@ -83,7 +83,6 @@ export type PlasmicDivarSuccess__OverridesType = {
   root?: Flex__<"div">;
   successful?: Flex__<typeof PlasmicImg__>;
   embedHtml?: Flex__<typeof Embed>;
-  button?: Flex__<"div">;
 };
 
 export interface DefaultDivarSuccessProps {}
@@ -191,8 +190,19 @@ function PlasmicDivarSuccess__RenderFunc(props: {
                 )}
               >
                 {hasVariant(globalVariants, "screen", "mobile")
-                  ? "\u0627\u0628\u0632\u0627\u0631\u06a9 \u0628\u0631\u0627\u06cc \u0634\u0645\u0627 \u0641\u0639\u0627\u0644 \u0634\u062f"
-                  : "\u062a\u0642\u0648\u06cc\u0645 \u0628\u0627 \u0645\u0648\u0641\u0642\u06cc\u062a \u0628\u0647 \u0622\u06af\u0647\u06cc\u062a \u0627\u0636\u0627\u0641\u0647 \u0634\u062f"}
+                  ? "\u062a\u0642\u0648\u06cc\u0645 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0628\u0627 \u0645\u0648\u0641\u0642\u06cc\u062a \u0628\u0647 \u0622\u06af\u0647\u06cc\u062a\u0648\u0646 \u0627\u0636\u0627\u0641\u0647 \u0634\u062f"
+                  : "\u062a\u0642\u0648\u06cc\u0645 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0628\u0627 \u0645\u0648\u0641\u0642\u06cc\u062a \u0628\u0647 \u0622\u06af\u0647\u06cc\u062a\u0648\u0646 \u0627\u0636\u0627\u0641\u0647 \u0634\u062f"}
+              </div>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__tZnNh
+                )}
+              >
+                {hasVariant(globalVariants, "screen", "mobile")
+                  ? "\u0627\u0644\u0627\u0646 \u0645\u0647\u0645\u0627\u0646\u200c\u0647\u0627 \u0645\u06cc\u062a\u0648\u0646\u0646 \u0627\u0632 \u0637\u0631\u06cc\u0642 \u0622\u06af\u0647\u06cc \u062f\u06cc\u0648\u0627\u0631\u062a\u0648\u0646\u060c  \u0642\u06cc\u0645\u062a \u0631\u0648\u0632 \u0647\u0627\u06cc \u062e\u0627\u0644\u06cc \u0631\u0648 \u0628\u0628\u06cc\u0646\u0646!"
+                  : "\u0627\u0644\u0627\u0646 \u0645\u0647\u0645\u0627\u0646\u200c\u0647\u0627 \u0645\u06cc\u062a\u0648\u0646\u0646 \u0627\u0632 \u0637\u0631\u06cc\u0642 \u0622\u06af\u0647\u06cc \u062f\u06cc\u0648\u0627\u0631\u062a\u0648\u0646\u060c  \u0642\u06cc\u0645\u062a \u0631\u0648\u0632 \u0647\u0627\u06cc \u062e\u0627\u0644\u06cc \u0631\u0648 \u0628\u0628\u06cc\u0646\u0646!"}
               </div>
             </div>
             <div className={classNames(projectcss.all, sty.freeBox__aiXp)}>
@@ -234,7 +244,7 @@ function PlasmicDivarSuccess__RenderFunc(props: {
                   }}
                 >
                   {
-                    "\u0628\u0631\u0648\u0632 \u06a9\u0631\u062f\u0646 \u062a\u0642\u0648\u06cc\u0645"
+                    "\u0628\u0647\u200c\u0631\u0648\u0632 \u06a9\u0631\u062f\u0646 \u062a\u0642\u0648\u06cc\u0645 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
                   }
                 </div>
               </div>
@@ -251,11 +261,6 @@ function PlasmicDivarSuccess__RenderFunc(props: {
                 />
               </div>
             </div>
-            <div
-              data-plasmic-name={"button"}
-              data-plasmic-override={overrides.button}
-              className={classNames(projectcss.all, sty.button)}
-            />
           </div>
         </div>
       </div>
@@ -264,10 +269,9 @@ function PlasmicDivarSuccess__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "successful", "embedHtml", "button"],
+  root: ["root", "successful", "embedHtml"],
   successful: ["successful"],
-  embedHtml: ["embedHtml"],
-  button: ["button"]
+  embedHtml: ["embedHtml"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -276,7 +280,6 @@ type NodeDefaultElementType = {
   root: "div";
   successful: typeof PlasmicImg__;
   embedHtml: typeof Embed;
-  button: "div";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -343,7 +346,6 @@ export const PlasmicDivarSuccess = Object.assign(
     // Helper components rendering sub-elements
     successful: makeNodeComponent("successful"),
     embedHtml: makeNodeComponent("embedHtml"),
-    button: makeNodeComponent("button"),
 
     // Metadata about props expected for PlasmicDivarSuccess
     internalVariantProps: PlasmicDivarSuccess__VariantProps,

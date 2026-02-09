@@ -62,6 +62,7 @@ import {
 import Select from "../../Select"; // plasmic-import: GgjLI5qwOqwu/component
 import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
 import { Input } from "@/fragment/components/input"; // plasmic-import: fpBkcjHl6n0Y/codeComponent
+import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
 import { _useGlobalVariants } from "./plasmic"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectModule
 import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/styleTokensProvider
 
@@ -97,6 +98,7 @@ export type PlasmicGdsPricing__OverridesType = {
   weekend?: Flex__<typeof Input>;
   holiday?: Flex__<typeof Input>;
   propretyDetail?: Flex__<typeof ApiRequest>;
+  sideEffect?: Flex__<typeof SideEffect>;
 };
 
 export interface DefaultGdsPricingProps {}
@@ -1760,6 +1762,118 @@ function PlasmicGdsPricing__RenderFunc(props: {
               </div>
             </div>
           </div>
+          <SideEffect
+            data-plasmic-name={"sideEffect"}
+            data-plasmic-override={overrides.sideEffect}
+            className={classNames("__wab_instance", sty.sideEffect)}
+            onMount={async () => {
+              const $steps = {};
+
+              $steps["runCode"] = true
+                ? (() => {
+                    const actionArgs = {
+                      customFunction: async () => {
+                        return (async () => {
+                          const isPlasmicStudio =
+                            Object.values($ctx.Fragment.previewApiConfig)
+                              .length > 0;
+                          const isMiaan =
+                            window.location.hostname.includes("miaan.ir");
+                          const ssoBase = isMiaan
+                            ? "https://sso.miaan.ir"
+                            : "https://sso.rentamon.com";
+                          const callbackBase = isMiaan
+                            ? "https://miaan.ir"
+                            : "https://rentamon.com";
+                          const redirectUrl = `${ssoBase}/web/index.html?callback=${callbackBase}/panel/`;
+                          const refreshUrl = `${ssoBase}/auth/refresh`;
+                          async function refreshToken() {
+                            if (isPlasmicStudio) return;
+                            try {
+                              const response = await fetch(refreshUrl, {
+                                method: "GET",
+                                credentials: "include"
+                              });
+                              console.log("Refreshed Token in 10 minutes");
+                              if (response.ok) {
+                                const data = await response.json();
+                                console.log(
+                                  "Token refreshed successfully:",
+                                  data
+                                );
+                              } else {
+                                console.error(
+                                  "Failed to refresh token:",
+                                  response.status
+                                );
+                              }
+                            } catch (error) {
+                              console.error("Error refreshing token:", error);
+                            }
+                          }
+                          setInterval(refreshToken, 300000);
+                          refreshToken();
+                          function getCookie(name) {
+                            const value = `; ${globalThis.document.cookie}`;
+                            const parts = value.split(`; ${name}=`);
+                            if (parts.length === 2)
+                              return parts.pop().split(";").shift();
+                          }
+                          const ussoRefreshAvailable =
+                            getCookie("usso_refresh_available") || false;
+                          console.log(
+                            "this is ussoRefresh: ",
+                            ussoRefreshAvailable
+                          );
+                          const ussoAccessAvailable =
+                            getCookie("usso_access_available") || false;
+                          console.log(
+                            "this is ussoAccessAvailable: ",
+                            ussoAccessAvailable
+                          );
+                          if (!ussoAccessAvailable && !isPlasmicStudio) {
+                            if (!ussoRefreshAvailable) {
+                              console.log("got here in redirect");
+                              return (window.location.href = redirectUrl);
+                            } else {
+                              console.log("got here in refreshToken");
+                              return fetch(refreshUrl, {
+                                method: "GET",
+                                credentials: "include"
+                              })
+                                .then(response => {
+                                  if (!response.ok) {
+                                    throw new Error("Failed to refresh token");
+                                  }
+                                  return response.json();
+                                })
+                                .then(data => {
+                                  console.log("Token refreshed:", data);
+                                  window.location.reload();
+                                })
+                                .catch(error => {
+                                  console.error("Error:", error);
+                                  window.location.href = redirectUrl;
+                                });
+                            }
+                          }
+                        })();
+                      }
+                    };
+                    return (({ customFunction }) => {
+                      return customFunction();
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["runCode"] != null &&
+                typeof $steps["runCode"] === "object" &&
+                typeof $steps["runCode"].then === "function"
+              ) {
+                $steps["runCode"] = await $steps["runCode"];
+              }
+            }}
+          />
         </div>
       </div>
     </React.Fragment>
@@ -1782,7 +1896,8 @@ const PlasmicDescendants = {
     "weekday",
     "weekend",
     "holiday",
-    "propretyDetail"
+    "propretyDetail",
+    "sideEffect"
   ],
   headerMobileNew: [
     "headerMobileNew",
@@ -1818,7 +1933,8 @@ const PlasmicDescendants = {
   weekday: ["weekday"],
   weekend: ["weekend"],
   holiday: ["holiday"],
-  propretyDetail: ["propretyDetail"]
+  propretyDetail: ["propretyDetail"],
+  sideEffect: ["sideEffect"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -1839,6 +1955,7 @@ type NodeDefaultElementType = {
   weekend: typeof Input;
   holiday: typeof Input;
   propretyDetail: typeof ApiRequest;
+  sideEffect: typeof SideEffect;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -1917,6 +2034,7 @@ export const PlasmicGdsPricing = Object.assign(
     weekend: makeNodeComponent("weekend"),
     holiday: makeNodeComponent("holiday"),
     propretyDetail: makeNodeComponent("propretyDetail"),
+    sideEffect: makeNodeComponent("sideEffect"),
 
     // Metadata about props expected for PlasmicGdsPricing
     internalVariantProps: PlasmicGdsPricing__VariantProps,
