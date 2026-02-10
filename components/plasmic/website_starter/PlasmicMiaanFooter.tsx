@@ -581,7 +581,7 @@ function PlasmicMiaanFooter__RenderFunc(props: {
                     sty.link__dOCjC
                   )}
                   component={Link}
-                  href={"/"}
+                  href={`/features`}
                   platform={"nextjs"}
                 >
                   <React.Fragment>
@@ -591,46 +591,6 @@ function PlasmicMiaanFooter__RenderFunc(props: {
                     >
                       {
                         "\u0627\u0645\u06a9\u0627\u0646\u0627\u062a \u0648 \u0648\u06cc\u0698\u06af\u06cc\u200c\u0647\u0627\u06cc \u0645\u06cc\u0627\u0646"
-                      }
-                    </span>
-                  </React.Fragment>
-                </PlasmicLink__>
-              }
-              <React.Fragment>{""}</React.Fragment>
-              <span
-                className={"plasmic_default__all plasmic_default__span"}
-                style={{ fontWeight: 400 }}
-              >
-                {"\r"}
-              </span>
-              <React.Fragment>{"\n"}</React.Fragment>
-              <span
-                className={"plasmic_default__all plasmic_default__span"}
-                style={{ fontWeight: 400 }}
-              >
-                {""}
-              </span>
-              <React.Fragment>{""}</React.Fragment>
-              {
-                <PlasmicLink__
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.a,
-                    projectcss.__wab_text,
-                    projectcss.plasmic_default__inline,
-                    sty.link___0VoWf
-                  )}
-                  component={Link}
-                  href={"/pricing"}
-                  platform={"nextjs"}
-                >
-                  <React.Fragment>
-                    <span
-                      className={"plasmic_default__all plasmic_default__span"}
-                      style={{ fontWeight: 400 }}
-                    >
-                      {
-                        "\u062a\u0639\u0631\u0641\u0647 \u062e\u062f\u0645\u0627\u062a"
                       }
                     </span>
                   </React.Fragment>
@@ -664,39 +624,6 @@ function PlasmicMiaanFooter__RenderFunc(props: {
                     >
                       {
                         "\u0641\u0631\u0635\u062a\u200c\u0647\u0627\u06cc \u0647\u0645\u06a9\u0627\u0631\u06cc\r"
-                      }
-                    </span>
-                  </React.Fragment>
-                </PlasmicLink__>
-              }
-              <React.Fragment>{""}</React.Fragment>
-              <span
-                className={"plasmic_default__all plasmic_default__span"}
-                style={{ fontWeight: 400 }}
-              >
-                {""}
-              </span>
-              <React.Fragment>{"\n"}</React.Fragment>
-              {
-                <PlasmicLink__
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.a,
-                    projectcss.__wab_text,
-                    projectcss.plasmic_default__inline,
-                    sty.link__cqnzq
-                  )}
-                  component={Link}
-                  href={`/about-us`}
-                  platform={"nextjs"}
-                >
-                  <React.Fragment>
-                    <span
-                      className={"plasmic_default__all plasmic_default__span"}
-                      style={{ fontWeight: 400 }}
-                    >
-                      {
-                        "\u0622\u0634\u0646\u0627\u06cc\u06cc \u0648 \u0627\u0631\u062a\u0628\u0627\u0637 \u0628\u0627 \u0645\u06cc\u0627\u0646"
                       }
                     </span>
                   </React.Fragment>

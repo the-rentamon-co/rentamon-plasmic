@@ -274,6 +274,7 @@
   text-align: center;
   font-size: 22px;
   font-weight: 500;
+  color: #444444;
   min-width: 0;
 }
 @media (max-width: 1200px) {

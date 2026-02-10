@@ -109,6 +109,11 @@ export type PlasmicLiteCalendar__OverridesType = {
   deskTablet?: Flex__<"div">;
   sidebarLite?: Flex__<typeof SidebarLite>;
   calendar2?: Flex__<typeof Calendar2>;
+  divarGuide?: Flex__<typeof AntdModal>;
+  selectDay?: Flex__<"ul">;
+  selectEdit?: Flex__<"ul">;
+  selectEdit3?: Flex__<"ul">;
+  selectEdit2?: Flex__<"ul">;
   spacerDontTouch?: Flex__<"div">;
   proPanelModal?: Flex__<typeof AntdModal>;
   form?: Flex__<typeof FormWrapper>;
@@ -288,6 +293,31 @@ function PlasmicLiteCalendar__RenderFunc(props: {
         type: "private",
         variableType: "text",
         initFunc: ({ $props, $state, $queries, $ctx }) => ""
+      },
+      {
+        path: "divarGuide.open",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) =>
+          (() => {
+            try {
+              return $state.showDivarGuide;
+            } catch (e) {
+              if (
+                e instanceof TypeError ||
+                e?.plasmicType === "PlasmicUndefinedDataError"
+              ) {
+                return false;
+              }
+              throw e;
+            }
+          })()
+      },
+      {
+        path: "showDivarGuide",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => false
       }
     ],
     [$props, $ctx, $refs]
@@ -523,7 +553,10 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                             vt = parseInt(vtRaw, 10);
                             $state.vtStatus = vt;
                             if (vt === 1) {
-                              return (window.location.href = `${baseUrl}/panel/`);
+                              window.location.href = `${baseUrl}/panel/`;
+                            }
+                            if (vt === 3) {
+                              return (window.location.href = `${baseUrl}/panel-2/`);
                             }
                           }
                         })();
@@ -594,7 +627,10 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                           if (isCurrentNaN || isFlagDifferent) {
                             setCookie("vt", flag.toString(), 0.3333);
                             if (flag === 1) {
-                              return (window.location.href = `${baseUrl}/panel/`);
+                              window.location.href = `${baseUrl}/panel/`;
+                            }
+                            if (flag === 3) {
+                              return (window.location.href = `${baseUrl}/panel-2/`);
                             }
                           }
                         })();
@@ -690,6 +726,32 @@ function PlasmicLiteCalendar__RenderFunc(props: {
               ) {
                 $steps["invokeGlobalAction"] =
                   await $steps["invokeGlobalAction"];
+              }
+
+              $steps["divarGuideModal"] = true
+                ? (() => {
+                    const actionArgs = {
+                      customFunction: async () => {
+                        return (() => {
+                          const hasSeen =
+                            localStorage.getItem("seen_divar_guide");
+                          if (!hasSeen) {
+                            return ($state.showDivarGuide = true);
+                          }
+                        })();
+                      }
+                    };
+                    return (({ customFunction }) => {
+                      return customFunction();
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["divarGuideModal"] != null &&
+                typeof $steps["divarGuideModal"] === "object" &&
+                typeof $steps["divarGuideModal"].then === "function"
+              ) {
+                $steps["divarGuideModal"] = await $steps["divarGuideModal"];
               }
 
               $steps["runCode4"] = true
@@ -1267,6 +1329,241 @@ function PlasmicLiteCalendar__RenderFunc(props: {
             })()}
           />
 
+          <AntdModal
+            data-plasmic-name={"divarGuide"}
+            data-plasmic-override={overrides.divarGuide}
+            className={classNames("__wab_instance", sty.divarGuide)}
+            defaultStylesClassName={classNames(
+              projectcss.root_reset,
+              projectcss.plasmic_default_styles,
+              projectcss.plasmic_mixins,
+              styleTokensClassNames
+            )}
+            hideFooter={true}
+            modalScopeClassName={sty["divarGuide__modal"]}
+            onOpenChange={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, ["divarGuide", "open"]).apply(
+                null,
+                eventArgs
+              );
+            }}
+            open={generateStateValueProp($state, ["divarGuide", "open"])}
+            title={
+              <div className={classNames(projectcss.all, sty.freeBox___3NGj7)}>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__i1AZf
+                  )}
+                >
+                  {
+                    "\u0631\u0648\u0632 \u0647\u0627\u06cc \u067e\u0631 \u0648 \u062e\u0627\u0644\u06cc \u0631\u0648 \u0628\u0647 \u0645\u0647\u0645\u0627\u0646 \u0646\u0634\u0648\u0646 \u0628\u062f\u0647"
+                  }
+                </div>
+              </div>
+            }
+            trigger={null}
+          >
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__nk47U
+              )}
+            >
+              <React.Fragment>
+                <React.Fragment>{""}</React.Fragment>
+                {
+                  <ul
+                    data-plasmic-name={"selectDay"}
+                    data-plasmic-override={overrides.selectDay}
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.ul,
+                      sty.selectDay
+                    )}
+                  >
+                    <li
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.li,
+                        projectcss.__wab_text,
+                        sty.li__sljoJ
+                      )}
+                    >
+                      {
+                        "\u0627\u0648\u0646 \u0631\u0648\u0632\u0647\u0627\u06cc\u06cc \u06a9\u0647 \u0646\u0645\u06cc\u062a\u0648\u0646\u06cc \u0627\u062c\u0627\u0631\u0647 \u0628\u062f\u06cc \u0631\u0648 \u0627\u0646\u062a\u062e\u0627\u0628 \u06a9\u0646"
+                      }
+                    </li>
+                  </ul>
+                }
+                <React.Fragment>{""}</React.Fragment>
+                {
+                  <ul
+                    data-plasmic-name={"selectEdit"}
+                    data-plasmic-override={overrides.selectEdit}
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.ul,
+                      sty.selectEdit
+                    )}
+                  >
+                    <li
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.li,
+                        projectcss.__wab_text,
+                        sty.li___4H3Ac
+                      )}
+                    >
+                      {
+                        "\u06af\u0632\u06cc\u0646\u0647 \u0648\u06cc\u0631\u0627\u06cc\u0634 \u0631\u0648 \u0627\u0646\u062a\u062e\u0627\u0628 \u06a9\u0646"
+                      }
+                    </li>
+                  </ul>
+                }
+                <React.Fragment>{""}</React.Fragment>
+                {
+                  <ul
+                    data-plasmic-name={"selectEdit3"}
+                    data-plasmic-override={overrides.selectEdit3}
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.ul,
+                      sty.selectEdit3
+                    )}
+                  >
+                    <li
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.li,
+                        projectcss.__wab_text,
+                        sty.li__ptpYi
+                      )}
+                    >
+                      {
+                        "\u06af\u0632\u06cc\u0646\u0647 \u067e\u0631 \u0631\u0648 \u0627\u0646\u062a\u062e\u0627\u0628 \u06a9\u0646"
+                      }
+                    </li>
+                  </ul>
+                }
+                <React.Fragment>{""}</React.Fragment>
+                {
+                  <ul
+                    data-plasmic-name={"selectEdit2"}
+                    data-plasmic-override={overrides.selectEdit2}
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.ul,
+                      sty.selectEdit2
+                    )}
+                  >
+                    <li
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.li,
+                        projectcss.__wab_text,
+                        sty.li__wlRx3
+                      )}
+                    >
+                      {
+                        "\u0627\u0632 \u0628\u06cc\u0646 \u00ab\u0645\u0633\u0627\u0641\u0631 \u062f\u0627\u0631\u0645/\u0641\u0639\u0644\u0627 \u0627\u062c\u0627\u0631\u0647 \u0646\u0645\u06cc\u062f\u0645\u00bb \u06cc\u06a9 \u06af\u0632\u06cc\u0646\u0647 \u0631\u0648 \u0627\u0646\u062a\u062e\u0627\u0628 \u06a9\u0646"
+                      }
+                    </li>
+                  </ul>
+                }
+                <React.Fragment>{""}</React.Fragment>
+              </React.Fragment>
+            </div>
+            <div className={classNames(projectcss.all, sty.freeBox__fqKew)}>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__rpnRj
+                )}
+              >
+                {
+                  "\u062d\u0627\u0644\u0627 \u0645\u0633\u0627\u0641\u0631 \u0645\u06cc\u062a\u0648\u0646\u0647 \u062f\u0627\u062e\u0644 \u062a\u0642\u0648\u06cc\u0645 \u062f\u06cc\u0648\u0627\u0631\u060c \u0631\u0648\u0632 \u0647\u0627\u06cc \u062e\u0627\u0644\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0631\u0648 \u0628\u0628\u06cc\u0646\u0647"
+                }
+              </div>
+            </div>
+            <div
+              className={classNames(projectcss.all, sty.freeBox__txXe5)}
+              onClick={async event => {
+                const $steps = {};
+
+                $steps["updateProPanelModal2Open"] = true
+                  ? (() => {
+                      const actionArgs = {
+                        variable: {
+                          objRoot: $state,
+                          variablePath: ["divarGuide", "open"]
+                        },
+                        operation: 4
+                      };
+                      return (({
+                        variable,
+                        value,
+                        startIndex,
+                        deleteCount
+                      }) => {
+                        if (!variable) {
+                          return;
+                        }
+                        const { objRoot, variablePath } = variable;
+
+                        const oldValue = $stateGet(objRoot, variablePath);
+                        $stateSet(objRoot, variablePath, !oldValue);
+                        return !oldValue;
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+                if (
+                  $steps["updateProPanelModal2Open"] != null &&
+                  typeof $steps["updateProPanelModal2Open"] === "object" &&
+                  typeof $steps["updateProPanelModal2Open"].then === "function"
+                ) {
+                  $steps["updateProPanelModal2Open"] =
+                    await $steps["updateProPanelModal2Open"];
+                }
+
+                $steps["runCode"] = true
+                  ? (() => {
+                      const actionArgs = {
+                        customFunction: async () => {
+                          return (() => {
+                            localStorage.setItem("seen_divar_guide", "true");
+                            return ($state.showDivarGuide = false);
+                          })();
+                        }
+                      };
+                      return (({ customFunction }) => {
+                        return customFunction();
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+                if (
+                  $steps["runCode"] != null &&
+                  typeof $steps["runCode"] === "object" &&
+                  typeof $steps["runCode"].then === "function"
+                ) {
+                  $steps["runCode"] = await $steps["runCode"];
+                }
+              }}
+            >
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__vyXCk
+                )}
+              >
+                {"\u0628\u0627\u0634\u0647"}
+              </div>
+            </div>
+          </AntdModal>
           <div
             data-plasmic-name={"spacerDontTouch"}
             data-plasmic-override={overrides.spacerDontTouch}
@@ -1350,7 +1647,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField__twj5D
+                        sty.formField__dpkr4
                       )}
                       label={"Name"}
                       name={"name"}
@@ -1362,7 +1659,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField__wXTjh
+                        sty.formField__tOyfg
                       )}
                       label={"Message"}
                       name={"message"}
@@ -1380,7 +1677,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                         className={classNames(
                           projectcss.all,
                           projectcss.__wab_text,
-                          sty.text___1GeZi
+                          sty.text___1Ipjw
                         )}
                       >
                         {"Submit"}
@@ -1432,6 +1729,11 @@ const PlasmicDescendants = {
     "deskTablet",
     "sidebarLite",
     "calendar2",
+    "divarGuide",
+    "selectDay",
+    "selectEdit",
+    "selectEdit3",
+    "selectEdit2",
     "spacerDontTouch",
     "proPanelModal",
     "form",
@@ -1465,6 +1767,17 @@ const PlasmicDescendants = {
   deskTablet: ["deskTablet", "sidebarLite"],
   sidebarLite: ["sidebarLite"],
   calendar2: ["calendar2"],
+  divarGuide: [
+    "divarGuide",
+    "selectDay",
+    "selectEdit",
+    "selectEdit3",
+    "selectEdit2"
+  ],
+  selectDay: ["selectDay"],
+  selectEdit: ["selectEdit"],
+  selectEdit3: ["selectEdit3"],
+  selectEdit2: ["selectEdit2"],
   spacerDontTouch: ["spacerDontTouch"],
   proPanelModal: ["proPanelModal", "form", "input", "textArea", "button"],
   form: ["form", "input", "textArea", "button"],
@@ -1492,6 +1805,11 @@ type NodeDefaultElementType = {
   deskTablet: "div";
   sidebarLite: typeof SidebarLite;
   calendar2: typeof Calendar2;
+  divarGuide: typeof AntdModal;
+  selectDay: "ul";
+  selectEdit: "ul";
+  selectEdit3: "ul";
+  selectEdit2: "ul";
   spacerDontTouch: "div";
   proPanelModal: typeof AntdModal;
   form: typeof FormWrapper;
@@ -1577,6 +1895,11 @@ export const PlasmicLiteCalendar = Object.assign(
     deskTablet: makeNodeComponent("deskTablet"),
     sidebarLite: makeNodeComponent("sidebarLite"),
     calendar2: makeNodeComponent("calendar2"),
+    divarGuide: makeNodeComponent("divarGuide"),
+    selectDay: makeNodeComponent("selectDay"),
+    selectEdit: makeNodeComponent("selectEdit"),
+    selectEdit3: makeNodeComponent("selectEdit3"),
+    selectEdit2: makeNodeComponent("selectEdit2"),
     spacerDontTouch: makeNodeComponent("spacerDontTouch"),
     proPanelModal: makeNodeComponent("proPanelModal"),
     form: makeNodeComponent("form"),

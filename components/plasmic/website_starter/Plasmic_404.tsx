@@ -318,9 +318,9 @@ function Plasmic_404__RenderFunc(props: {
                     sty.text__nnxTo
                   )}
                 >
-                  {hasVariant(globalVariants, "screen", "mobile")
-                    ? "\u0627\u06cc\u0646 \u0635\u0641\u062d\u0647 \u0631\u0648 \u0646\u062f\u0627\u0631\u06cc\u0645!"
-                    : "\u0645\u062b\u0644 \u0627\u06cc\u0646\u06a9\u0647 \u0627\u06cc\u0646 \u0635\u0641\u062d\u0647 \u0631\u0648 \u0646\u062f\u0627\u0631\u06cc\u0645!"}
+                  {
+                    "\u0645\u062b\u0644 \u0627\u06cc\u0646\u06a9\u0647 \u0627\u06cc\u0646 \u0635\u0641\u062d\u0647 \u0631\u0648 \u0646\u062f\u0627\u0631\u06cc\u0645!\n\u06f4\u06f0\u06f4"
+                  }
                 </div>
               </div>
               <div

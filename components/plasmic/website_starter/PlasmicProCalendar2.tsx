@@ -617,7 +617,7 @@ function PlasmicProCalendar2__RenderFunc(props: {
                             if (vt === 2) {
                               window.location.href = `${baseUrl}/panel-lite/`;
                             }
-                            if (vt == 1) {
+                            if (vt === 1) {
                               return (window.location.href = `${baseUrl}/panel`);
                             }
                           }
@@ -691,7 +691,7 @@ function PlasmicProCalendar2__RenderFunc(props: {
                           if (flag === 2) {
                             window.location.href = `${baseUrl}/panel-lite/`;
                           }
-                          if (flag == 1) {
+                          if (flag === 1) {
                             return (window.location.href = `${baseUrl}/panel/`);
                           }
                         }

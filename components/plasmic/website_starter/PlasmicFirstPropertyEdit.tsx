@@ -1849,10 +1849,65 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
                             await $steps["deletePropTourCookie"];
                         }
 
-                        $steps["goToPanel"] = true
+                        $steps["invokeGlobalActionDivarProperty"] = true
                           ? (() => {
                               const actionArgs = {
-                                destination: `/direct-booking/select-property`
+                                args: [
+                                  "POST",
+                                  "https://automation.miaan.ir/webhook/api/divar/property",
+                                  undefined,
+                                  undefined
+                                ]
+                              };
+                              return $globalActions[
+                                "Fragment.apiRequest"
+                              ]?.apply(null, [...actionArgs.args]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["invokeGlobalActionDivarProperty"] != null &&
+                          typeof $steps["invokeGlobalActionDivarProperty"] ===
+                            "object" &&
+                          typeof $steps["invokeGlobalActionDivarProperty"]
+                            .then === "function"
+                        ) {
+                          $steps["invokeGlobalActionDivarProperty"] =
+                            await $steps["invokeGlobalActionDivarProperty"];
+                        }
+
+                        $steps["addPropertyIdToDivarMapping"] = true
+                          ? (() => {
+                              const actionArgs = {
+                                args: [
+                                  "POST",
+                                  "https://automation.rentamon.com/webhook/api/divar/property/new-user",
+                                  undefined,
+                                  {
+                                    post_token:
+                                      localStorage.getItem("divar_post_token")
+                                  }
+                                ]
+                              };
+                              return $globalActions[
+                                "Fragment.apiRequest"
+                              ]?.apply(null, [...actionArgs.args]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["addPropertyIdToDivarMapping"] != null &&
+                          typeof $steps["addPropertyIdToDivarMapping"] ===
+                            "object" &&
+                          typeof $steps["addPropertyIdToDivarMapping"].then ===
+                            "function"
+                        ) {
+                          $steps["addPropertyIdToDivarMapping"] =
+                            await $steps["addPropertyIdToDivarMapping"];
+                        }
+
+                        $steps["goToPage"] = true
+                          ? (() => {
+                              const actionArgs = {
+                                destination: `/divar/success`
                               };
                               return (({ destination }) => {
                                 if (
@@ -1869,11 +1924,11 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
                             })()
                           : undefined;
                         if (
-                          $steps["goToPanel"] != null &&
-                          typeof $steps["goToPanel"] === "object" &&
-                          typeof $steps["goToPanel"].then === "function"
+                          $steps["goToPage"] != null &&
+                          typeof $steps["goToPage"] === "object" &&
+                          typeof $steps["goToPage"].then === "function"
                         ) {
-                          $steps["goToPanel"] = await $steps["goToPanel"];
+                          $steps["goToPage"] = await $steps["goToPage"];
                         }
 
                         $steps["updateLoading2"] = true

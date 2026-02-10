@@ -236,6 +236,21 @@ function PlasmicSupport__RenderFunc(props: {
           property="twitter:title"
           content={PlasmicSupport.pageMetadata.title}
         />
+        <meta
+          key="description"
+          property="description"
+          content={PlasmicSupport.pageMetadata.description}
+        />
+        <meta
+          key="og:description"
+          property="og:description"
+          content={PlasmicSupport.pageMetadata.description}
+        />
+        <meta
+          key="twitter:description"
+          property="twitter:description"
+          content={PlasmicSupport.pageMetadata.description}
+        />
       </Head>
 
       <style>{`
@@ -1600,8 +1615,8 @@ export const PlasmicSupport = Object.assign(
 
     // Page metadata
     pageMetadata: {
-      title: "درباره رنتامونی‌ها",
-      description: "",
+      title: "پشتیبانی و ارتباط با تیم میان",
+      description: "راه‌های ارتباط با تیم میان و پشتیبانی خدمات اینجاست.",
       ogImageSrc: "",
       canonical: ""
     }
