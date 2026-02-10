@@ -1849,32 +1849,6 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
                             await $steps["deletePropTourCookie"];
                         }
 
-                        $steps["invokeGlobalActionDivarProperty"] = true
-                          ? (() => {
-                              const actionArgs = {
-                                args: [
-                                  "POST",
-                                  "https://automation.miaan.ir/webhook/api/divar/property",
-                                  undefined,
-                                  undefined
-                                ]
-                              };
-                              return $globalActions[
-                                "Fragment.apiRequest"
-                              ]?.apply(null, [...actionArgs.args]);
-                            })()
-                          : undefined;
-                        if (
-                          $steps["invokeGlobalActionDivarProperty"] != null &&
-                          typeof $steps["invokeGlobalActionDivarProperty"] ===
-                            "object" &&
-                          typeof $steps["invokeGlobalActionDivarProperty"]
-                            .then === "function"
-                        ) {
-                          $steps["invokeGlobalActionDivarProperty"] =
-                            await $steps["invokeGlobalActionDivarProperty"];
-                        }
-
                         $steps["addPropertyIdToDivarMapping"] = true
                           ? (() => {
                               const actionArgs = {

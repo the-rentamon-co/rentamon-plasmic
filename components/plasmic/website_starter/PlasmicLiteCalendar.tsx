@@ -1340,6 +1340,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
               styleTokensClassNames
             )}
             hideFooter={true}
+            maskClosable={false}
             modalScopeClassName={sty["divarGuide__modal"]}
             onOpenChange={async (...eventArgs: any) => {
               generateStateOnChangeProp($state, ["divarGuide", "open"]).apply(
@@ -1647,7 +1648,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField__dpkr4
+                        sty.formField__gW9N0
                       )}
                       label={"Name"}
                       name={"name"}
@@ -1659,7 +1660,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField__tOyfg
+                        sty.formField__y1AP5
                       )}
                       label={"Message"}
                       name={"message"}
@@ -1677,7 +1678,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                         className={classNames(
                           projectcss.all,
                           projectcss.__wab_text,
-                          sty.text___1Ipjw
+                          sty.text__p1NdG
                         )}
                       >
                         {"Submit"}
