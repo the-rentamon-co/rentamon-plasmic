@@ -1759,6 +1759,7 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                       )}
                       component={Link}
                       href={`/best-villa-rental-sites`}
+                      legacyBehavior={false}
                       platform={"nextjs"}
                     >
                       {
@@ -1778,6 +1779,7 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                       )}
                       component={Link}
                       href={`/rental-rules`}
+                      legacyBehavior={false}
                       platform={"nextjs"}
                     >
                       {

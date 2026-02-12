@@ -432,6 +432,7 @@ function Plasmicمعرفیبرندجدید__RenderFunc(props: {
                               )}
                               component={Link}
                               href={"https://www.jajiga.com/room/3222562"}
+                              legacyBehavior={false}
                               platform={"nextjs"}
                             >
                               {hasVariant(
@@ -504,6 +505,7 @@ function Plasmicمعرفیبرندجدید__RenderFunc(props: {
                               )}
                               component={Link}
                               href={"https://www.jajiga.com/room/3222562"}
+                              legacyBehavior={false}
                               platform={"nextjs"}
                             >
                               {hasVariant(
@@ -576,6 +578,7 @@ function Plasmicمعرفیبرندجدید__RenderFunc(props: {
                               )}
                               component={Link}
                               href={"https://www.jajiga.com/room/3222562"}
+                              legacyBehavior={false}
                               platform={"nextjs"}
                             >
                               {hasVariant(
@@ -858,6 +861,7 @@ function Plasmicمعرفیبرندجدید__RenderFunc(props: {
                         )}
                         component={Link}
                         href={"https://www.homsa.net/rooms/88662"}
+                        legacyBehavior={false}
                         platform={"nextjs"}
                       >
                         {hasVariant(globalVariants, "screen", "mobile") ? (
@@ -898,6 +902,7 @@ function Plasmicمعرفیبرندجدید__RenderFunc(props: {
                         )}
                         component={Link}
                         href={"https://www.homsa.net/rooms/88662"}
+                        legacyBehavior={false}
                         platform={"nextjs"}
                       >
                         <React.Fragment>

@@ -552,6 +552,7 @@ function Plasmicمدیریتاقامتگاه__RenderFunc(props: {
                         )}
                         component={Link}
                         href={`/accommodation-management-software`}
+                        legacyBehavior={false}
                         platform={"nextjs"}
                       >
                         {
@@ -571,6 +572,7 @@ function Plasmicمدیریتاقامتگاه__RenderFunc(props: {
                         )}
                         component={Link}
                         href={`/list-your-property`}
+                        legacyBehavior={false}
                         platform={"nextjs"}
                       >
                         {
@@ -818,6 +820,7 @@ function Plasmicمدیریتاقامتگاه__RenderFunc(props: {
                           )}
                           component={Link}
                           href={"https://miaan.ir"}
+                          legacyBehavior={false}
                           platform={"nextjs"}
                         >
                           {"\u0645\u06cc\u0627\u0646"}
@@ -839,6 +842,7 @@ function Plasmicمدیریتاقامتگاه__RenderFunc(props: {
                           )}
                           component={Link}
                           href={"https://miaan.ir"}
+                          legacyBehavior={false}
                           platform={"nextjs"}
                         >
                           {"\u0645\u06cc\u0627\u0646"}

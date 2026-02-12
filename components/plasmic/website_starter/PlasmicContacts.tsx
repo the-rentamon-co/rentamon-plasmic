@@ -558,6 +558,7 @@ function PlasmicContacts__RenderFunc(props: {
                               throw e;
                             }
                           })()}
+                          legacyBehavior={false}
                           platform={"nextjs"}
                         >
                           <React.Fragment>

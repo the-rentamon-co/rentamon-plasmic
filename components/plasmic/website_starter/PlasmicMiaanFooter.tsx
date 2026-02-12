@@ -518,6 +518,7 @@ function PlasmicMiaanFooter__RenderFunc(props: {
                   )}
                   component={Link}
                   href={`/new-brand`}
+                  legacyBehavior={false}
                   platform={"nextjs"}
                 >
                   <React.Fragment>
@@ -582,6 +583,7 @@ function PlasmicMiaanFooter__RenderFunc(props: {
                   )}
                   component={Link}
                   href={`/features`}
+                  legacyBehavior={false}
                   platform={"nextjs"}
                 >
                   <React.Fragment>
@@ -615,6 +617,7 @@ function PlasmicMiaanFooter__RenderFunc(props: {
                   )}
                   component={Link}
                   href={`/join-our-journey`}
+                  legacyBehavior={false}
                   platform={"nextjs"}
                 >
                   <React.Fragment>
@@ -655,6 +658,7 @@ function PlasmicMiaanFooter__RenderFunc(props: {
                   )}
                   component={Link}
                   href={`/integrations`}
+                  legacyBehavior={false}
                   platform={"nextjs"}
                 >
                   <React.Fragment>
@@ -688,6 +692,7 @@ function PlasmicMiaanFooter__RenderFunc(props: {
                   )}
                   component={Link}
                   href={`/terms-of-use`}
+                  legacyBehavior={false}
                   platform={"nextjs"}
                 >
                   <React.Fragment>

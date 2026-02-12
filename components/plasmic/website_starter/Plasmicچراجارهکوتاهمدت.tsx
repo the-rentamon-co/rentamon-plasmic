@@ -501,6 +501,7 @@ function Plasmicچراجارهکوتاهمدت__RenderFunc(props: {
                       )}
                       component={Link}
                       href={`/furnished-rental-maintenance-guide`}
+                      legacyBehavior={false}
                       platform={"nextjs"}
                     >
                       {
@@ -520,6 +521,7 @@ function Plasmicچراجارهکوتاهمدت__RenderFunc(props: {
                       )}
                       component={Link}
                       href={`/rental-rules`}
+                      legacyBehavior={false}
                       platform={"nextjs"}
                     >
                       {
@@ -609,6 +611,7 @@ function Plasmicچراجارهکوتاهمدت__RenderFunc(props: {
                         )}
                         component={Link}
                         href={"/vacation-rental-income"}
+                        legacyBehavior={false}
                         platform={"nextjs"}
                       >
                         {
@@ -698,6 +701,7 @@ function Plasmicچراجارهکوتاهمدت__RenderFunc(props: {
                       )}
                       component={Link}
                       href={"/best-villa-rental-sites"}
+                      legacyBehavior={false}
                       platform={"nextjs"}
                     >
                       {

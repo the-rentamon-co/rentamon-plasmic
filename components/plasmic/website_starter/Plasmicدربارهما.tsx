@@ -644,6 +644,7 @@ function Plasmicدربارهما__RenderFunc(props: {
                         )}
                         component={Link}
                         href={"https://miaan.ir/join-our-journey/"}
+                        legacyBehavior={false}
                         platform={"nextjs"}
                       >
                         {"\u0627\u06cc\u0646\u062c\u0627"}

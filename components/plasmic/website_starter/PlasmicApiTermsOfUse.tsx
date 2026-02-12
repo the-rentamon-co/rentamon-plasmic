@@ -273,6 +273,7 @@ function PlasmicApiTermsOfUse__RenderFunc(props: {
                       )}
                       component={Link}
                       href={"https:/rentamon.com/integrations"}
+                      legacyBehavior={false}
                       platform={"nextjs"}
                     >
                       {"API \u0645\u06cc\u0627\u0646"}

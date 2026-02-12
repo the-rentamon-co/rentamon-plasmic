@@ -309,6 +309,7 @@ function Plasmicمدیریتویلا__RenderFunc(props: {
                           )}
                           component={Link}
                           href={`/best-villa-rental-sites`}
+                          legacyBehavior={false}
                           platform={"nextjs"}
                         >
                           {
@@ -459,6 +460,7 @@ function Plasmicمدیریتویلا__RenderFunc(props: {
                       )}
                       component={Link}
                       href={`/`}
+                      legacyBehavior={false}
                       platform={"nextjs"}
                     >
                       {"\u0645\u06cc\u0627\u0646"}
@@ -547,6 +549,7 @@ function Plasmicمدیریتویلا__RenderFunc(props: {
                     )}
                     component={Link}
                     href={`/features`}
+                    legacyBehavior={false}
                     platform={"nextjs"}
                   >
                     {

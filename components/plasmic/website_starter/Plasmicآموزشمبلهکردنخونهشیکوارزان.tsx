@@ -380,6 +380,7 @@ function Plasmicآموزشمبلهکردنخونهشیکوارزان__RenderFunc
                           )}
                           component={Link}
                           href={`/villa-management`}
+                          legacyBehavior={false}
                           platform={"nextjs"}
                         >
                           {
@@ -475,6 +476,7 @@ function Plasmicآموزشمبلهکردنخونهشیکوارزان__RenderFunc
                           )}
                           component={Link}
                           href={`/reviews-and-revenue`}
+                          legacyBehavior={false}
                           platform={"nextjs"}
                         >
                           {
@@ -622,6 +624,7 @@ function Plasmicآموزشمبلهکردنخونهشیکوارزان__RenderFunc
                             )}
                             component={Link}
                             href={`/furnished-rental-maintenance-guide`}
+                            legacyBehavior={false}
                             platform={"nextjs"}
                           >
                             {

@@ -1273,32 +1273,27 @@ function PlasmicCalendar24__RenderFunc(props: {
                       $state.manualResultShow = false;
                       $state.requestdata = null;
                       if (typeof window !== "undefined") {
-                        const savedPayloadStr = sessionStorage.getItem(
-                          "saved_request_payload"
-                        );
-                        const savedDataStr =
-                          sessionStorage.getItem("saved_request_data");
-                        if (savedPayloadStr && savedDataStr) {
+                        const targetId = $props.propertyId || $state.propId;
+                        if (targetId) {
                           try {
-                            const payload = JSON.parse(savedPayloadStr);
-                            if (payload.property_id == $props.propertyId) {
-                              $state.requestdata = payload;
-                              const savedData = JSON.parse(savedDataStr);
-                              if (savedData.isLoading) {
+                            const bookStr = sessionStorage.getItem(
+                              "property_history_book"
+                            );
+                            if (bookStr) {
+                              const book = JSON.parse(bookStr);
+                              const key = String(targetId);
+                              const myPage = book[key];
+                              if (myPage) {
+                                $state.requestdata = myPage.payload;
                                 $state.platformRequestStatus = {
-                                  isLoading: true
-                                };
-                              } else {
-                                $state.platformRequestStatus = {
-                                  data: savedData,
+                                  data: myPage.result,
                                   isLoading: false
                                 };
+                                return ($state.manualResultShow = true);
+                              } else {
                               }
-                              return ($state.manualResultShow = true);
                             }
-                          } catch (e) {
-                            return console.error("Error restoring data", e);
-                          }
+                          } catch (e) {}
                         }
                       }
                     })();
@@ -1350,41 +1345,6 @@ function PlasmicCalendar24__RenderFunc(props: {
             typeof $steps["runCode"].then === "function"
           ) {
             $steps["runCode"] = await $steps["runCode"];
-          }
-
-          $steps["runCode2"] = true
-            ? (() => {
-                const actionArgs = {
-                  customFunction: async () => {
-                    return (() => {
-                      const savedData =
-                        sessionStorage.getItem("saved_request_data");
-                      const savedPayload = sessionStorage.getItem(
-                        "saved_request_payload"
-                      );
-                      if (savedPayload) {
-                        $state.requestdata = JSON.parse(savedPayload);
-                      }
-                      if (savedData) {
-                        return ($state.platformRequestStatus = {
-                          data: JSON.parse(savedData),
-                          isLoading: false
-                        });
-                      }
-                    })();
-                  }
-                };
-                return (({ customFunction }) => {
-                  return customFunction();
-                })?.apply(null, [actionArgs]);
-              })()
-            : undefined;
-          if (
-            $steps["runCode2"] != null &&
-            typeof $steps["runCode2"] === "object" &&
-            typeof $steps["runCode2"].then === "function"
-          ) {
-            $steps["runCode2"] = await $steps["runCode2"];
           }
         }}
       />
@@ -8832,16 +8792,25 @@ function PlasmicCalendar24__RenderFunc(props: {
                               $state.platformRequestStatus &&
                               $state.platformRequestStatus.data
                             ) {
-                              sessionStorage.setItem(
-                                "saved_request_data",
-                                JSON.stringify(
-                                  $state.platformRequestStatus.data
-                                )
+                              const history = JSON.parse(
+                                sessionStorage.getItem(
+                                  "property_history_book"
+                                ) || "{}"
                               );
-                              return sessionStorage.setItem(
-                                "saved_request_payload",
-                                JSON.stringify($state.requestdata)
-                              );
+                              const safeId = $state.requestdata.property_id;
+                              if (safeId) {
+                                history[safeId] = {
+                                  result: $state.platformRequestStatus.data,
+                                  payload: $state.requestdata
+                                };
+                                sessionStorage.setItem(
+                                  "property_history_book",
+                                  JSON.stringify(history)
+                                );
+                                return console.log(
+                                  `Saved history for property ${safeId}`
+                                );
+                              }
                             }
                           })();
                         }

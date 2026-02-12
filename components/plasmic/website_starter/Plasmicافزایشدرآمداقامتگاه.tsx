@@ -402,6 +402,7 @@ function Plasmicافزایشدرآمداقامتگاه__RenderFunc(props: {
                           )}
                           component={Link}
                           href={`/short-term-rental`}
+                          legacyBehavior={false}
                           platform={"nextjs"}
                         >
                           {
@@ -493,6 +494,7 @@ function Plasmicافزایشدرآمداقامتگاه__RenderFunc(props: {
                         )}
                         component={Link}
                         href={`/reviews-and-revenue`}
+                        legacyBehavior={false}
                         platform={"nextjs"}
                       >
                         {
@@ -626,6 +628,7 @@ function Plasmicافزایشدرآمداقامتگاه__RenderFunc(props: {
                         )}
                         component={Link}
                         href={`/low-cost-furnishing-guide`}
+                        legacyBehavior={false}
                         platform={"nextjs"}
                       >
                         {
@@ -649,6 +652,7 @@ function Plasmicافزایشدرآمداقامتگاه__RenderFunc(props: {
                             ? `/reviews-and-revenue`
                             : `/furnished-rental-maintenance-guide`
                         }
+                        legacyBehavior={false}
                         platform={"nextjs"}
                       >
                         {
@@ -705,6 +709,7 @@ function Plasmicافزایشدرآمداقامتگاه__RenderFunc(props: {
                           )}
                           component={Link}
                           href={`/hospitality-principles`}
+                          legacyBehavior={false}
                           platform={"nextjs"}
                         >
                           {

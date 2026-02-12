@@ -1401,6 +1401,7 @@ function Plasmicتالار__RenderFunc(props: {
                                 sty.link
                               )}
                               component={Link}
+                              legacyBehavior={false}
                               platform={"nextjs"}
                             >
                               <React.Fragment>

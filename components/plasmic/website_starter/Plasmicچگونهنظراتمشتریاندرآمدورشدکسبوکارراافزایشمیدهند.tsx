@@ -537,6 +537,7 @@ function Plasmicچگونهنظراتمشتریاندرآمدورشدکسبوکا
                               )}
                               component={Link}
                               href={"https://miaan.ir/hospitality-principles/"}
+                              legacyBehavior={false}
                               platform={"nextjs"}
                             >
                               {
@@ -623,6 +624,7 @@ function Plasmicچگونهنظراتمشتریاندرآمدورشدکسبوکا
                           )}
                           component={Link}
                           href={`/short-term-rental`}
+                          legacyBehavior={false}
                           platform={"nextjs"}
                         >
                           {hasVariant(globalVariants, "screen", "mobile")
@@ -642,6 +644,7 @@ function Plasmicچگونهنظراتمشتریاندرآمدورشدکسبوکا
                           )}
                           component={Link}
                           href={`/hospitality-principles`}
+                          legacyBehavior={false}
                           platform={"nextjs"}
                         >
                           {hasVariant(globalVariants, "screen", "mobile")
@@ -673,6 +676,7 @@ function Plasmicچگونهنظراتمشتریاندرآمدورشدکسبوکا
                           )}
                           component={Link}
                           href={`/short-term-rental`}
+                          legacyBehavior={false}
                           platform={"nextjs"}
                         >
                           {hasVariant(globalVariants, "screen", "mobile")
@@ -692,6 +696,7 @@ function Plasmicچگونهنظراتمشتریاندرآمدورشدکسبوکا
                           )}
                           component={Link}
                           href={`/hospitality-principles`}
+                          legacyBehavior={false}
                           platform={"nextjs"}
                         >
                           {hasVariant(globalVariants, "screen", "mobile")

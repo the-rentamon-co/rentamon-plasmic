@@ -571,6 +571,7 @@ function Plasmicقوانیناجارهروزانه__RenderFunc(props: {
                               )}
                               component={Link}
                               href={"https://mojavez.ir/license/781593"}
+                              legacyBehavior={false}
                               platform={"nextjs"}
                             >
                               {"\u0627\u06cc\u0646\u062c\u0627"}
@@ -600,6 +601,7 @@ function Plasmicقوانیناجارهروزانه__RenderFunc(props: {
                               )}
                               component={Link}
                               href={"https://mojavez.ir/license/781593"}
+                              legacyBehavior={false}
                               platform={"nextjs"}
                             >
                               {hasVariant(globalVariants, "screen", "mobile")
@@ -639,6 +641,7 @@ function Plasmicقوانیناجارهروزانه__RenderFunc(props: {
                             )}
                             component={Link}
                             href={"https://www.jajiga.com/"}
+                            legacyBehavior={false}
                             platform={"nextjs"}
                           >
                             {"\u062c\u0627\u062c\u06cc\u06af\u0627"}
@@ -656,6 +659,7 @@ function Plasmicقوانیناجارهروزانه__RenderFunc(props: {
                             )}
                             component={Link}
                             href={"https://www.jabama.com/"}
+                            legacyBehavior={false}
                             platform={"nextjs"}
                           >
                             {"\u062c\u0627\u0628\u0627\u0645\u0627"}
@@ -673,6 +677,7 @@ function Plasmicقوانیناجارهروزانه__RenderFunc(props: {
                             )}
                             component={Link}
                             href={"https://www.otaghak.com/"}
+                            legacyBehavior={false}
                             platform={"nextjs"}
                           >
                             {"\u0627\u062a\u0627\u0642\u06a9"}
@@ -696,6 +701,7 @@ function Plasmicقوانیناجارهروزانه__RenderFunc(props: {
                             href={
                               "https://divar.ir/s/qom/rent-temporary-suite-apartment"
                             }
+                            legacyBehavior={false}
                             platform={"nextjs"}
                           >
                             {"\u062f\u06cc\u0648\u0627\u0631"}
@@ -792,6 +798,7 @@ function Plasmicقوانیناجارهروزانه__RenderFunc(props: {
                         )}
                         component={Link}
                         href={`/short-term-rental`}
+                        legacyBehavior={false}
                         platform={"nextjs"}
                       >
                         {
@@ -811,6 +818,7 @@ function Plasmicقوانیناجارهروزانه__RenderFunc(props: {
                         )}
                         component={Link}
                         href={`/vacation-rental-income`}
+                        legacyBehavior={false}
                         platform={"nextjs"}
                       >
                         {

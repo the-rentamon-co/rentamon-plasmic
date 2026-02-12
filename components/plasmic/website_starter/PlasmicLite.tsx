@@ -1015,6 +1015,7 @@ function PlasmicLite__RenderFunc(props: {
                                 href={
                                   "https://rentamon.com/%d9%85%d8%af%db%8c%d8%b1%db%8c%d8%aa-%d9%88%db%8c%d9%84%d8%a7/"
                                 }
+                                legacyBehavior={false}
                                 platform={"nextjs"}
                               >
                                 {

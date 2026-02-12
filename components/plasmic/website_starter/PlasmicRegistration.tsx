@@ -884,6 +884,7 @@ function PlasmicRegistration__RenderFunc(props: {
                                     )}
                                     component={Link}
                                     href={"https://rentamon.com/terms-of-use/"}
+                                    legacyBehavior={false}
                                     platform={"nextjs"}
                                   >
                                     {hasVariant(
@@ -961,6 +962,7 @@ function PlasmicRegistration__RenderFunc(props: {
                                     )}
                                     component={Link}
                                     href={"https://rentamon.com/terms-of-use/"}
+                                    legacyBehavior={false}
                                     platform={"nextjs"}
                                   >
                                     {hasVariant(

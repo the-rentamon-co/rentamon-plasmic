@@ -165,6 +165,7 @@ function PlasmicNavbarRntHeader__RenderFunc(props: {
               )}
               component={Link}
               href={`/`}
+              legacyBehavior={false}
               platform={"nextjs"}
             >
               <PlasmicImg__
@@ -353,6 +354,7 @@ function PlasmicNavbarRntHeader__RenderFunc(props: {
                       ? `/splash`
                       : "/"
                   }
+                  legacyBehavior={false}
                   onClick={async event => {
                     const $steps = {};
 
@@ -408,6 +410,7 @@ function PlasmicNavbarRntHeader__RenderFunc(props: {
                 )}
                 component={Link}
                 href={`/download`}
+                legacyBehavior={false}
                 platform={"nextjs"}
               >
                 {
@@ -457,6 +460,7 @@ function PlasmicNavbarRntHeader__RenderFunc(props: {
                     sty.link__kh6Yr
                   )}
                   component={Link}
+                  legacyBehavior={false}
                   platform={"nextjs"}
                 >
                   {"\u062a\u0639\u0631\u0641\u0647"}
@@ -506,6 +510,7 @@ function PlasmicNavbarRntHeader__RenderFunc(props: {
                     sty.link___9Ui3
                   )}
                   component={Link}
+                  legacyBehavior={false}
                   platform={"nextjs"}
                 >
                   {
@@ -556,6 +561,7 @@ function PlasmicNavbarRntHeader__RenderFunc(props: {
                     sty.link__vseFw
                   )}
                   component={Link}
+                  legacyBehavior={false}
                   platform={"nextjs"}
                 >
                   {"\u062f\u0631\u0628\u0627\u0631\u0647 \u0645\u0627"}
@@ -571,6 +577,7 @@ function PlasmicNavbarRntHeader__RenderFunc(props: {
               )}
               component={Link}
               href={`/splash?src=${"web"}`}
+              legacyBehavior={false}
               onClick={async event => {
                 const $steps = {};
 
@@ -625,6 +632,7 @@ function PlasmicNavbarRntHeader__RenderFunc(props: {
               )}
               component={Link}
               href={`/download`}
+              legacyBehavior={false}
               platform={"nextjs"}
             >
               {
@@ -640,6 +648,7 @@ function PlasmicNavbarRntHeader__RenderFunc(props: {
               )}
               component={Link}
               href={`/pricing`}
+              legacyBehavior={false}
               platform={"nextjs"}
             >
               {"\u062a\u0639\u0631\u0641\u0647"}
@@ -653,6 +662,7 @@ function PlasmicNavbarRntHeader__RenderFunc(props: {
               )}
               component={Link}
               href={`/download`}
+              legacyBehavior={false}
               platform={"nextjs"}
             >
               {
@@ -668,6 +678,7 @@ function PlasmicNavbarRntHeader__RenderFunc(props: {
               )}
               component={Link}
               href={`/about-us`}
+              legacyBehavior={false}
               platform={"nextjs"}
             >
               {"\u062f\u0631\u0628\u0627\u0631\u0647 \u0645\u0627"}

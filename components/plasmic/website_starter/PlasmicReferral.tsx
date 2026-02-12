@@ -1506,6 +1506,7 @@ ${$state.textInput.value}
                                     throw e;
                                   }
                                 })()}
+                                legacyBehavior={false}
                                 platform={"nextjs"}
                               >
                                 <React.Fragment>

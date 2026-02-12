@@ -531,6 +531,7 @@ function Plasmicمشکلاتاجارهروزانهدرایران__RenderFunc(pro
                         )}
                         component={Link}
                         href={`/short-term-rental`}
+                        legacyBehavior={false}
                         platform={"nextjs"}
                       >
                         {
@@ -550,6 +551,7 @@ function Plasmicمشکلاتاجارهروزانهدرایران__RenderFunc(pro
                         )}
                         component={Link}
                         href={`/vacation-rental-income`}
+                        legacyBehavior={false}
                         platform={"nextjs"}
                       >
                         {
@@ -791,6 +793,7 @@ function Plasmicمشکلاتاجارهروزانهدرایران__RenderFunc(pro
                           )}
                           component={Link}
                           href={`/list-your-property`}
+                          legacyBehavior={false}
                           platform={"nextjs"}
                         >
                           <React.Fragment>
@@ -852,6 +855,7 @@ function Plasmicمشکلاتاجارهروزانهدرایران__RenderFunc(pro
                           )}
                           component={Link}
                           href={`/short-term-rental`}
+                          legacyBehavior={false}
                           platform={"nextjs"}
                         >
                           {

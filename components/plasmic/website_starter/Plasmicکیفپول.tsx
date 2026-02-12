@@ -1975,6 +1975,7 @@ function Plasmicکیفپول__RenderFunc(props: {
                         )}
                         component={Link}
                         href={"tel: 02191096227"}
+                        legacyBehavior={false}
                         platform={"nextjs"}
                       >
                         {hasVariant(globalVariants, "screen", "mobile") ? (
@@ -2007,6 +2008,7 @@ function Plasmicکیفپول__RenderFunc(props: {
                         )}
                         component={Link}
                         href={"tel: 02191096227"}
+                        legacyBehavior={false}
                         platform={"nextjs"}
                       >
                         {hasVariant(globalVariants, "screen", "mobile")
@@ -2291,6 +2293,7 @@ function Plasmicکیفپول__RenderFunc(props: {
                                   )}
                                   component={Link}
                                   href={"https://miaan.ir/pricing"}
+                                  legacyBehavior={false}
                                   platform={"nextjs"}
                                 >
                                   {"\u0627\u06cc\u0646\u062c\u0627"}

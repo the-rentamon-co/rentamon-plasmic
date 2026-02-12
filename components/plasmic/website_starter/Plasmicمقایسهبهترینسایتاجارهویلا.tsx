@@ -1112,6 +1112,7 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
                       )}
                       component={Link}
                       href={"https://miaan.ir/rental-guide/"}
+                      legacyBehavior={false}
                       platform={"nextjs"}
                     >
                       <React.Fragment>
@@ -1147,6 +1148,7 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
                       )}
                       component={Link}
                       href={"https://miaan.ir/rental-rules/"}
+                      legacyBehavior={false}
                       platform={"nextjs"}
                     >
                       <React.Fragment>
@@ -1685,6 +1687,7 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
                           )}
                           component={Link}
                           href={"/short-term-rental"}
+                          legacyBehavior={false}
                           platform={"nextjs"}
                         >
                           {
@@ -1704,6 +1707,7 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
                           )}
                           component={Link}
                           href={"/vacation-rental-income"}
+                          legacyBehavior={false}
                           platform={"nextjs"}
                         >
                           {

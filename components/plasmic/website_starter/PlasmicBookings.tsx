@@ -3885,6 +3885,7 @@ function PlasmicBookings__RenderFunc(props: {
                                     throw e;
                                   }
                                 })()}
+                                legacyBehavior={false}
                                 platform={"nextjs"}
                               >
                                 {hasVariant(
@@ -10400,6 +10401,7 @@ function PlasmicBookings__RenderFunc(props: {
                                 throw e;
                               }
                             })()}
+                            legacyBehavior={false}
                             platform={"nextjs"}
                           >
                             {hasVariant(

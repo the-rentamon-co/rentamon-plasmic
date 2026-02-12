@@ -610,6 +610,7 @@ function Plasmicاهمیتحضوردراینترنت__RenderFunc(props: {
                         )}
                         component={Link}
                         href={`/low-cost-furnishing-guide`}
+                        legacyBehavior={false}
                         platform={"nextjs"}
                       >
                         {
@@ -633,6 +634,7 @@ function Plasmicاهمیتحضوردراینترنت__RenderFunc(props: {
                             ? `/reviews-and-revenue`
                             : `/furnished-rental-maintenance-guide`
                         }
+                        legacyBehavior={false}
                         platform={"nextjs"}
                       >
                         {

@@ -569,6 +569,7 @@ function Plasmicنرمافزارمدیریتاقامتگاه__RenderFunc(props: 
                         )}
                         component={Link}
                         href={`/rental-rules`}
+                        legacyBehavior={false}
                         platform={"nextjs"}
                       >
                         {
@@ -592,6 +593,7 @@ function Plasmicنرمافزارمدیریتاقامتگاه__RenderFunc(props: 
                             ? `/reviews-and-revenue`
                             : `/reviews-and-revenue`
                         }
+                        legacyBehavior={false}
                         platform={"nextjs"}
                       >
                         {

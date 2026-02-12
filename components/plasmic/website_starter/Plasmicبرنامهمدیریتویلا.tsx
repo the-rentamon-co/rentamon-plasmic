@@ -636,6 +636,7 @@ function Plasmicبرنامهمدیریتویلا__RenderFunc(props: {
                         )}
                         component={Link}
                         href={`/rental-rules`}
+                        legacyBehavior={false}
                         platform={"nextjs"}
                       >
                         {
@@ -655,6 +656,7 @@ function Plasmicبرنامهمدیریتویلا__RenderFunc(props: {
                         )}
                         component={Link}
                         href={`/hospitality-principles`}
+                        legacyBehavior={false}
                         platform={"nextjs"}
                       >
                         {

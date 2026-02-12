@@ -326,6 +326,7 @@ function Plasmicراهنمایجامعدرآمدازاجارهویلا__RenderFu
                           )}
                           component={Link}
                           href={"/short-term-rental"}
+                          legacyBehavior={false}
                           platform={"nextjs"}
                         >
                           {hasVariant(globalVariants, "screen", "mobile")
@@ -353,6 +354,7 @@ function Plasmicراهنمایجامعدرآمدازاجارهویلا__RenderFu
                           )}
                           component={Link}
                           href={"/short-term-rental"}
+                          legacyBehavior={false}
                           platform={"nextjs"}
                         >
                           {hasVariant(globalVariants, "screen", "mobile")
@@ -663,6 +665,7 @@ function Plasmicراهنمایجامعدرآمدازاجارهویلا__RenderFu
                         )}
                         component={Link}
                         href={`/reviews-and-revenue`}
+                        legacyBehavior={false}
                         platform={"nextjs"}
                       >
                         {
@@ -713,6 +716,7 @@ function Plasmicراهنمایجامعدرآمدازاجارهویلا__RenderFu
                         )}
                         component={Link}
                         href={`/villa-management-software`}
+                        legacyBehavior={false}
                         platform={"nextjs"}
                       >
                         {
@@ -765,6 +769,7 @@ function Plasmicراهنمایجامعدرآمدازاجارهویلا__RenderFu
                           )}
                           component={Link}
                           href={`/hospitality-principles`}
+                          legacyBehavior={false}
                           platform={"nextjs"}
                         >
                           {"\u0627\u06cc\u0646\u062c\u0627"}
@@ -850,6 +855,7 @@ function Plasmicراهنمایجامعدرآمدازاجارهویلا__RenderFu
                         )}
                         component={Link}
                         href={"/best-villa-rental-sites"}
+                        legacyBehavior={false}
                         platform={"nextjs"}
                       >
                         {
@@ -968,6 +974,7 @@ function Plasmicراهنمایجامعدرآمدازاجارهویلا__RenderFu
                       )}
                       component={Link}
                       href={`/rental-rules`}
+                      legacyBehavior={false}
                       platform={"nextjs"}
                     >
                       {"\u0627\u06cc\u0646\u062c\u0627 \u0628\u0632\u0646"}

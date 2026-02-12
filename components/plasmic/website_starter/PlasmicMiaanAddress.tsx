@@ -183,6 +183,7 @@ function PlasmicMiaanAddress__RenderFunc(props: {
                 )}
                 component={Link}
                 href={"tel: 02191096227"}
+                legacyBehavior={false}
                 platform={"nextjs"}
               >
                 {

@@ -781,6 +781,7 @@ function PlasmicActivation__RenderFunc(props: {
                                   )}
                                   component={Link}
                                   href={`/terms-of-use`}
+                                  legacyBehavior={false}
                                   platform={"nextjs"}
                                 >
                                   {hasVariant(
@@ -858,6 +859,7 @@ function PlasmicActivation__RenderFunc(props: {
                                   )}
                                   component={Link}
                                   href={`/terms-of-use`}
+                                  legacyBehavior={false}
                                   platform={"nextjs"}
                                 >
                                   {hasVariant(

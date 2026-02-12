@@ -538,6 +538,7 @@ function Plasmicنگهداریوسایلدراجارهروزانه__RenderFunc(p
                             sty.link__qqgRc
                           )}
                           component={Link}
+                          legacyBehavior={false}
                           onClick={async event => {
                             const $steps = {};
 
@@ -589,6 +590,7 @@ function Plasmicنگهداریوسایلدراجارهروزانه__RenderFunc(p
                             sty.link___2DgEa
                           )}
                           component={Link}
+                          legacyBehavior={false}
                           onClick={async event => {
                             const $steps = {};
 
@@ -1221,6 +1223,7 @@ function Plasmicنگهداریوسایلدراجارهروزانه__RenderFunc(p
                             )}
                             component={Link}
                             href={`/rental-rules`}
+                            legacyBehavior={false}
                             onClick={async event => {
                               const $steps = {};
 
