@@ -70,6 +70,7 @@ import NavbarMnFooter from "../../NavbarMnFooter"; // plasmic-import: y37kcAs9RX
 import ClarityRntComponent from "../../ClarityRntComponent"; // plasmic-import: J5D8c7V05ty1/component
 import FaviconRntComponent from "../../FaviconRntComponent"; // plasmic-import: 2Chy9NeUIB9Q/component
 import { AntdModal } from "@plasmicpkgs/antd5/skinny/registerModal";
+import { AntdButton } from "@plasmicpkgs/antd5/skinny/registerButton";
 import { _useGlobalVariants } from "./plasmic"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectModule
 import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/styleTokensProvider
 
@@ -151,6 +152,8 @@ export type PlasmicProCalendar__OverridesType = {
   clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
   faviconRntComponent?: Flex__<typeof FaviconRntComponent>;
   modal?: Flex__<typeof AntdModal>;
+  button?: Flex__<typeof AntdButton>;
+  userActiveWebsites?: Flex__<typeof ApiRequest>;
 };
 
 export interface DefaultProCalendarProps {}
@@ -371,7 +374,17 @@ function PlasmicProCalendar__RenderFunc(props: {
         path: "modal.open",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) =>
+          (() => {
+            if (typeof document === "undefined") return false;
+            const cookies = document.cookie.split(";");
+            const hasCookie = cookies.some(cookie =>
+              cookie.trim().startsWith("homsa_modal=")
+            );
+            const isHomsaActive =
+              $state.userActiveWebsites?.data?.status?.homsa === true;
+            return !hasCookie && isHomsaActive;
+          })()
       },
       {
         path: "variable2",
@@ -408,6 +421,30 @@ function PlasmicProCalendar__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "featureStatus"
+      },
+      {
+        path: "userActiveWebsites.data",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
+
+        refName: "userActiveWebsites"
+      },
+      {
+        path: "userActiveWebsites.error",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
+
+        refName: "userActiveWebsites"
+      },
+      {
+        path: "userActiveWebsites.loading",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
+
+        refName: "userActiveWebsites"
       }
     ],
     [$props, $ctx, $refs]
@@ -2117,130 +2154,242 @@ function PlasmicProCalendar__RenderFunc(props: {
               className={classNames("__wab_instance", sty.faviconRntComponent)}
             />
           </div>
-          <AntdModal
-            data-plasmic-name={"modal"}
-            data-plasmic-override={overrides.modal}
-            className={classNames("__wab_instance", sty.modal)}
-            defaultStylesClassName={classNames(
-              projectcss.root_reset,
-              projectcss.plasmic_default_styles,
-              projectcss.plasmic_mixins,
-              styleTokensClassNames
-            )}
-            hideFooter={true}
-            maskClosable={false}
-            modalScopeClassName={sty["modal__modal"]}
-            onOpenChange={async (...eventArgs: any) => {
-              generateStateOnChangeProp($state, ["modal", "open"]).apply(
-                null,
-                eventArgs
-              );
-            }}
-            open={generateStateValueProp($state, ["modal", "open"])}
-            title={null}
-            trigger={null}
-          >
-            <div className={classNames(projectcss.all, sty.freeBox__cBdpD)}>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__ltJJt
-                )}
-              >
-                {hasVariant(globalVariants, "screen", "smallMobile")
-                  ? "\u26a0\ufe0f\r\n\u0628\u0647 \u062f\u0644\u06cc\u0644 \u0627\u062e\u062a\u0644\u0627\u0644 \u0633\u0631\u0627\u0633\u0631\u06cc \u0631\u0648\u06cc \u0627\u06cc\u0646\u062a\u0631\u0646\u062a \u06a9\u0634\u0648\u0631\u060c \u0645\u0645\u06a9\u0646\u0647 \u0628\u0639\u0636\u06cc \u062a\u063a\u06cc\u06cc\u0631\u0627\u062a \u0628\u0627 \u062e\u0637\u0627 \u0645\u0648\u0627\u062c\u0647 \u0628\u0634\u0646"
-                  : "\u26a0\ufe0f\r\n\u0628\u0647 \u0639\u0644\u062a \u0627\u062e\u062a\u0644\u0627\u0644 \u062f\u0631 \u0633\u0627\u06cc\u062a \u0647\u0648\u0645\u0633\u0627 \u0645\u0645\u06a9\u0646\u0647 \u0628\u0639\u0636\u06cc \u0627\u0632 \u062a\u063a\u06cc\u06cc\u0631\u0627\u062a \u0627\u0639\u0645\u0627\u0644 \u0646\u0634\u0647"}
-              </div>
-            </div>
-            <div
-              className={classNames(projectcss.all, sty.freeBox___3KmGf)}
-              onClick={async event => {
-                const $steps = {};
-
-                $steps["updateModalOpen"] = true
-                  ? (() => {
-                      const actionArgs = {
-                        variable: {
-                          objRoot: $state,
-                          variablePath: ["modal", "open"]
-                        },
-                        operation: 0
-                      };
-                      return (({
-                        variable,
-                        value,
-                        startIndex,
-                        deleteCount
-                      }) => {
-                        if (!variable) {
-                          return;
-                        }
-                        const { objRoot, variablePath } = variable;
-
-                        $stateSet(objRoot, variablePath, value);
-                        return value;
-                      })?.apply(null, [actionArgs]);
-                    })()
-                  : undefined;
-                if (
-                  $steps["updateModalOpen"] != null &&
-                  typeof $steps["updateModalOpen"] === "object" &&
-                  typeof $steps["updateModalOpen"].then === "function"
-                ) {
-                  $steps["updateModalOpen"] = await $steps["updateModalOpen"];
+          {(() => {
+            const child$Props = {
+              className: classNames("__wab_instance", sty.modal),
+              defaultStylesClassName: classNames(
+                projectcss.root_reset,
+                projectcss.plasmic_default_styles,
+                projectcss.plasmic_mixins,
+                styleTokensClassNames
+              ),
+              hideFooter: true,
+              maskClosable: false,
+              modalScopeClassName: sty["modal__modal"],
+              onOpenChange: async (...eventArgs: any) => {
+                generateStateOnChangeProp($state, ["modal", "open"]).apply(
+                  null,
+                  eventArgs
+                );
+              },
+              open: generateStateValueProp($state, ["modal", "open"]),
+              title: null,
+              trigger: (
+                <AntdButton
+                  data-plasmic-name={"button"}
+                  data-plasmic-override={overrides.button}
+                  className={classNames("__wab_instance", sty.button)}
+                >
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text___9ZTnc
+                    )}
+                  >
+                    {"Show modal"}
+                  </div>
+                </AntdButton>
+              )
+            };
+            initializeCodeComponentStates(
+              $state,
+              [
+                {
+                  name: "open",
+                  plasmicStateName: "modal.open"
                 }
+              ],
+              [],
+              undefined ?? {},
+              child$Props
+            );
+            initializePlasmicStates(
+              $state,
+              [
+                {
+                  name: "modal.open",
+                  initFunc: ({ $props, $state, $queries, $q }) =>
+                    (() => {
+                      if (typeof document === "undefined") return false;
+                      const cookies = document.cookie.split(";");
+                      const hasCookie = cookies.some(cookie =>
+                        cookie.trim().startsWith("homsa_modal=")
+                      );
+                      const isHomsaActive =
+                        $state.userActiveWebsites?.data?.status?.homsa === true;
+                      return !hasCookie && isHomsaActive;
+                    })()
+                }
+              ],
+              []
+            );
+            return (
+              <AntdModal
+                data-plasmic-name={"modal"}
+                data-plasmic-override={overrides.modal}
+                {...child$Props}
+              >
+                <div className={classNames(projectcss.all, sty.freeBox__cBdpD)}>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__ltJJt
+                    )}
+                  >
+                    {hasVariant(globalVariants, "screen", "smallMobile")
+                      ? "\u26a0\ufe0f\r\n\u0628\u0647 \u062f\u0644\u06cc\u0644 \u0627\u062e\u062a\u0644\u0627\u0644 \u0633\u0631\u0627\u0633\u0631\u06cc \u0631\u0648\u06cc \u0627\u06cc\u0646\u062a\u0631\u0646\u062a \u06a9\u0634\u0648\u0631\u060c \u0645\u0645\u06a9\u0646\u0647 \u0628\u0639\u0636\u06cc \u062a\u063a\u06cc\u06cc\u0631\u0627\u062a \u0628\u0627 \u062e\u0637\u0627 \u0645\u0648\u0627\u062c\u0647 \u0628\u0634\u0646"
+                      : "\u26a0\ufe0f\r\n\u0628\u0647 \u0639\u0644\u062a \u0627\u062e\u062a\u0644\u0627\u0644 \u062f\u0631 \u0633\u0627\u06cc\u062a \u0647\u0648\u0645\u0633\u0627 \u0645\u0645\u06a9\u0646\u0647 \u0628\u0639\u0636\u06cc \u0627\u0632 \u062a\u063a\u06cc\u06cc\u0631\u0627\u062a \u0627\u0639\u0645\u0627\u0644 \u0646\u0634\u0647"}
+                  </div>
+                </div>
+                <div
+                  className={classNames(projectcss.all, sty.freeBox___3KmGf)}
+                  onClick={async event => {
+                    const $steps = {};
 
-                $steps["runCode"] = true
-                  ? (() => {
-                      const actionArgs = {
-                        customFunction: async () => {
-                          return (() => {
-                            function setCookie(name, value, hours) {
-                              let expires = "";
-                              if (hours) {
-                                const date = new Date();
-                                date.setTime(
-                                  date.getTime() + hours * 60 * 60 * 1000
-                                );
-                                expires = "; expires=" + date.toUTCString();
-                              }
-                              document.cookie =
-                                name +
-                                "=" +
-                                (value || "") +
-                                expires +
-                                "; path=/; SameSite=None; Secure";
+                    $steps["updateModalOpen"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            variable: {
+                              objRoot: $state,
+                              variablePath: ["modal", "open"]
+                            },
+                            operation: 0
+                          };
+                          return (({
+                            variable,
+                            value,
+                            startIndex,
+                            deleteCount
+                          }) => {
+                            if (!variable) {
+                              return;
                             }
-                            return setCookie("homsa_modal", "true", 24);
-                          })();
-                        }
-                      };
-                      return (({ customFunction }) => {
-                        return customFunction();
-                      })?.apply(null, [actionArgs]);
-                    })()
-                  : undefined;
-                if (
-                  $steps["runCode"] != null &&
-                  typeof $steps["runCode"] === "object" &&
-                  typeof $steps["runCode"].then === "function"
-                ) {
-                  $steps["runCode"] = await $steps["runCode"];
-                }
-              }}
-            >
+                            const { objRoot, variablePath } = variable;
+
+                            $stateSet(objRoot, variablePath, value);
+                            return value;
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["updateModalOpen"] != null &&
+                      typeof $steps["updateModalOpen"] === "object" &&
+                      typeof $steps["updateModalOpen"].then === "function"
+                    ) {
+                      $steps["updateModalOpen"] =
+                        await $steps["updateModalOpen"];
+                    }
+
+                    $steps["runCode"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            customFunction: async () => {
+                              return (() => {
+                                function setCookie(name, value, hours) {
+                                  let expires = "";
+                                  if (hours) {
+                                    const date = new Date();
+                                    date.setTime(
+                                      date.getTime() + hours * 60 * 60 * 1000
+                                    );
+                                    expires = "; expires=" + date.toUTCString();
+                                  }
+                                  document.cookie =
+                                    name +
+                                    "=" +
+                                    (value || "") +
+                                    expires +
+                                    "; path=/; SameSite=None; Secure";
+                                }
+                                return setCookie("homsa_modal", "true", 24);
+                              })();
+                            }
+                          };
+                          return (({ customFunction }) => {
+                            return customFunction();
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["runCode"] != null &&
+                      typeof $steps["runCode"] === "object" &&
+                      typeof $steps["runCode"].then === "function"
+                    ) {
+                      $steps["runCode"] = await $steps["runCode"];
+                    }
+                  }}
+                >
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text___9Tx8C
+                    )}
+                  >
+                    {"\u0628\u0627\u0634\u0647"}
+                  </div>
+                </div>
+              </AntdModal>
+            );
+          })()}
+          <ApiRequest
+            data-plasmic-name={"userActiveWebsites"}
+            data-plasmic-override={overrides.userActiveWebsites}
+            className={classNames("__wab_instance", sty.userActiveWebsites)}
+            errorDisplay={
               <div
                 className={classNames(
                   projectcss.all,
                   projectcss.__wab_text,
-                  sty.text___9Tx8C
+                  sty.text__bByO
                 )}
               >
-                {"\u0628\u0627\u0634\u0647"}
+                {"Error fetching data"}
               </div>
-            </div>
-          </AntdModal>
+            }
+            loadingDisplay={
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__mp9WL
+                )}
+              >
+                {"Loading..."}
+              </div>
+            }
+            method={"GET"}
+            onError={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, [
+                "userActiveWebsites",
+                "error"
+              ]).apply(null, eventArgs);
+            }}
+            onLoading={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, [
+                "userActiveWebsites",
+                "loading"
+              ]).apply(null, eventArgs);
+            }}
+            onSuccess={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, [
+                "userActiveWebsites",
+                "data"
+              ]).apply(null, eventArgs);
+            }}
+            ref={ref => {
+              $refs["userActiveWebsites"] = ref;
+            }}
+            url={(() => {
+              const isMiaan = window.location.hostname.includes("miaan.ir");
+              const apiBase = isMiaan
+                ? "https://api-v2.miaan.ir"
+                : "https://api-v2.rentamon.com";
+              return `${apiBase}/api/website_statuses/?property_id=${$state.propId}`;
+            })()}
+          />
         </div>
       </div>
     </React.Fragment>
@@ -2272,7 +2421,9 @@ const PlasmicDescendants = {
     "navbarMnFooter",
     "clarityRntComponent",
     "faviconRntComponent",
-    "modal"
+    "modal",
+    "button",
+    "userActiveWebsites"
   ],
   header2: ["header2", "sideBar2"],
   sideBar2: ["sideBar2"],
@@ -2329,7 +2480,9 @@ const PlasmicDescendants = {
   navbarMnFooter: ["navbarMnFooter"],
   clarityRntComponent: ["clarityRntComponent"],
   faviconRntComponent: ["faviconRntComponent"],
-  modal: ["modal"]
+  modal: ["modal", "button"],
+  button: ["button"],
+  userActiveWebsites: ["userActiveWebsites"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -2359,6 +2512,8 @@ type NodeDefaultElementType = {
   clarityRntComponent: typeof ClarityRntComponent;
   faviconRntComponent: typeof FaviconRntComponent;
   modal: typeof AntdModal;
+  button: typeof AntdButton;
+  userActiveWebsites: typeof ApiRequest;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -2446,6 +2601,8 @@ export const PlasmicProCalendar = Object.assign(
     clarityRntComponent: makeNodeComponent("clarityRntComponent"),
     faviconRntComponent: makeNodeComponent("faviconRntComponent"),
     modal: makeNodeComponent("modal"),
+    button: makeNodeComponent("button"),
+    userActiveWebsites: makeNodeComponent("userActiveWebsites"),
 
     // Metadata about props expected for PlasmicProCalendar
     internalVariantProps: PlasmicProCalendar__VariantProps,
@@ -2463,7 +2620,8 @@ export const PlasmicProCalendar = Object.assign(
       twitterDescription:
         "\u06cc\u06a9 \u062a\u0642\u0648\u06cc\u0645 \u062d\u0631\u0641\u0647\u200c\u0627\u06cc \u0628\u0631\u0627\u06cc \u0647\u0645\u06af\u0627\u0645\u200c\u0633\u0627\u0632\u06cc \u062c\u0627\u062c\u06cc\u06af\u0627\u060c \u0634\u0628\u060c \u0627\u062a\u0627\u0642\u06a9\u060c \u062c\u0627\u0628\u0627\u0645\u0627 \u0648 \u0628\u06cc\u0634\u062a\u0631.",
       nameRobots: 'content="noindex, nofollow"',
-      ogImage: "https://miaan.ir/plasmic/website_starter/images/image109.png"
+      ogImage: "https://miaan.ir/plasmic/website_starter/images/image109.png",
+      robots: "noindex, follow"
     },
 
     pageMetadata: generateDynamicMetadata(wrapQueriesWithLoadingProxy({}), {

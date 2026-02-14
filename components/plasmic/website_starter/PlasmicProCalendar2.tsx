@@ -2436,7 +2436,8 @@ export const PlasmicProCalendar2 = Object.assign(
       twitterDescription:
         "\u06cc\u06a9 \u062a\u0642\u0648\u06cc\u0645 \u062d\u0631\u0641\u0647\u200c\u0627\u06cc \u0628\u0631\u0627\u06cc \u0647\u0645\u06af\u0627\u0645\u200c\u0633\u0627\u0632\u06cc \u062c\u0627\u062c\u06cc\u06af\u0627\u060c \u0634\u0628\u060c \u0627\u062a\u0627\u0642\u06a9\u060c \u062c\u0627\u0628\u0627\u0645\u0627 \u0648 \u0628\u06cc\u0634\u062a\u0631.",
       nameRobots: 'content="noindex, nofollow"',
-      ogImage: "https://miaan.ir/plasmic/website_starter/images/image109.png"
+      ogImage: "https://miaan.ir/plasmic/website_starter/images/image109.png",
+      robots: "noindex, follow"
     },
 
     pageMetadata: generateDynamicMetadata(wrapQueriesWithLoadingProxy({}), {

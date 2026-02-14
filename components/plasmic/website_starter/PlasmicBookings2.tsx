@@ -8436,7 +8436,10 @@ export const PlasmicBookings2 = Object.assign(
     internalArgProps: PlasmicBookings2__ArgProps,
 
     // Key-value metadata
-    metadata: { nameRobots: 'content="noindex, nofollow"' },
+    metadata: {
+      nameRobots: 'content="noindex, nofollow"',
+      robots: "noindex, follow"
+    },
 
     pageMetadata: generateDynamicMetadata(wrapQueriesWithLoadingProxy({}), {
       pagePath: "/bookings",

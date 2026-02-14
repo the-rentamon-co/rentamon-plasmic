@@ -2519,6 +2519,9 @@ export const PlasmicReferral = Object.assign(
     internalVariantProps: PlasmicReferral__VariantProps,
     internalArgProps: PlasmicReferral__ArgProps,
 
+    // Key-value metadata
+    metadata: { robots: "noindex, follow" },
+
     pageMetadata: generateDynamicMetadata(wrapQueriesWithLoadingProxy({}), {
       pagePath: "/referral",
       searchParams: {},

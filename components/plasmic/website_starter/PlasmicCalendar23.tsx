@@ -72,6 +72,7 @@ import { AntdInputNumber } from "@plasmicpkgs/antd5/skinny/registerInput";
 import { AntdButton } from "@plasmicpkgs/antd5/skinny/registerButton";
 import { Textarea } from "@/fragment/components/textarea"; // plasmic-import: kolEMmvCWkE1/codeComponent
 import Select from "../../Select"; // plasmic-import: GgjLI5qwOqwu/component
+import { Fetcher } from "@plasmicapp/react-web/lib/data-sources";
 import { _useGlobalVariants } from "./plasmic"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectModule
 import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/styleTokensProvider
 

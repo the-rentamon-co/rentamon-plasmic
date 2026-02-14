@@ -266,7 +266,7 @@ function PlasmicSplash__RenderFunc(props: {
                 )}
               >
                 {
-                  "\u062f\u0631 \u062d\u0627\u0644 \u0627\u0646\u062a\u0642\u0627\u0644 \u0628\u0647 \u0645\u06cc\u0627\u0646\n\n\u0628\u0627 \u062a\u0648\u062c\u0647 \u0628\u0647 \u0627\u062e\u062a\u0644\u0627\u0644 \u0633\u0631\u0627\u0633\u0631\u06cc \u0628\u0631 \u0631\u0648\u06cc \u0627\u06cc\u0646\u062a\u0631\u0646\u062a \u06a9\u0634\u0648\u0631\r\n\u0645\u0645\u06a9\u0646\u0647 \u0628\u0627 \u06a9\u0646\u062f\u06cc \u0645\u0648\u0627\u062c\u0647 \u0628\u0634\u06cc"
+                  "\u062f\u0631 \u062d\u0627\u0644 \u0627\u0646\u062a\u0642\u0627\u0644 \u0628\u0647 \u0645\u06cc\u0627\u0646"
                 }
               </div>
             ) : null}
@@ -645,7 +645,10 @@ export const PlasmicSplash = Object.assign(
     internalArgProps: PlasmicSplash__ArgProps,
 
     // Key-value metadata
-    metadata: { nameRobots: 'content="noindex, nofollow"' },
+    metadata: {
+      nameRobots: 'content="noindex, nofollow"',
+      robots: "noindex, follow"
+    },
 
     pageMetadata: generateDynamicMetadata(wrapQueriesWithLoadingProxy({}), {
       pagePath: "/splash",

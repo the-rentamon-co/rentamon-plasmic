@@ -929,3 +929,35 @@
   border-radius: 30px;
   padding: 8px;
 }
+.button:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+}
+.text___9ZTnc {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  min-width: 0;
+}
+.userActiveWebsites:global(.__wab_instance) {
+  animation: none;
+  max-width: 100%;
+  object-fit: cover;
+}
+.text__mp9WL {
+  animation: none;
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  min-width: 0;
+}
+.text__bByO {
+  animation: none;
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  min-width: 0;
+}

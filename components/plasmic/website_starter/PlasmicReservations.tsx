@@ -8233,7 +8233,10 @@ export const PlasmicReservations = Object.assign(
     internalArgProps: PlasmicReservations__ArgProps,
 
     // Key-value metadata
-    metadata: { nameRobots: 'content="noindex, nofollow"' },
+    metadata: {
+      nameRobots: 'content="noindex, nofollow"',
+      robots: "noindex, follow"
+    },
 
     pageMetadata: generateDynamicMetadata(wrapQueriesWithLoadingProxy({}), {
       pagePath: "/reservations",

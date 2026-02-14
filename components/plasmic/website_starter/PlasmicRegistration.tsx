@@ -2413,7 +2413,7 @@ export const PlasmicRegistration = Object.assign(
     internalArgProps: PlasmicRegistration__ArgProps,
 
     // Key-value metadata
-    metadata: { nameRobots: 'content="noindex, nofollow"' },
+    metadata: { robots: "noindex, follow" },
 
     pageMetadata: generateDynamicMetadata(wrapQueriesWithLoadingProxy({}), {
       pagePath: "/registration/[type]",

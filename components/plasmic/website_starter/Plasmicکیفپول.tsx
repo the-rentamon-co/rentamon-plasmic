@@ -3035,7 +3035,7 @@ export const Plasmicکیفپول = Object.assign(
     internalArgProps: Plasmicکیفپول__ArgProps,
 
     // Key-value metadata
-    metadata: { nameRobots: 'content="noindex, nofollow"' },
+    metadata: { robots: "noindex, follow" },
 
     pageMetadata: generateDynamicMetadata(wrapQueriesWithLoadingProxy({}), {
       pagePath: "/wallet",

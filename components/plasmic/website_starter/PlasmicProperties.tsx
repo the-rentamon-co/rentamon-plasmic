@@ -1921,6 +1921,9 @@ export const PlasmicProperties = Object.assign(
     internalVariantProps: PlasmicProperties__VariantProps,
     internalArgProps: PlasmicProperties__ArgProps,
 
+    // Key-value metadata
+    metadata: { robots: "noindex, follow" },
+
     pageMetadata: generateDynamicMetadata(wrapQueriesWithLoadingProxy({}), {
       pagePath: "/properties",
       searchParams: {},
