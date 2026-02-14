@@ -92,6 +92,46 @@ import Icon36Icon from "./icons/PlasmicIcon__Icon36"; // plasmic-import: yp-BEib
 import CheckSvgIcon from "./icons/PlasmicIcon__CheckSvg"; // plasmic-import: aHRi_lZjzHt3/icon
 import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: nPWd30PDwgwm/icon
 
+const emptyProxy: any = new Proxy(() => "", {
+  get(_, prop) {
+    return prop === Symbol.toPrimitive ? () => "" : emptyProxy;
+  }
+});
+
+function wrapQueriesWithLoadingProxy($q: any): any {
+  return new Proxy($q, {
+    get(target, queryName) {
+      const query = target[queryName];
+      return !query || query.isLoading || !query.data ? emptyProxy : query;
+    }
+  });
+}
+
+export function generateDynamicMetadata($q: any, $ctx: any) {
+  return {
+    title: "میان، بروزرسانی خودکار موجودی اقامتگاه، در سایت‌های اجاره ویلا",
+    description:
+      "میان دستیار هوشمند میزبان‌هاست؛ راه حل عالی برای مدیریت تقویم اقامتگاه و اعمال تغییرات در سایت‌های جاباما، جاجیگا، اتاقک، شب و… از یکجا.",
+    openGraph: {
+      title: "میان، بروزرسانی خودکار موجودی اقامتگاه، در سایت‌های اجاره ویلا",
+      description:
+        "میان دستیار هوشمند میزبان‌هاست؛ راه حل عالی برای مدیریت تقویم اقامتگاه و اعمال تغییرات در سایت‌های جاباما، جاجیگا، اتاقک، شب و… از یکجا.",
+      images: [
+        "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2Fmiaan-logo-blue-sq-sm.png?versionId="
+      ]
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "میان، بروزرسانی خودکار موجودی اقامتگاه، در سایت‌های اجاره ویلا",
+      description:
+        "میان دستیار هوشمند میزبان‌هاست؛ راه حل عالی برای مدیریت تقویم اقامتگاه و اعمال تغییرات در سایت‌های جاباما، جاجیگا، اتاقک، شب و… از یکجا.",
+      images: [
+        "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2Fmiaan-logo-blue-sq-sm.png?versionId="
+      ]
+    }
+  };
+}
+
 createPlasmicElementProxy;
 
 export type PlasmicHomepage__VariantMembers = {};
@@ -223,13 +263,13 @@ function PlasmicHomepage__RenderFunc(props: {
         path: "propertyId",
         type: "private",
         variableType: "number",
-        initFunc: ({ $props, $state, $queries, $ctx }) => 0
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => 0
       },
       {
         path: "accordionMain.activePanelId",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         onMutate: generateOnMutateForSpec(
           "activePanelId",
@@ -240,13 +280,13 @@ function PlasmicHomepage__RenderFunc(props: {
         path: "consult2.open",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => false
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => false
       },
       {
         path: "form3.value",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "form3",
         onMutate: generateOnMutateForSpec("value", FormWrapper_Helpers)
@@ -255,7 +295,7 @@ function PlasmicHomepage__RenderFunc(props: {
         path: "form3.isSubmitting",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => false,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => false,
 
         refName: "form3",
         onMutate: generateOnMutateForSpec("isSubmitting", FormWrapper_Helpers)
@@ -264,7 +304,7 @@ function PlasmicHomepage__RenderFunc(props: {
         path: "input3.value",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         onMutate: generateOnMutateForSpec("value", AntdInput_Helpers)
       },
@@ -272,7 +312,7 @@ function PlasmicHomepage__RenderFunc(props: {
         path: "input4.value",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         onMutate: generateOnMutateForSpec("value", AntdInput_Helpers)
       },
@@ -280,7 +320,7 @@ function PlasmicHomepage__RenderFunc(props: {
         path: "modalMiaan.open",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => false
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => false
       }
     ],
     [$props, $ctx, $refs]
@@ -289,8 +329,14 @@ function PlasmicHomepage__RenderFunc(props: {
     $props,
     $ctx,
     $queries: {},
+    $q: {},
     $refs
   });
+
+  const pageMetadata = generateDynamicMetadata(
+    wrapQueriesWithLoadingProxy({}),
+    $ctx
+  );
 
   const styleTokensClassNames = _useStyleTokens();
 
@@ -298,41 +344,37 @@ function PlasmicHomepage__RenderFunc(props: {
     <React.Fragment>
       <Head>
         <meta name="twitter:card" content="summary_large_image" />
-        <title key="title">{PlasmicHomepage.pageMetadata.title}</title>
-        <meta
-          key="og:title"
-          property="og:title"
-          content={PlasmicHomepage.pageMetadata.title}
-        />
+        <title key="title">{pageMetadata.title}</title>
+        <meta key="og:title" property="og:title" content={pageMetadata.title} />
         <meta
           key="twitter:title"
           property="twitter:title"
-          content={PlasmicHomepage.pageMetadata.title}
+          content={pageMetadata.title}
         />
         <meta
           key="description"
           property="description"
-          content={PlasmicHomepage.pageMetadata.description}
+          content={pageMetadata.description}
         />
         <meta
           key="og:description"
           property="og:description"
-          content={PlasmicHomepage.pageMetadata.description}
+          content={pageMetadata.description}
         />
         <meta
           key="twitter:description"
           property="twitter:description"
-          content={PlasmicHomepage.pageMetadata.description}
+          content={pageMetadata.description}
         />
         <meta
           key="og:image"
           property="og:image"
-          content={PlasmicHomepage.pageMetadata.ogImageSrc}
+          content={pageMetadata.ogImageSrc}
         />
         <meta
           key="twitter:image"
           property="twitter:image"
-          content={PlasmicHomepage.pageMetadata.ogImageSrc}
+          content={pageMetadata.ogImageSrc}
         />
       </Head>
 
@@ -3267,15 +3309,11 @@ export const PlasmicHomepage = Object.assign(
       ogImage: "https://miaan.ir/plasmic/website_starter/images/image109.png"
     },
 
-    // Page metadata
-    pageMetadata: {
-      title: "میان، بروزرسانی خودکار موجودی اقامتگاه، در سایت‌های اجاره ویلا",
-      description:
-        "میان دستیار هوشمند میزبان‌هاست؛ راه حل عالی برای مدیریت تقویم اقامتگاه و اعمال تغییرات در سایت‌های جاباما، جاجیگا، اتاقک، شب و… از یکجا.",
-      ogImageSrc:
-        "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2Fmiaan-logo-blue-sq-sm.png?versionId=",
-      canonical: ""
-    }
+    pageMetadata: generateDynamicMetadata(wrapQueriesWithLoadingProxy({}), {
+      pagePath: "/",
+      searchParams: {},
+      params: {}
+    })
   }
 );
 

@@ -170,7 +170,7 @@ function PlasmicTooltip2__RenderFunc(props: {
         path: "ariaTooltip.isOpen",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined
       }
     ],
     [$props, $ctx, $refs]
@@ -179,6 +179,7 @@ function PlasmicTooltip2__RenderFunc(props: {
     $props,
     $ctx,
     $queries: {},
+    $q: {},
     $refs
   });
 

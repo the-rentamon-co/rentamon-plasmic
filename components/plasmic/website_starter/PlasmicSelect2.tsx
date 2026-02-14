@@ -191,13 +191,13 @@ function PlasmicSelect2__RenderFunc(props: {
         path: "ariaSelect.isOpen",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => false
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => false
       },
       {
         path: "ariaSelect.selectedValue",
         type: "readonly",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) =>
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) =>
           $props["initialSelectedValue"],
 
         onChangeProp: "onChange"
@@ -206,7 +206,7 @@ function PlasmicSelect2__RenderFunc(props: {
         path: "type",
         type: "private",
         variableType: "variant",
-        initFunc: ({ $props, $state, $queries, $ctx }) => $props.type
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => $props.type
       }
     ],
     [$props, $ctx, $refs]
@@ -215,6 +215,7 @@ function PlasmicSelect2__RenderFunc(props: {
     $props,
     $ctx,
     $queries: {},
+    $q: {},
     $refs
   });
 

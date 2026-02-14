@@ -273,31 +273,31 @@ function PlasmicCalendar24__RenderFunc(props: {
         path: "fragmentDatePicker.value",
         type: "private",
         variableType: "number",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined
       },
       {
         path: "fragmentDatePicker.values",
         type: "private",
         variableType: "array",
-        initFunc: ({ $props, $state, $queries, $ctx }) => []
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => []
       },
       {
         path: "fragmentDatePicker.month",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined
       },
       {
         path: "fragmentDatePicker.year",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined
       },
       {
         path: "modal.open",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) =>
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) =>
           hasVariant(globalVariants, "screen", "mobile")
             ? false
             : hasVariant(globalVariants, "screen", "tablet")
@@ -308,7 +308,7 @@ function PlasmicCalendar24__RenderFunc(props: {
         path: "modalChangePrice.open",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) =>
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) =>
           hasVariant(globalVariants, "screen", "mobile")
             ? false
             : hasVariant(globalVariants, "screen", "tablet")
@@ -319,13 +319,13 @@ function PlasmicCalendar24__RenderFunc(props: {
         path: "numberInput2.value",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined
       },
       {
         path: "modalDiscount.open",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) =>
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) =>
           hasVariant(globalVariants, "screen", "mobile")
             ? false
             : hasVariant(globalVariants, "screen", "tablet")
@@ -336,13 +336,13 @@ function PlasmicCalendar24__RenderFunc(props: {
         path: "count",
         type: "private",
         variableType: "number",
-        initFunc: ({ $props, $state, $queries, $ctx }) => 0
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => 0
       },
       {
         path: "block.open",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) =>
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) =>
           hasVariant(globalVariants, "screen", "smallMobile")
             ? false
             : hasVariant(globalVariants, "screen", "mobile")
@@ -353,7 +353,7 @@ function PlasmicCalendar24__RenderFunc(props: {
         path: "changedFetchModal.open",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) =>
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) =>
           hasVariant(globalVariants, "screen", "mobile")
             ? (() => {
                 try {
@@ -386,7 +386,7 @@ function PlasmicCalendar24__RenderFunc(props: {
         path: "variable3",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) =>
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) =>
           (() => {
             try {
               return undefined;
@@ -405,7 +405,7 @@ function PlasmicCalendar24__RenderFunc(props: {
         path: "apiRequest.data",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "apiRequest"
       },
@@ -413,7 +413,7 @@ function PlasmicCalendar24__RenderFunc(props: {
         path: "apiRequest.error",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "apiRequest"
       },
@@ -421,7 +421,7 @@ function PlasmicCalendar24__RenderFunc(props: {
         path: "apiRequest.loading",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "apiRequest"
       },
@@ -429,19 +429,19 @@ function PlasmicCalendar24__RenderFunc(props: {
         path: "platformRequestStatus",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => ({})
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => ({})
       },
       {
         path: "requestdata",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => ({})
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => ({})
       },
       {
         path: "dayStatus",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) =>
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) =>
           (() => {
             try {
               return (() => {
@@ -484,19 +484,19 @@ function PlasmicCalendar24__RenderFunc(props: {
         path: "textInput.value",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => ""
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => ""
       },
       {
         path: "textInput2.value",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => "0"
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => "0"
       },
       {
         path: "noteModal.open",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) =>
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) =>
           hasVariant(globalVariants, "screen", "smallMobile")
             ? false
             : hasVariant(globalVariants, "screen", "mobile")
@@ -507,39 +507,39 @@ function PlasmicCalendar24__RenderFunc(props: {
         path: "dateProp",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => ({})
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => ({})
       },
       {
         path: "writeNoteModal.open",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) =>
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) =>
           hasVariant(globalVariants, "screen", "mobile") ? false : false
       },
       {
         path: "textarea.value",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => ""
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => ""
       },
       {
         path: "targetNoteItem",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => ({})
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => ({})
       },
       {
         path: "updateNoteModal.open",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) =>
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) =>
           hasVariant(globalVariants, "screen", "mobile") ? false : false
       },
       {
         path: "textarea2.value",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) =>
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) =>
           hasVariant(globalVariants, "screen", "mobile")
             ? (() => {
                 try {
@@ -632,7 +632,7 @@ function PlasmicCalendar24__RenderFunc(props: {
         path: "year",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) =>
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) =>
           (() => {
             try {
               return (() => {
@@ -656,14 +656,14 @@ function PlasmicCalendar24__RenderFunc(props: {
         path: "checkForChange.open",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) =>
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) =>
           hasVariant(globalVariants, "screen", "mobile") ? false : false
       },
       {
         path: "addingGuestInfo.open",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) =>
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) =>
           hasVariant(globalVariants, "screen", "smallMobile")
             ? false
             : hasVariant(globalVariants, "screen", "mobile")
@@ -676,121 +676,121 @@ function PlasmicCalendar24__RenderFunc(props: {
         path: "guestName.value",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => ""
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => ""
       },
       {
         path: "phoneNumber.value",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => ""
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => ""
       },
       {
         path: "guestReferrer.value",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined
       },
       {
         path: "guestCount.value",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined
       },
       {
         path: "amount.value",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined
       },
       {
         path: "selectedDay",
         type: "private",
         variableType: "array",
-        initFunc: ({ $props, $state, $queries, $ctx }) => []
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => []
       },
       {
         path: "newDiscountModal.open",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => false
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => false
       },
       {
         path: "textInput4.value",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => "0"
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => "0"
       },
       {
         path: "selectedItem",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => ({})
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => ({})
       },
       {
         path: "updateStyle",
         type: "private",
         variableType: "number",
-        initFunc: ({ $props, $state, $queries, $ctx }) => 0
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => 0
       },
       {
         path: "tourSteps",
         type: "private",
         variableType: "number",
-        initFunc: ({ $props, $state, $queries, $ctx }) => 0
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => 0
       },
       {
         path: "lastSteps",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => false
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => false
       },
       {
         path: "watingForResponse",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => false
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => false
       },
       {
         path: "input.value",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => ""
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => ""
       },
       {
         path: "input2.value",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => ""
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => ""
       },
       {
         path: "variable",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => ""
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => ""
       },
       {
         path: "phoneError",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => ""
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => ""
       },
       {
         path: "showMobileError",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => false
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => false
       },
       {
         path: "manualReserveBookingId",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => ""
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => ""
       },
       {
         path: "reserveData.data",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "reserveData"
       },
@@ -798,7 +798,7 @@ function PlasmicCalendar24__RenderFunc(props: {
         path: "reserveData.error",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "reserveData"
       },
@@ -806,7 +806,7 @@ function PlasmicCalendar24__RenderFunc(props: {
         path: "reserveData.loading",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "reserveData"
       },
@@ -814,13 +814,13 @@ function PlasmicCalendar24__RenderFunc(props: {
         path: "fetchModal.open",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => false
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => false
       },
       {
         path: "getJabamaSmartPriceStatus2.data",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "getJabamaSmartPriceStatus2"
       },
@@ -828,7 +828,7 @@ function PlasmicCalendar24__RenderFunc(props: {
         path: "getJabamaSmartPriceStatus2.error",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "getJabamaSmartPriceStatus2"
       },
@@ -836,7 +836,7 @@ function PlasmicCalendar24__RenderFunc(props: {
         path: "getJabamaSmartPriceStatus2.loading",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "getJabamaSmartPriceStatus2"
       },
@@ -844,7 +844,7 @@ function PlasmicCalendar24__RenderFunc(props: {
         path: "userPlatform2.data",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "userPlatform2"
       },
@@ -852,7 +852,7 @@ function PlasmicCalendar24__RenderFunc(props: {
         path: "userPlatform2.error",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "userPlatform2"
       },
@@ -860,7 +860,7 @@ function PlasmicCalendar24__RenderFunc(props: {
         path: "userPlatform2.loading",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "userPlatform2"
       },
@@ -876,25 +876,25 @@ function PlasmicCalendar24__RenderFunc(props: {
         path: "manualResultShow",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => false
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => false
       },
       {
         path: "variable2",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => ""
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => ""
       },
       {
         path: "submittedDates",
         type: "private",
         variableType: "array",
-        initFunc: ({ $props, $state, $queries, $ctx }) => []
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => []
       },
       {
         path: "showTutorial2",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => false
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => false
       }
     ],
     [$props, $ctx, $refs]
@@ -903,6 +903,7 @@ function PlasmicCalendar24__RenderFunc(props: {
     $props,
     $ctx,
     $queries: {},
+    $q: {},
     $refs
   });
 
@@ -4869,16 +4870,25 @@ function PlasmicCalendar24__RenderFunc(props: {
                               $state.platformRequestStatus &&
                               $state.platformRequestStatus.data
                             ) {
-                              sessionStorage.setItem(
-                                "saved_request_data",
-                                JSON.stringify(
-                                  $state.platformRequestStatus.data
-                                )
+                              const history = JSON.parse(
+                                sessionStorage.getItem(
+                                  "property_history_book"
+                                ) || "{}"
                               );
-                              return sessionStorage.setItem(
-                                "saved_request_payload",
-                                JSON.stringify($state.requestdata)
-                              );
+                              const safeId = $state.requestdata.property_id;
+                              if (safeId) {
+                                history[safeId] = {
+                                  result: $state.platformRequestStatus.data,
+                                  payload: $state.requestdata
+                                };
+                                sessionStorage.setItem(
+                                  "property_history_book",
+                                  JSON.stringify(history)
+                                );
+                                return console.log(
+                                  `Saved history for property ${safeId}`
+                                );
+                              }
                             }
                           })();
                         }
@@ -5847,16 +5857,25 @@ function PlasmicCalendar24__RenderFunc(props: {
                                 $state.platformRequestStatus &&
                                 $state.platformRequestStatus.data
                               ) {
-                                sessionStorage.setItem(
-                                  "saved_request_data",
-                                  JSON.stringify(
-                                    $state.platformRequestStatus.data
-                                  )
+                                const history = JSON.parse(
+                                  sessionStorage.getItem(
+                                    "property_history_book"
+                                  ) || "{}"
                                 );
-                                return sessionStorage.setItem(
-                                  "saved_request_payload",
-                                  JSON.stringify($state.requestdata)
-                                );
+                                const safeId = $state.requestdata.property_id;
+                                if (safeId) {
+                                  history[safeId] = {
+                                    result: $state.platformRequestStatus.data,
+                                    payload: $state.requestdata
+                                  };
+                                  sessionStorage.setItem(
+                                    "property_history_book",
+                                    JSON.stringify(history)
+                                  );
+                                  return console.log(
+                                    `Saved history for property ${safeId}`
+                                  );
+                                }
                               }
                             })();
                           }
@@ -8139,14 +8158,24 @@ function PlasmicCalendar24__RenderFunc(props: {
                             $state.platformRequestStatus &&
                             $state.platformRequestStatus.data
                           ) {
-                            sessionStorage.setItem(
-                              "saved_request_data",
-                              JSON.stringify($state.platformRequestStatus.data)
+                            const history = JSON.parse(
+                              sessionStorage.getItem("property_history_book") ||
+                                "{}"
                             );
-                            return sessionStorage.setItem(
-                              "saved_request_payload",
-                              JSON.stringify($state.requestdata)
-                            );
+                            const safeId = $state.requestdata.property_id;
+                            if (safeId) {
+                              history[safeId] = {
+                                result: $state.platformRequestStatus.data,
+                                payload: $state.requestdata
+                              };
+                              sessionStorage.setItem(
+                                "property_history_book",
+                                JSON.stringify(history)
+                              );
+                              return console.log(
+                                `Saved history for property ${safeId}`
+                              );
+                            }
                           }
                         })();
                       }
@@ -9442,7 +9471,7 @@ function PlasmicCalendar24__RenderFunc(props: {
                 [
                   {
                     name: "textarea2.value",
-                    initFunc: ({ $props, $state, $queries }) =>
+                    initFunc: ({ $props, $state, $queries, $q }) =>
                       hasVariant(globalVariants, "screen", "mobile")
                         ? (() => {
                             try {
@@ -11209,16 +11238,25 @@ function PlasmicCalendar24__RenderFunc(props: {
                                 $state.platformRequestStatus &&
                                 $state.platformRequestStatus.data
                               ) {
-                                sessionStorage.setItem(
-                                  "saved_request_data",
-                                  JSON.stringify(
-                                    $state.platformRequestStatus.data
-                                  )
+                                const history = JSON.parse(
+                                  sessionStorage.getItem(
+                                    "property_history_book"
+                                  ) || "{}"
                                 );
-                                return sessionStorage.setItem(
-                                  "saved_request_payload",
-                                  JSON.stringify($state.requestdata)
-                                );
+                                const safeId = $state.requestdata.property_id;
+                                if (safeId) {
+                                  history[safeId] = {
+                                    result: $state.platformRequestStatus.data,
+                                    payload: $state.requestdata
+                                  };
+                                  sessionStorage.setItem(
+                                    "property_history_book",
+                                    JSON.stringify(history)
+                                  );
+                                  return console.log(
+                                    `Saved history for property ${safeId}`
+                                  );
+                                }
                               }
                             })();
                           }

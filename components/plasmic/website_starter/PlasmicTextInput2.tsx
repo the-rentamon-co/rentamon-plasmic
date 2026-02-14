@@ -316,7 +316,7 @@ function PlasmicTextInput2__RenderFunc(props: {
         path: "ariaInput.value",
         type: "readonly",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) =>
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) =>
           $props["defaultValue"],
 
         onChangeProp: "onChange",
@@ -327,19 +327,19 @@ function PlasmicTextInput2__RenderFunc(props: {
         path: "type",
         type: "private",
         variableType: "variant",
-        initFunc: ({ $props, $state, $queries, $ctx }) => $props.type
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => $props.type
       },
       {
         path: "flat",
         type: "private",
         variableType: "variant",
-        initFunc: ({ $props, $state, $queries, $ctx }) => $props.flat
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => $props.flat
       },
       {
         path: "padded",
         type: "private",
         variableType: "variant",
-        initFunc: ({ $props, $state, $queries, $ctx }) => $props.padded
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => $props.padded
       }
     ],
     [$props, $ctx, $refs]
@@ -348,6 +348,7 @@ function PlasmicTextInput2__RenderFunc(props: {
     $props,
     $ctx,
     $queries: {},
+    $q: {},
     $refs
   });
 

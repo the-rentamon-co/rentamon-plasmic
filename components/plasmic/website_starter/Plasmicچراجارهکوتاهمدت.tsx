@@ -72,6 +72,46 @@ import "@plasmicapp/react-web/lib/plasmic.css";
 import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./Plasmicچراجارهکوتاهمدت.module.css"; // plasmic-import: toyYO-nFHLHU/css
 
+const emptyProxy: any = new Proxy(() => "", {
+  get(_, prop) {
+    return prop === Symbol.toPrimitive ? () => "" : emptyProxy;
+  }
+});
+
+function wrapQueriesWithLoadingProxy($q: any): any {
+  return new Proxy($q, {
+    get(target, queryName) {
+      const query = target[queryName];
+      return !query || query.isLoading || !query.data ? emptyProxy : query;
+    }
+  });
+}
+
+export function generateDynamicMetadata($q: any, $ctx: any) {
+  return {
+    title: "چر اجاره کوتاه مدت",
+    description:
+      "مقایسه میزان درآمدزایی اجاره روزانه و اجاره سالانه از نظر درآمد و هزینه‌های اجرایی.",
+    openGraph: {
+      title: "چر اجاره کوتاه مدت",
+      description:
+        "مقایسه میزان درآمدزایی اجاره روزانه و اجاره سالانه از نظر درآمد و هزینه‌های اجرایی.",
+      images: [
+        "https://site-assets.plasmic.app/c85f60591d2e0c0e332ab600541cfe78.webp"
+      ]
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "چر اجاره کوتاه مدت",
+      description:
+        "مقایسه میزان درآمدزایی اجاره روزانه و اجاره سالانه از نظر درآمد و هزینه‌های اجرایی.",
+      images: [
+        "https://site-assets.plasmic.app/c85f60591d2e0c0e332ab600541cfe78.webp"
+      ]
+    }
+  };
+}
+
 createPlasmicElementProxy;
 
 export type Plasmicچراجارهکوتاهمدت__VariantMembers = {};
@@ -159,7 +199,7 @@ function Plasmicچراجارهکوتاهمدت__RenderFunc(props: {
         path: "propertyId",
         type: "private",
         variableType: "number",
-        initFunc: ({ $props, $state, $queries, $ctx }) => 0
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => 0
       }
     ],
     [$props, $ctx, $refs]
@@ -168,8 +208,14 @@ function Plasmicچراجارهکوتاهمدت__RenderFunc(props: {
     $props,
     $ctx,
     $queries: {},
+    $q: {},
     $refs
   });
+
+  const pageMetadata = generateDynamicMetadata(
+    wrapQueriesWithLoadingProxy({}),
+    $ctx
+  );
 
   const styleTokensClassNames = _useStyleTokens();
 
@@ -177,41 +223,37 @@ function Plasmicچراجارهکوتاهمدت__RenderFunc(props: {
     <React.Fragment>
       <Head>
         <meta name="twitter:card" content="summary_large_image" />
-        <title key="title">{Plasmicچراجارهکوتاهمدت.pageMetadata.title}</title>
-        <meta
-          key="og:title"
-          property="og:title"
-          content={Plasmicچراجارهکوتاهمدت.pageMetadata.title}
-        />
+        <title key="title">{pageMetadata.title}</title>
+        <meta key="og:title" property="og:title" content={pageMetadata.title} />
         <meta
           key="twitter:title"
           property="twitter:title"
-          content={Plasmicچراجارهکوتاهمدت.pageMetadata.title}
+          content={pageMetadata.title}
         />
         <meta
           key="description"
           property="description"
-          content={Plasmicچراجارهکوتاهمدت.pageMetadata.description}
+          content={pageMetadata.description}
         />
         <meta
           key="og:description"
           property="og:description"
-          content={Plasmicچراجارهکوتاهمدت.pageMetadata.description}
+          content={pageMetadata.description}
         />
         <meta
           key="twitter:description"
           property="twitter:description"
-          content={Plasmicچراجارهکوتاهمدت.pageMetadata.description}
+          content={pageMetadata.description}
         />
         <meta
           key="og:image"
           property="og:image"
-          content={Plasmicچراجارهکوتاهمدت.pageMetadata.ogImageSrc}
+          content={pageMetadata.ogImageSrc}
         />
         <meta
           key="twitter:image"
           property="twitter:image"
-          content={Plasmicچراجارهکوتاهمدت.pageMetadata.ogImageSrc}
+          content={pageMetadata.ogImageSrc}
         />
       </Head>
 
@@ -1041,15 +1083,11 @@ export const Plasmicچراجارهکوتاهمدت = Object.assign(
         "\u0646\u0645\u0648\u062f\u0627\u0631 \u0645\u0642\u0627\u06cc\u0633\u0647 \u062f\u0631\u0622\u0645\u062f \u06cc\u06a9 \u0633\u0627\u0644 \u0627\u0632 \u0637\u0631\u06cc\u0642 \u0627\u062c\u0627\u0631\u0647 \u06a9\u0648\u062a\u0627\u0647 \u0645\u062f\u062a \u0646\u0633\u0628\u062a \u0628\u0647 \u0627\u062c\u0627\u0631\u0647 \u0633\u0627\u0644\u0627\u0646\u0647"
     },
 
-    // Page metadata
-    pageMetadata: {
-      title: "چر اجاره کوتاه مدت",
-      description:
-        "مقایسه میزان درآمدزایی اجاره روزانه و اجاره سالانه از نظر درآمد و هزینه‌های اجرایی.",
-      ogImageSrc:
-        "https://site-assets.plasmic.app/c85f60591d2e0c0e332ab600541cfe78.webp",
-      canonical: ""
-    }
+    pageMetadata: generateDynamicMetadata(wrapQueriesWithLoadingProxy({}), {
+      pagePath: "/short-term-rental",
+      searchParams: {},
+      params: {}
+    })
   }
 );
 

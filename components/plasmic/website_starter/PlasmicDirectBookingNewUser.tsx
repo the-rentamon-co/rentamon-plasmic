@@ -73,6 +73,35 @@ import "@plasmicapp/react-web/lib/plasmic.css";
 import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicDirectBookingNewUser.module.css"; // plasmic-import: immtBa3TQWti/css
 
+const emptyProxy: any = new Proxy(() => "", {
+  get(_, prop) {
+    return prop === Symbol.toPrimitive ? () => "" : emptyProxy;
+  }
+});
+
+function wrapQueriesWithLoadingProxy($q: any): any {
+  return new Proxy($q, {
+    get(target, queryName) {
+      const query = target[queryName];
+      return !query || query.isLoading || !query.data ? emptyProxy : query;
+    }
+  });
+}
+
+export function generateDynamicMetadata($q: any, $ctx: any) {
+  return {
+    title: "دانلود میان",
+
+    openGraph: {
+      title: "دانلود میان"
+    },
+    twitter: {
+      card: "summary",
+      title: "دانلود میان"
+    }
+  };
+}
+
 createPlasmicElementProxy;
 
 export type PlasmicDirectBookingNewUser__VariantMembers = {};
@@ -151,13 +180,13 @@ function PlasmicDirectBookingNewUser__RenderFunc(props: {
         path: "propertyId",
         type: "private",
         variableType: "number",
-        initFunc: ({ $props, $state, $queries, $ctx }) => 0
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => 0
       },
       {
         path: "profile2.data",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "profile2"
       },
@@ -165,7 +194,7 @@ function PlasmicDirectBookingNewUser__RenderFunc(props: {
         path: "profile2.error",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "profile2"
       },
@@ -173,7 +202,7 @@ function PlasmicDirectBookingNewUser__RenderFunc(props: {
         path: "profile2.loading",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "profile2"
       }
@@ -184,8 +213,14 @@ function PlasmicDirectBookingNewUser__RenderFunc(props: {
     $props,
     $ctx,
     $queries: {},
+    $q: {},
     $refs
   });
+
+  const pageMetadata = generateDynamicMetadata(
+    wrapQueriesWithLoadingProxy({}),
+    $ctx
+  );
 
   const styleTokensClassNames = _useStyleTokens();
 
@@ -193,18 +228,12 @@ function PlasmicDirectBookingNewUser__RenderFunc(props: {
     <React.Fragment>
       <Head>
         <meta name="twitter:card" content="summary" />
-        <title key="title">
-          {PlasmicDirectBookingNewUser.pageMetadata.title}
-        </title>
-        <meta
-          key="og:title"
-          property="og:title"
-          content={PlasmicDirectBookingNewUser.pageMetadata.title}
-        />
+        <title key="title">{pageMetadata.title}</title>
+        <meta key="og:title" property="og:title" content={pageMetadata.title} />
         <meta
           key="twitter:title"
           property="twitter:title"
-          content={PlasmicDirectBookingNewUser.pageMetadata.title}
+          content={pageMetadata.title}
         />
       </Head>
 
@@ -596,13 +625,11 @@ export const PlasmicDirectBookingNewUser = Object.assign(
     internalVariantProps: PlasmicDirectBookingNewUser__VariantProps,
     internalArgProps: PlasmicDirectBookingNewUser__ArgProps,
 
-    // Page metadata
-    pageMetadata: {
-      title: "دانلود میان",
-      description: "",
-      ogImageSrc: "",
-      canonical: ""
-    }
+    pageMetadata: generateDynamicMetadata(wrapQueriesWithLoadingProxy({}), {
+      pagePath: "/direct-booking/select-property/new-user",
+      searchParams: {},
+      params: {}
+    })
   }
 );
 

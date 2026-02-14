@@ -71,6 +71,43 @@ import "@plasmicapp/react-web/lib/plasmic.css";
 import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicGdsPricing.module.css"; // plasmic-import: ughXhz3-XBs4/css
 
+const emptyProxy: any = new Proxy(() => "", {
+  get(_, prop) {
+    return prop === Symbol.toPrimitive ? () => "" : emptyProxy;
+  }
+});
+
+function wrapQueriesWithLoadingProxy($q: any): any {
+  return new Proxy($q, {
+    get(target, queryName) {
+      const query = target[queryName];
+      return !query || query.isLoading || !query.data ? emptyProxy : query;
+    }
+  });
+}
+
+export function generateDynamicMetadata($q: any, $ctx: any) {
+  return {
+    title: "تقویم یکپارچه اقامتگاه | مدیریت قیمت و وضعیت رزرو در چند سایت",
+    description:
+      "با تقویم هوشمند رنتامون، تاریخ‌ها، قیمت و وضعیت رزرو اقامتگاه‌ خود را در پلتفرم‌هایی مثل جاجیگا، شب، اتاقک و جاباما از یک پنل مرکزی مدیریت کنید. ساده، سریع و بدون خطا.",
+    openGraph: {
+      title: "تقویم یکپارچه اقامتگاه | مدیریت قیمت و وضعیت رزرو در چند سایت",
+      description:
+        "با تقویم هوشمند رنتامون، تاریخ‌ها، قیمت و وضعیت رزرو اقامتگاه‌ خود را در پلتفرم‌هایی مثل جاجیگا، شب، اتاقک و جاباما از یک پنل مرکزی مدیریت کنید. ساده، سریع و بدون خطا.",
+      images: ["https://miaan.ir/plasmic/website_starter/images/image109.png"]
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "تقویم یکپارچه اقامتگاه | مدیریت قیمت و وضعیت رزرو در چند سایت",
+      description:
+        "با تقویم هوشمند رنتامون، تاریخ‌ها، قیمت و وضعیت رزرو اقامتگاه‌ خود را در پلتفرم‌هایی مثل جاجیگا، شب، اتاقک و جاباما از یک پنل مرکزی مدیریت کنید. ساده، سریع و بدون خطا.",
+      images: ["https://miaan.ir/plasmic/website_starter/images/image109.png"]
+    },
+    alternates: { canonical: "https://app.rentamon.com/panel" }
+  };
+}
+
 createPlasmicElementProxy;
 
 export type PlasmicGdsPricing__VariantMembers = {};
@@ -152,7 +189,7 @@ function PlasmicGdsPricing__RenderFunc(props: {
         path: "profile.data",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "profile"
       },
@@ -160,7 +197,7 @@ function PlasmicGdsPricing__RenderFunc(props: {
         path: "profile.error",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "profile"
       },
@@ -168,7 +205,7 @@ function PlasmicGdsPricing__RenderFunc(props: {
         path: "profile.loading",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "profile"
       },
@@ -176,19 +213,19 @@ function PlasmicGdsPricing__RenderFunc(props: {
         path: "pageUrl",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => ""
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => ""
       },
       {
         path: "propId",
         type: "private",
         variableType: "number",
-        initFunc: ({ $props, $state, $queries, $ctx }) => 1
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => 1
       },
       {
         path: "select2.value",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) =>
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) =>
           hasVariant(globalVariants, "screen", "smallMobile")
             ? (() => {
                 try {
@@ -223,13 +260,13 @@ function PlasmicGdsPricing__RenderFunc(props: {
         path: "isTheFirstVisit",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => false
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => false
       },
       {
         path: "isModalShow",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) =>
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) =>
           (() => {
             try {
               return (() => {
@@ -255,43 +292,43 @@ function PlasmicGdsPricing__RenderFunc(props: {
         path: "vtStatus",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => ""
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => ""
       },
       {
         path: "variable2",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => ""
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => ""
       },
       {
         path: "reservationsMode",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => false
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => false
       },
       {
         path: "weekday.value",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => ""
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => ""
       },
       {
         path: "weekend.value",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => ""
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => ""
       },
       {
         path: "holiday.value",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => ""
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => ""
       },
       {
         path: "propretyDetail.data",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "propretyDetail"
       },
@@ -299,7 +336,7 @@ function PlasmicGdsPricing__RenderFunc(props: {
         path: "propretyDetail.error",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "propretyDetail"
       },
@@ -307,7 +344,7 @@ function PlasmicGdsPricing__RenderFunc(props: {
         path: "propretyDetail.loading",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "propretyDetail"
       },
@@ -315,7 +352,7 @@ function PlasmicGdsPricing__RenderFunc(props: {
         path: "pricing",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => ({})
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => ({})
       }
     ],
     [$props, $ctx, $refs]
@@ -324,8 +361,14 @@ function PlasmicGdsPricing__RenderFunc(props: {
     $props,
     $ctx,
     $queries: {},
+    $q: {},
     $refs
   });
+
+  const pageMetadata = generateDynamicMetadata(
+    wrapQueriesWithLoadingProxy({}),
+    $ctx
+  );
 
   const styleTokensClassNames = _useStyleTokens();
 
@@ -333,43 +376,39 @@ function PlasmicGdsPricing__RenderFunc(props: {
     <React.Fragment>
       <Head>
         <meta name="twitter:card" content="summary_large_image" />
-        <title key="title">{PlasmicGdsPricing.pageMetadata.title}</title>
-        <meta
-          key="og:title"
-          property="og:title"
-          content={PlasmicGdsPricing.pageMetadata.title}
-        />
+        <title key="title">{pageMetadata.title}</title>
+        <meta key="og:title" property="og:title" content={pageMetadata.title} />
         <meta
           key="twitter:title"
           property="twitter:title"
-          content={PlasmicGdsPricing.pageMetadata.title}
+          content={pageMetadata.title}
         />
         <meta
           key="description"
           property="description"
-          content={PlasmicGdsPricing.pageMetadata.description}
+          content={pageMetadata.description}
         />
         <meta
           key="og:description"
           property="og:description"
-          content={PlasmicGdsPricing.pageMetadata.description}
+          content={pageMetadata.description}
         />
         <meta
           key="twitter:description"
           property="twitter:description"
-          content={PlasmicGdsPricing.pageMetadata.description}
+          content={pageMetadata.description}
         />
         <meta
           key="og:image"
           property="og:image"
-          content={PlasmicGdsPricing.pageMetadata.ogImageSrc}
+          content={pageMetadata.ogImageSrc}
         />
         <meta
           key="twitter:image"
           property="twitter:image"
-          content={PlasmicGdsPricing.pageMetadata.ogImageSrc}
+          content={pageMetadata.ogImageSrc}
         />
-        <link rel="canonical" href={PlasmicGdsPricing.pageMetadata.canonical} />
+        <link rel="canonical" href={pageMetadata.alternates?.canonical} />
       </Head>
 
       <style>{`
@@ -2055,15 +2094,11 @@ export const PlasmicGdsPricing = Object.assign(
       ogImage: "https://miaan.ir/plasmic/website_starter/images/image109.png"
     },
 
-    // Page metadata
-    pageMetadata: {
-      title: "تقویم یکپارچه اقامتگاه | مدیریت قیمت و وضعیت رزرو در چند سایت",
-      description:
-        "با تقویم هوشمند رنتامون، تاریخ‌ها، قیمت و وضعیت رزرو اقامتگاه‌ خود را در پلتفرم‌هایی مثل جاجیگا، شب، اتاقک و جاباما از یک پنل مرکزی مدیریت کنید. ساده، سریع و بدون خطا.",
-      ogImageSrc:
-        "https://miaan.ir/plasmic/website_starter/images/image109.png",
-      canonical: "https://app.rentamon.com/panel"
-    }
+    pageMetadata: generateDynamicMetadata(wrapQueriesWithLoadingProxy({}), {
+      pagePath: "/gds/pricing",
+      searchParams: {},
+      params: {}
+    })
   }
 );
 

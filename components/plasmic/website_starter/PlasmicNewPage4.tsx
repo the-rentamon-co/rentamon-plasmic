@@ -67,6 +67,30 @@ import "@plasmicapp/react-web/lib/plasmic.css";
 import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicNewPage4.module.css"; // plasmic-import: 6CFXY27Y4RPh/css
 
+const emptyProxy: any = new Proxy(() => "", {
+  get(_, prop) {
+    return prop === Symbol.toPrimitive ? () => "" : emptyProxy;
+  }
+});
+
+function wrapQueriesWithLoadingProxy($q: any): any {
+  return new Proxy($q, {
+    get(target, queryName) {
+      const query = target[queryName];
+      return !query || query.isLoading || !query.data ? emptyProxy : query;
+    }
+  });
+}
+
+export function generateDynamicMetadata($q: any, $ctx: any) {
+  return {
+    openGraph: {},
+    twitter: {
+      card: "summary"
+    }
+  };
+}
+
 createPlasmicElementProxy;
 
 export type PlasmicNewPage4__VariantMembers = {};
@@ -123,6 +147,11 @@ function PlasmicNewPage4__RenderFunc(props: {
   const $ctx = useDataEnv?.() || {};
   const refsRef = React.useRef({});
   const $refs = refsRef.current;
+
+  const pageMetadata = generateDynamicMetadata(
+    wrapQueriesWithLoadingProxy({}),
+    $ctx
+  );
 
   const styleTokensClassNames = _useStyleTokens();
 
@@ -242,13 +271,11 @@ export const PlasmicNewPage4 = Object.assign(
     internalVariantProps: PlasmicNewPage4__VariantProps,
     internalArgProps: PlasmicNewPage4__ArgProps,
 
-    // Page metadata
-    pageMetadata: {
-      title: "",
-      description: "",
-      ogImageSrc: "",
-      canonical: ""
-    }
+    pageMetadata: generateDynamicMetadata(wrapQueriesWithLoadingProxy({}), {
+      pagePath: "/new-page-3",
+      searchParams: {},
+      params: {}
+    })
   }
 );
 

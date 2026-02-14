@@ -73,6 +73,30 @@ import "@plasmicapp/react-web/lib/plasmic.css";
 import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicCrossListing.module.css"; // plasmic-import: sQu22rJFNRn7/css
 
+const emptyProxy: any = new Proxy(() => "", {
+  get(_, prop) {
+    return prop === Symbol.toPrimitive ? () => "" : emptyProxy;
+  }
+});
+
+function wrapQueriesWithLoadingProxy($q: any): any {
+  return new Proxy($q, {
+    get(target, queryName) {
+      const query = target[queryName];
+      return !query || query.isLoading || !query.data ? emptyProxy : query;
+    }
+  });
+}
+
+export function generateDynamicMetadata($q: any, $ctx: any) {
+  return {
+    openGraph: {},
+    twitter: {
+      card: "summary"
+    }
+  };
+}
+
 createPlasmicElementProxy;
 
 export type PlasmicCrossListing__VariantMembers = {};
@@ -178,7 +202,7 @@ function PlasmicCrossListing__RenderFunc(props: {
         path: "form.value",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "form",
         onMutate: generateOnMutateForSpec("value", FormWrapper_Helpers)
@@ -187,7 +211,7 @@ function PlasmicCrossListing__RenderFunc(props: {
         path: "form.isSubmitting",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => false,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => false,
 
         refName: "form",
         onMutate: generateOnMutateForSpec("isSubmitting", FormWrapper_Helpers)
@@ -196,7 +220,7 @@ function PlasmicCrossListing__RenderFunc(props: {
         path: "input.value",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         onMutate: generateOnMutateForSpec("value", AntdInput_Helpers)
       },
@@ -204,7 +228,7 @@ function PlasmicCrossListing__RenderFunc(props: {
         path: "input2.value",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         onMutate: generateOnMutateForSpec("value", AntdInput_Helpers)
       },
@@ -212,7 +236,7 @@ function PlasmicCrossListing__RenderFunc(props: {
         path: "input3.value",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         onMutate: generateOnMutateForSpec("value", AntdInput_Helpers)
       },
@@ -220,7 +244,7 @@ function PlasmicCrossListing__RenderFunc(props: {
         path: "input4.value",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         onMutate: generateOnMutateForSpec("value", AntdInput_Helpers)
       },
@@ -228,7 +252,7 @@ function PlasmicCrossListing__RenderFunc(props: {
         path: "input5.value",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         onMutate: generateOnMutateForSpec("value", AntdInput_Helpers)
       },
@@ -236,7 +260,7 @@ function PlasmicCrossListing__RenderFunc(props: {
         path: "input6.value",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         onMutate: generateOnMutateForSpec("value", AntdInput_Helpers)
       },
@@ -244,7 +268,7 @@ function PlasmicCrossListing__RenderFunc(props: {
         path: "input7.value",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         onMutate: generateOnMutateForSpec("value", AntdInput_Helpers)
       },
@@ -252,7 +276,7 @@ function PlasmicCrossListing__RenderFunc(props: {
         path: "input8.value",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         onMutate: generateOnMutateForSpec("value", AntdInput_Helpers)
       },
@@ -260,7 +284,7 @@ function PlasmicCrossListing__RenderFunc(props: {
         path: "input9.value",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         onMutate: generateOnMutateForSpec("value", AntdInput_Helpers)
       },
@@ -268,7 +292,7 @@ function PlasmicCrossListing__RenderFunc(props: {
         path: "input10.value",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         onMutate: generateOnMutateForSpec("value", AntdInput_Helpers)
       },
@@ -276,7 +300,7 @@ function PlasmicCrossListing__RenderFunc(props: {
         path: "input11.value",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         onMutate: generateOnMutateForSpec("value", AntdInput_Helpers)
       },
@@ -284,13 +308,13 @@ function PlasmicCrossListing__RenderFunc(props: {
         path: "step",
         type: "private",
         variableType: "number",
-        initFunc: ({ $props, $state, $queries, $ctx }) => 0
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => 0
       },
       {
         path: "input13.value",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         onMutate: generateOnMutateForSpec("value", AntdInput_Helpers)
       },
@@ -298,7 +322,7 @@ function PlasmicCrossListing__RenderFunc(props: {
         path: "input14.value",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         onMutate: generateOnMutateForSpec("value", AntdInput_Helpers)
       },
@@ -306,7 +330,7 @@ function PlasmicCrossListing__RenderFunc(props: {
         path: "input15.value",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         onMutate: generateOnMutateForSpec("value", AntdInput_Helpers)
       },
@@ -314,7 +338,7 @@ function PlasmicCrossListing__RenderFunc(props: {
         path: "input16.value",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         onMutate: generateOnMutateForSpec("value", AntdInput_Helpers)
       },
@@ -322,7 +346,7 @@ function PlasmicCrossListing__RenderFunc(props: {
         path: "input17.value",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         onMutate: generateOnMutateForSpec("value", AntdInput_Helpers)
       },
@@ -330,7 +354,7 @@ function PlasmicCrossListing__RenderFunc(props: {
         path: "input18.value",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         onMutate: generateOnMutateForSpec("value", AntdInput_Helpers)
       }
@@ -341,8 +365,14 @@ function PlasmicCrossListing__RenderFunc(props: {
     $props,
     $ctx,
     $queries: {},
+    $q: {},
     $refs
   });
+
+  const pageMetadata = generateDynamicMetadata(
+    wrapQueriesWithLoadingProxy({}),
+    $ctx
+  );
 
   const styleTokensClassNames = _useStyleTokens();
 
@@ -2522,13 +2552,11 @@ export const PlasmicCrossListing = Object.assign(
     // Key-value metadata
     metadata: { nameRobots: 'content="noindex, nofollow"' },
 
-    // Page metadata
-    pageMetadata: {
-      title: "",
-      description: "",
-      ogImageSrc: "",
-      canonical: ""
-    }
+    pageMetadata: generateDynamicMetadata(wrapQueriesWithLoadingProxy({}), {
+      pagePath: "/cross-listing",
+      searchParams: {},
+      params: {}
+    })
   }
 );
 

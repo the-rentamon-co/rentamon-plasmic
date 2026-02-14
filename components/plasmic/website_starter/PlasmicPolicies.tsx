@@ -134,7 +134,7 @@ function PlasmicPolicies__RenderFunc(props: {
         path: "policiesCheckbox.isChecked",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined
       }
     ],
     [$props, $ctx, $refs]
@@ -143,6 +143,7 @@ function PlasmicPolicies__RenderFunc(props: {
     $props,
     $ctx,
     $queries: {},
+    $q: {},
     $refs
   });
 

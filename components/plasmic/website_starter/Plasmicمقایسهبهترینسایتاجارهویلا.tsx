@@ -73,6 +73,46 @@ import "@plasmicapp/react-web/lib/plasmic.css";
 import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./Plasmicمقایسهبهترینسایتاجارهویلا.module.css"; // plasmic-import: wqhmVdxkd2UU/css
 
+const emptyProxy: any = new Proxy(() => "", {
+  get(_, prop) {
+    return prop === Symbol.toPrimitive ? () => "" : emptyProxy;
+  }
+});
+
+function wrapQueriesWithLoadingProxy($q: any): any {
+  return new Proxy($q, {
+    get(target, queryName) {
+      const query = target[queryName];
+      return !query || query.isLoading || !query.data ? emptyProxy : query;
+    }
+  });
+}
+
+export function generateDynamicMetadata($q: any, $ctx: any) {
+  return {
+    title: "مقایسه بهترین سایت‌های اجاره ویلا",
+    description:
+      "مقایسه میزان کارمزد، کیفیت پشتیبانی و درآمد سایت‌های جاباما، جاجیگا، شب، اتاقک و...",
+    openGraph: {
+      title: "مقایسه بهترین سایت‌های اجاره ویلا",
+      description:
+        "مقایسه میزان کارمزد، کیفیت پشتیبانی و درآمد سایت‌های جاباما، جاجیگا، شب، اتاقک و...",
+      images: [
+        "https://site-assets.plasmic.app/cc7ae424dd4a99449087afa68e7f3dd1.jpg"
+      ]
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "مقایسه بهترین سایت‌های اجاره ویلا",
+      description:
+        "مقایسه میزان کارمزد، کیفیت پشتیبانی و درآمد سایت‌های جاباما، جاجیگا، شب، اتاقک و...",
+      images: [
+        "https://site-assets.plasmic.app/cc7ae424dd4a99449087afa68e7f3dd1.jpg"
+      ]
+    }
+  };
+}
+
 createPlasmicElementProxy;
 
 export type Plasmicمقایسهبهترینسایتاجارهویلا__VariantMembers = {};
@@ -175,7 +215,7 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
         path: "propertyId",
         type: "private",
         variableType: "number",
-        initFunc: ({ $props, $state, $queries, $ctx }) => 0
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => 0
       }
     ],
     [$props, $ctx, $refs]
@@ -184,8 +224,14 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
     $props,
     $ctx,
     $queries: {},
+    $q: {},
     $refs
   });
+
+  const pageMetadata = generateDynamicMetadata(
+    wrapQueriesWithLoadingProxy({}),
+    $ctx
+  );
 
   const styleTokensClassNames = _useStyleTokens();
 
@@ -193,43 +239,37 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
     <React.Fragment>
       <Head>
         <meta name="twitter:card" content="summary_large_image" />
-        <title key="title">
-          {Plasmicمقایسهبهترینسایتاجارهویلا.pageMetadata.title}
-        </title>
-        <meta
-          key="og:title"
-          property="og:title"
-          content={Plasmicمقایسهبهترینسایتاجارهویلا.pageMetadata.title}
-        />
+        <title key="title">{pageMetadata.title}</title>
+        <meta key="og:title" property="og:title" content={pageMetadata.title} />
         <meta
           key="twitter:title"
           property="twitter:title"
-          content={Plasmicمقایسهبهترینسایتاجارهویلا.pageMetadata.title}
+          content={pageMetadata.title}
         />
         <meta
           key="description"
           property="description"
-          content={Plasmicمقایسهبهترینسایتاجارهویلا.pageMetadata.description}
+          content={pageMetadata.description}
         />
         <meta
           key="og:description"
           property="og:description"
-          content={Plasmicمقایسهبهترینسایتاجارهویلا.pageMetadata.description}
+          content={pageMetadata.description}
         />
         <meta
           key="twitter:description"
           property="twitter:description"
-          content={Plasmicمقایسهبهترینسایتاجارهویلا.pageMetadata.description}
+          content={pageMetadata.description}
         />
         <meta
           key="og:image"
           property="og:image"
-          content={Plasmicمقایسهبهترینسایتاجارهویلا.pageMetadata.ogImageSrc}
+          content={pageMetadata.ogImageSrc}
         />
         <meta
           key="twitter:image"
           property="twitter:image"
-          content={Plasmicمقایسهبهترینسایتاجارهویلا.pageMetadata.ogImageSrc}
+          content={pageMetadata.ogImageSrc}
         />
       </Head>
 
@@ -2211,15 +2251,11 @@ export const Plasmicمقایسهبهترینسایتاجارهویلا = Object.
         "\u062c\u062f\u0648\u0644 \u0645\u0642\u0627\u06cc\u0633\u0647 \u0628\u0647\u062a\u0631\u06cc\u0646 \u0628\u0631\u0646\u0627\u0645\u0647/\u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u0627\u06cc\u0631\u0627\u0646"
     },
 
-    // Page metadata
-    pageMetadata: {
-      title: "مقایسه بهترین سایت‌های اجاره ویلا",
-      description:
-        "مقایسه میزان کارمزد، کیفیت پشتیبانی و درآمد سایت‌های جاباما، جاجیگا، شب، اتاقک و...",
-      ogImageSrc:
-        "https://site-assets.plasmic.app/cc7ae424dd4a99449087afa68e7f3dd1.jpg",
-      canonical: ""
-    }
+    pageMetadata: generateDynamicMetadata(wrapQueriesWithLoadingProxy({}), {
+      pagePath: "/best-villa-rental-sites",
+      searchParams: {},
+      params: {}
+    })
   }
 );
 

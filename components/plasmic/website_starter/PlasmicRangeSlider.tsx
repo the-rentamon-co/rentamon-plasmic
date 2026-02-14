@@ -194,7 +194,7 @@ function PlasmicRangeSlider__RenderFunc(props: {
         path: "ariaRangeSlider.value",
         type: "readonly",
         variableType: "array",
-        initFunc: ({ $props, $state, $queries, $ctx }) =>
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) =>
           $props["initialValue"],
 
         onChangeProp: "onChange"
@@ -206,6 +206,7 @@ function PlasmicRangeSlider__RenderFunc(props: {
     $props,
     $ctx,
     $queries: {},
+    $q: {},
     $refs
   });
 

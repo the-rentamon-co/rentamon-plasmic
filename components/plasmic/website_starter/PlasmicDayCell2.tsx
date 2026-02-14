@@ -241,19 +241,19 @@ function PlasmicDayCell2__RenderFunc(props: {
         path: "selected",
         type: "private",
         variableType: "variant",
-        initFunc: ({ $props, $state, $queries, $ctx }) => $props.selected
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => $props.selected
       },
       {
         path: "dayStatus",
         type: "private",
         variableType: "variant",
-        initFunc: ({ $props, $state, $queries, $ctx }) => $props.dayStatus
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => $props.dayStatus
       },
       {
         path: "test",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => ""
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => ""
       }
     ],
     [$props, $ctx, $refs]
@@ -262,6 +262,7 @@ function PlasmicDayCell2__RenderFunc(props: {
     $props,
     $ctx,
     $queries: {},
+    $q: {},
     $refs
   });
 

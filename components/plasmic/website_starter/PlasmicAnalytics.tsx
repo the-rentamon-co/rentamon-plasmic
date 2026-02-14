@@ -74,6 +74,35 @@ import "@plasmicapp/react-web/lib/plasmic.css";
 import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicAnalytics.module.css"; // plasmic-import: 8d3uvVUzIbi1/css
 
+const emptyProxy: any = new Proxy(() => "", {
+  get(_, prop) {
+    return prop === Symbol.toPrimitive ? () => "" : emptyProxy;
+  }
+});
+
+function wrapQueriesWithLoadingProxy($q: any): any {
+  return new Proxy($q, {
+    get(target, queryName) {
+      const query = target[queryName];
+      return !query || query.isLoading || !query.data ? emptyProxy : query;
+    }
+  });
+}
+
+export function generateDynamicMetadata($q: any, $ctx: any) {
+  return {
+    title: "گزارشات پیشرفته اقامتگاه",
+
+    openGraph: {
+      title: "گزارشات پیشرفته اقامتگاه"
+    },
+    twitter: {
+      card: "summary",
+      title: "گزارشات پیشرفته اقامتگاه"
+    }
+  };
+}
+
 createPlasmicElementProxy;
 
 export type PlasmicAnalytics__VariantMembers = {};
@@ -163,13 +192,13 @@ function PlasmicAnalytics__RenderFunc(props: {
         path: "propertyId",
         type: "private",
         variableType: "number",
-        initFunc: ({ $props, $state, $queries, $ctx }) => 0
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => 0
       },
       {
         path: "profile2.data",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "profile2"
       },
@@ -177,7 +206,7 @@ function PlasmicAnalytics__RenderFunc(props: {
         path: "profile2.error",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "profile2"
       },
@@ -185,7 +214,7 @@ function PlasmicAnalytics__RenderFunc(props: {
         path: "profile2.loading",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "profile2"
       },
@@ -193,7 +222,7 @@ function PlasmicAnalytics__RenderFunc(props: {
         path: "apiRequestMonthlyIncome.data",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "apiRequestMonthlyIncome"
       },
@@ -201,7 +230,7 @@ function PlasmicAnalytics__RenderFunc(props: {
         path: "apiRequestMonthlyIncome.error",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "apiRequestMonthlyIncome"
       },
@@ -209,7 +238,7 @@ function PlasmicAnalytics__RenderFunc(props: {
         path: "apiRequestMonthlyIncome.loading",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "apiRequestMonthlyIncome"
       },
@@ -217,13 +246,13 @@ function PlasmicAnalytics__RenderFunc(props: {
         path: "variable",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => ""
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => ""
       },
       {
         path: "apiRequestSourceOfReserves.data",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "apiRequestSourceOfReserves"
       },
@@ -231,7 +260,7 @@ function PlasmicAnalytics__RenderFunc(props: {
         path: "apiRequestSourceOfReserves.error",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "apiRequestSourceOfReserves"
       },
@@ -239,7 +268,7 @@ function PlasmicAnalytics__RenderFunc(props: {
         path: "apiRequestSourceOfReserves.loading",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "apiRequestSourceOfReserves"
       },
@@ -247,7 +276,7 @@ function PlasmicAnalytics__RenderFunc(props: {
         path: "apiRequestOccupancyRate.data",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "apiRequestOccupancyRate"
       },
@@ -255,7 +284,7 @@ function PlasmicAnalytics__RenderFunc(props: {
         path: "apiRequestOccupancyRate.error",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "apiRequestOccupancyRate"
       },
@@ -263,7 +292,7 @@ function PlasmicAnalytics__RenderFunc(props: {
         path: "apiRequestOccupancyRate.loading",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "apiRequestOccupancyRate"
       },
@@ -271,7 +300,7 @@ function PlasmicAnalytics__RenderFunc(props: {
         path: "apiRequestAvgDailyRate.data",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "apiRequestAvgDailyRate"
       },
@@ -279,7 +308,7 @@ function PlasmicAnalytics__RenderFunc(props: {
         path: "apiRequestAvgDailyRate.error",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "apiRequestAvgDailyRate"
       },
@@ -287,7 +316,7 @@ function PlasmicAnalytics__RenderFunc(props: {
         path: "apiRequestAvgDailyRate.loading",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "apiRequestAvgDailyRate"
       }
@@ -298,8 +327,14 @@ function PlasmicAnalytics__RenderFunc(props: {
     $props,
     $ctx,
     $queries: {},
+    $q: {},
     $refs
   });
+
+  const pageMetadata = generateDynamicMetadata(
+    wrapQueriesWithLoadingProxy({}),
+    $ctx
+  );
 
   const styleTokensClassNames = _useStyleTokens();
 
@@ -307,16 +342,12 @@ function PlasmicAnalytics__RenderFunc(props: {
     <React.Fragment>
       <Head>
         <meta name="twitter:card" content="summary" />
-        <title key="title">{PlasmicAnalytics.pageMetadata.title}</title>
-        <meta
-          key="og:title"
-          property="og:title"
-          content={PlasmicAnalytics.pageMetadata.title}
-        />
+        <title key="title">{pageMetadata.title}</title>
+        <meta key="og:title" property="og:title" content={pageMetadata.title} />
         <meta
           key="twitter:title"
           property="twitter:title"
-          content={PlasmicAnalytics.pageMetadata.title}
+          content={pageMetadata.title}
         />
       </Head>
 
@@ -1383,13 +1414,11 @@ export const PlasmicAnalytics = Object.assign(
     // Key-value metadata
     metadata: { nameRobots: 'content="noindex, nofollow"' },
 
-    // Page metadata
-    pageMetadata: {
-      title: "گزارشات پیشرفته اقامتگاه",
-      description: "",
-      ogImageSrc: "",
-      canonical: ""
-    }
+    pageMetadata: generateDynamicMetadata(wrapQueriesWithLoadingProxy({}), {
+      pagePath: "/analytics",
+      searchParams: {},
+      params: {}
+    })
   }
 );
 

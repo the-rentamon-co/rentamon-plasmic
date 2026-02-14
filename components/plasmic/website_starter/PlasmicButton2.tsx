@@ -213,37 +213,38 @@ function PlasmicButton2__RenderFunc(props: {
         path: "showStartIcon",
         type: "private",
         variableType: "variant",
-        initFunc: ({ $props, $state, $queries, $ctx }) => $props.showStartIcon
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) =>
+          $props.showStartIcon
       },
       {
         path: "showEndIcon",
         type: "private",
         variableType: "variant",
-        initFunc: ({ $props, $state, $queries, $ctx }) => $props.showEndIcon
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => $props.showEndIcon
       },
       {
         path: "color",
         type: "private",
         variableType: "variant",
-        initFunc: ({ $props, $state, $queries, $ctx }) => $props.color
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => $props.color
       },
       {
         path: "iconOnly",
         type: "private",
         variableType: "variant",
-        initFunc: ({ $props, $state, $queries, $ctx }) => $props.iconOnly
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => $props.iconOnly
       },
       {
         path: "large",
         type: "private",
         variableType: "variant",
-        initFunc: ({ $props, $state, $queries, $ctx }) => $props.large
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => $props.large
       },
       {
         path: "isDisabled",
         type: "private",
         variableType: "variant",
-        initFunc: ({ $props, $state, $queries, $ctx }) => $props.isDisabled
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => $props.isDisabled
       }
     ],
     [$props, $ctx, $refs]
@@ -252,6 +253,7 @@ function PlasmicButton2__RenderFunc(props: {
     $props,
     $ctx,
     $queries: {},
+    $q: {},
     $refs
   });
 

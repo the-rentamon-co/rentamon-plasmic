@@ -72,6 +72,46 @@ import "@plasmicapp/react-web/lib/plasmic.css";
 import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./Plasmicمشکلاتاجارهروزانهدرایران.module.css"; // plasmic-import: _aFdYQil1-CA/css
 
+const emptyProxy: any = new Proxy(() => "", {
+  get(_, prop) {
+    return prop === Symbol.toPrimitive ? () => "" : emptyProxy;
+  }
+});
+
+function wrapQueriesWithLoadingProxy($q: any): any {
+  return new Proxy($q, {
+    get(target, queryName) {
+      const query = target[queryName];
+      return !query || query.isLoading || !query.data ? emptyProxy : query;
+    }
+  });
+}
+
+export function generateDynamicMetadata($q: any, $ctx: any) {
+  return {
+    title: "مشکلات اجاره روزانه ویلا و سوییت در ایران",
+    description:
+      "این مدل اجاره نسبت به اجاره سالانه درآمد خیلی بیش‌تری برای صاحبخونه ایجاد می‌کنه، اما طبیعی هم هست که میزبان‌ها نگرانی‌ها و سوال‌هایی داشته باشن. از وسایل خونه گرفته تا همسایه‌ها و امنیت مهمون‌ها.",
+    openGraph: {
+      title: "مشکلات اجاره روزانه ویلا و سوییت در ایران",
+      description:
+        "این مدل اجاره نسبت به اجاره سالانه درآمد خیلی بیش‌تری برای صاحبخونه ایجاد می‌کنه، اما طبیعی هم هست که میزبان‌ها نگرانی‌ها و سوال‌هایی داشته باشن. از وسایل خونه گرفته تا همسایه‌ها و امنیت مهمون‌ها.",
+      images: [
+        "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2Fposts%2F%D9%85%D8%B4%DA%A9%D9%84%D8%A7%D8%AA-%D8%A7%D8%AC%D8%A7%D8%B1%D9%87-%D8%A7%D9%82%D8%A7%D9%85%D8%AA%DA%AF%D8%A7%D9%87-%DB%B1.jpg?versionId="
+      ]
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "مشکلات اجاره روزانه ویلا و سوییت در ایران",
+      description:
+        "این مدل اجاره نسبت به اجاره سالانه درآمد خیلی بیش‌تری برای صاحبخونه ایجاد می‌کنه، اما طبیعی هم هست که میزبان‌ها نگرانی‌ها و سوال‌هایی داشته باشن. از وسایل خونه گرفته تا همسایه‌ها و امنیت مهمون‌ها.",
+      images: [
+        "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2Fposts%2F%D9%85%D8%B4%DA%A9%D9%84%D8%A7%D8%AA-%D8%A7%D8%AC%D8%A7%D8%B1%D9%87-%D8%A7%D9%82%D8%A7%D9%85%D8%AA%DA%AF%D8%A7%D9%87-%DB%B1.jpg?versionId="
+      ]
+    }
+  };
+}
+
 createPlasmicElementProxy;
 
 export type Plasmicمشکلاتاجارهروزانهدرایران__VariantMembers = {};
@@ -171,7 +211,7 @@ function Plasmicمشکلاتاجارهروزانهدرایران__RenderFunc(pro
         path: "propertyId",
         type: "private",
         variableType: "number",
-        initFunc: ({ $props, $state, $queries, $ctx }) => 0
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => 0
       }
     ],
     [$props, $ctx, $refs]
@@ -180,8 +220,14 @@ function Plasmicمشکلاتاجارهروزانهدرایران__RenderFunc(pro
     $props,
     $ctx,
     $queries: {},
+    $q: {},
     $refs
   });
+
+  const pageMetadata = generateDynamicMetadata(
+    wrapQueriesWithLoadingProxy({}),
+    $ctx
+  );
 
   const styleTokensClassNames = _useStyleTokens();
 
@@ -189,43 +235,37 @@ function Plasmicمشکلاتاجارهروزانهدرایران__RenderFunc(pro
     <React.Fragment>
       <Head>
         <meta name="twitter:card" content="summary_large_image" />
-        <title key="title">
-          {Plasmicمشکلاتاجارهروزانهدرایران.pageMetadata.title}
-        </title>
-        <meta
-          key="og:title"
-          property="og:title"
-          content={Plasmicمشکلاتاجارهروزانهدرایران.pageMetadata.title}
-        />
+        <title key="title">{pageMetadata.title}</title>
+        <meta key="og:title" property="og:title" content={pageMetadata.title} />
         <meta
           key="twitter:title"
           property="twitter:title"
-          content={Plasmicمشکلاتاجارهروزانهدرایران.pageMetadata.title}
+          content={pageMetadata.title}
         />
         <meta
           key="description"
           property="description"
-          content={Plasmicمشکلاتاجارهروزانهدرایران.pageMetadata.description}
+          content={pageMetadata.description}
         />
         <meta
           key="og:description"
           property="og:description"
-          content={Plasmicمشکلاتاجارهروزانهدرایران.pageMetadata.description}
+          content={pageMetadata.description}
         />
         <meta
           key="twitter:description"
           property="twitter:description"
-          content={Plasmicمشکلاتاجارهروزانهدرایران.pageMetadata.description}
+          content={pageMetadata.description}
         />
         <meta
           key="og:image"
           property="og:image"
-          content={Plasmicمشکلاتاجارهروزانهدرایران.pageMetadata.ogImageSrc}
+          content={pageMetadata.ogImageSrc}
         />
         <meta
           key="twitter:image"
           property="twitter:image"
-          content={Plasmicمشکلاتاجارهروزانهدرایران.pageMetadata.ogImageSrc}
+          content={pageMetadata.ogImageSrc}
         />
       </Head>
 
@@ -1333,15 +1373,11 @@ export const Plasmicمشکلاتاجارهروزانهدرایران = Object.as
         "\u0627\u062c\u0627\u0631\u0647 \u0631\u0648\u0632\u0627\u0646\u0647, \u0627\u062c\u0627\u0631\u0647 \u06a9\u0648\u062a\u0627\u0647\u200c\u0645\u062f\u062a, \u0627\u062c\u0627\u0631\u0647 \u0622\u067e\u0627\u0631\u062a\u0645\u0627\u0646 \u0645\u0628\u0644\u0647, \u0645\u0634\u06a9\u0644\u0627\u062a \u0627\u062c\u0627\u0631\u0647 \u0631\u0648\u0632\u0627\u0646\u0647, \u062f\u0631\u0622\u0645\u062f \u0627\u062c\u0627\u0631\u0647 \u06a9\u0648\u062a\u0627\u0647\u200c\u0645\u062f\u062a, \u0645\u062f\u06cc\u0631\u06cc\u062a \u0645\u0647\u0645\u0627\u0646, \u0627\u0645\u0646\u06cc\u062a \u0627\u062c\u0627\u0631\u0647 \u0631\u0648\u0632\u0627\u0646\u0647, \u0631\u0646\u062a\u0627\u0645\u0648\u0646"
     },
 
-    // Page metadata
-    pageMetadata: {
-      title: "مشکلات اجاره روزانه ویلا و سوییت در ایران",
-      description:
-        "این مدل اجاره نسبت به اجاره سالانه درآمد خیلی بیش‌تری برای صاحبخونه ایجاد می‌کنه، اما طبیعی هم هست که میزبان‌ها نگرانی‌ها و سوال‌هایی داشته باشن. از وسایل خونه گرفته تا همسایه‌ها و امنیت مهمون‌ها.",
-      ogImageSrc:
-        "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2Fposts%2F%D9%85%D8%B4%DA%A9%D9%84%D8%A7%D8%AA-%D8%A7%D8%AC%D8%A7%D8%B1%D9%87-%D8%A7%D9%82%D8%A7%D9%85%D8%AA%DA%AF%D8%A7%D9%87-%DB%B1.jpg?versionId=",
-      canonical: ""
-    }
+    pageMetadata: generateDynamicMetadata(wrapQueriesWithLoadingProxy({}), {
+      pagePath: "/rental-guide",
+      searchParams: {},
+      params: {}
+    })
   }
 );
 

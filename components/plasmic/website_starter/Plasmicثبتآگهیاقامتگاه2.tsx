@@ -68,6 +68,38 @@ import "@plasmicapp/react-web/lib/plasmic.css";
 import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./Plasmicثبتآگهیاقامتگاه2.module.css"; // plasmic-import: HZSvfOagQfiC/css
 
+const emptyProxy: any = new Proxy(() => "", {
+  get(_, prop) {
+    return prop === Symbol.toPrimitive ? () => "" : emptyProxy;
+  }
+});
+
+function wrapQueriesWithLoadingProxy($q: any): any {
+  return new Proxy($q, {
+    get(target, queryName) {
+      const query = target[queryName];
+      return !query || query.isLoading || !query.data ? emptyProxy : query;
+    }
+  });
+}
+
+export function generateDynamicMetadata($q: any, $ctx: any) {
+  return {
+    description:
+      "ثبت رایگان آگهی ویلا، اقامتگاه و سوییت در جاباما، جاجیگا، اتاقک، شب و هومسا توسط ما.\n",
+    openGraph: {
+      description:
+        "ثبت رایگان آگهی ویلا، اقامتگاه و سوییت در جاباما، جاجیگا، اتاقک، شب و هومسا توسط ما.\n"
+    },
+    twitter: {
+      card: "summary",
+
+      description:
+        "ثبت رایگان آگهی ویلا، اقامتگاه و سوییت در جاباما، جاجیگا، اتاقک، شب و هومسا توسط ما.\n"
+    }
+  };
+}
+
 createPlasmicElementProxy;
 
 export type Plasmicثبتآگهیاقامتگاه2__VariantMembers = {};
@@ -127,6 +159,11 @@ function Plasmicثبتآگهیاقامتگاه2__RenderFunc(props: {
   const refsRef = React.useRef({});
   const $refs = refsRef.current;
 
+  const pageMetadata = generateDynamicMetadata(
+    wrapQueriesWithLoadingProxy({}),
+    $ctx
+  );
+
   const styleTokensClassNames = _useStyleTokens();
 
   return (
@@ -137,17 +174,17 @@ function Plasmicثبتآگهیاقامتگاه2__RenderFunc(props: {
         <meta
           key="description"
           property="description"
-          content={Plasmicثبتآگهیاقامتگاه2.pageMetadata.description}
+          content={pageMetadata.description}
         />
         <meta
           key="og:description"
           property="og:description"
-          content={Plasmicثبتآگهیاقامتگاه2.pageMetadata.description}
+          content={pageMetadata.description}
         />
         <meta
           key="twitter:description"
           property="twitter:description"
-          content={Plasmicثبتآگهیاقامتگاه2.pageMetadata.description}
+          content={pageMetadata.description}
         />
       </Head>
 
@@ -322,14 +359,12 @@ export const Plasmicثبتآگهیاقامتگاه2 = Object.assign(
     // Key-value metadata
     metadata: { nameRobots: 'content="noindex, nofollow"' },
 
-    // Page metadata
-    pageMetadata: {
-      title: "",
-      description:
-        "ثبت رایگان آگهی ویلا، اقامتگاه و سوییت در جاباما، جاجیگا، اتاقک، شب و هومسا توسط ما.\n",
-      ogImageSrc: "",
-      canonical: ""
-    }
+    pageMetadata: generateDynamicMetadata(wrapQueriesWithLoadingProxy({}), {
+      pagePath:
+        "/%D8%AB%D8%A8%D8%AA-%D8%A2%DA%AF%D9%87%DB%8C-%D8%A7%D9%82%D8%A7%D9%85%D8%AA%DA%AF%D8%A7%D9%87",
+      searchParams: {},
+      params: {}
+    })
   }
 );
 

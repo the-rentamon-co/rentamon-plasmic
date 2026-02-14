@@ -156,7 +156,7 @@ function PlasmicToastMessageRnt__RenderFunc(props: {
         path: "display",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => true
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => true
       }
     ],
     [$props, $ctx, $refs]
@@ -165,6 +165,7 @@ function PlasmicToastMessageRnt__RenderFunc(props: {
     $props,
     $ctx,
     $queries: {},
+    $q: {},
     $refs
   });
 

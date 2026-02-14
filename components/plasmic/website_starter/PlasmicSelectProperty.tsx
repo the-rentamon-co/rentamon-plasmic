@@ -71,6 +71,35 @@ import "@plasmicapp/react-web/lib/plasmic.css";
 import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicSelectProperty.module.css"; // plasmic-import: 3WANQH2QE7qG/css
 
+const emptyProxy: any = new Proxy(() => "", {
+  get(_, prop) {
+    return prop === Symbol.toPrimitive ? () => "" : emptyProxy;
+  }
+});
+
+function wrapQueriesWithLoadingProxy($q: any): any {
+  return new Proxy($q, {
+    get(target, queryName) {
+      const query = target[queryName];
+      return !query || query.isLoading || !query.data ? emptyProxy : query;
+    }
+  });
+}
+
+export function generateDynamicMetadata($q: any, $ctx: any) {
+  return {
+    title: "انتخاب اقامتگاه",
+
+    openGraph: {
+      title: "انتخاب اقامتگاه"
+    },
+    twitter: {
+      card: "summary",
+      title: "انتخاب اقامتگاه"
+    }
+  };
+}
+
 createPlasmicElementProxy;
 
 export type PlasmicSelectProperty__VariantMembers = {};
@@ -141,7 +170,7 @@ function PlasmicSelectProperty__RenderFunc(props: {
         path: "apiRequest.data",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "apiRequest"
       },
@@ -149,7 +178,7 @@ function PlasmicSelectProperty__RenderFunc(props: {
         path: "apiRequest.error",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "apiRequest"
       },
@@ -157,7 +186,7 @@ function PlasmicSelectProperty__RenderFunc(props: {
         path: "apiRequest.loading",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "apiRequest"
       },
@@ -165,7 +194,7 @@ function PlasmicSelectProperty__RenderFunc(props: {
         path: "selectProperty.value",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) =>
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) =>
           (() => {
             try {
               return $state.apiRequest.data[0].name;
@@ -187,8 +216,14 @@ function PlasmicSelectProperty__RenderFunc(props: {
     $props,
     $ctx,
     $queries: {},
+    $q: {},
     $refs
   });
+
+  const pageMetadata = generateDynamicMetadata(
+    wrapQueriesWithLoadingProxy({}),
+    $ctx
+  );
 
   const styleTokensClassNames = _useStyleTokens();
 
@@ -196,16 +231,12 @@ function PlasmicSelectProperty__RenderFunc(props: {
     <React.Fragment>
       <Head>
         <meta name="twitter:card" content="summary" />
-        <title key="title">{PlasmicSelectProperty.pageMetadata.title}</title>
-        <meta
-          key="og:title"
-          property="og:title"
-          content={PlasmicSelectProperty.pageMetadata.title}
-        />
+        <title key="title">{pageMetadata.title}</title>
+        <meta key="og:title" property="og:title" content={pageMetadata.title} />
         <meta
           key="twitter:title"
           property="twitter:title"
-          content={PlasmicSelectProperty.pageMetadata.title}
+          content={pageMetadata.title}
         />
       </Head>
 
@@ -1033,13 +1064,11 @@ export const PlasmicSelectProperty = Object.assign(
     internalVariantProps: PlasmicSelectProperty__VariantProps,
     internalArgProps: PlasmicSelectProperty__ArgProps,
 
-    // Page metadata
-    pageMetadata: {
-      title: "انتخاب اقامتگاه",
-      description: "",
-      ogImageSrc: "",
-      canonical: ""
-    }
+    pageMetadata: generateDynamicMetadata(wrapQueriesWithLoadingProxy({}), {
+      pagePath: "/direct-booking/select-property",
+      searchParams: {},
+      params: {}
+    })
   }
 );
 

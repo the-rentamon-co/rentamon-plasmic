@@ -77,6 +77,43 @@ import "@plasmicapp/react-web/lib/plasmic.css";
 import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicProCalendar2.module.css"; // plasmic-import: 9iGaaZlYRc7S/css
 
+const emptyProxy: any = new Proxy(() => "", {
+  get(_, prop) {
+    return prop === Symbol.toPrimitive ? () => "" : emptyProxy;
+  }
+});
+
+function wrapQueriesWithLoadingProxy($q: any): any {
+  return new Proxy($q, {
+    get(target, queryName) {
+      const query = target[queryName];
+      return !query || query.isLoading || !query.data ? emptyProxy : query;
+    }
+  });
+}
+
+export function generateDynamicMetadata($q: any, $ctx: any) {
+  return {
+    title: "تقویم یکپارچه اقامتگاه | مدیریت قیمت و وضعیت رزرو در چند سایت",
+    description:
+      "با تقویم هوشمند رنتامون، تاریخ‌ها، قیمت و وضعیت رزرو اقامتگاه‌ خود را در پلتفرم‌هایی مثل جاجیگا، شب، اتاقک و جاباما از یک پنل مرکزی مدیریت کنید. ساده، سریع و بدون خطا.",
+    openGraph: {
+      title: "تقویم یکپارچه اقامتگاه | مدیریت قیمت و وضعیت رزرو در چند سایت",
+      description:
+        "با تقویم هوشمند رنتامون، تاریخ‌ها، قیمت و وضعیت رزرو اقامتگاه‌ خود را در پلتفرم‌هایی مثل جاجیگا، شب، اتاقک و جاباما از یک پنل مرکزی مدیریت کنید. ساده، سریع و بدون خطا.",
+      images: ["https://miaan.ir/plasmic/website_starter/images/image109.png"]
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "تقویم یکپارچه اقامتگاه | مدیریت قیمت و وضعیت رزرو در چند سایت",
+      description:
+        "با تقویم هوشمند رنتامون، تاریخ‌ها، قیمت و وضعیت رزرو اقامتگاه‌ خود را در پلتفرم‌هایی مثل جاجیگا، شب، اتاقک و جاباما از یک پنل مرکزی مدیریت کنید. ساده، سریع و بدون خطا.",
+      images: ["https://miaan.ir/plasmic/website_starter/images/image109.png"]
+    },
+    alternates: { canonical: "https://app.rentamon.com/panel" }
+  };
+}
+
 createPlasmicElementProxy;
 
 export type PlasmicProCalendar2__VariantMembers = {};
@@ -164,13 +201,13 @@ function PlasmicProCalendar2__RenderFunc(props: {
         path: "variable",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => ""
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => ""
       },
       {
         path: "profile.data",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "profile"
       },
@@ -178,7 +215,7 @@ function PlasmicProCalendar2__RenderFunc(props: {
         path: "profile.error",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "profile"
       },
@@ -186,7 +223,7 @@ function PlasmicProCalendar2__RenderFunc(props: {
         path: "profile.loading",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "profile"
       },
@@ -194,13 +231,13 @@ function PlasmicProCalendar2__RenderFunc(props: {
         path: "pageUrl",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => ""
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => ""
       },
       {
         path: "propId",
         type: "private",
         variableType: "number",
-        initFunc: ({ $props, $state, $queries, $ctx }) =>
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) =>
           (() => {
             try {
               return (() => {
@@ -222,7 +259,7 @@ function PlasmicProCalendar2__RenderFunc(props: {
         path: "connectionStatusApiRequest.data",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "connectionStatusApiRequest"
       },
@@ -230,7 +267,7 @@ function PlasmicProCalendar2__RenderFunc(props: {
         path: "connectionStatusApiRequest.error",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "connectionStatusApiRequest"
       },
@@ -238,7 +275,7 @@ function PlasmicProCalendar2__RenderFunc(props: {
         path: "connectionStatusApiRequest.loading",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "connectionStatusApiRequest"
       },
@@ -246,7 +283,7 @@ function PlasmicProCalendar2__RenderFunc(props: {
         path: "select2.value",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) =>
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) =>
           hasVariant(globalVariants, "screen", "smallMobile")
             ? (() => {
                 try {
@@ -281,7 +318,7 @@ function PlasmicProCalendar2__RenderFunc(props: {
         path: "feature",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => ({
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => ({
           reservation: false,
           auto_sync: false
         })
@@ -290,19 +327,19 @@ function PlasmicProCalendar2__RenderFunc(props: {
         path: "aiShow",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => false
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => false
       },
       {
         path: "isTheFirstVisit",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => false
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => false
       },
       {
         path: "isModalShow",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) =>
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) =>
           (() => {
             try {
               return (() => {
@@ -328,31 +365,31 @@ function PlasmicProCalendar2__RenderFunc(props: {
         path: "vtStatus",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => ""
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => ""
       },
       {
         path: "modal.open",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => false
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => false
       },
       {
         path: "variable2",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => ""
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => ""
       },
       {
         path: "reservationsMode",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => false
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => false
       },
       {
         path: "calendar24.isGlobalLoading",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => false
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => false
       }
     ],
     [$props, $ctx, $refs]
@@ -361,8 +398,14 @@ function PlasmicProCalendar2__RenderFunc(props: {
     $props,
     $ctx,
     $queries: {},
+    $q: {},
     $refs
   });
+
+  const pageMetadata = generateDynamicMetadata(
+    wrapQueriesWithLoadingProxy({}),
+    $ctx
+  );
 
   const styleTokensClassNames = _useStyleTokens();
 
@@ -370,46 +413,39 @@ function PlasmicProCalendar2__RenderFunc(props: {
     <React.Fragment>
       <Head>
         <meta name="twitter:card" content="summary_large_image" />
-        <title key="title">{PlasmicProCalendar2.pageMetadata.title}</title>
-        <meta
-          key="og:title"
-          property="og:title"
-          content={PlasmicProCalendar2.pageMetadata.title}
-        />
+        <title key="title">{pageMetadata.title}</title>
+        <meta key="og:title" property="og:title" content={pageMetadata.title} />
         <meta
           key="twitter:title"
           property="twitter:title"
-          content={PlasmicProCalendar2.pageMetadata.title}
+          content={pageMetadata.title}
         />
         <meta
           key="description"
           property="description"
-          content={PlasmicProCalendar2.pageMetadata.description}
+          content={pageMetadata.description}
         />
         <meta
           key="og:description"
           property="og:description"
-          content={PlasmicProCalendar2.pageMetadata.description}
+          content={pageMetadata.description}
         />
         <meta
           key="twitter:description"
           property="twitter:description"
-          content={PlasmicProCalendar2.pageMetadata.description}
+          content={pageMetadata.description}
         />
         <meta
           key="og:image"
           property="og:image"
-          content={PlasmicProCalendar2.pageMetadata.ogImageSrc}
+          content={pageMetadata.ogImageSrc}
         />
         <meta
           key="twitter:image"
           property="twitter:image"
-          content={PlasmicProCalendar2.pageMetadata.ogImageSrc}
+          content={pageMetadata.ogImageSrc}
         />
-        <link
-          rel="canonical"
-          href={PlasmicProCalendar2.pageMetadata.canonical}
-        />
+        <link rel="canonical" href={pageMetadata.alternates?.canonical} />
       </Head>
 
       <style>{`
@@ -2403,15 +2439,11 @@ export const PlasmicProCalendar2 = Object.assign(
       ogImage: "https://miaan.ir/plasmic/website_starter/images/image109.png"
     },
 
-    // Page metadata
-    pageMetadata: {
-      title: "تقویم یکپارچه اقامتگاه | مدیریت قیمت و وضعیت رزرو در چند سایت",
-      description:
-        "با تقویم هوشمند رنتامون، تاریخ‌ها، قیمت و وضعیت رزرو اقامتگاه‌ خود را در پلتفرم‌هایی مثل جاجیگا، شب، اتاقک و جاباما از یک پنل مرکزی مدیریت کنید. ساده، سریع و بدون خطا.",
-      ogImageSrc:
-        "https://miaan.ir/plasmic/website_starter/images/image109.png",
-      canonical: "https://app.rentamon.com/panel"
-    }
+    pageMetadata: generateDynamicMetadata(wrapQueriesWithLoadingProxy({}), {
+      pagePath: "/panel-2",
+      searchParams: {},
+      params: {}
+    })
   }
 );
 

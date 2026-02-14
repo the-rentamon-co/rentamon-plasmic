@@ -73,6 +73,46 @@ import "@plasmicapp/react-web/lib/plasmic.css";
 import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./Plasmicامکاناتنسخهیپیشرفتهرنتامون.module.css"; // plasmic-import: OUfaFiJLkcrx/css
 
+const emptyProxy: any = new Proxy(() => "", {
+  get(_, prop) {
+    return prop === Symbol.toPrimitive ? () => "" : emptyProxy;
+  }
+});
+
+function wrapQueriesWithLoadingProxy($q: any): any {
+  return new Proxy($q, {
+    get(target, queryName) {
+      const query = target[queryName];
+      return !query || query.isLoading || !query.data ? emptyProxy : query;
+    }
+  });
+}
+
+export function generateDynamicMetadata($q: any, $ctx: any) {
+  return {
+    title: "امکانات نسخه‌ی پیشرفته رنتامون",
+    description:
+      "رنتامون امکانات جذابی برای افزایش درآمد میزبان‌ها ارائه می‌ده. مثل نمایش آخرین وضعیت «تسویه درآمد» سایت‌ها، مشاهده‌ی تاریخچه رزرو سایت‌ها و...\n\n",
+    openGraph: {
+      title: "امکانات نسخه‌ی پیشرفته رنتامون",
+      description:
+        "رنتامون امکانات جذابی برای افزایش درآمد میزبان‌ها ارائه می‌ده. مثل نمایش آخرین وضعیت «تسویه درآمد» سایت‌ها، مشاهده‌ی تاریخچه رزرو سایت‌ها و...\n\n",
+      images: [
+        "https://site-assets.plasmic.app/28cd923580288b56ef96b273d0ff6cb0.png"
+      ]
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "امکانات نسخه‌ی پیشرفته رنتامون",
+      description:
+        "رنتامون امکانات جذابی برای افزایش درآمد میزبان‌ها ارائه می‌ده. مثل نمایش آخرین وضعیت «تسویه درآمد» سایت‌ها، مشاهده‌ی تاریخچه رزرو سایت‌ها و...\n\n",
+      images: [
+        "https://site-assets.plasmic.app/28cd923580288b56ef96b273d0ff6cb0.png"
+      ]
+    }
+  };
+}
+
 createPlasmicElementProxy;
 
 export type Plasmicامکاناتنسخهیپیشرفتهرنتامون__VariantMembers = {};
@@ -147,49 +187,48 @@ function Plasmicامکاناتنسخهیپیشرفتهرنتامون__RenderFunc
 
   const globalVariants = _useGlobalVariants();
 
+  const pageMetadata = generateDynamicMetadata(
+    wrapQueriesWithLoadingProxy({}),
+    $ctx
+  );
+
   const styleTokensClassNames = _useStyleTokens();
 
   return (
     <React.Fragment>
       <Head>
         <meta name="twitter:card" content="summary_large_image" />
-        <title key="title">
-          {Plasmicامکاناتنسخهیپیشرفتهرنتامون.pageMetadata.title}
-        </title>
-        <meta
-          key="og:title"
-          property="og:title"
-          content={Plasmicامکاناتنسخهیپیشرفتهرنتامون.pageMetadata.title}
-        />
+        <title key="title">{pageMetadata.title}</title>
+        <meta key="og:title" property="og:title" content={pageMetadata.title} />
         <meta
           key="twitter:title"
           property="twitter:title"
-          content={Plasmicامکاناتنسخهیپیشرفتهرنتامون.pageMetadata.title}
+          content={pageMetadata.title}
         />
         <meta
           key="description"
           property="description"
-          content={Plasmicامکاناتنسخهیپیشرفتهرنتامون.pageMetadata.description}
+          content={pageMetadata.description}
         />
         <meta
           key="og:description"
           property="og:description"
-          content={Plasmicامکاناتنسخهیپیشرفتهرنتامون.pageMetadata.description}
+          content={pageMetadata.description}
         />
         <meta
           key="twitter:description"
           property="twitter:description"
-          content={Plasmicامکاناتنسخهیپیشرفتهرنتامون.pageMetadata.description}
+          content={pageMetadata.description}
         />
         <meta
           key="og:image"
           property="og:image"
-          content={Plasmicامکاناتنسخهیپیشرفتهرنتامون.pageMetadata.ogImageSrc}
+          content={pageMetadata.ogImageSrc}
         />
         <meta
           key="twitter:image"
           property="twitter:image"
-          content={Plasmicامکاناتنسخهیپیشرفتهرنتامون.pageMetadata.ogImageSrc}
+          content={pageMetadata.ogImageSrc}
         />
       </Head>
 
@@ -917,15 +956,11 @@ export const Plasmicامکاناتنسخهیپیشرفتهرنتامون = Objec
       ogUrl: "https://rentamon.com/features/"
     },
 
-    // Page metadata
-    pageMetadata: {
-      title: "امکانات نسخه‌ی پیشرفته رنتامون",
-      description:
-        "رنتامون امکانات جذابی برای افزایش درآمد میزبان‌ها ارائه می‌ده. مثل نمایش آخرین وضعیت «تسویه درآمد» سایت‌ها، مشاهده‌ی تاریخچه رزرو سایت‌ها و...\n\n",
-      ogImageSrc:
-        "https://site-assets.plasmic.app/28cd923580288b56ef96b273d0ff6cb0.png",
-      canonical: ""
-    }
+    pageMetadata: generateDynamicMetadata(wrapQueriesWithLoadingProxy({}), {
+      pagePath: "/features",
+      searchParams: {},
+      params: {}
+    })
   }
 );
 

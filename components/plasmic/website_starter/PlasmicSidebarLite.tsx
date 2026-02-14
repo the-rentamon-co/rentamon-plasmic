@@ -161,7 +161,7 @@ function PlasmicSidebarLite__RenderFunc(props: {
         path: "modalSidebar.open",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) =>
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) =>
           (() => {
             try {
               return $props.isOpen;
@@ -180,7 +180,7 @@ function PlasmicSidebarLite__RenderFunc(props: {
         path: "checkUserPendingReserve.data",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "checkUserPendingReserve"
       },
@@ -188,7 +188,7 @@ function PlasmicSidebarLite__RenderFunc(props: {
         path: "checkUserPendingReserve.error",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "checkUserPendingReserve"
       },
@@ -196,7 +196,7 @@ function PlasmicSidebarLite__RenderFunc(props: {
         path: "checkUserPendingReserve.loading",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "checkUserPendingReserve"
       },
@@ -204,7 +204,7 @@ function PlasmicSidebarLite__RenderFunc(props: {
         path: "reserveCount",
         type: "private",
         variableType: "number",
-        initFunc: ({ $props, $state, $queries, $ctx }) => 0
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => 0
       }
     ],
     [$props, $ctx, $refs]
@@ -213,6 +213,7 @@ function PlasmicSidebarLite__RenderFunc(props: {
     $props,
     $ctx,
     $queries: {},
+    $q: {},
     $refs
   });
 

@@ -70,6 +70,35 @@ import "@plasmicapp/react-web/lib/plasmic.css";
 import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicGuestCalendar.module.css"; // plasmic-import: lbsIEMOgeDFC/css
 
+const emptyProxy: any = new Proxy(() => "", {
+  get(_, prop) {
+    return prop === Symbol.toPrimitive ? () => "" : emptyProxy;
+  }
+});
+
+function wrapQueriesWithLoadingProxy($q: any): any {
+  return new Proxy($q, {
+    get(target, queryName) {
+      const query = target[queryName];
+      return !query || query.isLoading || !query.data ? emptyProxy : query;
+    }
+  });
+}
+
+export function generateDynamicMetadata($q: any, $ctx: any) {
+  return {
+    title: "تقویم",
+
+    openGraph: {
+      title: "تقویم"
+    },
+    twitter: {
+      card: "summary",
+      title: "تقویم"
+    }
+  };
+}
+
 createPlasmicElementProxy;
 
 export type PlasmicGuestCalendar__VariantMembers = {};
@@ -140,7 +169,7 @@ function PlasmicGuestCalendar__RenderFunc(props: {
         path: "profile2.data",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "profile2"
       },
@@ -148,7 +177,7 @@ function PlasmicGuestCalendar__RenderFunc(props: {
         path: "profile2.error",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "profile2"
       },
@@ -156,7 +185,7 @@ function PlasmicGuestCalendar__RenderFunc(props: {
         path: "profile2.loading",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "profile2"
       },
@@ -164,7 +193,7 @@ function PlasmicGuestCalendar__RenderFunc(props: {
         path: "apiRequest2.data",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "apiRequest2"
       },
@@ -172,7 +201,7 @@ function PlasmicGuestCalendar__RenderFunc(props: {
         path: "apiRequest2.error",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "apiRequest2"
       },
@@ -180,7 +209,7 @@ function PlasmicGuestCalendar__RenderFunc(props: {
         path: "apiRequest2.loading",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "apiRequest2"
       },
@@ -188,7 +217,7 @@ function PlasmicGuestCalendar__RenderFunc(props: {
         path: "apiRequest.data",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "apiRequest"
       },
@@ -196,7 +225,7 @@ function PlasmicGuestCalendar__RenderFunc(props: {
         path: "apiRequest.error",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "apiRequest"
       },
@@ -204,7 +233,7 @@ function PlasmicGuestCalendar__RenderFunc(props: {
         path: "apiRequest.loading",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "apiRequest"
       }
@@ -215,8 +244,14 @@ function PlasmicGuestCalendar__RenderFunc(props: {
     $props,
     $ctx,
     $queries: {},
+    $q: {},
     $refs
   });
+
+  const pageMetadata = generateDynamicMetadata(
+    wrapQueriesWithLoadingProxy({}),
+    $ctx
+  );
 
   const styleTokensClassNames = _useStyleTokens();
 
@@ -224,16 +259,12 @@ function PlasmicGuestCalendar__RenderFunc(props: {
     <React.Fragment>
       <Head>
         <meta name="twitter:card" content="summary" />
-        <title key="title">{PlasmicGuestCalendar.pageMetadata.title}</title>
-        <meta
-          key="og:title"
-          property="og:title"
-          content={PlasmicGuestCalendar.pageMetadata.title}
-        />
+        <title key="title">{pageMetadata.title}</title>
+        <meta key="og:title" property="og:title" content={pageMetadata.title} />
         <meta
           key="twitter:title"
           property="twitter:title"
-          content={PlasmicGuestCalendar.pageMetadata.title}
+          content={pageMetadata.title}
         />
       </Head>
 
@@ -1353,13 +1384,11 @@ export const PlasmicGuestCalendar = Object.assign(
     internalVariantProps: PlasmicGuestCalendar__VariantProps,
     internalArgProps: PlasmicGuestCalendar__ArgProps,
 
-    // Page metadata
-    pageMetadata: {
-      title: "تقویم",
-      description: "",
-      ogImageSrc: "",
-      canonical: ""
-    }
+    pageMetadata: generateDynamicMetadata(wrapQueriesWithLoadingProxy({}), {
+      pagePath: "/calendar/[property_id]/[sub-resource]",
+      searchParams: {},
+      params: {}
+    })
   }
 );
 

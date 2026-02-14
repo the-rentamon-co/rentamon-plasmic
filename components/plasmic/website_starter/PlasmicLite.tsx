@@ -80,6 +80,46 @@ import Icon36Icon from "./icons/PlasmicIcon__Icon36"; // plasmic-import: yp-BEib
 import Icon35Icon from "./icons/PlasmicIcon__Icon35"; // plasmic-import: OcX2ER-sALSD/icon
 import Icon33Icon from "./icons/PlasmicIcon__Icon33"; // plasmic-import: 7SATgDgNnB07/icon
 
+const emptyProxy: any = new Proxy(() => "", {
+  get(_, prop) {
+    return prop === Symbol.toPrimitive ? () => "" : emptyProxy;
+  }
+});
+
+function wrapQueriesWithLoadingProxy($q: any): any {
+  return new Proxy($q, {
+    get(target, queryName) {
+      const query = target[queryName];
+      return !query || query.isLoading || !query.data ? emptyProxy : query;
+    }
+  });
+}
+
+export function generateDynamicMetadata($q: any, $ctx: any) {
+  return {
+    title: "میان، تقویم آنلاین اقامتگاه",
+    description:
+      "با میان، دیگه نیازی به دفترچه، سررسید یا تقویم‌های کاغذی نیست! همه چیز در یک تقویم آنلاین در دسترسه؛ از هر جا و روی هر دستگاهی، به اطلاعات ویلا و مهمان‌ها دسترسی داری.",
+    openGraph: {
+      title: "میان، تقویم آنلاین اقامتگاه",
+      description:
+        "با میان، دیگه نیازی به دفترچه، سررسید یا تقویم‌های کاغذی نیست! همه چیز در یک تقویم آنلاین در دسترسه؛ از هر جا و روی هر دستگاهی، به اطلاعات ویلا و مهمان‌ها دسترسی داری.",
+      images: [
+        "https://site-assets.plasmic.app/34f18b9d9c3a2d97d0402c2e7fe04721.png"
+      ]
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "میان، تقویم آنلاین اقامتگاه",
+      description:
+        "با میان، دیگه نیازی به دفترچه، سررسید یا تقویم‌های کاغذی نیست! همه چیز در یک تقویم آنلاین در دسترسه؛ از هر جا و روی هر دستگاهی، به اطلاعات ویلا و مهمان‌ها دسترسی داری.",
+      images: [
+        "https://site-assets.plasmic.app/34f18b9d9c3a2d97d0402c2e7fe04721.png"
+      ]
+    }
+  };
+}
+
 createPlasmicElementProxy;
 
 export type PlasmicLite__VariantMembers = {};
@@ -196,13 +236,13 @@ function PlasmicLite__RenderFunc(props: {
         path: "propertyId",
         type: "private",
         variableType: "number",
-        initFunc: ({ $props, $state, $queries, $ctx }) => 0
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => 0
       },
       {
         path: "accordionMain.activePanelId",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         onMutate: generateOnMutateForSpec(
           "activePanelId",
@@ -216,8 +256,14 @@ function PlasmicLite__RenderFunc(props: {
     $props,
     $ctx,
     $queries: {},
+    $q: {},
     $refs
   });
+
+  const pageMetadata = generateDynamicMetadata(
+    wrapQueriesWithLoadingProxy({}),
+    $ctx
+  );
 
   const styleTokensClassNames = _useStyleTokens();
 
@@ -225,41 +271,37 @@ function PlasmicLite__RenderFunc(props: {
     <React.Fragment>
       <Head>
         <meta name="twitter:card" content="summary_large_image" />
-        <title key="title">{PlasmicLite.pageMetadata.title}</title>
-        <meta
-          key="og:title"
-          property="og:title"
-          content={PlasmicLite.pageMetadata.title}
-        />
+        <title key="title">{pageMetadata.title}</title>
+        <meta key="og:title" property="og:title" content={pageMetadata.title} />
         <meta
           key="twitter:title"
           property="twitter:title"
-          content={PlasmicLite.pageMetadata.title}
+          content={pageMetadata.title}
         />
         <meta
           key="description"
           property="description"
-          content={PlasmicLite.pageMetadata.description}
+          content={pageMetadata.description}
         />
         <meta
           key="og:description"
           property="og:description"
-          content={PlasmicLite.pageMetadata.description}
+          content={pageMetadata.description}
         />
         <meta
           key="twitter:description"
           property="twitter:description"
-          content={PlasmicLite.pageMetadata.description}
+          content={pageMetadata.description}
         />
         <meta
           key="og:image"
           property="og:image"
-          content={PlasmicLite.pageMetadata.ogImageSrc}
+          content={pageMetadata.ogImageSrc}
         />
         <meta
           key="twitter:image"
           property="twitter:image"
-          content={PlasmicLite.pageMetadata.ogImageSrc}
+          content={pageMetadata.ogImageSrc}
         />
       </Head>
 
@@ -1506,15 +1548,11 @@ export const PlasmicLite = Object.assign(
         "\u0628\u0627 \u0645\u06cc\u0627\u0646\u060c \u062f\u06cc\u06af\u0647 \u0646\u06cc\u0627\u0632\u06cc \u0628\u0647 \u062f\u0641\u062a\u0631\u0686\u0647\u060c \u0633\u0631\u0631\u0633\u06cc\u062f \u06cc\u0627 \u062a\u0642\u0648\u06cc\u0645\u200c\u0647\u0627\u06cc \u06a9\u0627\u063a\u0630\u06cc \u0646\u06cc\u0633\u062a! \u0647\u0645\u0647 \u0686\u06cc\u0632 \u062f\u0631 \u06cc\u06a9 \u062a\u0642\u0648\u06cc\u0645 \u0622\u0646\u0644\u0627\u06cc\u0646 \u062f\u0631 \u062f\u0633\u062a\u0631\u0633\u0647\u061b \u0627\u0632 \u0647\u0631 \u062c\u0627 \u0648 \u0631\u0648\u06cc \u0647\u0631 \u062f\u0633\u062a\u06af\u0627\u0647\u06cc\u060c \u0628\u0647 \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0648\u06cc\u0644\u0627 \u0648 \u0645\u0647\u0645\u0627\u0646\u200c\u0647\u0627 \u062f\u0633\u062a\u0631\u0633\u06cc \u062f\u0627\u0631\u06cc."
     },
 
-    // Page metadata
-    pageMetadata: {
-      title: "میان، تقویم آنلاین اقامتگاه",
-      description:
-        "با میان، دیگه نیازی به دفترچه، سررسید یا تقویم‌های کاغذی نیست! همه چیز در یک تقویم آنلاین در دسترسه؛ از هر جا و روی هر دستگاهی، به اطلاعات ویلا و مهمان‌ها دسترسی داری.",
-      ogImageSrc:
-        "https://site-assets.plasmic.app/34f18b9d9c3a2d97d0402c2e7fe04721.png",
-      canonical: ""
-    }
+    pageMetadata: generateDynamicMetadata(wrapQueriesWithLoadingProxy({}), {
+      pagePath: "/lite",
+      searchParams: {},
+      params: {}
+    })
   }
 );
 

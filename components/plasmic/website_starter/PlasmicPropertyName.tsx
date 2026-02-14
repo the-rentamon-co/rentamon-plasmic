@@ -141,7 +141,7 @@ function PlasmicPropertyName__RenderFunc(props: {
         path: "collapse.open",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         onMutate: generateOnMutateForSpec("open", AntdSingleCollapse_Helpers)
       },
@@ -149,7 +149,7 @@ function PlasmicPropertyName__RenderFunc(props: {
         path: "fragmentPopover.open",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => false,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => false,
 
         refName: "fragmentPopover"
       },
@@ -157,7 +157,7 @@ function PlasmicPropertyName__RenderFunc(props: {
         path: "propertyId2",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => ""
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => ""
       }
     ],
     [$props, $ctx, $refs]
@@ -166,6 +166,7 @@ function PlasmicPropertyName__RenderFunc(props: {
     $props,
     $ctx,
     $queries: {},
+    $q: {},
     $refs
   });
 

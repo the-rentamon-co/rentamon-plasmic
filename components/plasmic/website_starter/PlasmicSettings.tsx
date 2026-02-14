@@ -78,6 +78,35 @@ import sty from "./PlasmicSettings.module.css"; // plasmic-import: Gu50HL8TWrKF/
 import Icon96Icon from "./icons/PlasmicIcon__Icon96"; // plasmic-import: KF8kMPq8z-hR/icon
 import Icon97Icon from "./icons/PlasmicIcon__Icon97"; // plasmic-import: WvAcVVsrw6t2/icon
 
+const emptyProxy: any = new Proxy(() => "", {
+  get(_, prop) {
+    return prop === Symbol.toPrimitive ? () => "" : emptyProxy;
+  }
+});
+
+function wrapQueriesWithLoadingProxy($q: any): any {
+  return new Proxy($q, {
+    get(target, queryName) {
+      const query = target[queryName];
+      return !query || query.isLoading || !query.data ? emptyProxy : query;
+    }
+  });
+}
+
+export function generateDynamicMetadata($q: any, $ctx: any) {
+  return {
+    title: "تنظیمات",
+
+    openGraph: {
+      title: "تنظیمات"
+    },
+    twitter: {
+      card: "summary",
+      title: "تنظیمات"
+    }
+  };
+}
+
 createPlasmicElementProxy;
 
 export type PlasmicSettings__VariantMembers = {};
@@ -212,13 +241,13 @@ function PlasmicSettings__RenderFunc(props: {
         path: "variable",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => ""
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => ""
       },
       {
         path: "activateAutosync.open",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) =>
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) =>
           hasVariant(globalVariants, "screen", "smallMobile")
             ? false
             : hasVariant(globalVariants, "screen", "mobile")
@@ -231,7 +260,7 @@ function PlasmicSettings__RenderFunc(props: {
         path: "dEactivateAutosync.open",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) =>
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) =>
           hasVariant(globalVariants, "screen", "smallMobile")
             ? false
             : hasVariant(globalVariants, "screen", "mobile")
@@ -244,7 +273,7 @@ function PlasmicSettings__RenderFunc(props: {
         path: "activateSmartbooking.open",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) =>
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) =>
           hasVariant(globalVariants, "screen", "smallMobile")
             ? false
             : hasVariant(globalVariants, "screen", "mobile")
@@ -257,7 +286,7 @@ function PlasmicSettings__RenderFunc(props: {
         path: "dEactivateSmartbooking.open",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) =>
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) =>
           hasVariant(globalVariants, "screen", "smallMobile")
             ? false
             : hasVariant(globalVariants, "screen", "mobile")
@@ -270,13 +299,13 @@ function PlasmicSettings__RenderFunc(props: {
         path: "loading",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => false
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => false
       },
       {
         path: "apiRequestSetting.data",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "apiRequestSetting"
       },
@@ -284,7 +313,7 @@ function PlasmicSettings__RenderFunc(props: {
         path: "apiRequestSetting.error",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "apiRequestSetting"
       },
@@ -292,7 +321,7 @@ function PlasmicSettings__RenderFunc(props: {
         path: "apiRequestSetting.loading",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "apiRequestSetting"
       },
@@ -300,7 +329,7 @@ function PlasmicSettings__RenderFunc(props: {
         path: "apiRequest.data",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "apiRequest"
       },
@@ -308,7 +337,7 @@ function PlasmicSettings__RenderFunc(props: {
         path: "apiRequest.error",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "apiRequest"
       },
@@ -316,7 +345,7 @@ function PlasmicSettings__RenderFunc(props: {
         path: "apiRequest.loading",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "apiRequest"
       },
@@ -324,7 +353,7 @@ function PlasmicSettings__RenderFunc(props: {
         path: "apiRequest2.data",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "apiRequest2"
       },
@@ -332,7 +361,7 @@ function PlasmicSettings__RenderFunc(props: {
         path: "apiRequest2.error",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "apiRequest2"
       },
@@ -340,7 +369,7 @@ function PlasmicSettings__RenderFunc(props: {
         path: "apiRequest2.loading",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "apiRequest2"
       },
@@ -348,7 +377,7 @@ function PlasmicSettings__RenderFunc(props: {
         path: "profile.data",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "profile"
       },
@@ -356,7 +385,7 @@ function PlasmicSettings__RenderFunc(props: {
         path: "profile.error",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "profile"
       },
@@ -364,7 +393,7 @@ function PlasmicSettings__RenderFunc(props: {
         path: "profile.loading",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "profile"
       },
@@ -372,7 +401,7 @@ function PlasmicSettings__RenderFunc(props: {
         path: "autoSyncSwitch.checked",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) =>
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) =>
           (() => {
             try {
               return (() => {
@@ -403,7 +432,7 @@ function PlasmicSettings__RenderFunc(props: {
         path: "reservationSwitch.checked",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) =>
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) =>
           (() => {
             try {
               return (() => {
@@ -434,31 +463,31 @@ function PlasmicSettings__RenderFunc(props: {
         path: "pricingSwitch.checked",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined
       },
       {
         path: "lowBalance.open",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => false
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => false
       },
       {
         path: "variable2",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => ""
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => ""
       },
       {
         path: "selectedFeature",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => ""
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => ""
       },
       {
         path: "freeFeatureCredits.data",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "freeFeatureCredits"
       },
@@ -466,7 +495,7 @@ function PlasmicSettings__RenderFunc(props: {
         path: "freeFeatureCredits.error",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "freeFeatureCredits"
       },
@@ -474,7 +503,7 @@ function PlasmicSettings__RenderFunc(props: {
         path: "freeFeatureCredits.loading",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "freeFeatureCredits"
       }
@@ -485,8 +514,14 @@ function PlasmicSettings__RenderFunc(props: {
     $props,
     $ctx,
     $queries: {},
+    $q: {},
     $refs
   });
+
+  const pageMetadata = generateDynamicMetadata(
+    wrapQueriesWithLoadingProxy({}),
+    $ctx
+  );
 
   const styleTokensClassNames = _useStyleTokens();
 
@@ -494,16 +529,12 @@ function PlasmicSettings__RenderFunc(props: {
     <React.Fragment>
       <Head>
         <meta name="twitter:card" content="summary" />
-        <title key="title">{PlasmicSettings.pageMetadata.title}</title>
-        <meta
-          key="og:title"
-          property="og:title"
-          content={PlasmicSettings.pageMetadata.title}
-        />
+        <title key="title">{pageMetadata.title}</title>
+        <meta key="og:title" property="og:title" content={pageMetadata.title} />
         <meta
           key="twitter:title"
           property="twitter:title"
-          content={PlasmicSettings.pageMetadata.title}
+          content={pageMetadata.title}
         />
       </Head>
 
@@ -4854,13 +4885,11 @@ export const PlasmicSettings = Object.assign(
     // Key-value metadata
     metadata: { nameRobots: 'content="noindex, nofollow"' },
 
-    // Page metadata
-    pageMetadata: {
-      title: "تنظیمات",
-      description: "",
-      ogImageSrc: "",
-      canonical: ""
-    }
+    pageMetadata: generateDynamicMetadata(wrapQueriesWithLoadingProxy({}), {
+      pagePath: "/settings",
+      searchParams: {},
+      params: {}
+    })
   }
 );
 

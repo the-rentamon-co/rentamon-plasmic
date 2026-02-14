@@ -72,6 +72,35 @@ import "@plasmicapp/react-web/lib/plasmic.css";
 import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./Plasmicقوانینومقرراتاستفادهازرنتامون.module.css"; // plasmic-import: ItZEs9masGCY/css
 
+const emptyProxy: any = new Proxy(() => "", {
+  get(_, prop) {
+    return prop === Symbol.toPrimitive ? () => "" : emptyProxy;
+  }
+});
+
+function wrapQueriesWithLoadingProxy($q: any): any {
+  return new Proxy($q, {
+    get(target, queryName) {
+      const query = target[queryName];
+      return !query || query.isLoading || !query.data ? emptyProxy : query;
+    }
+  });
+}
+
+export function generateDynamicMetadata($q: any, $ctx: any) {
+  return {
+    title: "قوانین و مقررات استفاده از رنتامون",
+
+    openGraph: {
+      title: "قوانین و مقررات استفاده از رنتامون"
+    },
+    twitter: {
+      card: "summary",
+      title: "قوانین و مقررات استفاده از رنتامون"
+    }
+  };
+}
+
 createPlasmicElementProxy;
 
 export type Plasmicقوانینومقرراتاستفادهازرنتامون__VariantMembers = {};
@@ -150,7 +179,7 @@ function Plasmicقوانینومقرراتاستفادهازرنتامون__Rend
         path: "propertyId",
         type: "private",
         variableType: "number",
-        initFunc: ({ $props, $state, $queries, $ctx }) => 0
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => 0
       }
     ],
     [$props, $ctx, $refs]
@@ -159,8 +188,14 @@ function Plasmicقوانینومقرراتاستفادهازرنتامون__Rend
     $props,
     $ctx,
     $queries: {},
+    $q: {},
     $refs
   });
+
+  const pageMetadata = generateDynamicMetadata(
+    wrapQueriesWithLoadingProxy({}),
+    $ctx
+  );
 
   const styleTokensClassNames = _useStyleTokens();
 
@@ -168,18 +203,12 @@ function Plasmicقوانینومقرراتاستفادهازرنتامون__Rend
     <React.Fragment>
       <Head>
         <meta name="twitter:card" content="summary" />
-        <title key="title">
-          {Plasmicقوانینومقرراتاستفادهازرنتامون.pageMetadata.title}
-        </title>
-        <meta
-          key="og:title"
-          property="og:title"
-          content={Plasmicقوانینومقرراتاستفادهازرنتامون.pageMetadata.title}
-        />
+        <title key="title">{pageMetadata.title}</title>
+        <meta key="og:title" property="og:title" content={pageMetadata.title} />
         <meta
           key="twitter:title"
           property="twitter:title"
-          content={Plasmicقوانینومقرراتاستفادهازرنتامون.pageMetadata.title}
+          content={pageMetadata.title}
         />
       </Head>
 
@@ -1534,13 +1563,11 @@ export const Plasmicقوانینومقرراتاستفادهازرنتامون =
     internalVariantProps: Plasmicقوانینومقرراتاستفادهازرنتامون__VariantProps,
     internalArgProps: Plasmicقوانینومقرراتاستفادهازرنتامون__ArgProps,
 
-    // Page metadata
-    pageMetadata: {
-      title: "قوانین و مقررات استفاده از رنتامون",
-      description: "",
-      ogImageSrc: "",
-      canonical: ""
-    }
+    pageMetadata: generateDynamicMetadata(wrapQueriesWithLoadingProxy({}), {
+      pagePath: "/terms-of-use",
+      searchParams: {},
+      params: {}
+    })
   }
 );
 

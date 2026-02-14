@@ -71,6 +71,49 @@ import "@plasmicapp/react-web/lib/plasmic.css";
 import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./Plasmicنگهداریوسایلدراجارهروزانه.module.css"; // plasmic-import: pfg_BRg-bix0/css
 
+const emptyProxy: any = new Proxy(() => "", {
+  get(_, prop) {
+    return prop === Symbol.toPrimitive ? () => "" : emptyProxy;
+  }
+});
+
+function wrapQueriesWithLoadingProxy($q: any): any {
+  return new Proxy($q, {
+    get(target, queryName) {
+      const query = target[queryName];
+      return !query || query.isLoading || !query.data ? emptyProxy : query;
+    }
+  });
+}
+
+export function generateDynamicMetadata($q: any, $ctx: any) {
+  return {
+    title:
+      "دردسرهای اجاره دادن خونه مبله و راه‌حل‌های نگهداری وسایل در اجاره روزانه",
+    description:
+      "اگه می‌خوای وارد اجاره روزانه بشی، باید بدونی علاوه بر سودش، با چالش‌هایی هم رو‌به‌رو می‌شی مثل نگهداری وسایل، آسیب‌های کوچیک و بزرگ و نهایتا هم دائما توی ذهنت با اجاره سالانه مقایسه‌اش می‌کنی و حتی ممکنه تو ذوقت بخوره وقتی ببینی مهمان‌ها اونقدرا هم مراقب وسایلت نیستن! اما...",
+    openGraph: {
+      title:
+        "دردسرهای اجاره دادن خونه مبله و راه‌حل‌های نگهداری وسایل در اجاره روزانه",
+      description:
+        "اگه می‌خوای وارد اجاره روزانه بشی، باید بدونی علاوه بر سودش، با چالش‌هایی هم رو‌به‌رو می‌شی مثل نگهداری وسایل، آسیب‌های کوچیک و بزرگ و نهایتا هم دائما توی ذهنت با اجاره سالانه مقایسه‌اش می‌کنی و حتی ممکنه تو ذوقت بخوره وقتی ببینی مهمان‌ها اونقدرا هم مراقب وسایلت نیستن! اما...",
+      images: [
+        "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2Fposts%2Ffurniture-hall-2.jpg"
+      ]
+    },
+    twitter: {
+      card: "summary_large_image",
+      title:
+        "دردسرهای اجاره دادن خونه مبله و راه‌حل‌های نگهداری وسایل در اجاره روزانه",
+      description:
+        "اگه می‌خوای وارد اجاره روزانه بشی، باید بدونی علاوه بر سودش، با چالش‌هایی هم رو‌به‌رو می‌شی مثل نگهداری وسایل، آسیب‌های کوچیک و بزرگ و نهایتا هم دائما توی ذهنت با اجاره سالانه مقایسه‌اش می‌کنی و حتی ممکنه تو ذوقت بخوره وقتی ببینی مهمان‌ها اونقدرا هم مراقب وسایلت نیستن! اما...",
+      images: [
+        "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2Fposts%2Ffurniture-hall-2.jpg"
+      ]
+    }
+  };
+}
+
 createPlasmicElementProxy;
 
 export type Plasmicنگهداریوسایلدراجارهروزانه__VariantMembers = {};
@@ -164,49 +207,48 @@ function Plasmicنگهداریوسایلدراجارهروزانه__RenderFunc(p
 
   const globalVariants = _useGlobalVariants();
 
+  const pageMetadata = generateDynamicMetadata(
+    wrapQueriesWithLoadingProxy({}),
+    $ctx
+  );
+
   const styleTokensClassNames = _useStyleTokens();
 
   return (
     <React.Fragment>
       <Head>
         <meta name="twitter:card" content="summary_large_image" />
-        <title key="title">
-          {Plasmicنگهداریوسایلدراجارهروزانه.pageMetadata.title}
-        </title>
-        <meta
-          key="og:title"
-          property="og:title"
-          content={Plasmicنگهداریوسایلدراجارهروزانه.pageMetadata.title}
-        />
+        <title key="title">{pageMetadata.title}</title>
+        <meta key="og:title" property="og:title" content={pageMetadata.title} />
         <meta
           key="twitter:title"
           property="twitter:title"
-          content={Plasmicنگهداریوسایلدراجارهروزانه.pageMetadata.title}
+          content={pageMetadata.title}
         />
         <meta
           key="description"
           property="description"
-          content={Plasmicنگهداریوسایلدراجارهروزانه.pageMetadata.description}
+          content={pageMetadata.description}
         />
         <meta
           key="og:description"
           property="og:description"
-          content={Plasmicنگهداریوسایلدراجارهروزانه.pageMetadata.description}
+          content={pageMetadata.description}
         />
         <meta
           key="twitter:description"
           property="twitter:description"
-          content={Plasmicنگهداریوسایلدراجارهروزانه.pageMetadata.description}
+          content={pageMetadata.description}
         />
         <meta
           key="og:image"
           property="og:image"
-          content={Plasmicنگهداریوسایلدراجارهروزانه.pageMetadata.ogImageSrc}
+          content={pageMetadata.ogImageSrc}
         />
         <meta
           key="twitter:image"
           property="twitter:image"
-          content={Plasmicنگهداریوسایلدراجارهروزانه.pageMetadata.ogImageSrc}
+          content={pageMetadata.ogImageSrc}
         />
       </Head>
 
@@ -1784,16 +1826,11 @@ export const Plasmicنگهداریوسایلدراجارهروزانه = Object.
         "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2Fposts%2Ffurniture-hall-2.jpg"
     },
 
-    // Page metadata
-    pageMetadata: {
-      title:
-        "دردسرهای اجاره دادن خونه مبله و راه‌حل‌های نگهداری وسایل در اجاره روزانه",
-      description:
-        "اگه می‌خوای وارد اجاره روزانه بشی، باید بدونی علاوه بر سودش، با چالش‌هایی هم رو‌به‌رو می‌شی مثل نگهداری وسایل، آسیب‌های کوچیک و بزرگ و نهایتا هم دائما توی ذهنت با اجاره سالانه مقایسه‌اش می‌کنی و حتی ممکنه تو ذوقت بخوره وقتی ببینی مهمان‌ها اونقدرا هم مراقب وسایلت نیستن! اما...",
-      ogImageSrc:
-        "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2Fposts%2Ffurniture-hall-2.jpg",
-      canonical: ""
-    }
+    pageMetadata: generateDynamicMetadata(wrapQueriesWithLoadingProxy({}), {
+      pagePath: "/furnished-rental-maintenance-guide",
+      searchParams: {},
+      params: {}
+    })
   }
 );
 

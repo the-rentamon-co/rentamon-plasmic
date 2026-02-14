@@ -72,6 +72,46 @@ import "@plasmicapp/react-web/lib/plasmic.css";
 import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./Plasmicبرنامهمدیریتویلا.module.css"; // plasmic-import: f8iN0oLghxE4/css
 
+const emptyProxy: any = new Proxy(() => "", {
+  get(_, prop) {
+    return prop === Symbol.toPrimitive ? () => "" : emptyProxy;
+  }
+});
+
+function wrapQueriesWithLoadingProxy($q: any): any {
+  return new Proxy($q, {
+    get(target, queryName) {
+      const query = target[queryName];
+      return !query || query.isLoading || !query.data ? emptyProxy : query;
+    }
+  });
+}
+
+export function generateDynamicMetadata($q: any, $ctx: any) {
+  return {
+    title: "برنامه مدیریت ویلا",
+    description:
+      "اگه ویلا یا اقامتگاه کوتاه‌مدت داری، یک نرم‌افزار مدیریت ویلا می‌تونه تمام رزروها، تقویم، قیمت‌گذاری و ارتباط با مهمان‌هات رو یک‌جا سامان بده. در این مطلب راهنمای کامل انتخاب بهترین برنامه مدیریت ویلا رو می‌خونی و با مزایا، چالش‌ها و نکات مهم این حوزه آشنا می‌شی.",
+    openGraph: {
+      title: "برنامه مدیریت ویلا",
+      description:
+        "اگه ویلا یا اقامتگاه کوتاه‌مدت داری، یک نرم‌افزار مدیریت ویلا می‌تونه تمام رزروها، تقویم، قیمت‌گذاری و ارتباط با مهمان‌هات رو یک‌جا سامان بده. در این مطلب راهنمای کامل انتخاب بهترین برنامه مدیریت ویلا رو می‌خونی و با مزایا، چالش‌ها و نکات مهم این حوزه آشنا می‌شی.",
+      images: [
+        "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2Fposts%2Fvilla-management-software-1.jpg?versionId="
+      ]
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "برنامه مدیریت ویلا",
+      description:
+        "اگه ویلا یا اقامتگاه کوتاه‌مدت داری، یک نرم‌افزار مدیریت ویلا می‌تونه تمام رزروها، تقویم، قیمت‌گذاری و ارتباط با مهمان‌هات رو یک‌جا سامان بده. در این مطلب راهنمای کامل انتخاب بهترین برنامه مدیریت ویلا رو می‌خونی و با مزایا، چالش‌ها و نکات مهم این حوزه آشنا می‌شی.",
+      images: [
+        "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2Fposts%2Fvilla-management-software-1.jpg?versionId="
+      ]
+    }
+  };
+}
+
 createPlasmicElementProxy;
 
 export type Plasmicبرنامهمدیریتویلا__VariantMembers = {};
@@ -162,7 +202,7 @@ function Plasmicبرنامهمدیریتویلا__RenderFunc(props: {
         path: "propertyId",
         type: "private",
         variableType: "number",
-        initFunc: ({ $props, $state, $queries, $ctx }) => 0
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => 0
       }
     ],
     [$props, $ctx, $refs]
@@ -171,8 +211,14 @@ function Plasmicبرنامهمدیریتویلا__RenderFunc(props: {
     $props,
     $ctx,
     $queries: {},
+    $q: {},
     $refs
   });
+
+  const pageMetadata = generateDynamicMetadata(
+    wrapQueriesWithLoadingProxy({}),
+    $ctx
+  );
 
   const styleTokensClassNames = _useStyleTokens();
 
@@ -180,41 +226,37 @@ function Plasmicبرنامهمدیریتویلا__RenderFunc(props: {
     <React.Fragment>
       <Head>
         <meta name="twitter:card" content="summary_large_image" />
-        <title key="title">{Plasmicبرنامهمدیریتویلا.pageMetadata.title}</title>
-        <meta
-          key="og:title"
-          property="og:title"
-          content={Plasmicبرنامهمدیریتویلا.pageMetadata.title}
-        />
+        <title key="title">{pageMetadata.title}</title>
+        <meta key="og:title" property="og:title" content={pageMetadata.title} />
         <meta
           key="twitter:title"
           property="twitter:title"
-          content={Plasmicبرنامهمدیریتویلا.pageMetadata.title}
+          content={pageMetadata.title}
         />
         <meta
           key="description"
           property="description"
-          content={Plasmicبرنامهمدیریتویلا.pageMetadata.description}
+          content={pageMetadata.description}
         />
         <meta
           key="og:description"
           property="og:description"
-          content={Plasmicبرنامهمدیریتویلا.pageMetadata.description}
+          content={pageMetadata.description}
         />
         <meta
           key="twitter:description"
           property="twitter:description"
-          content={Plasmicبرنامهمدیریتویلا.pageMetadata.description}
+          content={pageMetadata.description}
         />
         <meta
           key="og:image"
           property="og:image"
-          content={Plasmicبرنامهمدیریتویلا.pageMetadata.ogImageSrc}
+          content={pageMetadata.ogImageSrc}
         />
         <meta
           key="twitter:image"
           property="twitter:image"
-          content={Plasmicبرنامهمدیریتویلا.pageMetadata.ogImageSrc}
+          content={pageMetadata.ogImageSrc}
         />
       </Head>
 
@@ -1075,15 +1117,11 @@ export const Plasmicبرنامهمدیریتویلا = Object.assign(
         "\u0646\u0631\u0645\u200c\u0627\u0641\u0632\u0627\u0631 \u0645\u062f\u06cc\u0631\u06cc\u062a \u0648\u06cc\u0644\u0627\u060c \u0628\u0631\u0646\u0627\u0645\u0647 \u0645\u062f\u06cc\u0631\u06cc\u062a \u0648\u06cc\u0644\u0627\u060c \u0633\u06cc\u0633\u062a\u0645 \u0645\u062f\u06cc\u0631\u06cc\u062a \u0648\u06cc\u0644\u0627\u060c \u0645\u062f\u06cc\u0631\u06cc\u062a \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u060c \u0645\u062f\u06cc\u0631\u06cc\u062a \u0631\u0632\u0631\u0648 \u0648\u06cc\u0644\u0627\u060c \u0646\u0631\u0645\u200c\u0627\u0641\u0632\u0627\u0631 \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627\u060c \u062a\u0642\u0648\u06cc\u0645 \u0631\u0632\u0631\u0648 \u0648\u06cc\u0644\u0627\u060c \u0645\u062f\u06cc\u0631\u06cc\u062a \u0628\u0648\u0645\u06af\u0631\u062f\u06cc\u060c channel manager \u0648\u06cc\u0644\u0627\u060c \u0645\u06cc\u0627\u0646 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\u060c"
     },
 
-    // Page metadata
-    pageMetadata: {
-      title: "برنامه مدیریت ویلا",
-      description:
-        "اگه ویلا یا اقامتگاه کوتاه‌مدت داری، یک نرم‌افزار مدیریت ویلا می‌تونه تمام رزروها، تقویم، قیمت‌گذاری و ارتباط با مهمان‌هات رو یک‌جا سامان بده. در این مطلب راهنمای کامل انتخاب بهترین برنامه مدیریت ویلا رو می‌خونی و با مزایا، چالش‌ها و نکات مهم این حوزه آشنا می‌شی.",
-      ogImageSrc:
-        "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2Fposts%2Fvilla-management-software-1.jpg?versionId=",
-      canonical: ""
-    }
+    pageMetadata: generateDynamicMetadata(wrapQueriesWithLoadingProxy({}), {
+      pagePath: "/villa-management-software",
+      searchParams: {},
+      params: {}
+    })
   }
 );
 

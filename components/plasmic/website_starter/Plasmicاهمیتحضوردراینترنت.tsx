@@ -72,6 +72,49 @@ import "@plasmicapp/react-web/lib/plasmic.css";
 import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./Plasmicاهمیتحضوردراینترنت.module.css"; // plasmic-import: Q-HDp8ZxsV2r/css
 
+const emptyProxy: any = new Proxy(() => "", {
+  get(_, prop) {
+    return prop === Symbol.toPrimitive ? () => "" : emptyProxy;
+  }
+});
+
+function wrapQueriesWithLoadingProxy($q: any): any {
+  return new Proxy($q, {
+    get(target, queryName) {
+      const query = target[queryName];
+      return !query || query.isLoading || !query.data ? emptyProxy : query;
+    }
+  });
+}
+
+export function generateDynamicMetadata($q: any, $ctx: any) {
+  return {
+    title: String(
+      "\u062d\u0636\u0648\u0631 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0634\u0645\u0627 \u062f\u0631 \u0627\u06cc\u0646\u062a\u0631\u0646\u062a \u0648 \u062b\u0628\u062a \u0644\u0648\u06a9\u06cc\u0634\u0646 \u062f\u0631 \u06af\u0648\u06af\u0644 \u0645\u067e\u060c \u0686\u0637\u0648\u0631 \u0645\u0633\u06cc\u0631 \u0627\u0639\u062a\u0645\u0627\u062f \u0645\u0647\u0645\u0627\u0646\u060c \u062a\u0645\u0627\u0633 \u0645\u0633\u062a\u0642\u06cc\u0645 \u0648 \u0633\u0648\u062f \u0628\u06cc\u0634\u062a\u0631 \u0631\u0648 \u0628\u0631\u0627\u06cc \u0634\u0645\u0627 \u0641\u0631\u0627\u0647\u0645 \u0645\u06cc\u200c\u06a9\u0646\u0647..."
+    ),
+
+    openGraph: {
+      title: String(
+        "\u062d\u0636\u0648\u0631 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0634\u0645\u0627 \u062f\u0631 \u0627\u06cc\u0646\u062a\u0631\u0646\u062a \u0648 \u062b\u0628\u062a \u0644\u0648\u06a9\u06cc\u0634\u0646 \u062f\u0631 \u06af\u0648\u06af\u0644 \u0645\u067e\u060c \u0686\u0637\u0648\u0631 \u0645\u0633\u06cc\u0631 \u0627\u0639\u062a\u0645\u0627\u062f \u0645\u0647\u0645\u0627\u0646\u060c \u062a\u0645\u0627\u0633 \u0645\u0633\u062a\u0642\u06cc\u0645 \u0648 \u0633\u0648\u062f \u0628\u06cc\u0634\u062a\u0631 \u0631\u0648 \u0628\u0631\u0627\u06cc \u0634\u0645\u0627 \u0641\u0631\u0627\u0647\u0645 \u0645\u06cc\u200c\u06a9\u0646\u0647..."
+      ),
+
+      images: [
+        "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2Fposts%2Fincrease-income-3.jpg?versionId="
+      ]
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: String(
+        "\u062d\u0636\u0648\u0631 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0634\u0645\u0627 \u062f\u0631 \u0627\u06cc\u0646\u062a\u0631\u0646\u062a \u0648 \u062b\u0628\u062a \u0644\u0648\u06a9\u06cc\u0634\u0646 \u062f\u0631 \u06af\u0648\u06af\u0644 \u0645\u067e\u060c \u0686\u0637\u0648\u0631 \u0645\u0633\u06cc\u0631 \u0627\u0639\u062a\u0645\u0627\u062f \u0645\u0647\u0645\u0627\u0646\u060c \u062a\u0645\u0627\u0633 \u0645\u0633\u062a\u0642\u06cc\u0645 \u0648 \u0633\u0648\u062f \u0628\u06cc\u0634\u062a\u0631 \u0631\u0648 \u0628\u0631\u0627\u06cc \u0634\u0645\u0627 \u0641\u0631\u0627\u0647\u0645 \u0645\u06cc\u200c\u06a9\u0646\u0647..."
+      ),
+
+      images: [
+        "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2Fposts%2Fincrease-income-3.jpg?versionId="
+      ]
+    }
+  };
+}
+
 createPlasmicElementProxy;
 
 export type Plasmicاهمیتحضوردراینترنت__VariantMembers = {};
@@ -169,7 +212,7 @@ function Plasmicاهمیتحضوردراینترنت__RenderFunc(props: {
         path: "propertyId",
         type: "private",
         variableType: "number",
-        initFunc: ({ $props, $state, $queries, $ctx }) => 0
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => 0
       }
     ],
     [$props, $ctx, $refs]
@@ -178,8 +221,14 @@ function Plasmicاهمیتحضوردراینترنت__RenderFunc(props: {
     $props,
     $ctx,
     $queries: {},
+    $q: {},
     $refs
   });
+
+  const pageMetadata = generateDynamicMetadata(
+    wrapQueriesWithLoadingProxy({}),
+    $ctx
+  );
 
   const styleTokensClassNames = _useStyleTokens();
 
@@ -187,29 +236,23 @@ function Plasmicاهمیتحضوردراینترنت__RenderFunc(props: {
     <React.Fragment>
       <Head>
         <meta name="twitter:card" content="summary_large_image" />
-        <title key="title">
-          {Plasmicاهمیتحضوردراینترنت.pageMetadata.title}
-        </title>
-        <meta
-          key="og:title"
-          property="og:title"
-          content={Plasmicاهمیتحضوردراینترنت.pageMetadata.title}
-        />
+        <title key="title">{pageMetadata.title}</title>
+        <meta key="og:title" property="og:title" content={pageMetadata.title} />
         <meta
           key="twitter:title"
           property="twitter:title"
-          content={Plasmicاهمیتحضوردراینترنت.pageMetadata.title}
+          content={pageMetadata.title}
         />
 
         <meta
           key="og:image"
           property="og:image"
-          content={Plasmicاهمیتحضوردراینترنت.pageMetadata.ogImageSrc}
+          content={pageMetadata.ogImageSrc}
         />
         <meta
           key="twitter:image"
           property="twitter:image"
-          content={Plasmicاهمیتحضوردراینترنت.pageMetadata.ogImageSrc}
+          content={pageMetadata.ogImageSrc}
         />
       </Head>
 
@@ -1344,15 +1387,11 @@ export const Plasmicاهمیتحضوردراینترنت = Object.assign(
         "\u0686\u0637\u0648\u0631 \u0633\u0648\u062f \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u0631\u0627 \u0628\u0647 \u062d\u062f\u0627\u06a9\u062b\u0631 \u0628\u0631\u0633\u0627\u0646\u06cc\u0645\u061f \u0622\u0645\u0648\u0632\u0634 \u062a\u0631\u0641\u0646\u062f\u0647\u0627\u06cc \u06a9\u0644\u06cc\u062f\u06cc \u0634\u0627\u0645\u0644 \u0642\u06cc\u0645\u062a\u200c\u06af\u0630\u0627\u0631\u06cc\u060c \u062c\u0630\u0628 \u062a\u0648\u0631\u06cc\u0633\u062a \u0648 \u06a9\u0627\u0647\u0634 \u0647\u0632\u06cc\u0646\u0647\u200c\u0647\u0627 \u0628\u0631\u0627\u06cc \u062f\u0627\u0634\u062a\u0646 \u062f\u0631\u0622\u0645\u062f \u067e\u0627\u06cc\u062f\u0627\u0631 \u0648 \u062a\u0642\u0648\u06cc\u0645 \u0631\u0632\u0631\u0648 \u067e\u064f\u0631."
     },
 
-    // Page metadata
-    pageMetadata: {
-      title:
-        "حضور اقامتگاه شما در اینترنت و ثبت لوکیشن در گوگل مپ، چطور مسیر اعتماد مهمان، تماس مستقیم و سود بیشتر رو برای شما فراهم می‌کنه...",
-      description: "",
-      ogImageSrc:
-        "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2Fposts%2Fincrease-income-3.jpg?versionId=",
-      canonical: ""
-    }
+    pageMetadata: generateDynamicMetadata(wrapQueriesWithLoadingProxy({}), {
+      pagePath: "/villa-digital-presence",
+      searchParams: {},
+      params: {}
+    })
   }
 );
 

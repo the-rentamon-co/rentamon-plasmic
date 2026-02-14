@@ -83,6 +83,46 @@ import "@plasmicapp/react-web/lib/plasmic.css";
 import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./Plasmicثبتآگهیاقامتگاه.module.css"; // plasmic-import: 1vN9Eff09IS1/css
 
+const emptyProxy: any = new Proxy(() => "", {
+  get(_, prop) {
+    return prop === Symbol.toPrimitive ? () => "" : emptyProxy;
+  }
+});
+
+function wrapQueriesWithLoadingProxy($q: any): any {
+  return new Proxy($q, {
+    get(target, queryName) {
+      const query = target[queryName];
+      return !query || query.isLoading || !query.data ? emptyProxy : query;
+    }
+  });
+}
+
+export function generateDynamicMetadata($q: any, $ctx: any) {
+  return {
+    title: "ثبت همزمان آگهی ویلا در معتبرترین سایت‌های اجاره اقامتگاه",
+    description:
+      "کافیه یک‌بار مشخصات اقامتگاهت رو در «میان» ثبت کنی، تا در معتبرترین سایت‌های اجاره ویلا نمایش داده بشه.",
+    openGraph: {
+      title: "ثبت همزمان آگهی ویلا در معتبرترین سایت‌های اجاره اقامتگاه",
+      description:
+        "کافیه یک‌بار مشخصات اقامتگاهت رو در «میان» ثبت کنی، تا در معتبرترین سایت‌های اجاره ویلا نمایش داده بشه.",
+      images: [
+        "https://site-assets.plasmic.app/33c05b5a2d13ca8a5491f31ff19d2fb3.jpg"
+      ]
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "ثبت همزمان آگهی ویلا در معتبرترین سایت‌های اجاره اقامتگاه",
+      description:
+        "کافیه یک‌بار مشخصات اقامتگاهت رو در «میان» ثبت کنی، تا در معتبرترین سایت‌های اجاره ویلا نمایش داده بشه.",
+      images: [
+        "https://site-assets.plasmic.app/33c05b5a2d13ca8a5491f31ff19d2fb3.jpg"
+      ]
+    }
+  };
+}
+
 createPlasmicElementProxy;
 
 export type Plasmicثبتآگهیاقامتگاه__VariantMembers = {};
@@ -182,13 +222,13 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
         path: "propertyId",
         type: "private",
         variableType: "number",
-        initFunc: ({ $props, $state, $queries, $ctx }) => 0
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => 0
       },
       {
         path: "form.value",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "form",
         onMutate: generateOnMutateForSpec("value", FormWrapper_Helpers)
@@ -197,7 +237,7 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
         path: "form.isSubmitting",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => false,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => false,
 
         refName: "form",
         onMutate: generateOnMutateForSpec("isSubmitting", FormWrapper_Helpers)
@@ -206,7 +246,7 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
         path: "input.value",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         onMutate: generateOnMutateForSpec("value", AntdInput_Helpers)
       },
@@ -214,7 +254,7 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
         path: "input2.value",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         onMutate: generateOnMutateForSpec("value", AntdInput_Helpers)
       },
@@ -222,7 +262,7 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
         path: "textArea.value",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         onMutate: generateOnMutateForSpec("value", AntdTextArea_Helpers)
       },
@@ -230,7 +270,7 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
         path: "modal.open",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) =>
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) =>
           hasVariant(globalVariants, "screen", "mobile") ? false : false
       }
     ],
@@ -240,8 +280,14 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
     $props,
     $ctx,
     $queries: {},
+    $q: {},
     $refs
   });
+
+  const pageMetadata = generateDynamicMetadata(
+    wrapQueriesWithLoadingProxy({}),
+    $ctx
+  );
 
   const styleTokensClassNames = _useStyleTokens();
 
@@ -249,41 +295,37 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
     <React.Fragment>
       <Head>
         <meta name="twitter:card" content="summary_large_image" />
-        <title key="title">{Plasmicثبتآگهیاقامتگاه.pageMetadata.title}</title>
-        <meta
-          key="og:title"
-          property="og:title"
-          content={Plasmicثبتآگهیاقامتگاه.pageMetadata.title}
-        />
+        <title key="title">{pageMetadata.title}</title>
+        <meta key="og:title" property="og:title" content={pageMetadata.title} />
         <meta
           key="twitter:title"
           property="twitter:title"
-          content={Plasmicثبتآگهیاقامتگاه.pageMetadata.title}
+          content={pageMetadata.title}
         />
         <meta
           key="description"
           property="description"
-          content={Plasmicثبتآگهیاقامتگاه.pageMetadata.description}
+          content={pageMetadata.description}
         />
         <meta
           key="og:description"
           property="og:description"
-          content={Plasmicثبتآگهیاقامتگاه.pageMetadata.description}
+          content={pageMetadata.description}
         />
         <meta
           key="twitter:description"
           property="twitter:description"
-          content={Plasmicثبتآگهیاقامتگاه.pageMetadata.description}
+          content={pageMetadata.description}
         />
         <meta
           key="og:image"
           property="og:image"
-          content={Plasmicثبتآگهیاقامتگاه.pageMetadata.ogImageSrc}
+          content={pageMetadata.ogImageSrc}
         />
         <meta
           key="twitter:image"
           property="twitter:image"
-          content={Plasmicثبتآگهیاقامتگاه.pageMetadata.ogImageSrc}
+          content={pageMetadata.ogImageSrc}
         />
       </Head>
 
@@ -2300,15 +2342,11 @@ export const Plasmicثبتآگهیاقامتگاه = Object.assign(
         "\u062b\u0628\u062a \u0631\u0627\u06cc\u06af\u0627\u0646 \u0622\u06af\u0647\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0631 \u062c\u0627\u0628\u0627\u0645\u0627\u060c \u062c\u0627\u062c\u06cc\u06af\u0627\u060c \u0634\u0628\u060c \u0627\u062a\u0627\u0642\u06a9 \u0648 \u0647\u0648\u0645\u0633\u0627 \u062a\u0648\u0633\u0637 \u0645\u0627"
     },
 
-    // Page metadata
-    pageMetadata: {
-      title: "ثبت همزمان آگهی ویلا در معتبرترین سایت‌های اجاره اقامتگاه",
-      description:
-        "کافیه یک‌بار مشخصات اقامتگاهت رو در «میان» ثبت کنی، تا در معتبرترین سایت‌های اجاره ویلا نمایش داده بشه.",
-      ogImageSrc:
-        "https://site-assets.plasmic.app/33c05b5a2d13ca8a5491f31ff19d2fb3.jpg",
-      canonical: ""
-    }
+    pageMetadata: generateDynamicMetadata(wrapQueriesWithLoadingProxy({}), {
+      pagePath: "/list-your-property",
+      searchParams: {},
+      params: {}
+    })
   }
 );
 

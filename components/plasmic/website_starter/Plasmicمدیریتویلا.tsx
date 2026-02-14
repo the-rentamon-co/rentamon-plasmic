@@ -73,6 +73,46 @@ import "@plasmicapp/react-web/lib/plasmic.css";
 import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./Plasmicمدیریتویلا.module.css"; // plasmic-import: lU71surWQVHn/css
 
+const emptyProxy: any = new Proxy(() => "", {
+  get(_, prop) {
+    return prop === Symbol.toPrimitive ? () => "" : emptyProxy;
+  }
+});
+
+function wrapQueriesWithLoadingProxy($q: any): any {
+  return new Proxy($q, {
+    get(target, queryName) {
+      const query = target[queryName];
+      return !query || query.isLoading || !query.data ? emptyProxy : query;
+    }
+  });
+}
+
+export function generateDynamicMetadata($q: any, $ctx: any) {
+  return {
+    title: "مدیریت ویلا، سنتی یا هوشمند؟",
+    description:
+      "اگه برای مدیریت رزروهای اقامتگاه در سایت‌های اجاره ویلا مثل جاباما، جاجیگا، اتاقک، شب و… همیشه چالش و دردسر داری، یه خبر خوب برات داریم.",
+    openGraph: {
+      title: "مدیریت ویلا، سنتی یا هوشمند؟",
+      description:
+        "اگه برای مدیریت رزروهای اقامتگاه در سایت‌های اجاره ویلا مثل جاباما، جاجیگا، اتاقک، شب و… همیشه چالش و دردسر داری، یه خبر خوب برات داریم.",
+      images: [
+        "https://site-assets.plasmic.app/34f18b9d9c3a2d97d0402c2e7fe04721.png"
+      ]
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "مدیریت ویلا، سنتی یا هوشمند؟",
+      description:
+        "اگه برای مدیریت رزروهای اقامتگاه در سایت‌های اجاره ویلا مثل جاباما، جاجیگا، اتاقک، شب و… همیشه چالش و دردسر داری، یه خبر خوب برات داریم.",
+      images: [
+        "https://site-assets.plasmic.app/34f18b9d9c3a2d97d0402c2e7fe04721.png"
+      ]
+    }
+  };
+}
+
 createPlasmicElementProxy;
 
 export type Plasmicمدیریتویلا__VariantMembers = {};
@@ -158,7 +198,7 @@ function Plasmicمدیریتویلا__RenderFunc(props: {
         path: "propertyId",
         type: "private",
         variableType: "number",
-        initFunc: ({ $props, $state, $queries, $ctx }) => 0
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => 0
       }
     ],
     [$props, $ctx, $refs]
@@ -167,8 +207,14 @@ function Plasmicمدیریتویلا__RenderFunc(props: {
     $props,
     $ctx,
     $queries: {},
+    $q: {},
     $refs
   });
+
+  const pageMetadata = generateDynamicMetadata(
+    wrapQueriesWithLoadingProxy({}),
+    $ctx
+  );
 
   const styleTokensClassNames = _useStyleTokens();
 
@@ -176,41 +222,37 @@ function Plasmicمدیریتویلا__RenderFunc(props: {
     <React.Fragment>
       <Head>
         <meta name="twitter:card" content="summary_large_image" />
-        <title key="title">{Plasmicمدیریتویلا.pageMetadata.title}</title>
-        <meta
-          key="og:title"
-          property="og:title"
-          content={Plasmicمدیریتویلا.pageMetadata.title}
-        />
+        <title key="title">{pageMetadata.title}</title>
+        <meta key="og:title" property="og:title" content={pageMetadata.title} />
         <meta
           key="twitter:title"
           property="twitter:title"
-          content={Plasmicمدیریتویلا.pageMetadata.title}
+          content={pageMetadata.title}
         />
         <meta
           key="description"
           property="description"
-          content={Plasmicمدیریتویلا.pageMetadata.description}
+          content={pageMetadata.description}
         />
         <meta
           key="og:description"
           property="og:description"
-          content={Plasmicمدیریتویلا.pageMetadata.description}
+          content={pageMetadata.description}
         />
         <meta
           key="twitter:description"
           property="twitter:description"
-          content={Plasmicمدیریتویلا.pageMetadata.description}
+          content={pageMetadata.description}
         />
         <meta
           key="og:image"
           property="og:image"
-          content={Plasmicمدیریتویلا.pageMetadata.ogImageSrc}
+          content={pageMetadata.ogImageSrc}
         />
         <meta
           key="twitter:image"
           property="twitter:image"
-          content={Plasmicمدیریتویلا.pageMetadata.ogImageSrc}
+          content={pageMetadata.ogImageSrc}
         />
       </Head>
 
@@ -905,15 +947,11 @@ export const Plasmicمدیریتویلا = Object.assign(
         "\u0645\u062f\u06cc\u0631\u06cc\u062a \u0647\u0648\u0634\u0645\u0646\u062f \u0648\u06cc\u0644\u0627 \u0628\u0627 \u0686\u0646\u0644\u200c\u0645\u0646\u06cc\u062c\u0631 \u0645\u06cc\u0627\u0646"
     },
 
-    // Page metadata
-    pageMetadata: {
-      title: "مدیریت ویلا، سنتی یا هوشمند؟",
-      description:
-        "اگه برای مدیریت رزروهای اقامتگاه در سایت‌های اجاره ویلا مثل جاباما، جاجیگا، اتاقک، شب و… همیشه چالش و دردسر داری، یه خبر خوب برات داریم.",
-      ogImageSrc:
-        "https://site-assets.plasmic.app/34f18b9d9c3a2d97d0402c2e7fe04721.png",
-      canonical: ""
-    }
+    pageMetadata: generateDynamicMetadata(wrapQueriesWithLoadingProxy({}), {
+      pagePath: "/villa-management",
+      searchParams: {},
+      params: {}
+    })
   }
 );
 

@@ -154,7 +154,7 @@ function PlasmicSideBar22__RenderFunc(props: {
         path: "modalSidebar.open",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) =>
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) =>
           (() => {
             try {
               return $props.isOpen;
@@ -173,7 +173,7 @@ function PlasmicSideBar22__RenderFunc(props: {
         path: "reserveCount",
         type: "private",
         variableType: "number",
-        initFunc: ({ $props, $state, $queries, $ctx }) => 0
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => 0
       }
     ],
     [$props, $ctx, $refs]
@@ -182,6 +182,7 @@ function PlasmicSideBar22__RenderFunc(props: {
     $props,
     $ctx,
     $queries: {},
+    $q: {},
     $refs
   });
 

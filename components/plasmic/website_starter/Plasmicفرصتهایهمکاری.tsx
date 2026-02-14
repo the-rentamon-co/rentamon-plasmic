@@ -82,6 +82,46 @@ import "@plasmicapp/react-web/lib/plasmic.css";
 import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./Plasmicفرصتهایهمکاری.module.css"; // plasmic-import: ytFOCorhXWl1/css
 
+const emptyProxy: any = new Proxy(() => "", {
+  get(_, prop) {
+    return prop === Symbol.toPrimitive ? () => "" : emptyProxy;
+  }
+});
+
+function wrapQueriesWithLoadingProxy($q: any): any {
+  return new Proxy($q, {
+    get(target, queryName) {
+      const query = target[queryName];
+      return !query || query.isLoading || !query.data ? emptyProxy : query;
+    }
+  });
+}
+
+export function generateDynamicMetadata($q: any, $ctx: any) {
+  return {
+    title: "منتظر آینده بهتر نمی‌مونیم | فرصت همکاری با میان",
+    description:
+      "حدود ۱۰۰۰ میزبان از نقاط مختلف کشور با رنتامون ویلاشون رو مدیریت می‌کنن، و هر روز نیازهای بیشتری رو مطرح می‌کنن. به کمکت نیاز داریم.",
+    openGraph: {
+      title: "منتظر آینده بهتر نمی‌مونیم | فرصت همکاری با میان",
+      description:
+        "حدود ۱۰۰۰ میزبان از نقاط مختلف کشور با رنتامون ویلاشون رو مدیریت می‌کنن، و هر روز نیازهای بیشتری رو مطرح می‌کنن. به کمکت نیاز داریم.",
+      images: [
+        "https://site-assets.plasmic.app/1d9c8ad9b54a38a21150e4728acbe949.jpg"
+      ]
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "منتظر آینده بهتر نمی‌مونیم | فرصت همکاری با میان",
+      description:
+        "حدود ۱۰۰۰ میزبان از نقاط مختلف کشور با رنتامون ویلاشون رو مدیریت می‌کنن، و هر روز نیازهای بیشتری رو مطرح می‌کنن. به کمکت نیاز داریم.",
+      images: [
+        "https://site-assets.plasmic.app/1d9c8ad9b54a38a21150e4728acbe949.jpg"
+      ]
+    }
+  };
+}
+
 createPlasmicElementProxy;
 
 export type Plasmicفرصتهایهمکاری__VariantMembers = {};
@@ -202,19 +242,19 @@ function Plasmicفرصتهایهمکاری__RenderFunc(props: {
         path: "propertyId",
         type: "private",
         variableType: "number",
-        initFunc: ({ $props, $state, $queries, $ctx }) => 0
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => 0
       },
       {
         path: "consult2.open",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined
       },
       {
         path: "form3.value",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "form3",
         onMutate: generateOnMutateForSpec("value", FormWrapper_Helpers)
@@ -223,7 +263,7 @@ function Plasmicفرصتهایهمکاری__RenderFunc(props: {
         path: "form3.isSubmitting",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => false,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => false,
 
         refName: "form3",
         onMutate: generateOnMutateForSpec("isSubmitting", FormWrapper_Helpers)
@@ -232,7 +272,7 @@ function Plasmicفرصتهایهمکاری__RenderFunc(props: {
         path: "input3.value",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         onMutate: generateOnMutateForSpec("value", AntdInput_Helpers)
       },
@@ -240,7 +280,7 @@ function Plasmicفرصتهایهمکاری__RenderFunc(props: {
         path: "input4.value",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         onMutate: generateOnMutateForSpec("value", AntdInput_Helpers)
       },
@@ -248,13 +288,13 @@ function Plasmicفرصتهایهمکاری__RenderFunc(props: {
         path: "consult4.open",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined
       },
       {
         path: "form5.value",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "form5",
         onMutate: generateOnMutateForSpec("value", FormWrapper_Helpers)
@@ -263,7 +303,7 @@ function Plasmicفرصتهایهمکاری__RenderFunc(props: {
         path: "form5.isSubmitting",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => false,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => false,
 
         refName: "form5",
         onMutate: generateOnMutateForSpec("isSubmitting", FormWrapper_Helpers)
@@ -272,7 +312,7 @@ function Plasmicفرصتهایهمکاری__RenderFunc(props: {
         path: "input7.value",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         onMutate: generateOnMutateForSpec("value", AntdInput_Helpers)
       },
@@ -280,7 +320,7 @@ function Plasmicفرصتهایهمکاری__RenderFunc(props: {
         path: "input8.value",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         onMutate: generateOnMutateForSpec("value", AntdInput_Helpers)
       },
@@ -288,13 +328,13 @@ function Plasmicفرصتهایهمکاری__RenderFunc(props: {
         path: "consult3.open",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined
       },
       {
         path: "form4.value",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "form4",
         onMutate: generateOnMutateForSpec("value", FormWrapper_Helpers)
@@ -303,7 +343,7 @@ function Plasmicفرصتهایهمکاری__RenderFunc(props: {
         path: "form4.isSubmitting",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => false,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => false,
 
         refName: "form4",
         onMutate: generateOnMutateForSpec("isSubmitting", FormWrapper_Helpers)
@@ -312,7 +352,7 @@ function Plasmicفرصتهایهمکاری__RenderFunc(props: {
         path: "input5.value",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         onMutate: generateOnMutateForSpec("value", AntdInput_Helpers)
       },
@@ -320,7 +360,7 @@ function Plasmicفرصتهایهمکاری__RenderFunc(props: {
         path: "input6.value",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         onMutate: generateOnMutateForSpec("value", AntdInput_Helpers)
       }
@@ -331,8 +371,14 @@ function Plasmicفرصتهایهمکاری__RenderFunc(props: {
     $props,
     $ctx,
     $queries: {},
+    $q: {},
     $refs
   });
+
+  const pageMetadata = generateDynamicMetadata(
+    wrapQueriesWithLoadingProxy({}),
+    $ctx
+  );
 
   const styleTokensClassNames = _useStyleTokens();
 
@@ -340,41 +386,37 @@ function Plasmicفرصتهایهمکاری__RenderFunc(props: {
     <React.Fragment>
       <Head>
         <meta name="twitter:card" content="summary_large_image" />
-        <title key="title">{Plasmicفرصتهایهمکاری.pageMetadata.title}</title>
-        <meta
-          key="og:title"
-          property="og:title"
-          content={Plasmicفرصتهایهمکاری.pageMetadata.title}
-        />
+        <title key="title">{pageMetadata.title}</title>
+        <meta key="og:title" property="og:title" content={pageMetadata.title} />
         <meta
           key="twitter:title"
           property="twitter:title"
-          content={Plasmicفرصتهایهمکاری.pageMetadata.title}
+          content={pageMetadata.title}
         />
         <meta
           key="description"
           property="description"
-          content={Plasmicفرصتهایهمکاری.pageMetadata.description}
+          content={pageMetadata.description}
         />
         <meta
           key="og:description"
           property="og:description"
-          content={Plasmicفرصتهایهمکاری.pageMetadata.description}
+          content={pageMetadata.description}
         />
         <meta
           key="twitter:description"
           property="twitter:description"
-          content={Plasmicفرصتهایهمکاری.pageMetadata.description}
+          content={pageMetadata.description}
         />
         <meta
           key="og:image"
           property="og:image"
-          content={Plasmicفرصتهایهمکاری.pageMetadata.ogImageSrc}
+          content={pageMetadata.ogImageSrc}
         />
         <meta
           key="twitter:image"
           property="twitter:image"
-          content={Plasmicفرصتهایهمکاری.pageMetadata.ogImageSrc}
+          content={pageMetadata.ogImageSrc}
         />
       </Head>
 
@@ -3731,15 +3773,11 @@ export const Plasmicفرصتهایهمکاری = Object.assign(
         "\u0641\u0631\u0635\u062a \u0647\u0627\u06cc \u0634\u063a\u0644\u06cc \u0631\u0646\u062a\u0627\u0645\u0648\u0646"
     },
 
-    // Page metadata
-    pageMetadata: {
-      title: "منتظر آینده بهتر نمی‌مونیم | فرصت همکاری با میان",
-      description:
-        "حدود ۱۰۰۰ میزبان از نقاط مختلف کشور با رنتامون ویلاشون رو مدیریت می‌کنن، و هر روز نیازهای بیشتری رو مطرح می‌کنن. به کمکت نیاز داریم.",
-      ogImageSrc:
-        "https://site-assets.plasmic.app/1d9c8ad9b54a38a21150e4728acbe949.jpg",
-      canonical: ""
-    }
+    pageMetadata: generateDynamicMetadata(wrapQueriesWithLoadingProxy({}), {
+      pagePath: "/join-our-journey",
+      searchParams: {},
+      params: {}
+    })
   }
 );
 

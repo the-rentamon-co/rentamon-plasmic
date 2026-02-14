@@ -84,6 +84,35 @@ import "@plasmicapp/react-web/lib/plasmic.css";
 import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicLiteCalendar.module.css"; // plasmic-import: wDX6CsUVKNmL/css
 
+const emptyProxy: any = new Proxy(() => "", {
+  get(_, prop) {
+    return prop === Symbol.toPrimitive ? () => "" : emptyProxy;
+  }
+});
+
+function wrapQueriesWithLoadingProxy($q: any): any {
+  return new Proxy($q, {
+    get(target, queryName) {
+      const query = target[queryName];
+      return !query || query.isLoading || !query.data ? emptyProxy : query;
+    }
+  });
+}
+
+export function generateDynamicMetadata($q: any, $ctx: any) {
+  return {
+    title: "تقویم یکپارچه اقامتگاه (رایگان)",
+
+    openGraph: {
+      title: "تقویم یکپارچه اقامتگاه (رایگان)"
+    },
+    twitter: {
+      card: "summary",
+      title: "تقویم یکپارچه اقامتگاه (رایگان)"
+    }
+  };
+}
+
 createPlasmicElementProxy;
 
 export type PlasmicLiteCalendar__VariantMembers = {};
@@ -176,13 +205,13 @@ function PlasmicLiteCalendar__RenderFunc(props: {
         path: "variable",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => ""
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => ""
       },
       {
         path: "profile.data",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "profile"
       },
@@ -190,7 +219,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
         path: "profile.error",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "profile"
       },
@@ -198,7 +227,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
         path: "profile.loading",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "profile"
       },
@@ -206,19 +235,19 @@ function PlasmicLiteCalendar__RenderFunc(props: {
         path: "pageUrl",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => ""
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => ""
       },
       {
         path: "propId",
         type: "private",
         variableType: "number",
-        initFunc: ({ $props, $state, $queries, $ctx }) => 1
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => 1
       },
       {
         path: "select2.value",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) =>
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) =>
           hasVariant(globalVariants, "screen", "smallMobile")
             ? (() => {
                 try {
@@ -253,7 +282,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
         path: "feature",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => ({
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => ({
           reservation: false,
           auto_sync: false
         })
@@ -262,13 +291,13 @@ function PlasmicLiteCalendar__RenderFunc(props: {
         path: "proPanelModal.open",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => false
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => false
       },
       {
         path: "form.value",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "form",
         onMutate: generateOnMutateForSpec("value", FormWrapper_Helpers)
@@ -277,7 +306,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
         path: "form.isSubmitting",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => false,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => false,
 
         refName: "form",
         onMutate: generateOnMutateForSpec("isSubmitting", FormWrapper_Helpers)
@@ -286,19 +315,19 @@ function PlasmicLiteCalendar__RenderFunc(props: {
         path: "isTheFirstVisit",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => false
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => false
       },
       {
         path: "vtStatus",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => ""
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => ""
       },
       {
         path: "divarGuide.open",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) =>
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) =>
           (() => {
             try {
               return $state.showDivarGuide;
@@ -317,7 +346,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
         path: "showDivarGuide",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => false
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => false
       }
     ],
     [$props, $ctx, $refs]
@@ -326,8 +355,14 @@ function PlasmicLiteCalendar__RenderFunc(props: {
     $props,
     $ctx,
     $queries: {},
+    $q: {},
     $refs
   });
+
+  const pageMetadata = generateDynamicMetadata(
+    wrapQueriesWithLoadingProxy({}),
+    $ctx
+  );
 
   const styleTokensClassNames = _useStyleTokens();
 
@@ -335,16 +370,12 @@ function PlasmicLiteCalendar__RenderFunc(props: {
     <React.Fragment>
       <Head>
         <meta name="twitter:card" content="summary" />
-        <title key="title">{PlasmicLiteCalendar.pageMetadata.title}</title>
-        <meta
-          key="og:title"
-          property="og:title"
-          content={PlasmicLiteCalendar.pageMetadata.title}
-        />
+        <title key="title">{pageMetadata.title}</title>
+        <meta key="og:title" property="og:title" content={pageMetadata.title} />
         <meta
           key="twitter:title"
           property="twitter:title"
-          content={PlasmicLiteCalendar.pageMetadata.title}
+          content={pageMetadata.title}
         />
       </Head>
 
@@ -1648,7 +1679,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField__q412R
+                        sty.formField__cewZ6
                       )}
                       label={"Name"}
                       name={"name"}
@@ -1660,7 +1691,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField___2OyE3
+                        sty.formField__r3D6X
                       )}
                       label={"Message"}
                       name={"message"}
@@ -1678,7 +1709,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                         className={classNames(
                           projectcss.all,
                           projectcss.__wab_text,
-                          sty.text__aGMs
+                          sty.text__uHxmZ
                         )}
                       >
                         {"Submit"}
@@ -1918,13 +1949,11 @@ export const PlasmicLiteCalendar = Object.assign(
     // Key-value metadata
     metadata: { nameRobots: 'content="noindex, nofollow"' },
 
-    // Page metadata
-    pageMetadata: {
-      title: "تقویم یکپارچه اقامتگاه (رایگان)",
-      description: "",
-      ogImageSrc: "",
-      canonical: ""
-    }
+    pageMetadata: generateDynamicMetadata(wrapQueriesWithLoadingProxy({}), {
+      pagePath: "/panel-lite",
+      searchParams: {},
+      params: {}
+    })
   }
 );
 

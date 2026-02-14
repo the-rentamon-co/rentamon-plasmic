@@ -135,6 +135,12 @@ export type PlasmicCalendar23__OverridesType = {
   input?: Flex__<typeof Input>;
   textInput?: Flex__<typeof TextInput>;
   numberInput2?: Flex__<typeof AntdInputNumber>;
+  modalChangePrice2?: Flex__<typeof AntdModal>;
+  main3?: Flex__<"div">;
+  input3?: Flex__<typeof Input>;
+  textInput3?: Flex__<typeof TextInput>;
+  numberInput3?: Flex__<typeof AntdInputNumber>;
+  getMarkup?: Flex__<typeof ApiRequest>;
   fetchModal?: Flex__<typeof AntdModal>;
   getJabamaSmartPriceStatus?: Flex__<typeof ApiRequest>;
   userPlatform?: Flex__<typeof ApiRequest>;
@@ -254,31 +260,31 @@ function PlasmicCalendar23__RenderFunc(props: {
         path: "fragmentDatePicker.value",
         type: "private",
         variableType: "number",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined
       },
       {
         path: "fragmentDatePicker.values",
         type: "private",
         variableType: "array",
-        initFunc: ({ $props, $state, $queries, $ctx }) => []
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => []
       },
       {
         path: "fragmentDatePicker.month",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined
       },
       {
         path: "fragmentDatePicker.year",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined
       },
       {
         path: "modal.open",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) =>
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) =>
           hasVariant(globalVariants, "screen", "mobile")
             ? false
             : hasVariant(globalVariants, "screen", "tablet")
@@ -289,7 +295,7 @@ function PlasmicCalendar23__RenderFunc(props: {
         path: "modalChangePrice.open",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) =>
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) =>
           hasVariant(globalVariants, "screen", "mobile")
             ? false
             : hasVariant(globalVariants, "screen", "tablet")
@@ -300,13 +306,13 @@ function PlasmicCalendar23__RenderFunc(props: {
         path: "numberInput2.value",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined
       },
       {
         path: "modalDiscount.open",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) =>
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) =>
           hasVariant(globalVariants, "screen", "mobile")
             ? false
             : hasVariant(globalVariants, "screen", "tablet")
@@ -317,13 +323,13 @@ function PlasmicCalendar23__RenderFunc(props: {
         path: "count",
         type: "private",
         variableType: "number",
-        initFunc: ({ $props, $state, $queries, $ctx }) => 0
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => 0
       },
       {
         path: "block.open",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) =>
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) =>
           hasVariant(globalVariants, "screen", "smallMobile")
             ? false
             : hasVariant(globalVariants, "screen", "mobile")
@@ -334,13 +340,13 @@ function PlasmicCalendar23__RenderFunc(props: {
         path: "fetchModal.open",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => false
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => false
       },
       {
         path: "variable3",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) =>
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) =>
           (() => {
             try {
               return undefined;
@@ -359,7 +365,7 @@ function PlasmicCalendar23__RenderFunc(props: {
         path: "apiRequest.data",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "apiRequest"
       },
@@ -367,7 +373,7 @@ function PlasmicCalendar23__RenderFunc(props: {
         path: "apiRequest.error",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "apiRequest"
       },
@@ -375,7 +381,7 @@ function PlasmicCalendar23__RenderFunc(props: {
         path: "apiRequest.loading",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "apiRequest"
       },
@@ -383,7 +389,7 @@ function PlasmicCalendar23__RenderFunc(props: {
         path: "userPlatform.data",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "userPlatform"
       },
@@ -391,7 +397,7 @@ function PlasmicCalendar23__RenderFunc(props: {
         path: "userPlatform.error",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "userPlatform"
       },
@@ -399,7 +405,7 @@ function PlasmicCalendar23__RenderFunc(props: {
         path: "userPlatform.loading",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "userPlatform"
       },
@@ -407,19 +413,19 @@ function PlasmicCalendar23__RenderFunc(props: {
         path: "platformRequestStatus",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => ({})
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => ({})
       },
       {
         path: "requestdata",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => ({})
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => ({})
       },
       {
         path: "dayStatus",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) =>
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) =>
           (() => {
             try {
               return (() => {
@@ -462,19 +468,19 @@ function PlasmicCalendar23__RenderFunc(props: {
         path: "textInput.value",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => ""
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => ""
       },
       {
         path: "textInput2.value",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => "0"
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => "0"
       },
       {
         path: "noteModal.open",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) =>
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) =>
           hasVariant(globalVariants, "screen", "smallMobile")
             ? false
             : hasVariant(globalVariants, "screen", "mobile")
@@ -485,39 +491,39 @@ function PlasmicCalendar23__RenderFunc(props: {
         path: "dateProp",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => ({})
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => ({})
       },
       {
         path: "writeNoteModal.open",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) =>
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) =>
           hasVariant(globalVariants, "screen", "mobile") ? false : false
       },
       {
         path: "textarea.value",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => ""
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => ""
       },
       {
         path: "targetNoteItem",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => ({})
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => ({})
       },
       {
         path: "updateNoteModal.open",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) =>
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) =>
           hasVariant(globalVariants, "screen", "mobile") ? false : false
       },
       {
         path: "textarea2.value",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) =>
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) =>
           hasVariant(globalVariants, "screen", "mobile")
             ? (() => {
                 try {
@@ -610,7 +616,7 @@ function PlasmicCalendar23__RenderFunc(props: {
         path: "year",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) =>
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) =>
           (() => {
             try {
               return (() => {
@@ -634,14 +640,14 @@ function PlasmicCalendar23__RenderFunc(props: {
         path: "checkForChange.open",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) =>
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) =>
           hasVariant(globalVariants, "screen", "mobile") ? false : false
       },
       {
         path: "addingGuestInfo.open",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) =>
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) =>
           hasVariant(globalVariants, "screen", "smallMobile")
             ? false
             : hasVariant(globalVariants, "screen", "mobile")
@@ -654,121 +660,121 @@ function PlasmicCalendar23__RenderFunc(props: {
         path: "guestName.value",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => ""
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => ""
       },
       {
         path: "phoneNumber.value",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => ""
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => ""
       },
       {
         path: "guestReferrer.value",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined
       },
       {
         path: "guestCount.value",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined
       },
       {
         path: "amount.value",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined
       },
       {
         path: "selectedDay",
         type: "private",
         variableType: "array",
-        initFunc: ({ $props, $state, $queries, $ctx }) => []
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => []
       },
       {
         path: "newDiscountModal.open",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => false
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => false
       },
       {
         path: "textInput4.value",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => "0"
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => "0"
       },
       {
         path: "selectedItem",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => ({})
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => ({})
       },
       {
         path: "updateStyle",
         type: "private",
         variableType: "number",
-        initFunc: ({ $props, $state, $queries, $ctx }) => 0
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => 0
       },
       {
         path: "tourSteps",
         type: "private",
         variableType: "number",
-        initFunc: ({ $props, $state, $queries, $ctx }) => 0
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => 0
       },
       {
         path: "lastSteps",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => false
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => false
       },
       {
         path: "watingForResponse",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => false
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => false
       },
       {
         path: "input.value",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => ""
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => ""
       },
       {
         path: "input2.value",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => ""
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => ""
       },
       {
         path: "variable",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => ""
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => ""
       },
       {
         path: "phoneError",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => ""
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => ""
       },
       {
         path: "showMobileError",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => false
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => false
       },
       {
         path: "manualReserveBookingId",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => ""
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => ""
       },
       {
         path: "getJabamaSmartPriceStatus.data",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "getJabamaSmartPriceStatus"
       },
@@ -776,7 +782,7 @@ function PlasmicCalendar23__RenderFunc(props: {
         path: "getJabamaSmartPriceStatus.error",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "getJabamaSmartPriceStatus"
       },
@@ -784,7 +790,7 @@ function PlasmicCalendar23__RenderFunc(props: {
         path: "getJabamaSmartPriceStatus.loading",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "getJabamaSmartPriceStatus"
       },
@@ -792,7 +798,7 @@ function PlasmicCalendar23__RenderFunc(props: {
         path: "reserveData.data",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "reserveData"
       },
@@ -800,7 +806,7 @@ function PlasmicCalendar23__RenderFunc(props: {
         path: "reserveData.error",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "reserveData"
       },
@@ -808,9 +814,62 @@ function PlasmicCalendar23__RenderFunc(props: {
         path: "reserveData.loading",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "reserveData"
+      },
+      {
+        path: "modalChangePrice2.open",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) =>
+          hasVariant(globalVariants, "screen", "mobile")
+            ? false
+            : hasVariant(globalVariants, "screen", "tablet")
+              ? false
+              : false
+      },
+      {
+        path: "input3.value",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => ""
+      },
+      {
+        path: "textInput3.value",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => ""
+      },
+      {
+        path: "numberInput3.value",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined
+      },
+      {
+        path: "getMarkup.data",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
+
+        refName: "getMarkup"
+      },
+      {
+        path: "getMarkup.error",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
+
+        refName: "getMarkup"
+      },
+      {
+        path: "getMarkup.loading",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
+
+        refName: "getMarkup"
       }
     ],
     [$props, $ctx, $refs]
@@ -819,6 +878,7 @@ function PlasmicCalendar23__RenderFunc(props: {
     $props,
     $ctx,
     $queries: {},
+    $q: {},
     $refs
   });
 
@@ -5383,6 +5443,651 @@ function PlasmicCalendar23__RenderFunc(props: {
             </div>
           </div>
         </AntdModal>
+        <AntdModal
+          data-plasmic-name={"modalChangePrice2"}
+          data-plasmic-override={overrides.modalChangePrice2}
+          cancelText={"\u0628\u06cc\u200c\u062e\u06cc\u0627\u0644\u0634"}
+          className={classNames("__wab_instance", sty.modalChangePrice2)}
+          closeButtonClassName={classNames({
+            [sty["pcls_CIb4t1gEq1iF"]]: true
+          })}
+          defaultStylesClassName={classNames(
+            projectcss.root_reset,
+            projectcss.plasmic_default_styles,
+            projectcss.plasmic_mixins,
+            styleTokensClassNames
+          )}
+          hideFooter={true}
+          maskClosable={true}
+          modalScopeClassName={sty["modalChangePrice2__modal"]}
+          okText={"\u062a\u0627\u06cc\u06cc\u062f"}
+          onOk={async () => {
+            const $steps = {};
+          }}
+          onOpenChange={async (...eventArgs: any) => {
+            generateStateOnChangeProp($state, [
+              "modalChangePrice2",
+              "open"
+            ]).apply(null, eventArgs);
+          }}
+          open={generateStateValueProp($state, ["modalChangePrice2", "open"])}
+          title={
+            <div className={classNames(projectcss.all, sty.freeBox__vCUds)}>
+              <Icon23Icon
+                className={classNames(projectcss.all, sty.svg___6Pqqb)}
+                onClick={async event => {
+                  const $steps = {};
+
+                  $steps["updateModalChangePriceOpen"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          variable: {
+                            objRoot: $state,
+                            variablePath: ["modalChangePrice2", "open"]
+                          },
+                          operation: 0
+                        };
+                        return (({
+                          variable,
+                          value,
+                          startIndex,
+                          deleteCount
+                        }) => {
+                          if (!variable) {
+                            return;
+                          }
+                          const { objRoot, variablePath } = variable;
+
+                          $stateSet(objRoot, variablePath, value);
+                          return value;
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["updateModalChangePriceOpen"] != null &&
+                    typeof $steps["updateModalChangePriceOpen"] === "object" &&
+                    typeof $steps["updateModalChangePriceOpen"].then ===
+                      "function"
+                  ) {
+                    $steps["updateModalChangePriceOpen"] =
+                      await $steps["updateModalChangePriceOpen"];
+                  }
+
+                  $steps["updateModalOpen"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          variable: {
+                            objRoot: $state,
+                            variablePath: ["modal", "open"]
+                          },
+                          operation: 0,
+                          value: true
+                        };
+                        return (({
+                          variable,
+                          value,
+                          startIndex,
+                          deleteCount
+                        }) => {
+                          if (!variable) {
+                            return;
+                          }
+                          const { objRoot, variablePath } = variable;
+
+                          $stateSet(objRoot, variablePath, value);
+                          return value;
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["updateModalOpen"] != null &&
+                    typeof $steps["updateModalOpen"] === "object" &&
+                    typeof $steps["updateModalOpen"].then === "function"
+                  ) {
+                    $steps["updateModalOpen"] = await $steps["updateModalOpen"];
+                  }
+                }}
+                role={"img"}
+              />
+
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__jjbg0
+                )}
+              >
+                {
+                  "\u0646\u0631\u062e \u0631\u0627 \u0648\u0627\u0631\u062f \u06a9\u0646"
+                }
+              </div>
+            </div>
+          }
+          trigger={null}
+          width={
+            hasVariant(globalVariants, "screen", "mobile")
+              ? "320px"
+              : hasVariant(globalVariants, "screen", "tablet")
+                ? "320px"
+                : "320px"
+          }
+        >
+          <div className={classNames(projectcss.all, sty.freeBox__s8W84)}>
+            <div
+              data-plasmic-name={"main3"}
+              data-plasmic-override={overrides.main3}
+              className={classNames(projectcss.all, sty.main3)}
+            >
+              <Input
+                data-plasmic-name={"input3"}
+                data-plasmic-override={overrides.input3}
+                className={classNames("__wab_instance", sty.input3)}
+                onChange={async (...eventArgs: any) => {
+                  generateStateOnChangeProp($state, ["input3", "value"]).apply(
+                    null,
+                    eventArgs
+                  );
+                }}
+                placeholder={
+                  "\u0645\u062b\u0644\u0627 \u06f2/\u06f0\u06f0\u06f0/\u06f0\u06f0\u06f0"
+                }
+                type={"number"}
+                value={generateStateValueProp($state, ["input3", "value"])}
+              />
+
+              <TextInput
+                data-plasmic-name={"textInput3"}
+                data-plasmic-override={overrides.textInput3}
+                className={classNames("__wab_instance", sty.textInput3)}
+                onChange={async (...eventArgs: any) => {
+                  ((...eventArgs) => {
+                    generateStateOnChangeProp($state, ["textInput3", "value"])(
+                      (e => e.target?.value).apply(null, eventArgs)
+                    );
+                  }).apply(null, eventArgs);
+
+                  if (
+                    eventArgs.length > 1 &&
+                    eventArgs[1] &&
+                    eventArgs[1]._plasmic_state_init_
+                  ) {
+                    return;
+                  }
+                }}
+                placeholder={
+                  "\u0645\u062b\u0644\u0627 \u06f2/\u06f0\u06f0\u06f0/\u06f0\u06f0\u06f0"
+                }
+                type={"number"}
+                value={
+                  generateStateValueProp($state, ["textInput3", "value"]) ?? ""
+                }
+              />
+
+              {false ? (
+                <AntdInputNumber
+                  data-plasmic-name={"numberInput3"}
+                  data-plasmic-override={overrides.numberInput3}
+                  className={classNames("__wab_instance", sty.numberInput3)}
+                  controls={false}
+                  onChange={async (...eventArgs: any) => {
+                    generateStateOnChangeProp($state, [
+                      "numberInput3",
+                      "value"
+                    ]).apply(null, eventArgs);
+                  }}
+                  placeholder={
+                    "\u0645\u062b\u0644\u0627 \u06f2/\u06f0\u06f0\u06f0/\u06f0\u06f0\u06f0"
+                  }
+                  readOnly={false}
+                  type={"number"}
+                  value={generateStateValueProp($state, [
+                    "numberInput3",
+                    "value"
+                  ])}
+                />
+              ) : null}
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__mAt6C
+                )}
+              >
+                <React.Fragment>
+                  {(() => {
+                    try {
+                      return (() => {
+                        function numberToPersian(num) {
+                          const units = [
+                            "",
+                            "یک",
+                            "دو",
+                            "سه",
+                            "چهار",
+                            "پنج",
+                            "شش",
+                            "هفت",
+                            "هشت",
+                            "نه"
+                          ];
+
+                          const tens = [
+                            "",
+                            "ده",
+                            "بیست",
+                            "سی",
+                            "چهل",
+                            "پنجاه",
+                            "شصت",
+                            "هفتاد",
+                            "هشتاد",
+                            "نود"
+                          ];
+
+                          const teens = [
+                            "ده",
+                            "یازده",
+                            "دوازده",
+                            "سیزده",
+                            "چهارده",
+                            "پانزده",
+                            "شانزده",
+                            "هفده",
+                            "هجده",
+                            "نوزده"
+                          ];
+
+                          const hundreds = [
+                            "",
+                            "صد",
+                            "دویست",
+                            "سیصد",
+                            "چهارصد",
+                            "پانصد",
+                            "ششصد",
+                            "هفتصد",
+                            "هشتصد",
+                            "نهصد"
+                          ];
+
+                          const groupNames = ["", "هزار", "میلیون", "میلیارد"];
+
+                          if (num == null || num === "" || num === 0)
+                            return "صفر";
+                          const splitNumber = n => {
+                            const str = n.toString();
+                            const len = str.length;
+                            if (len <= 3) return [n];
+                            const groups = [];
+                            let i = len;
+                            while (i > 0) {
+                              groups.unshift(
+                                Number(str.substring(Math.max(0, i - 3), i))
+                              );
+                              i -= 3;
+                            }
+                            return groups;
+                          };
+                          const convertGroup = n => {
+                            if (n === 0) return "";
+                            const h = Math.floor(n / 100);
+                            const t = Math.floor((n % 100) / 10);
+                            const u = n % 10;
+                            const hundred = hundreds[h];
+                            let tenUnit = "";
+                            if (t === 1) {
+                              tenUnit = teens[u];
+                            } else {
+                              tenUnit =
+                                tens[t] + (u > 0 ? " و " + units[u] : "");
+                            }
+                            return [hundred, tenUnit]
+                              .filter(Boolean)
+                              .join(" و ")
+                              .trim();
+                          };
+                          const groups = splitNumber(num);
+                          const result = groups
+                            .map((g, i) => {
+                              const groupText = convertGroup(g);
+                              if (groupText) {
+                                return (
+                                  groupText +
+                                  (groupNames[groups.length - i - 1]
+                                    ? " " + groupNames[groups.length - i - 1]
+                                    : "")
+                                );
+                              }
+                              return "";
+                            })
+                            .filter(Boolean)
+                            .join(" و ");
+                          const finalResult = result.startsWith("و ")
+                            ? result.slice(2)
+                            : result;
+                          return finalResult.trim() + " تومان";
+                        }
+                        const input = $state.input3?.value || "";
+                        const output =
+                          input === "" ? "صفر" : numberToPersian(Number(input));
+                        return output;
+                      })();
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return "";
+                      }
+                      throw e;
+                    }
+                  })()}
+                </React.Fragment>
+              </div>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__cBu94
+                )}
+              >
+                {
+                  "\u0645\u0628\u0644\u063a \u0628\u0627\u0644\u0627 \u00ab\u067e\u0633 \u0627\u0632 \u06a9\u0633\u0631 \u06a9\u0627\u0631\u0645\u0632\u062f\u00bb \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u0627\u0633\u062a. \u06cc\u0639\u0646\u06cc \u0645\u0628\u0644\u063a\u06cc \u06a9\u0647 \u0628\u0647 \u062d\u0633\u0627\u0628\u062a \u0645\u06cc\u0627\u062f"
+                }
+              </div>
+            </div>
+            <div className={classNames(projectcss.all, sty.freeBox__nFpXi)}>
+              <Button
+                className={classNames("__wab_instance", sty.button__cJeNe)}
+                color={"miaanColor"}
+                isDisabled={(() => {
+                  try {
+                    return (
+                      $state.input3.value <= 99999 ||
+                      $state.input3.value == null ||
+                      $state.input3.value >= 50000000
+                    );
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return [];
+                    }
+                    throw e;
+                  }
+                })()}
+                onClick={async event => {
+                  const $steps = {};
+
+                  $steps["updateStateVariable"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          operation: 0,
+                          value: ($state.modalChangePrice2.open = false)
+                        };
+                        return (({
+                          variable,
+                          value,
+                          startIndex,
+                          deleteCount
+                        }) => {
+                          if (!variable) {
+                            return;
+                          }
+                          const { objRoot, variablePath } = variable;
+
+                          $stateSet(objRoot, variablePath, value);
+                          return value;
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["updateStateVariable"] != null &&
+                    typeof $steps["updateStateVariable"] === "object" &&
+                    typeof $steps["updateStateVariable"].then === "function"
+                  ) {
+                    $steps["updateStateVariable"] =
+                      await $steps["updateStateVariable"];
+                  }
+
+                  $steps["updateFetchModalOpen"] =
+                    $props.calendarType == "pro"
+                      ? (() => {
+                          const actionArgs = {
+                            variable: {
+                              objRoot: $state,
+                              variablePath: ["fetchModal", "open"]
+                            },
+                            operation: 0,
+                            value: true
+                          };
+                          return (({
+                            variable,
+                            value,
+                            startIndex,
+                            deleteCount
+                          }) => {
+                            if (!variable) {
+                              return;
+                            }
+                            const { objRoot, variablePath } = variable;
+
+                            $stateSet(objRoot, variablePath, value);
+                            return value;
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                  if (
+                    $steps["updateFetchModalOpen"] != null &&
+                    typeof $steps["updateFetchModalOpen"] === "object" &&
+                    typeof $steps["updateFetchModalOpen"].then === "function"
+                  ) {
+                    $steps["updateFetchModalOpen"] =
+                      await $steps["updateFetchModalOpen"];
+                  }
+
+                  $steps["updateStateVariable2"] =
+                    $props.calendarType == "lite"
+                      ? (() => {
+                          const actionArgs = {
+                            operation: 0,
+                            value: ($state.updateStyle = $state.updateStyle + 1)
+                          };
+                          return (({
+                            variable,
+                            value,
+                            startIndex,
+                            deleteCount
+                          }) => {
+                            if (!variable) {
+                              return;
+                            }
+                            const { objRoot, variablePath } = variable;
+
+                            $stateSet(objRoot, variablePath, value);
+                            return value;
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                  if (
+                    $steps["updateStateVariable2"] != null &&
+                    typeof $steps["updateStateVariable2"] === "object" &&
+                    typeof $steps["updateStateVariable2"].then === "function"
+                  ) {
+                    $steps["updateStateVariable2"] =
+                      await $steps["updateStateVariable2"];
+                  }
+
+                  $steps["setPrice"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          args: [
+                            "POST",
+                            "https://api-v2.miaan.ir/api/setprice",
+                            undefined,
+                            (() => {
+                              try {
+                                return (() => {
+                                  function convertPersianNumbersToEnglish(str) {
+                                    const persianNumbers = [
+                                      "۰",
+                                      "۱",
+                                      "۲",
+                                      "۳",
+                                      "۴",
+                                      "۵",
+                                      "۶",
+                                      "۷",
+                                      "۸",
+                                      "۹"
+                                    ];
+
+                                    const englishNumbers = [
+                                      "0",
+                                      "1",
+                                      "2",
+                                      "3",
+                                      "4",
+                                      "5",
+                                      "6",
+                                      "7",
+                                      "8",
+                                      "9"
+                                    ];
+
+                                    return str.replace(
+                                      /[۰-۹]/g,
+                                      char =>
+                                        englishNumbers[
+                                          persianNumbers.indexOf(char)
+                                        ] || char
+                                    );
+                                  }
+                                  function padZero(num) {
+                                    return num.length === 1 ? `0${num}` : num;
+                                  }
+                                  function convertTimestampToPersianDateWithEnglishNumbers(
+                                    timestamp
+                                  ) {
+                                    const date = new Date(timestamp * 1000);
+                                    const [year, month, day] = date
+                                      .toLocaleDateString("fa")
+                                      .split("/");
+                                    const formattedDate = `${convertPersianNumbersToEnglish(year)}-${padZero(convertPersianNumbersToEnglish(month))}-${padZero(convertPersianNumbersToEnglish(day))}`;
+                                    return formattedDate;
+                                  }
+                                  const data = {
+                                    days: [$state.fragmentDatePicker.values],
+                                    property_id: $props.propertyId,
+                                    price: String($state.input3.value),
+                                    markup: $state.getMarkup.data
+                                  };
+                                  $state.requestdata = data;
+                                  data.days = data.days
+                                    .map(timestampArray =>
+                                      timestampArray.map(timestamp =>
+                                        convertTimestampToPersianDateWithEnglishNumbers(
+                                          timestamp
+                                        )
+                                      )
+                                    )
+                                    .flat();
+                                  return data;
+                                })();
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
+                                }
+                                throw e;
+                              }
+                            })()
+                          ]
+                        };
+                        return $globalActions["Fragment.apiRequest"]?.apply(
+                          null,
+                          [...actionArgs.args]
+                        );
+                      })()
+                    : undefined;
+                  if (
+                    $steps["setPrice"] != null &&
+                    typeof $steps["setPrice"] === "object" &&
+                    typeof $steps["setPrice"].then === "function"
+                  ) {
+                    $steps["setPrice"] = await $steps["setPrice"];
+                  }
+
+                  $steps["runCode2"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          customFunction: async () => {
+                            return ($state.platformRequestStatus =
+                              $steps.setPrice.data);
+                          }
+                        };
+                        return (({ customFunction }) => {
+                          return customFunction();
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["runCode2"] != null &&
+                    typeof $steps["runCode2"] === "object" &&
+                    typeof $steps["runCode2"].then === "function"
+                  ) {
+                    $steps["runCode2"] = await $steps["runCode2"];
+                  }
+                }}
+              >
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text___2RHn1
+                  )}
+                >
+                  {
+                    "\u062b\u0628\u062a \u062a\u063a\u06cc\u06cc\u0631\u0627\u062a"
+                  }
+                </div>
+              </Button>
+            </div>
+          </div>
+          <ApiRequest
+            data-plasmic-name={"getMarkup"}
+            data-plasmic-override={overrides.getMarkup}
+            className={classNames("__wab_instance", sty.getMarkup)}
+            errorDisplay={null}
+            loadingDisplay={null}
+            method={"GET"}
+            onError={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, ["getMarkup", "error"]).apply(
+                null,
+                eventArgs
+              );
+            }}
+            onLoading={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, ["getMarkup", "loading"]).apply(
+                null,
+                eventArgs
+              );
+            }}
+            onSuccess={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, ["getMarkup", "data"]).apply(
+                null,
+                eventArgs
+              );
+            }}
+            ref={ref => {
+              $refs["getMarkup"] = ref;
+            }}
+            url={"https://prod.miaan.ir/webhook/markups"}
+          />
+        </AntdModal>
         <div className={classNames(projectcss.all, sty.freeBox__ox6V, ``)}>
           <AntdModal
             data-plasmic-name={"fetchModal"}
@@ -8249,7 +8954,7 @@ function PlasmicCalendar23__RenderFunc(props: {
                 [
                   {
                     name: "textarea2.value",
-                    initFunc: ({ $props, $state, $queries }) =>
+                    initFunc: ({ $props, $state, $queries, $q }) =>
                       hasVariant(globalVariants, "screen", "mobile")
                         ? (() => {
                             try {
@@ -11522,6 +12227,12 @@ const PlasmicDescendants = {
     "input",
     "textInput",
     "numberInput2",
+    "modalChangePrice2",
+    "main3",
+    "input3",
+    "textInput3",
+    "numberInput3",
+    "getMarkup",
     "fetchModal",
     "getJabamaSmartPriceStatus",
     "userPlatform",
@@ -11619,6 +12330,19 @@ const PlasmicDescendants = {
   input: ["input"],
   textInput: ["textInput"],
   numberInput2: ["numberInput2"],
+  modalChangePrice2: [
+    "modalChangePrice2",
+    "main3",
+    "input3",
+    "textInput3",
+    "numberInput3",
+    "getMarkup"
+  ],
+  main3: ["main3", "input3", "textInput3", "numberInput3"],
+  input3: ["input3"],
+  textInput3: ["textInput3"],
+  numberInput3: ["numberInput3"],
+  getMarkup: ["getMarkup"],
   fetchModal: [
     "fetchModal",
     "getJabamaSmartPriceStatus",
@@ -11774,6 +12498,12 @@ type NodeDefaultElementType = {
   input: typeof Input;
   textInput: typeof TextInput;
   numberInput2: typeof AntdInputNumber;
+  modalChangePrice2: typeof AntdModal;
+  main3: "div";
+  input3: typeof Input;
+  textInput3: typeof TextInput;
+  numberInput3: typeof AntdInputNumber;
+  getMarkup: typeof ApiRequest;
   fetchModal: typeof AntdModal;
   getJabamaSmartPriceStatus: typeof ApiRequest;
   userPlatform: typeof ApiRequest;
@@ -11919,6 +12649,12 @@ export const PlasmicCalendar23 = Object.assign(
     input: makeNodeComponent("input"),
     textInput: makeNodeComponent("textInput"),
     numberInput2: makeNodeComponent("numberInput2"),
+    modalChangePrice2: makeNodeComponent("modalChangePrice2"),
+    main3: makeNodeComponent("main3"),
+    input3: makeNodeComponent("input3"),
+    textInput3: makeNodeComponent("textInput3"),
+    numberInput3: makeNodeComponent("numberInput3"),
+    getMarkup: makeNodeComponent("getMarkup"),
     fetchModal: makeNodeComponent("fetchModal"),
     getJabamaSmartPriceStatus: makeNodeComponent("getJabamaSmartPriceStatus"),
     userPlatform: makeNodeComponent("userPlatform"),

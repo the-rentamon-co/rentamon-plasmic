@@ -151,7 +151,7 @@ function PlasmicTestimonialsScrolling__RenderFunc(props: {
         path: "userTestimonial.data",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "userTestimonial"
       },
@@ -159,7 +159,7 @@ function PlasmicTestimonialsScrolling__RenderFunc(props: {
         path: "userTestimonial.error",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "userTestimonial"
       },
@@ -167,7 +167,7 @@ function PlasmicTestimonialsScrolling__RenderFunc(props: {
         path: "userTestimonial.loading",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "userTestimonial"
       }
@@ -178,6 +178,7 @@ function PlasmicTestimonialsScrolling__RenderFunc(props: {
     $props,
     $ctx,
     $queries: {},
+    $q: {},
     $refs
   });
 

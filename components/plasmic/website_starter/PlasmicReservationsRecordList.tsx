@@ -175,27 +175,29 @@ function PlasmicReservationsRecordList__RenderFunc(props: {
         path: "pastBookingsBox",
         type: "private",
         variableType: "variant",
-        initFunc: ({ $props, $state, $queries, $ctx }) => $props.pastBookingsBox
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) =>
+          $props.pastBookingsBox
       },
       {
         path: "cancelledBookings",
         type: "private",
         variableType: "variant",
-        initFunc: ({ $props, $state, $queries, $ctx }) =>
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) =>
           $props.cancelledBookings
       },
       {
         path: "confirmedBookings",
         type: "private",
         variableType: "variant",
-        initFunc: ({ $props, $state, $queries, $ctx }) =>
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) =>
           $props.confirmedBookings
       },
       {
         path: "pendingBookings",
         type: "private",
         variableType: "variant",
-        initFunc: ({ $props, $state, $queries, $ctx }) => $props.pendingBookings
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) =>
+          $props.pendingBookings
       }
     ],
     [$props, $ctx, $refs]
@@ -204,6 +206,7 @@ function PlasmicReservationsRecordList__RenderFunc(props: {
     $props,
     $ctx,
     $queries: {},
+    $q: {},
     $refs
   });
 

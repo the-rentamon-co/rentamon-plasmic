@@ -78,6 +78,37 @@ import sty from "./PlasmicSupport.module.css"; // plasmic-import: _jWDmDgs08t7/c
 import Icon99Icon from "./icons/PlasmicIcon__Icon99"; // plasmic-import: 6B_Ilcn7d77Z/icon
 import Icon28Icon from "./icons/PlasmicIcon__Icon28"; // plasmic-import: 1BYhcdmlcA0q/icon
 
+const emptyProxy: any = new Proxy(() => "", {
+  get(_, prop) {
+    return prop === Symbol.toPrimitive ? () => "" : emptyProxy;
+  }
+});
+
+function wrapQueriesWithLoadingProxy($q: any): any {
+  return new Proxy($q, {
+    get(target, queryName) {
+      const query = target[queryName];
+      return !query || query.isLoading || !query.data ? emptyProxy : query;
+    }
+  });
+}
+
+export function generateDynamicMetadata($q: any, $ctx: any) {
+  return {
+    title: "پشتیبانی و ارتباط با تیم میان",
+    description: "راه‌های ارتباط با تیم میان و پشتیبانی خدمات اینجاست.",
+    openGraph: {
+      title: "پشتیبانی و ارتباط با تیم میان",
+      description: "راه‌های ارتباط با تیم میان و پشتیبانی خدمات اینجاست."
+    },
+    twitter: {
+      card: "summary",
+      title: "پشتیبانی و ارتباط با تیم میان",
+      description: "راه‌های ارتباط با تیم میان و پشتیبانی خدمات اینجاست."
+    }
+  };
+}
+
 createPlasmicElementProxy;
 
 export type PlasmicSupport__VariantMembers = {};
@@ -183,13 +214,13 @@ function PlasmicSupport__RenderFunc(props: {
         path: "propertyId",
         type: "private",
         variableType: "number",
-        initFunc: ({ $props, $state, $queries, $ctx }) => 0
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => 0
       },
       {
         path: "profile2.data",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "profile2"
       },
@@ -197,7 +228,7 @@ function PlasmicSupport__RenderFunc(props: {
         path: "profile2.error",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "profile2"
       },
@@ -205,7 +236,7 @@ function PlasmicSupport__RenderFunc(props: {
         path: "profile2.loading",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "profile2"
       }
@@ -216,8 +247,14 @@ function PlasmicSupport__RenderFunc(props: {
     $props,
     $ctx,
     $queries: {},
+    $q: {},
     $refs
   });
+
+  const pageMetadata = generateDynamicMetadata(
+    wrapQueriesWithLoadingProxy({}),
+    $ctx
+  );
 
   const styleTokensClassNames = _useStyleTokens();
 
@@ -225,31 +262,27 @@ function PlasmicSupport__RenderFunc(props: {
     <React.Fragment>
       <Head>
         <meta name="twitter:card" content="summary" />
-        <title key="title">{PlasmicSupport.pageMetadata.title}</title>
-        <meta
-          key="og:title"
-          property="og:title"
-          content={PlasmicSupport.pageMetadata.title}
-        />
+        <title key="title">{pageMetadata.title}</title>
+        <meta key="og:title" property="og:title" content={pageMetadata.title} />
         <meta
           key="twitter:title"
           property="twitter:title"
-          content={PlasmicSupport.pageMetadata.title}
+          content={pageMetadata.title}
         />
         <meta
           key="description"
           property="description"
-          content={PlasmicSupport.pageMetadata.description}
+          content={pageMetadata.description}
         />
         <meta
           key="og:description"
           property="og:description"
-          content={PlasmicSupport.pageMetadata.description}
+          content={pageMetadata.description}
         />
         <meta
           key="twitter:description"
           property="twitter:description"
-          content={PlasmicSupport.pageMetadata.description}
+          content={pageMetadata.description}
         />
       </Head>
 
@@ -1613,13 +1646,11 @@ export const PlasmicSupport = Object.assign(
     internalVariantProps: PlasmicSupport__VariantProps,
     internalArgProps: PlasmicSupport__ArgProps,
 
-    // Page metadata
-    pageMetadata: {
-      title: "پشتیبانی و ارتباط با تیم میان",
-      description: "راه‌های ارتباط با تیم میان و پشتیبانی خدمات اینجاست.",
-      ogImageSrc: "",
-      canonical: ""
-    }
+    pageMetadata: generateDynamicMetadata(wrapQueriesWithLoadingProxy({}), {
+      pagePath: "/support",
+      searchParams: {},
+      params: {}
+    })
   }
 );
 

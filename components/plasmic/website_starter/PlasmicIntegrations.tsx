@@ -73,6 +73,40 @@ import "@plasmicapp/react-web/lib/plasmic.css";
 import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicIntegrations.module.css"; // plasmic-import: 7qT9iMfa9pib/css
 
+const emptyProxy: any = new Proxy(() => "", {
+  get(_, prop) {
+    return prop === Symbol.toPrimitive ? () => "" : emptyProxy;
+  }
+});
+
+function wrapQueriesWithLoadingProxy($q: any): any {
+  return new Proxy($q, {
+    get(target, queryName) {
+      const query = target[queryName];
+      return !query || query.isLoading || !query.data ? emptyProxy : query;
+    }
+  });
+}
+
+export function generateDynamicMetadata($q: any, $ctx: any) {
+  return {
+    title: "دریافت API پلتفرم‌های اجاره ویلا",
+    description:
+      "با Integrations میان، اقامتگاه خود را بدون دردسر به جاباما، جاجیگا، اسنپ‌تریپ و شب وصل کنید. قیمت، موجودی و تقویم همیشه خودکار و یکپارچه به‌روز می‌شود تا مدیریت چندپلفرمی ساده شود و از هرگونه تداخل رزرو جلوگیری شود.",
+    openGraph: {
+      title: "دریافت API پلتفرم‌های اجاره ویلا",
+      description:
+        "با Integrations میان، اقامتگاه خود را بدون دردسر به جاباما، جاجیگا، اسنپ‌تریپ و شب وصل کنید. قیمت، موجودی و تقویم همیشه خودکار و یکپارچه به‌روز می‌شود تا مدیریت چندپلفرمی ساده شود و از هرگونه تداخل رزرو جلوگیری شود."
+    },
+    twitter: {
+      card: "summary",
+      title: "دریافت API پلتفرم‌های اجاره ویلا",
+      description:
+        "با Integrations میان، اقامتگاه خود را بدون دردسر به جاباما، جاجیگا، اسنپ‌تریپ و شب وصل کنید. قیمت، موجودی و تقویم همیشه خودکار و یکپارچه به‌روز می‌شود تا مدیریت چندپلفرمی ساده شود و از هرگونه تداخل رزرو جلوگیری شود."
+    }
+  };
+}
+
 createPlasmicElementProxy;
 
 export type PlasmicIntegrations__VariantMembers = {};
@@ -187,7 +221,7 @@ function PlasmicIntegrations__RenderFunc(props: {
         path: "propertyId",
         type: "private",
         variableType: "number",
-        initFunc: ({ $props, $state, $queries, $ctx }) => 0
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => 0
       }
     ],
     [$props, $ctx, $refs]
@@ -196,8 +230,14 @@ function PlasmicIntegrations__RenderFunc(props: {
     $props,
     $ctx,
     $queries: {},
+    $q: {},
     $refs
   });
+
+  const pageMetadata = generateDynamicMetadata(
+    wrapQueriesWithLoadingProxy({}),
+    $ctx
+  );
 
   const styleTokensClassNames = _useStyleTokens();
 
@@ -205,31 +245,27 @@ function PlasmicIntegrations__RenderFunc(props: {
     <React.Fragment>
       <Head>
         <meta name="twitter:card" content="summary" />
-        <title key="title">{PlasmicIntegrations.pageMetadata.title}</title>
-        <meta
-          key="og:title"
-          property="og:title"
-          content={PlasmicIntegrations.pageMetadata.title}
-        />
+        <title key="title">{pageMetadata.title}</title>
+        <meta key="og:title" property="og:title" content={pageMetadata.title} />
         <meta
           key="twitter:title"
           property="twitter:title"
-          content={PlasmicIntegrations.pageMetadata.title}
+          content={pageMetadata.title}
         />
         <meta
           key="description"
           property="description"
-          content={PlasmicIntegrations.pageMetadata.description}
+          content={pageMetadata.description}
         />
         <meta
           key="og:description"
           property="og:description"
-          content={PlasmicIntegrations.pageMetadata.description}
+          content={pageMetadata.description}
         />
         <meta
           key="twitter:description"
           property="twitter:description"
-          content={PlasmicIntegrations.pageMetadata.description}
+          content={pageMetadata.description}
         />
       </Head>
 
@@ -1762,14 +1798,11 @@ export const PlasmicIntegrations = Object.assign(
       url: "https://miaan.ir/integrations"
     },
 
-    // Page metadata
-    pageMetadata: {
-      title: "دریافت API پلتفرم‌های اجاره ویلا",
-      description:
-        "با Integrations میان، اقامتگاه خود را بدون دردسر به جاباما، جاجیگا، اسنپ‌تریپ و شب وصل کنید. قیمت، موجودی و تقویم همیشه خودکار و یکپارچه به‌روز می‌شود تا مدیریت چندپلفرمی ساده شود و از هرگونه تداخل رزرو جلوگیری شود.",
-      ogImageSrc: "",
-      canonical: ""
-    }
+    pageMetadata: generateDynamicMetadata(wrapQueriesWithLoadingProxy({}), {
+      pagePath: "/integrations",
+      searchParams: {},
+      params: {}
+    })
   }
 );
 

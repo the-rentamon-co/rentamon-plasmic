@@ -184,6 +184,7 @@ function PlasmicSwitch__RenderFunc(props: {
     $props,
     $ctx,
     $queries: {},
+    $q: {},
     $refs
   });
 

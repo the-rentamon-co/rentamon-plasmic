@@ -144,13 +144,13 @@ function PlasmicFunctionSelect__RenderFunc(props: {
         path: "show",
         type: "private",
         variableType: "variant",
-        initFunc: ({ $props, $state, $queries, $ctx }) => $props.show
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => $props.show
       },
       {
         path: "hide",
         type: "private",
         variableType: "variant",
-        initFunc: ({ $props, $state, $queries, $ctx }) => $props.hide
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => $props.hide
       }
     ],
     [$props, $ctx, $refs]
@@ -159,6 +159,7 @@ function PlasmicFunctionSelect__RenderFunc(props: {
     $props,
     $ctx,
     $queries: {},
+    $q: {},
     $refs
   });
 

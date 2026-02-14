@@ -72,6 +72,30 @@ import "@plasmicapp/react-web/lib/plasmic.css";
 import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicPropertyAnalytics.module.css"; // plasmic-import: oEgwlD3XbRDL/css
 
+const emptyProxy: any = new Proxy(() => "", {
+  get(_, prop) {
+    return prop === Symbol.toPrimitive ? () => "" : emptyProxy;
+  }
+});
+
+function wrapQueriesWithLoadingProxy($q: any): any {
+  return new Proxy($q, {
+    get(target, queryName) {
+      const query = target[queryName];
+      return !query || query.isLoading || !query.data ? emptyProxy : query;
+    }
+  });
+}
+
+export function generateDynamicMetadata($q: any, $ctx: any) {
+  return {
+    openGraph: {},
+    twitter: {
+      card: "summary"
+    }
+  };
+}
+
 createPlasmicElementProxy;
 
 export type PlasmicPropertyAnalytics__VariantMembers = {};
@@ -159,7 +183,7 @@ function PlasmicPropertyAnalytics__RenderFunc(props: {
         path: "apiRequest.data",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "apiRequest"
       },
@@ -167,7 +191,7 @@ function PlasmicPropertyAnalytics__RenderFunc(props: {
         path: "apiRequest.error",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "apiRequest"
       },
@@ -175,7 +199,7 @@ function PlasmicPropertyAnalytics__RenderFunc(props: {
         path: "apiRequest.loading",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "apiRequest"
       },
@@ -183,7 +207,7 @@ function PlasmicPropertyAnalytics__RenderFunc(props: {
         path: "apiRequestAvgDailyRate.data",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "apiRequestAvgDailyRate"
       },
@@ -191,7 +215,7 @@ function PlasmicPropertyAnalytics__RenderFunc(props: {
         path: "apiRequestAvgDailyRate.error",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "apiRequestAvgDailyRate"
       },
@@ -199,7 +223,7 @@ function PlasmicPropertyAnalytics__RenderFunc(props: {
         path: "apiRequestAvgDailyRate.loading",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "apiRequestAvgDailyRate"
       },
@@ -207,7 +231,7 @@ function PlasmicPropertyAnalytics__RenderFunc(props: {
         path: "apiRequestOccupancyRate.data",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "apiRequestOccupancyRate"
       },
@@ -215,7 +239,7 @@ function PlasmicPropertyAnalytics__RenderFunc(props: {
         path: "apiRequestOccupancyRate.error",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "apiRequestOccupancyRate"
       },
@@ -223,7 +247,7 @@ function PlasmicPropertyAnalytics__RenderFunc(props: {
         path: "apiRequestOccupancyRate.loading",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "apiRequestOccupancyRate"
       },
@@ -231,7 +255,7 @@ function PlasmicPropertyAnalytics__RenderFunc(props: {
         path: "apiRequestSourceOfReserves.data",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "apiRequestSourceOfReserves"
       },
@@ -239,7 +263,7 @@ function PlasmicPropertyAnalytics__RenderFunc(props: {
         path: "apiRequestSourceOfReserves.error",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "apiRequestSourceOfReserves"
       },
@@ -247,7 +271,7 @@ function PlasmicPropertyAnalytics__RenderFunc(props: {
         path: "apiRequestSourceOfReserves.loading",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "apiRequestSourceOfReserves"
       },
@@ -255,7 +279,7 @@ function PlasmicPropertyAnalytics__RenderFunc(props: {
         path: "apiRequestMonthlyIncome.data",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "apiRequestMonthlyIncome"
       },
@@ -263,7 +287,7 @@ function PlasmicPropertyAnalytics__RenderFunc(props: {
         path: "apiRequestMonthlyIncome.error",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "apiRequestMonthlyIncome"
       },
@@ -271,7 +295,7 @@ function PlasmicPropertyAnalytics__RenderFunc(props: {
         path: "apiRequestMonthlyIncome.loading",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "apiRequestMonthlyIncome"
       }
@@ -282,8 +306,14 @@ function PlasmicPropertyAnalytics__RenderFunc(props: {
     $props,
     $ctx,
     $queries: {},
+    $q: {},
     $refs
   });
+
+  const pageMetadata = generateDynamicMetadata(
+    wrapQueriesWithLoadingProxy({}),
+    $ctx
+  );
 
   const styleTokensClassNames = _useStyleTokens();
 
@@ -1849,13 +1879,11 @@ export const PlasmicPropertyAnalytics = Object.assign(
     // Key-value metadata
     metadata: { nameRobots: 'content="noindex, nofollow"' },
 
-    // Page metadata
-    pageMetadata: {
-      title: "",
-      description: "",
-      ogImageSrc: "",
-      canonical: ""
-    }
+    pageMetadata: generateDynamicMetadata(wrapQueriesWithLoadingProxy({}), {
+      pagePath: "/property-3/[id]",
+      searchParams: {},
+      params: {}
+    })
   }
 );
 

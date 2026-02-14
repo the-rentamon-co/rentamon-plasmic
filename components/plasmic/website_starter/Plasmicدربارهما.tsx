@@ -75,6 +75,47 @@ import "@plasmicapp/react-web/lib/plasmic.css";
 import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./Plasmicدربارهما.module.css"; // plasmic-import: eddiHU6vfbzN/css
 
+const emptyProxy: any = new Proxy(() => "", {
+  get(_, prop) {
+    return prop === Symbol.toPrimitive ? () => "" : emptyProxy;
+  }
+});
+
+function wrapQueriesWithLoadingProxy($q: any): any {
+  return new Proxy($q, {
+    get(target, queryName) {
+      const query = target[queryName];
+      return !query || query.isLoading || !query.data ? emptyProxy : query;
+    }
+  });
+}
+
+export function generateDynamicMetadata($q: any, $ctx: any) {
+  return {
+    title: "درباره میان",
+    description:
+      "شرکت توسعه فناوری و توانمدسازی شریف (رنتامون) به شماره ثبت ۲۲۵۷۷، با ارائه پنل مدیریت یکپارچه اقامتگاه، مدیریت وضعیت تقویم و نرخ‌گذاری رو برای صاحبین اقامتگاه خودکار و چندین برابر سریع می‌کنه. معتقدیم استفاده از این محصول توسط میزبانان، منجر به سهولت و بهبود کیفیت تعامل با پلتفرم‌ها و حتی مسافرها میشه، و نهایتا صنعت گردشگری کشور رونق پیدا می‌کنه. این هدفه که ما رو دور هم جمع کرده.",
+    openGraph: {
+      title: "درباره میان",
+      description:
+        "شرکت توسعه فناوری و توانمدسازی شریف (رنتامون) به شماره ثبت ۲۲۵۷۷، با ارائه پنل مدیریت یکپارچه اقامتگاه، مدیریت وضعیت تقویم و نرخ‌گذاری رو برای صاحبین اقامتگاه خودکار و چندین برابر سریع می‌کنه. معتقدیم استفاده از این محصول توسط میزبانان، منجر به سهولت و بهبود کیفیت تعامل با پلتفرم‌ها و حتی مسافرها میشه، و نهایتا صنعت گردشگری کشور رونق پیدا می‌کنه. این هدفه که ما رو دور هم جمع کرده.",
+      images: [
+        "https://rentamon.com/plasmic/website_starter/images/team1404Jpg.jpg"
+      ]
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "درباره میان",
+      description:
+        "شرکت توسعه فناوری و توانمدسازی شریف (رنتامون) به شماره ثبت ۲۲۵۷۷، با ارائه پنل مدیریت یکپارچه اقامتگاه، مدیریت وضعیت تقویم و نرخ‌گذاری رو برای صاحبین اقامتگاه خودکار و چندین برابر سریع می‌کنه. معتقدیم استفاده از این محصول توسط میزبانان، منجر به سهولت و بهبود کیفیت تعامل با پلتفرم‌ها و حتی مسافرها میشه، و نهایتا صنعت گردشگری کشور رونق پیدا می‌کنه. این هدفه که ما رو دور هم جمع کرده.",
+      images: [
+        "https://rentamon.com/plasmic/website_starter/images/team1404Jpg.jpg"
+      ]
+    },
+    alternates: { canonical: "https://rentamon.com/about-us/" }
+  };
+}
+
 createPlasmicElementProxy;
 
 export type Plasmicدربارهما__VariantMembers = {};
@@ -169,7 +210,7 @@ function Plasmicدربارهما__RenderFunc(props: {
         path: "propertyId",
         type: "private",
         variableType: "number",
-        initFunc: ({ $props, $state, $queries, $ctx }) => 0
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => 0
       }
     ],
     [$props, $ctx, $refs]
@@ -178,8 +219,14 @@ function Plasmicدربارهما__RenderFunc(props: {
     $props,
     $ctx,
     $queries: {},
+    $q: {},
     $refs
   });
+
+  const pageMetadata = generateDynamicMetadata(
+    wrapQueriesWithLoadingProxy({}),
+    $ctx
+  );
 
   const styleTokensClassNames = _useStyleTokens();
 
@@ -187,43 +234,39 @@ function Plasmicدربارهما__RenderFunc(props: {
     <React.Fragment>
       <Head>
         <meta name="twitter:card" content="summary_large_image" />
-        <title key="title">{Plasmicدربارهما.pageMetadata.title}</title>
-        <meta
-          key="og:title"
-          property="og:title"
-          content={Plasmicدربارهما.pageMetadata.title}
-        />
+        <title key="title">{pageMetadata.title}</title>
+        <meta key="og:title" property="og:title" content={pageMetadata.title} />
         <meta
           key="twitter:title"
           property="twitter:title"
-          content={Plasmicدربارهما.pageMetadata.title}
+          content={pageMetadata.title}
         />
         <meta
           key="description"
           property="description"
-          content={Plasmicدربارهما.pageMetadata.description}
+          content={pageMetadata.description}
         />
         <meta
           key="og:description"
           property="og:description"
-          content={Plasmicدربارهما.pageMetadata.description}
+          content={pageMetadata.description}
         />
         <meta
           key="twitter:description"
           property="twitter:description"
-          content={Plasmicدربارهما.pageMetadata.description}
+          content={pageMetadata.description}
         />
         <meta
           key="og:image"
           property="og:image"
-          content={Plasmicدربارهما.pageMetadata.ogImageSrc}
+          content={pageMetadata.ogImageSrc}
         />
         <meta
           key="twitter:image"
           property="twitter:image"
-          content={Plasmicدربارهما.pageMetadata.ogImageSrc}
+          content={pageMetadata.ogImageSrc}
         />
-        <link rel="canonical" href={Plasmicدربارهما.pageMetadata.canonical} />
+        <link rel="canonical" href={pageMetadata.alternates?.canonical} />
       </Head>
 
       <style>{`
@@ -1028,15 +1071,11 @@ export const Plasmicدربارهما = Object.assign(
         "https://rentamon.com/plasmic/website_starter/images/teamJpg.jpg"
     },
 
-    // Page metadata
-    pageMetadata: {
-      title: "درباره میان",
-      description:
-        "شرکت توسعه فناوری و توانمدسازی شریف (رنتامون) به شماره ثبت ۲۲۵۷۷، با ارائه پنل مدیریت یکپارچه اقامتگاه، مدیریت وضعیت تقویم و نرخ‌گذاری رو برای صاحبین اقامتگاه خودکار و چندین برابر سریع می‌کنه. معتقدیم استفاده از این محصول توسط میزبانان، منجر به سهولت و بهبود کیفیت تعامل با پلتفرم‌ها و حتی مسافرها میشه، و نهایتا صنعت گردشگری کشور رونق پیدا می‌کنه. این هدفه که ما رو دور هم جمع کرده.",
-      ogImageSrc:
-        "https://rentamon.com/plasmic/website_starter/images/team1404Jpg.jpg",
-      canonical: "https://rentamon.com/about-us/"
-    }
+    pageMetadata: generateDynamicMetadata(wrapQueriesWithLoadingProxy({}), {
+      pagePath: "/about-us",
+      searchParams: {},
+      params: {}
+    })
   }
 );
 

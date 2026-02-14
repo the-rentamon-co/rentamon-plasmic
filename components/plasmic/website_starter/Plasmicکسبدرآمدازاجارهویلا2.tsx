@@ -68,6 +68,30 @@ import "@plasmicapp/react-web/lib/plasmic.css";
 import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./Plasmicکسبدرآمدازاجارهویلا2.module.css"; // plasmic-import: fLse0hRVq6K7/css
 
+const emptyProxy: any = new Proxy(() => "", {
+  get(_, prop) {
+    return prop === Symbol.toPrimitive ? () => "" : emptyProxy;
+  }
+});
+
+function wrapQueriesWithLoadingProxy($q: any): any {
+  return new Proxy($q, {
+    get(target, queryName) {
+      const query = target[queryName];
+      return !query || query.isLoading || !query.data ? emptyProxy : query;
+    }
+  });
+}
+
+export function generateDynamicMetadata($q: any, $ctx: any) {
+  return {
+    openGraph: {},
+    twitter: {
+      card: "summary"
+    }
+  };
+}
+
 createPlasmicElementProxy;
 
 export type Plasmicکسبدرآمدازاجارهویلا2__VariantMembers = {};
@@ -127,6 +151,11 @@ function Plasmicکسبدرآمدازاجارهویلا2__RenderFunc(props: {
   const $ctx = useDataEnv?.() || {};
   const refsRef = React.useRef({});
   const $refs = refsRef.current;
+
+  const pageMetadata = generateDynamicMetadata(
+    wrapQueriesWithLoadingProxy({}),
+    $ctx
+  );
 
   const styleTokensClassNames = _useStyleTokens();
 
@@ -320,13 +349,12 @@ export const Plasmicکسبدرآمدازاجارهویلا2 = Object.assign(
     internalVariantProps: Plasmicکسبدرآمدازاجارهویلا2__VariantProps,
     internalArgProps: Plasmicکسبدرآمدازاجارهویلا2__ArgProps,
 
-    // Page metadata
-    pageMetadata: {
-      title: "",
-      description: "",
-      ogImageSrc: "",
-      canonical: ""
-    }
+    pageMetadata: generateDynamicMetadata(wrapQueriesWithLoadingProxy({}), {
+      pagePath:
+        "/%DA%A9%D8%B3%D8%A8-%D8%AF%D8%B1%D8%A2%D9%85%D8%AF-%D8%A7%D8%B2-%D8%A7%D8%AC%D8%A7%D8%B1%D9%87-%D9%88%DB%8C%D9%84%D8%A7",
+      searchParams: {},
+      params: {}
+    })
   }
 );
 

@@ -68,6 +68,35 @@ import "@plasmicapp/react-web/lib/plasmic.css";
 import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./Plasmicمبنایمحاسبات.module.css"; // plasmic-import: 683spdJ2aZLx/css
 
+const emptyProxy: any = new Proxy(() => "", {
+  get(_, prop) {
+    return prop === Symbol.toPrimitive ? () => "" : emptyProxy;
+  }
+});
+
+function wrapQueriesWithLoadingProxy($q: any): any {
+  return new Proxy($q, {
+    get(target, queryName) {
+      const query = target[queryName];
+      return !query || query.isLoading || !query.data ? emptyProxy : query;
+    }
+  });
+}
+
+export function generateDynamicMetadata($q: any, $ctx: any) {
+  return {
+    title: "مبنای محاسبات",
+
+    openGraph: {
+      title: "مبنای محاسبات"
+    },
+    twitter: {
+      card: "summary",
+      title: "مبنای محاسبات"
+    }
+  };
+}
+
 createPlasmicElementProxy;
 
 export type Plasmicمبنایمحاسبات__VariantMembers = {};
@@ -127,22 +156,23 @@ function Plasmicمبنایمحاسبات__RenderFunc(props: {
   const refsRef = React.useRef({});
   const $refs = refsRef.current;
 
+  const pageMetadata = generateDynamicMetadata(
+    wrapQueriesWithLoadingProxy({}),
+    $ctx
+  );
+
   const styleTokensClassNames = _useStyleTokens();
 
   return (
     <React.Fragment>
       <Head>
         <meta name="twitter:card" content="summary" />
-        <title key="title">{Plasmicمبنایمحاسبات.pageMetadata.title}</title>
-        <meta
-          key="og:title"
-          property="og:title"
-          content={Plasmicمبنایمحاسبات.pageMetadata.title}
-        />
+        <title key="title">{pageMetadata.title}</title>
+        <meta key="og:title" property="og:title" content={pageMetadata.title} />
         <meta
           key="twitter:title"
           property="twitter:title"
-          content={Plasmicمبنایمحاسبات.pageMetadata.title}
+          content={pageMetadata.title}
         />
       </Head>
 
@@ -338,13 +368,12 @@ export const Plasmicمبنایمحاسبات = Object.assign(
     // Key-value metadata
     metadata: { nameRobots: 'content="noindex, nofollow"' },
 
-    // Page metadata
-    pageMetadata: {
-      title: "مبنای محاسبات",
-      description: "",
-      ogImageSrc: "",
-      canonical: ""
-    }
+    pageMetadata: generateDynamicMetadata(wrapQueriesWithLoadingProxy({}), {
+      pagePath:
+        "/%D9%85%D8%A8%D9%86%D8%A7%DB%8C-%D9%85%D8%AD%D8%A7%D8%B3%D8%A8%D8%A7%D8%AA",
+      searchParams: {},
+      params: {}
+    })
   }
 );
 

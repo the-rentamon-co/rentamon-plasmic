@@ -176,7 +176,7 @@ function PlasmicEditReserveInfo__RenderFunc(props: {
         path: "guestName.value",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) =>
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) =>
           (() => {
             try {
               return $props.data.guest_name;
@@ -195,7 +195,7 @@ function PlasmicEditReserveInfo__RenderFunc(props: {
         path: "guestReferrer.value",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) =>
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) =>
           (() => {
             try {
               return (() => {
@@ -228,7 +228,7 @@ function PlasmicEditReserveInfo__RenderFunc(props: {
         path: "guestCount.value",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) =>
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) =>
           (() => {
             try {
               return (() => {
@@ -269,7 +269,7 @@ function PlasmicEditReserveInfo__RenderFunc(props: {
         path: "phoneNumber.value",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) =>
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) =>
           (() => {
             try {
               return $props.data.phone;
@@ -288,7 +288,7 @@ function PlasmicEditReserveInfo__RenderFunc(props: {
         path: "amount2.value",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) =>
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) =>
           (() => {
             try {
               return (() => {
@@ -329,7 +329,7 @@ function PlasmicEditReserveInfo__RenderFunc(props: {
         path: "amount.value",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined
       }
     ],
     [$props, $ctx, $refs]
@@ -338,6 +338,7 @@ function PlasmicEditReserveInfo__RenderFunc(props: {
     $props,
     $ctx,
     $queries: {},
+    $q: {},
     $refs
   });
 

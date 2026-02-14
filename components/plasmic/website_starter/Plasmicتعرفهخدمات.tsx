@@ -77,6 +77,35 @@ import "@plasmicapp/react-web/lib/plasmic.css";
 import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./Plasmicتعرفهخدمات.module.css"; // plasmic-import: 4KhpZ-of93My/css
 
+const emptyProxy: any = new Proxy(() => "", {
+  get(_, prop) {
+    return prop === Symbol.toPrimitive ? () => "" : emptyProxy;
+  }
+});
+
+function wrapQueriesWithLoadingProxy($q: any): any {
+  return new Proxy($q, {
+    get(target, queryName) {
+      const query = target[queryName];
+      return !query || query.isLoading || !query.data ? emptyProxy : query;
+    }
+  });
+}
+
+export function generateDynamicMetadata($q: any, $ctx: any) {
+  return {
+    title: "تعرفه خدمات میان",
+
+    openGraph: {
+      title: "تعرفه خدمات میان"
+    },
+    twitter: {
+      card: "summary",
+      title: "تعرفه خدمات میان"
+    }
+  };
+}
+
 createPlasmicElementProxy;
 
 export type Plasmicتعرفهخدمات__VariantMembers = {};
@@ -189,7 +218,7 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
         path: "accordionMain.activePanelId",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         onMutate: generateOnMutateForSpec(
           "activePanelId",
@@ -200,79 +229,79 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
         path: "tokenResponse",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => ({})
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => ({})
       },
       {
         path: "loading",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => false
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => false
       },
       {
         path: "checkbox8.isChecked",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => "isChecked"
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => "isChecked"
       },
       {
         path: "checkbox2.isChecked",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => "isChecked"
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => "isChecked"
       },
       {
         path: "checkbox3.isChecked",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => "isChecked"
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => "isChecked"
       },
       {
         path: "checkbox9.isChecked",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => "isChecked"
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => "isChecked"
       },
       {
         path: "checkbox5.isChecked",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined
       },
       {
         path: "checkbox6.isChecked",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined
       },
       {
         path: "checkbox7.isChecked",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined
       },
       {
         path: "checkbox10.isChecked",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => "isChecked"
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => "isChecked"
       },
       {
         path: "checkbox11.isChecked",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => "isChecked"
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => "isChecked"
       },
       {
         path: "input2.value",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => ""
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => ""
       },
       {
         path: "checkbox12.isChecked",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => "isChecked"
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => "isChecked"
       }
     ],
     [$props, $ctx, $refs]
@@ -281,8 +310,14 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
     $props,
     $ctx,
     $queries: {},
+    $q: {},
     $refs
   });
+
+  const pageMetadata = generateDynamicMetadata(
+    wrapQueriesWithLoadingProxy({}),
+    $ctx
+  );
 
   const styleTokensClassNames = _useStyleTokens();
 
@@ -290,16 +325,12 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
     <React.Fragment>
       <Head>
         <meta name="twitter:card" content="summary" />
-        <title key="title">{Plasmicتعرفهخدمات.pageMetadata.title}</title>
-        <meta
-          key="og:title"
-          property="og:title"
-          content={Plasmicتعرفهخدمات.pageMetadata.title}
-        />
+        <title key="title">{pageMetadata.title}</title>
+        <meta key="og:title" property="og:title" content={pageMetadata.title} />
         <meta
           key="twitter:title"
           property="twitter:title"
-          content={Plasmicتعرفهخدمات.pageMetadata.title}
+          content={pageMetadata.title}
         />
       </Head>
 
@@ -3365,13 +3396,11 @@ export const Plasmicتعرفهخدمات = Object.assign(
     internalVariantProps: Plasmicتعرفهخدمات__VariantProps,
     internalArgProps: Plasmicتعرفهخدمات__ArgProps,
 
-    // Page metadata
-    pageMetadata: {
-      title: "تعرفه خدمات میان",
-      description: "",
-      ogImageSrc: "",
-      canonical: ""
-    }
+    pageMetadata: generateDynamicMetadata(wrapQueriesWithLoadingProxy({}), {
+      pagePath: "/pricing",
+      searchParams: {},
+      params: {}
+    })
   }
 );
 

@@ -171,7 +171,7 @@ function PlasmicPopover__RenderFunc(props: {
         path: "ariaDialogTrigger.isOpen",
         type: "readonly",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         onChangeProp: "onOpenChange"
       }
@@ -182,6 +182,7 @@ function PlasmicPopover__RenderFunc(props: {
     $props,
     $ctx,
     $queries: {},
+    $q: {},
     $refs
   });
 

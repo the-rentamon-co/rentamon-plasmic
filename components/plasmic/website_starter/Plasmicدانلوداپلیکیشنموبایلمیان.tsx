@@ -72,6 +72,35 @@ import "@plasmicapp/react-web/lib/plasmic.css";
 import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./Plasmicدانلوداپلیکیشنموبایلمیان.module.css"; // plasmic-import: 4_Sank-PwTYC/css
 
+const emptyProxy: any = new Proxy(() => "", {
+  get(_, prop) {
+    return prop === Symbol.toPrimitive ? () => "" : emptyProxy;
+  }
+});
+
+function wrapQueriesWithLoadingProxy($q: any): any {
+  return new Proxy($q, {
+    get(target, queryName) {
+      const query = target[queryName];
+      return !query || query.isLoading || !query.data ? emptyProxy : query;
+    }
+  });
+}
+
+export function generateDynamicMetadata($q: any, $ctx: any) {
+  return {
+    title: "دانلود اپلیکیشن موبایل میان",
+
+    openGraph: {
+      title: "دانلود اپلیکیشن موبایل میان"
+    },
+    twitter: {
+      card: "summary",
+      title: "دانلود اپلیکیشن موبایل میان"
+    }
+  };
+}
+
 createPlasmicElementProxy;
 
 export type Plasmicدانلوداپلیکیشنموبایلمیان__VariantMembers = {};
@@ -177,7 +206,7 @@ function Plasmicدانلوداپلیکیشنموبایلمیان__RenderFunc(pro
         path: "propertyId",
         type: "private",
         variableType: "number",
-        initFunc: ({ $props, $state, $queries, $ctx }) => 0
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => 0
       }
     ],
     [$props, $ctx, $refs]
@@ -186,8 +215,14 @@ function Plasmicدانلوداپلیکیشنموبایلمیان__RenderFunc(pro
     $props,
     $ctx,
     $queries: {},
+    $q: {},
     $refs
   });
+
+  const pageMetadata = generateDynamicMetadata(
+    wrapQueriesWithLoadingProxy({}),
+    $ctx
+  );
 
   const styleTokensClassNames = _useStyleTokens();
 
@@ -195,18 +230,12 @@ function Plasmicدانلوداپلیکیشنموبایلمیان__RenderFunc(pro
     <React.Fragment>
       <Head>
         <meta name="twitter:card" content="summary" />
-        <title key="title">
-          {Plasmicدانلوداپلیکیشنموبایلمیان.pageMetadata.title}
-        </title>
-        <meta
-          key="og:title"
-          property="og:title"
-          content={Plasmicدانلوداپلیکیشنموبایلمیان.pageMetadata.title}
-        />
+        <title key="title">{pageMetadata.title}</title>
+        <meta key="og:title" property="og:title" content={pageMetadata.title} />
         <meta
           key="twitter:title"
           property="twitter:title"
-          content={Plasmicدانلوداپلیکیشنموبایلمیان.pageMetadata.title}
+          content={pageMetadata.title}
         />
       </Head>
 
@@ -1294,13 +1323,11 @@ export const Plasmicدانلوداپلیکیشنموبایلمیان = Object.as
     internalVariantProps: Plasmicدانلوداپلیکیشنموبایلمیان__VariantProps,
     internalArgProps: Plasmicدانلوداپلیکیشنموبایلمیان__ArgProps,
 
-    // Page metadata
-    pageMetadata: {
-      title: "دانلود اپلیکیشن موبایل میان",
-      description: "",
-      ogImageSrc: "",
-      canonical: ""
-    }
+    pageMetadata: generateDynamicMetadata(wrapQueriesWithLoadingProxy({}), {
+      pagePath: "/download",
+      searchParams: {},
+      params: {}
+    })
   }
 );
 

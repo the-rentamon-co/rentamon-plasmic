@@ -72,6 +72,46 @@ import "@plasmicapp/react-web/lib/plasmic.css";
 import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./Plasmicراهنمایجامعدرآمدازاجارهویلا.module.css"; // plasmic-import: 8TcoVSj4ZBG-/css
 
+const emptyProxy: any = new Proxy(() => "", {
+  get(_, prop) {
+    return prop === Symbol.toPrimitive ? () => "" : emptyProxy;
+  }
+});
+
+function wrapQueriesWithLoadingProxy($q: any): any {
+  return new Proxy($q, {
+    get(target, queryName) {
+      const query = target[queryName];
+      return !query || query.isLoading || !query.data ? emptyProxy : query;
+    }
+  });
+}
+
+export function generateDynamicMetadata($q: any, $ctx: any) {
+  return {
+    title: "راهنمای جامع درآمدزایی از اجاره ویلا",
+    description:
+      "در این راهنمای جامع، تمام استراتژی‌ها و نکات عملی برای شروع به کار و درآمدزایی از اجاره ویلا ارائه می‌شه. از آماده‌سازی اقامتگاه، تا جذب مهمان...",
+    openGraph: {
+      title: "راهنمای جامع درآمدزایی از اجاره ویلا",
+      description:
+        "در این راهنمای جامع، تمام استراتژی‌ها و نکات عملی برای شروع به کار و درآمدزایی از اجاره ویلا ارائه می‌شه. از آماده‌سازی اقامتگاه، تا جذب مهمان...",
+      images: [
+        "https://site-assets.plasmic.app/15351cdec6468de813a07a902e7e2f8d.jpg"
+      ]
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "راهنمای جامع درآمدزایی از اجاره ویلا",
+      description:
+        "در این راهنمای جامع، تمام استراتژی‌ها و نکات عملی برای شروع به کار و درآمدزایی از اجاره ویلا ارائه می‌شه. از آماده‌سازی اقامتگاه، تا جذب مهمان...",
+      images: [
+        "https://site-assets.plasmic.app/15351cdec6468de813a07a902e7e2f8d.jpg"
+      ]
+    }
+  };
+}
+
 createPlasmicElementProxy;
 
 export type Plasmicراهنمایجامعدرآمدازاجارهویلا__VariantMembers = {};
@@ -158,7 +198,7 @@ function Plasmicراهنمایجامعدرآمدازاجارهویلا__RenderFu
         path: "propertyId",
         type: "private",
         variableType: "number",
-        initFunc: ({ $props, $state, $queries, $ctx }) => 0
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => 0
       }
     ],
     [$props, $ctx, $refs]
@@ -167,8 +207,14 @@ function Plasmicراهنمایجامعدرآمدازاجارهویلا__RenderFu
     $props,
     $ctx,
     $queries: {},
+    $q: {},
     $refs
   });
+
+  const pageMetadata = generateDynamicMetadata(
+    wrapQueriesWithLoadingProxy({}),
+    $ctx
+  );
 
   const styleTokensClassNames = _useStyleTokens();
 
@@ -176,43 +222,37 @@ function Plasmicراهنمایجامعدرآمدازاجارهویلا__RenderFu
     <React.Fragment>
       <Head>
         <meta name="twitter:card" content="summary_large_image" />
-        <title key="title">
-          {Plasmicراهنمایجامعدرآمدازاجارهویلا.pageMetadata.title}
-        </title>
-        <meta
-          key="og:title"
-          property="og:title"
-          content={Plasmicراهنمایجامعدرآمدازاجارهویلا.pageMetadata.title}
-        />
+        <title key="title">{pageMetadata.title}</title>
+        <meta key="og:title" property="og:title" content={pageMetadata.title} />
         <meta
           key="twitter:title"
           property="twitter:title"
-          content={Plasmicراهنمایجامعدرآمدازاجارهویلا.pageMetadata.title}
+          content={pageMetadata.title}
         />
         <meta
           key="description"
           property="description"
-          content={Plasmicراهنمایجامعدرآمدازاجارهویلا.pageMetadata.description}
+          content={pageMetadata.description}
         />
         <meta
           key="og:description"
           property="og:description"
-          content={Plasmicراهنمایجامعدرآمدازاجارهویلا.pageMetadata.description}
+          content={pageMetadata.description}
         />
         <meta
           key="twitter:description"
           property="twitter:description"
-          content={Plasmicراهنمایجامعدرآمدازاجارهویلا.pageMetadata.description}
+          content={pageMetadata.description}
         />
         <meta
           key="og:image"
           property="og:image"
-          content={Plasmicراهنمایجامعدرآمدازاجارهویلا.pageMetadata.ogImageSrc}
+          content={pageMetadata.ogImageSrc}
         />
         <meta
           key="twitter:image"
           property="twitter:image"
-          content={Plasmicراهنمایجامعدرآمدازاجارهویلا.pageMetadata.ogImageSrc}
+          content={pageMetadata.ogImageSrc}
         />
       </Head>
 
@@ -1338,15 +1378,11 @@ export const Plasmicراهنمایجامعدرآمدازاجارهویلا = Obj
         "https://rentamon.com/plasmic/website_starter/images/%D8%A7%D8%AC%D8%A7%D8%B1%D9%87%D9%88%DB%8C%D9%84%D8%A7%D8%A8%D9%87%D9%85%D8%B3%D8%A7%D9%81%D8%B1%D8%A7%D9%86Jpg.jpg"
     },
 
-    // Page metadata
-    pageMetadata: {
-      title: "راهنمای جامع درآمدزایی از اجاره ویلا",
-      description:
-        "در این راهنمای جامع، تمام استراتژی‌ها و نکات عملی برای شروع به کار و درآمدزایی از اجاره ویلا ارائه می‌شه. از آماده‌سازی اقامتگاه، تا جذب مهمان...",
-      ogImageSrc:
-        "https://site-assets.plasmic.app/15351cdec6468de813a07a902e7e2f8d.jpg",
-      canonical: ""
-    }
+    pageMetadata: generateDynamicMetadata(wrapQueriesWithLoadingProxy({}), {
+      pagePath: "/vacation-rental-income",
+      searchParams: {},
+      params: {}
+    })
   }
 );
 

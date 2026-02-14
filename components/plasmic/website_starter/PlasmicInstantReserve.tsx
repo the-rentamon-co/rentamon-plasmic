@@ -78,6 +78,30 @@ import "@plasmicapp/react-web/lib/plasmic.css";
 import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicInstantReserve.module.css"; // plasmic-import: qnoSvk5APDQU/css
 
+const emptyProxy: any = new Proxy(() => "", {
+  get(_, prop) {
+    return prop === Symbol.toPrimitive ? () => "" : emptyProxy;
+  }
+});
+
+function wrapQueriesWithLoadingProxy($q: any): any {
+  return new Proxy($q, {
+    get(target, queryName) {
+      const query = target[queryName];
+      return !query || query.isLoading || !query.data ? emptyProxy : query;
+    }
+  });
+}
+
+export function generateDynamicMetadata($q: any, $ctx: any) {
+  return {
+    openGraph: {},
+    twitter: {
+      card: "summary"
+    }
+  };
+}
+
 createPlasmicElementProxy;
 
 export type PlasmicInstantReserve__VariantMembers = {};
@@ -181,7 +205,7 @@ function PlasmicInstantReserve__RenderFunc(props: {
         path: "properties.data",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "properties"
       },
@@ -189,7 +213,7 @@ function PlasmicInstantReserve__RenderFunc(props: {
         path: "properties.error",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "properties"
       },
@@ -197,7 +221,7 @@ function PlasmicInstantReserve__RenderFunc(props: {
         path: "properties.loading",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "properties"
       },
@@ -205,13 +229,13 @@ function PlasmicInstantReserve__RenderFunc(props: {
         path: "variable",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => ""
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => ""
       },
       {
         path: "profile2.data",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "profile2"
       },
@@ -219,7 +243,7 @@ function PlasmicInstantReserve__RenderFunc(props: {
         path: "profile2.error",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "profile2"
       },
@@ -227,7 +251,7 @@ function PlasmicInstantReserve__RenderFunc(props: {
         path: "profile2.loading",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "profile2"
       },
@@ -235,13 +259,13 @@ function PlasmicInstantReserve__RenderFunc(props: {
         path: "isOld",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => false
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => false
       },
       {
         path: "selectProperty.value",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) =>
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) =>
           (() => {
             try {
               return $state.properties.data[0].property_name;
@@ -260,7 +284,7 @@ function PlasmicInstantReserve__RenderFunc(props: {
         path: "shabSwitch.checked",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) =>
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) =>
           (() => {
             try {
               return $state.isShabSwitchChecked;
@@ -279,13 +303,13 @@ function PlasmicInstantReserve__RenderFunc(props: {
         path: "auth",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => ""
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => ""
       },
       {
         path: "instantProperty.data",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "instantProperty"
       },
@@ -293,7 +317,7 @@ function PlasmicInstantReserve__RenderFunc(props: {
         path: "instantProperty.error",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "instantProperty"
       },
@@ -301,7 +325,7 @@ function PlasmicInstantReserve__RenderFunc(props: {
         path: "instantProperty.loading",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "instantProperty"
       },
@@ -309,7 +333,7 @@ function PlasmicInstantReserve__RenderFunc(props: {
         path: "instantPropertyWebsite.data",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "instantPropertyWebsite"
       },
@@ -317,7 +341,7 @@ function PlasmicInstantReserve__RenderFunc(props: {
         path: "instantPropertyWebsite.error",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "instantPropertyWebsite"
       },
@@ -325,7 +349,7 @@ function PlasmicInstantReserve__RenderFunc(props: {
         path: "instantPropertyWebsite.loading",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "instantPropertyWebsite"
       },
@@ -333,7 +357,7 @@ function PlasmicInstantReserve__RenderFunc(props: {
         path: "shabSwitch2.checked",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) =>
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) =>
           (() => {
             try {
               return $state.isOtaghakSwitchChecked;
@@ -352,7 +376,7 @@ function PlasmicInstantReserve__RenderFunc(props: {
         path: "isOtaghakSwitchChecked",
         type: "private",
         variableType: "number",
-        initFunc: ({ $props, $state, $queries, $ctx }) =>
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) =>
           (() => {
             try {
               return $state.instantProperty.data.some(
@@ -373,7 +397,7 @@ function PlasmicInstantReserve__RenderFunc(props: {
         path: "isShabSwitchChecked",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) =>
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) =>
           (() => {
             try {
               return $state.instantProperty.data.some(
@@ -394,7 +418,7 @@ function PlasmicInstantReserve__RenderFunc(props: {
         path: "jabamaSwitch.checked",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) =>
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) =>
           (() => {
             try {
               return $state.isJabamaSwitchChecked;
@@ -413,7 +437,7 @@ function PlasmicInstantReserve__RenderFunc(props: {
         path: "isJabamaSwitchChecked",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) =>
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) =>
           (() => {
             try {
               return $state.instantProperty.data.some(
@@ -434,7 +458,7 @@ function PlasmicInstantReserve__RenderFunc(props: {
         path: "jajigaModal.open",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) =>
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) =>
           hasVariant(globalVariants, "screen", "mobile")
             ? false
             : hasVariant(globalVariants, "screen", "tablet")
@@ -445,7 +469,7 @@ function PlasmicInstantReserve__RenderFunc(props: {
         path: "jajigaSwitch.checked",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) =>
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) =>
           (() => {
             try {
               return $state.isJajigaSwitchChecked;
@@ -464,7 +488,7 @@ function PlasmicInstantReserve__RenderFunc(props: {
         path: "isJajigaSwitchChecked",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) =>
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) =>
           (() => {
             try {
               return $state.instantProperty.data.some(
@@ -485,7 +509,7 @@ function PlasmicInstantReserve__RenderFunc(props: {
         path: "jajigaPermission.data",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "jajigaPermission"
       },
@@ -493,7 +517,7 @@ function PlasmicInstantReserve__RenderFunc(props: {
         path: "jajigaPermission.error",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "jajigaPermission"
       },
@@ -501,7 +525,7 @@ function PlasmicInstantReserve__RenderFunc(props: {
         path: "jajigaPermission.loading",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "jajigaPermission"
       },
@@ -509,7 +533,7 @@ function PlasmicInstantReserve__RenderFunc(props: {
         path: "perJajiga",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) =>
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) =>
           (() => {
             try {
               return $state.jajigaPermission.data.permission;
@@ -528,7 +552,7 @@ function PlasmicInstantReserve__RenderFunc(props: {
         path: "isHomsaSwitchChecked",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) =>
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) =>
           (() => {
             try {
               return $state.instantProperty.data.some(
@@ -549,7 +573,7 @@ function PlasmicInstantReserve__RenderFunc(props: {
         path: "homsaSwitch.checked",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) =>
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) =>
           (() => {
             try {
               return $state.isHomsaSwitchChecked;
@@ -568,7 +592,7 @@ function PlasmicInstantReserve__RenderFunc(props: {
         path: "mihmanshoSwitch.checked",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) =>
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) =>
           (() => {
             try {
               return $state.isMihmanshoSwitchChecked;
@@ -587,7 +611,7 @@ function PlasmicInstantReserve__RenderFunc(props: {
         path: "isMihmanshoSwitchChecked",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) =>
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) =>
           (() => {
             try {
               return $state.instantProperty.data.some(
@@ -608,14 +632,14 @@ function PlasmicInstantReserve__RenderFunc(props: {
         path: "notificationModal.open",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) =>
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) =>
           hasVariant(globalVariants, "screen", "tablet") ? false : false
       },
       {
         path: "showNewFeatureBadge",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => false
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => false
       }
     ],
     [$props, $ctx, $refs]
@@ -624,8 +648,14 @@ function PlasmicInstantReserve__RenderFunc(props: {
     $props,
     $ctx,
     $queries: {},
+    $q: {},
     $refs
   });
+
+  const pageMetadata = generateDynamicMetadata(
+    wrapQueriesWithLoadingProxy({}),
+    $ctx
+  );
 
   const styleTokensClassNames = _useStyleTokens();
 
@@ -4293,13 +4323,11 @@ export const PlasmicInstantReserve = Object.assign(
     // Key-value metadata
     metadata: { nameRobots: 'content="noindex, nofollow"' },
 
-    // Page metadata
-    pageMetadata: {
-      title: "",
-      description: "",
-      ogImageSrc: "",
-      canonical: ""
-    }
+    pageMetadata: generateDynamicMetadata(wrapQueriesWithLoadingProxy({}), {
+      pagePath: "/instant",
+      searchParams: {},
+      params: {}
+    })
   }
 );
 

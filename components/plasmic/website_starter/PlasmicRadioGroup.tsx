@@ -169,7 +169,7 @@ function PlasmicRadioGroup__RenderFunc(props: {
         path: "ariaRadioGroup.value",
         type: "readonly",
         variableType: "array",
-        initFunc: ({ $props, $state, $queries, $ctx }) =>
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) =>
           $props["defaultValue"],
 
         onChangeProp: "onChange"
@@ -181,6 +181,7 @@ function PlasmicRadioGroup__RenderFunc(props: {
     $props,
     $ctx,
     $queries: {},
+    $q: {},
     $refs
   });
 

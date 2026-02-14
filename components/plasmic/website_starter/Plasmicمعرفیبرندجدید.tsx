@@ -76,6 +76,46 @@ import "@plasmicapp/react-web/lib/plasmic.css";
 import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./Plasmicمعرفیبرندجدید.module.css"; // plasmic-import: vfdAdNB4GVjb/css
 
+const emptyProxy: any = new Proxy(() => "", {
+  get(_, prop) {
+    return prop === Symbol.toPrimitive ? () => "" : emptyProxy;
+  }
+});
+
+function wrapQueriesWithLoadingProxy($q: any): any {
+  return new Proxy($q, {
+    get(target, queryName) {
+      const query = target[queryName];
+      return !query || query.isLoading || !query.data ? emptyProxy : query;
+    }
+  });
+}
+
+export function generateDynamicMetadata($q: any, $ctx: any) {
+  return {
+    title: "معرفی برند جدید میان",
+    description:
+      "بعد از ۲ سال فعالیت با نام رنتامون، دیگه این نام گویای مسیر و فعالیت فعلی ما نیست. به همین دلیل «میان» متولد شد.",
+    openGraph: {
+      title: "معرفی برند جدید میان",
+      description:
+        "بعد از ۲ سال فعالیت با نام رنتامون، دیگه این نام گویای مسیر و فعالیت فعلی ما نیست. به همین دلیل «میان» متولد شد.",
+      images: [
+        "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2Fpeople.png?versionId="
+      ]
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "معرفی برند جدید میان",
+      description:
+        "بعد از ۲ سال فعالیت با نام رنتامون، دیگه این نام گویای مسیر و فعالیت فعلی ما نیست. به همین دلیل «میان» متولد شد.",
+      images: [
+        "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2Fpeople.png?versionId="
+      ]
+    }
+  };
+}
+
 createPlasmicElementProxy;
 
 export type Plasmicمعرفیبرندجدید__VariantMembers = {};
@@ -170,13 +210,13 @@ function Plasmicمعرفیبرندجدید__RenderFunc(props: {
         path: "propertyId",
         type: "private",
         variableType: "number",
-        initFunc: ({ $props, $state, $queries, $ctx }) => 0
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => 0
       },
       {
         path: "accordionMain.activePanelId",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         onMutate: generateOnMutateForSpec(
           "activePanelId",
@@ -190,8 +230,14 @@ function Plasmicمعرفیبرندجدید__RenderFunc(props: {
     $props,
     $ctx,
     $queries: {},
+    $q: {},
     $refs
   });
+
+  const pageMetadata = generateDynamicMetadata(
+    wrapQueriesWithLoadingProxy({}),
+    $ctx
+  );
 
   const styleTokensClassNames = _useStyleTokens();
 
@@ -199,41 +245,37 @@ function Plasmicمعرفیبرندجدید__RenderFunc(props: {
     <React.Fragment>
       <Head>
         <meta name="twitter:card" content="summary_large_image" />
-        <title key="title">{Plasmicمعرفیبرندجدید.pageMetadata.title}</title>
-        <meta
-          key="og:title"
-          property="og:title"
-          content={Plasmicمعرفیبرندجدید.pageMetadata.title}
-        />
+        <title key="title">{pageMetadata.title}</title>
+        <meta key="og:title" property="og:title" content={pageMetadata.title} />
         <meta
           key="twitter:title"
           property="twitter:title"
-          content={Plasmicمعرفیبرندجدید.pageMetadata.title}
+          content={pageMetadata.title}
         />
         <meta
           key="description"
           property="description"
-          content={Plasmicمعرفیبرندجدید.pageMetadata.description}
+          content={pageMetadata.description}
         />
         <meta
           key="og:description"
           property="og:description"
-          content={Plasmicمعرفیبرندجدید.pageMetadata.description}
+          content={pageMetadata.description}
         />
         <meta
           key="twitter:description"
           property="twitter:description"
-          content={Plasmicمعرفیبرندجدید.pageMetadata.description}
+          content={pageMetadata.description}
         />
         <meta
           key="og:image"
           property="og:image"
-          content={Plasmicمعرفیبرندجدید.pageMetadata.ogImageSrc}
+          content={pageMetadata.ogImageSrc}
         />
         <meta
           key="twitter:image"
           property="twitter:image"
-          content={Plasmicمعرفیبرندجدید.pageMetadata.ogImageSrc}
+          content={pageMetadata.ogImageSrc}
         />
       </Head>
 
@@ -1863,15 +1905,11 @@ export const Plasmicمعرفیبرندجدید = Object.assign(
       locale: "fa_IR"
     },
 
-    // Page metadata
-    pageMetadata: {
-      title: "معرفی برند جدید میان",
-      description:
-        "بعد از ۲ سال فعالیت با نام رنتامون، دیگه این نام گویای مسیر و فعالیت فعلی ما نیست. به همین دلیل «میان» متولد شد.",
-      ogImageSrc:
-        "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2Fpeople.png?versionId=",
-      canonical: ""
-    }
+    pageMetadata: generateDynamicMetadata(wrapQueriesWithLoadingProxy({}), {
+      pagePath: "/new-brand",
+      searchParams: {},
+      params: {}
+    })
   }
 );
 

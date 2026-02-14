@@ -71,6 +71,35 @@ import "@plasmicapp/react-web/lib/plasmic.css";
 import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicApiTermsOfUse.module.css"; // plasmic-import: 37MTGM1evdNF/css
 
+const emptyProxy: any = new Proxy(() => "", {
+  get(_, prop) {
+    return prop === Symbol.toPrimitive ? () => "" : emptyProxy;
+  }
+});
+
+function wrapQueriesWithLoadingProxy($q: any): any {
+  return new Proxy($q, {
+    get(target, queryName) {
+      const query = target[queryName];
+      return !query || query.isLoading || !query.data ? emptyProxy : query;
+    }
+  });
+}
+
+export function generateDynamicMetadata($q: any, $ctx: any) {
+  return {
+    title: "قوانین و مقررات استفاده از API رنتامون",
+
+    openGraph: {
+      title: "قوانین و مقررات استفاده از API رنتامون"
+    },
+    twitter: {
+      card: "summary",
+      title: "قوانین و مقررات استفاده از API رنتامون"
+    }
+  };
+}
+
 createPlasmicElementProxy;
 
 export type PlasmicApiTermsOfUse__VariantMembers = {};
@@ -147,7 +176,7 @@ function PlasmicApiTermsOfUse__RenderFunc(props: {
         path: "propertyId",
         type: "private",
         variableType: "number",
-        initFunc: ({ $props, $state, $queries, $ctx }) => 0
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => 0
       }
     ],
     [$props, $ctx, $refs]
@@ -156,8 +185,14 @@ function PlasmicApiTermsOfUse__RenderFunc(props: {
     $props,
     $ctx,
     $queries: {},
+    $q: {},
     $refs
   });
+
+  const pageMetadata = generateDynamicMetadata(
+    wrapQueriesWithLoadingProxy({}),
+    $ctx
+  );
 
   const styleTokensClassNames = _useStyleTokens();
 
@@ -165,16 +200,12 @@ function PlasmicApiTermsOfUse__RenderFunc(props: {
     <React.Fragment>
       <Head>
         <meta name="twitter:card" content="summary" />
-        <title key="title">{PlasmicApiTermsOfUse.pageMetadata.title}</title>
-        <meta
-          key="og:title"
-          property="og:title"
-          content={PlasmicApiTermsOfUse.pageMetadata.title}
-        />
+        <title key="title">{pageMetadata.title}</title>
+        <meta key="og:title" property="og:title" content={pageMetadata.title} />
         <meta
           key="twitter:title"
           property="twitter:title"
-          content={PlasmicApiTermsOfUse.pageMetadata.title}
+          content={pageMetadata.title}
         />
       </Head>
 
@@ -528,13 +559,11 @@ export const PlasmicApiTermsOfUse = Object.assign(
     internalVariantProps: PlasmicApiTermsOfUse__VariantProps,
     internalArgProps: PlasmicApiTermsOfUse__ArgProps,
 
-    // Page metadata
-    pageMetadata: {
-      title: "قوانین و مقررات استفاده از API رنتامون",
-      description: "",
-      ogImageSrc: "",
-      canonical: ""
-    }
+    pageMetadata: generateDynamicMetadata(wrapQueriesWithLoadingProxy({}), {
+      pagePath: "/api-terms-of-use",
+      searchParams: {},
+      params: {}
+    })
   }
 );
 

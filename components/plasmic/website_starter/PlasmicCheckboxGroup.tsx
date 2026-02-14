@@ -169,7 +169,7 @@ function PlasmicCheckboxGroup__RenderFunc(props: {
         path: "ariaCheckboxGroup.value",
         type: "readonly",
         variableType: "array",
-        initFunc: ({ $props, $state, $queries, $ctx }) =>
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) =>
           $props["defaultValues"],
 
         onChangeProp: "onChange"
@@ -181,6 +181,7 @@ function PlasmicCheckboxGroup__RenderFunc(props: {
     $props,
     $ctx,
     $queries: {},
+    $q: {},
     $refs
   });
 

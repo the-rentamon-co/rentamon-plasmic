@@ -72,6 +72,46 @@ import "@plasmicapp/react-web/lib/plasmic.css";
 import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./Plasmicاصولمهماننوازی.module.css"; // plasmic-import: GxY2Fc-mSw8s/css
 
+const emptyProxy: any = new Proxy(() => "", {
+  get(_, prop) {
+    return prop === Symbol.toPrimitive ? () => "" : emptyProxy;
+  }
+});
+
+function wrapQueriesWithLoadingProxy($q: any): any {
+  return new Proxy($q, {
+    get(target, queryName) {
+      const query = target[queryName];
+      return !query || query.isLoading || !query.data ? emptyProxy : query;
+    }
+  });
+}
+
+export function generateDynamicMetadata($q: any, $ctx: any) {
+  return {
+    title: "اصول مهمان‌نوازی و نحوه‌ی تعامل با مهمانان مشکل‌پسند",
+    description:
+      "چطور مثل یک میزبان حرفه‌ای باشیم؟ راهنمای خلق تجربه فوق‌العاده برای مهمان و مدیریت چالش‌های میزبانی.",
+    openGraph: {
+      title: "اصول مهمان‌نوازی و نحوه‌ی تعامل با مهمانان مشکل‌پسند",
+      description:
+        "چطور مثل یک میزبان حرفه‌ای باشیم؟ راهنمای خلق تجربه فوق‌العاده برای مهمان و مدیریت چالش‌های میزبانی.",
+      images: [
+        "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2Fposts%2Fhospitality-3.jpg?versionId="
+      ]
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "اصول مهمان‌نوازی و نحوه‌ی تعامل با مهمانان مشکل‌پسند",
+      description:
+        "چطور مثل یک میزبان حرفه‌ای باشیم؟ راهنمای خلق تجربه فوق‌العاده برای مهمان و مدیریت چالش‌های میزبانی.",
+      images: [
+        "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2Fposts%2Fhospitality-3.jpg?versionId="
+      ]
+    }
+  };
+}
+
 createPlasmicElementProxy;
 
 export type Plasmicاصولمهماننوازی__VariantMembers = {};
@@ -165,7 +205,7 @@ function Plasmicاصولمهماننوازی__RenderFunc(props: {
         path: "propertyId",
         type: "private",
         variableType: "number",
-        initFunc: ({ $props, $state, $queries, $ctx }) => 0
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => 0
       }
     ],
     [$props, $ctx, $refs]
@@ -174,8 +214,14 @@ function Plasmicاصولمهماننوازی__RenderFunc(props: {
     $props,
     $ctx,
     $queries: {},
+    $q: {},
     $refs
   });
+
+  const pageMetadata = generateDynamicMetadata(
+    wrapQueriesWithLoadingProxy({}),
+    $ctx
+  );
 
   const styleTokensClassNames = _useStyleTokens();
 
@@ -183,41 +229,37 @@ function Plasmicاصولمهماننوازی__RenderFunc(props: {
     <React.Fragment>
       <Head>
         <meta name="twitter:card" content="summary_large_image" />
-        <title key="title">{Plasmicاصولمهماننوازی.pageMetadata.title}</title>
-        <meta
-          key="og:title"
-          property="og:title"
-          content={Plasmicاصولمهماننوازی.pageMetadata.title}
-        />
+        <title key="title">{pageMetadata.title}</title>
+        <meta key="og:title" property="og:title" content={pageMetadata.title} />
         <meta
           key="twitter:title"
           property="twitter:title"
-          content={Plasmicاصولمهماننوازی.pageMetadata.title}
+          content={pageMetadata.title}
         />
         <meta
           key="description"
           property="description"
-          content={Plasmicاصولمهماننوازی.pageMetadata.description}
+          content={pageMetadata.description}
         />
         <meta
           key="og:description"
           property="og:description"
-          content={Plasmicاصولمهماننوازی.pageMetadata.description}
+          content={pageMetadata.description}
         />
         <meta
           key="twitter:description"
           property="twitter:description"
-          content={Plasmicاصولمهماننوازی.pageMetadata.description}
+          content={pageMetadata.description}
         />
         <meta
           key="og:image"
           property="og:image"
-          content={Plasmicاصولمهماننوازی.pageMetadata.ogImageSrc}
+          content={pageMetadata.ogImageSrc}
         />
         <meta
           key="twitter:image"
           property="twitter:image"
-          content={Plasmicاصولمهماننوازی.pageMetadata.ogImageSrc}
+          content={pageMetadata.ogImageSrc}
         />
       </Head>
 
@@ -1200,15 +1242,11 @@ export const Plasmicاصولمهماننوازی = Object.assign(
         "\u0627\u0635\u0648\u0644 \u0645\u0647\u0645\u0627\u0646\u200c\u0646\u0648\u0627\u0632\u06cc \u0648 \u0646\u062d\u0648\u0647\u200c\u06cc \u062a\u0639\u0627\u0645\u0644 \u0628\u0627 \u0645\u0647\u0645\u0627\u0646\u0627\u0646 \u0645\u0634\u06a9\u0644\u200c\u067e\u0633\u0646\u062f"
     },
 
-    // Page metadata
-    pageMetadata: {
-      title: "اصول مهمان‌نوازی و نحوه‌ی تعامل با مهمانان مشکل‌پسند",
-      description:
-        "چطور مثل یک میزبان حرفه‌ای باشیم؟ راهنمای خلق تجربه فوق‌العاده برای مهمان و مدیریت چالش‌های میزبانی.",
-      ogImageSrc:
-        "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2Fposts%2Fhospitality-3.jpg?versionId=",
-      canonical: ""
-    }
+    pageMetadata: generateDynamicMetadata(wrapQueriesWithLoadingProxy({}), {
+      pagePath: "/hospitality-principles",
+      searchParams: {},
+      params: {}
+    })
   }
 );
 

@@ -72,6 +72,35 @@ import "@plasmicapp/react-web/lib/plasmic.css";
 import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./Plasmicدستیارهوشمصنوعیرنتامون.module.css"; // plasmic-import: juphYAqvVhVp/css
 
+const emptyProxy: any = new Proxy(() => "", {
+  get(_, prop) {
+    return prop === Symbol.toPrimitive ? () => "" : emptyProxy;
+  }
+});
+
+function wrapQueriesWithLoadingProxy($q: any): any {
+  return new Proxy($q, {
+    get(target, queryName) {
+      const query = target[queryName];
+      return !query || query.isLoading || !query.data ? emptyProxy : query;
+    }
+  });
+}
+
+export function generateDynamicMetadata($q: any, $ctx: any) {
+  return {
+    title: "دستیار هوش مصنوعی رنتامون",
+
+    openGraph: {
+      title: "دستیار هوش مصنوعی رنتامون"
+    },
+    twitter: {
+      card: "summary",
+      title: "دستیار هوش مصنوعی رنتامون"
+    }
+  };
+}
+
 createPlasmicElementProxy;
 
 export type Plasmicدستیارهوشمصنوعیرنتامون__VariantMembers = {};
@@ -149,7 +178,7 @@ function Plasmicدستیارهوشمصنوعیرنتامون__RenderFunc(props: 
         path: "propertyId",
         type: "private",
         variableType: "number",
-        initFunc: ({ $props, $state, $queries, $ctx }) => 0
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => 0
       }
     ],
     [$props, $ctx, $refs]
@@ -158,8 +187,14 @@ function Plasmicدستیارهوشمصنوعیرنتامون__RenderFunc(props: 
     $props,
     $ctx,
     $queries: {},
+    $q: {},
     $refs
   });
+
+  const pageMetadata = generateDynamicMetadata(
+    wrapQueriesWithLoadingProxy({}),
+    $ctx
+  );
 
   const styleTokensClassNames = _useStyleTokens();
 
@@ -167,18 +202,12 @@ function Plasmicدستیارهوشمصنوعیرنتامون__RenderFunc(props: 
     <React.Fragment>
       <Head>
         <meta name="twitter:card" content="summary" />
-        <title key="title">
-          {Plasmicدستیارهوشمصنوعیرنتامون.pageMetadata.title}
-        </title>
-        <meta
-          key="og:title"
-          property="og:title"
-          content={Plasmicدستیارهوشمصنوعیرنتامون.pageMetadata.title}
-        />
+        <title key="title">{pageMetadata.title}</title>
+        <meta key="og:title" property="og:title" content={pageMetadata.title} />
         <meta
           key="twitter:title"
           property="twitter:title"
-          content={Plasmicدستیارهوشمصنوعیرنتامون.pageMetadata.title}
+          content={pageMetadata.title}
         />
       </Head>
 
@@ -560,13 +589,11 @@ export const Plasmicدستیارهوشمصنوعیرنتامون = Object.assign
     internalVariantProps: Plasmicدستیارهوشمصنوعیرنتامون__VariantProps,
     internalArgProps: Plasmicدستیارهوشمصنوعیرنتامون__ArgProps,
 
-    // Page metadata
-    pageMetadata: {
-      title: "دستیار هوش مصنوعی رنتامون",
-      description: "",
-      ogImageSrc: "",
-      canonical: ""
-    }
+    pageMetadata: generateDynamicMetadata(wrapQueriesWithLoadingProxy({}), {
+      pagePath: "/ai-assistant",
+      searchParams: {},
+      params: {}
+    })
   }
 );
 

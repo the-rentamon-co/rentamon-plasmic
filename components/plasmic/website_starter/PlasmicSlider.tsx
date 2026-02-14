@@ -193,7 +193,7 @@ function PlasmicSlider__RenderFunc(props: {
         path: "ariaSlider.value",
         type: "readonly",
         variableType: "number",
-        initFunc: ({ $props, $state, $queries, $ctx }) =>
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) =>
           $props["initialValue"],
 
         onChangeProp: "onChange"
@@ -205,6 +205,7 @@ function PlasmicSlider__RenderFunc(props: {
     $props,
     $ctx,
     $queries: {},
+    $q: {},
     $refs
   });
 

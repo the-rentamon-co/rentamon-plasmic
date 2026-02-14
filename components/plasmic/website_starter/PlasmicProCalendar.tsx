@@ -78,6 +78,43 @@ import "@plasmicapp/react-web/lib/plasmic.css";
 import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicProCalendar.module.css"; // plasmic-import: 7xoX8eHI85Zt/css
 
+const emptyProxy: any = new Proxy(() => "", {
+  get(_, prop) {
+    return prop === Symbol.toPrimitive ? () => "" : emptyProxy;
+  }
+});
+
+function wrapQueriesWithLoadingProxy($q: any): any {
+  return new Proxy($q, {
+    get(target, queryName) {
+      const query = target[queryName];
+      return !query || query.isLoading || !query.data ? emptyProxy : query;
+    }
+  });
+}
+
+export function generateDynamicMetadata($q: any, $ctx: any) {
+  return {
+    title: "تقویم یکپارچه اقامتگاه | مدیریت قیمت و وضعیت رزرو در چند سایت",
+    description:
+      "با تقویم هوشمند رنتامون، تاریخ‌ها، قیمت و وضعیت رزرو اقامتگاه‌ خود را در پلتفرم‌هایی مثل جاجیگا، شب، اتاقک و جاباما از یک پنل مرکزی مدیریت کنید. ساده، سریع و بدون خطا.",
+    openGraph: {
+      title: "تقویم یکپارچه اقامتگاه | مدیریت قیمت و وضعیت رزرو در چند سایت",
+      description:
+        "با تقویم هوشمند رنتامون، تاریخ‌ها، قیمت و وضعیت رزرو اقامتگاه‌ خود را در پلتفرم‌هایی مثل جاجیگا، شب، اتاقک و جاباما از یک پنل مرکزی مدیریت کنید. ساده، سریع و بدون خطا.",
+      images: ["https://miaan.ir/plasmic/website_starter/images/image109.png"]
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "تقویم یکپارچه اقامتگاه | مدیریت قیمت و وضعیت رزرو در چند سایت",
+      description:
+        "با تقویم هوشمند رنتامون، تاریخ‌ها، قیمت و وضعیت رزرو اقامتگاه‌ خود را در پلتفرم‌هایی مثل جاجیگا، شب، اتاقک و جاباما از یک پنل مرکزی مدیریت کنید. ساده، سریع و بدون خطا.",
+      images: ["https://miaan.ir/plasmic/website_starter/images/image109.png"]
+    },
+    alternates: { canonical: "https://app.rentamon.com/panel" }
+  };
+}
+
 createPlasmicElementProxy;
 
 export type PlasmicProCalendar__VariantMembers = {};
@@ -167,13 +204,13 @@ function PlasmicProCalendar__RenderFunc(props: {
         path: "variable",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => ""
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => ""
       },
       {
         path: "profile.data",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "profile"
       },
@@ -181,7 +218,7 @@ function PlasmicProCalendar__RenderFunc(props: {
         path: "profile.error",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "profile"
       },
@@ -189,7 +226,7 @@ function PlasmicProCalendar__RenderFunc(props: {
         path: "profile.loading",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "profile"
       },
@@ -197,13 +234,13 @@ function PlasmicProCalendar__RenderFunc(props: {
         path: "pageUrl",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => ""
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => ""
       },
       {
         path: "propId",
         type: "private",
         variableType: "number",
-        initFunc: ({ $props, $state, $queries, $ctx }) =>
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) =>
           (() => {
             try {
               return (() => {
@@ -225,7 +262,7 @@ function PlasmicProCalendar__RenderFunc(props: {
         path: "connectionStatusApiRequest.data",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "connectionStatusApiRequest"
       },
@@ -233,7 +270,7 @@ function PlasmicProCalendar__RenderFunc(props: {
         path: "connectionStatusApiRequest.error",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "connectionStatusApiRequest"
       },
@@ -241,7 +278,7 @@ function PlasmicProCalendar__RenderFunc(props: {
         path: "connectionStatusApiRequest.loading",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "connectionStatusApiRequest"
       },
@@ -249,7 +286,7 @@ function PlasmicProCalendar__RenderFunc(props: {
         path: "select2.value",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) =>
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) =>
           hasVariant(globalVariants, "screen", "smallMobile")
             ? (() => {
                 try {
@@ -284,25 +321,25 @@ function PlasmicProCalendar__RenderFunc(props: {
         path: "feature",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => ({})
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => ({})
       },
       {
         path: "aiShow",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => false
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => false
       },
       {
         path: "isTheFirstVisit",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => false
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => false
       },
       {
         path: "isModalShow",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) =>
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) =>
           (() => {
             try {
               return (() => {
@@ -328,51 +365,31 @@ function PlasmicProCalendar__RenderFunc(props: {
         path: "vtStatus",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => ""
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => ""
       },
       {
         path: "modal.open",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) =>
-          (() => {
-            try {
-              return (() => {
-                if (typeof document === "undefined") return false;
-                const cookies = document.cookie.split(";");
-                const hasCookie = cookies.some(cookie =>
-                  cookie.trim().startsWith("homsa_modal=")
-                );
-                return !hasCookie;
-              })();
-            } catch (e) {
-              if (
-                e instanceof TypeError ||
-                e?.plasmicType === "PlasmicUndefinedDataError"
-              ) {
-                return false;
-              }
-              throw e;
-            }
-          })()
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined
       },
       {
         path: "variable2",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => ""
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => ""
       },
       {
         path: "reservationsMode",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => false
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => false
       },
       {
         path: "featureStatus.data",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "featureStatus"
       },
@@ -380,7 +397,7 @@ function PlasmicProCalendar__RenderFunc(props: {
         path: "featureStatus.error",
         type: "private",
         variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "featureStatus"
       },
@@ -388,7 +405,7 @@ function PlasmicProCalendar__RenderFunc(props: {
         path: "featureStatus.loading",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "featureStatus"
       }
@@ -399,8 +416,14 @@ function PlasmicProCalendar__RenderFunc(props: {
     $props,
     $ctx,
     $queries: {},
+    $q: {},
     $refs
   });
+
+  const pageMetadata = generateDynamicMetadata(
+    wrapQueriesWithLoadingProxy({}),
+    $ctx
+  );
 
   const styleTokensClassNames = _useStyleTokens();
 
@@ -408,46 +431,39 @@ function PlasmicProCalendar__RenderFunc(props: {
     <React.Fragment>
       <Head>
         <meta name="twitter:card" content="summary_large_image" />
-        <title key="title">{PlasmicProCalendar.pageMetadata.title}</title>
-        <meta
-          key="og:title"
-          property="og:title"
-          content={PlasmicProCalendar.pageMetadata.title}
-        />
+        <title key="title">{pageMetadata.title}</title>
+        <meta key="og:title" property="og:title" content={pageMetadata.title} />
         <meta
           key="twitter:title"
           property="twitter:title"
-          content={PlasmicProCalendar.pageMetadata.title}
+          content={pageMetadata.title}
         />
         <meta
           key="description"
           property="description"
-          content={PlasmicProCalendar.pageMetadata.description}
+          content={pageMetadata.description}
         />
         <meta
           key="og:description"
           property="og:description"
-          content={PlasmicProCalendar.pageMetadata.description}
+          content={pageMetadata.description}
         />
         <meta
           key="twitter:description"
           property="twitter:description"
-          content={PlasmicProCalendar.pageMetadata.description}
+          content={pageMetadata.description}
         />
         <meta
           key="og:image"
           property="og:image"
-          content={PlasmicProCalendar.pageMetadata.ogImageSrc}
+          content={pageMetadata.ogImageSrc}
         />
         <meta
           key="twitter:image"
           property="twitter:image"
-          content={PlasmicProCalendar.pageMetadata.ogImageSrc}
+          content={pageMetadata.ogImageSrc}
         />
-        <link
-          rel="canonical"
-          href={PlasmicProCalendar.pageMetadata.canonical}
-        />
+        <link rel="canonical" href={pageMetadata.alternates?.canonical} />
       </Head>
 
       <style>{`
@@ -2101,180 +2117,130 @@ function PlasmicProCalendar__RenderFunc(props: {
               className={classNames("__wab_instance", sty.faviconRntComponent)}
             />
           </div>
-          {(() => {
-            const child$Props = {
-              className: classNames("__wab_instance", sty.modal),
-              defaultStylesClassName: classNames(
-                projectcss.root_reset,
-                projectcss.plasmic_default_styles,
-                projectcss.plasmic_mixins,
-                styleTokensClassNames
-              ),
-              hideFooter: true,
-              maskClosable: false,
-              modalScopeClassName: sty["modal__modal"],
-              onOpenChange: async (...eventArgs: any) => {
-                generateStateOnChangeProp($state, ["modal", "open"]).apply(
-                  null,
-                  eventArgs
-                );
-              },
-              open: generateStateValueProp($state, ["modal", "open"]),
-              title: null,
-              trigger: null
-            };
-            initializeCodeComponentStates(
-              $state,
-              [
-                {
-                  name: "open",
-                  plasmicStateName: "modal.open"
-                }
-              ],
-              [],
-              undefined ?? {},
-              child$Props
-            );
-            initializePlasmicStates(
-              $state,
-              [
-                {
-                  name: "modal.open",
-                  initFunc: ({ $props, $state, $queries }) =>
-                    (() => {
-                      try {
-                        return (() => {
-                          if (typeof document === "undefined") return false;
-                          const cookies = document.cookie.split(";");
-                          const hasCookie = cookies.some(cookie =>
-                            cookie.trim().startsWith("homsa_modal=")
-                          );
-                          return !hasCookie;
-                        })();
-                      } catch (e) {
-                        if (
-                          e instanceof TypeError ||
-                          e?.plasmicType === "PlasmicUndefinedDataError"
-                        ) {
-                          return false;
-                        }
-                        throw e;
-                      }
-                    })()
-                }
-              ],
-              []
-            );
-            return (
-              <AntdModal
-                data-plasmic-name={"modal"}
-                data-plasmic-override={overrides.modal}
-                {...child$Props}
+          <AntdModal
+            data-plasmic-name={"modal"}
+            data-plasmic-override={overrides.modal}
+            className={classNames("__wab_instance", sty.modal)}
+            defaultStylesClassName={classNames(
+              projectcss.root_reset,
+              projectcss.plasmic_default_styles,
+              projectcss.plasmic_mixins,
+              styleTokensClassNames
+            )}
+            hideFooter={true}
+            maskClosable={false}
+            modalScopeClassName={sty["modal__modal"]}
+            onOpenChange={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, ["modal", "open"]).apply(
+                null,
+                eventArgs
+              );
+            }}
+            open={generateStateValueProp($state, ["modal", "open"])}
+            title={null}
+            trigger={null}
+          >
+            <div className={classNames(projectcss.all, sty.freeBox__cBdpD)}>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__ltJJt
+                )}
               >
-                <div className={classNames(projectcss.all, sty.freeBox__cBdpD)}>
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__ltJJt
-                    )}
-                  >
-                    {hasVariant(globalVariants, "screen", "smallMobile")
-                      ? "\u26a0\ufe0f\r\n\u0628\u0647 \u062f\u0644\u06cc\u0644 \u0627\u062e\u062a\u0644\u0627\u0644 \u0633\u0631\u0627\u0633\u0631\u06cc \u0631\u0648\u06cc \u0627\u06cc\u0646\u062a\u0631\u0646\u062a \u06a9\u0634\u0648\u0631\u060c \u0645\u0645\u06a9\u0646\u0647 \u0628\u0639\u0636\u06cc \u062a\u063a\u06cc\u06cc\u0631\u0627\u062a \u0628\u0627 \u062e\u0637\u0627 \u0645\u0648\u0627\u062c\u0647 \u0628\u0634\u0646"
-                      : "\u26a0\ufe0f\r\n\u0628\u0647 \u0639\u0644\u062a \u0627\u062e\u062a\u0644\u0627\u0644 \u062f\u0631 \u0633\u0627\u06cc\u062a \u0647\u0648\u0645\u0633\u0627 \u0645\u0645\u06a9\u0646\u0647 \u0628\u0639\u0636\u06cc \u0627\u0632 \u062a\u063a\u06cc\u06cc\u0631\u0627\u062a \u0627\u0639\u0645\u0627\u0644 \u0646\u0634\u0647"}
-                  </div>
-                </div>
-                <div
-                  className={classNames(projectcss.all, sty.freeBox___3KmGf)}
-                  onClick={async event => {
-                    const $steps = {};
+                {hasVariant(globalVariants, "screen", "smallMobile")
+                  ? "\u26a0\ufe0f\r\n\u0628\u0647 \u062f\u0644\u06cc\u0644 \u0627\u062e\u062a\u0644\u0627\u0644 \u0633\u0631\u0627\u0633\u0631\u06cc \u0631\u0648\u06cc \u0627\u06cc\u0646\u062a\u0631\u0646\u062a \u06a9\u0634\u0648\u0631\u060c \u0645\u0645\u06a9\u0646\u0647 \u0628\u0639\u0636\u06cc \u062a\u063a\u06cc\u06cc\u0631\u0627\u062a \u0628\u0627 \u062e\u0637\u0627 \u0645\u0648\u0627\u062c\u0647 \u0628\u0634\u0646"
+                  : "\u26a0\ufe0f\r\n\u0628\u0647 \u0639\u0644\u062a \u0627\u062e\u062a\u0644\u0627\u0644 \u062f\u0631 \u0633\u0627\u06cc\u062a \u0647\u0648\u0645\u0633\u0627 \u0645\u0645\u06a9\u0646\u0647 \u0628\u0639\u0636\u06cc \u0627\u0632 \u062a\u063a\u06cc\u06cc\u0631\u0627\u062a \u0627\u0639\u0645\u0627\u0644 \u0646\u0634\u0647"}
+              </div>
+            </div>
+            <div
+              className={classNames(projectcss.all, sty.freeBox___3KmGf)}
+              onClick={async event => {
+                const $steps = {};
 
-                    $steps["updateModalOpen"] = true
-                      ? (() => {
-                          const actionArgs = {
-                            variable: {
-                              objRoot: $state,
-                              variablePath: ["modal", "open"]
-                            },
-                            operation: 0
-                          };
-                          return (({
-                            variable,
-                            value,
-                            startIndex,
-                            deleteCount
-                          }) => {
-                            if (!variable) {
-                              return;
+                $steps["updateModalOpen"] = true
+                  ? (() => {
+                      const actionArgs = {
+                        variable: {
+                          objRoot: $state,
+                          variablePath: ["modal", "open"]
+                        },
+                        operation: 0
+                      };
+                      return (({
+                        variable,
+                        value,
+                        startIndex,
+                        deleteCount
+                      }) => {
+                        if (!variable) {
+                          return;
+                        }
+                        const { objRoot, variablePath } = variable;
+
+                        $stateSet(objRoot, variablePath, value);
+                        return value;
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+                if (
+                  $steps["updateModalOpen"] != null &&
+                  typeof $steps["updateModalOpen"] === "object" &&
+                  typeof $steps["updateModalOpen"].then === "function"
+                ) {
+                  $steps["updateModalOpen"] = await $steps["updateModalOpen"];
+                }
+
+                $steps["runCode"] = true
+                  ? (() => {
+                      const actionArgs = {
+                        customFunction: async () => {
+                          return (() => {
+                            function setCookie(name, value, hours) {
+                              let expires = "";
+                              if (hours) {
+                                const date = new Date();
+                                date.setTime(
+                                  date.getTime() + hours * 60 * 60 * 1000
+                                );
+                                expires = "; expires=" + date.toUTCString();
+                              }
+                              document.cookie =
+                                name +
+                                "=" +
+                                (value || "") +
+                                expires +
+                                "; path=/; SameSite=None; Secure";
                             }
-                            const { objRoot, variablePath } = variable;
-
-                            $stateSet(objRoot, variablePath, value);
-                            return value;
-                          })?.apply(null, [actionArgs]);
-                        })()
-                      : undefined;
-                    if (
-                      $steps["updateModalOpen"] != null &&
-                      typeof $steps["updateModalOpen"] === "object" &&
-                      typeof $steps["updateModalOpen"].then === "function"
-                    ) {
-                      $steps["updateModalOpen"] =
-                        await $steps["updateModalOpen"];
-                    }
-
-                    $steps["runCode"] = true
-                      ? (() => {
-                          const actionArgs = {
-                            customFunction: async () => {
-                              return (() => {
-                                function setCookie(name, value, hours) {
-                                  let expires = "";
-                                  if (hours) {
-                                    const date = new Date();
-                                    date.setTime(
-                                      date.getTime() + hours * 60 * 60 * 1000
-                                    );
-                                    expires = "; expires=" + date.toUTCString();
-                                  }
-                                  document.cookie =
-                                    name +
-                                    "=" +
-                                    (value || "") +
-                                    expires +
-                                    "; path=/; SameSite=None; Secure";
-                                }
-                                return setCookie("homsa_modal", "true", 24);
-                              })();
-                            }
-                          };
-                          return (({ customFunction }) => {
-                            return customFunction();
-                          })?.apply(null, [actionArgs]);
-                        })()
-                      : undefined;
-                    if (
-                      $steps["runCode"] != null &&
-                      typeof $steps["runCode"] === "object" &&
-                      typeof $steps["runCode"].then === "function"
-                    ) {
-                      $steps["runCode"] = await $steps["runCode"];
-                    }
-                  }}
-                >
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text___9Tx8C
-                    )}
-                  >
-                    {"\u0628\u0627\u0634\u0647"}
-                  </div>
-                </div>
-              </AntdModal>
-            );
-          })()}
+                            return setCookie("homsa_modal", "true", 24);
+                          })();
+                        }
+                      };
+                      return (({ customFunction }) => {
+                        return customFunction();
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+                if (
+                  $steps["runCode"] != null &&
+                  typeof $steps["runCode"] === "object" &&
+                  typeof $steps["runCode"].then === "function"
+                ) {
+                  $steps["runCode"] = await $steps["runCode"];
+                }
+              }}
+            >
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text___9Tx8C
+                )}
+              >
+                {"\u0628\u0627\u0634\u0647"}
+              </div>
+            </div>
+          </AntdModal>
         </div>
       </div>
     </React.Fragment>
@@ -2500,15 +2466,11 @@ export const PlasmicProCalendar = Object.assign(
       ogImage: "https://miaan.ir/plasmic/website_starter/images/image109.png"
     },
 
-    // Page metadata
-    pageMetadata: {
-      title: "تقویم یکپارچه اقامتگاه | مدیریت قیمت و وضعیت رزرو در چند سایت",
-      description:
-        "با تقویم هوشمند رنتامون، تاریخ‌ها، قیمت و وضعیت رزرو اقامتگاه‌ خود را در پلتفرم‌هایی مثل جاجیگا، شب، اتاقک و جاباما از یک پنل مرکزی مدیریت کنید. ساده، سریع و بدون خطا.",
-      ogImageSrc:
-        "https://miaan.ir/plasmic/website_starter/images/image109.png",
-      canonical: "https://app.rentamon.com/panel"
-    }
+    pageMetadata: generateDynamicMetadata(wrapQueriesWithLoadingProxy({}), {
+      pagePath: "/panel",
+      searchParams: {},
+      params: {}
+    })
   }
 );
 

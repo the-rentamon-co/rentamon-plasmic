@@ -72,6 +72,46 @@ import "@plasmicapp/react-web/lib/plasmic.css";
 import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./Plasmicقوانیناجارهروزانه.module.css"; // plasmic-import: QWS-QYNSlvjx/css
 
+const emptyProxy: any = new Proxy(() => "", {
+  get(_, prop) {
+    return prop === Symbol.toPrimitive ? () => "" : emptyProxy;
+  }
+});
+
+function wrapQueriesWithLoadingProxy($q: any): any {
+  return new Proxy($q, {
+    get(target, queryName) {
+      const query = target[queryName];
+      return !query || query.isLoading || !query.data ? emptyProxy : query;
+    }
+  });
+}
+
+export function generateDynamicMetadata($q: any, $ctx: any) {
+  return {
+    title: "قوانین اجاره روزانه ویلا و آپارتمان مبله",
+    description:
+      "قوانین اجاره کوتاه‌مدت در ایران: مجوزها، مسئولیت‌ها، مالیات، بیمه و احراز هویت مهمان؛ راهنمای کامل برای صاحبان ویلا و آپارتمان مبله.",
+    openGraph: {
+      title: "قوانین اجاره روزانه ویلا و آپارتمان مبله",
+      description:
+        "قوانین اجاره کوتاه‌مدت در ایران: مجوزها، مسئولیت‌ها، مالیات، بیمه و احراز هویت مهمان؛ راهنمای کامل برای صاحبان ویلا و آپارتمان مبله.",
+      images: [
+        "https://site-assets.plasmic.app/0fa21a59b2c480cb87b67e80efe4956e.jpg"
+      ]
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "قوانین اجاره روزانه ویلا و آپارتمان مبله",
+      description:
+        "قوانین اجاره کوتاه‌مدت در ایران: مجوزها، مسئولیت‌ها، مالیات، بیمه و احراز هویت مهمان؛ راهنمای کامل برای صاحبان ویلا و آپارتمان مبله.",
+      images: [
+        "https://site-assets.plasmic.app/0fa21a59b2c480cb87b67e80efe4956e.jpg"
+      ]
+    }
+  };
+}
+
 createPlasmicElementProxy;
 
 export type Plasmicقوانیناجارهروزانه__VariantMembers = {};
@@ -167,7 +207,7 @@ function Plasmicقوانیناجارهروزانه__RenderFunc(props: {
         path: "propertyId",
         type: "private",
         variableType: "number",
-        initFunc: ({ $props, $state, $queries, $ctx }) => 0
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => 0
       }
     ],
     [$props, $ctx, $refs]
@@ -176,8 +216,14 @@ function Plasmicقوانیناجارهروزانه__RenderFunc(props: {
     $props,
     $ctx,
     $queries: {},
+    $q: {},
     $refs
   });
+
+  const pageMetadata = generateDynamicMetadata(
+    wrapQueriesWithLoadingProxy({}),
+    $ctx
+  );
 
   const styleTokensClassNames = _useStyleTokens();
 
@@ -185,41 +231,37 @@ function Plasmicقوانیناجارهروزانه__RenderFunc(props: {
     <React.Fragment>
       <Head>
         <meta name="twitter:card" content="summary_large_image" />
-        <title key="title">{Plasmicقوانیناجارهروزانه.pageMetadata.title}</title>
-        <meta
-          key="og:title"
-          property="og:title"
-          content={Plasmicقوانیناجارهروزانه.pageMetadata.title}
-        />
+        <title key="title">{pageMetadata.title}</title>
+        <meta key="og:title" property="og:title" content={pageMetadata.title} />
         <meta
           key="twitter:title"
           property="twitter:title"
-          content={Plasmicقوانیناجارهروزانه.pageMetadata.title}
+          content={pageMetadata.title}
         />
         <meta
           key="description"
           property="description"
-          content={Plasmicقوانیناجارهروزانه.pageMetadata.description}
+          content={pageMetadata.description}
         />
         <meta
           key="og:description"
           property="og:description"
-          content={Plasmicقوانیناجارهروزانه.pageMetadata.description}
+          content={pageMetadata.description}
         />
         <meta
           key="twitter:description"
           property="twitter:description"
-          content={Plasmicقوانیناجارهروزانه.pageMetadata.description}
+          content={pageMetadata.description}
         />
         <meta
           key="og:image"
           property="og:image"
-          content={Plasmicقوانیناجارهروزانه.pageMetadata.ogImageSrc}
+          content={pageMetadata.ogImageSrc}
         />
         <meta
           key="twitter:image"
           property="twitter:image"
-          content={Plasmicقوانیناجارهروزانه.pageMetadata.ogImageSrc}
+          content={pageMetadata.ogImageSrc}
         />
       </Head>
 
@@ -1439,15 +1481,11 @@ export const Plasmicقوانیناجارهروزانه = Object.assign(
         "\u0642\u0648\u0627\u0646\u06cc\u0646 \u0627\u062c\u0627\u0631\u0647 \u0631\u0648\u0632\u0627\u0646\u0647 \u0648\u06cc\u0644\u0627 \u0648 \u0622\u067e\u0627\u0631\u062a\u0645\u0627\u0646 \u0645\u0628\u0644\u0647"
     },
 
-    // Page metadata
-    pageMetadata: {
-      title: "قوانین اجاره روزانه ویلا و آپارتمان مبله",
-      description:
-        "قوانین اجاره کوتاه‌مدت در ایران: مجوزها، مسئولیت‌ها، مالیات، بیمه و احراز هویت مهمان؛ راهنمای کامل برای صاحبان ویلا و آپارتمان مبله.",
-      ogImageSrc:
-        "https://site-assets.plasmic.app/0fa21a59b2c480cb87b67e80efe4956e.jpg",
-      canonical: ""
-    }
+    pageMetadata: generateDynamicMetadata(wrapQueriesWithLoadingProxy({}), {
+      pagePath: "/rental-rules",
+      searchParams: {},
+      params: {}
+    })
   }
 );
 

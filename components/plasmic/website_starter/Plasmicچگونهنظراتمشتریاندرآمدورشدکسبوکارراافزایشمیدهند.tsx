@@ -72,6 +72,46 @@ import "@plasmicapp/react-web/lib/plasmic.css";
 import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./Plasmicچگونهنظراتمشتریاندرآمدورشدکسبوکارراافزایشمیدهند.module.css"; // plasmic-import: PYuUvaJRn38T/css
 
+const emptyProxy: any = new Proxy(() => "", {
+  get(_, prop) {
+    return prop === Symbol.toPrimitive ? () => "" : emptyProxy;
+  }
+});
+
+function wrapQueriesWithLoadingProxy($q: any): any {
+  return new Proxy($q, {
+    get(target, queryName) {
+      const query = target[queryName];
+      return !query || query.isLoading || !query.data ? emptyProxy : query;
+    }
+  });
+}
+
+export function generateDynamicMetadata($q: any, $ctx: any) {
+  return {
+    title: "چگونه نظرات مشتریان درآمد و رشد کسب‌وکار را افزایش می‌دهند",
+    description:
+      "نظرات مهمانان کلید افزایش رزروها هستند. یاد بگیرید چگونه امتیازهای ۵ ستاره بیشتری بگیرید، بازخوردهای منفی را مدیریت کنید و درآمد اجاره خود را افزایش دهید.",
+    openGraph: {
+      title: "چگونه نظرات مشتریان درآمد و رشد کسب‌وکار را افزایش می‌دهند",
+      description:
+        "نظرات مهمانان کلید افزایش رزروها هستند. یاد بگیرید چگونه امتیازهای ۵ ستاره بیشتری بگیرید، بازخوردهای منفی را مدیریت کنید و درآمد اجاره خود را افزایش دهید.",
+      images: [
+        "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2Fposts%2Freview-1.jpg?versionId="
+      ]
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "چگونه نظرات مشتریان درآمد و رشد کسب‌وکار را افزایش می‌دهند",
+      description:
+        "نظرات مهمانان کلید افزایش رزروها هستند. یاد بگیرید چگونه امتیازهای ۵ ستاره بیشتری بگیرید، بازخوردهای منفی را مدیریت کنید و درآمد اجاره خود را افزایش دهید.",
+      images: [
+        "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2Fposts%2Freview-1.jpg?versionId="
+      ]
+    }
+  };
+}
+
 createPlasmicElementProxy;
 
 export type Plasmicچگونهنظراتمشتریاندرآمدورشدکسبوکارراافزایشمیدهند__VariantMembers =
@@ -172,7 +212,7 @@ function Plasmicچگونهنظراتمشتریاندرآمدورشدکسبوکا
         path: "propertyId",
         type: "private",
         variableType: "number",
-        initFunc: ({ $props, $state, $queries, $ctx }) => 0
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => 0
       }
     ],
     [$props, $ctx, $refs]
@@ -181,8 +221,14 @@ function Plasmicچگونهنظراتمشتریاندرآمدورشدکسبوکا
     $props,
     $ctx,
     $queries: {},
+    $q: {},
     $refs
   });
+
+  const pageMetadata = generateDynamicMetadata(
+    wrapQueriesWithLoadingProxy({}),
+    $ctx
+  );
 
   const styleTokensClassNames = _useStyleTokens();
 
@@ -190,67 +236,37 @@ function Plasmicچگونهنظراتمشتریاندرآمدورشدکسبوکا
     <React.Fragment>
       <Head>
         <meta name="twitter:card" content="summary_large_image" />
-        <title key="title">
-          {
-            Plasmicچگونهنظراتمشتریاندرآمدورشدکسبوکارراافزایشمیدهند.pageMetadata
-              .title
-          }
-        </title>
-        <meta
-          key="og:title"
-          property="og:title"
-          content={
-            Plasmicچگونهنظراتمشتریاندرآمدورشدکسبوکارراافزایشمیدهند.pageMetadata
-              .title
-          }
-        />
+        <title key="title">{pageMetadata.title}</title>
+        <meta key="og:title" property="og:title" content={pageMetadata.title} />
         <meta
           key="twitter:title"
           property="twitter:title"
-          content={
-            Plasmicچگونهنظراتمشتریاندرآمدورشدکسبوکارراافزایشمیدهند.pageMetadata
-              .title
-          }
+          content={pageMetadata.title}
         />
         <meta
           key="description"
           property="description"
-          content={
-            Plasmicچگونهنظراتمشتریاندرآمدورشدکسبوکارراافزایشمیدهند.pageMetadata
-              .description
-          }
+          content={pageMetadata.description}
         />
         <meta
           key="og:description"
           property="og:description"
-          content={
-            Plasmicچگونهنظراتمشتریاندرآمدورشدکسبوکارراافزایشمیدهند.pageMetadata
-              .description
-          }
+          content={pageMetadata.description}
         />
         <meta
           key="twitter:description"
           property="twitter:description"
-          content={
-            Plasmicچگونهنظراتمشتریاندرآمدورشدکسبوکارراافزایشمیدهند.pageMetadata
-              .description
-          }
+          content={pageMetadata.description}
         />
         <meta
           key="og:image"
           property="og:image"
-          content={
-            Plasmicچگونهنظراتمشتریاندرآمدورشدکسبوکارراافزایشمیدهند.pageMetadata
-              .ogImageSrc
-          }
+          content={pageMetadata.ogImageSrc}
         />
         <meta
           key="twitter:image"
           property="twitter:image"
-          content={
-            Plasmicچگونهنظراتمشتریاندرآمدورشدکسبوکارراافزایشمیدهند.pageMetadata
-              .ogImageSrc
-          }
+          content={pageMetadata.ogImageSrc}
         />
       </Head>
 
@@ -1250,15 +1266,11 @@ export const Plasmicچگونهنظراتمشتریاندرآمدورشدکسبو
         ogImageAlt: "Impact of customer reviews on sales growth"
       },
 
-      // Page metadata
-      pageMetadata: {
-        title: "چگونه نظرات مشتریان درآمد و رشد کسب‌وکار را افزایش می‌دهند",
-        description:
-          "نظرات مهمانان کلید افزایش رزروها هستند. یاد بگیرید چگونه امتیازهای ۵ ستاره بیشتری بگیرید، بازخوردهای منفی را مدیریت کنید و درآمد اجاره خود را افزایش دهید.",
-        ogImageSrc:
-          "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2Fposts%2Freview-1.jpg?versionId=",
-        canonical: ""
-      }
+      pageMetadata: generateDynamicMetadata(wrapQueriesWithLoadingProxy({}), {
+        pagePath: "/reviews-and-revenue",
+        searchParams: {},
+        params: {}
+      })
     }
   );
 
