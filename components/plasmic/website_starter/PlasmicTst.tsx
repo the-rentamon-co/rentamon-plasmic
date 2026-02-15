@@ -755,6 +755,16 @@ function PlasmicTst__RenderFunc(props: {
             }}
             message={"\u062c\u0627\u062c\u06cc\u06af\u0627"}
           />
+
+          <div
+            className={classNames(
+              projectcss.all,
+              projectcss.__wab_text,
+              sty.text__reYsy
+            )}
+          >
+            {"test for build"}
+          </div>
         </div>
       </div>
     </React.Fragment>
