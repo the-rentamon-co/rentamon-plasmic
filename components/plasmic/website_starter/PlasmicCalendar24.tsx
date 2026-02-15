@@ -7936,6 +7936,109 @@ function PlasmicCalendar24__RenderFunc(props: {
                   await $steps["updateAddingGuestInfoOpen"];
               }
 
+              $steps["createAManualReserve"] = true
+                ? (() => {
+                    const actionArgs = {
+                      args: [
+                        "POST",
+                        "https://api-v3.miaan.ir/webhook/reserve/create",
+                        undefined,
+                        (() => {
+                          try {
+                            return (() => {
+                              function convertPersianNumbersToEnglish(str) {
+                                const persianNumbers = [
+                                  "۰",
+                                  "۱",
+                                  "۲",
+                                  "۳",
+                                  "۴",
+                                  "۵",
+                                  "۶",
+                                  "۷",
+                                  "۸",
+                                  "۹"
+                                ];
+
+                                const englishNumbers = [
+                                  "0",
+                                  "1",
+                                  "2",
+                                  "3",
+                                  "4",
+                                  "5",
+                                  "6",
+                                  "7",
+                                  "8",
+                                  "9"
+                                ];
+
+                                return str.replace(
+                                  /[۰-۹]/g,
+                                  char =>
+                                    englishNumbers[persianNumbers.indexOf(char)]
+                                );
+                              }
+                              function padZero(num) {
+                                return num.length === 1 ? `0${num}` : num;
+                              }
+                              function convertTimestampToPersianDate(
+                                timestamp
+                              ) {
+                                const date = new Date(timestamp * 1000);
+                                const [year, month, day] = date
+                                  .toLocaleDateString("fa")
+                                  .split("/");
+                                const formattedDate = `${convertPersianNumbersToEnglish(year)}-${padZero(convertPersianNumbersToEnglish(month))}-${padZero(convertPersianNumbersToEnglish(day))}`;
+                                return formattedDate;
+                              }
+                              function getTodayInPersian() {
+                                const today = new Date();
+                                const [year, month, day] = today
+                                  .toLocaleDateString("fa")
+                                  .split("/");
+                                const formattedDate = `${convertPersianNumbersToEnglish(year)}-${padZero(convertPersianNumbersToEnglish(month))}-${padZero(convertPersianNumbersToEnglish(day))}`;
+                                return formattedDate;
+                              }
+                              const timestamps =
+                                $state.fragmentDatePicker.values;
+                              const today = getTodayInPersian();
+                              const jalaliDates = timestamps
+                                .map(ts => convertTimestampToPersianDate(ts))
+                                .filter(date => date >= today)
+                                .sort();
+                              return {
+                                check_in: jalaliDates[0],
+                                check_out: jalaliDates[jalaliDates.length - 1],
+                                property_id: $props.propertyId
+                              };
+                            })();
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return undefined;
+                            }
+                            throw e;
+                          }
+                        })()
+                      ]
+                    };
+                    return $globalActions["Fragment.apiRequest"]?.apply(null, [
+                      ...actionArgs.args
+                    ]);
+                  })()
+                : undefined;
+              if (
+                $steps["createAManualReserve"] != null &&
+                typeof $steps["createAManualReserve"] === "object" &&
+                typeof $steps["createAManualReserve"].then === "function"
+              ) {
+                $steps["createAManualReserve"] =
+                  await $steps["createAManualReserve"];
+              }
+
               $steps["updatePlatformRequestStatus"] = true
                 ? (() => {
                     const actionArgs = {
@@ -8245,118 +8348,12 @@ function PlasmicCalendar24__RenderFunc(props: {
                 $steps["runCode3"] = await $steps["runCode3"];
               }
 
-              $steps["createAManualReserve"] = true
-                ? (() => {
-                    const actionArgs = {
-                      args: [
-                        "POST",
-                        "https://api-v3.miaan.ir/webhook/reserve/create",
-                        undefined,
-                        (() => {
-                          try {
-                            return (() => {
-                              function convertPersianNumbersToEnglish(str) {
-                                const persianNumbers = [
-                                  "۰",
-                                  "۱",
-                                  "۲",
-                                  "۳",
-                                  "۴",
-                                  "۵",
-                                  "۶",
-                                  "۷",
-                                  "۸",
-                                  "۹"
-                                ];
-
-                                const englishNumbers = [
-                                  "0",
-                                  "1",
-                                  "2",
-                                  "3",
-                                  "4",
-                                  "5",
-                                  "6",
-                                  "7",
-                                  "8",
-                                  "9"
-                                ];
-
-                                return str.replace(
-                                  /[۰-۹]/g,
-                                  char =>
-                                    englishNumbers[persianNumbers.indexOf(char)]
-                                );
-                              }
-                              function padZero(num) {
-                                return num.length === 1 ? `0${num}` : num;
-                              }
-                              function convertTimestampToPersianDate(
-                                timestamp
-                              ) {
-                                const date = new Date(timestamp * 1000);
-                                const [year, month, day] = date
-                                  .toLocaleDateString("fa")
-                                  .split("/");
-                                const formattedDate = `${convertPersianNumbersToEnglish(year)}-${padZero(convertPersianNumbersToEnglish(month))}-${padZero(convertPersianNumbersToEnglish(day))}`;
-                                return formattedDate;
-                              }
-                              function getTodayInPersian() {
-                                const today = new Date();
-                                const [year, month, day] = today
-                                  .toLocaleDateString("fa")
-                                  .split("/");
-                                const formattedDate = `${convertPersianNumbersToEnglish(year)}-${padZero(convertPersianNumbersToEnglish(month))}-${padZero(convertPersianNumbersToEnglish(day))}`;
-                                return formattedDate;
-                              }
-                              const timestamps =
-                                $state.fragmentDatePicker.values;
-                              const today = getTodayInPersian();
-                              const jalaliDates = timestamps
-                                .map(ts => convertTimestampToPersianDate(ts))
-                                .filter(date => date >= today)
-                                .sort();
-                              return {
-                                check_in: jalaliDates[0],
-                                check_out: jalaliDates[jalaliDates.length - 1],
-                                property_id: $props.propertyId
-                              };
-                            })();
-                          } catch (e) {
-                            if (
-                              e instanceof TypeError ||
-                              e?.plasmicType === "PlasmicUndefinedDataError"
-                            ) {
-                              return undefined;
-                            }
-                            throw e;
-                          }
-                        })()
-                      ]
-                    };
-                    return $globalActions["Fragment.apiRequest"]?.apply(null, [
-                      ...actionArgs.args
-                    ]);
-                  })()
-                : undefined;
-              if (
-                $steps["createAManualReserve"] != null &&
-                typeof $steps["createAManualReserve"] === "object" &&
-                typeof $steps["createAManualReserve"].then === "function"
-              ) {
-                $steps["createAManualReserve"] =
-                  await $steps["createAManualReserve"];
-              }
-
-              $steps["runCode2"] = true
+              $steps["getBookingIdFromRequest"] = true
                 ? (() => {
                     const actionArgs = {
                       customFunction: async () => {
-                        return (() => {
-                          console.log($steps.createAManualReserve.data[0].b_id);
-                          return ($state.manualReserveBookingId =
-                            $steps.createAManualReserve.data[0].b_id);
-                        })();
+                        return ($state.manualReserveBookingId =
+                          $steps.createAManualReserve.data[0].b_id);
                       }
                     };
                     return (({ customFunction }) => {
@@ -8365,11 +8362,12 @@ function PlasmicCalendar24__RenderFunc(props: {
                   })()
                 : undefined;
               if (
-                $steps["runCode2"] != null &&
-                typeof $steps["runCode2"] === "object" &&
-                typeof $steps["runCode2"].then === "function"
+                $steps["getBookingIdFromRequest"] != null &&
+                typeof $steps["getBookingIdFromRequest"] === "object" &&
+                typeof $steps["getBookingIdFromRequest"].then === "function"
               ) {
-                $steps["runCode2"] = await $steps["runCode2"];
+                $steps["getBookingIdFromRequest"] =
+                  await $steps["getBookingIdFromRequest"];
               }
             }}
           >
