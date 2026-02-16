@@ -13914,9 +13914,34 @@ function PlasmicCalendar24__RenderFunc(props: {
                             <React.Fragment>
                               {(() => {
                                 try {
-                                  return Number(
-                                    $state.getPrice.value
-                                  ).toLocaleString();
+                                  return (() => {
+                                    const defaultMarkups = {
+                                      jabama: 15,
+                                      jajiga: 16.5,
+                                      homsa: 15,
+                                      mihmansho: 16,
+                                      snapptrip: 10,
+                                      shab: 8,
+                                      otaghak: 15
+                                    };
+                                    const basePrice = Number(
+                                      $state.getPrice.value
+                                    );
+                                    const siteName = currentItem.site;
+                                    const currentMarkup = currentItem.value;
+                                    const defaultMarkup =
+                                      defaultMarkups[siteName] || 0;
+                                    const difference =
+                                      currentMarkup > defaultMarkup
+                                        ? currentMarkup - defaultMarkup
+                                        : 0;
+                                    const finalPrice =
+                                      basePrice +
+                                      basePrice * (difference / 100);
+                                    return Math.round(
+                                      finalPrice
+                                    ).toLocaleString();
+                                  })();
                                 } catch (e) {
                                   if (
                                     e instanceof TypeError ||
