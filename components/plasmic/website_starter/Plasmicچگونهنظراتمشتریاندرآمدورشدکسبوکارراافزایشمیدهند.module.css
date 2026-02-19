@@ -920,7 +920,7 @@
     padding-left: 4px;
   }
 }
-.text__ho2Zz {
+.h2__ho2Zz {
   text-align: right;
   font-size: 18px;
   font-weight: 600;
@@ -930,17 +930,17 @@
   letter-spacing: 0px;
 }
 @media (max-width: 1200px) {
-  .text__ho2Zz {
+  .h2__ho2Zz {
     font-size: 18px;
   }
 }
 @media (max-width: 500px) {
-  .text__ho2Zz {
+  .h2__ho2Zz {
     font-size: 16px;
   }
 }
 @media (max-width: 350px) {
-  .text__ho2Zz {
+  .h2__ho2Zz {
     font-size: 16px;
   }
 }

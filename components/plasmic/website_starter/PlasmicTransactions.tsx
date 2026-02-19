@@ -3371,7 +3371,7 @@ function PlasmicTransactions__RenderFunc(props: {
                 </div>
                 {(() => {
                   try {
-                    return $state.modalData.comment == true;
+                    return $state.modalData.comment != null;
                   } catch (e) {
                     if (
                       e instanceof TypeError ||
