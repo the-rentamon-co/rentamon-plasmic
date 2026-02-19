@@ -185,6 +185,7 @@ export type PlasmicCalendar24__OverridesType = {
   text3?: Flex__<"div">;
   note?: Flex__<"div">;
   text4?: Flex__<"div">;
+  resultShow?: Flex__<"div">;
   editResult?: Flex__<"div">;
   ok7?: Flex__<typeof PlasmicImg__>;
   fail3?: Flex__<typeof PlasmicImg__>;
@@ -11775,7 +11776,11 @@ function PlasmicCalendar24__RenderFunc(props: {
             </div>
           </div>
         ) : null}
-        <div className={classNames(projectcss.all, sty.freeBox___4G6Tz)}>
+        <div
+          data-plasmic-name={"resultShow"}
+          data-plasmic-override={overrides.resultShow}
+          className={classNames(projectcss.all, sty.resultShow)}
+        >
           {(
             hasVariant(globalVariants, "screen", "mobile")
               ? (() => {
@@ -11791,7 +11796,7 @@ function PlasmicCalendar24__RenderFunc(props: {
                       e instanceof TypeError ||
                       e?.plasmicType === "PlasmicUndefinedDataError"
                     ) {
-                      return false;
+                      return true;
                     }
                     throw e;
                   }
@@ -12059,7 +12064,11 @@ function PlasmicCalendar24__RenderFunc(props: {
                     displayMaxWidth={"100%"}
                     displayMinHeight={"0"}
                     displayMinWidth={"0"}
-                    displayWidth={"auto"}
+                    displayWidth={
+                      hasVariant(globalVariants, "screen", "mobile")
+                        ? "34px"
+                        : "auto"
+                    }
                     loading={"lazy"}
                     src={{
                       src: "/plasmic/website_starter/images/image140.gif",
@@ -14819,6 +14828,7 @@ const PlasmicDescendants = {
     "text3",
     "note",
     "text4",
+    "resultShow",
     "editResult",
     "ok7",
     "fail3",
@@ -14995,6 +15005,7 @@ const PlasmicDescendants = {
   text3: ["text3"],
   note: ["note", "text4"],
   text4: ["text4"],
+  resultShow: ["resultShow", "editResult", "ok7", "fail3", "loading5"],
   editResult: ["editResult", "ok7", "fail3", "loading5"],
   ok7: ["ok7"],
   fail3: ["fail3"],
@@ -15140,6 +15151,7 @@ type NodeDefaultElementType = {
   text3: "div";
   note: "div";
   text4: "div";
+  resultShow: "div";
   editResult: "div";
   ok7: typeof PlasmicImg__;
   fail3: typeof PlasmicImg__;
@@ -15304,6 +15316,7 @@ export const PlasmicCalendar24 = Object.assign(
     text3: makeNodeComponent("text3"),
     note: makeNodeComponent("note"),
     text4: makeNodeComponent("text4"),
+    resultShow: makeNodeComponent("resultShow"),
     editResult: makeNodeComponent("editResult"),
     ok7: makeNodeComponent("ok7"),
     fail3: makeNodeComponent("fail3"),

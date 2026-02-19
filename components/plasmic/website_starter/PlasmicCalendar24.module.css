@@ -2804,7 +2804,7 @@
   flex-direction: row;
   position: relative;
   align-items: stretch;
-  justify-content: flex-start;
+  justify-content: space-between;
   width: 100%;
   height: auto;
   max-width: 100%;
@@ -2820,6 +2820,7 @@
   .freeBox___93YnJ {
     top: auto;
     left: auto;
+    justify-content: space-between;
   }
 }
 .tourguide {
@@ -3276,7 +3277,7 @@
     letter-spacing: -1px;
   }
 }
-.freeBox___4G6Tz {
+.resultShow {
   display: flex;
   flex-direction: row;
   align-items: stretch;
@@ -3295,7 +3296,7 @@
   background: #ffffff;
   max-height: 80%;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   flex-direction: row;
   min-width: 20px;
   pointer-events: auto;
@@ -3316,12 +3317,16 @@
     justify-content: center;
     align-items: center;
     flex-shrink: 1;
+    min-width: 50px;
+    max-height: none;
+    padding-top: 3px;
+    padding-bottom: 3px;
     display: flex;
   }
 }
 @media (max-width: 350px) {
   .editResult {
-    width: 60px;
+    width: 50px;
     flex-shrink: 0;
   }
 }
@@ -3338,12 +3343,13 @@
 }
 @media (max-width: 500px) {
   .freeBox___48Nrb {
-    width: 64%;
+    width: 100%;
+    min-width: 0;
   }
 }
 @media (max-width: 350px) {
   .freeBox___48Nrb {
-    width: 80%;
+    width: 100%;
   }
 }
 .ok7 {
@@ -3387,6 +3393,11 @@
 }
 .loading5 > picture > img {
   object-fit: cover;
+}
+@media (max-width: 500px) {
+  .loading5 {
+    width: 34px;
+  }
 }
 .submitChange {
   display: flex;
