@@ -1,4 +1,4 @@
-/* @import url("https://fonts.googleapis.com/css2?family=Vazirmatn%3Aital%2Cwght%400%2C300%3B0%2C400%3B0%2C500%3B0%2C600%3B0%2C700%3B0%2C800&family=Inconsolata%3Aital%2Cwght%400%2C300%3B0%2C400%3B0%2C500%3B0%2C600%3B0%2C700%3B0%2C800&family=Montserrat%3Aital%2Cwght%400%2C300%3B0%2C400%3B0%2C500%3B0%2C600%3B0%2C700%3B0%2C800%3B1%2C300%3B1%2C400%3B1%2C500%3B1%2C600%3B1%2C700%3B1%2C800&family=Inter%3Aital%2Cwght%400%2C300%3B0%2C400%3B0%2C500%3B0%2C600%3B0%2C700%3B0%2C800&display=swap"); */
+@import url("https://fonts.googleapis.com/css2?family=Vazirmatn%3Aital%2Cwght%400%2C300%3B0%2C400%3B0%2C500%3B0%2C600%3B0%2C700%3B0%2C800&family=Inconsolata%3Aital%2Cwght%400%2C300%3B0%2C400%3B0%2C500%3B0%2C600%3B0%2C700%3B0%2C800&family=Montserrat%3Aital%2Cwght%400%2C300%3B0%2C400%3B0%2C500%3B0%2C600%3B0%2C700%3B0%2C800%3B1%2C300%3B1%2C400%3B1%2C500%3B1%2C600%3B1%2C700%3B1%2C800&family=Inter%3Aital%2Cwght%400%2C300%3B0%2C400%3B0%2C500%3B0%2C600%3B0%2C700%3B0%2C800&display=swap");
 
 .plasmic_tokens {
   --token-2CXdk7410BHW: var(--token-HBTFH2K_vw-c);
@@ -9,7 +9,7 @@
   --plasmic-token-unnamed-style-token: var(--token-PWaVbr2W6PfQ);
   --token-UNUM8uSD-733: 1px;
   --plasmic-token-unnamed-style-token-2: var(--token-UNUM8uSD-733);
-  --token-7MRjbe724hDb: #2f2f2f;
+  --token-7MRjbe724hDb: #2f2f2f80;
   --plasmic-token-calendar-text-color: var(--token-7MRjbe724hDb);
   --token-5pBr4MZPegMc: #e5e5e5;
   --plasmic-token-basic-calendar-day-color: var(--token-5pBr4MZPegMc);
@@ -206,6 +206,16 @@
   .plasmic_tokens {
     --token-pZV_D4O-0Dnd: #dc2626;
     --token-LJG2fFX9fNUT: 1em;
+  }
+}
+
+.plasmic_tokens_override.plasmic_tokens_override {
+  --token-Bo2_tT25lwh4: var(--antd-colorErrorActive);
+}
+
+@media (max-width: 500px) {
+  .plasmic_tokens_override.plasmic_tokens_override {
+    --token-Bo2_tT25lwh4: #d9363e80;
   }
 }
 

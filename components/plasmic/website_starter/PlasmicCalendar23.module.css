@@ -4115,6 +4115,11 @@
   align-items: center;
   min-width: 0;
 }
+@media (max-width: 500px) {
+  .freeBox__pxCf9 {
+    max-width: 50%;
+  }
+}
 .text__xaZpA {
   animation: none;
   position: relative;
@@ -4148,6 +4153,11 @@
   align-items: center;
   min-width: 0;
 }
+@media (max-width: 500px) {
+  .freeBox__noJfT {
+    max-width: 15%;
+  }
+}
 .text__e9HNz {
   animation: none;
   position: relative;
@@ -4180,6 +4190,11 @@
   justify-content: flex-start;
   align-items: center;
   min-width: 0;
+}
+@media (max-width: 500px) {
+  .freeBox__owQpt {
+    max-width: 35%;
+  }
 }
 .text__yRXnw {
   animation: none;
@@ -4231,6 +4246,11 @@
   align-items: center;
   column-gap: 10px;
   min-width: 0;
+}
+@media (max-width: 500px) {
+  .freeBox__fNfpT {
+    max-width: 50%;
+  }
 }
 .grossPrice {
   position: relative;
@@ -4307,6 +4327,11 @@
   justify-content: flex-start;
   align-items: center;
   min-width: 0;
+}
+@media (max-width: 500px) {
+  .freeBox___3M3C {
+    max-width: 35%;
+  }
 }
 .text__pvLpo {
   animation: none;

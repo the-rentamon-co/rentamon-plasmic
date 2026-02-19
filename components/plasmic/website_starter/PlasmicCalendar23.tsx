@@ -4812,7 +4812,9 @@ function PlasmicCalendar23__RenderFunc(props: {
                     sty.text__bpfL3
                   )}
                 >
-                  {"\u0642\u06cc\u0645\u062a"}
+                  {
+                    "\u0648\u06cc\u0631\u0627\u06cc\u0634 \u0642\u06cc\u0645\u062a"
+                  }
                 </div>
                 <Icon16Icon
                   className={classNames(projectcss.all, sty.svg___3D7Tn)}
@@ -4923,7 +4925,9 @@ function PlasmicCalendar23__RenderFunc(props: {
                     sty.text___2AHu
                   )}
                 >
-                  {"\u062a\u062e\u0641\u06cc\u0641 \u066a"}
+                  {
+                    "\u0648\u06cc\u0631\u0627\u06cc\u0634 \u062a\u062e\u0641\u06cc\u0641"
+                  }
                 </div>
                 <Icon16Icon
                   className={classNames(projectcss.all, sty.svg__pXkC)}

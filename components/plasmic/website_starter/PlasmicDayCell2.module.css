@@ -1163,6 +1163,9 @@
   margin-top: 2px;
   min-width: 0;
 }
+.holidays2dayStatus_passedFirstDayReserveV2 {
+  color: #ff4e4e80;
+}
 .holidays2dayStatus_passedReservedV2 {
   color: var(--token-Bo2_tT25lwh4);
   width: 100%;
@@ -1199,6 +1202,9 @@
   .holidays2dayStatus_reservedSmartBooking {
     font-weight: 400;
   }
+}
+.holidays2dayStatus_firstDaySmartBookingPast {
+  color: #ff4e4e80;
 }
 .holidays2dayStatus_reservedSmartBookingPast {
   color: var(--token-Bo2_tT25lwh4);

@@ -2923,7 +2923,7 @@
     {
       "name": "calendar-text-color",
       "type": "color",
-      "value": "#2F2F2F",
+      "value": "#2F2F2F80",
       "category": "color",
       "meta": {
         "projectId": "7SNMkB8UMukVgcWJYokeAQ",
