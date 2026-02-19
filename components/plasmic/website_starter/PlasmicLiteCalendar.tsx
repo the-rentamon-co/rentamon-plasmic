@@ -759,24 +759,26 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                   await $steps["invokeGlobalAction"];
               }
 
-              $steps["divarGuideModal"] = true
-                ? (() => {
-                    const actionArgs = {
-                      customFunction: async () => {
-                        return (() => {
-                          const hasSeen =
-                            localStorage.getItem("seen_divar_guide");
-                          if (!hasSeen) {
-                            return ($state.showDivarGuide = true);
-                          }
-                        })();
-                      }
-                    };
-                    return (({ customFunction }) => {
-                      return customFunction();
-                    })?.apply(null, [actionArgs]);
-                  })()
-                : undefined;
+              $steps["divarGuideModal"] =
+                typeof document !== "undefined" &&
+                document.cookie.includes("from=divar")
+                  ? (() => {
+                      const actionArgs = {
+                        customFunction: async () => {
+                          return (() => {
+                            const hasSeen =
+                              localStorage.getItem("seen_divar_guide");
+                            if (!hasSeen) {
+                              return ($state.showDivarGuide = true);
+                            }
+                          })();
+                        }
+                      };
+                      return (({ customFunction }) => {
+                        return customFunction();
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
               if (
                 $steps["divarGuideModal"] != null &&
                 typeof $steps["divarGuideModal"] === "object" &&
@@ -1679,7 +1681,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField__jD2E
+                        sty.formField__h8Rxk
                       )}
                       label={"Name"}
                       name={"name"}
@@ -1691,7 +1693,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField__jYVt
+                        sty.formField__mi7QU
                       )}
                       label={"Message"}
                       name={"message"}
@@ -1709,7 +1711,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                         className={classNames(
                           projectcss.all,
                           projectcss.__wab_text,
-                          sty.text__dsvpn
+                          sty.text__gudXu
                         )}
                       >
                         {"Submit"}
