@@ -63,6 +63,7 @@ import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
 import SideBar2 from "../../SideBar2"; // plasmic-import: 03ZPQfFyBXgI/component
 import Select from "../../Select"; // plasmic-import: GgjLI5qwOqwu/component
 import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
+import ToastMessageRnt from "../../ToastMessageRnt"; // plasmic-import: _mkSLPxHmSdr/component
 import Calendar24 from "../../Calendar24"; // plasmic-import: Sbe_BqY3Yw-T/component
 import { Iframe } from "@plasmicpkgs/plasmic-basic-components";
 import NavbarMnFooter from "../../NavbarMnFooter"; // plasmic-import: y37kcAs9RXYg/component
@@ -141,6 +142,9 @@ export type PlasmicProCalendar2__OverridesType = {
   left?: Flex__<"div">;
   image?: Flex__<"div">;
   profile?: Flex__<typeof ApiRequest>;
+  featureStatus2?: Flex__<"div">;
+  featureStatus?: Flex__<typeof ApiRequest>;
+  toastMessageRnt?: Flex__<typeof ToastMessageRnt>;
   calendar24?: Flex__<typeof Calendar24>;
   dontDeleteSpacer?: Flex__<"div">;
   aiAgentIframe?: Flex__<typeof Iframe>;
@@ -390,6 +394,30 @@ function PlasmicProCalendar2__RenderFunc(props: {
         type: "private",
         variableType: "boolean",
         initFunc: ({ $props, $state, $queries, $q, $ctx }) => false
+      },
+      {
+        path: "featureStatus.data",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
+
+        refName: "featureStatus"
+      },
+      {
+        path: "featureStatus.error",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
+
+        refName: "featureStatus"
+      },
+      {
+        path: "featureStatus.loading",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
+
+        refName: "featureStatus"
       }
     ],
     [$props, $ctx, $refs]
@@ -1866,6 +1894,76 @@ function PlasmicProCalendar2__RenderFunc(props: {
               </div>
             </div>
           ) : null}
+          <div
+            data-plasmic-name={"featureStatus2"}
+            data-plasmic-override={overrides.featureStatus2}
+            className={classNames(projectcss.all, sty.featureStatus2)}
+          >
+            <ApiRequest
+              data-plasmic-name={"featureStatus"}
+              data-plasmic-override={overrides.featureStatus}
+              className={classNames("__wab_instance", sty.featureStatus)}
+              errorDisplay={null}
+              loadingDisplay={null}
+              method={"GET"}
+              onError={async (...eventArgs: any) => {
+                generateStateOnChangeProp($state, [
+                  "featureStatus",
+                  "error"
+                ]).apply(null, eventArgs);
+              }}
+              onLoading={async (...eventArgs: any) => {
+                generateStateOnChangeProp($state, [
+                  "featureStatus",
+                  "loading"
+                ]).apply(null, eventArgs);
+              }}
+              onSuccess={async (...eventArgs: any) => {
+                generateStateOnChangeProp($state, [
+                  "featureStatus",
+                  "data"
+                ]).apply(null, eventArgs);
+              }}
+              ref={ref => {
+                $refs["featureStatus"] = ref;
+              }}
+              url={"https://nb.miaan.ir/webhook/feature-status"}
+            >
+              {(() => {
+                try {
+                  return (
+                    $state.featureStatus.data.feature_name == "auto_sync" &&
+                    $state.featureStatus.data.is_active == false
+                  );
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return true;
+                  }
+                  throw e;
+                }
+              })() ? (
+                <ToastMessageRnt
+                  data-plasmic-name={"toastMessageRnt"}
+                  data-plasmic-override={overrides.toastMessageRnt}
+                  buttonLink={`/settings`}
+                  buttonText={"\u062a\u0646\u0638\u06cc\u0645\u0627\u062a"}
+                  className={classNames("__wab_instance", sty.toastMessageRnt)}
+                  logo={{
+                    src: "/plasmic/website_starter/images/errorSvgrepoCom1Svg.svg",
+                    fullWidth: 800,
+                    fullHeight: 800,
+                    aspectRatio: undefined
+                  }}
+                  message={
+                    "\u0647\u0634\u062f\u0627\u0631: \u0648\u06cc\u0698\u06af\u06cc \u00ab\u067e\u0627\u0633\u0628\u0627\u0646\u00bb \u062e\u0627\u0645\u0648\u0634\u0647!"
+                  }
+                />
+              ) : null}
+            </ApiRequest>
+          </div>
           <Calendar24
             data-plasmic-name={"calendar24"}
             data-plasmic-override={overrides.calendar24}
@@ -2245,6 +2343,9 @@ const PlasmicDescendants = {
     "left",
     "image",
     "profile",
+    "featureStatus2",
+    "featureStatus",
+    "toastMessageRnt",
     "calendar24",
     "dontDeleteSpacer",
     "aiAgentIframe",
@@ -2300,6 +2401,9 @@ const PlasmicDescendants = {
   left: ["left", "image"],
   image: ["image"],
   profile: ["profile"],
+  featureStatus2: ["featureStatus2", "featureStatus", "toastMessageRnt"],
+  featureStatus: ["featureStatus", "toastMessageRnt"],
+  toastMessageRnt: ["toastMessageRnt"],
   calendar24: ["calendar24"],
   dontDeleteSpacer: ["dontDeleteSpacer"],
   aiAgentIframe: ["aiAgentIframe"],
@@ -2327,6 +2431,9 @@ type NodeDefaultElementType = {
   left: "div";
   image: "div";
   profile: typeof ApiRequest;
+  featureStatus2: "div";
+  featureStatus: typeof ApiRequest;
+  toastMessageRnt: typeof ToastMessageRnt;
   calendar24: typeof Calendar24;
   dontDeleteSpacer: "div";
   aiAgentIframe: typeof Iframe;
@@ -2412,6 +2519,9 @@ export const PlasmicProCalendar2 = Object.assign(
     left: makeNodeComponent("left"),
     image: makeNodeComponent("image"),
     profile: makeNodeComponent("profile"),
+    featureStatus2: makeNodeComponent("featureStatus2"),
+    featureStatus: makeNodeComponent("featureStatus"),
+    toastMessageRnt: makeNodeComponent("toastMessageRnt"),
     calendar24: makeNodeComponent("calendar24"),
     dontDeleteSpacer: makeNodeComponent("dontDeleteSpacer"),
     aiAgentIframe: makeNodeComponent("aiAgentIframe"),

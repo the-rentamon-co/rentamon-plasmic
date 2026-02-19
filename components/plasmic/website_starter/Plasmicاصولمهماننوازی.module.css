@@ -975,7 +975,7 @@
     padding-left: 4px;
   }
 }
-.text__lxVsP {
+.h2__lxVsP {
   text-align: right;
   font-size: 18px;
   font-weight: 600;
@@ -985,17 +985,17 @@
   letter-spacing: 0px;
 }
 @media (max-width: 1200px) {
-  .text__lxVsP {
+  .h2__lxVsP {
     font-size: 18px;
   }
 }
 @media (max-width: 500px) {
-  .text__lxVsP {
+  .h2__lxVsP {
     font-size: 16px;
   }
 }
 @media (max-width: 350px) {
-  .text__lxVsP {
+  .h2__lxVsP {
     font-size: 16px;
   }
 }
@@ -1126,7 +1126,7 @@
     padding-left: 4px;
   }
 }
-.text__swowd {
+.h3__swowd {
   text-align: right;
   font-size: 18px;
   font-weight: 600;
@@ -1134,18 +1134,18 @@
   color: #444444;
 }
 @media (max-width: 1200px) {
-  .text__swowd {
+  .h3__swowd {
     font-size: 18px;
   }
 }
 @media (max-width: 500px) {
-  .text__swowd {
+  .h3__swowd {
     line-height: 2;
     letter-spacing: 0px;
   }
 }
 @media (max-width: 350px) {
-  .text__swowd {
+  .h3__swowd {
     font-size: 16px;
   }
 }
@@ -1333,26 +1333,27 @@
     padding-left: 4px;
   }
 }
-.text__mfDol {
+.h3__mfDol {
   text-align: right;
   font-size: 18px;
   font-weight: 600;
   padding-top: 0px;
   color: #444444;
+  line-height: 2;
 }
 @media (max-width: 1200px) {
-  .text__mfDol {
+  .h3__mfDol {
     font-size: 18px;
   }
 }
 @media (max-width: 500px) {
-  .text__mfDol {
+  .h3__mfDol {
     line-height: 2;
     letter-spacing: 0px;
   }
 }
 @media (max-width: 350px) {
-  .text__mfDol {
+  .h3__mfDol {
     font-size: 16px;
   }
 }

@@ -948,6 +948,18 @@ function PlasmicCalendar24__RenderFunc(props: {
         type: "private",
         variableType: "boolean",
         initFunc: ({ $props, $state, $queries, $q, $ctx }) => false
+      },
+      {
+        path: "generatedRequestId",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => ""
+      },
+      {
+        path: "checkingRequestId",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => ""
       }
     ],
     [$props, $ctx, $refs]
@@ -1365,6 +1377,97 @@ function PlasmicCalendar24__RenderFunc(props: {
           ) {
             $steps["updateFragmentDatePickerValue2"] =
               await $steps["updateFragmentDatePickerValue2"];
+          }
+
+          $steps["request"] = false
+            ? (() => {
+                const actionArgs = {
+                  args: [
+                    "GET",
+                    (() => {
+                      try {
+                        return (() => {
+                          const propId = $props.propertyId;
+                          const storageKey = `pending_req_${propId}`;
+                          const pendingReqId =
+                            sessionStorage.getItem(storageKey);
+                          return `https://automation.rentamon.com/webhook/request/status?request_id=${pendingReqId}`;
+                        })();
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return undefined;
+                        }
+                        throw e;
+                      }
+                    })()
+                  ]
+                };
+                return $globalActions["Fragment.apiRequest"]?.apply(null, [
+                  ...actionArgs.args
+                ]);
+              })()
+            : undefined;
+          if (
+            $steps["request"] != null &&
+            typeof $steps["request"] === "object" &&
+            typeof $steps["request"].then === "function"
+          ) {
+            $steps["request"] = await $steps["request"];
+          }
+
+          $steps["updateFragmentDatePickerValue4"] = false
+            ? (() => {
+                const actionArgs = {
+                  customFunction: async () => {
+                    return (() => {
+                      const responseData = $steps.request.data;
+                      if (
+                        responseData &&
+                        responseData.status === "request_id not found"
+                      ) {
+                        $state.isDataReady = false;
+                        $state.platformRequestStatus = { isLoading: true };
+                        $state.manualResultShow = false;
+                        return;
+                      }
+                      if (responseData) {
+                        const firstKey = Object.keys(responseData)[0];
+                        const mainData = responseData[firstKey];
+                        if (mainData) {
+                          $state.requestdata = mainData.payload;
+                          $state.platformRequestStatus = {
+                            data: mainData.result,
+                            isLoading: false
+                          };
+                          sessionStorage.setItem(
+                            "property_history_book",
+                            JSON.stringify(responseData)
+                          );
+                          const propId = $props.propertyId || $state.propId;
+                          if (propId)
+                            return sessionStorage.removeItem(
+                              `pending_req_${propId}`
+                            );
+                        }
+                      }
+                    })();
+                  }
+                };
+                return (({ customFunction }) => {
+                  return customFunction();
+                })?.apply(null, [actionArgs]);
+              })()
+            : undefined;
+          if (
+            $steps["updateFragmentDatePickerValue4"] != null &&
+            typeof $steps["updateFragmentDatePickerValue4"] === "object" &&
+            typeof $steps["updateFragmentDatePickerValue4"].then === "function"
+          ) {
+            $steps["updateFragmentDatePickerValue4"] =
+              await $steps["updateFragmentDatePickerValue4"];
           }
         }}
       />
@@ -4486,6 +4589,41 @@ function PlasmicCalendar24__RenderFunc(props: {
               onClick={async event => {
                 const $steps = {};
 
+                $steps["requestId"] = true
+                  ? (() => {
+                      const actionArgs = {
+                        customFunction: async () => {
+                          return (() => {
+                            const reqId =
+                              "req_" +
+                              Date.now() +
+                              "_" +
+                              Math.floor(Math.random() * 100000);
+                            $state.generatedRequestId = reqId;
+                            const currentPropId =
+                              $props.propertyId || $state.propId;
+                            if (currentPropId) {
+                              return sessionStorage.setItem(
+                                `pending_req_${currentPropId}`,
+                                reqId
+                              );
+                            }
+                          })();
+                        }
+                      };
+                      return (({ customFunction }) => {
+                        return customFunction();
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+                if (
+                  $steps["requestId"] != null &&
+                  typeof $steps["requestId"] === "object" &&
+                  typeof $steps["requestId"].then === "function"
+                ) {
+                  $steps["requestId"] = await $steps["requestId"];
+                }
+
                 $steps["updateFetchModalOpen"] =
                   $props.calendarType === "pro" &&
                   $state.changedFetchModal &&
@@ -4850,7 +4988,8 @@ function PlasmicCalendar24__RenderFunc(props: {
                                 const todayInPersian = getTodayInPersian();
                                 const data = {
                                   days: [$state.fragmentDatePicker.values],
-                                  property_id: $props.propertyId
+                                  property_id: $props.propertyId,
+                                  request_id: $state.generatedRequestId
                                 };
                                 $state.requestdata = data;
                                 data.days = data.days
@@ -5634,6 +5773,41 @@ function PlasmicCalendar24__RenderFunc(props: {
                       await $steps["updatePlatformRequestStatus"];
                   }
 
+                  $steps["requestId"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          customFunction: async () => {
+                            return (() => {
+                              const reqId =
+                                "req_" +
+                                Date.now() +
+                                "_" +
+                                Math.floor(Math.random() * 100000);
+                              $state.generatedRequestId = reqId;
+                              const currentPropId =
+                                $props.propertyId || $state.propId;
+                              if (currentPropId) {
+                                return sessionStorage.setItem(
+                                  `pending_req_${currentPropId}`,
+                                  reqId
+                                );
+                              }
+                            })();
+                          }
+                        };
+                        return (({ customFunction }) => {
+                          return customFunction();
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["requestId"] != null &&
+                    typeof $steps["requestId"] === "object" &&
+                    typeof $steps["requestId"].then === "function"
+                  ) {
+                    $steps["requestId"] = await $steps["requestId"];
+                  }
+
                   $steps["updateFetchModalOpen"] =
                     $props.calendarType === "pro" &&
                     $state.changedFetchModal &&
@@ -5838,7 +6012,8 @@ function PlasmicCalendar24__RenderFunc(props: {
                                   const data = {
                                     days: [$state.fragmentDatePicker.values],
                                     property_id: $props.propertyId,
-                                    price: String($state.input.value)
+                                    price: String($state.input.value),
+                                    request_id: $state.generatedRequestId
                                   };
                                   $state.requestdata = data;
                                   data.days = data.days
@@ -7880,6 +8055,41 @@ function PlasmicCalendar24__RenderFunc(props: {
                   await $steps["toastCheckConsecutive"];
               }
 
+              $steps["requestId"] = true
+                ? (() => {
+                    const actionArgs = {
+                      customFunction: async () => {
+                        return (() => {
+                          const reqId =
+                            "req_" +
+                            Date.now() +
+                            "_" +
+                            Math.floor(Math.random() * 100000);
+                          $state.generatedRequestId = reqId;
+                          const currentPropId =
+                            $props.propertyId || $state.propId;
+                          if (currentPropId) {
+                            return sessionStorage.setItem(
+                              `pending_req_${currentPropId}`,
+                              reqId
+                            );
+                          }
+                        })();
+                      }
+                    };
+                    return (({ customFunction }) => {
+                      return customFunction();
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["requestId"] != null &&
+                typeof $steps["requestId"] === "object" &&
+                typeof $steps["requestId"].then === "function"
+              ) {
+                $steps["requestId"] = await $steps["requestId"];
+              }
+
               $steps["updateStateVariable"] = $steps.checkConsecutive
                 ? (() => {
                     const actionArgs = {
@@ -8240,7 +8450,8 @@ function PlasmicCalendar24__RenderFunc(props: {
                                   days: [$state.fragmentDatePicker.values],
                                   property_id: $props.propertyId,
                                   requested_by: "user",
-                                  request_for: "reserve"
+                                  request_for: "reserve",
+                                  request_id: $state.generatedRequestId
                                 };
                                 $state.requestdata = data;
                                 data.days = data.days
@@ -8507,6 +8718,41 @@ function PlasmicCalendar24__RenderFunc(props: {
                 ) {
                   $steps["updatePlatformRequestStatus"] =
                     await $steps["updatePlatformRequestStatus"];
+                }
+
+                $steps["requestId"] = true
+                  ? (() => {
+                      const actionArgs = {
+                        customFunction: async () => {
+                          return (() => {
+                            const reqId =
+                              "req_" +
+                              Date.now() +
+                              "_" +
+                              Math.floor(Math.random() * 100000);
+                            $state.generatedRequestId = reqId;
+                            const currentPropId =
+                              $props.propertyId || $state.propId;
+                            if (currentPropId) {
+                              return sessionStorage.setItem(
+                                `pending_req_${currentPropId}`,
+                                reqId
+                              );
+                            }
+                          })();
+                        }
+                      };
+                      return (({ customFunction }) => {
+                        return customFunction();
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+                if (
+                  $steps["requestId"] != null &&
+                  typeof $steps["requestId"] === "object" &&
+                  typeof $steps["requestId"].then === "function"
+                ) {
+                  $steps["requestId"] = await $steps["requestId"];
                 }
 
                 $steps["updateFetchModalOpen"] =
@@ -8798,7 +9044,8 @@ function PlasmicCalendar24__RenderFunc(props: {
                                   days: [$state.fragmentDatePicker.values],
                                   property_id: $props.propertyId,
                                   requested_by: "user",
-                                  request_for: "block"
+                                  request_for: "block",
+                                  request_id: $state.generatedRequestId
                                 };
                                 $state.requestdata = data;
                                 data.days = data.days
@@ -11046,6 +11293,41 @@ function PlasmicCalendar24__RenderFunc(props: {
                       await $steps["updatePlatformRequestStatus"];
                   }
 
+                  $steps["requestId"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          customFunction: async () => {
+                            return (() => {
+                              const reqId =
+                                "req_" +
+                                Date.now() +
+                                "_" +
+                                Math.floor(Math.random() * 100000);
+                              $state.generatedRequestId = reqId;
+                              const currentPropId =
+                                $props.propertyId || $state.propId;
+                              if (currentPropId) {
+                                return sessionStorage.setItem(
+                                  `pending_req_${currentPropId}`,
+                                  reqId
+                                );
+                              }
+                            })();
+                          }
+                        };
+                        return (({ customFunction }) => {
+                          return customFunction();
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["requestId"] != null &&
+                    typeof $steps["requestId"] === "object" &&
+                    typeof $steps["requestId"].then === "function"
+                  ) {
+                    $steps["requestId"] = await $steps["requestId"];
+                  }
+
                   $steps["updateFetchModalOpen"] =
                     $state.changedFetchModal &&
                     (typeof window !== "undefined"
@@ -11217,7 +11499,8 @@ function PlasmicCalendar24__RenderFunc(props: {
                                   const data = {
                                     days: [$state.fragmentDatePicker.values],
                                     property_id: $props.propertyId,
-                                    discount: String($state.textInput4.value)
+                                    discount: String($state.textInput4.value),
+                                    request_id: $state.generatedRequestId
                                   };
                                   $state.requestdata = data;
                                   data.days = data.days
@@ -11539,33 +11822,32 @@ function PlasmicCalendar24__RenderFunc(props: {
               onClick={async event => {
                 const $steps = {};
 
-                $steps["updateFetchModalOpen"] =
-                  $props.calendarType == "pro"
-                    ? (() => {
-                        const actionArgs = {
-                          variable: {
-                            objRoot: $state,
-                            variablePath: ["fetchModal", "open"]
-                          },
-                          operation: 0,
-                          value: true
-                        };
-                        return (({
-                          variable,
-                          value,
-                          startIndex,
-                          deleteCount
-                        }) => {
-                          if (!variable) {
-                            return;
-                          }
-                          const { objRoot, variablePath } = variable;
+                $steps["updateFetchModalOpen"] = true
+                  ? (() => {
+                      const actionArgs = {
+                        variable: {
+                          objRoot: $state,
+                          variablePath: ["fetchModal", "open"]
+                        },
+                        operation: 0,
+                        value: true
+                      };
+                      return (({
+                        variable,
+                        value,
+                        startIndex,
+                        deleteCount
+                      }) => {
+                        if (!variable) {
+                          return;
+                        }
+                        const { objRoot, variablePath } = variable;
 
-                          $stateSet(objRoot, variablePath, value);
-                          return value;
-                        })?.apply(null, [actionArgs]);
-                      })()
-                    : undefined;
+                        $stateSet(objRoot, variablePath, value);
+                        return value;
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
                 if (
                   $steps["updateFetchModalOpen"] != null &&
                   typeof $steps["updateFetchModalOpen"] === "object" &&
@@ -14059,6 +14341,41 @@ function PlasmicCalendar24__RenderFunc(props: {
                       await $steps["updatePlatformRequestStatus"];
                   }
 
+                  $steps["requestId"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          customFunction: async () => {
+                            return (() => {
+                              const reqId =
+                                "req_" +
+                                Date.now() +
+                                "_" +
+                                Math.floor(Math.random() * 100000);
+                              $state.generatedRequestId = reqId;
+                              const currentPropId =
+                                $props.propertyId || $state.propId;
+                              if (currentPropId) {
+                                return sessionStorage.setItem(
+                                  `pending_req_${currentPropId}`,
+                                  reqId
+                                );
+                              }
+                            })();
+                          }
+                        };
+                        return (({ customFunction }) => {
+                          return customFunction();
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["requestId"] != null &&
+                    typeof $steps["requestId"] === "object" &&
+                    typeof $steps["requestId"].then === "function"
+                  ) {
+                    $steps["requestId"] = await $steps["requestId"];
+                  }
+
                   $steps["updateFetchModalOpen"] =
                     $props.calendarType === "pro" &&
                     $state.changedFetchModal &&
@@ -14264,7 +14581,8 @@ function PlasmicCalendar24__RenderFunc(props: {
                                     days: [$state.fragmentDatePicker.values],
                                     property_id: $props.propertyId,
                                     price: String($state.getPrice.value),
-                                    markup: $state.getMarkup.data
+                                    markup: $state.getMarkup.data,
+                                    request_id: $state.generatedRequestId
                                   };
                                   $state.requestdata = data;
                                   data.days = data.days

@@ -102,7 +102,7 @@ export type PlasmicCalendar23__ArgsType = {
   daystatuses?: any;
   calendarType?: string;
   isFirstVisit?: boolean;
-  reservationsMode?: boolean;
+  newPricing?: boolean;
 };
 type ArgPropType = keyof PlasmicCalendar23__ArgsType;
 export const PlasmicCalendar23__ArgProps = new Array<ArgPropType>(
@@ -110,7 +110,7 @@ export const PlasmicCalendar23__ArgProps = new Array<ArgPropType>(
   "daystatuses",
   "calendarType",
   "isFirstVisit",
-  "reservationsMode"
+  "newPricing"
 );
 
 export type PlasmicCalendar23__OverridesType = {
@@ -198,6 +198,18 @@ export type PlasmicCalendar23__OverridesType = {
   phoneNumber?: Flex__<typeof TextInput>;
   p5?: Flex__<"div">;
   reserveData?: Flex__<typeof ApiRequest>;
+  price?: Flex__<"div">;
+  title?: Flex__<"div">;
+  priceInput?: Flex__<"div">;
+  getPrice?: Flex__<typeof Input>;
+  priceText?: Flex__<"div">;
+  info?: Flex__<"div">;
+  info2?: Flex__<"div">;
+  header?: Flex__<"div">;
+  content?: Flex__<"div">;
+  grossPrice?: Flex__<"div">;
+  websiteName?: Flex__<"div">;
+  getMarkup2?: Flex__<typeof ApiRequest>;
 };
 
 export interface DefaultCalendar23Props {
@@ -205,7 +217,7 @@ export interface DefaultCalendar23Props {
   daystatuses?: any;
   calendarType?: string;
   isFirstVisit?: boolean;
-  reservationsMode?: boolean;
+  newPricing?: boolean;
   className?: string;
 }
 
@@ -231,7 +243,7 @@ function PlasmicCalendar23__RenderFunc(props: {
       Object.assign(
         {
           isFirstVisit: false,
-          reservationsMode: false
+          newPricing: false
         },
         Object.fromEntries(
           Object.entries(props.args).filter(([_, v]) => v !== undefined)
@@ -871,6 +883,48 @@ function PlasmicCalendar23__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "getMarkup"
+      },
+      {
+        path: "getPrice.value",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => ""
+      },
+      {
+        path: "getMarkup2.data",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
+
+        refName: "getMarkup2"
+      },
+      {
+        path: "getMarkup2.error",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
+
+        refName: "getMarkup2"
+      },
+      {
+        path: "getMarkup2.loading",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
+
+        refName: "getMarkup2"
+      },
+      {
+        path: "modalActions",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => ""
+      },
+      {
+        path: "pricingInfo",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => false
       }
     ],
     [$props, $ctx, $refs]
@@ -1129,7 +1183,7 @@ function PlasmicCalendar23__RenderFunc(props: {
                           monStr = toEnglishDigits(monStr);
                         }
                         let mon = parseInt(monStr, 10);
-                        let daysInMonth = mon >= 1 && mon <= 6 ? 31 : 30;
+                        let daysInMonth = mon <= 6 ? 31 : mon === 12 ? 29 : 30;
                         const isMiaan =
                           window.location.hostname.includes("miaan.ir");
                         const apiBase = isMiaan
@@ -4641,32 +4695,69 @@ function PlasmicCalendar23__RenderFunc(props: {
               onClick={async event => {
                 const $steps = {};
 
-                $steps["updateModalChangePriceOpen"] = true
-                  ? (() => {
-                      const actionArgs = {
-                        variable: {
-                          objRoot: $state,
-                          variablePath: ["modalChangePrice", "open"]
-                        },
-                        operation: 0,
-                        value: true
-                      };
-                      return (({
-                        variable,
-                        value,
-                        startIndex,
-                        deleteCount
-                      }) => {
-                        if (!variable) {
-                          return;
-                        }
-                        const { objRoot, variablePath } = variable;
+                $steps["updateModalActions"] =
+                  $props.newPricing == true
+                    ? (() => {
+                        const actionArgs = {
+                          variable: {
+                            objRoot: $state,
+                            variablePath: ["modalActions"]
+                          },
+                          operation: 0,
+                          value: "price"
+                        };
+                        return (({
+                          variable,
+                          value,
+                          startIndex,
+                          deleteCount
+                        }) => {
+                          if (!variable) {
+                            return;
+                          }
+                          const { objRoot, variablePath } = variable;
 
-                        $stateSet(objRoot, variablePath, value);
-                        return value;
-                      })?.apply(null, [actionArgs]);
-                    })()
-                  : undefined;
+                          $stateSet(objRoot, variablePath, value);
+                          return value;
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                if (
+                  $steps["updateModalActions"] != null &&
+                  typeof $steps["updateModalActions"] === "object" &&
+                  typeof $steps["updateModalActions"].then === "function"
+                ) {
+                  $steps["updateModalActions"] =
+                    await $steps["updateModalActions"];
+                }
+
+                $steps["updateModalChangePriceOpen"] =
+                  $props.newPricing == false
+                    ? (() => {
+                        const actionArgs = {
+                          variable: {
+                            objRoot: $state,
+                            variablePath: ["modalChangePrice", "open"]
+                          },
+                          operation: 0,
+                          value: true
+                        };
+                        return (({
+                          variable,
+                          value,
+                          startIndex,
+                          deleteCount
+                        }) => {
+                          if (!variable) {
+                            return;
+                          }
+                          const { objRoot, variablePath } = variable;
+
+                          $stateSet(objRoot, variablePath, value);
+                          return value;
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
                 if (
                   $steps["updateModalChangePriceOpen"] != null &&
                   typeof $steps["updateModalChangePriceOpen"] === "object" &&
@@ -10795,7 +10886,7 @@ function PlasmicCalendar23__RenderFunc(props: {
           {(() => {
             try {
               return (() => {
-                if ($props.reservationsMode == false) {
+                if ($props.newPricing == false) {
                   return true;
                 }
                 const items = $state.selectedItem;
@@ -12118,17 +12209,7 @@ function PlasmicCalendar23__RenderFunc(props: {
         data-plasmic-name={"reserveData"}
         data-plasmic-override={overrides.reserveData}
         className={classNames("__wab_instance", sty.reserveData)}
-        errorDisplay={
-          <div
-            className={classNames(
-              projectcss.all,
-              projectcss.__wab_text,
-              sty.text__b90ON
-            )}
-          >
-            {"Error fetching data"}
-          </div>
-        }
+        errorDisplay={null}
         loadingDisplay={null}
         method={"GET"}
         onError={async (...eventArgs: any) => {
@@ -12200,6 +12281,906 @@ function PlasmicCalendar23__RenderFunc(props: {
           }
         })()}
       />
+
+      <div
+        className={classNames(
+          projectcss.all,
+          sty.freeBox__pOy81,
+          hasVariant(globalVariants, "screen", "mobile")
+            ? $state.modalActions != ""
+              ? "modal-overlay-2"
+              : null
+            : $state.modalActions != ""
+              ? "modal-overlay-2"
+              : null
+        )}
+      >
+        <div
+          className={classNames(
+            projectcss.all,
+            sty.freeBox__sd7O9,
+            "modal-bottom-content"
+          )}
+        >
+          <div
+            className={classNames(projectcss.all, sty.freeBox__eBEks)}
+            onClick={async event => {
+              const $steps = {};
+
+              $steps["updateModalActions"] = true
+                ? (() => {
+                    const actionArgs = {
+                      variable: {
+                        objRoot: $state,
+                        variablePath: ["modalActions"]
+                      },
+                      operation: 0,
+                      value: ""
+                    };
+                    return (({ variable, value, startIndex, deleteCount }) => {
+                      if (!variable) {
+                        return;
+                      }
+                      const { objRoot, variablePath } = variable;
+
+                      $stateSet(objRoot, variablePath, value);
+                      return value;
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["updateModalActions"] != null &&
+                typeof $steps["updateModalActions"] === "object" &&
+                typeof $steps["updateModalActions"].then === "function"
+              ) {
+                $steps["updateModalActions"] =
+                  await $steps["updateModalActions"];
+              }
+            }}
+          >
+            <PlasmicImg__
+              alt={""}
+              className={classNames(sty.img__wcmtI)}
+              displayHeight={"27px"}
+              displayMaxHeight={"none"}
+              displayMaxWidth={"100%"}
+              displayMinHeight={"0"}
+              displayMinWidth={"0"}
+              displayWidth={"auto"}
+              loading={"lazy"}
+              src={{
+                src: "/plasmic/website_starter/images/image24.svg",
+                fullWidth: 20,
+                fullHeight: 18,
+                aspectRatio: 1.111111
+              }}
+            />
+          </div>
+          <div
+            data-plasmic-name={"price"}
+            data-plasmic-override={overrides.price}
+            className={classNames(projectcss.all, sty.price)}
+          >
+            <div
+              data-plasmic-name={"title"}
+              data-plasmic-override={overrides.title}
+              className={classNames(projectcss.all, sty.title)}
+            >
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__bl9
+                )}
+              >
+                {
+                  "\u0646\u0631\u062e \u0631\u0648 \u0648\u0627\u0631\u062f \u06a9\u0646"
+                }
+              </div>
+            </div>
+            <div
+              data-plasmic-name={"priceInput"}
+              data-plasmic-override={overrides.priceInput}
+              className={classNames(projectcss.all, sty.priceInput)}
+            >
+              <Input
+                data-plasmic-name={"getPrice"}
+                data-plasmic-override={overrides.getPrice}
+                className={classNames("__wab_instance", sty.getPrice)}
+                onChange={async (...eventArgs: any) => {
+                  generateStateOnChangeProp($state, [
+                    "getPrice",
+                    "value"
+                  ]).apply(null, eventArgs);
+                }}
+                placeholder={
+                  "\u0645\u062b\u0644\u0627 \u06f2/\u06f0\u06f0\u06f0/\u06f0\u06f0\u06f0"
+                }
+                type={"number"}
+                value={generateStateValueProp($state, ["getPrice", "value"])}
+              />
+            </div>
+            <div
+              data-plasmic-name={"priceText"}
+              data-plasmic-override={overrides.priceText}
+              className={classNames(projectcss.all, sty.priceText)}
+            >
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__eZPo
+                )}
+              >
+                <React.Fragment>
+                  {(() => {
+                    function numberToPersian(num) {
+                      const units = [
+                        "",
+                        "یک",
+                        "دو",
+                        "سه",
+                        "چهار",
+                        "پنج",
+                        "شش",
+                        "هفت",
+                        "هشت",
+                        "نه"
+                      ];
+
+                      const tens = [
+                        "",
+                        "ده",
+                        "بیست",
+                        "سی",
+                        "چهل",
+                        "پنجاه",
+                        "شصت",
+                        "هفتاد",
+                        "هشتاد",
+                        "نود"
+                      ];
+
+                      const teens = [
+                        "ده",
+                        "یازده",
+                        "دوازده",
+                        "سیزده",
+                        "چهارده",
+                        "پانزده",
+                        "شانزده",
+                        "هفده",
+                        "هجده",
+                        "نوزده"
+                      ];
+
+                      const hundreds = [
+                        "",
+                        "صد",
+                        "دویست",
+                        "سیصد",
+                        "چهارصد",
+                        "پانصد",
+                        "ششصد",
+                        "هفتصد",
+                        "هشتصد",
+                        "نهصد"
+                      ];
+
+                      const groupNames = ["", "هزار", "میلیون", "میلیارد"];
+
+                      if (num == null || num === "" || num === 0) return "صفر";
+                      const splitNumber = n => {
+                        const str = n.toString();
+                        const len = str.length;
+                        if (len <= 3) return [n];
+                        const groups = [];
+                        let i = len;
+                        while (i > 0) {
+                          groups.unshift(
+                            Number(str.substring(Math.max(0, i - 3), i))
+                          );
+                          i -= 3;
+                        }
+                        return groups;
+                      };
+                      const convertGroup = n => {
+                        if (n === 0) return "";
+                        const h = Math.floor(n / 100);
+                        const t = Math.floor((n % 100) / 10);
+                        const u = n % 10;
+                        const hundred = hundreds[h];
+                        let tenUnit = "";
+                        if (t === 1) {
+                          tenUnit = teens[u];
+                        } else {
+                          tenUnit = tens[t] + (u > 0 ? " و " + units[u] : "");
+                        }
+                        return [hundred, tenUnit]
+                          .filter(Boolean)
+                          .join(" و ")
+                          .trim();
+                      };
+                      const groups = splitNumber(num);
+                      const result = groups
+                        .map((g, i) => {
+                          const groupText = convertGroup(g);
+                          if (groupText) {
+                            return (
+                              groupText +
+                              (groupNames[groups.length - i - 1]
+                                ? " " + groupNames[groups.length - i - 1]
+                                : "")
+                            );
+                          }
+                          return "";
+                        })
+                        .filter(Boolean)
+                        .join(" و ");
+                      const finalResult = result.startsWith("و ")
+                        ? result.slice(2)
+                        : result;
+                      return finalResult.trim() + " تومان";
+                    }
+                    const input = $state.getPrice?.value || "";
+                    const output =
+                      input === "" ? "صفر" : numberToPersian(Number(input));
+                    return output;
+                  })()}
+                </React.Fragment>
+              </div>
+            </div>
+            <div
+              data-plasmic-name={"info"}
+              data-plasmic-override={overrides.info}
+              className={classNames(projectcss.all, sty.info)}
+            >
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__xMdbQ
+                )}
+              >
+                {
+                  "\u0645\u0628\u0644\u063a \u0628\u0627\u0644\u0627 \u00ab\u0642\u06cc\u0645\u062a \u062f\u0631\u06cc\u0627\u0641\u062a\u06cc\u00bb \u0634\u0645\u0627 \u0627\u0632 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u0627\u0633\u062a. \u0645\u0628\u0644\u063a\u06cc \u06a9\u0647 \u0628\u0647 \u062d\u0633\u0627\u0628\u062a \u0645\u06cc\u0627\u062f"
+                }
+              </div>
+            </div>
+            <div
+              data-plasmic-name={"info2"}
+              data-plasmic-override={overrides.info2}
+              className={classNames(projectcss.all, sty.info2)}
+            >
+              {(() => {
+                try {
+                  return !$state.pricingInfo;
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return true;
+                  }
+                  throw e;
+                }
+              })() ? (
+                <div
+                  className={classNames(projectcss.all, sty.freeBox___4SEdn)}
+                  onClick={async event => {
+                    const $steps = {};
+
+                    $steps["updatePricingInfo"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            variable: {
+                              objRoot: $state,
+                              variablePath: ["pricingInfo"]
+                            },
+                            operation: 4
+                          };
+                          return (({
+                            variable,
+                            value,
+                            startIndex,
+                            deleteCount
+                          }) => {
+                            if (!variable) {
+                              return;
+                            }
+                            const { objRoot, variablePath } = variable;
+
+                            const oldValue = $stateGet(objRoot, variablePath);
+                            $stateSet(objRoot, variablePath, !oldValue);
+                            return !oldValue;
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["updatePricingInfo"] != null &&
+                      typeof $steps["updatePricingInfo"] === "object" &&
+                      typeof $steps["updatePricingInfo"].then === "function"
+                    ) {
+                      $steps["updatePricingInfo"] =
+                        await $steps["updatePricingInfo"];
+                    }
+                  }}
+                >
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__f0Kdj
+                    )}
+                  >
+                    {
+                      "\u0646\u0645\u0627\u06cc\u0634 \u0642\u06cc\u0645\u062a \u062f\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627"
+                    }
+                  </div>
+                  <PlasmicImg__
+                    alt={""}
+                    className={classNames(sty.img__g8E0U)}
+                    displayHeight={"10px"}
+                    displayMaxHeight={"none"}
+                    displayMaxWidth={"100%"}
+                    displayMinHeight={"0"}
+                    displayMinWidth={"0"}
+                    displayWidth={"auto"}
+                    loading={"lazy"}
+                    src={{
+                      src: "/plasmic/website_starter/images/image197.svg",
+                      fullWidth: 21,
+                      fullHeight: 10,
+                      aspectRatio: undefined
+                    }}
+                  />
+                </div>
+              ) : null}
+              {(() => {
+                try {
+                  return $state.pricingInfo;
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return true;
+                  }
+                  throw e;
+                }
+              })() ? (
+                <div className={classNames(projectcss.all, sty.freeBox__eUkqZ)}>
+                  <div
+                    data-plasmic-name={"header"}
+                    data-plasmic-override={overrides.header}
+                    className={classNames(projectcss.all, sty.header)}
+                  >
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__pxCf9)}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__xaZpA
+                        )}
+                      >
+                        {
+                          "\u0646\u0631\u062e \u062f\u0631 \u0633\u0627\u06cc\u062a"
+                        }
+                      </div>
+                    </div>
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__noJfT)}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__e9HNz
+                        )}
+                      >
+                        {"\u0628\u0647\u0631\u0647"}
+                      </div>
+                    </div>
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__owQpt)}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__yRXnw
+                        )}
+                      >
+                        {
+                          "\u062f\u0631\u0622\u0645\u062f \u062e\u0627\u0644\u0635"
+                        }
+                      </div>
+                    </div>
+                  </div>
+                  {(_par => (!_par ? [] : Array.isArray(_par) ? _par : [_par]))(
+                    (() => {
+                      try {
+                        return (() => {
+                          const data = $state.getMarkup2.data;
+                          return Object.entries(data).map(
+                            ([siteName, price]) => {
+                              return {
+                                site: siteName,
+                                value: price
+                              };
+                            }
+                          );
+                        })();
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return [];
+                        }
+                        throw e;
+                      }
+                    })()
+                  ).map((__plasmic_item_0, __plasmic_idx_0) => {
+                    const currentItem = __plasmic_item_0;
+                    const currentIndex = __plasmic_idx_0;
+                    return (
+                      <div
+                        data-plasmic-name={"content"}
+                        data-plasmic-override={overrides.content}
+                        className={classNames(projectcss.all, sty.content)}
+                        key={currentIndex}
+                      >
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            sty.freeBox__fNfpT
+                          )}
+                        >
+                          <div
+                            data-plasmic-name={"grossPrice"}
+                            data-plasmic-override={overrides.grossPrice}
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.grossPrice
+                            )}
+                          >
+                            <React.Fragment>
+                              {(() => {
+                                const price = Number($state.getPrice.value);
+                                const percent = Number(currentItem.value);
+                                const finalPrice =
+                                  price + price * (percent / 100);
+                                return Math.floor(finalPrice).toLocaleString();
+                              })()}
+                            </React.Fragment>
+                          </div>
+                          <div
+                            data-plasmic-name={"websiteName"}
+                            data-plasmic-override={overrides.websiteName}
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.websiteName
+                            )}
+                          >
+                            <React.Fragment>
+                              {(() => {
+                                try {
+                                  return (() => {
+                                    const siteNamesFa = {
+                                      jabama: "جاباما",
+                                      jajiga: "جاجیگا",
+                                      shab: "شب",
+                                      otaghak: "اتاقک",
+                                      snapptrip: "اسنپ تریپ",
+                                      homsa: "هومسا",
+                                      mihmansho: "مهمانشو"
+                                    };
+                                    return (
+                                      siteNamesFa[currentItem.site] ||
+                                      currentItem.site
+                                    );
+                                  })();
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return " ";
+                                  }
+                                  throw e;
+                                }
+                              })()}
+                            </React.Fragment>
+                          </div>
+                        </div>
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            sty.freeBox___382Ks
+                          )}
+                        >
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__k0Jtg
+                            )}
+                          >
+                            <React.Fragment>
+                              {(() => {
+                                try {
+                                  return currentItem.value;
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return "\u0628\u0647\u0631\u0647";
+                                  }
+                                  throw e;
+                                }
+                              })()}
+                            </React.Fragment>
+                          </div>
+                        </div>
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            sty.freeBox___3M3C
+                          )}
+                        >
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__pvLpo
+                            )}
+                          >
+                            {""}
+                          </div>
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__iEwHz
+                            )}
+                          >
+                            <React.Fragment>
+                              {(() => {
+                                const defaultMarkups = {
+                                  jabama: 15,
+                                  jajiga: 16.5,
+                                  homsa: 15,
+                                  mihmansho: 16,
+                                  snapptrip: 10,
+                                  shab: 8,
+                                  otaghak: 15
+                                };
+                                const basePrice = Number($state.getPrice.value);
+                                const siteName = currentItem.site;
+                                const currentMarkup = currentItem.value;
+                                const defaultMarkup =
+                                  defaultMarkups[siteName] || 0;
+                                const difference =
+                                  currentMarkup > defaultMarkup
+                                    ? currentMarkup - defaultMarkup
+                                    : 0;
+                                const finalPrice =
+                                  basePrice + basePrice * (difference / 100);
+                                return Math.round(finalPrice).toLocaleString();
+                              })()}
+                            </React.Fragment>
+                          </div>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              ) : null}
+            </div>
+            <div className={classNames(projectcss.all, sty.freeBox__l008F)}>
+              <Button
+                className={classNames("__wab_instance", sty.button___9ZQf7)}
+                isDisabled={(() => {
+                  try {
+                    return (
+                      $state.getPrice.value <= 99999 ||
+                      $state.getPrice.value == null ||
+                      $state.getPrice.value >= 50000000
+                    );
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return [];
+                    }
+                    throw e;
+                  }
+                })()}
+                onClick={async event => {
+                  const $steps = {};
+
+                  $steps["updateModalActions"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          variable: {
+                            objRoot: $state,
+                            variablePath: ["modalActions"]
+                          },
+                          operation: 0,
+                          value: ""
+                        };
+                        return (({
+                          variable,
+                          value,
+                          startIndex,
+                          deleteCount
+                        }) => {
+                          if (!variable) {
+                            return;
+                          }
+                          const { objRoot, variablePath } = variable;
+
+                          $stateSet(objRoot, variablePath, value);
+                          return value;
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["updateModalActions"] != null &&
+                    typeof $steps["updateModalActions"] === "object" &&
+                    typeof $steps["updateModalActions"].then === "function"
+                  ) {
+                    $steps["updateModalActions"] =
+                      await $steps["updateModalActions"];
+                  }
+
+                  $steps["updateFetchModalOpen"] =
+                    $props.calendarType == "pro"
+                      ? (() => {
+                          const actionArgs = {
+                            variable: {
+                              objRoot: $state,
+                              variablePath: ["fetchModal", "open"]
+                            },
+                            operation: 0,
+                            value: true
+                          };
+                          return (({
+                            variable,
+                            value,
+                            startIndex,
+                            deleteCount
+                          }) => {
+                            if (!variable) {
+                              return;
+                            }
+                            const { objRoot, variablePath } = variable;
+
+                            $stateSet(objRoot, variablePath, value);
+                            return value;
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                  if (
+                    $steps["updateFetchModalOpen"] != null &&
+                    typeof $steps["updateFetchModalOpen"] === "object" &&
+                    typeof $steps["updateFetchModalOpen"].then === "function"
+                  ) {
+                    $steps["updateFetchModalOpen"] =
+                      await $steps["updateFetchModalOpen"];
+                  }
+
+                  $steps["updateStateVariable2"] =
+                    $props.calendarType == "lite"
+                      ? (() => {
+                          const actionArgs = {
+                            operation: 0,
+                            value: ($state.updateStyle = $state.updateStyle + 1)
+                          };
+                          return (({
+                            variable,
+                            value,
+                            startIndex,
+                            deleteCount
+                          }) => {
+                            if (!variable) {
+                              return;
+                            }
+                            const { objRoot, variablePath } = variable;
+
+                            $stateSet(objRoot, variablePath, value);
+                            return value;
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                  if (
+                    $steps["updateStateVariable2"] != null &&
+                    typeof $steps["updateStateVariable2"] === "object" &&
+                    typeof $steps["updateStateVariable2"].then === "function"
+                  ) {
+                    $steps["updateStateVariable2"] =
+                      await $steps["updateStateVariable2"];
+                  }
+
+                  $steps["setPrice"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          args: [
+                            "POST",
+                            "https://api-v2.miaan.ir/api/setprice",
+                            undefined,
+                            (() => {
+                              try {
+                                return (() => {
+                                  function convertPersianNumbersToEnglish(str) {
+                                    const persianNumbers = [
+                                      "۰",
+                                      "۱",
+                                      "۲",
+                                      "۳",
+                                      "۴",
+                                      "۵",
+                                      "۶",
+                                      "۷",
+                                      "۸",
+                                      "۹"
+                                    ];
+
+                                    const englishNumbers = [
+                                      "0",
+                                      "1",
+                                      "2",
+                                      "3",
+                                      "4",
+                                      "5",
+                                      "6",
+                                      "7",
+                                      "8",
+                                      "9"
+                                    ];
+
+                                    return str.replace(
+                                      /[۰-۹]/g,
+                                      char =>
+                                        englishNumbers[
+                                          persianNumbers.indexOf(char)
+                                        ] || char
+                                    );
+                                  }
+                                  function padZero(num) {
+                                    return num.length === 1 ? `0${num}` : num;
+                                  }
+                                  function convertTimestampToPersianDateWithEnglishNumbers(
+                                    timestamp
+                                  ) {
+                                    const date = new Date(timestamp * 1000);
+                                    const [year, month, day] = date
+                                      .toLocaleDateString("fa")
+                                      .split("/");
+                                    const formattedDate = `${convertPersianNumbersToEnglish(year)}-${padZero(convertPersianNumbersToEnglish(month))}-${padZero(convertPersianNumbersToEnglish(day))}`;
+                                    return formattedDate;
+                                  }
+                                  const data = {
+                                    days: [$state.fragmentDatePicker.values],
+                                    property_id: $props.propertyId,
+                                    price: String($state.getPrice.value),
+                                    markup: $state.getMarkup2.data
+                                  };
+                                  $state.requestdata = data;
+                                  data.days = data.days
+                                    .map(timestampArray =>
+                                      timestampArray.map(timestamp =>
+                                        convertTimestampToPersianDateWithEnglishNumbers(
+                                          timestamp
+                                        )
+                                      )
+                                    )
+                                    .flat();
+                                  return data;
+                                })();
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
+                                }
+                                throw e;
+                              }
+                            })()
+                          ]
+                        };
+                        return $globalActions["Fragment.apiRequest"]?.apply(
+                          null,
+                          [...actionArgs.args]
+                        );
+                      })()
+                    : undefined;
+                  if (
+                    $steps["setPrice"] != null &&
+                    typeof $steps["setPrice"] === "object" &&
+                    typeof $steps["setPrice"].then === "function"
+                  ) {
+                    $steps["setPrice"] = await $steps["setPrice"];
+                  }
+
+                  $steps["runCode2"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          customFunction: async () => {
+                            return ($state.platformRequestStatus =
+                              $steps.setPrice.data);
+                          }
+                        };
+                        return (({ customFunction }) => {
+                          return customFunction();
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["runCode2"] != null &&
+                    typeof $steps["runCode2"] === "object" &&
+                    typeof $steps["runCode2"].then === "function"
+                  ) {
+                    $steps["runCode2"] = await $steps["runCode2"];
+                  }
+                }}
+              >
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__mv3
+                  )}
+                >
+                  {
+                    "\u062b\u0628\u062a \u062a\u063a\u06cc\u06cc\u0631\u0627\u062a"
+                  }
+                </div>
+              </Button>
+            </div>
+            <ApiRequest
+              data-plasmic-name={"getMarkup2"}
+              data-plasmic-override={overrides.getMarkup2}
+              className={classNames("__wab_instance", sty.getMarkup2)}
+              errorDisplay={null}
+              loadingDisplay={null}
+              method={"GET"}
+              onError={async (...eventArgs: any) => {
+                generateStateOnChangeProp($state, [
+                  "getMarkup2",
+                  "error"
+                ]).apply(null, eventArgs);
+              }}
+              onLoading={async (...eventArgs: any) => {
+                generateStateOnChangeProp($state, [
+                  "getMarkup2",
+                  "loading"
+                ]).apply(null, eventArgs);
+              }}
+              onSuccess={async (...eventArgs: any) => {
+                generateStateOnChangeProp($state, ["getMarkup2", "data"]).apply(
+                  null,
+                  eventArgs
+                );
+              }}
+              ref={ref => {
+                $refs["getMarkup2"] = ref;
+              }}
+              url={`https://prod.miaan.ir/webhook/markups?property_id=${$props.propertyId}`}
+            />
+          </div>
+        </div>
+      </div>
     </div>
   ) as React.ReactElement | null;
 }
@@ -12289,7 +13270,19 @@ const PlasmicDescendants = {
     "p2",
     "phoneNumber",
     "p5",
-    "reserveData"
+    "reserveData",
+    "price",
+    "title",
+    "priceInput",
+    "getPrice",
+    "priceText",
+    "info",
+    "info2",
+    "header",
+    "content",
+    "grossPrice",
+    "websiteName",
+    "getMarkup2"
   ],
   apiRequest: ["apiRequest"],
   setReserveDataOnCalendar: ["setReserveDataOnCalendar"],
@@ -12471,7 +13464,32 @@ const PlasmicDescendants = {
   p2: ["p2", "phoneNumber"],
   phoneNumber: ["phoneNumber"],
   p5: ["p5"],
-  reserveData: ["reserveData"]
+  reserveData: ["reserveData"],
+  price: [
+    "price",
+    "title",
+    "priceInput",
+    "getPrice",
+    "priceText",
+    "info",
+    "info2",
+    "header",
+    "content",
+    "grossPrice",
+    "websiteName",
+    "getMarkup2"
+  ],
+  title: ["title"],
+  priceInput: ["priceInput", "getPrice"],
+  getPrice: ["getPrice"],
+  priceText: ["priceText"],
+  info: ["info"],
+  info2: ["info2", "header", "content", "grossPrice", "websiteName"],
+  header: ["header"],
+  content: ["content", "grossPrice", "websiteName"],
+  grossPrice: ["grossPrice"],
+  websiteName: ["websiteName"],
+  getMarkup2: ["getMarkup2"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -12561,6 +13579,18 @@ type NodeDefaultElementType = {
   phoneNumber: typeof TextInput;
   p5: "div";
   reserveData: typeof ApiRequest;
+  price: "div";
+  title: "div";
+  priceInput: "div";
+  getPrice: typeof Input;
+  priceText: "div";
+  info: "div";
+  info2: "div";
+  header: "div";
+  content: "div";
+  grossPrice: "div";
+  websiteName: "div";
+  getMarkup2: typeof ApiRequest;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -12712,6 +13742,18 @@ export const PlasmicCalendar23 = Object.assign(
     phoneNumber: makeNodeComponent("phoneNumber"),
     p5: makeNodeComponent("p5"),
     reserveData: makeNodeComponent("reserveData"),
+    price: makeNodeComponent("price"),
+    title: makeNodeComponent("title"),
+    priceInput: makeNodeComponent("priceInput"),
+    getPrice: makeNodeComponent("getPrice"),
+    priceText: makeNodeComponent("priceText"),
+    info: makeNodeComponent("info"),
+    info2: makeNodeComponent("info2"),
+    header: makeNodeComponent("header"),
+    content: makeNodeComponent("content"),
+    grossPrice: makeNodeComponent("grossPrice"),
+    websiteName: makeNodeComponent("websiteName"),
+    getMarkup2: makeNodeComponent("getMarkup2"),
 
     // Metadata about props expected for PlasmicCalendar23
     internalVariantProps: PlasmicCalendar23__VariantProps,

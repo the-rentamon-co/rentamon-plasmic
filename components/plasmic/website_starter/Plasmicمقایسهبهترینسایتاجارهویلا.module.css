@@ -314,6 +314,7 @@
   color: #444444;
   line-height: 2;
   letter-spacing: 0px;
+  padding-left: 0px;
   min-width: 0;
 }
 @media (max-width: 1200px) {
@@ -3026,6 +3027,7 @@
   line-height: 1.8;
   padding-top: 10px;
   color: #444444;
+  padding-right: 0px;
 }
 @media (max-width: 1200px) {
   .text___3POvo {
@@ -3286,6 +3288,7 @@
   font-size: 18px;
   font-weight: 600;
   padding-top: 0px;
+  padding-left: 0px;
 }
 @media (max-width: 1200px) {
   .text__sEu9Y {

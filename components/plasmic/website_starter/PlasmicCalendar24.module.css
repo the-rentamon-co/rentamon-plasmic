@@ -3289,7 +3289,7 @@
 .editResult {
   animation: fadeInLeft4B8ZYZskL8T 1s ease 0s 1 normal none running;
   display: flex;
-  width: 100px;
+  width: 60px;
   height: 100%;
   max-width: 100%;
   background: #ffffff;
@@ -3297,23 +3297,25 @@
   align-items: center;
   justify-content: center;
   flex-direction: row;
-  border-top-width: 4px;
-  border-right-width: 4px;
-  border-bottom-width: 4px;
-  border-left-width: 0px;
   min-width: 20px;
+  pointer-events: auto;
   flex-shrink: 0;
   min-height: 0;
   border-radius: 0px 100px 100px 0px;
   padding: 8px;
-  border-style: solid;
-  border-color: var(--token-8nedppYkGVaH);
+  border: 3px solid var(--token-8nedppYkGVaH);
 }
 @media (max-width: 500px) {
   .editResult {
     animation: fadeInLeft4B8ZYZskL8T 1s ease 0s 1 normal none running;
-    width: 70px;
-    flex-shrink: 0;
+    width: 50px;
+    border-top-width: 2px;
+    border-right-width: 2px;
+    border-bottom-width: 2px;
+    border-left-width: 0px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 1;
     display: flex;
   }
 }
@@ -3329,11 +3331,10 @@
   position: relative;
   align-items: flex-end;
   justify-content: center;
-  width: 60%;
+  width: auto;
   height: auto;
   max-width: 100%;
   row-gap: 4px;
-  padding: 0px;
 }
 @media (max-width: 500px) {
   .freeBox___48Nrb {
