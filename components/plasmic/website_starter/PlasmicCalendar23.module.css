@@ -3372,6 +3372,7 @@
 }
 @media (max-width: 500px) {
   .text__m5OnU {
+    display: block;
     border-radius: 100px;
   }
 }

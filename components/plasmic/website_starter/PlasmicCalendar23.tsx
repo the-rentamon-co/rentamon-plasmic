@@ -10887,30 +10887,55 @@ function PlasmicCalendar23__RenderFunc(props: {
             })()
           )}
         >
-          {(() => {
-            try {
-              return (() => {
-                if ($props.newPricing == false) {
-                  return true;
-                }
-                const items = $state.selectedItem;
-                const allHaveSameValidId =
-                  items &&
-                  items.length > 0 &&
-                  items[0].booking_id &&
-                  items.every(item => item.booking_id === items[0].booking_id);
-                return !allHaveSameValidId;
-              })();
-            } catch (e) {
-              if (
-                e instanceof TypeError ||
-                e?.plasmicType === "PlasmicUndefinedDataError"
-              ) {
-                return true;
-              }
-              throw e;
-            }
-          })() ? (
+          {(
+            hasVariant(globalVariants, "screen", "mobile")
+              ? (() => {
+                  try {
+                    return (() => {
+                      const items = $state.selectedItem;
+                      const allHaveSameValidId =
+                        items &&
+                        items.length > 0 &&
+                        items[0].booking_id &&
+                        items.every(
+                          item => item.booking_id === items[0].booking_id
+                        );
+                      return !allHaveSameValidId;
+                    })();
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return true;
+                    }
+                    throw e;
+                  }
+                })()
+              : (() => {
+                  try {
+                    return (() => {
+                      const items = $state.selectedItem;
+                      const allHaveSameValidId =
+                        items &&
+                        items.length > 0 &&
+                        items[0].booking_id &&
+                        items.every(
+                          item => item.booking_id === items[0].booking_id
+                        );
+                      return !allHaveSameValidId;
+                    })();
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return true;
+                    }
+                    throw e;
+                  }
+                })()
+          ) ? (
             <div
               className={classNames(
                 projectcss.all,

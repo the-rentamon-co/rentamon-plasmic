@@ -66,6 +66,7 @@ import { Input } from "@/fragment/components/input"; // plasmic-import: fpBkcjHl
 import { AntdButton } from "@plasmicpkgs/antd5/skinny/registerButton";
 import { AntdInput } from "@plasmicpkgs/antd5/skinny/registerInput";
 import { inputHelpers as AntdInput_Helpers } from "@plasmicpkgs/antd5/skinny/registerInput";
+import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
 import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
 import { _useGlobalVariants } from "./plasmic"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectModule
 import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/styleTokensProvider
@@ -174,6 +175,7 @@ export type PlasmicConnections__OverridesType = {
   homsaVerify?: Flex__<typeof AntdButton>;
   jabamasend7?: Flex__<typeof AntdButton>;
   security?: Flex__<"div">;
+  apiRequest?: Flex__<typeof ApiRequest>;
   footer?: Flex__<"div">;
   sideEffect?: Flex__<typeof SideEffect>;
 };
@@ -449,6 +451,30 @@ function PlasmicConnections__RenderFunc(props: {
         type: "private",
         variableType: "boolean",
         initFunc: ({ $props, $state, $queries, $q, $ctx }) => false
+      },
+      {
+        path: "apiRequest.data",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
+
+        refName: "apiRequest"
+      },
+      {
+        path: "apiRequest.error",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
+
+        refName: "apiRequest"
+      },
+      {
+        path: "apiRequest.loading",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
+
+        refName: "apiRequest"
       }
     ],
     [$props, $ctx, $refs]
@@ -819,6 +845,7 @@ function PlasmicConnections__RenderFunc(props: {
                               "value"
                             ]).apply(null, eventArgs);
                           }}
+                          placeholder={undefined}
                           type={"text"}
                           value={generateStateValueProp($state, [
                             "jabamaSendOtp",
@@ -6048,6 +6075,56 @@ function PlasmicConnections__RenderFunc(props: {
                 </FormWrapper>
               );
             })()}
+            <ApiRequest
+              data-plasmic-name={"apiRequest"}
+              data-plasmic-override={overrides.apiRequest}
+              className={classNames("__wab_instance", sty.apiRequest)}
+              errorDisplay={
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__wawK5
+                  )}
+                >
+                  {"Error fetching data"}
+                </div>
+              }
+              loadingDisplay={
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__nIwUv
+                  )}
+                >
+                  {"Loading..."}
+                </div>
+              }
+              method={"GET"}
+              onError={async (...eventArgs: any) => {
+                generateStateOnChangeProp($state, [
+                  "apiRequest",
+                  "error"
+                ]).apply(null, eventArgs);
+              }}
+              onLoading={async (...eventArgs: any) => {
+                generateStateOnChangeProp($state, [
+                  "apiRequest",
+                  "loading"
+                ]).apply(null, eventArgs);
+              }}
+              onSuccess={async (...eventArgs: any) => {
+                generateStateOnChangeProp($state, ["apiRequest", "data"]).apply(
+                  null,
+                  eventArgs
+                );
+              }}
+              ref={ref => {
+                $refs["apiRequest"] = ref;
+              }}
+              url={"https://nb.miaan.ir/webhook/connection-phone"}
+            />
           </div>
           {false ? (
             <div
@@ -6076,6 +6153,27 @@ function PlasmicConnections__RenderFunc(props: {
             className={classNames("__wab_instance", sty.sideEffect)}
             onMount={async () => {
               const $steps = {};
+
+              $steps["connectionPhone"] = true
+                ? (() => {
+                    const actionArgs = {
+                      args: [
+                        undefined,
+                        "https://nb.miaan.ir/webhook/connection-phone"
+                      ]
+                    };
+                    return $globalActions["Fragment.apiRequest"]?.apply(null, [
+                      ...actionArgs.args
+                    ]);
+                  })()
+                : undefined;
+              if (
+                $steps["connectionPhone"] != null &&
+                typeof $steps["connectionPhone"] === "object" &&
+                typeof $steps["connectionPhone"].then === "function"
+              ) {
+                $steps["connectionPhone"] = await $steps["connectionPhone"];
+              }
 
               $steps["runCode"] = true
                 ? (() => {
@@ -6251,6 +6349,7 @@ const PlasmicDescendants = {
     "homsaVerify",
     "jabamasend7",
     "security",
+    "apiRequest",
     "footer",
     "sideEffect"
   ],
@@ -6314,7 +6413,8 @@ const PlasmicDescendants = {
     "input16",
     "homsaVerify",
     "jabamasend7",
-    "security"
+    "security",
+    "apiRequest"
   ],
   form: [
     "form",
@@ -6506,6 +6606,7 @@ const PlasmicDescendants = {
   homsaVerify: ["homsaVerify"],
   jabamasend7: ["jabamasend7"],
   security: ["security"],
+  apiRequest: ["apiRequest"],
   footer: ["footer"],
   sideEffect: ["sideEffect"]
 } as const;
@@ -6574,6 +6675,7 @@ type NodeDefaultElementType = {
   homsaVerify: typeof AntdButton;
   jabamasend7: typeof AntdButton;
   security: "div";
+  apiRequest: typeof ApiRequest;
   footer: "div";
   sideEffect: typeof SideEffect;
 };
@@ -6700,6 +6802,7 @@ export const PlasmicConnections = Object.assign(
     homsaVerify: makeNodeComponent("homsaVerify"),
     jabamasend7: makeNodeComponent("jabamasend7"),
     security: makeNodeComponent("security"),
+    apiRequest: makeNodeComponent("apiRequest"),
     footer: makeNodeComponent("footer"),
     sideEffect: makeNodeComponent("sideEffect"),
 
