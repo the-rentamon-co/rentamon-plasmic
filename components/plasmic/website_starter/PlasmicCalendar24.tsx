@@ -5694,7 +5694,7 @@ function PlasmicCalendar24__RenderFunc(props: {
                     return (
                       $state.input.value <= 99999 ||
                       $state.input.value == null ||
-                      $state.input.value >= 50000000
+                      $state.input.value >= 70000000
                     );
                   } catch (e) {
                     if (
@@ -14266,7 +14266,7 @@ function PlasmicCalendar24__RenderFunc(props: {
                     return (
                       $state.getPrice.value <= 99999 ||
                       $state.getPrice.value == null ||
-                      $state.getPrice.value >= 50000000
+                      $state.getPrice.value >= 70000000
                     );
                   } catch (e) {
                     if (

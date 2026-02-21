@@ -400,25 +400,77 @@ function PlasmicConnections__RenderFunc(props: {
         path: "jajigaSend.value",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $q, $ctx }) => ""
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) =>
+          (() => {
+            try {
+              return $state.apiRequest.data.website3;
+            } catch (e) {
+              if (
+                e instanceof TypeError ||
+                e?.plasmicType === "PlasmicUndefinedDataError"
+              ) {
+                return undefined;
+              }
+              throw e;
+            }
+          })()
       },
       {
         path: "jabamaSendOtp.value",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $q, $ctx }) => ""
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) =>
+          (() => {
+            try {
+              return $state.apiRequest.data.website2;
+            } catch (e) {
+              if (
+                e instanceof TypeError ||
+                e?.plasmicType === "PlasmicUndefinedDataError"
+              ) {
+                return undefined;
+              }
+              throw e;
+            }
+          })()
       },
       {
         path: "otaghakSendOtp.value",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $q, $ctx }) => ""
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) =>
+          (() => {
+            try {
+              return $state.apiRequest.data.website6;
+            } catch (e) {
+              if (
+                e instanceof TypeError ||
+                e?.plasmicType === "PlasmicUndefinedDataError"
+              ) {
+                return undefined;
+              }
+              throw e;
+            }
+          })()
       },
       {
         path: "shabOtpSend.value",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $q, $ctx }) => ""
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) =>
+          (() => {
+            try {
+              return $state.apiRequest.data.website4;
+            } catch (e) {
+              if (
+                e instanceof TypeError ||
+                e?.plasmicType === "PlasmicUndefinedDataError"
+              ) {
+                return undefined;
+              }
+              throw e;
+            }
+          })()
       },
       {
         path: "userType",
@@ -430,7 +482,8 @@ function PlasmicConnections__RenderFunc(props: {
         path: "snappSend.value",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $q, $ctx }) => ""
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) =>
+          $state.apiRequest.data.website17
       },
       {
         path: "input7.value",
@@ -845,7 +898,6 @@ function PlasmicConnections__RenderFunc(props: {
                               "value"
                             ]).apply(null, eventArgs);
                           }}
-                          placeholder={undefined}
                           type={"text"}
                           value={generateStateValueProp($state, [
                             "jabamaSendOtp",
@@ -5482,7 +5534,7 @@ function PlasmicConnections__RenderFunc(props: {
                                 AntdInput_Helpers
                               ).apply(null, eventArgs);
                             },
-                            placeholder: ``,
+                            placeholder: undefined,
                             size: "large",
                             value: generateStateValueProp($state, [
                               "input15",
@@ -6124,7 +6176,26 @@ function PlasmicConnections__RenderFunc(props: {
                 $refs["apiRequest"] = ref;
               }}
               url={"https://nb.miaan.ir/webhook/connection-phone"}
-            />
+            >
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__wtrKd
+                )}
+              >
+                <React.Fragment>{undefined}</React.Fragment>
+              </div>
+            </ApiRequest>
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__zdlQi
+              )}
+            >
+              <React.Fragment>{undefined}</React.Fragment>
+            </div>
           </div>
           {false ? (
             <div
