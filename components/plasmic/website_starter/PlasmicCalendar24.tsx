@@ -961,6 +961,12 @@ function PlasmicCalendar24__RenderFunc(props: {
         type: "private",
         variableType: "text",
         initFunc: ({ $props, $state, $queries, $q, $ctx }) => ""
+      },
+      {
+        path: "pollingRequestId",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => ""
       }
     ],
     [$props, $ctx, $refs]
@@ -1219,7 +1225,7 @@ function PlasmicCalendar24__RenderFunc(props: {
                           monStr = toEnglishDigits(monStr);
                         }
                         let mon = parseInt(monStr, 10);
-                        let daysInMonth = mon >= 1 && mon <= 6 ? 31 : 30;
+                        let daysInMonth = mon <= 6 ? 31 : mon === 12 ? 29 : 30;
                         const isMiaan =
                           window.location.hostname.includes("miaan.ir");
                         const apiBase = isMiaan
@@ -1380,7 +1386,7 @@ function PlasmicCalendar24__RenderFunc(props: {
               await $steps["updateFragmentDatePickerValue2"];
           }
 
-          $steps["request"] = false
+          $steps["request"] = true
             ? (() => {
                 const actionArgs = {
                   args: [
@@ -1419,41 +1425,96 @@ function PlasmicCalendar24__RenderFunc(props: {
             $steps["request"] = await $steps["request"];
           }
 
-          $steps["updateFragmentDatePickerValue4"] = false
+          $steps["updateFragmentDatePickerValue4"] = true
             ? (() => {
                 const actionArgs = {
                   customFunction: async () => {
-                    return (() => {
-                      const responseData = $steps.request.data;
-                      if (
-                        responseData &&
-                        responseData.status === "request_id not found"
-                      ) {
-                        $state.isDataReady = false;
-                        $state.platformRequestStatus = { isLoading: true };
-                        $state.manualResultShow = false;
+                    return (async () => {
+                      console.log("\uD83D\uDD35 [ساید افکت] ۱. تریگر شد!");
+                      const propId = $props.propertyId || $state.propId;
+                      const reqId =
+                        typeof window !== "undefined" && propId
+                          ? sessionStorage.getItem(`pending_req_${propId}`)
+                          : null;
+                      console.log(
+                        `🔵 [ساید افکت] ۲. آی‌دی خوانده شده از سشن: ${reqId}`
+                      );
+                      if (!reqId) {
+                        console.log(
+                          "\uD83D\uDD35 [ساید افکت] ۳. آی‌دی نبود\u060C خروج."
+                        );
                         return;
                       }
-                      if (responseData) {
-                        const firstKey = Object.keys(responseData)[0];
-                        const mainData = responseData[firstKey];
-                        if (mainData) {
-                          $state.requestdata = mainData.payload;
-                          $state.platformRequestStatus = {
-                            data: mainData.result,
-                            isLoading: false
-                          };
-                          sessionStorage.setItem(
-                            "property_history_book",
-                            JSON.stringify(responseData)
-                          );
-                          const propId = $props.propertyId || $state.propId;
-                          if (propId)
-                            return sessionStorage.removeItem(
-                              `pending_req_${propId}`
-                            );
-                        }
+                      if (!$state.platformRequestStatus?.isLoading) {
+                        $state.platformRequestStatus = {
+                          isLoading: true,
+                          data: null
+                        };
                       }
+                      let isPolling = true;
+                      const checkStatus = async () => {
+                        if (!isPolling) {
+                          console.log(
+                            `🛑 [پولینگ] متوقف شد برای آی‌دی: ${reqId}`
+                          );
+                          return;
+                        }
+                        try {
+                          console.log(
+                            `🟡 [پولینگ] در حال ارسال درخواست برای: ${reqId}`
+                          );
+                          const response = await fetch(
+                            `https://automation.miaan.ir/webhook/request/status?request_id=${reqId}`
+                          );
+                          if (!response.ok) throw new Error("Server Error");
+                          const data = await response.json();
+                          console.log(
+                            `🟡 [پولینگ] جواب دریافت شد برای ${reqId}:`,
+                            data
+                          );
+                          if (!isPolling) return;
+                          if (
+                            data?.status === "request_id not found" ||
+                            data?.status === "pending"
+                          ) {
+                            if (isPolling) setTimeout(checkStatus, 2000);
+                            return;
+                          }
+                          const mainData = data ? Object.values(data)[0] : null;
+                          if (mainData) {
+                            console.log(
+                              `✅ [پولینگ] موفقیت! آپدیت استیت با دیتای بک‌اند برای: ${reqId}`
+                            );
+                            $state.requestdata = mainData.payload;
+                            $state.platformRequestStatus = {
+                              data: mainData.result,
+                              isLoading: false
+                            };
+                            sessionStorage.setItem(
+                              "property_history_book",
+                              JSON.stringify(data)
+                            );
+                            if (propId)
+                              sessionStorage.removeItem(
+                                `pending_req_${propId}`
+                              );
+                            isPolling = false;
+                          }
+                        } catch (error) {
+                          console.error(
+                            `🔴 [پولینگ] خطا برای ${reqId}:`,
+                            error
+                          );
+                          if (isPolling) setTimeout(checkStatus, 2000);
+                        }
+                      };
+                      checkStatus();
+                      return () => {
+                        console.log(
+                          `🧹 [کلین‌آپ] پاکسازی موتور قدیمی برای آی‌دی: ${reqId}`
+                        );
+                        isPolling = false;
+                      };
                     })();
                   }
                 };
@@ -6715,67 +6776,66 @@ function PlasmicCalendar24__RenderFunc(props: {
                     {(() => {
                       try {
                         return (() => {
-                          {
-                            return (() => {
-                              let action = "خالی کردن";
-                              if (
-                                $state.requestdata.request_for === "reserve"
-                              ) {
-                                action = "ثبت رزرو";
-                              }
-                              if ($state.requestdata.request_for === "block") {
-                                action = "بستن";
-                              }
-                              if ($state.requestdata.discount != null) {
-                                action = "ویرایش تخفیف";
-                              }
-                              if ($state.requestdata.price != null) {
-                                action = "ویرایش قیمت";
-                              }
-                              const flatDays =
-                                $state.requestdata.days.flat?.() ??
-                                $state.requestdata.days;
-                              if (!flatDays.length) {
-                                return `نتیجه درخواست «${action}»`;
-                              }
-                              const dates = flatDays
-                                .map(ts => {
-                                  const d = new Date(ts * 1000);
-                                  d.setHours(0, 0, 0, 0);
-                                  return d;
-                                })
-                                .sort((a, b) => a - b);
-                              let isConsecutive = true;
-                              for (let i = 1; i < dates.length; i++) {
-                                const diff =
-                                  (dates[i] - dates[i - 1]) /
-                                  (1000 * 60 * 60 * 24);
-                                if (diff !== 1) {
-                                  isConsecutive = false;
-                                  break;
-                                }
-                              }
-                              if (!isConsecutive) {
-                                return `نتیجه درخواست «${action}»`;
-                              }
-                              const fmt = new Intl.DateTimeFormat(
-                                "fa-IR-u-ca-persian",
-                                {
-                                  day: "numeric",
-                                  month: "long"
-                                }
-                              );
-                              const firstDate = fmt.format(dates[0]);
-                              let dateStr = firstDate;
-                              if (dates.length > 1) {
-                                const lastDate = fmt.format(
-                                  dates[dates.length - 1]
-                                );
-                                dateStr = `${firstDate} تا ${lastDate}`;
-                              }
-                              return `نتیجه «${action}» ${dateStr}`;
-                            })();
+                          let action = "خالی کردن";
+                          if ($state.requestdata?.request_for === "reserve") {
+                            action = "ثبت رزرو";
                           }
+                          if ($state.requestdata?.request_for === "block") {
+                            action = "بستن";
+                          }
+                          if ($state.requestdata?.discount != null) {
+                            action = "ویرایش تخفیف";
+                          }
+                          if ($state.requestdata?.price != null) {
+                            action = "ویرایش قیمت";
+                          }
+                          const flatDays = (
+                            $state.requestdata?.days?.flat?.() ||
+                            $state.requestdata?.days ||
+                            []
+                          ).filter(ts => ts != null);
+                          if (!flatDays.length) {
+                            return `نتیجه درخواست «${action}»`;
+                          }
+                          const dates = flatDays
+                            .map(ts => {
+                              const d = new Date(ts * 1000);
+                              d.setHours(0, 0, 0, 0);
+                              return d;
+                            })
+                            .filter(d => !isNaN(d.getTime()))
+                            .sort((a, b) => a - b);
+                          if (!dates.length) {
+                            return `نتیجه درخواست «${action}»`;
+                          }
+                          let isConsecutive = true;
+                          for (let i = 1; i < dates.length; i++) {
+                            const diff =
+                              (dates[i] - dates[i - 1]) / (1000 * 60 * 60 * 24);
+                            if (Math.round(diff) !== 1) {
+                              isConsecutive = false;
+                              break;
+                            }
+                          }
+                          if (!isConsecutive) {
+                            return `نتیجه درخواست «${action}»`;
+                          }
+                          const fmt = new Intl.DateTimeFormat(
+                            "fa-IR-u-ca-persian",
+                            {
+                              day: "numeric",
+                              month: "long"
+                            }
+                          );
+                          const firstDate = fmt.format(dates[0]);
+                          let dateStr = firstDate;
+                          if (dates.length > 1) {
+                            const lastDate = fmt.format(
+                              dates[dates.length - 1]
+                            );
+                            dateStr = `${firstDate} تا ${lastDate}`;
+                          }
+                          return `نتیجه «${action}» ${dateStr}`;
                         })();
                       } catch (e) {
                         if (
@@ -8730,20 +8790,30 @@ function PlasmicCalendar24__RenderFunc(props: {
                       const actionArgs = {
                         customFunction: async () => {
                           return (() => {
-                            const reqId =
-                              "req_" +
-                              Date.now() +
-                              "_" +
-                              Math.floor(Math.random() * 100000);
-                            $state.generatedRequestId = reqId;
-                            const currentPropId =
-                              $props.propertyId || $state.propId;
-                            if (currentPropId) {
-                              return sessionStorage.setItem(
-                                `pending_req_${currentPropId}`,
-                                reqId
-                              );
-                            }
+                            try {
+                              const propId = $props.propertyId || $state.propId;
+                              const reqId = `req_${Date.now()}_${Math.floor(Math.random() * 100000)}`;
+                              $state.requestdata = {
+                                days: [$state.fragmentDatePicker?.values || []],
+                                property_id: propId,
+                                requested_by: "user",
+                                request_for: "block"
+                              };
+                              $state.platformRequestStatus = {
+                                isLoading: true,
+                                data: null
+                              };
+                              if (propId && typeof window !== "undefined") {
+                                sessionStorage.setItem(
+                                  `pending_req_${propId}`,
+                                  reqId
+                                );
+                                $state.pollingRequestId = reqId;
+                              }
+                              return setTimeout(() => {
+                                $state.manualResultShow = true;
+                              }, 50);
+                            } catch (error) {}
                           })();
                         }
                       };
@@ -8983,7 +9053,7 @@ function PlasmicCalendar24__RenderFunc(props: {
                       const actionArgs = {
                         args: [
                           "POST",
-                          "https://api-v2.rentamon.com/api/setblock",
+                          "https://automation.miaan.ir/webhook/calendar/actions",
                           undefined,
                           (() => {
                             try {
@@ -9033,27 +9103,29 @@ function PlasmicCalendar24__RenderFunc(props: {
                                   const [year, month, day] = date
                                     .toLocaleDateString("fa")
                                     .split("/");
-                                  const formattedDate = `${convertPersianNumbersToEnglish(year)}-${padZero(convertPersianNumbersToEnglish(month))}-${padZero(convertPersianNumbersToEnglish(day))}`;
-                                  return formattedDate;
+                                  return `${convertPersianNumbersToEnglish(year)}-${padZero(convertPersianNumbersToEnglish(month))}-${padZero(convertPersianNumbersToEnglish(day))}`;
                                 }
                                 function getTodayInPersian() {
                                   const today = new Date();
                                   const [year, month, day] = today
                                     .toLocaleDateString("fa")
                                     .split("/");
-                                  const formattedDate = `${convertPersianNumbersToEnglish(year)}-${padZero(convertPersianNumbersToEnglish(month))}-${padZero(convertPersianNumbersToEnglish(day))}`;
-                                  return formattedDate;
+                                  return `${convertPersianNumbersToEnglish(year)}-${padZero(convertPersianNumbersToEnglish(month))}-${padZero(convertPersianNumbersToEnglish(day))}`;
                                 }
                                 const todayInPersian = getTodayInPersian();
-                                const data = {
-                                  days: [$state.fragmentDatePicker.values],
-                                  property_id: $props.propertyId,
-                                  requested_by: "user",
-                                  request_for: "block",
-                                  request_id: $state.generatedRequestId
-                                };
-                                $state.requestdata = data;
-                                data.days = data.days
+                                const propId =
+                                  $props.propertyId || $state.propId;
+                                const reqId =
+                                  $state.pollingRequestId ||
+                                  (typeof window !== "undefined" && propId
+                                    ? sessionStorage.getItem(
+                                        `pending_req_${propId}`
+                                      )
+                                    : "");
+                                const rawDays = [
+                                  $state.fragmentDatePicker.values
+                                ];
+                                const formattedDays = rawDays
                                   .map(timestampArray =>
                                     timestampArray
                                       .map(timestamp =>
@@ -9064,7 +9136,14 @@ function PlasmicCalendar24__RenderFunc(props: {
                                       .filter(day => day >= todayInPersian)
                                   )
                                   .flat();
-                                return data;
+                                const backendData = {
+                                  days: formattedDays,
+                                  property_id: propId,
+                                  requested_by: "user",
+                                  request_for: "block",
+                                  request_id: reqId
+                                };
+                                return backendData;
                               })();
                             } catch (e) {
                               if (
@@ -11935,7 +12014,7 @@ function PlasmicCalendar24__RenderFunc(props: {
                       e instanceof TypeError ||
                       e?.plasmicType === "PlasmicUndefinedDataError"
                     ) {
-                      return true;
+                      return false;
                     }
                     throw e;
                   }
@@ -12001,7 +12080,7 @@ function PlasmicCalendar24__RenderFunc(props: {
                       e instanceof TypeError ||
                       e?.plasmicType === "PlasmicUndefinedDataError"
                     ) {
-                      return true;
+                      return false;
                     }
                     throw e;
                   }
@@ -12053,7 +12132,7 @@ function PlasmicCalendar24__RenderFunc(props: {
                       e instanceof TypeError ||
                       e?.plasmicType === "PlasmicUndefinedDataError"
                     ) {
-                      return true;
+                      return false;
                     }
                     throw e;
                   }

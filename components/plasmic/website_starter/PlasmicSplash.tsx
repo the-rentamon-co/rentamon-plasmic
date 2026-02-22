@@ -461,7 +461,7 @@ function PlasmicSplash__RenderFunc(props: {
                 $steps["setSourceCookie"] = await $steps["setSourceCookie"];
               }
 
-              $steps["getUserSegment"] = true
+              $steps["getUserSegment"] = false
                 ? (() => {
                     const actionArgs = {
                       args: [
@@ -487,47 +487,12 @@ function PlasmicSplash__RenderFunc(props: {
                     const actionArgs = {
                       customFunction: async () => {
                         return (() => {
-                          if (
-                            !$steps.getUserSegment ||
-                            !$steps.getUserSegment.data ||
-                            $steps.getUserSegment.data.flag == null
-                          ) {
-                            $state.isErrorHappen = true;
-                          }
-                          function setCookie(name, value, hours) {
-                            let expires = "";
-                            if (hours) {
-                              const date = new Date();
-                              date.setTime(
-                                date.getTime() + hours * 60 * 60 * 1000
-                              );
-                              expires = "; expires=" + date.toUTCString();
-                            }
-                            document.cookie =
-                              name + "=" + (value || "") + expires + "; path=/";
-                          }
-                          setCookie(
-                            "vt",
-                            $steps.getUserSegment.data.flag || 99,
-                            0.3333
-                          );
                           const isMiaan =
                             window.location.hostname.includes("miaan.ir");
                           const baseUrl = isMiaan
                             ? "https://miaan.ir"
                             : "https://rentamon.com";
-                          if ($steps.getUserSegment.data.flag == 2) {
-                            window.location.href = `${baseUrl}/panel-lite/`;
-                          }
-                          if ($steps.getUserSegment.data.flag == 1) {
-                            window.location.href = `${baseUrl}/panel/`;
-                          }
-                          if ($steps.getUserSegment.data.flag == 0) {
-                            window.location.href = `${baseUrl}/panel-lite/`;
-                          }
-                          if ($steps.getUserSegment.data.flag == 3) {
-                            return (window.location.href = `${baseUrl}/panel-2/`);
-                          }
+                          return (window.location.href = `${baseUrl}/panel/`);
                         })();
                       }
                     };

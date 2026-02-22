@@ -1219,7 +1219,6 @@
   }
 }
 .homsa {
-  display: flex;
   flex-direction: column;
   position: relative;
   width: 100%;
@@ -1229,6 +1228,7 @@
   left: auto;
   top: auto;
   min-width: 0;
+  display: none;
   padding: 8px;
 }
 @media (max-width: 1200px) {
@@ -1394,7 +1394,6 @@
   }
 }
 .mizboon {
-  display: flex;
   flex-direction: column;
   position: relative;
   width: 100%;
@@ -1404,6 +1403,7 @@
   left: auto;
   top: auto;
   min-width: 0;
+  display: none;
   padding: 8px;
 }
 @media (max-width: 1200px) {

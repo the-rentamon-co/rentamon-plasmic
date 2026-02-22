@@ -1264,21 +1264,7 @@ function PlasmicInstantReserve__RenderFunc(props: {
                 }
               })() ? (
                 <div className={classNames(projectcss.all, sty.freeBox__kJN)}>
-                  {(() => {
-                    try {
-                      return $state.instantPropertyWebsite.data.some(
-                        item => item.website_id === "8"
-                      );
-                    } catch (e) {
-                      if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
-                      ) {
-                        return false;
-                      }
-                      throw e;
-                    }
-                  })() ? (
+                  {false ? (
                     <div
                       data-plasmic-name={"homsaContainer"}
                       data-plasmic-override={overrides.homsaContainer}
