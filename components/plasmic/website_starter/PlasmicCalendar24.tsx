@@ -3063,6 +3063,11 @@ function PlasmicCalendar24__RenderFunc(props: {
                             ? $state.selectedItem
                             : [];
                           const calendar = $state.apiRequest.data[1].calendar;
+                          const getCategory = item => {
+                            if (item.booking_id) return "reserved";
+                            if (item.status === "blocked") return "blocked";
+                            return "free";
+                          };
                           const targetDates = timestamps.map(ts => {
                             const d = new Date(ts * 1000);
                             return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
@@ -3103,53 +3108,54 @@ function PlasmicCalendar24__RenderFunc(props: {
                             $state.fragmentDatePicker.values = [];
                             return;
                           }
-                          if (addedItem && addedItem.booking_id) {
-                            const bookingId = addedItem.booking_id;
-                            const fullBookingGroup = calendar.filter(
-                              day => day.booking_id === bookingId
+                          if (addedItem) {
+                            const addedCat = getCategory(addedItem);
+                            if (addedCat === "reserved") {
+                              const bookingId = addedItem.booking_id;
+                              const fullBookingGroup = calendar.filter(
+                                day => day.booking_id === bookingId
+                              );
+                              $state.selectedItem = fullBookingGroup;
+                              const referenceTimestamp =
+                                timestamps[addedItemIndex] ||
+                                timestamps[0] ||
+                                Date.now();
+                              const referenceDate = new Date(
+                                referenceTimestamp * 1000
+                              );
+                              const hours = referenceDate.getHours();
+                              const minutes = referenceDate.getMinutes();
+                              const seconds = referenceDate.getSeconds();
+                              const finalTimestamps = fullBookingGroup.map(
+                                item => {
+                                  const [year, month, day] = item.date
+                                    .split("-")
+                                    .map(Number);
+                                  const newDate = new Date(
+                                    year,
+                                    month - 1,
+                                    day,
+                                    hours,
+                                    minutes,
+                                    seconds
+                                  );
+                                  return Math.floor(newDate.getTime() / 1000);
+                                }
+                              );
+                              $state.fragmentDatePicker.values =
+                                finalTimestamps;
+                              return;
+                            }
+                            const hasConflict = previousSelectedItems.some(
+                              item => getCategory(item) !== addedCat
                             );
-                            $state.selectedItem = fullBookingGroup;
-                            const referenceTimestamp =
-                              timestamps[addedItemIndex] ||
-                              timestamps[0] ||
-                              Date.now();
-                            const referenceDate = new Date(
-                              referenceTimestamp * 1000
-                            );
-                            const hours = referenceDate.getHours();
-                            const minutes = referenceDate.getMinutes();
-                            const seconds = referenceDate.getSeconds();
-                            const finalTimestamps = fullBookingGroup.map(
-                              item => {
-                                const [year, month, day] = item.date
-                                  .split("-")
-                                  .map(Number);
-                                const newDate = new Date(
-                                  year,
-                                  month - 1,
-                                  day,
-                                  hours,
-                                  minutes,
-                                  seconds
-                                );
-                                return Math.floor(newDate.getTime() / 1000);
-                              }
-                            );
-                            $state.fragmentDatePicker.values = finalTimestamps;
-                            return;
-                          }
-                          if (addedItem && !addedItem.booking_id) {
-                            const wasPrevStateBooked =
-                              previousSelectedItems.some(i => i.booking_id);
-                            if (wasPrevStateBooked) {
+                            if (hasConflict) {
                               $state.selectedItem = [addedItem];
                               $state.fragmentDatePicker.values = [
                                 timestamps[addedItemIndex]
                               ];
-                            } else {
-                              $state.selectedItem = currentItems;
+                              return;
                             }
-                            return;
                           }
                           return ($state.selectedItem = currentItems);
                         })();
@@ -5178,231 +5184,265 @@ function PlasmicCalendar24__RenderFunc(props: {
                 </div>
               </div>
             </section>
-            <section
-              data-plasmic-name={"\u0642\u06cc\u0645\u062a"}
-              data-plasmic-override={overrides.قیمت}
-              className={classNames(
-                projectcss.all,
-                sty.قیمت,
-                (() => {
-                  try {
-                    return $props.isFirstVisit ? "unclickable" : "clickable";
-                  } catch (e) {
-                    if (
-                      e instanceof TypeError ||
-                      e?.plasmicType === "PlasmicUndefinedDataError"
-                    ) {
-                      return undefined;
+            {(() => {
+              try {
+                return !($state.selectedItem || []).some(
+                  item =>
+                    item?.status === "blocked" || item?.status === "reserved"
+                );
+              } catch (e) {
+                if (
+                  e instanceof TypeError ||
+                  e?.plasmicType === "PlasmicUndefinedDataError"
+                ) {
+                  return true;
+                }
+                throw e;
+              }
+            })() ? (
+              <section
+                data-plasmic-name={"\u0642\u06cc\u0645\u062a"}
+                data-plasmic-override={overrides.قیمت}
+                className={classNames(
+                  projectcss.all,
+                  sty.قیمت,
+                  (() => {
+                    try {
+                      return $props.isFirstVisit ? "unclickable" : "clickable";
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return undefined;
+                      }
+                      throw e;
                     }
-                    throw e;
+                  })()
+                )}
+                onClick={async event => {
+                  const $steps = {};
+
+                  $steps["updateModalActions"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          variable: {
+                            objRoot: $state,
+                            variablePath: ["modalActions"]
+                          },
+                          operation: 0,
+                          value: "price"
+                        };
+                        return (({
+                          variable,
+                          value,
+                          startIndex,
+                          deleteCount
+                        }) => {
+                          if (!variable) {
+                            return;
+                          }
+                          const { objRoot, variablePath } = variable;
+
+                          $stateSet(objRoot, variablePath, value);
+                          return value;
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["updateModalActions"] != null &&
+                    typeof $steps["updateModalActions"] === "object" &&
+                    typeof $steps["updateModalActions"].then === "function"
+                  ) {
+                    $steps["updateModalActions"] =
+                      await $steps["updateModalActions"];
                   }
-                })()
-              )}
-              onClick={async event => {
-                const $steps = {};
 
-                $steps["updateModalActions"] = true
-                  ? (() => {
-                      const actionArgs = {
-                        variable: {
-                          objRoot: $state,
-                          variablePath: ["modalActions"]
-                        },
-                        operation: 0,
-                        value: "price"
-                      };
-                      return (({
-                        variable,
-                        value,
-                        startIndex,
-                        deleteCount
-                      }) => {
-                        if (!variable) {
-                          return;
-                        }
-                        const { objRoot, variablePath } = variable;
+                  $steps["updateStateVariable"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          operation: 0,
+                          value: (() => {
+                            return ($state.modal.open = false);
+                          })()
+                        };
+                        return (({
+                          variable,
+                          value,
+                          startIndex,
+                          deleteCount
+                        }) => {
+                          if (!variable) {
+                            return;
+                          }
+                          const { objRoot, variablePath } = variable;
 
-                        $stateSet(objRoot, variablePath, value);
-                        return value;
-                      })?.apply(null, [actionArgs]);
-                    })()
-                  : undefined;
-                if (
-                  $steps["updateModalActions"] != null &&
-                  typeof $steps["updateModalActions"] === "object" &&
-                  typeof $steps["updateModalActions"].then === "function"
-                ) {
-                  $steps["updateModalActions"] =
-                    await $steps["updateModalActions"];
-                }
-
-                $steps["updateStateVariable"] = true
-                  ? (() => {
-                      const actionArgs = {
-                        operation: 0,
-                        value: (() => {
-                          return ($state.modal.open = false);
-                        })()
-                      };
-                      return (({
-                        variable,
-                        value,
-                        startIndex,
-                        deleteCount
-                      }) => {
-                        if (!variable) {
-                          return;
-                        }
-                        const { objRoot, variablePath } = variable;
-
-                        $stateSet(objRoot, variablePath, value);
-                        return value;
-                      })?.apply(null, [actionArgs]);
-                    })()
-                  : undefined;
-                if (
-                  $steps["updateStateVariable"] != null &&
-                  typeof $steps["updateStateVariable"] === "object" &&
-                  typeof $steps["updateStateVariable"].then === "function"
-                ) {
-                  $steps["updateStateVariable"] =
-                    await $steps["updateStateVariable"];
-                }
-              }}
-            >
-              <div
-                className={classNames(projectcss.all, sty.freeBox__xgYwl, ``)}
+                          $stateSet(objRoot, variablePath, value);
+                          return value;
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["updateStateVariable"] != null &&
+                    typeof $steps["updateStateVariable"] === "object" &&
+                    typeof $steps["updateStateVariable"].then === "function"
+                  ) {
+                    $steps["updateStateVariable"] =
+                      await $steps["updateStateVariable"];
+                  }
+                }}
               >
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__bt1Gn
-                  )}
+                  className={classNames(projectcss.all, sty.freeBox__xgYwl, ``)}
                 >
-                  {
-                    "\u0648\u06cc\u0631\u0627\u06cc\u0634 \u0642\u06cc\u0645\u062a"
-                  }
-                </div>
-                <Icon16Icon
-                  className={classNames(projectcss.all, sty.svg__mBp72)}
-                  role={"img"}
-                />
-              </div>
-            </section>
-            <section
-              data-plasmic-name={"\u062a\u062e\u0641\u06cc\u0641"}
-              data-plasmic-override={overrides.تخفیف}
-              className={classNames(
-                projectcss.all,
-                sty.تخفیف,
-                (() => {
-                  try {
-                    return $props.isFirstVisit ? "unclickable" : "clickable";
-                  } catch (e) {
-                    if (
-                      e instanceof TypeError ||
-                      e?.plasmicType === "PlasmicUndefinedDataError"
-                    ) {
-                      return undefined;
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__bt1Gn
+                    )}
+                  >
+                    {
+                      "\u0648\u06cc\u0631\u0627\u06cc\u0634 \u0642\u06cc\u0645\u062a"
                     }
-                    throw e;
+                  </div>
+                  <Icon16Icon
+                    className={classNames(projectcss.all, sty.svg__mBp72)}
+                    role={"img"}
+                  />
+                </div>
+              </section>
+            ) : null}
+            {(() => {
+              try {
+                return !($state.selectedItem || []).some(
+                  item =>
+                    item?.status === "blocked" || item?.status === "reserved"
+                );
+              } catch (e) {
+                if (
+                  e instanceof TypeError ||
+                  e?.plasmicType === "PlasmicUndefinedDataError"
+                ) {
+                  return true;
+                }
+                throw e;
+              }
+            })() ? (
+              <section
+                data-plasmic-name={"\u062a\u062e\u0641\u06cc\u0641"}
+                data-plasmic-override={overrides.تخفیف}
+                className={classNames(
+                  projectcss.all,
+                  sty.تخفیف,
+                  (() => {
+                    try {
+                      return $props.isFirstVisit ? "unclickable" : "clickable";
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return undefined;
+                      }
+                      throw e;
+                    }
+                  })()
+                )}
+                onClick={async event => {
+                  const $steps = {};
+
+                  $steps["updateNewDiscountModalOpen"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          variable: {
+                            objRoot: $state,
+                            variablePath: ["newDiscountModal", "open"]
+                          },
+                          operation: 0,
+                          value: true
+                        };
+                        return (({
+                          variable,
+                          value,
+                          startIndex,
+                          deleteCount
+                        }) => {
+                          if (!variable) {
+                            return;
+                          }
+                          const { objRoot, variablePath } = variable;
+
+                          $stateSet(objRoot, variablePath, value);
+                          return value;
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["updateNewDiscountModalOpen"] != null &&
+                    typeof $steps["updateNewDiscountModalOpen"] === "object" &&
+                    typeof $steps["updateNewDiscountModalOpen"].then ===
+                      "function"
+                  ) {
+                    $steps["updateNewDiscountModalOpen"] =
+                      await $steps["updateNewDiscountModalOpen"];
                   }
-                })()
-              )}
-              onClick={async event => {
-                const $steps = {};
 
-                $steps["updateNewDiscountModalOpen"] = true
-                  ? (() => {
-                      const actionArgs = {
-                        variable: {
-                          objRoot: $state,
-                          variablePath: ["newDiscountModal", "open"]
-                        },
-                        operation: 0,
-                        value: true
-                      };
-                      return (({
-                        variable,
-                        value,
-                        startIndex,
-                        deleteCount
-                      }) => {
-                        if (!variable) {
-                          return;
-                        }
-                        const { objRoot, variablePath } = variable;
+                  $steps["updateStateVariable"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          operation: 0,
+                          value: (() => {
+                            return ($state.modal.open = false);
+                          })()
+                        };
+                        return (({
+                          variable,
+                          value,
+                          startIndex,
+                          deleteCount
+                        }) => {
+                          if (!variable) {
+                            return;
+                          }
+                          const { objRoot, variablePath } = variable;
 
-                        $stateSet(objRoot, variablePath, value);
-                        return value;
-                      })?.apply(null, [actionArgs]);
-                    })()
-                  : undefined;
-                if (
-                  $steps["updateNewDiscountModalOpen"] != null &&
-                  typeof $steps["updateNewDiscountModalOpen"] === "object" &&
-                  typeof $steps["updateNewDiscountModalOpen"].then ===
-                    "function"
-                ) {
-                  $steps["updateNewDiscountModalOpen"] =
-                    await $steps["updateNewDiscountModalOpen"];
-                }
-
-                $steps["updateStateVariable"] = true
-                  ? (() => {
-                      const actionArgs = {
-                        operation: 0,
-                        value: (() => {
-                          return ($state.modal.open = false);
-                        })()
-                      };
-                      return (({
-                        variable,
-                        value,
-                        startIndex,
-                        deleteCount
-                      }) => {
-                        if (!variable) {
-                          return;
-                        }
-                        const { objRoot, variablePath } = variable;
-
-                        $stateSet(objRoot, variablePath, value);
-                        return value;
-                      })?.apply(null, [actionArgs]);
-                    })()
-                  : undefined;
-                if (
-                  $steps["updateStateVariable"] != null &&
-                  typeof $steps["updateStateVariable"] === "object" &&
-                  typeof $steps["updateStateVariable"].then === "function"
-                ) {
-                  $steps["updateStateVariable"] =
-                    await $steps["updateStateVariable"];
-                }
-              }}
-            >
-              <div
-                className={classNames(projectcss.all, sty.freeBox__savS, ``)}
+                          $stateSet(objRoot, variablePath, value);
+                          return value;
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["updateStateVariable"] != null &&
+                    typeof $steps["updateStateVariable"] === "object" &&
+                    typeof $steps["updateStateVariable"].then === "function"
+                  ) {
+                    $steps["updateStateVariable"] =
+                      await $steps["updateStateVariable"];
+                  }
+                }}
               >
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__u1W1S
-                  )}
+                  className={classNames(projectcss.all, sty.freeBox__savS, ``)}
                 >
-                  {
-                    "\u0648\u06cc\u0631\u0627\u06cc\u0634 \u062a\u062e\u0641\u06cc\u0641"
-                  }
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__u1W1S
+                    )}
+                  >
+                    {
+                      "\u0648\u06cc\u0631\u0627\u06cc\u0634 \u062a\u062e\u0641\u06cc\u0641"
+                    }
+                  </div>
+                  <Icon16Icon
+                    className={classNames(projectcss.all, sty.svg__mc88L)}
+                    role={"img"}
+                  />
                 </div>
-                <Icon16Icon
-                  className={classNames(projectcss.all, sty.svg__mc88L)}
-                  role={"img"}
-                />
-              </div>
-            </section>
+              </section>
+            ) : null}
           </section>
         </AntdModal>
         <AntdModal

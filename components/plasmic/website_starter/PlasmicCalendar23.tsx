@@ -2794,6 +2794,11 @@ function PlasmicCalendar23__RenderFunc(props: {
                             ? $state.selectedItem
                             : [];
                           const calendar = $state.apiRequest.data[1].calendar;
+                          const getCategory = item => {
+                            if (item.booking_id) return "reserved";
+                            if (item.status === "blocked") return "blocked";
+                            return "free";
+                          };
                           const targetDates = timestamps.map(ts => {
                             const d = new Date(ts * 1000);
                             return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
@@ -2834,53 +2839,54 @@ function PlasmicCalendar23__RenderFunc(props: {
                             $state.fragmentDatePicker.values = [];
                             return;
                           }
-                          if (addedItem && addedItem.booking_id) {
-                            const bookingId = addedItem.booking_id;
-                            const fullBookingGroup = calendar.filter(
-                              day => day.booking_id === bookingId
+                          if (addedItem) {
+                            const addedCat = getCategory(addedItem);
+                            if (addedCat === "reserved") {
+                              const bookingId = addedItem.booking_id;
+                              const fullBookingGroup = calendar.filter(
+                                day => day.booking_id === bookingId
+                              );
+                              $state.selectedItem = fullBookingGroup;
+                              const referenceTimestamp =
+                                timestamps[addedItemIndex] ||
+                                timestamps[0] ||
+                                Date.now();
+                              const referenceDate = new Date(
+                                referenceTimestamp * 1000
+                              );
+                              const hours = referenceDate.getHours();
+                              const minutes = referenceDate.getMinutes();
+                              const seconds = referenceDate.getSeconds();
+                              const finalTimestamps = fullBookingGroup.map(
+                                item => {
+                                  const [year, month, day] = item.date
+                                    .split("-")
+                                    .map(Number);
+                                  const newDate = new Date(
+                                    year,
+                                    month - 1,
+                                    day,
+                                    hours,
+                                    minutes,
+                                    seconds
+                                  );
+                                  return Math.floor(newDate.getTime() / 1000);
+                                }
+                              );
+                              $state.fragmentDatePicker.values =
+                                finalTimestamps;
+                              return;
+                            }
+                            const hasConflict = previousSelectedItems.some(
+                              item => getCategory(item) !== addedCat
                             );
-                            $state.selectedItem = fullBookingGroup;
-                            const referenceTimestamp =
-                              timestamps[addedItemIndex] ||
-                              timestamps[0] ||
-                              Date.now();
-                            const referenceDate = new Date(
-                              referenceTimestamp * 1000
-                            );
-                            const hours = referenceDate.getHours();
-                            const minutes = referenceDate.getMinutes();
-                            const seconds = referenceDate.getSeconds();
-                            const finalTimestamps = fullBookingGroup.map(
-                              item => {
-                                const [year, month, day] = item.date
-                                  .split("-")
-                                  .map(Number);
-                                const newDate = new Date(
-                                  year,
-                                  month - 1,
-                                  day,
-                                  hours,
-                                  minutes,
-                                  seconds
-                                );
-                                return Math.floor(newDate.getTime() / 1000);
-                              }
-                            );
-                            $state.fragmentDatePicker.values = finalTimestamps;
-                            return;
-                          }
-                          if (addedItem && !addedItem.booking_id) {
-                            const wasPrevStateBooked =
-                              previousSelectedItems.some(i => i.booking_id);
-                            if (wasPrevStateBooked) {
+                            if (hasConflict) {
                               $state.selectedItem = [addedItem];
                               $state.fragmentDatePicker.values = [
                                 timestamps[addedItemIndex]
                               ];
-                            } else {
-                              $state.selectedItem = currentItems;
+                              return;
                             }
-                            return;
                           }
                           return ($state.selectedItem = currentItems);
                         })();
