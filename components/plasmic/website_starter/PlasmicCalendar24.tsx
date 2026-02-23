@@ -1386,7 +1386,7 @@ function PlasmicCalendar24__RenderFunc(props: {
               await $steps["updateFragmentDatePickerValue2"];
           }
 
-          $steps["request"] = true
+          $steps["request"] = false
             ? (() => {
                 const actionArgs = {
                   args: [
@@ -1425,7 +1425,7 @@ function PlasmicCalendar24__RenderFunc(props: {
             $steps["request"] = await $steps["request"];
           }
 
-          $steps["updateFragmentDatePickerValue4"] = true
+          $steps["updateFragmentDatePickerValue4"] = false
             ? (() => {
                 const actionArgs = {
                   customFunction: async () => {
@@ -8790,30 +8790,20 @@ function PlasmicCalendar24__RenderFunc(props: {
                       const actionArgs = {
                         customFunction: async () => {
                           return (() => {
-                            try {
-                              const propId = $props.propertyId || $state.propId;
-                              const reqId = `req_${Date.now()}_${Math.floor(Math.random() * 100000)}`;
-                              $state.requestdata = {
-                                days: [$state.fragmentDatePicker?.values || []],
-                                property_id: propId,
-                                requested_by: "user",
-                                request_for: "block"
-                              };
-                              $state.platformRequestStatus = {
-                                isLoading: true,
-                                data: null
-                              };
-                              if (propId && typeof window !== "undefined") {
-                                sessionStorage.setItem(
-                                  `pending_req_${propId}`,
-                                  reqId
-                                );
-                                $state.pollingRequestId = reqId;
-                              }
-                              return setTimeout(() => {
-                                $state.manualResultShow = true;
-                              }, 50);
-                            } catch (error) {}
+                            const reqId =
+                              "req_" +
+                              Date.now() +
+                              "_" +
+                              Math.floor(Math.random() * 100000);
+                            $state.generatedRequestId = reqId;
+                            const currentPropId =
+                              $props.propertyId || $state.propId;
+                            if (currentPropId) {
+                              return sessionStorage.setItem(
+                                `pending_req_${currentPropId}`,
+                                reqId
+                              );
+                            }
                           })();
                         }
                       };
@@ -9053,7 +9043,7 @@ function PlasmicCalendar24__RenderFunc(props: {
                       const actionArgs = {
                         args: [
                           "POST",
-                          "https://automation.miaan.ir/webhook/calendar/actions",
+                          "https://api-v2.rentamon.com/api/setblock",
                           undefined,
                           (() => {
                             try {
