@@ -4411,6 +4411,7 @@
 @media (max-width: 500px) {
   .freeBox__dmczz {
     max-width: 100%;
+    padding-bottom: 60px;
   }
 }
 .button__y5O2W:global(.__wab_instance) {
