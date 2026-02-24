@@ -872,7 +872,7 @@ function PlasmicProCalendar2__RenderFunc(props: {
                     const actionArgs = {
                       args: [
                         undefined,
-                        "https://api-v3.miaan.ir/webhook/check_reserve"
+                        "https://prod.miaan.ir/webhook/check_reserve"
                       ]
                     };
                     return $globalActions["Fragment.apiRequest"]?.apply(null, [

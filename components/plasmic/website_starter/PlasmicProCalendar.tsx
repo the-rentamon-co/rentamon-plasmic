@@ -876,7 +876,7 @@ function PlasmicProCalendar__RenderFunc(props: {
                     const actionArgs = {
                       args: [
                         undefined,
-                        "https://api-v3.miaan.ir/webhook/check_reserve"
+                        "https://prod.miaan.ir/webhook/check_reserve"
                       ]
                     };
                     return $globalActions["Fragment.apiRequest"]?.apply(null, [
@@ -2244,7 +2244,7 @@ function PlasmicProCalendar__RenderFunc(props: {
                     const actionArgs = {
                       args: [
                         undefined,
-                        "https://api-v3.miaan.ir/webhook/panel/user/segment?feature_name=new-pricing"
+                        "https://prod.miaan.ir/webhook/panel/user/segment?feature_name=new-pricing"
                       ]
                     };
                     return $globalActions["Fragment.apiRequest"]?.apply(null, [

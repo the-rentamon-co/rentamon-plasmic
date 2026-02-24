@@ -466,7 +466,7 @@ function PlasmicSplash__RenderFunc(props: {
                     const actionArgs = {
                       args: [
                         undefined,
-                        "https://api-v3.miaan.ir/webhook/get_user_segment"
+                        "https://prod.miaan.ir/webhook/get_user_segment"
                       ]
                     };
                     return $globalActions["Fragment.apiRequest"]?.apply(null, [
