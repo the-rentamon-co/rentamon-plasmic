@@ -7415,15 +7415,14 @@ function PlasmicCalendar24__RenderFunc(props: {
                                 if ($state.platformRequestStatus?.isLoading) {
                                   return false;
                                 }
-                                if (
-                                  !$state.platformRequestStatus ||
-                                  !$state.platformRequestStatus.data
-                                ) {
+                                const data = $state.platformRequestStatus?.data;
+                                if (!data) {
                                   return false;
                                 }
                                 if (
-                                  Object.keys($state.platformRequestStatus.data)
-                                    .length === 0
+                                  Object.keys(data).length === 0 ||
+                                  data.timeout ||
+                                  data.empty_result
                                 ) {
                                   return true;
                                 }
@@ -7437,8 +7436,7 @@ function PlasmicCalendar24__RenderFunc(props: {
                                 ) {
                                   return false;
                                 }
-                                const platforms =
-                                  $state.platformRequestStatus.data;
+                                const platforms = data;
                                 const discount = $state.requestdata?.discount;
                                 if (platforms[currentItem]) {
                                   return (

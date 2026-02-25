@@ -2195,7 +2195,6 @@
   }
 }
 .text__e6SC {
-  position: relative;
   width: 100%;
   height: auto;
   max-width: 100%;
@@ -2203,6 +2202,7 @@
   line-height: 1.8;
   padding-top: 4px;
   padding-bottom: 0px;
+  position: relative;
   min-width: 0;
 }
 @media (max-width: 1200px) {
