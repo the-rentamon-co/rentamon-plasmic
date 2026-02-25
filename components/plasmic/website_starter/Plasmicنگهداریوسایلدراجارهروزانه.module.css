@@ -179,27 +179,6 @@
   min-width: 0;
   padding: 5px 8px 8px;
 }
-.h2__qd0B9 {
-  animation: none;
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  font-size: 18px;
-  font-weight: 600;
-  color: #444444;
-  font-family: "Estedad";
-  font-style: normal;
-  text-align: right;
-  text-transform: none;
-  line-height: 2;
-  letter-spacing: 0px;
-  white-space: pre-wrap;
-  user-select: text;
-  text-decoration-line: none;
-  text-overflow: clip;
-  min-width: 0;
-}
 .text__s4Wy {
   animation: none;
   position: relative;
@@ -300,7 +279,7 @@
     padding-left: 0px;
   }
 }
-.h2__vlYFu {
+.text__vlYFu {
   animation: none;
   position: relative;
   width: 100%;
@@ -322,7 +301,7 @@
   min-width: 0;
 }
 @media (max-width: 500px) {
-  .h2__vlYFu {
+  .text__vlYFu {
     line-height: 2;
     letter-spacing: 0px;
   }
@@ -381,7 +360,7 @@
   min-width: 0;
   padding: 8px;
 }
-.h2__qa24 {
+.text__qa24 {
   animation: none;
   text-align: right;
   font-size: 18px;
@@ -399,7 +378,7 @@
   text-overflow: clip;
 }
 @media (max-width: 500px) {
-  .h2__qa24 {
+  .text__qa24 {
     line-height: 2;
     letter-spacing: 0px;
   }
@@ -458,7 +437,7 @@
   min-width: 0;
   padding: 8px;
 }
-.h2__sEv48 {
+.text__sEv48 {
   animation: none;
   text-align: right;
   font-size: 18px;
@@ -476,7 +455,7 @@
   text-overflow: clip;
 }
 @media (max-width: 500px) {
-  .h2__sEv48 {
+  .text__sEv48 {
     padding-top: 0px;
     font-family: "Estedad";
     font-size: 18px;
@@ -786,7 +765,7 @@
   min-width: 0;
   padding: 8px;
 }
-.text__flPVl {
+.h2__flPVl {
   animation: none;
   text-align: right;
   font-size: 18px;
@@ -804,7 +783,7 @@
   text-overflow: clip;
 }
 @media (max-width: 500px) {
-  .text__flPVl {
+  .h2__flPVl {
     padding-top: 0px;
     font-family: "Estedad";
     font-size: 18px;
@@ -1762,12 +1741,14 @@
   width: 100%;
   height: auto;
   max-width: 100%;
+  padding-left: 8px;
+  padding-bottom: 20px;
+  padding-top: 8px;
   justify-content: flex-start;
   align-items: flex-start;
   min-width: 0;
-  padding: 8px 8px 20px;
 }
-.h3___196Ix {
+.h2___196Ix {
   animation: none;
   text-align: right;
   font-size: 18px;
@@ -1783,9 +1764,11 @@
   user-select: text;
   text-decoration-line: none;
   text-overflow: clip;
+  padding-left: 0px;
+  margin-bottom: 0px;
 }
 @media (max-width: 500px) {
-  .h3___196Ix {
+  .h2___196Ix {
     padding-top: 0px;
     font-family: "Estedad";
     font-size: 18px;
@@ -1877,7 +1860,7 @@
     padding-left: 16px;
   }
 }
-.h3__urddI {
+.h3 {
   animation: none;
   text-align: right;
   font-size: 18px;
@@ -1895,7 +1878,7 @@
   text-overflow: clip;
 }
 @media (max-width: 500px) {
-  .h3__urddI {
+  .h3 {
     padding-top: 0px;
     font-family: "Estedad";
     font-size: 18px;

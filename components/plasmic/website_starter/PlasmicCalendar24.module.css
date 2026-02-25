@@ -22,6 +22,10 @@
   max-width: 100%;
   object-fit: cover;
 }
+.sideEffect__jawO9:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+}
 .sideEffect__dqL5Y:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
@@ -3300,11 +3304,12 @@
   flex-direction: row;
   min-width: 20px;
   pointer-events: auto;
+  cursor: pointer;
   flex-shrink: 0;
   min-height: 0;
   border-radius: 0px 100px 100px 0px;
   padding: 8px;
-  border: 3px solid var(--token-8nedppYkGVaH);
+  border: 2px solid var(--token-8nedppYkGVaH);
 }
 @media (max-width: 500px) {
   .editResult {
@@ -3340,10 +3345,12 @@
   height: auto;
   max-width: 100%;
   row-gap: 4px;
+  padding-right: 6px;
 }
 @media (max-width: 500px) {
   .freeBox___48Nrb {
     width: 100%;
+    padding-right: 0px;
     min-width: 0;
   }
 }
@@ -3920,7 +3927,7 @@
   max-width: 100%;
   min-width: 0;
 }
-.freeBox___9Fnh9 {
+.newPricing {
   flex-direction: column;
   position: relative;
   width: auto;

@@ -319,18 +319,6 @@ function Plasmicاصولمهماننوازی__RenderFunc(props: {
                     "\u0627\u0635\u0648\u0644 \u0645\u0647\u0645\u0627\u0646\u200c\u0646\u0648\u0627\u0632\u06cc \u0648 \u0646\u062d\u0648\u0647\u200c\u06cc \u062a\u0639\u0627\u0645\u0644 \u0628\u0627 \u0645\u0647\u0645\u0627\u0646\u200c\u0647\u0627\u06cc \u0645\u0634\u06a9\u0644\u200c\u067e\u0633\u0646\u062f"
                   }
                 </h1>
-                <h2
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.h2,
-                    projectcss.__wab_text,
-                    sty.h2__kkOSe
-                  )}
-                >
-                  {
-                    "\u0627\u0635\u0648\u0644 \u0645\u0647\u0645\u0627\u0646 \u0646\u0648\u0627\u0632\u06cc \u0686\u06cc\u0633\u062a\u061f"
-                  }
-                </h2>
               </div>
               <div
                 data-plasmic-name={"introDesc"}

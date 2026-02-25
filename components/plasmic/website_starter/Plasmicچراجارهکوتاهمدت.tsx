@@ -89,11 +89,11 @@ function wrapQueriesWithLoadingProxy($q: any): any {
 
 export function generateDynamicMetadata($q: any, $ctx: any) {
   return {
-    title: "چر اجاره کوتاه مدت",
+    title: "اجاره کوتاه مدت چیست؟",
     description:
       "مقایسه میزان درآمدزایی اجاره روزانه و اجاره سالانه از نظر درآمد و هزینه‌های اجرایی.",
     openGraph: {
-      title: "چر اجاره کوتاه مدت",
+      title: "اجاره کوتاه مدت چیست؟",
       description:
         "مقایسه میزان درآمدزایی اجاره روزانه و اجاره سالانه از نظر درآمد و هزینه‌های اجرایی.",
       images: [
@@ -102,7 +102,7 @@ export function generateDynamicMetadata($q: any, $ctx: any) {
     },
     twitter: {
       card: "summary_large_image",
-      title: "چر اجاره کوتاه مدت",
+      title: "اجاره کوتاه مدت چیست؟",
       description:
         "مقایسه میزان درآمدزایی اجاره روزانه و اجاره سالانه از نظر درآمد و هزینه‌های اجرایی.",
       images: [

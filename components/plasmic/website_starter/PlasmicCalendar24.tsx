@@ -207,6 +207,7 @@ export type PlasmicCalendar24__OverridesType = {
   phoneNumber?: Flex__<typeof TextInput>;
   p5?: Flex__<"div">;
   reserveData?: Flex__<typeof ApiRequest>;
+  newPricing?: Flex__<"div">;
   price?: Flex__<"div">;
   title?: Flex__<"div">;
   priceInput?: Flex__<"div">;
@@ -951,19 +952,13 @@ function PlasmicCalendar24__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $q, $ctx }) => false
       },
       {
-        path: "generatedRequestId",
-        type: "private",
-        variableType: "text",
-        initFunc: ({ $props, $state, $queries, $q, $ctx }) => ""
-      },
-      {
-        path: "checkingRequestId",
-        type: "private",
-        variableType: "text",
-        initFunc: ({ $props, $state, $queries, $q, $ctx }) => ""
-      },
-      {
         path: "pollingRequestId",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => ""
+      },
+      {
+        path: "triggerPolling",
         type: "private",
         variableType: "text",
         initFunc: ({ $props, $state, $queries, $q, $ctx }) => ""
@@ -1290,6 +1285,166 @@ function PlasmicCalendar24__RenderFunc(props: {
       />
 
       <SideEffect
+        className={classNames("__wab_instance", sty.sideEffect__jawO9)}
+        deps={[$state.triggerPolling]}
+        onMount={async () => {
+          const $steps = {};
+
+          $steps["polling"] = true
+            ? (() => {
+                const actionArgs = {
+                  customFunction: async () => {
+                    return (async () => {
+                      const reqId = $state.triggerPolling;
+                      const currentPropId = String(
+                        $props.propertyId || $state.propId
+                      );
+                      if (
+                        !reqId ||
+                        !currentPropId ||
+                        typeof window === "undefined"
+                      )
+                        return;
+                      const abortController = new AbortController();
+                      let timeoutId = null;
+                      let isPolling = true;
+                      let retryCount = 0;
+                      const MAX_RETRIES = 12;
+                      const checkStatus = async () => {
+                        if (!isPolling || abortController.signal.aborted)
+                          return;
+                        retryCount++;
+                        if (retryCount > MAX_RETRIES) {
+                          const timeoutResult = {
+                            empty_result: true,
+                            timeout: true
+                          };
+                          if (
+                            String($state.requestdata?.property_id) ===
+                            currentPropId
+                          ) {
+                            $state.platformRequestStatus = {
+                              isLoading: false,
+                              data: timeoutResult
+                            };
+                          }
+                          try {
+                            const historyBook = JSON.parse(
+                              sessionStorage.getItem("property_history_book") ||
+                                "{}"
+                            );
+                            historyBook[currentPropId] = {
+                              result: timeoutResult,
+                              payload: $state.requestdata
+                            };
+                            sessionStorage.setItem(
+                              "property_history_book",
+                              JSON.stringify(historyBook)
+                            );
+                          } catch (e) {}
+                          sessionStorage.removeItem(
+                            `pending_req_${currentPropId}`
+                          );
+                          sessionStorage.removeItem(
+                            `action_data_${currentPropId}`
+                          );
+                          $state.triggerPolling = null;
+                          isPolling = false;
+                          return;
+                        }
+                        try {
+                          const response = await fetch(
+                            `https://automation.miaan.ir/webhook/request/status?request_id=${reqId}`,
+                            { signal: abortController.signal }
+                          );
+                          if (!response.ok) throw new Error("Server Error");
+                          const data = await response.json();
+                          if (!isPolling || abortController.signal.aborted)
+                            return;
+                          if (
+                            data?.status === "request_id not found" ||
+                            data?.status === "pending"
+                          ) {
+                            if (timeoutId) clearTimeout(timeoutId);
+                            timeoutId = setTimeout(checkStatus, 2000);
+                            return;
+                          }
+                          const mainData = data ? Object.values(data)[0] : null;
+                          if (mainData) {
+                            const resultData = mainData.result;
+                            const hasActualResults =
+                              resultData &&
+                              typeof resultData === "object" &&
+                              Object.keys(resultData).length > 0;
+                            const finalResult = hasActualResults
+                              ? resultData
+                              : { empty_result: true };
+                            if (
+                              String($state.requestdata?.property_id) ===
+                              currentPropId
+                            ) {
+                              $state.platformRequestStatus = {
+                                data: finalResult,
+                                isLoading: false
+                              };
+                            }
+                            try {
+                              const historyBook = JSON.parse(
+                                sessionStorage.getItem(
+                                  "property_history_book"
+                                ) || "{}"
+                              );
+                              historyBook[currentPropId] = {
+                                result: finalResult,
+                                payload: $state.requestdata
+                              };
+                              sessionStorage.setItem(
+                                "property_history_book",
+                                JSON.stringify(historyBook)
+                              );
+                            } catch (e) {}
+                            sessionStorage.removeItem(
+                              `pending_req_${currentPropId}`
+                            );
+                            sessionStorage.removeItem(
+                              `action_data_${currentPropId}`
+                            );
+                            $state.triggerPolling = null;
+                            isPolling = false;
+                          }
+                        } catch (error) {
+                          if (error.name === "AbortError") return;
+                          if (isPolling && !abortController.signal.aborted) {
+                            if (timeoutId) clearTimeout(timeoutId);
+                            timeoutId = setTimeout(checkStatus, 2000);
+                          }
+                        }
+                      };
+                      checkStatus();
+                      return () => {
+                        isPolling = false;
+                        abortController.abort();
+                        if (timeoutId) clearTimeout(timeoutId);
+                      };
+                    })();
+                  }
+                };
+                return (({ customFunction }) => {
+                  return customFunction();
+                })?.apply(null, [actionArgs]);
+              })()
+            : undefined;
+          if (
+            $steps["polling"] != null &&
+            typeof $steps["polling"] === "object" &&
+            typeof $steps["polling"].then === "function"
+          ) {
+            $steps["polling"] = await $steps["polling"];
+          }
+        }}
+      />
+
+      <SideEffect
         className={classNames("__wab_instance", sty.sideEffect__dqL5Y)}
         deps={(() => {
           try {
@@ -1337,184 +1492,71 @@ function PlasmicCalendar24__RenderFunc(props: {
               await $steps["updateFragmentDatePickerValue"];
           }
 
-          $steps["updateFragmentDatePickerValue2"] = true
+          $steps["fetchModalData"] = true
             ? (() => {
                 const actionArgs = {
                   customFunction: async () => {
                     return (() => {
-                      $state.platformRequestStatus = null;
+                      const currentPropId = String(
+                        $props.propertyId || $state.propId
+                      );
+                      if (!currentPropId || currentPropId === "undefined")
+                        return;
                       $state.manualResultShow = false;
-                      $state.requestdata = null;
-                      if (typeof window !== "undefined") {
-                        const targetId = $props.propertyId || $state.propId;
-                        if (targetId) {
+                      $state.triggerPolling = null;
+                      const pendingReqId = sessionStorage.getItem(
+                        `pending_req_${currentPropId}`
+                      );
+                      const historyBookStr = sessionStorage.getItem(
+                        "property_history_book"
+                      );
+                      if (pendingReqId) {
+                        const savedActionData = sessionStorage.getItem(
+                          `action_data_${currentPropId}`
+                        );
+                        if (savedActionData) {
                           try {
-                            const bookStr = sessionStorage.getItem(
-                              "property_history_book"
-                            );
-                            if (bookStr) {
-                              const book = JSON.parse(bookStr);
-                              const key = String(targetId);
-                              const myPage = book[key];
-                              if (myPage) {
-                                $state.requestdata = myPage.payload;
-                                $state.platformRequestStatus = {
-                                  data: myPage.result,
-                                  isLoading: false
-                                };
-                                return ($state.manualResultShow = true);
-                              } else {
-                              }
-                            }
+                            $state.requestdata = JSON.parse(savedActionData);
                           } catch (e) {}
                         }
-                      }
-                    })();
-                  }
-                };
-                return (({ customFunction }) => {
-                  return customFunction();
-                })?.apply(null, [actionArgs]);
-              })()
-            : undefined;
-          if (
-            $steps["updateFragmentDatePickerValue2"] != null &&
-            typeof $steps["updateFragmentDatePickerValue2"] === "object" &&
-            typeof $steps["updateFragmentDatePickerValue2"].then === "function"
-          ) {
-            $steps["updateFragmentDatePickerValue2"] =
-              await $steps["updateFragmentDatePickerValue2"];
-          }
-
-          $steps["request"] = false
-            ? (() => {
-                const actionArgs = {
-                  args: [
-                    "GET",
-                    (() => {
-                      try {
-                        return (() => {
-                          const propId = $props.propertyId;
-                          const storageKey = `pending_req_${propId}`;
-                          const pendingReqId =
-                            sessionStorage.getItem(storageKey);
-                          return `https://automation.rentamon.com/webhook/request/status?request_id=${pendingReqId}`;
-                        })();
-                      } catch (e) {
-                        if (
-                          e instanceof TypeError ||
-                          e?.plasmicType === "PlasmicUndefinedDataError"
-                        ) {
-                          return undefined;
-                        }
-                        throw e;
-                      }
-                    })()
-                  ]
-                };
-                return $globalActions["Fragment.apiRequest"]?.apply(null, [
-                  ...actionArgs.args
-                ]);
-              })()
-            : undefined;
-          if (
-            $steps["request"] != null &&
-            typeof $steps["request"] === "object" &&
-            typeof $steps["request"].then === "function"
-          ) {
-            $steps["request"] = await $steps["request"];
-          }
-
-          $steps["updateFragmentDatePickerValue4"] = false
-            ? (() => {
-                const actionArgs = {
-                  customFunction: async () => {
-                    return (async () => {
-                      console.log("\uD83D\uDD35 [ساید افکت] ۱. تریگر شد!");
-                      const propId = $props.propertyId || $state.propId;
-                      const reqId =
-                        typeof window !== "undefined" && propId
-                          ? sessionStorage.getItem(`pending_req_${propId}`)
-                          : null;
-                      console.log(
-                        `🔵 [ساید افکت] ۲. آی‌دی خوانده شده از سشن: ${reqId}`
-                      );
-                      if (!reqId) {
-                        console.log(
-                          "\uD83D\uDD35 [ساید افکت] ۳. آی‌دی نبود\u060C خروج."
-                        );
-                        return;
-                      }
-                      if (!$state.platformRequestStatus?.isLoading) {
                         $state.platformRequestStatus = {
                           isLoading: true,
                           data: null
                         };
+                        $state.triggerPolling = pendingReqId;
+                        return setTimeout(() => {
+                          $state.manualResultShow = true;
+                        }, 50);
+                      } else {
+                        let foundInHistory = false;
+                        if (historyBookStr) {
+                          try {
+                            const historyBook = JSON.parse(historyBookStr);
+                            if (historyBook[currentPropId]) {
+                              if (historyBook[currentPropId].payload) {
+                                $state.requestdata =
+                                  historyBook[currentPropId].payload;
+                              }
+                              $state.platformRequestStatus = {
+                                isLoading: false,
+                                data: historyBook[currentPropId].result
+                              };
+                              setTimeout(() => {
+                                $state.manualResultShow = true;
+                              }, 50);
+                              foundInHistory = true;
+                            }
+                          } catch (e) {}
+                        }
+                        if (!foundInHistory) {
+                          $state.platformRequestStatus = null;
+                          return ($state.requestdata = {
+                            property_id: currentPropId,
+                            days: [],
+                            request_for: ""
+                          });
+                        }
                       }
-                      let isPolling = true;
-                      const checkStatus = async () => {
-                        if (!isPolling) {
-                          console.log(
-                            `🛑 [پولینگ] متوقف شد برای آی‌دی: ${reqId}`
-                          );
-                          return;
-                        }
-                        try {
-                          console.log(
-                            `🟡 [پولینگ] در حال ارسال درخواست برای: ${reqId}`
-                          );
-                          const response = await fetch(
-                            `https://automation.miaan.ir/webhook/request/status?request_id=${reqId}`
-                          );
-                          if (!response.ok) throw new Error("Server Error");
-                          const data = await response.json();
-                          console.log(
-                            `🟡 [پولینگ] جواب دریافت شد برای ${reqId}:`,
-                            data
-                          );
-                          if (!isPolling) return;
-                          if (
-                            data?.status === "request_id not found" ||
-                            data?.status === "pending"
-                          ) {
-                            if (isPolling) setTimeout(checkStatus, 2000);
-                            return;
-                          }
-                          const mainData = data ? Object.values(data)[0] : null;
-                          if (mainData) {
-                            console.log(
-                              `✅ [پولینگ] موفقیت! آپدیت استیت با دیتای بک‌اند برای: ${reqId}`
-                            );
-                            $state.requestdata = mainData.payload;
-                            $state.platformRequestStatus = {
-                              data: mainData.result,
-                              isLoading: false
-                            };
-                            sessionStorage.setItem(
-                              "property_history_book",
-                              JSON.stringify(data)
-                            );
-                            if (propId)
-                              sessionStorage.removeItem(
-                                `pending_req_${propId}`
-                              );
-                            isPolling = false;
-                          }
-                        } catch (error) {
-                          console.error(
-                            `🔴 [پولینگ] خطا برای ${reqId}:`,
-                            error
-                          );
-                          if (isPolling) setTimeout(checkStatus, 2000);
-                        }
-                      };
-                      checkStatus();
-                      return () => {
-                        console.log(
-                          `🧹 [کلین‌آپ] پاکسازی موتور قدیمی برای آی‌دی: ${reqId}`
-                        );
-                        isPolling = false;
-                      };
                     })();
                   }
                 };
@@ -1524,12 +1566,11 @@ function PlasmicCalendar24__RenderFunc(props: {
               })()
             : undefined;
           if (
-            $steps["updateFragmentDatePickerValue4"] != null &&
-            typeof $steps["updateFragmentDatePickerValue4"] === "object" &&
-            typeof $steps["updateFragmentDatePickerValue4"].then === "function"
+            $steps["fetchModalData"] != null &&
+            typeof $steps["fetchModalData"] === "object" &&
+            typeof $steps["fetchModalData"].then === "function"
           ) {
-            $steps["updateFragmentDatePickerValue4"] =
-              await $steps["updateFragmentDatePickerValue4"];
+            $steps["fetchModalData"] = await $steps["fetchModalData"];
           }
         }}
       />
@@ -4657,41 +4698,6 @@ function PlasmicCalendar24__RenderFunc(props: {
               onClick={async event => {
                 const $steps = {};
 
-                $steps["requestId"] = true
-                  ? (() => {
-                      const actionArgs = {
-                        customFunction: async () => {
-                          return (() => {
-                            const reqId =
-                              "req_" +
-                              Date.now() +
-                              "_" +
-                              Math.floor(Math.random() * 100000);
-                            $state.generatedRequestId = reqId;
-                            const currentPropId =
-                              $props.propertyId || $state.propId;
-                            if (currentPropId) {
-                              return sessionStorage.setItem(
-                                `pending_req_${currentPropId}`,
-                                reqId
-                              );
-                            }
-                          })();
-                        }
-                      };
-                      return (({ customFunction }) => {
-                        return customFunction();
-                      })?.apply(null, [actionArgs]);
-                    })()
-                  : undefined;
-                if (
-                  $steps["requestId"] != null &&
-                  typeof $steps["requestId"] === "object" &&
-                  typeof $steps["requestId"].then === "function"
-                ) {
-                  $steps["requestId"] = await $steps["requestId"];
-                }
-
                 $steps["updateFetchModalOpen"] =
                   $props.calendarType === "pro" &&
                   $state.changedFetchModal &&
@@ -4784,6 +4790,68 @@ function PlasmicCalendar24__RenderFunc(props: {
                 ) {
                   $steps["updatePlatformRequestStatus"] =
                     await $steps["updatePlatformRequestStatus"];
+                }
+
+                $steps["createFetchModalData"] = true
+                  ? (() => {
+                      const actionArgs = {
+                        customFunction: async () => {
+                          return (() => {
+                            try {
+                              const propId = String(
+                                $props.propertyId || $state.propId
+                              );
+                              if (!propId || propId === "undefined") {
+                                return;
+                              }
+                              $state.triggerPolling = null;
+                              if (typeof window !== "undefined") {
+                                sessionStorage.removeItem(
+                                  `pending_req_${propId}`
+                                );
+                                sessionStorage.removeItem(
+                                  `action_data_${propId}`
+                                );
+                              }
+                              const actionData = {
+                                request_for: "unblock",
+                                property_id: propId,
+                                days: Array.isArray(
+                                  $state.fragmentDatePicker?.values
+                                )
+                                  ? $state.fragmentDatePicker.values
+                                  : []
+                              };
+                              $state.requestdata = actionData;
+                              $state.platformRequestStatus = {
+                                isLoading: true,
+                                data: null
+                              };
+                              if (typeof window !== "undefined") {
+                                sessionStorage.setItem(
+                                  `action_data_${propId}`,
+                                  JSON.stringify(actionData)
+                                );
+                              }
+                              return setTimeout(() => {
+                                $state.manualResultShow = true;
+                              }, 50);
+                            } catch (error) {}
+                          })();
+                        }
+                      };
+                      return (({ customFunction }) => {
+                        return customFunction();
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+                if (
+                  $steps["createFetchModalData"] != null &&
+                  typeof $steps["createFetchModalData"] === "object" &&
+                  typeof $steps["createFetchModalData"].then === "function"
+                ) {
+                  $steps["createFetchModalData"] =
+                    await $steps["createFetchModalData"];
                 }
 
                 $steps["updateStateVariable"] = true
@@ -4992,7 +5060,7 @@ function PlasmicCalendar24__RenderFunc(props: {
                       const actionArgs = {
                         args: [
                           "POST",
-                          "https://api-v2.rentamon.com/api/setunblock",
+                          "https://automation.miaan.ir/webhook/calendar/actions",
                           undefined,
                           (() => {
                             try {
@@ -5057,7 +5125,8 @@ function PlasmicCalendar24__RenderFunc(props: {
                                 const data = {
                                   days: [$state.fragmentDatePicker.values],
                                   property_id: $props.propertyId,
-                                  request_id: $state.generatedRequestId
+                                  requested_by: "user",
+                                  request_for: "unblock"
                                 };
                                 $state.requestdata = data;
                                 data.days = data.days
@@ -5104,8 +5173,34 @@ function PlasmicCalendar24__RenderFunc(props: {
                     ? (() => {
                         const actionArgs = {
                           customFunction: async () => {
-                            return ($state.platformRequestStatus =
-                              $steps.setUnblock.data);
+                            return (() => {
+                              try {
+                                const responseData = $steps.setUnblock?.data;
+                                const realReqId = responseData?.request_id;
+                                const propId =
+                                  $props.propertyId || $state.propId;
+                                $state.platformRequestStatus = {
+                                  isLoading: true,
+                                  data: null
+                                };
+                                if (
+                                  realReqId &&
+                                  propId &&
+                                  typeof window !== "undefined"
+                                ) {
+                                  sessionStorage.setItem(
+                                    `pending_req_${propId}`,
+                                    realReqId
+                                  );
+                                  $state.requestdata = {
+                                    ...$state.requestdata,
+                                    request_id: realReqId
+                                  };
+                                  return ($state.triggerPolling = realReqId);
+                                } else {
+                                }
+                              } catch (error) {}
+                            })();
                           }
                         };
                         return (({ customFunction }) => {
@@ -5119,51 +5214,6 @@ function PlasmicCalendar24__RenderFunc(props: {
                   typeof $steps["runCode2"].then === "function"
                 ) {
                   $steps["runCode2"] = await $steps["runCode2"];
-                }
-
-                $steps["runCode"] = true
-                  ? (() => {
-                      const actionArgs = {
-                        customFunction: async () => {
-                          return (() => {
-                            if (
-                              $state.platformRequestStatus &&
-                              $state.platformRequestStatus.data
-                            ) {
-                              const history = JSON.parse(
-                                sessionStorage.getItem(
-                                  "property_history_book"
-                                ) || "{}"
-                              );
-                              const safeId = $state.requestdata.property_id;
-                              if (safeId) {
-                                history[safeId] = {
-                                  result: $state.platformRequestStatus.data,
-                                  payload: $state.requestdata
-                                };
-                                sessionStorage.setItem(
-                                  "property_history_book",
-                                  JSON.stringify(history)
-                                );
-                                return console.log(
-                                  `Saved history for property ${safeId}`
-                                );
-                              }
-                            }
-                          })();
-                        }
-                      };
-                      return (({ customFunction }) => {
-                        return customFunction();
-                      })?.apply(null, [actionArgs]);
-                    })()
-                  : undefined;
-                if (
-                  $steps["runCode"] != null &&
-                  typeof $steps["runCode"] === "object" &&
-                  typeof $steps["runCode"].then === "function"
-                ) {
-                  $steps["runCode"] = await $steps["runCode"];
                 }
               }}
             >
@@ -5879,25 +5929,51 @@ function PlasmicCalendar24__RenderFunc(props: {
                       await $steps["updatePlatformRequestStatus"];
                   }
 
-                  $steps["requestId"] = true
+                  $steps["createFetchModalData"] = true
                     ? (() => {
                         const actionArgs = {
                           customFunction: async () => {
                             return (() => {
-                              const reqId =
-                                "req_" +
-                                Date.now() +
-                                "_" +
-                                Math.floor(Math.random() * 100000);
-                              $state.generatedRequestId = reqId;
-                              const currentPropId =
-                                $props.propertyId || $state.propId;
-                              if (currentPropId) {
-                                return sessionStorage.setItem(
-                                  `pending_req_${currentPropId}`,
-                                  reqId
+                              try {
+                                const propId = String(
+                                  $props.propertyId || $state.propId
                                 );
-                              }
+                                if (!propId || propId === "undefined") {
+                                  return;
+                                }
+                                $state.triggerPolling = null;
+                                if (typeof window !== "undefined") {
+                                  sessionStorage.removeItem(
+                                    `pending_req_${propId}`
+                                  );
+                                  sessionStorage.removeItem(
+                                    `action_data_${propId}`
+                                  );
+                                }
+                                const actionData = {
+                                  request_for: "price",
+                                  property_id: propId,
+                                  days: Array.isArray(
+                                    $state.fragmentDatePicker?.values
+                                  )
+                                    ? $state.fragmentDatePicker.values
+                                    : []
+                                };
+                                $state.requestdata = actionData;
+                                $state.platformRequestStatus = {
+                                  isLoading: true,
+                                  data: null
+                                };
+                                if (typeof window !== "undefined") {
+                                  sessionStorage.setItem(
+                                    `action_data_${propId}`,
+                                    JSON.stringify(actionData)
+                                  );
+                                }
+                                return setTimeout(() => {
+                                  $state.manualResultShow = true;
+                                }, 50);
+                              } catch (error) {}
                             })();
                           }
                         };
@@ -5907,11 +5983,12 @@ function PlasmicCalendar24__RenderFunc(props: {
                       })()
                     : undefined;
                   if (
-                    $steps["requestId"] != null &&
-                    typeof $steps["requestId"] === "object" &&
-                    typeof $steps["requestId"].then === "function"
+                    $steps["createFetchModalData"] != null &&
+                    typeof $steps["createFetchModalData"] === "object" &&
+                    typeof $steps["createFetchModalData"].then === "function"
                   ) {
-                    $steps["requestId"] = await $steps["requestId"];
+                    $steps["createFetchModalData"] =
+                      await $steps["createFetchModalData"];
                   }
 
                   $steps["updateFetchModalOpen"] =
@@ -6062,7 +6139,7 @@ function PlasmicCalendar24__RenderFunc(props: {
                         const actionArgs = {
                           args: [
                             "POST",
-                            "https://api-v2.rentamon.com/api/setprice",
+                            "https://automation.miaan.ir/webhook/calendar/actions",
                             undefined,
                             (() => {
                               try {
@@ -6119,7 +6196,8 @@ function PlasmicCalendar24__RenderFunc(props: {
                                     days: [$state.fragmentDatePicker.values],
                                     property_id: $props.propertyId,
                                     price: String($state.input.value),
-                                    request_id: $state.generatedRequestId
+                                    requested_by: "user",
+                                    request_for: "price"
                                   };
                                   $state.requestdata = data;
                                   data.days = data.days
@@ -6164,8 +6242,34 @@ function PlasmicCalendar24__RenderFunc(props: {
                       ? (() => {
                           const actionArgs = {
                             customFunction: async () => {
-                              return ($state.platformRequestStatus =
-                                $steps.setPrice.data);
+                              return (() => {
+                                try {
+                                  const responseData = $steps.setPrice.data;
+                                  const realReqId = responseData?.request_id;
+                                  const propId =
+                                    $props.propertyId || $state.propId;
+                                  $state.platformRequestStatus = {
+                                    isLoading: true,
+                                    data: null
+                                  };
+                                  if (
+                                    realReqId &&
+                                    propId &&
+                                    typeof window !== "undefined"
+                                  ) {
+                                    sessionStorage.setItem(
+                                      `pending_req_${propId}`,
+                                      realReqId
+                                    );
+                                    $state.requestdata = {
+                                      ...$state.requestdata,
+                                      request_id: realReqId
+                                    };
+                                    return ($state.triggerPolling = realReqId);
+                                  } else {
+                                  }
+                                } catch (error) {}
+                              })();
                             }
                           };
                           return (({ customFunction }) => {
@@ -6179,51 +6283,6 @@ function PlasmicCalendar24__RenderFunc(props: {
                     typeof $steps["runCode2"].then === "function"
                   ) {
                     $steps["runCode2"] = await $steps["runCode2"];
-                  }
-
-                  $steps["runCode"] = true
-                    ? (() => {
-                        const actionArgs = {
-                          customFunction: async () => {
-                            return (() => {
-                              if (
-                                $state.platformRequestStatus &&
-                                $state.platformRequestStatus.data
-                              ) {
-                                const history = JSON.parse(
-                                  sessionStorage.getItem(
-                                    "property_history_book"
-                                  ) || "{}"
-                                );
-                                const safeId = $state.requestdata.property_id;
-                                if (safeId) {
-                                  history[safeId] = {
-                                    result: $state.platformRequestStatus.data,
-                                    payload: $state.requestdata
-                                  };
-                                  sessionStorage.setItem(
-                                    "property_history_book",
-                                    JSON.stringify(history)
-                                  );
-                                  return console.log(
-                                    `Saved history for property ${safeId}`
-                                  );
-                                }
-                              }
-                            })();
-                          }
-                        };
-                        return (({ customFunction }) => {
-                          return customFunction();
-                        })?.apply(null, [actionArgs]);
-                      })()
-                    : undefined;
-                  if (
-                    $steps["runCode"] != null &&
-                    typeof $steps["runCode"] === "object" &&
-                    typeof $steps["runCode"].then === "function"
-                  ) {
-                    $steps["runCode"] = await $steps["runCode"];
                   }
                 }}
               >
@@ -6817,65 +6876,82 @@ function PlasmicCalendar24__RenderFunc(props: {
                       try {
                         return (() => {
                           let action = "خالی کردن";
-                          if ($state.requestdata?.request_for === "reserve") {
+                          const req = $state.requestdata || {};
+                          if (req.request_for === "reserve")
                             action = "ثبت رزرو";
-                          }
-                          if ($state.requestdata?.request_for === "block") {
-                            action = "بستن";
-                          }
-                          if ($state.requestdata?.discount != null) {
-                            action = "ویرایش تخفیف";
-                          }
-                          if ($state.requestdata?.price != null) {
-                            action = "ویرایش قیمت";
-                          }
-                          const flatDays = (
-                            $state.requestdata?.days?.flat?.() ||
-                            $state.requestdata?.days ||
+                          if (req.request_for === "block") action = "بستن";
+                          if (req.request_for === "unblock")
+                            action = "خالی کردن";
+                          if (req.discount != null) action = "ویرایش تخفیف";
+                          if (req.price != null) action = "ویرایش قیمت";
+                          const rawDays = (
+                            req.days?.flat?.() ||
+                            req.days ||
                             []
-                          ).filter(ts => ts != null);
-                          if (!flatDays.length) {
+                          ).filter(d => d != null);
+                          if (!rawDays.length) {
                             return `نتیجه درخواست «${action}»`;
                           }
-                          const dates = flatDays
-                            .map(ts => {
-                              const d = new Date(ts * 1000);
-                              d.setHours(0, 0, 0, 0);
-                              return d;
-                            })
-                            .filter(d => !isNaN(d.getTime()))
-                            .sort((a, b) => a - b);
-                          if (!dates.length) {
-                            return `نتیجه درخواست «${action}»`;
-                          }
-                          let isConsecutive = true;
-                          for (let i = 1; i < dates.length; i++) {
-                            const diff =
-                              (dates[i] - dates[i - 1]) / (1000 * 60 * 60 * 24);
-                            if (Math.round(diff) !== 1) {
-                              isConsecutive = false;
-                              break;
+                          const isStringFormat = typeof rawDays[0] === "string";
+                          if (isStringFormat) {
+                            const jalaliMonths = [
+                              "فروردین",
+                              "اردیبهشت",
+                              "خرداد",
+                              "تیر",
+                              "مرداد",
+                              "شهریور",
+                              "مهر",
+                              "آبان",
+                              "آذر",
+                              "دی",
+                              "بهمن",
+                              "اسفند"
+                            ];
+
+                            const parseJalali = str => {
+                              const parts = str.split("-");
+                              if (parts.length === 3) {
+                                return `${parseInt(parts[2], 10)} ${jalaliMonths[parseInt(parts[1], 10) - 1]}`;
+                              }
+                              return str;
+                            };
+                            const firstDate = parseJalali(rawDays[0]);
+                            if (rawDays.length > 1) {
+                              const lastDate = parseJalali(
+                                rawDays[rawDays.length - 1]
+                              );
+                              return `نتیجه «${action}» ${firstDate} تا ${lastDate}`;
                             }
-                          }
-                          if (!isConsecutive) {
-                            return `نتیجه درخواست «${action}»`;
-                          }
-                          const fmt = new Intl.DateTimeFormat(
-                            "fa-IR-u-ca-persian",
-                            {
-                              day: "numeric",
-                              month: "long"
+                            return `نتیجه «${action}» ${firstDate}`;
+                          } else {
+                            const dates = rawDays
+                              .map(ts => {
+                                const d = new Date(ts * 1000);
+                                d.setHours(0, 0, 0, 0);
+                                return d;
+                              })
+                              .filter(d => !isNaN(d.getTime()))
+                              .sort((a, b) => a - b);
+                            if (!dates.length) {
+                              return `نتیجه درخواست «${action}»`;
                             }
-                          );
-                          const firstDate = fmt.format(dates[0]);
-                          let dateStr = firstDate;
-                          if (dates.length > 1) {
-                            const lastDate = fmt.format(
-                              dates[dates.length - 1]
+                            const fmt = new Intl.DateTimeFormat(
+                              "fa-IR-u-ca-persian",
+                              {
+                                day: "numeric",
+                                month: "long"
+                              }
                             );
-                            dateStr = `${firstDate} تا ${lastDate}`;
+                            const firstDate = fmt.format(dates[0]);
+                            if (dates.length > 1) {
+                              const lastDate = fmt.format(
+                                dates[dates.length - 1]
+                              );
+                              return `نتیجه «${action}» ${firstDate} تا ${lastDate}`;
+                            }
+                            return `نتیجه «${action}» ${firstDate}`;
                           }
-                          return `نتیجه «${action}» ${dateStr}`;
                         })();
                       } catch (e) {
                         if (
@@ -7336,43 +7412,42 @@ function PlasmicCalendar24__RenderFunc(props: {
                           {(() => {
                             try {
                               return (() => {
+                                if ($state.platformRequestStatus?.isLoading) {
+                                  return false;
+                                }
                                 if (
                                   !$state.platformRequestStatus ||
-                                  !$state.platformRequestStatus.data ||
-                                  Object.keys($state.platformRequestStatus.data)
-                                    .length === 0
+                                  !$state.platformRequestStatus.data
                                 ) {
                                   return false;
                                 }
+                                if (
+                                  Object.keys($state.platformRequestStatus.data)
+                                    .length === 0
+                                ) {
+                                  return true;
+                                }
                                 const jabama_smart_price =
-                                  $state.getJabamaSmartPriceStatus2.data;
+                                  $state.getJabamaSmartPriceStatus2?.data;
                                 if (
                                   currentItem === "jabama" &&
                                   jabama_smart_price?.[0]?.status === true &&
-                                  ($state.requestdata.discount != null ||
-                                    $state.requestdata.price != null)
+                                  ($state.requestdata?.discount != null ||
+                                    $state.requestdata?.price != null)
                                 ) {
                                   return false;
                                 }
                                 const platforms =
                                   $state.platformRequestStatus.data;
-                                const discount = $state.requestdata.discount;
+                                const discount = $state.requestdata?.discount;
                                 if (platforms[currentItem]) {
-                                  if (
+                                  return (
                                     platforms[currentItem].final_status ===
                                       false ||
                                     platforms[currentItem].status_code !== 200
-                                  ) {
-                                    return true;
-                                  } else {
-                                    return false;
-                                  }
+                                  );
                                 } else {
-                                  if (discount == null) {
-                                    return true;
-                                  } else {
-                                    return false;
-                                  }
+                                  return discount == null;
                                 }
                               })();
                             } catch (e) {
@@ -7446,25 +7521,17 @@ function PlasmicCalendar24__RenderFunc(props: {
                             try {
                               return (() => {
                                 const jabama_smart_price =
-                                  $state.getJabamaSmartPriceStatus2.data;
+                                  $state.getJabamaSmartPriceStatus2?.data;
                                 if (
                                   currentItem === "jabama" &&
                                   jabama_smart_price?.[0]?.status === true &&
-                                  ($state.requestdata.discount != null ||
-                                    $state.requestdata.price != null)
+                                  ($state.requestdata?.discount != null ||
+                                    $state.requestdata?.price != null)
                                 ) {
                                   return false;
                                 }
-                                if (
-                                  !$state.platformRequestStatus ||
-                                  !$state.platformRequestStatus.data ||
-                                  Object.keys($state.platformRequestStatus.data)
-                                    .length === 0
-                                ) {
-                                  return true;
-                                } else {
-                                  return false;
-                                }
+                                return !!$state.platformRequestStatus
+                                  ?.isLoading;
                               })();
                             } catch (e) {
                               if (
@@ -8160,25 +8227,51 @@ function PlasmicCalendar24__RenderFunc(props: {
                   await $steps["toastCheckConsecutive"];
               }
 
-              $steps["requestId"] = true
+              $steps["createFetchModalData"] = true
                 ? (() => {
                     const actionArgs = {
                       customFunction: async () => {
                         return (() => {
-                          const reqId =
-                            "req_" +
-                            Date.now() +
-                            "_" +
-                            Math.floor(Math.random() * 100000);
-                          $state.generatedRequestId = reqId;
-                          const currentPropId =
-                            $props.propertyId || $state.propId;
-                          if (currentPropId) {
-                            return sessionStorage.setItem(
-                              `pending_req_${currentPropId}`,
-                              reqId
+                          try {
+                            const propId = String(
+                              $props.propertyId || $state.propId
                             );
-                          }
+                            if (!propId || propId === "undefined") {
+                              return;
+                            }
+                            $state.triggerPolling = null;
+                            if (typeof window !== "undefined") {
+                              sessionStorage.removeItem(
+                                `pending_req_${propId}`
+                              );
+                              sessionStorage.removeItem(
+                                `action_data_${propId}`
+                              );
+                            }
+                            const actionData = {
+                              request_for: "reserve",
+                              property_id: propId,
+                              days: Array.isArray(
+                                $state.fragmentDatePicker?.values
+                              )
+                                ? $state.fragmentDatePicker.values
+                                : []
+                            };
+                            $state.requestdata = actionData;
+                            $state.platformRequestStatus = {
+                              isLoading: true,
+                              data: null
+                            };
+                            if (typeof window !== "undefined") {
+                              sessionStorage.setItem(
+                                `action_data_${propId}`,
+                                JSON.stringify(actionData)
+                              );
+                            }
+                            return setTimeout(() => {
+                              $state.manualResultShow = true;
+                            }, 50);
+                          } catch (error) {}
                         })();
                       }
                     };
@@ -8188,11 +8281,12 @@ function PlasmicCalendar24__RenderFunc(props: {
                   })()
                 : undefined;
               if (
-                $steps["requestId"] != null &&
-                typeof $steps["requestId"] === "object" &&
-                typeof $steps["requestId"].then === "function"
+                $steps["createFetchModalData"] != null &&
+                typeof $steps["createFetchModalData"] === "object" &&
+                typeof $steps["createFetchModalData"].then === "function"
               ) {
-                $steps["requestId"] = await $steps["requestId"];
+                $steps["createFetchModalData"] =
+                  await $steps["createFetchModalData"];
               }
 
               $steps["updateStateVariable"] = $steps.checkConsecutive
@@ -8489,7 +8583,7 @@ function PlasmicCalendar24__RenderFunc(props: {
                       const actionArgs = {
                         args: [
                           "POST",
-                          "https://api-v2.rentamon.com/api/setblock",
+                          "https://automation.miaan.ir/webhook/calendar/actions",
                           undefined,
                           (() => {
                             try {
@@ -8555,8 +8649,7 @@ function PlasmicCalendar24__RenderFunc(props: {
                                   days: [$state.fragmentDatePicker.values],
                                   property_id: $props.propertyId,
                                   requested_by: "user",
-                                  request_for: "reserve",
-                                  request_id: $state.generatedRequestId
+                                  request_for: "reserve"
                                 };
                                 $state.requestdata = data;
                                 data.days = data.days
@@ -8603,8 +8696,33 @@ function PlasmicCalendar24__RenderFunc(props: {
                   ? (() => {
                       const actionArgs = {
                         customFunction: async () => {
-                          return ($state.platformRequestStatus =
-                            $steps.setBlock.data);
+                          return (() => {
+                            try {
+                              const responseData = $steps.setBlock?.data;
+                              const realReqId = responseData?.request_id;
+                              const propId = $props.propertyId || $state.propId;
+                              $state.platformRequestStatus = {
+                                isLoading: true,
+                                data: null
+                              };
+                              if (
+                                realReqId &&
+                                propId &&
+                                typeof window !== "undefined"
+                              ) {
+                                sessionStorage.setItem(
+                                  `pending_req_${propId}`,
+                                  realReqId
+                                );
+                                $state.requestdata = {
+                                  ...$state.requestdata,
+                                  request_id: realReqId
+                                };
+                                return ($state.triggerPolling = realReqId);
+                              } else {
+                              }
+                            } catch (error) {}
+                          })();
                         }
                       };
                       return (({ customFunction }) => {
@@ -8618,50 +8736,6 @@ function PlasmicCalendar24__RenderFunc(props: {
                 typeof $steps["runCode"].then === "function"
               ) {
                 $steps["runCode"] = await $steps["runCode"];
-              }
-
-              $steps["runCode3"] = true
-                ? (() => {
-                    const actionArgs = {
-                      customFunction: async () => {
-                        return (() => {
-                          if (
-                            $state.platformRequestStatus &&
-                            $state.platformRequestStatus.data
-                          ) {
-                            const history = JSON.parse(
-                              sessionStorage.getItem("property_history_book") ||
-                                "{}"
-                            );
-                            const safeId = $state.requestdata.property_id;
-                            if (safeId) {
-                              history[safeId] = {
-                                result: $state.platformRequestStatus.data,
-                                payload: $state.requestdata
-                              };
-                              sessionStorage.setItem(
-                                "property_history_book",
-                                JSON.stringify(history)
-                              );
-                              return console.log(
-                                `Saved history for property ${safeId}`
-                              );
-                            }
-                          }
-                        })();
-                      }
-                    };
-                    return (({ customFunction }) => {
-                      return customFunction();
-                    })?.apply(null, [actionArgs]);
-                  })()
-                : undefined;
-              if (
-                $steps["runCode3"] != null &&
-                typeof $steps["runCode3"] === "object" &&
-                typeof $steps["runCode3"].then === "function"
-              ) {
-                $steps["runCode3"] = await $steps["runCode3"];
               }
 
               $steps["getBookingIdFromRequest"] = true
@@ -8825,25 +8899,51 @@ function PlasmicCalendar24__RenderFunc(props: {
                     await $steps["updatePlatformRequestStatus"];
                 }
 
-                $steps["requestId"] = true
+                $steps["createFetchModalData"] = true
                   ? (() => {
                       const actionArgs = {
                         customFunction: async () => {
                           return (() => {
-                            const reqId =
-                              "req_" +
-                              Date.now() +
-                              "_" +
-                              Math.floor(Math.random() * 100000);
-                            $state.generatedRequestId = reqId;
-                            const currentPropId =
-                              $props.propertyId || $state.propId;
-                            if (currentPropId) {
-                              return sessionStorage.setItem(
-                                `pending_req_${currentPropId}`,
-                                reqId
+                            try {
+                              const propId = String(
+                                $props.propertyId || $state.propId
                               );
-                            }
+                              if (!propId || propId === "undefined") {
+                                return;
+                              }
+                              $state.triggerPolling = null;
+                              if (typeof window !== "undefined") {
+                                sessionStorage.removeItem(
+                                  `pending_req_${propId}`
+                                );
+                                sessionStorage.removeItem(
+                                  `action_data_${propId}`
+                                );
+                              }
+                              const actionData = {
+                                request_for: "block",
+                                property_id: propId,
+                                days: Array.isArray(
+                                  $state.fragmentDatePicker?.values
+                                )
+                                  ? $state.fragmentDatePicker.values
+                                  : []
+                              };
+                              $state.requestdata = actionData;
+                              $state.platformRequestStatus = {
+                                isLoading: true,
+                                data: null
+                              };
+                              if (typeof window !== "undefined") {
+                                sessionStorage.setItem(
+                                  `action_data_${propId}`,
+                                  JSON.stringify(actionData)
+                                );
+                              }
+                              return setTimeout(() => {
+                                $state.manualResultShow = true;
+                              }, 50);
+                            } catch (error) {}
                           })();
                         }
                       };
@@ -8853,11 +8953,12 @@ function PlasmicCalendar24__RenderFunc(props: {
                     })()
                   : undefined;
                 if (
-                  $steps["requestId"] != null &&
-                  typeof $steps["requestId"] === "object" &&
-                  typeof $steps["requestId"].then === "function"
+                  $steps["createFetchModalData"] != null &&
+                  typeof $steps["createFetchModalData"] === "object" &&
+                  typeof $steps["createFetchModalData"].then === "function"
                 ) {
-                  $steps["requestId"] = await $steps["requestId"];
+                  $steps["createFetchModalData"] =
+                    await $steps["createFetchModalData"];
                 }
 
                 $steps["updateFetchModalOpen"] =
@@ -9083,7 +9184,7 @@ function PlasmicCalendar24__RenderFunc(props: {
                       const actionArgs = {
                         args: [
                           "POST",
-                          "https://api-v2.rentamon.com/api/setblock",
+                          "https://automation.miaan.ir/webhook/calendar/actions",
                           undefined,
                           (() => {
                             try {
@@ -9206,8 +9307,34 @@ function PlasmicCalendar24__RenderFunc(props: {
                     ? (() => {
                         const actionArgs = {
                           customFunction: async () => {
-                            return ($state.platformRequestStatus =
-                              $steps.setBlock.data);
+                            return (() => {
+                              try {
+                                const responseData = $steps.setBlock?.data;
+                                const realReqId = responseData?.request_id;
+                                const propId =
+                                  $props.propertyId || $state.propId;
+                                $state.platformRequestStatus = {
+                                  isLoading: true,
+                                  data: null
+                                };
+                                if (
+                                  realReqId &&
+                                  propId &&
+                                  typeof window !== "undefined"
+                                ) {
+                                  sessionStorage.setItem(
+                                    `pending_req_${propId}`,
+                                    realReqId
+                                  );
+                                  $state.requestdata = {
+                                    ...$state.requestdata,
+                                    request_id: realReqId
+                                  };
+                                  return ($state.triggerPolling = realReqId);
+                                } else {
+                                }
+                              } catch (error) {}
+                            })();
                           }
                         };
                         return (({ customFunction }) => {
@@ -9221,54 +9348,6 @@ function PlasmicCalendar24__RenderFunc(props: {
                   typeof $steps["runCode"].then === "function"
                 ) {
                   $steps["runCode"] = await $steps["runCode"];
-                }
-
-                $steps["updateFragmentDatePickerValue4"] = true
-                  ? (() => {
-                      const actionArgs = {
-                        customFunction: async () => {
-                          return (() => {
-                            if (
-                              $state.platformRequestStatus &&
-                              $state.platformRequestStatus.data
-                            ) {
-                              const history = JSON.parse(
-                                sessionStorage.getItem(
-                                  "property_history_book"
-                                ) || "{}"
-                              );
-                              const safeId = $state.requestdata.property_id;
-                              if (safeId) {
-                                history[safeId] = {
-                                  result: $state.platformRequestStatus.data,
-                                  payload: $state.requestdata
-                                };
-                                sessionStorage.setItem(
-                                  "property_history_book",
-                                  JSON.stringify(history)
-                                );
-                                return console.log(
-                                  `Saved history for property ${safeId}`
-                                );
-                              }
-                            }
-                          })();
-                        }
-                      };
-                      return (({ customFunction }) => {
-                        return customFunction();
-                      })?.apply(null, [actionArgs]);
-                    })()
-                  : undefined;
-                if (
-                  $steps["updateFragmentDatePickerValue4"] != null &&
-                  typeof $steps["updateFragmentDatePickerValue4"] ===
-                    "object" &&
-                  typeof $steps["updateFragmentDatePickerValue4"].then ===
-                    "function"
-                ) {
-                  $steps["updateFragmentDatePickerValue4"] =
-                    await $steps["updateFragmentDatePickerValue4"];
                 }
 
                 $steps["toast"] = ($props.isFirstVisit ? true : false)
@@ -11407,25 +11486,51 @@ function PlasmicCalendar24__RenderFunc(props: {
                       await $steps["updatePlatformRequestStatus"];
                   }
 
-                  $steps["requestId"] = true
+                  $steps["createFetchModalData"] = true
                     ? (() => {
                         const actionArgs = {
                           customFunction: async () => {
                             return (() => {
-                              const reqId =
-                                "req_" +
-                                Date.now() +
-                                "_" +
-                                Math.floor(Math.random() * 100000);
-                              $state.generatedRequestId = reqId;
-                              const currentPropId =
-                                $props.propertyId || $state.propId;
-                              if (currentPropId) {
-                                return sessionStorage.setItem(
-                                  `pending_req_${currentPropId}`,
-                                  reqId
+                              try {
+                                const propId = String(
+                                  $props.propertyId || $state.propId
                                 );
-                              }
+                                if (!propId || propId === "undefined") {
+                                  return;
+                                }
+                                $state.triggerPolling = null;
+                                if (typeof window !== "undefined") {
+                                  sessionStorage.removeItem(
+                                    `pending_req_${propId}`
+                                  );
+                                  sessionStorage.removeItem(
+                                    `action_data_${propId}`
+                                  );
+                                }
+                                const actionData = {
+                                  request_for: "discount",
+                                  property_id: propId,
+                                  days: Array.isArray(
+                                    $state.fragmentDatePicker?.values
+                                  )
+                                    ? $state.fragmentDatePicker.values
+                                    : []
+                                };
+                                $state.requestdata = actionData;
+                                $state.platformRequestStatus = {
+                                  isLoading: true,
+                                  data: null
+                                };
+                                if (typeof window !== "undefined") {
+                                  sessionStorage.setItem(
+                                    `action_data_${propId}`,
+                                    JSON.stringify(actionData)
+                                  );
+                                }
+                                return setTimeout(() => {
+                                  $state.manualResultShow = true;
+                                }, 50);
+                              } catch (error) {}
                             })();
                           }
                         };
@@ -11435,11 +11540,12 @@ function PlasmicCalendar24__RenderFunc(props: {
                       })()
                     : undefined;
                   if (
-                    $steps["requestId"] != null &&
-                    typeof $steps["requestId"] === "object" &&
-                    typeof $steps["requestId"].then === "function"
+                    $steps["createFetchModalData"] != null &&
+                    typeof $steps["createFetchModalData"] === "object" &&
+                    typeof $steps["createFetchModalData"].then === "function"
                   ) {
-                    $steps["requestId"] = await $steps["requestId"];
+                    $steps["createFetchModalData"] =
+                      await $steps["createFetchModalData"];
                   }
 
                   $steps["updateFetchModalOpen"] =
@@ -11557,7 +11663,7 @@ function PlasmicCalendar24__RenderFunc(props: {
                         const actionArgs = {
                           args: [
                             "POST",
-                            "https://api-v2.rentamon.com/api/setdiscount",
+                            "https://automation.miaan.ir/webhook/calendar/actions",
                             undefined,
                             (() => {
                               try {
@@ -11614,7 +11720,8 @@ function PlasmicCalendar24__RenderFunc(props: {
                                     days: [$state.fragmentDatePicker.values],
                                     property_id: $props.propertyId,
                                     discount: String($state.textInput4.value),
-                                    request_id: $state.generatedRequestId
+                                    requested_by: "user",
+                                    request_for: "discount"
                                   };
                                   $state.requestdata = data;
                                   data.days = data.days
@@ -11659,8 +11766,34 @@ function PlasmicCalendar24__RenderFunc(props: {
                       ? (() => {
                           const actionArgs = {
                             customFunction: async () => {
-                              return ($state.platformRequestStatus =
-                                $steps.setDiscout.data);
+                              return (() => {
+                                try {
+                                  const responseData = $steps.setDiscout.data;
+                                  const realReqId = responseData?.request_id;
+                                  const propId =
+                                    $props.propertyId || $state.propId;
+                                  $state.platformRequestStatus = {
+                                    isLoading: true,
+                                    data: null
+                                  };
+                                  if (
+                                    realReqId &&
+                                    propId &&
+                                    typeof window !== "undefined"
+                                  ) {
+                                    sessionStorage.setItem(
+                                      `pending_req_${propId}`,
+                                      realReqId
+                                    );
+                                    $state.requestdata = {
+                                      ...$state.requestdata,
+                                      request_id: realReqId
+                                    };
+                                    return ($state.triggerPolling = realReqId);
+                                  } else {
+                                  }
+                                } catch (error) {}
+                              })();
                             }
                           };
                           return (({ customFunction }) => {
@@ -11674,51 +11807,6 @@ function PlasmicCalendar24__RenderFunc(props: {
                     typeof $steps["runCode2"].then === "function"
                   ) {
                     $steps["runCode2"] = await $steps["runCode2"];
-                  }
-
-                  $steps["runCode"] = true
-                    ? (() => {
-                        const actionArgs = {
-                          customFunction: async () => {
-                            return (() => {
-                              if (
-                                $state.platformRequestStatus &&
-                                $state.platformRequestStatus.data
-                              ) {
-                                const history = JSON.parse(
-                                  sessionStorage.getItem(
-                                    "property_history_book"
-                                  ) || "{}"
-                                );
-                                const safeId = $state.requestdata.property_id;
-                                if (safeId) {
-                                  history[safeId] = {
-                                    result: $state.platformRequestStatus.data,
-                                    payload: $state.requestdata
-                                  };
-                                  sessionStorage.setItem(
-                                    "property_history_book",
-                                    JSON.stringify(history)
-                                  );
-                                  return console.log(
-                                    `Saved history for property ${safeId}`
-                                  );
-                                }
-                              }
-                            })();
-                          }
-                        };
-                        return (({ customFunction }) => {
-                          return customFunction();
-                        })?.apply(null, [actionArgs]);
-                      })()
-                    : undefined;
-                  if (
-                    $steps["runCode"] != null &&
-                    typeof $steps["runCode"] === "object" &&
-                    typeof $steps["runCode"].then === "function"
-                  ) {
-                    $steps["runCode"] = await $steps["runCode"];
                   }
                 }}
               >
@@ -11916,12 +12004,23 @@ function PlasmicCalendar24__RenderFunc(props: {
                 })()
               : (() => {
                   try {
-                    return (
-                      (!!$state.platformRequestStatus &&
-                        (!!$state.platformRequestStatus.isLoading ||
-                          !!$state.platformRequestStatus.data)) ||
-                      $state.manualResultShow
-                    );
+                    return (() => {
+                      const currentPropId = String(
+                        $props.propertyId || $state.propId
+                      );
+                      const statePropId = String(
+                        $state.requestdata?.property_id
+                      );
+                      if (currentPropId !== statePropId) {
+                        return false;
+                      }
+                      return (
+                        (!!$state.platformRequestStatus &&
+                          (!!$state.platformRequestStatus.isLoading ||
+                            !!$state.platformRequestStatus.data)) ||
+                        !!$state.manualResultShow
+                      );
+                    })();
                   } catch (e) {
                     if (
                       e instanceof TypeError ||
@@ -12080,15 +12179,18 @@ function PlasmicCalendar24__RenderFunc(props: {
                 {(() => {
                   try {
                     return (() => {
+                      if (!$state.platformRequestStatus) return false;
+                      if ($state.platformRequestStatus.isLoading) return false;
+                      const data = $state.platformRequestStatus.data;
+                      if (!data) return false;
                       if (
-                        !$state.platformRequestStatus ||
-                        !$state.platformRequestStatus.data ||
-                        Object.keys($state.platformRequestStatus.data)
-                          .length === 0
+                        Object.keys(data).length === 0 ||
+                        data.timeout ||
+                        data.empty_result
                       ) {
-                        return false;
+                        return true;
                       }
-                      const platforms = $state.platformRequestStatus.data;
+                      const platforms = data;
                       const keys = Object.keys(platforms);
                       const jabama_smart_price =
                         $state.getJabamaSmartPriceStatus2?.data;
@@ -12146,23 +12248,14 @@ function PlasmicCalendar24__RenderFunc(props: {
                 {(() => {
                   try {
                     return (() => {
-                      if (
-                        !$state.platformRequestStatus ||
-                        !$state.platformRequestStatus.data ||
-                        Object.keys($state.platformRequestStatus.data)
-                          .length === 0
-                      ) {
-                        return true;
-                      } else {
-                        return false;
-                      }
+                      return !!$state.platformRequestStatus?.isLoading;
                     })();
                   } catch (e) {
                     if (
                       e instanceof TypeError ||
                       e?.plasmicType === "PlasmicUndefinedDataError"
                     ) {
-                      return false;
+                      return true;
                     }
                     throw e;
                   }
@@ -13669,9 +13762,11 @@ function PlasmicCalendar24__RenderFunc(props: {
       />
 
       <div
+        data-plasmic-name={"newPricing"}
+        data-plasmic-override={overrides.newPricing}
         className={classNames(
           projectcss.all,
-          sty.freeBox___9Fnh9,
+          sty.newPricing,
           (() => {
             try {
               return $state.modalActions != "" ? "modal-overlay-2" : null;
@@ -14463,25 +14558,51 @@ function PlasmicCalendar24__RenderFunc(props: {
                       await $steps["updatePlatformRequestStatus"];
                   }
 
-                  $steps["requestId"] = true
+                  $steps["createFetchModalData"] = true
                     ? (() => {
                         const actionArgs = {
                           customFunction: async () => {
                             return (() => {
-                              const reqId =
-                                "req_" +
-                                Date.now() +
-                                "_" +
-                                Math.floor(Math.random() * 100000);
-                              $state.generatedRequestId = reqId;
-                              const currentPropId =
-                                $props.propertyId || $state.propId;
-                              if (currentPropId) {
-                                return sessionStorage.setItem(
-                                  `pending_req_${currentPropId}`,
-                                  reqId
+                              try {
+                                const propId = String(
+                                  $props.propertyId || $state.propId
                                 );
-                              }
+                                if (!propId || propId === "undefined") {
+                                  return;
+                                }
+                                $state.triggerPolling = null;
+                                if (typeof window !== "undefined") {
+                                  sessionStorage.removeItem(
+                                    `pending_req_${propId}`
+                                  );
+                                  sessionStorage.removeItem(
+                                    `action_data_${propId}`
+                                  );
+                                }
+                                const actionData = {
+                                  request_for: "price",
+                                  property_id: propId,
+                                  days: Array.isArray(
+                                    $state.fragmentDatePicker?.values
+                                  )
+                                    ? $state.fragmentDatePicker.values
+                                    : []
+                                };
+                                $state.requestdata = actionData;
+                                $state.platformRequestStatus = {
+                                  isLoading: true,
+                                  data: null
+                                };
+                                if (typeof window !== "undefined") {
+                                  sessionStorage.setItem(
+                                    `action_data_${propId}`,
+                                    JSON.stringify(actionData)
+                                  );
+                                }
+                                return setTimeout(() => {
+                                  $state.manualResultShow = true;
+                                }, 50);
+                              } catch (error) {}
                             })();
                           }
                         };
@@ -14491,11 +14612,12 @@ function PlasmicCalendar24__RenderFunc(props: {
                       })()
                     : undefined;
                   if (
-                    $steps["requestId"] != null &&
-                    typeof $steps["requestId"] === "object" &&
-                    typeof $steps["requestId"].then === "function"
+                    $steps["createFetchModalData"] != null &&
+                    typeof $steps["createFetchModalData"] === "object" &&
+                    typeof $steps["createFetchModalData"].then === "function"
                   ) {
-                    $steps["requestId"] = await $steps["requestId"];
+                    $steps["createFetchModalData"] =
+                      await $steps["createFetchModalData"];
                   }
 
                   $steps["updateFetchModalOpen"] =
@@ -14646,7 +14768,7 @@ function PlasmicCalendar24__RenderFunc(props: {
                         const actionArgs = {
                           args: [
                             "POST",
-                            "https://api-v2.rentamon.com/api/setprice",
+                            "https://automation.miaan.ir/webhook/calendar/actions",
                             undefined,
                             (() => {
                               try {
@@ -14702,9 +14824,10 @@ function PlasmicCalendar24__RenderFunc(props: {
                                   const data = {
                                     days: [$state.fragmentDatePicker.values],
                                     property_id: $props.propertyId,
+                                    requested_by: "user",
+                                    request_for: "price",
                                     price: String($state.getPrice.value),
-                                    markup: $state.getMarkup.data,
-                                    request_id: $state.generatedRequestId
+                                    markup: $state.getMarkup.data
                                   };
                                   $state.requestdata = data;
                                   data.days = data.days
@@ -14749,8 +14872,34 @@ function PlasmicCalendar24__RenderFunc(props: {
                       ? (() => {
                           const actionArgs = {
                             customFunction: async () => {
-                              return ($state.platformRequestStatus =
-                                $steps.setPrice.data);
+                              return (() => {
+                                try {
+                                  const responseData = $steps.setPrice.data;
+                                  const realReqId = responseData?.request_id;
+                                  const propId =
+                                    $props.propertyId || $state.propId;
+                                  $state.platformRequestStatus = {
+                                    isLoading: true,
+                                    data: null
+                                  };
+                                  if (
+                                    realReqId &&
+                                    propId &&
+                                    typeof window !== "undefined"
+                                  ) {
+                                    sessionStorage.setItem(
+                                      `pending_req_${propId}`,
+                                      realReqId
+                                    );
+                                    $state.requestdata = {
+                                      ...$state.requestdata,
+                                      request_id: realReqId
+                                    };
+                                    return ($state.triggerPolling = realReqId);
+                                  } else {
+                                  }
+                                } catch (error) {}
+                              })();
                             }
                           };
                           return (({ customFunction }) => {
@@ -14764,51 +14913,6 @@ function PlasmicCalendar24__RenderFunc(props: {
                     typeof $steps["runCode2"].then === "function"
                   ) {
                     $steps["runCode2"] = await $steps["runCode2"];
-                  }
-
-                  $steps["runCode"] = true
-                    ? (() => {
-                        const actionArgs = {
-                          customFunction: async () => {
-                            return (() => {
-                              if (
-                                $state.platformRequestStatus &&
-                                $state.platformRequestStatus.data
-                              ) {
-                                const history = JSON.parse(
-                                  sessionStorage.getItem(
-                                    "property_history_book"
-                                  ) || "{}"
-                                );
-                                const safeId = $state.requestdata.property_id;
-                                if (safeId) {
-                                  history[safeId] = {
-                                    result: $state.platformRequestStatus.data,
-                                    payload: $state.requestdata
-                                  };
-                                  sessionStorage.setItem(
-                                    "property_history_book",
-                                    JSON.stringify(history)
-                                  );
-                                  return console.log(
-                                    `Saved history for property ${safeId}`
-                                  );
-                                }
-                              }
-                            })();
-                          }
-                        };
-                        return (({ customFunction }) => {
-                          return customFunction();
-                        })?.apply(null, [actionArgs]);
-                      })()
-                    : undefined;
-                  if (
-                    $steps["runCode"] != null &&
-                    typeof $steps["runCode"] === "object" &&
-                    typeof $steps["runCode"].then === "function"
-                  ) {
-                    $steps["runCode"] = await $steps["runCode"];
                   }
                 }}
               >
@@ -14963,6 +15067,7 @@ const PlasmicDescendants = {
     "phoneNumber",
     "p5",
     "reserveData",
+    "newPricing",
     "price",
     "title",
     "priceInput",
@@ -15171,6 +15276,20 @@ const PlasmicDescendants = {
   phoneNumber: ["phoneNumber"],
   p5: ["p5"],
   reserveData: ["reserveData"],
+  newPricing: [
+    "newPricing",
+    "price",
+    "title",
+    "priceInput",
+    "getPrice",
+    "priceText",
+    "info",
+    "info2",
+    "header",
+    "content",
+    "grossPrice",
+    "getMarkup"
+  ],
   price: [
     "price",
     "title",
@@ -15286,6 +15405,7 @@ type NodeDefaultElementType = {
   phoneNumber: typeof TextInput;
   p5: "div";
   reserveData: typeof ApiRequest;
+  newPricing: "div";
   price: "div";
   title: "div";
   priceInput: "div";
@@ -15451,6 +15571,7 @@ export const PlasmicCalendar24 = Object.assign(
     phoneNumber: makeNodeComponent("phoneNumber"),
     p5: makeNodeComponent("p5"),
     reserveData: makeNodeComponent("reserveData"),
+    newPricing: makeNodeComponent("newPricing"),
     price: makeNodeComponent("price"),
     title: makeNodeComponent("title"),
     priceInput: makeNodeComponent("priceInput"),
