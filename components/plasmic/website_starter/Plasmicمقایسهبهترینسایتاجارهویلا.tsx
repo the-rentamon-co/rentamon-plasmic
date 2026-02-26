@@ -1614,7 +1614,7 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
                   <PlasmicImg__
                     alt={""}
                     className={classNames(sty.img___6Jg)}
-                    displayHeight={"auto"}
+                    displayHeight={"254px"}
                     displayMaxHeight={"none"}
                     displayMaxWidth={
                       hasVariant(globalVariants, "screen", "smallMobile")
@@ -1623,16 +1623,16 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
                           ? "80%"
                           : hasVariant(globalVariants, "screen", "tablet")
                             ? "50%"
-                            : "30%"
+                            : "37.06%"
                     }
                     displayMinHeight={"0"}
                     displayMinWidth={"auto"}
-                    displayWidth={"auto"}
+                    displayWidth={"100%"}
                     loading={"lazy"}
                     src={{
-                      src: "/plasmic/website_starter/images/geminiGeneratedImageQ3Utrqq3Utrqq3UtPng.png",
-                      fullWidth: 2336,
-                      fullHeight: 1824,
+                      src: "/plasmic/website_starter/images/image20260225221738Png.png",
+                      fullWidth: 755,
+                      fullHeight: 446,
                       aspectRatio: undefined
                     }}
                   />
@@ -1656,7 +1656,7 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
                     displayWidth={"auto"}
                     loading={"lazy"}
                     src={{
-                      src: "/plasmic/website_starter/images/_.png",
+                      src: "/plasmic/website_starter/images/websitePng2.png",
                       fullWidth: 2144,
                       fullHeight: 1984,
                       aspectRatio: undefined
@@ -1802,9 +1802,9 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
                     }
                     loading={"lazy"}
                     src={{
-                      src: "/plasmic/website_starter/images/geminiGeneratedImageQlz5Dhqlz5Dhqlz5Png.png",
-                      fullWidth: 495,
-                      fullHeight: 482,
+                      src: "/plasmic/website_starter/images/chatJpg.jpg",
+                      fullWidth: 768,
+                      fullHeight: 679,
                       aspectRatio: undefined
                     }}
                   />

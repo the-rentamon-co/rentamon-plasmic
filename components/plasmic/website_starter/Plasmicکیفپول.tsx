@@ -145,8 +145,6 @@ export type Plasmicکیفپول__OverridesType = {
   intext?: Flex__<"div">;
   right2?: Flex__<"div">;
   left2?: Flex__<"div">;
-  estimatedCommision2?: Flex__<typeof ApiRequest>;
-  estimatedCommision?: Flex__<"div">;
   packages?: Flex__<"div">;
   p1?: Flex__<"div">;
   selected?: Flex__<"div">;
@@ -317,30 +315,6 @@ function Plasmicکیفپول__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
         refName: "apiRequest"
-      },
-      {
-        path: "estimatedCommision2.data",
-        type: "private",
-        variableType: "object",
-        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
-
-        refName: "estimatedCommision2"
-      },
-      {
-        path: "estimatedCommision2.error",
-        type: "private",
-        variableType: "object",
-        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
-
-        refName: "estimatedCommision2"
-      },
-      {
-        path: "estimatedCommision2.loading",
-        type: "private",
-        variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
-
-        refName: "estimatedCommision2"
       }
     ],
     [$props, $ctx, $refs]
@@ -1257,97 +1231,6 @@ function Plasmicکیفپول__RenderFunc(props: {
                   </div>
                 </div>
               </div>
-              <ApiRequest
-                data-plasmic-name={"estimatedCommision2"}
-                data-plasmic-override={overrides.estimatedCommision2}
-                className={classNames(
-                  "__wab_instance",
-                  sty.estimatedCommision2
-                )}
-                errorDisplay={
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__wmQml
-                    )}
-                  >
-                    {"Error fetching data"}
-                  </div>
-                }
-                loadingDisplay={
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__hn45V
-                    )}
-                  >
-                    {"Loading..."}
-                  </div>
-                }
-                method={"GET"}
-                onError={async (...eventArgs: any) => {
-                  generateStateOnChangeProp($state, [
-                    "estimatedCommision2",
-                    "error"
-                  ]).apply(null, eventArgs);
-                }}
-                onLoading={async (...eventArgs: any) => {
-                  generateStateOnChangeProp($state, [
-                    "estimatedCommision2",
-                    "loading"
-                  ]).apply(null, eventArgs);
-                }}
-                onSuccess={async (...eventArgs: any) => {
-                  generateStateOnChangeProp($state, [
-                    "estimatedCommision2",
-                    "data"
-                  ]).apply(null, eventArgs);
-                }}
-                ref={ref => {
-                  $refs["estimatedCommision2"] = ref;
-                }}
-                url={"https://nb.miaan.ir/webhook/commision_estimate"}
-              >
-                <div
-                  data-plasmic-name={"estimatedCommision"}
-                  data-plasmic-override={overrides.estimatedCommision}
-                  className={classNames(projectcss.all, sty.estimatedCommision)}
-                >
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__iGsgX
-                    )}
-                  >
-                    {
-                      "\u062d\u062f\u0627\u0642\u0644 \u0645\u0628\u0644\u063a \u067e\u06cc\u0634\u0646\u0647\u0627\u062f\u06cc \u0645\u0627:"
-                    }
-                  </div>
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__iNjhU
-                    )}
-                  >
-                    <React.Fragment>
-                      {$state.estimatedCommision2.data.estimated_commision}
-                    </React.Fragment>
-                  </div>
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__sp4GZ
-                    )}
-                  >
-                    {"\u0631\u06cc\u0627\u0644"}
-                  </div>
-                </div>
-              </ApiRequest>
             </div>
             <div
               data-plasmic-name={"packages"}
@@ -2880,8 +2763,6 @@ const PlasmicDescendants = {
     "intext",
     "right2",
     "left2",
-    "estimatedCommision2",
-    "estimatedCommision",
     "packages",
     "p1",
     "selected",
@@ -2928,9 +2809,7 @@ const PlasmicDescendants = {
     "left",
     "intext",
     "right2",
-    "left2",
-    "estimatedCommision2",
-    "estimatedCommision"
+    "left2"
   ],
   input: ["input", "right", "center", "input3", "input2", "left"],
   right: ["right"],
@@ -2941,8 +2820,6 @@ const PlasmicDescendants = {
   intext: ["intext", "right2", "left2"],
   right2: ["right2"],
   left2: ["left2"],
-  estimatedCommision2: ["estimatedCommision2", "estimatedCommision"],
-  estimatedCommision: ["estimatedCommision"],
   packages: ["packages", "p1", "selected", "selected2", "selected3"],
   p1: ["p1", "selected", "selected2", "selected3"],
   selected: ["selected"],
@@ -3018,8 +2895,6 @@ type NodeDefaultElementType = {
   intext: "div";
   right2: "div";
   left2: "div";
-  estimatedCommision2: typeof ApiRequest;
-  estimatedCommision: "div";
   packages: "div";
   p1: "div";
   selected: "div";
@@ -3129,8 +3004,6 @@ export const Plasmicکیفپول = Object.assign(
     intext: makeNodeComponent("intext"),
     right2: makeNodeComponent("right2"),
     left2: makeNodeComponent("left2"),
-    estimatedCommision2: makeNodeComponent("estimatedCommision2"),
-    estimatedCommision: makeNodeComponent("estimatedCommision"),
     packages: makeNodeComponent("packages"),
     p1: makeNodeComponent("p1"),
     selected: makeNodeComponent("selected"),

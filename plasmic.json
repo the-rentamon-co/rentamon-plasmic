@@ -6227,6 +6227,21 @@
           "id": "YKAW4y1Y_vOU",
           "name": "image 198",
           "filePath": "../public/plasmic/website_starter/images/image198.svg"
+        },
+        {
+          "id": "DhFkudDJbOfm",
+          "name": "chat.jpg",
+          "filePath": "../public/plasmic/website_starter/images/chatJpg.jpg"
+        },
+        {
+          "id": "NXjiA6nzqE_h",
+          "name": "image_2026-02-25_22-17-38.png",
+          "filePath": "../public/plasmic/website_starter/images/image20260225221738Png.png"
+        },
+        {
+          "id": "oWMiy6WfTUU_",
+          "name": "website.png 2",
+          "filePath": "../public/plasmic/website_starter/images/websitePng2.png"
         }
       ],
       "indirect": false,
