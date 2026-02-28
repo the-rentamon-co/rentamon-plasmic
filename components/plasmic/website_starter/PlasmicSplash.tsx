@@ -270,6 +270,31 @@ function PlasmicSplash__RenderFunc(props: {
                 }
               </div>
             ) : null}
+            {(() => {
+              try {
+                return !$state.isErrorHappen;
+              } catch (e) {
+                if (
+                  e instanceof TypeError ||
+                  e?.plasmicType === "PlasmicUndefinedDataError"
+                ) {
+                  return true;
+                }
+                throw e;
+              }
+            })() ? (
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text___0ImBe
+                )}
+              >
+                {
+                  "\u0628\u0647 \u0639\u0644\u062a \u0627\u062e\u062a\u0644\u0627\u0644\u0627\u062a \u0633\u0631\u0627\u0633\u0631\u06cc \u062f\u0631 \u0627\u06cc\u0646\u062a\u0631\u0646\u062a \u06a9\u0634\u0648\u0631\u060c \u0645\u0645\u06a9\u0646\u0647 \u0628\u0627 \u062e\u0637\u0627 \u06cc\u0627 \u06a9\u0646\u062f\u06cc \u0645\u0648\u0627\u062c\u0647 \u0628\u0634\u06cc."
+                }
+              </div>
+            ) : null}
           </div>
           {(() => {
             try {
