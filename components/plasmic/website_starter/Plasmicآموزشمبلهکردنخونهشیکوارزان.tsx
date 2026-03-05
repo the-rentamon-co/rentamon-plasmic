@@ -87,7 +87,14 @@ function wrapQueriesWithLoadingProxy($q: any): any {
   });
 }
 
-export function generateDynamicMetadata($q: any, $ctx: any) {
+export type PageCtx = {
+  pageRoute: string;
+  pagePath: string;
+  params: Record<string, string | string[] | undefined>;
+  query: Record<string, string | string[] | undefined>;
+};
+
+export function generateDynamicMetadata($q: any, $ctx: PageCtx) {
   return {
     title:
       "آموزش مبله کردن خونه و تکنیک‌های افزایش جذابیت بصری ویلا با کم‌ترین هزینه",
@@ -220,7 +227,7 @@ function Plasmicآموزشمبلهکردنخونهشیکوارزان__RenderFunc
 
   const pageMetadata = generateDynamicMetadata(
     wrapQueriesWithLoadingProxy({}),
-    $ctx
+    $ctx as PageCtx
   );
 
   const styleTokensClassNames = _useStyleTokens();
@@ -1112,9 +1119,10 @@ export const Plasmicآموزشمبلهکردنخونهشیکوارزان = Objec
     },
 
     pageMetadata: generateDynamicMetadata(wrapQueriesWithLoadingProxy({}), {
+      pageRoute: "/low-cost-furnishing-guide",
       pagePath: "/low-cost-furnishing-guide",
-      searchParams: {},
-      params: {}
+      params: {},
+      query: {}
     })
   }
 );

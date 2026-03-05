@@ -87,7 +87,14 @@ function wrapQueriesWithLoadingProxy($q: any): any {
   });
 }
 
-export function generateDynamicMetadata($q: any, $ctx: any) {
+export type PageCtx = {
+  pageRoute: string;
+  pagePath: string;
+  params: Record<string, string | string[] | undefined>;
+  query: Record<string, string | string[] | undefined>;
+};
+
+export function generateDynamicMetadata($q: any, $ctx: PageCtx) {
   return {
     title: "راهنمای جامع درآمدزایی از اجاره ویلا",
     description:
@@ -213,7 +220,7 @@ function Plasmicراهنمایجامعدرآمدازاجارهویلا__RenderFu
 
   const pageMetadata = generateDynamicMetadata(
     wrapQueriesWithLoadingProxy({}),
-    $ctx
+    $ctx as PageCtx
   );
 
   const styleTokensClassNames = _useStyleTokens();
@@ -1379,9 +1386,10 @@ export const Plasmicراهنمایجامعدرآمدازاجارهویلا = Obj
     },
 
     pageMetadata: generateDynamicMetadata(wrapQueriesWithLoadingProxy({}), {
+      pageRoute: "/vacation-rental-income",
       pagePath: "/vacation-rental-income",
-      searchParams: {},
-      params: {}
+      params: {},
+      query: {}
     })
   }
 );

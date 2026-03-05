@@ -92,7 +92,14 @@ function wrapQueriesWithLoadingProxy($q: any): any {
   });
 }
 
-export function generateDynamicMetadata($q: any, $ctx: any) {
+export type PageCtx = {
+  pageRoute: string;
+  pagePath: string;
+  params: Record<string, string | string[] | undefined>;
+  query: Record<string, string | string[] | undefined>;
+};
+
+export function generateDynamicMetadata($q: any, $ctx: PageCtx) {
   return {
     title: "تعرفه خدمات میان",
 
@@ -316,7 +323,7 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
 
   const pageMetadata = generateDynamicMetadata(
     wrapQueriesWithLoadingProxy({}),
-    $ctx
+    $ctx as PageCtx
   );
 
   const styleTokensClassNames = _useStyleTokens();
@@ -3397,9 +3404,10 @@ export const Plasmicتعرفهخدمات = Object.assign(
     internalArgProps: Plasmicتعرفهخدمات__ArgProps,
 
     pageMetadata: generateDynamicMetadata(wrapQueriesWithLoadingProxy({}), {
+      pageRoute: "/pricing",
       pagePath: "/pricing",
-      searchParams: {},
-      params: {}
+      params: {},
+      query: {}
     })
   }
 );

@@ -87,7 +87,14 @@ function wrapQueriesWithLoadingProxy($q: any): any {
   });
 }
 
-export function generateDynamicMetadata($q: any, $ctx: any) {
+export type PageCtx = {
+  pageRoute: string;
+  pagePath: string;
+  params: Record<string, string | string[] | undefined>;
+  query: Record<string, string | string[] | undefined>;
+};
+
+export function generateDynamicMetadata($q: any, $ctx: PageCtx) {
   return {
     title: "اجاره کوتاه مدت چیست؟",
     description:
@@ -214,7 +221,7 @@ function Plasmicچراجارهکوتاهمدت__RenderFunc(props: {
 
   const pageMetadata = generateDynamicMetadata(
     wrapQueriesWithLoadingProxy({}),
-    $ctx
+    $ctx as PageCtx
   );
 
   const styleTokensClassNames = _useStyleTokens();
@@ -1082,9 +1089,10 @@ export const Plasmicچراجارهکوتاهمدت = Object.assign(
     },
 
     pageMetadata: generateDynamicMetadata(wrapQueriesWithLoadingProxy({}), {
+      pageRoute: "/short-term-rental",
       pagePath: "/short-term-rental",
-      searchParams: {},
-      params: {}
+      params: {},
+      query: {}
     })
   }
 );

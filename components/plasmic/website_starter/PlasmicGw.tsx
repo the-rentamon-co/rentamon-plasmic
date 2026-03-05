@@ -83,7 +83,14 @@ function wrapQueriesWithLoadingProxy($q: any): any {
   });
 }
 
-export function generateDynamicMetadata($q: any, $ctx: any) {
+export type PageCtx = {
+  pageRoute: string;
+  pagePath: string;
+  params: Record<string, string | string[] | undefined>;
+  query: Record<string, string | string[] | undefined>;
+};
+
+export function generateDynamicMetadata($q: any, $ctx: PageCtx) {
   return {
     openGraph: {},
     twitter: {
@@ -153,7 +160,7 @@ function PlasmicGw__RenderFunc(props: {
 
   const pageMetadata = generateDynamicMetadata(
     wrapQueriesWithLoadingProxy({}),
-    $ctx
+    $ctx as PageCtx
   );
 
   const styleTokensClassNames = _useStyleTokens();
@@ -367,9 +374,10 @@ export const PlasmicGw = Object.assign(
     internalArgProps: PlasmicGw__ArgProps,
 
     pageMetadata: generateDynamicMetadata(wrapQueriesWithLoadingProxy({}), {
+      pageRoute: "/gw/[authority]",
       pagePath: "/gw/[authority]",
-      searchParams: {},
-      params: {}
+      params: {},
+      query: {}
     })
   }
 );

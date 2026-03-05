@@ -83,7 +83,14 @@ function wrapQueriesWithLoadingProxy($q: any): any {
   });
 }
 
-export function generateDynamicMetadata($q: any, $ctx: any) {
+export type PageCtx = {
+  pageRoute: string;
+  pagePath: string;
+  params: Record<string, string | string[] | undefined>;
+  query: Record<string, string | string[] | undefined>;
+};
+
+export function generateDynamicMetadata($q: any, $ctx: PageCtx) {
   return {
     openGraph: {},
     twitter: {
@@ -155,7 +162,7 @@ function PlasmicDivarPaymentError__RenderFunc(props: {
 
   const pageMetadata = generateDynamicMetadata(
     wrapQueriesWithLoadingProxy({}),
-    $ctx
+    $ctx as PageCtx
   );
 
   const styleTokensClassNames = _useStyleTokens();
@@ -338,9 +345,10 @@ export const PlasmicDivarPaymentError = Object.assign(
     internalArgProps: PlasmicDivarPaymentError__ArgProps,
 
     pageMetadata: generateDynamicMetadata(wrapQueriesWithLoadingProxy({}), {
+      pageRoute: "/divar/payment/error",
       pagePath: "/divar/payment/error",
-      searchParams: {},
-      params: {}
+      params: {},
+      query: {}
     })
   }
 );

@@ -743,12 +743,10 @@ function PlasmicSidebarLite__RenderFunc(props: {
               ? (() => {
                   const actionArgs = {
                     customFunction: async () => {
-                      return (() => {
-                        return window.open(
-                          "https://goftino.com/c/WgsGXv",
-                          "_blank"
-                        );
-                      })();
+                      return window.open(
+                        "https://miaan.ir/support/?nimchat",
+                        "_blank"
+                      );
                     }
                   };
                   return (({ customFunction }) => {

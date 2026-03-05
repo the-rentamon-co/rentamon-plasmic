@@ -99,7 +99,14 @@ function wrapQueriesWithLoadingProxy($q: any): any {
   });
 }
 
-export function generateDynamicMetadata($q: any, $ctx: any) {
+export type PageCtx = {
+  pageRoute: string;
+  pagePath: string;
+  params: Record<string, string | string[] | undefined>;
+  query: Record<string, string | string[] | undefined>;
+};
+
+export function generateDynamicMetadata($q: any, $ctx: PageCtx) {
   return {
     title: "تقویم یکپارچه اقامتگاه (رایگان)",
 
@@ -361,7 +368,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
 
   const pageMetadata = generateDynamicMetadata(
     wrapQueriesWithLoadingProxy({}),
-    $ctx
+    $ctx as PageCtx
   );
 
   const styleTokensClassNames = _useStyleTokens();
@@ -1681,7 +1688,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField__ro9Tq
+                        sty.formField__v1PDc
                       )}
                       label={"Name"}
                       name={"name"}
@@ -1693,7 +1700,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField__jbfl9
+                        sty.formField__qrF
                       )}
                       label={"Message"}
                       name={"message"}
@@ -1711,7 +1718,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                         className={classNames(
                           projectcss.all,
                           projectcss.__wab_text,
-                          sty.text__u9Zgn
+                          sty.text__yc2Ut
                         )}
                       >
                         {"Submit"}
@@ -1955,9 +1962,10 @@ export const PlasmicLiteCalendar = Object.assign(
     },
 
     pageMetadata: generateDynamicMetadata(wrapQueriesWithLoadingProxy({}), {
+      pageRoute: "/panel-lite",
       pagePath: "/panel-lite",
-      searchParams: {},
-      params: {}
+      params: {},
+      query: {}
     })
   }
 );

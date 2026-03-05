@@ -83,7 +83,14 @@ function wrapQueriesWithLoadingProxy($q: any): any {
   });
 }
 
-export function generateDynamicMetadata($q: any, $ctx: any) {
+export type PageCtx = {
+  pageRoute: string;
+  pagePath: string;
+  params: Record<string, string | string[] | undefined>;
+  query: Record<string, string | string[] | undefined>;
+};
+
+export function generateDynamicMetadata($q: any, $ctx: PageCtx) {
   return {
     openGraph: {},
     twitter: {
@@ -153,7 +160,7 @@ function Plasmicمدیریتویلا2__RenderFunc(props: {
 
   const pageMetadata = generateDynamicMetadata(
     wrapQueriesWithLoadingProxy({}),
-    $ctx
+    $ctx as PageCtx
   );
 
   const styleTokensClassNames = _useStyleTokens();
@@ -347,10 +354,12 @@ export const Plasmicمدیریتویلا2 = Object.assign(
     metadata: { nameRobots: 'content="noindex, nofollow"' },
 
     pageMetadata: generateDynamicMetadata(wrapQueriesWithLoadingProxy({}), {
+      pageRoute:
+        "/%D9%85%D8%AF%DB%8C%D8%B1%DB%8C%D8%AA-%D9%88%DB%8C%D9%84%D8%A7",
       pagePath:
         "/%D9%85%D8%AF%DB%8C%D8%B1%DB%8C%D8%AA-%D9%88%DB%8C%D9%84%D8%A7",
-      searchParams: {},
-      params: {}
+      params: {},
+      query: {}
     })
   }
 );

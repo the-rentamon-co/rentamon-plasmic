@@ -97,7 +97,14 @@ function wrapQueriesWithLoadingProxy($q: any): any {
   });
 }
 
-export function generateDynamicMetadata($q: any, $ctx: any) {
+export type PageCtx = {
+  pageRoute: string;
+  pagePath: string;
+  params: Record<string, string | string[] | undefined>;
+  query: Record<string, string | string[] | undefined>;
+};
+
+export function generateDynamicMetadata($q: any, $ctx: PageCtx) {
   return {
     title: "منتظر آینده بهتر نمی‌مونیم | فرصت همکاری با میان",
     description:
@@ -377,7 +384,7 @@ function Plasmicفرصتهایهمکاری__RenderFunc(props: {
 
   const pageMetadata = generateDynamicMetadata(
     wrapQueriesWithLoadingProxy({}),
-    $ctx
+    $ctx as PageCtx
   );
 
   const styleTokensClassNames = _useStyleTokens();
@@ -3774,9 +3781,10 @@ export const Plasmicفرصتهایهمکاری = Object.assign(
     },
 
     pageMetadata: generateDynamicMetadata(wrapQueriesWithLoadingProxy({}), {
+      pageRoute: "/join-our-journey",
       pagePath: "/join-our-journey",
-      searchParams: {},
-      params: {}
+      params: {},
+      query: {}
     })
   }
 );

@@ -83,7 +83,14 @@ function wrapQueriesWithLoadingProxy($q: any): any {
   });
 }
 
-export function generateDynamicMetadata($q: any, $ctx: any) {
+export type PageCtx = {
+  pageRoute: string;
+  pagePath: string;
+  params: Record<string, string | string[] | undefined>;
+  query: Record<string, string | string[] | undefined>;
+};
+
+export function generateDynamicMetadata($q: any, $ctx: PageCtx) {
   return {
     description:
       "ثبت رایگان آگهی ویلا، اقامتگاه و سوییت در جاباما، جاجیگا، اتاقک، شب و هومسا توسط ما.\n",
@@ -161,7 +168,7 @@ function Plasmicثبتآگهیاقامتگاه2__RenderFunc(props: {
 
   const pageMetadata = generateDynamicMetadata(
     wrapQueriesWithLoadingProxy({}),
-    $ctx
+    $ctx as PageCtx
   );
 
   const styleTokensClassNames = _useStyleTokens();
@@ -360,10 +367,12 @@ export const Plasmicثبتآگهیاقامتگاه2 = Object.assign(
     metadata: { nameRobots: 'content="noindex, nofollow"' },
 
     pageMetadata: generateDynamicMetadata(wrapQueriesWithLoadingProxy({}), {
+      pageRoute:
+        "/%D8%AB%D8%A8%D8%AA-%D8%A2%DA%AF%D9%87%DB%8C-%D8%A7%D9%82%D8%A7%D9%85%D8%AA%DA%AF%D8%A7%D9%87",
       pagePath:
         "/%D8%AB%D8%A8%D8%AA-%D8%A2%DA%AF%D9%87%DB%8C-%D8%A7%D9%82%D8%A7%D9%85%D8%AA%DA%AF%D8%A7%D9%87",
-      searchParams: {},
-      params: {}
+      params: {},
+      query: {}
     })
   }
 );

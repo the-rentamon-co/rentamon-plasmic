@@ -107,7 +107,14 @@ function wrapQueriesWithLoadingProxy($q: any): any {
   });
 }
 
-export function generateDynamicMetadata($q: any, $ctx: any) {
+export type PageCtx = {
+  pageRoute: string;
+  pagePath: string;
+  params: Record<string, string | string[] | undefined>;
+  query: Record<string, string | string[] | undefined>;
+};
+
+export function generateDynamicMetadata($q: any, $ctx: PageCtx) {
   return {
     title: "میان، بروزرسانی خودکار موجودی اقامتگاه، در سایت‌های اجاره ویلا",
     description:
@@ -335,7 +342,7 @@ function PlasmicHomepage__RenderFunc(props: {
 
   const pageMetadata = generateDynamicMetadata(
     wrapQueriesWithLoadingProxy({}),
-    $ctx
+    $ctx as PageCtx
   );
 
   const styleTokensClassNames = _useStyleTokens();
@@ -3310,9 +3317,10 @@ export const PlasmicHomepage = Object.assign(
     },
 
     pageMetadata: generateDynamicMetadata(wrapQueriesWithLoadingProxy({}), {
+      pageRoute: "/",
       pagePath: "/",
-      searchParams: {},
-      params: {}
+      params: {},
+      query: {}
     })
   }
 );

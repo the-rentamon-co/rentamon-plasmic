@@ -87,7 +87,14 @@ function wrapQueriesWithLoadingProxy($q: any): any {
   });
 }
 
-export function generateDynamicMetadata($q: any, $ctx: any) {
+export type PageCtx = {
+  pageRoute: string;
+  pagePath: string;
+  params: Record<string, string | string[] | undefined>;
+  query: Record<string, string | string[] | undefined>;
+};
+
+export function generateDynamicMetadata($q: any, $ctx: PageCtx) {
   return {
     title: "مهم ترین مشکلات اجاره روزانه در ایران +راه حل‌های آن",
     description:
@@ -226,7 +233,7 @@ function Plasmicمشکلاتاجارهروزانهدرایران__RenderFunc(pro
 
   const pageMetadata = generateDynamicMetadata(
     wrapQueriesWithLoadingProxy({}),
-    $ctx
+    $ctx as PageCtx
   );
 
   const styleTokensClassNames = _useStyleTokens();
@@ -1361,9 +1368,10 @@ export const Plasmicمشکلاتاجارهروزانهدرایران = Object.as
     },
 
     pageMetadata: generateDynamicMetadata(wrapQueriesWithLoadingProxy({}), {
+      pageRoute: "/rental-guide",
       pagePath: "/rental-guide",
-      searchParams: {},
-      params: {}
+      params: {},
+      query: {}
     })
   }
 );

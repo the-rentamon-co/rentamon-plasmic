@@ -86,7 +86,14 @@ function wrapQueriesWithLoadingProxy($q: any): any {
   });
 }
 
-export function generateDynamicMetadata($q: any, $ctx: any) {
+export type PageCtx = {
+  pageRoute: string;
+  pagePath: string;
+  params: Record<string, string | string[] | undefined>;
+  query: Record<string, string | string[] | undefined>;
+};
+
+export function generateDynamicMetadata($q: any, $ctx: PageCtx) {
   return {
     title: "مشکلات و چالش‌های خونه  مبله در اجاره روزانه",
     description:
@@ -207,7 +214,7 @@ function Plasmicنگهداریوسایلدراجارهروزانه__RenderFunc(p
 
   const pageMetadata = generateDynamicMetadata(
     wrapQueriesWithLoadingProxy({}),
-    $ctx
+    $ctx as PageCtx
   );
 
   const styleTokensClassNames = _useStyleTokens();
@@ -1816,9 +1823,10 @@ export const Plasmicنگهداریوسایلدراجارهروزانه = Object.
     },
 
     pageMetadata: generateDynamicMetadata(wrapQueriesWithLoadingProxy({}), {
+      pageRoute: "/furnished-rental-maintenance-guide",
       pagePath: "/furnished-rental-maintenance-guide",
-      searchParams: {},
-      params: {}
+      params: {},
+      query: {}
     })
   }
 );

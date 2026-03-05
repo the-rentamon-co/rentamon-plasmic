@@ -83,7 +83,14 @@ function wrapQueriesWithLoadingProxy($q: any): any {
   });
 }
 
-export function generateDynamicMetadata($q: any, $ctx: any) {
+export type PageCtx = {
+  pageRoute: string;
+  pagePath: string;
+  params: Record<string, string | string[] | undefined>;
+  query: Record<string, string | string[] | undefined>;
+};
+
+export function generateDynamicMetadata($q: any, $ctx: PageCtx) {
   return {
     title: "مبنای محاسبات",
 
@@ -158,7 +165,7 @@ function Plasmicمبنایمحاسبات__RenderFunc(props: {
 
   const pageMetadata = generateDynamicMetadata(
     wrapQueriesWithLoadingProxy({}),
-    $ctx
+    $ctx as PageCtx
   );
 
   const styleTokensClassNames = _useStyleTokens();
@@ -369,10 +376,12 @@ export const Plasmicمبنایمحاسبات = Object.assign(
     metadata: { nameRobots: 'content="noindex, nofollow"' },
 
     pageMetadata: generateDynamicMetadata(wrapQueriesWithLoadingProxy({}), {
+      pageRoute:
+        "/%D9%85%D8%A8%D9%86%D8%A7%DB%8C-%D9%85%D8%AD%D8%A7%D8%B3%D8%A8%D8%A7%D8%AA",
       pagePath:
         "/%D9%85%D8%A8%D9%86%D8%A7%DB%8C-%D9%85%D8%AD%D8%A7%D8%B3%D8%A8%D8%A7%D8%AA",
-      searchParams: {},
-      params: {}
+      params: {},
+      query: {}
     })
   }
 );

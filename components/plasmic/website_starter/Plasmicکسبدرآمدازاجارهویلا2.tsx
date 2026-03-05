@@ -83,7 +83,14 @@ function wrapQueriesWithLoadingProxy($q: any): any {
   });
 }
 
-export function generateDynamicMetadata($q: any, $ctx: any) {
+export type PageCtx = {
+  pageRoute: string;
+  pagePath: string;
+  params: Record<string, string | string[] | undefined>;
+  query: Record<string, string | string[] | undefined>;
+};
+
+export function generateDynamicMetadata($q: any, $ctx: PageCtx) {
   return {
     openGraph: {},
     twitter: {
@@ -154,7 +161,7 @@ function Plasmicکسبدرآمدازاجارهویلا2__RenderFunc(props: {
 
   const pageMetadata = generateDynamicMetadata(
     wrapQueriesWithLoadingProxy({}),
-    $ctx
+    $ctx as PageCtx
   );
 
   const styleTokensClassNames = _useStyleTokens();
@@ -350,10 +357,12 @@ export const Plasmicکسبدرآمدازاجارهویلا2 = Object.assign(
     internalArgProps: Plasmicکسبدرآمدازاجارهویلا2__ArgProps,
 
     pageMetadata: generateDynamicMetadata(wrapQueriesWithLoadingProxy({}), {
+      pageRoute:
+        "/%DA%A9%D8%B3%D8%A8-%D8%AF%D8%B1%D8%A2%D9%85%D8%AF-%D8%A7%D8%B2-%D8%A7%D8%AC%D8%A7%D8%B1%D9%87-%D9%88%DB%8C%D9%84%D8%A7",
       pagePath:
         "/%DA%A9%D8%B3%D8%A8-%D8%AF%D8%B1%D8%A2%D9%85%D8%AF-%D8%A7%D8%B2-%D8%A7%D8%AC%D8%A7%D8%B1%D9%87-%D9%88%DB%8C%D9%84%D8%A7",
-      searchParams: {},
-      params: {}
+      params: {},
+      query: {}
     })
   }
 );

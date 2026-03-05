@@ -85,7 +85,14 @@ function wrapQueriesWithLoadingProxy($q: any): any {
   });
 }
 
-export function generateDynamicMetadata($q: any, $ctx: any) {
+export type PageCtx = {
+  pageRoute: string;
+  pagePath: string;
+  params: Record<string, string | string[] | undefined>;
+  query: Record<string, string | string[] | undefined>;
+};
+
+export function generateDynamicMetadata($q: any, $ctx: PageCtx) {
   return {
     title: "تقویم",
 
@@ -250,7 +257,7 @@ function PlasmicGuestCalendar__RenderFunc(props: {
 
   const pageMetadata = generateDynamicMetadata(
     wrapQueriesWithLoadingProxy({}),
-    $ctx
+    $ctx as PageCtx
   );
 
   const styleTokensClassNames = _useStyleTokens();
@@ -1385,9 +1392,10 @@ export const PlasmicGuestCalendar = Object.assign(
     internalArgProps: PlasmicGuestCalendar__ArgProps,
 
     pageMetadata: generateDynamicMetadata(wrapQueriesWithLoadingProxy({}), {
+      pageRoute: "/calendar/[property_id]/[sub-resource]",
       pagePath: "/calendar/[property_id]/[sub-resource]",
-      searchParams: {},
-      params: {}
+      params: {},
+      query: {}
     })
   }
 );

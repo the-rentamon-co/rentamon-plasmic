@@ -87,7 +87,14 @@ function wrapQueriesWithLoadingProxy($q: any): any {
   });
 }
 
-export function generateDynamicMetadata($q: any, $ctx: any) {
+export type PageCtx = {
+  pageRoute: string;
+  pagePath: string;
+  params: Record<string, string | string[] | undefined>;
+  query: Record<string, string | string[] | undefined>;
+};
+
+export function generateDynamicMetadata($q: any, $ctx: PageCtx) {
   return {
     title: String(
       "\u062d\u0636\u0648\u0631 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0634\u0645\u0627 \u062f\u0631 \u0627\u06cc\u0646\u062a\u0631\u0646\u062a \u0648 \u062b\u0628\u062a \u0644\u0648\u06a9\u06cc\u0634\u0646 \u062f\u0631 \u06af\u0648\u06af\u0644 \u0645\u067e\u060c \u0686\u0637\u0648\u0631 \u0645\u0633\u06cc\u0631 \u0627\u0639\u062a\u0645\u0627\u062f \u0645\u0647\u0645\u0627\u0646\u060c \u062a\u0645\u0627\u0633 \u0645\u0633\u062a\u0642\u06cc\u0645 \u0648 \u0633\u0648\u062f \u0628\u06cc\u0634\u062a\u0631 \u0631\u0648 \u0628\u0631\u0627\u06cc \u0634\u0645\u0627 \u0641\u0631\u0627\u0647\u0645 \u0645\u06cc\u200c\u06a9\u0646\u0647..."
@@ -227,7 +234,7 @@ function Plasmicاهمیتحضوردراینترنت__RenderFunc(props: {
 
   const pageMetadata = generateDynamicMetadata(
     wrapQueriesWithLoadingProxy({}),
-    $ctx
+    $ctx as PageCtx
   );
 
   const styleTokensClassNames = _useStyleTokens();
@@ -1388,9 +1395,10 @@ export const Plasmicاهمیتحضوردراینترنت = Object.assign(
     },
 
     pageMetadata: generateDynamicMetadata(wrapQueriesWithLoadingProxy({}), {
+      pageRoute: "/villa-digital-presence",
       pagePath: "/villa-digital-presence",
-      searchParams: {},
-      params: {}
+      params: {},
+      query: {}
     })
   }
 );
