@@ -14550,9 +14550,7 @@ function PlasmicCalendar24__RenderFunc(props: {
                                     const defaultMarkup =
                                       defaultMarkups[siteName] || 0;
                                     const difference =
-                                      currentMarkup > defaultMarkup
-                                        ? currentMarkup - defaultMarkup
-                                        : 0;
+                                      currentMarkup - defaultMarkup;
                                     const finalPrice =
                                       basePrice +
                                       basePrice * (difference / 100);
