@@ -14157,17 +14157,40 @@ function PlasmicCalendar24__RenderFunc(props: {
               data-plasmic-override={overrides.info}
               className={classNames(projectcss.all, sty.info)}
             >
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__btqRb
-                )}
-              >
-                {
-                  "\u0645\u0628\u0644\u063a \u0628\u0627\u0644\u0627 \u00ab\u0642\u06cc\u0645\u062a \u062f\u0631\u06cc\u0627\u0641\u062a\u06cc\u00bb \u0634\u0645\u0627 \u0627\u0632 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u0627\u0633\u062a. \u0645\u0628\u0644\u063a\u06cc \u06a9\u0647 \u0628\u0647 \u062d\u0633\u0627\u0628\u062a \u0645\u06cc\u0627\u062f"
+              {(() => {
+                try {
+                  return (function () {
+                    const data = $state.getMarkup.data;
+                    const allValuesAreZero = Object.values(data).every(
+                      value => value === 0
+                    );
+                    if (allValuesAreZero) {
+                      return false;
+                    }
+                    return true;
+                  })();
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return true;
+                  }
+                  throw e;
                 }
-              </div>
+              })() ? (
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__btqRb
+                  )}
+                >
+                  {
+                    "\u0645\u0628\u0644\u063a \u0628\u0627\u0644\u0627 \u00ab\u0642\u06cc\u0645\u062a \u062f\u0631\u06cc\u0627\u0641\u062a\u06cc\u00bb \u0634\u0645\u0627 \u0627\u0632 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u0627\u0633\u062a. \u0645\u0628\u0644\u063a\u06cc \u06a9\u0647 \u0628\u0647 \u062d\u0633\u0627\u0628\u062a \u0645\u06cc\u0627\u062f"
+                  }
+                </div>
+              ) : null}
             </div>
             <div
               data-plasmic-name={"info2"}
@@ -14176,7 +14199,17 @@ function PlasmicCalendar24__RenderFunc(props: {
             >
               {(() => {
                 try {
-                  return !$state.pricingInfo;
+                  return (function () {
+                    const data = $state.getMarkup.data;
+                    const isPricingMissing = !$state.pricingInfo;
+                    const allValuesAreZero = Object.values(data).every(
+                      value => value === 0
+                    );
+                    if (isPricingMissing && allValuesAreZero) {
+                      return false;
+                    }
+                    return true;
+                  })();
                 } catch (e) {
                   if (
                     e instanceof TypeError ||
