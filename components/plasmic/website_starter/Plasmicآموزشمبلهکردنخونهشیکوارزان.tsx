@@ -110,7 +110,7 @@ export function generateDynamicMetadata($q: any, $ctx: PageCtx) {
       ]
     },
     twitter: {
-      card: "summary_large_image",
+      card: "summary_large_image" as const,
       title:
         "آموزش مبله کردن خونه و تکنیک‌های افزایش جذابیت بصری ویلا با کم‌ترین هزینه",
       description:

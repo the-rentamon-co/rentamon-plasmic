@@ -108,7 +108,7 @@ export function generateDynamicMetadata($q: any, $ctx: PageCtx) {
       ]
     },
     twitter: {
-      card: "summary_large_image",
+      card: "summary_large_image" as const,
       title: "راهنمای جامع درآمدزایی از اجاره ویلا",
       description:
         "در این راهنمای جامع، تمام استراتژی‌ها و نکات عملی برای شروع به کار و درآمدزایی از اجاره ویلا ارائه می‌شه. از آماده‌سازی اقامتگاه، تا جذب مهمان...",

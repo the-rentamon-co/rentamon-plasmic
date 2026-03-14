@@ -100,7 +100,7 @@ export function generateDynamicMetadata($q: any, $ctx: PageCtx) {
       title: "تقویم"
     },
     twitter: {
-      card: "summary",
+      card: "summary" as const,
       title: "تقویم"
     }
   };

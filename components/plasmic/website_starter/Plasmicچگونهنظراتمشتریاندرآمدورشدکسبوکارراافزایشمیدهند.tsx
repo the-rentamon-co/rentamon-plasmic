@@ -108,7 +108,7 @@ export function generateDynamicMetadata($q: any, $ctx: PageCtx) {
       ]
     },
     twitter: {
-      card: "summary_large_image",
+      card: "summary_large_image" as const,
       title: "تأثیر نظرات مهمان‌ها بر درآمد صاحبین اقامتگاه",
       description:
         "نظرات مهمانان کلید افزایش رزروها هستند. یاد بگیرید چگونه امتیازهای ۵ ستاره بیشتری بگیرید، بازخوردهای منفی را مدیریت کنید و درآمد اجاره خود را افزایش دهید.",

@@ -109,7 +109,7 @@ export function generateDynamicMetadata($q: any, $ctx: PageCtx) {
       ]
     },
     twitter: {
-      card: "summary_large_image",
+      card: "summary_large_image" as const,
       title: "امکانات نسخه‌ی پیشرفته رنتامون",
       description:
         "رنتامون امکانات جذابی برای افزایش درآمد میزبان‌ها ارائه می‌ده. مثل نمایش آخرین وضعیت «تسویه درآمد» سایت‌ها، مشاهده‌ی تاریخچه رزرو سایت‌ها و...\n\n",

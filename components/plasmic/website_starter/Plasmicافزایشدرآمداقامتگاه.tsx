@@ -108,7 +108,7 @@ export function generateDynamicMetadata($q: any, $ctx: PageCtx) {
       ]
     },
     twitter: {
-      card: "summary_large_image",
+      card: "summary_large_image" as const,
       title:
         "راهکارهای طلایی افزایش درآمد اجاره ویلا؛ از قیمت‌گذاری هوشمند تا جذب توریست",
 

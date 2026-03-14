@@ -186,6 +186,7 @@ export type PlasmicCalendar24__OverridesType = {
   note?: Flex__<"div">;
   text4?: Flex__<"div">;
   resultShow?: Flex__<"div">;
+  userPlatform3?: Flex__<typeof ApiRequest>;
   editResult?: Flex__<"div">;
   ok7?: Flex__<typeof PlasmicImg__>;
   fail3?: Flex__<typeof PlasmicImg__>;
@@ -383,7 +384,7 @@ function PlasmicCalendar24__RenderFunc(props: {
               })()
             : (() => {
                 try {
-                  return $state.showTutorial2;
+                  return $state.showTutorial2 && $props.isFirstVisit === false;
                 } catch (e) {
                   if (
                     e instanceof TypeError ||
@@ -962,6 +963,30 @@ function PlasmicCalendar24__RenderFunc(props: {
         type: "private",
         variableType: "text",
         initFunc: ({ $props, $state, $queries, $q, $ctx }) => ""
+      },
+      {
+        path: "userPlatform3.data",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
+
+        refName: "userPlatform3"
+      },
+      {
+        path: "userPlatform3.error",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
+
+        refName: "userPlatform3"
+      },
+      {
+        path: "userPlatform3.loading",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
+
+        refName: "userPlatform3"
       }
     ],
     [$props, $ctx, $refs]
@@ -8519,32 +8544,6 @@ function PlasmicCalendar24__RenderFunc(props: {
                   await $steps["updateFetchModalOpen"];
               }
 
-              $steps["updateStateVariable2"] = true
-                ? (() => {
-                    const actionArgs = {
-                      operation: 0,
-                      value: ($state.updateStyle = $state.updateStyle + 1)
-                    };
-                    return (({ variable, value, startIndex, deleteCount }) => {
-                      if (!variable) {
-                        return;
-                      }
-                      const { objRoot, variablePath } = variable;
-
-                      $stateSet(objRoot, variablePath, value);
-                      return value;
-                    })?.apply(null, [actionArgs]);
-                  })()
-                : undefined;
-              if (
-                $steps["updateStateVariable2"] != null &&
-                typeof $steps["updateStateVariable2"] === "object" &&
-                typeof $steps["updateStateVariable2"].then === "function"
-              ) {
-                $steps["updateStateVariable2"] =
-                  await $steps["updateStateVariable2"];
-              }
-
               $steps["updateSelectedDay"] = true
                 ? (() => {
                     const actionArgs = {
@@ -8736,7 +8735,7 @@ function PlasmicCalendar24__RenderFunc(props: {
                 $steps["runCode"] = await $steps["runCode"];
               }
 
-              $steps["getBookingIdFromRequest"] = true
+              $steps["getBookingIdFromRequest"] = false
                 ? (() => {
                     const actionArgs = {
                       customFunction: async () => {
@@ -8756,6 +8755,36 @@ function PlasmicCalendar24__RenderFunc(props: {
               ) {
                 $steps["getBookingIdFromRequest"] =
                   await $steps["getBookingIdFromRequest"];
+              }
+
+              $steps["updateStateVariable2"] = true
+                ? (() => {
+                    const actionArgs = {
+                      operation: 0,
+                      value: (() => {
+                        $state.manualReserveBookingId =
+                          $steps.createAManualReserve.data[0].b_id;
+                        return ($state.updateStyle = $state.updateStyle + 1);
+                      })()
+                    };
+                    return (({ variable, value, startIndex, deleteCount }) => {
+                      if (!variable) {
+                        return;
+                      }
+                      const { objRoot, variablePath } = variable;
+
+                      $stateSet(objRoot, variablePath, value);
+                      return value;
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["updateStateVariable2"] != null &&
+                typeof $steps["updateStateVariable2"] === "object" &&
+                typeof $steps["updateStateVariable2"].then === "function"
+              ) {
+                $steps["updateStateVariable2"] =
+                  await $steps["updateStateVariable2"];
               }
             }}
           >
@@ -8859,7 +8888,8 @@ function PlasmicCalendar24__RenderFunc(props: {
                     await $steps["updateStateVariable"];
                 }
 
-                $steps["updatePlatformRequestStatus"] = true
+                $steps["updatePlatformRequestStatus"] = $state.userPlatform3
+                  .data.status
                   ? (() => {
                       const actionArgs = {
                         variable: {
@@ -11980,311 +12010,402 @@ function PlasmicCalendar24__RenderFunc(props: {
           data-plasmic-override={overrides.resultShow}
           className={classNames(projectcss.all, sty.resultShow)}
         >
-          {(
-            hasVariant(globalVariants, "screen", "mobile")
-              ? (() => {
-                  try {
-                    return (
-                      (!!$state.platformRequestStatus &&
-                        (!!$state.platformRequestStatus.isLoading ||
-                          !!$state.platformRequestStatus.data)) ||
-                      $state.manualResultShow
-                    );
-                  } catch (e) {
-                    if (
-                      e instanceof TypeError ||
-                      e?.plasmicType === "PlasmicUndefinedDataError"
-                    ) {
-                      return true;
-                    }
-                    throw e;
-                  }
-                })()
-              : (() => {
-                  try {
-                    return (() => {
-                      const currentPropId = String(
-                        $props.propertyId || $state.propId
-                      );
-                      const statePropId = String(
-                        $state.requestdata?.property_id
-                      );
-                      if (currentPropId !== statePropId) {
-                        return false;
-                      }
+          <ApiRequest
+            data-plasmic-name={"userPlatform3"}
+            data-plasmic-override={overrides.userPlatform3}
+            className={classNames("__wab_instance", sty.userPlatform3)}
+            errorDisplay={null}
+            loadingDisplay={null}
+            method={"GET"}
+            onError={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, [
+                "userPlatform3",
+                "error"
+              ]).apply(null, eventArgs);
+            }}
+            onLoading={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, [
+                "userPlatform3",
+                "loading"
+              ]).apply(null, eventArgs);
+            }}
+            onSuccess={async (...eventArgs: any) => {
+              generateStateOnChangeProp($state, [
+                "userPlatform3",
+                "data"
+              ]).apply(null, eventArgs);
+            }}
+            ref={ref => {
+              $refs["userPlatform3"] = ref;
+            }}
+            url={(() => {
+              try {
+                return (() => {
+                  const isMiaan = window.location.hostname.includes("miaan.ir");
+                  const apiBase = isMiaan
+                    ? "https://api-v2.miaan.ir"
+                    : "https://api-v2.rentamon.com";
+                  return `${apiBase}/api/website_statuses/?property_id=${$props.propertyId}`;
+                })();
+              } catch (e) {
+                if (
+                  e instanceof TypeError ||
+                  e?.plasmicType === "PlasmicUndefinedDataError"
+                ) {
+                  return undefined;
+                }
+                throw e;
+              }
+            })()}
+          >
+            {(
+              hasVariant(globalVariants, "screen", "mobile")
+                ? (() => {
+                    try {
                       return (
                         (!!$state.platformRequestStatus &&
                           (!!$state.platformRequestStatus.isLoading ||
                             !!$state.platformRequestStatus.data)) ||
-                        !!$state.manualResultShow
+                        $state.manualResultShow
                       );
-                    })();
-                  } catch (e) {
-                    if (
-                      e instanceof TypeError ||
-                      e?.plasmicType === "PlasmicUndefinedDataError"
-                    ) {
-                      return false;
-                    }
-                    throw e;
-                  }
-                })()
-          ) ? (
-            <div
-              data-plasmic-name={"editResult"}
-              data-plasmic-override={overrides.editResult}
-              className={classNames(projectcss.all, sty.editResult)}
-              onClick={async event => {
-                const $steps = {};
-
-                $steps["updateFetchModalOpen"] = true
-                  ? (() => {
-                      const actionArgs = {
-                        variable: {
-                          objRoot: $state,
-                          variablePath: ["fetchModal", "open"]
-                        },
-                        operation: 0,
-                        value: true
-                      };
-                      return (({
-                        variable,
-                        value,
-                        startIndex,
-                        deleteCount
-                      }) => {
-                        if (!variable) {
-                          return;
-                        }
-                        const { objRoot, variablePath } = variable;
-
-                        $stateSet(objRoot, variablePath, value);
-                        return value;
-                      })?.apply(null, [actionArgs]);
-                    })()
-                  : undefined;
-                if (
-                  $steps["updateFetchModalOpen"] != null &&
-                  typeof $steps["updateFetchModalOpen"] === "object" &&
-                  typeof $steps["updateFetchModalOpen"].then === "function"
-                ) {
-                  $steps["updateFetchModalOpen"] =
-                    await $steps["updateFetchModalOpen"];
-                }
-
-                $steps["updateManualResultShow"] = true
-                  ? (() => {
-                      const actionArgs = {
-                        variable: {
-                          objRoot: $state,
-                          variablePath: ["manualResultShow"]
-                        },
-                        operation: 0,
-                        value: false
-                      };
-                      return (({
-                        variable,
-                        value,
-                        startIndex,
-                        deleteCount
-                      }) => {
-                        if (!variable) {
-                          return;
-                        }
-                        const { objRoot, variablePath } = variable;
-
-                        $stateSet(objRoot, variablePath, value);
-                        return value;
-                      })?.apply(null, [actionArgs]);
-                    })()
-                  : undefined;
-                if (
-                  $steps["updateManualResultShow"] != null &&
-                  typeof $steps["updateManualResultShow"] === "object" &&
-                  typeof $steps["updateManualResultShow"].then === "function"
-                ) {
-                  $steps["updateManualResultShow"] =
-                    await $steps["updateManualResultShow"];
-                }
-              }}
-            >
-              <div className={classNames(projectcss.all, sty.freeBox___48Nrb)}>
-                {(() => {
-                  try {
-                    return (() => {
+                    } catch (e) {
                       if (
-                        !$state.platformRequestStatus ||
-                        !$state.platformRequestStatus.data ||
-                        Object.keys($state.platformRequestStatus.data)
-                          .length === 0
-                      ) {
-                        return false;
-                      }
-                      const platforms = $state.platformRequestStatus.data;
-                      const keys = Object.keys(platforms);
-                      const jabama_smart_price =
-                        $state.getJabamaSmartPriceStatus2?.data;
-                      const isJabamaConflict =
-                        jabama_smart_price?.[0]?.status === true &&
-                        ($state.requestdata?.discount != null ||
-                          $state.requestdata?.price != null);
-                      return keys.every(key => {
-                        if (key === "jabama" && isJabamaConflict) return false;
-                        const item = platforms[key];
-                        return (
-                          item.final_status === true && item.status_code === 200
-                        );
-                      });
-                    })();
-                  } catch (e) {
-                    if (
-                      e instanceof TypeError ||
-                      e?.plasmicType === "PlasmicUndefinedDataError"
-                    ) {
-                      return false;
-                    }
-                    throw e;
-                  }
-                })() ? (
-                  <PlasmicImg__
-                    data-plasmic-name={"ok7"}
-                    data-plasmic-override={overrides.ok7}
-                    alt={""}
-                    className={classNames(sty.ok7)}
-                    displayHeight={
-                      hasVariant(globalVariants, "screen", "mobile")
-                        ? "30px"
-                        : "30px"
-                    }
-                    displayMaxHeight={"none"}
-                    displayMaxWidth={"100%"}
-                    displayMinHeight={"0"}
-                    displayMinWidth={"0"}
-                    displayWidth={"auto"}
-                    loading={
-                      hasVariant(globalVariants, "screen", "mobile")
-                        ? "lazy"
-                        : "eager"
-                    }
-                    src={{
-                      src: "/plasmic/website_starter/images/image27.svg",
-                      fullWidth: 26,
-                      fullHeight: 26,
-                      aspectRatio: 1
-                    }}
-                  />
-                ) : null}
-                {(() => {
-                  try {
-                    return (() => {
-                      if (!$state.platformRequestStatus) return false;
-                      if ($state.platformRequestStatus.isLoading) return false;
-                      const data = $state.platformRequestStatus.data;
-                      if (!data) return false;
-                      if (
-                        Object.keys(data).length === 0 ||
-                        data.timeout ||
-                        data.empty_result
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
                       ) {
                         return true;
                       }
-                      const platforms = data;
-                      const keys = Object.keys(platforms);
-                      const jabama_smart_price =
-                        $state.getJabamaSmartPriceStatus2?.data;
-                      const isJabamaConflict =
-                        jabama_smart_price?.[0]?.status === true &&
-                        ($state.requestdata?.discount != null ||
-                          $state.requestdata?.price != null);
-                      return keys.some(key => {
-                        if (key === "jabama" && isJabamaConflict) return false;
-                        const item = platforms[key];
-                        return (
-                          item.final_status === false ||
-                          item.status_code !== 200
+                      throw e;
+                    }
+                  })()
+                : (() => {
+                    try {
+                      return (() => {
+                        const currentPropId = String(
+                          $props.propertyId || $state.propId
                         );
-                      });
-                    })();
-                  } catch (e) {
-                    if (
-                      e instanceof TypeError ||
-                      e?.plasmicType === "PlasmicUndefinedDataError"
-                    ) {
-                      return false;
+                        const statePropId = String(
+                          $state.requestdata?.property_id
+                        );
+                        if (currentPropId !== statePropId) {
+                          return false;
+                        }
+                        return (
+                          (!!$state.platformRequestStatus &&
+                            (!!$state.platformRequestStatus.isLoading ||
+                              !!$state.platformRequestStatus.data)) ||
+                          !!$state.manualResultShow
+                        );
+                      })();
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return false;
+                      }
+                      throw e;
                     }
-                    throw e;
+                  })()
+            ) ? (
+              <div
+                data-plasmic-name={"editResult"}
+                data-plasmic-override={overrides.editResult}
+                className={classNames(projectcss.all, sty.editResult)}
+                onClick={async event => {
+                  const $steps = {};
+
+                  $steps["updateFetchModalOpen"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          variable: {
+                            objRoot: $state,
+                            variablePath: ["fetchModal", "open"]
+                          },
+                          operation: 0,
+                          value: true
+                        };
+                        return (({
+                          variable,
+                          value,
+                          startIndex,
+                          deleteCount
+                        }) => {
+                          if (!variable) {
+                            return;
+                          }
+                          const { objRoot, variablePath } = variable;
+
+                          $stateSet(objRoot, variablePath, value);
+                          return value;
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["updateFetchModalOpen"] != null &&
+                    typeof $steps["updateFetchModalOpen"] === "object" &&
+                    typeof $steps["updateFetchModalOpen"].then === "function"
+                  ) {
+                    $steps["updateFetchModalOpen"] =
+                      await $steps["updateFetchModalOpen"];
                   }
-                })() ? (
-                  <PlasmicImg__
-                    data-plasmic-name={"fail3"}
-                    data-plasmic-override={overrides.fail3}
-                    alt={""}
-                    className={classNames(sty.fail3, "element")}
-                    displayHeight={
-                      hasVariant(globalVariants, "screen", "mobile")
-                        ? "30px"
-                        : "30px"
-                    }
-                    displayMaxHeight={"none"}
-                    displayMaxWidth={"100%"}
-                    displayMinHeight={"0"}
-                    displayMinWidth={"0"}
-                    displayWidth={"auto"}
-                    loading={
-                      hasVariant(globalVariants, "screen", "mobile")
-                        ? "lazy"
-                        : "eager"
-                    }
-                    src={{
-                      src: "/plasmic/website_starter/images/image28.svg",
-                      fullWidth: 26,
-                      fullHeight: 26,
-                      aspectRatio: 1
-                    }}
-                  />
-                ) : null}
-                {(() => {
-                  try {
-                    return (() => {
-                      return !!$state.platformRequestStatus?.isLoading;
-                    })();
-                  } catch (e) {
-                    if (
-                      e instanceof TypeError ||
-                      e?.plasmicType === "PlasmicUndefinedDataError"
-                    ) {
-                      return true;
-                    }
-                    throw e;
+
+                  $steps["updateManualResultShow"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          variable: {
+                            objRoot: $state,
+                            variablePath: ["manualResultShow"]
+                          },
+                          operation: 0,
+                          value: false
+                        };
+                        return (({
+                          variable,
+                          value,
+                          startIndex,
+                          deleteCount
+                        }) => {
+                          if (!variable) {
+                            return;
+                          }
+                          const { objRoot, variablePath } = variable;
+
+                          $stateSet(objRoot, variablePath, value);
+                          return value;
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["updateManualResultShow"] != null &&
+                    typeof $steps["updateManualResultShow"] === "object" &&
+                    typeof $steps["updateManualResultShow"].then === "function"
+                  ) {
+                    $steps["updateManualResultShow"] =
+                      await $steps["updateManualResultShow"];
                   }
-                })() ? (
-                  <PlasmicImg__
-                    data-plasmic-name={"loading5"}
-                    data-plasmic-override={overrides.loading5}
-                    alt={""}
-                    className={classNames(sty.loading5)}
-                    displayHeight={"34px"}
-                    displayMaxHeight={"none"}
-                    displayMaxWidth={"100%"}
-                    displayMinHeight={"0"}
-                    displayMinWidth={"0"}
-                    displayWidth={
-                      hasVariant(globalVariants, "screen", "mobile")
-                        ? "34px"
-                        : "auto"
+                }}
+              >
+                <div
+                  className={classNames(projectcss.all, sty.freeBox___48Nrb)}
+                >
+                  {(() => {
+                    try {
+                      return (() => {
+                        const connectedSites =
+                          $state.userPlatform3?.data?.status;
+                        const hasNoSites =
+                          !connectedSites ||
+                          typeof connectedSites !== "object" ||
+                          Object.keys(connectedSites).length === 0;
+                        if (hasNoSites) {
+                          return true;
+                        }
+                        if ($state.platformRequestStatus?.isLoading) {
+                          return false;
+                        }
+                        if (
+                          !$state.platformRequestStatus ||
+                          !$state.platformRequestStatus.data
+                        ) {
+                          return false;
+                        }
+                        const data = $state.platformRequestStatus.data;
+                        if (
+                          Object.keys(data).length === 0 ||
+                          data.timeout ||
+                          data.empty_result
+                        ) {
+                          return false;
+                        }
+                        const platforms = data;
+                        const keys = Object.keys(platforms);
+                        const jabama_smart_price =
+                          $state.getJabamaSmartPriceStatus2?.data;
+                        const isJabamaConflict =
+                          jabama_smart_price?.[0]?.status === true &&
+                          ($state.requestdata?.discount != null ||
+                            $state.requestdata?.price != null);
+                        return keys.every(key => {
+                          if (key === "jabama" && isJabamaConflict)
+                            return false;
+                          const item = platforms[key];
+                          return (
+                            item.final_status === true &&
+                            item.status_code === 200
+                          );
+                        });
+                      })();
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return false;
+                      }
+                      throw e;
                     }
-                    loading={"lazy"}
-                    src={{
-                      src: "/plasmic/website_starter/images/image140.gif",
-                      fullWidth: 500,
-                      fullHeight: 500,
-                      aspectRatio: undefined
-                    }}
-                  />
-                ) : null}
+                  })() ? (
+                    <PlasmicImg__
+                      data-plasmic-name={"ok7"}
+                      data-plasmic-override={overrides.ok7}
+                      alt={""}
+                      className={classNames(sty.ok7)}
+                      displayHeight={
+                        hasVariant(globalVariants, "screen", "mobile")
+                          ? "30px"
+                          : "30px"
+                      }
+                      displayMaxHeight={"none"}
+                      displayMaxWidth={"100%"}
+                      displayMinHeight={"0"}
+                      displayMinWidth={"0"}
+                      displayWidth={"auto"}
+                      loading={
+                        hasVariant(globalVariants, "screen", "mobile")
+                          ? "lazy"
+                          : "eager"
+                      }
+                      src={{
+                        src: "/plasmic/website_starter/images/image27.svg",
+                        fullWidth: 26,
+                        fullHeight: 26,
+                        aspectRatio: 1
+                      }}
+                    />
+                  ) : null}
+                  {(() => {
+                    try {
+                      return (() => {
+                        if (!$state.platformRequestStatus) return false;
+                        if ($state.platformRequestStatus.isLoading)
+                          return false;
+                        const connectedSites =
+                          $state.userPlatform3?.data?.status;
+                        const hasNoSites =
+                          !connectedSites ||
+                          typeof connectedSites !== "object" ||
+                          Object.keys(connectedSites).length === 0;
+                        if (hasNoSites) {
+                          return false;
+                        }
+                        const data = $state.platformRequestStatus.data;
+                        if (!data) return false;
+                        if (
+                          Object.keys(data).length === 0 ||
+                          data.timeout ||
+                          data.empty_result
+                        ) {
+                          return true;
+                        }
+                        const platforms = data;
+                        const keys = Object.keys(platforms);
+                        const jabama_smart_price =
+                          $state.getJabamaSmartPriceStatus2?.data;
+                        const isJabamaConflict =
+                          jabama_smart_price?.[0]?.status === true &&
+                          ($state.requestdata?.discount != null ||
+                            $state.requestdata?.price != null);
+                        return keys.some(key => {
+                          if (key === "jabama" && isJabamaConflict)
+                            return false;
+                          const item = platforms[key];
+                          return (
+                            item.final_status === false ||
+                            item.status_code !== 200
+                          );
+                        });
+                      })();
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return false;
+                      }
+                      throw e;
+                    }
+                  })() ? (
+                    <PlasmicImg__
+                      data-plasmic-name={"fail3"}
+                      data-plasmic-override={overrides.fail3}
+                      alt={""}
+                      className={classNames(sty.fail3, "element")}
+                      displayHeight={
+                        hasVariant(globalVariants, "screen", "mobile")
+                          ? "30px"
+                          : "30px"
+                      }
+                      displayMaxHeight={"none"}
+                      displayMaxWidth={"100%"}
+                      displayMinHeight={"0"}
+                      displayMinWidth={"0"}
+                      displayWidth={"auto"}
+                      loading={
+                        hasVariant(globalVariants, "screen", "mobile")
+                          ? "lazy"
+                          : "eager"
+                      }
+                      src={{
+                        src: "/plasmic/website_starter/images/image28.svg",
+                        fullWidth: 26,
+                        fullHeight: 26,
+                        aspectRatio: 1
+                      }}
+                    />
+                  ) : null}
+                  {(() => {
+                    try {
+                      return (() => {
+                        const connectedSites =
+                          $state.userPlatform3?.data?.status;
+                        const hasNoSites =
+                          !connectedSites ||
+                          typeof connectedSites !== "object" ||
+                          Object.keys(connectedSites).length === 0;
+                        if (hasNoSites) {
+                          return false;
+                        }
+                        return !!$state.platformRequestStatus?.isLoading;
+                      })();
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return true;
+                      }
+                      throw e;
+                    }
+                  })() ? (
+                    <PlasmicImg__
+                      data-plasmic-name={"loading5"}
+                      data-plasmic-override={overrides.loading5}
+                      alt={""}
+                      className={classNames(sty.loading5)}
+                      displayHeight={"34px"}
+                      displayMaxHeight={"none"}
+                      displayMaxWidth={"100%"}
+                      displayMinHeight={"0"}
+                      displayMinWidth={"0"}
+                      displayWidth={
+                        hasVariant(globalVariants, "screen", "mobile")
+                          ? "34px"
+                          : "auto"
+                      }
+                      loading={"lazy"}
+                      src={{
+                        src: "/plasmic/website_starter/images/image140.gif",
+                        fullWidth: 500,
+                        fullHeight: 500,
+                        aspectRatio: undefined
+                      }}
+                    />
+                  ) : null}
+                </div>
               </div>
-            </div>
-          ) : null}
+            ) : null}
+          </ApiRequest>
         </div>
       </div>
       <div
@@ -15044,6 +15165,7 @@ const PlasmicDescendants = {
     "note",
     "text4",
     "resultShow",
+    "userPlatform3",
     "editResult",
     "ok7",
     "fail3",
@@ -15221,7 +15343,15 @@ const PlasmicDescendants = {
   text3: ["text3"],
   note: ["note", "text4"],
   text4: ["text4"],
-  resultShow: ["resultShow", "editResult", "ok7", "fail3", "loading5"],
+  resultShow: [
+    "resultShow",
+    "userPlatform3",
+    "editResult",
+    "ok7",
+    "fail3",
+    "loading5"
+  ],
+  userPlatform3: ["userPlatform3", "editResult", "ok7", "fail3", "loading5"],
   editResult: ["editResult", "ok7", "fail3", "loading5"],
   ok7: ["ok7"],
   fail3: ["fail3"],
@@ -15382,6 +15512,7 @@ type NodeDefaultElementType = {
   note: "div";
   text4: "div";
   resultShow: "div";
+  userPlatform3: typeof ApiRequest;
   editResult: "div";
   ok7: typeof PlasmicImg__;
   fail3: typeof PlasmicImg__;
@@ -15548,6 +15679,7 @@ export const PlasmicCalendar24 = Object.assign(
     note: makeNodeComponent("note"),
     text4: makeNodeComponent("text4"),
     resultShow: makeNodeComponent("resultShow"),
+    userPlatform3: makeNodeComponent("userPlatform3"),
     editResult: makeNodeComponent("editResult"),
     ok7: makeNodeComponent("ok7"),
     fail3: makeNodeComponent("fail3"),

@@ -99,7 +99,7 @@ export function generateDynamicMetadata($q: any, $ctx: PageCtx) {
         "ثبت رایگان آگهی ویلا، اقامتگاه و سوییت در جاباما، جاجیگا، اتاقک، شب و هومسا توسط ما.\n"
     },
     twitter: {
-      card: "summary",
+      card: "summary" as const,
 
       description:
         "ثبت رایگان آگهی ویلا، اقامتگاه و سوییت در جاباما، جاجیگا، اتاقک، شب و هومسا توسط ما.\n"

@@ -119,7 +119,7 @@ export function generateDynamicMetadata($q: any, $ctx: PageCtx) {
       ]
     },
     twitter: {
-      card: "summary_large_image",
+      card: "summary_large_image" as const,
       title: "ثبت همزمان آگهی ویلا در معتبرترین سایت‌های اجاره اقامتگاه",
       description:
         "کافیه یک‌بار مشخصات اقامتگاهت رو در «میان» ثبت کنی، تا در معتبرترین سایت‌های اجاره ویلا نمایش داده بشه.",

@@ -110,7 +110,7 @@ export function generateDynamicMetadata($q: any, $ctx: PageCtx) {
       title: "بروز رسانی خودکار رزروها"
     },
     twitter: {
-      card: "summary",
+      card: "summary" as const,
       title: "بروز رسانی خودکار رزروها"
     }
   };

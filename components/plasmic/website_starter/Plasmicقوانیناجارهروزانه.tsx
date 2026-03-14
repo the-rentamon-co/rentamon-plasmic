@@ -108,7 +108,7 @@ export function generateDynamicMetadata($q: any, $ctx: PageCtx) {
       ]
     },
     twitter: {
-      card: "summary_large_image",
+      card: "summary_large_image" as const,
       title: "قوانین اجاره روزانه ویلا و آپارتمان مبله",
       description:
         "قوانین اجاره کوتاه‌مدت در ایران: مجوزها، مسئولیت‌ها، مالیات، بیمه و احراز هویت مهمان؛ راهنمای کامل برای صاحبان ویلا و آپارتمان مبله.",

@@ -102,7 +102,7 @@ export function generateDynamicMetadata($q: any, $ctx: PageCtx) {
       title: "قوانین و مقررات استفاده از رنتامون"
     },
     twitter: {
-      card: "summary",
+      card: "summary" as const,
       title: "قوانین و مقررات استفاده از رنتامون"
     }
   };

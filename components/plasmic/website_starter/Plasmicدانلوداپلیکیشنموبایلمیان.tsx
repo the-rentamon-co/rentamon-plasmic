@@ -102,7 +102,7 @@ export function generateDynamicMetadata($q: any, $ctx: PageCtx) {
       title: "دانلود اپلیکیشن موبایل میان"
     },
     twitter: {
-      card: "summary",
+      card: "summary" as const,
       title: "دانلود اپلیکیشن موبایل میان"
     }
   };

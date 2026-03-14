@@ -113,7 +113,7 @@ export function generateDynamicMetadata($q: any, $ctx: PageCtx) {
   return {
     openGraph: {},
     twitter: {
-      card: "summary"
+      card: "summary" as const
     }
   };
 }
@@ -7206,8 +7206,8 @@ function PlasmicBookings__RenderFunc(props: {
                                       try {
                                         return $state.booking.data.status ==
                                           "cancelled"
-                                          ? "نتیجه تلاش رنتامون برای باز کردن سایت‌ها:"
-                                          : "نتیجه تلاش رنتامون برای بستن سایت‌ها:";
+                                          ? "نتیجه تلاش میان برای باز کردن سایت‌ها:"
+                                          : "نتیجه تلاش میان برای بستن سایت‌ها:";
                                       } catch (e) {
                                         if (
                                           e instanceof TypeError ||

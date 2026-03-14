@@ -109,7 +109,7 @@ export function generateDynamicMetadata($q: any, $ctx: PageCtx) {
       ]
     },
     twitter: {
-      card: "summary_large_image",
+      card: "summary_large_image" as const,
       title: "مقایسه بهترین سایت‌های اجاره ویلا",
       description:
         "مقایسه میزان کارمزد، کیفیت پشتیبانی و درآمد سایت‌های جاباما، جاجیگا، شب، اتاقک و...",

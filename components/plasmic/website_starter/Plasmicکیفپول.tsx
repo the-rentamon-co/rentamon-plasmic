@@ -113,7 +113,7 @@ export function generateDynamicMetadata($q: any, $ctx: PageCtx) {
       title: "کیف پول"
     },
     twitter: {
-      card: "summary",
+      card: "summary" as const,
       title: "کیف پول"
     }
   };

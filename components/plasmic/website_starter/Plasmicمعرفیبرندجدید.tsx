@@ -112,7 +112,7 @@ export function generateDynamicMetadata($q: any, $ctx: PageCtx) {
       ]
     },
     twitter: {
-      card: "summary_large_image",
+      card: "summary_large_image" as const,
       title: "معرفی برند جدید میان",
       description:
         "بعد از ۲ سال فعالیت با نام رنتامون، دیگه این نام گویای مسیر و فعالیت فعلی ما نیست. به همین دلیل «میان» متولد شد.",

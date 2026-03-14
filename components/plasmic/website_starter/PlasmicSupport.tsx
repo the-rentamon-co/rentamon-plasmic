@@ -109,7 +109,7 @@ export function generateDynamicMetadata($q: any, $ctx: PageCtx) {
       description: "راه‌های ارتباط با تیم میان و پشتیبانی خدمات اینجاست."
     },
     twitter: {
-      card: "summary",
+      card: "summary" as const,
       title: "پشتیبانی و ارتباط با تیم میان",
       description: "راه‌های ارتباط با تیم میان و پشتیبانی خدمات اینجاست."
     }

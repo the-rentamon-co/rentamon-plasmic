@@ -109,7 +109,7 @@ export function generateDynamicMetadata($q: any, $ctx: PageCtx) {
       ]
     },
     twitter: {
-      card: "summary_large_image",
+      card: "summary_large_image" as const,
       title: "مدیریت ویلا، سنتی یا هوشمند؟",
       description:
         "اگه برای مدیریت رزروهای اقامتگاه در سایت‌های اجاره ویلا مثل جاباما، جاجیگا، اتاقک، شب و… همیشه چالش و دردسر داری، یه خبر خوب برات داریم.",

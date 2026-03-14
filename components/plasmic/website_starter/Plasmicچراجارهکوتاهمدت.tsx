@@ -108,7 +108,7 @@ export function generateDynamicMetadata($q: any, $ctx: PageCtx) {
       ]
     },
     twitter: {
-      card: "summary_large_image",
+      card: "summary_large_image" as const,
       title: "اجاره کوتاه مدت چیست؟",
       description:
         "مقایسه میزان درآمدزایی اجاره روزانه و اجاره سالانه از نظر درآمد و هزینه‌های اجرایی.",

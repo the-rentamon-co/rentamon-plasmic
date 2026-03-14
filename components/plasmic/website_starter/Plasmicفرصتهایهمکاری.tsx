@@ -118,7 +118,7 @@ export function generateDynamicMetadata($q: any, $ctx: PageCtx) {
       ]
     },
     twitter: {
-      card: "summary_large_image",
+      card: "summary_large_image" as const,
       title: "منتظر آینده بهتر نمی‌مونیم | فرصت همکاری با میان",
       description:
         "حدود ۱۰۰۰ میزبان از نقاط مختلف کشور با رنتامون ویلاشون رو مدیریت می‌کنن، و هر روز نیازهای بیشتری رو مطرح می‌کنن. به کمکت نیاز داریم.",

@@ -108,7 +108,7 @@ export function generateDynamicMetadata($q: any, $ctx: PageCtx) {
       ]
     },
     twitter: {
-      card: "summary_large_image",
+      card: "summary_large_image" as const,
       title: "اصول مهمان‌نوازی و نحوه‌ی تعامل با مهمانان مشکل‌پسند",
       description:
         "چطور مثل یک میزبان حرفه‌ای باشیم؟ راهنمای خلق تجربه فوق‌العاده برای مهمان و مدیریت چالش‌های میزبانی.",

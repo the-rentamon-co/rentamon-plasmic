@@ -3291,6 +3291,10 @@
   max-width: 100%;
   padding: 0px;
 }
+.userPlatform3:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+}
 .editResult {
   animation: fadeInLeft4B8ZYZskL8T 1s ease 0s 1 normal none running;
   display: flex;
@@ -3305,7 +3309,6 @@
   min-width: 20px;
   pointer-events: auto;
   cursor: pointer;
-  flex-shrink: 0;
   min-height: 0;
   border-radius: 0px 100px 100px 0px;
   padding: 8px;
@@ -3332,7 +3335,6 @@
 @media (max-width: 350px) {
   .editResult {
     width: 50px;
-    flex-shrink: 0;
   }
 }
 .freeBox___48Nrb {

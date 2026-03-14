@@ -128,7 +128,7 @@ export function generateDynamicMetadata($q: any, $ctx: PageCtx) {
       ]
     },
     twitter: {
-      card: "summary_large_image",
+      card: "summary_large_image" as const,
       title: "میان، بروزرسانی خودکار موجودی اقامتگاه، در سایت‌های اجاره ویلا",
       description:
         "میان دستیار هوشمند میزبان‌هاست؛ راه حل عالی برای مدیریت تقویم اقامتگاه و اعمال تغییرات در سایت‌های جاباما، جاجیگا، اتاقک، شب و… از یکجا.",

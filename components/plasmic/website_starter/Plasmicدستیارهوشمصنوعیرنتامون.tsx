@@ -102,7 +102,7 @@ export function generateDynamicMetadata($q: any, $ctx: PageCtx) {
       title: "دستیار هوش مصنوعی رنتامون"
     },
     twitter: {
-      card: "summary",
+      card: "summary" as const,
       title: "دستیار هوش مصنوعی رنتامون"
     }
   };

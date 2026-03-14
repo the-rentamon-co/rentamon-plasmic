@@ -116,7 +116,7 @@ export function generateDynamicMetadata($q: any, $ctx: PageCtx) {
       ]
     },
     twitter: {
-      card: "summary_large_image",
+      card: "summary_large_image" as const,
       title: "میان، تقویم آنلاین اقامتگاه",
       description:
         "با میان، دیگه نیازی به دفترچه، سررسید یا تقویم‌های کاغذی نیست! همه چیز در یک تقویم آنلاین در دسترسه؛ از هر جا و روی هر دستگاهی، به اطلاعات ویلا و مهمان‌ها دسترسی داری.",

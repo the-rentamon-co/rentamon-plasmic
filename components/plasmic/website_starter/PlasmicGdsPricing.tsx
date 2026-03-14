@@ -105,7 +105,7 @@ export function generateDynamicMetadata($q: any, $ctx: PageCtx) {
       images: ["https://miaan.ir/plasmic/website_starter/images/image109.png"]
     },
     twitter: {
-      card: "summary_large_image",
+      card: "summary_large_image" as const,
       title: "تقویم یکپارچه اقامتگاه | مدیریت قیمت و وضعیت رزرو در چند سایت",
       description:
         "با تقویم هوشمند رنتامون، تاریخ‌ها، قیمت و وضعیت رزرو اقامتگاه‌ خود را در پلتفرم‌هایی مثل جاجیگا، شب، اتاقک و جاباما از یک پنل مرکزی مدیریت کنید. ساده، سریع و بدون خطا.",

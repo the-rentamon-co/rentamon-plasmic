@@ -108,7 +108,7 @@ export function generateDynamicMetadata($q: any, $ctx: PageCtx) {
       ]
     },
     twitter: {
-      card: "summary_large_image",
+      card: "summary_large_image" as const,
       title: "مهم ترین مشکلات اجاره روزانه در ایران +راه حل‌های آن",
       description:
         "این مدل اجاره نسبت به اجاره سالانه درآمد خیلی بیش‌تری برای صاحبخونه ایجاد می‌کنه، اما طبیعی هم هست که میزبان‌ها نگرانی‌ها و سوال‌هایی داشته باشن. از وسایل خونه گرفته تا همسایه‌ها و امنیت مهمون‌ها.",

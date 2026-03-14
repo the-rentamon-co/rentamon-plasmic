@@ -114,7 +114,7 @@ export function generateDynamicMetadata($q: any, $ctx: PageCtx) {
       title: "تقویم یکپارچه اقامتگاه (رایگان)"
     },
     twitter: {
-      card: "summary",
+      card: "summary" as const,
       title: "تقویم یکپارچه اقامتگاه (رایگان)"
     }
   };
@@ -1688,7 +1688,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField__v1PDc
+                        sty.formField__zUIbA
                       )}
                       label={"Name"}
                       name={"name"}
@@ -1700,7 +1700,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField__qrF
+                        sty.formField__cJUe
                       )}
                       label={"Message"}
                       name={"message"}
@@ -1718,7 +1718,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                         className={classNames(
                           projectcss.all,
                           projectcss.__wab_text,
-                          sty.text__yc2Ut
+                          sty.text__ppfM
                         )}
                       >
                         {"Submit"}
