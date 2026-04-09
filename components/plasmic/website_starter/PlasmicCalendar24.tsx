@@ -382,7 +382,7 @@ function PlasmicCalendar24__RenderFunc(props: {
                   throw e;
                 }
               })()
-            : undefined
+            : false
       },
       {
         path: "variable3",
