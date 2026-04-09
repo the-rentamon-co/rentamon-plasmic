@@ -1,0 +1,19 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: auto;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 0px;
+  min-width: 0;
+}
+.httpRestApiFetcher:global(.__wab_instance) {
+  width: 429px;
+  max-width: 100%;
+  object-fit: cover;
+}
+.wallet:global(.__wab_instance) {
+  position: relative;
+}

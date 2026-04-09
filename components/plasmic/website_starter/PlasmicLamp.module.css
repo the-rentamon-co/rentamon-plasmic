@@ -1,0 +1,28 @@
+.root {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: flex-start;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  position: relative;
+  min-width: 0;
+  padding: 8px;
+}
+.on {
+  object-fit: cover;
+  max-width: 100%;
+  height: 100px;
+  width: 100px;
+  flex-shrink: 0;
+}
+.off {
+  object-fit: cover;
+  max-width: 100%;
+  margin-left: 0px;
+  margin-right: 0px;
+  width: 100px;
+  height: 100px;
+  flex-shrink: 0;
+}

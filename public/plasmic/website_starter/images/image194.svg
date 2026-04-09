@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" fill="#0000f7" stroke="#0000f7" class="icon flat-line" data-name="Flat Line" viewBox="0 0 24 24">
+  <g fill="none" stroke="#0000f7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+    <path d="M6 5h10a2 2 0 0 1 2 2v7"/>
+    <path d="M18 19H8a2 2 0 0 1-2-2v-7m9 1 3 3 3-3" data-name="primary"/>
+    <path d="m9 13-3-3-3 3" data-name="primary"/>
+  </g>
+</svg>
