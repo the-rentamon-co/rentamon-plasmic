@@ -1511,7 +1511,7 @@ function PlasmicProperties__RenderFunc(props: {
                 ? (() => {
                     const actionArgs = {
                       customFunction: async () => {
-                        return (async () => {
+                        return async () => {
                           const isPlasmicStudio =
                             Object.values(
                               $ctx?.Fragment?.previewApiConfig || {}
@@ -1528,7 +1528,7 @@ function PlasmicProperties__RenderFunc(props: {
                           const USSO_REFRESH_URL = `${ssoBase}/auth/refresh`;
                           const LEGACY_REFRESH_URL =
                             "https://api-v2.miaan.ir/api/auth/refresh";
-                          const REDIRECT_URL = `${ssoBase}/web/index.html?callback=${callbackBase}/panel/`;
+                          const REDIRECT_URL = `https://auth.miaan.ir/login`;
                           const getCookie = name => {
                             const value = `; ${document.cookie}`;
                             const parts = value.split(`; ${name}=`);
@@ -1540,29 +1540,56 @@ function PlasmicProperties__RenderFunc(props: {
                           const ussoRefresh = getCookie(
                             "usso_refresh_available"
                           );
+                          async function refreshToken() {
+                            try {
+                              const response = await fetch(USSO_REFRESH_URL, {
+                                method: "GET",
+                                credentials: "include"
+                              });
+                              console.log("Refreshed Token in 5 minutes");
+                              if (response.ok) {
+                                const data = await response.json();
+                                console.log(
+                                  "Token refreshed successfully:",
+                                  data
+                                );
+                              } else {
+                                console.error(
+                                  "Failed to refresh token:",
+                                  response.status
+                                );
+                              }
+                            } catch (error) {
+                              console.error("Error refreshing token:", error);
+                            }
+                          }
                           if (ussoAccess || ussoRefresh) {
-                            const runUssorefresh = async forceReload => {
-                              try {
-                                const response = await fetch(USSO_REFRESH_URL, {
-                                  method: "GET",
-                                  credentials: "include"
-                                });
-                                console.log("USSO Token Refresh Attempted...");
-                                if (response.ok) {
-                                  if (forceReload) {
-                                    window.location.reload();
+                            setInterval(refreshToken, 300000);
+                            refreshToken();
+                            if (!ussoAccess) {
+                              if (!ussoRefresh) {
+                                window.location.href = REDIRECT_URL;
+                              } else {
+                                try {
+                                  const response = await fetch(
+                                    USSO_REFRESH_URL,
+                                    {
+                                      method: "GET",
+                                      credentials: "include"
+                                    }
+                                  );
+                                  if (!response.ok) {
+                                    throw new Error("Failed to refresh token");
                                   }
-                                } else if (!ussoAccess) {
+                                  const data = await response.json();
+                                  console.log("Token refreshed:", data);
+                                  window.location.reload();
+                                } catch (error) {
+                                  console.error("Error:", error);
                                   window.location.href = REDIRECT_URL;
                                 }
-                              } catch (error) {
-                                console.error("USSO Refresh Error:", error);
-                                if (!ussoAccess)
-                                  window.location.href = REDIRECT_URL;
                               }
-                            };
-                            await runUssorefresh(!ussoAccess);
-                            setInterval(() => runUssorefresh(false), 300000);
+                            }
                             return;
                           }
                           const legacyAccessToken = getCookie("access_token");
@@ -1589,7 +1616,7 @@ function PlasmicProperties__RenderFunc(props: {
                               window.location.href = REDIRECT_URL;
                             }
                           }
-                        })();
+                        };
                       }
                     };
                     return (({ customFunction }) => {

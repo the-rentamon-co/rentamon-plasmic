@@ -2554,10 +2554,12 @@ function Plasmicکیفپول__RenderFunc(props: {
                 ? (() => {
                     const actionArgs = {
                       customFunction: async () => {
-                        return (async () => {
+                        return async () => {
                           const isPlasmicStudio =
-                            Object.values($ctx.Fragment.previewApiConfig)
-                              .length > 0;
+                            Object.values(
+                              $ctx?.Fragment?.previewApiConfig || {}
+                            ).length > 0;
+                          if (isPlasmicStudio) return;
                           const isMiaan =
                             window.location.hostname.includes("miaan.ir");
                           const ssoBase = isMiaan
@@ -2566,16 +2568,28 @@ function Plasmicکیفپول__RenderFunc(props: {
                           const callbackBase = isMiaan
                             ? "https://miaan.ir"
                             : "https://rentamon.com";
-                          const redirectUrl = `${ssoBase}/web/index.html?callback=${callbackBase}/panel/`;
-                          const refreshUrl = `${ssoBase}/auth/refresh`;
+                          const USSO_REFRESH_URL = `${ssoBase}/auth/refresh`;
+                          const LEGACY_REFRESH_URL =
+                            "https://api-v2.miaan.ir/api/auth/refresh";
+                          const REDIRECT_URL = `https://auth.miaan.ir/login`;
+                          const getCookie = name => {
+                            const value = `; ${document.cookie}`;
+                            const parts = value.split(`; ${name}=`);
+                            if (parts.length === 2)
+                              return parts.pop().split(";").shift();
+                            return null;
+                          };
+                          const ussoAccess = getCookie("usso_access_available");
+                          const ussoRefresh = getCookie(
+                            "usso_refresh_available"
+                          );
                           async function refreshToken() {
-                            if (isPlasmicStudio) return;
                             try {
-                              const response = await fetch(refreshUrl, {
+                              const response = await fetch(USSO_REFRESH_URL, {
                                 method: "GET",
                                 credentials: "include"
                               });
-                              console.log("Refreshed Token in 10 minutes");
+                              console.log("Refreshed Token in 5 minutes");
                               if (response.ok) {
                                 const data = await response.json();
                                 console.log(
@@ -2592,53 +2606,60 @@ function Plasmicکیفپول__RenderFunc(props: {
                               console.error("Error refreshing token:", error);
                             }
                           }
-                          setInterval(refreshToken, 300000);
-                          refreshToken();
-                          function getCookie(name) {
-                            const value = `; ${globalThis.document.cookie}`;
-                            const parts = value.split(`; ${name}=`);
-                            if (parts.length === 2)
-                              return parts.pop().split(";").shift();
-                          }
-                          const ussoRefreshAvailable =
-                            getCookie("usso_refresh_available") || false;
-                          console.log(
-                            "this is ussoRefresh: ",
-                            ussoRefreshAvailable
-                          );
-                          const ussoAccessAvailable =
-                            getCookie("usso_access_available") || false;
-                          console.log(
-                            "this is ussoAccessAvailable: ",
-                            ussoAccessAvailable
-                          );
-                          if (!ussoAccessAvailable && !isPlasmicStudio) {
-                            if (!ussoRefreshAvailable) {
-                              console.log("got here in redirect");
-                              return (window.location.href = redirectUrl);
-                            } else {
-                              console.log("got here in refreshToken");
-                              return fetch(refreshUrl, {
-                                method: "GET",
-                                credentials: "include"
-                              })
-                                .then(response => {
+                          if (ussoAccess || ussoRefresh) {
+                            setInterval(refreshToken, 300000);
+                            refreshToken();
+                            if (!ussoAccess) {
+                              if (!ussoRefresh) {
+                                window.location.href = REDIRECT_URL;
+                              } else {
+                                try {
+                                  const response = await fetch(
+                                    USSO_REFRESH_URL,
+                                    {
+                                      method: "GET",
+                                      credentials: "include"
+                                    }
+                                  );
                                   if (!response.ok) {
                                     throw new Error("Failed to refresh token");
                                   }
-                                  return response.json();
-                                })
-                                .then(data => {
+                                  const data = await response.json();
                                   console.log("Token refreshed:", data);
                                   window.location.reload();
-                                })
-                                .catch(error => {
+                                } catch (error) {
                                   console.error("Error:", error);
-                                  window.location.href = redirectUrl;
-                                });
+                                  window.location.href = REDIRECT_URL;
+                                }
+                              }
+                            }
+                            return;
+                          }
+                          const legacyAccessToken = getCookie("access_token");
+                          const isLogin = getCookie("is_login");
+                          if (!legacyAccessToken) {
+                            if (isLogin) {
+                              try {
+                                const response = await fetch(
+                                  LEGACY_REFRESH_URL,
+                                  {
+                                    method: "POST",
+                                    credentials: "include"
+                                  }
+                                );
+                                if (response.ok) {
+                                  window.location.reload();
+                                } else {
+                                  window.location.href = REDIRECT_URL;
+                                }
+                              } catch (err) {
+                                window.location.href = REDIRECT_URL;
+                              }
+                            } else {
+                              window.location.href = REDIRECT_URL;
                             }
                           }
-                        })();
+                        };
                       }
                     };
                     return (({ customFunction }) => {

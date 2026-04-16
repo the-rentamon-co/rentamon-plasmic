@@ -472,6 +472,22 @@ function PlasmicSelectProperty__RenderFunc(props: {
                   />
                 </div>
               </div>
+              <div className={classNames(projectcss.all, sty.freeBox__g3QNo)}>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text___8IIHz
+                  )}
+                  onClick={async event => {
+                    const $steps = {};
+                  }}
+                >
+                  {
+                    "\u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0627\u062e\u0644 \u0644\u06cc\u0633\u062a \u0648\u062c\u0648\u062f \u0646\u062f\u0627\u0631\u0647\u061f"
+                  }
+                </div>
+              </div>
             </div>
             <div className={classNames(projectcss.all, sty.freeBox__zxxOc)}>
               <div className={classNames(projectcss.all, sty.freeBox__q5W0)}>
