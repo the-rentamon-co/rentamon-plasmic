@@ -7095,9 +7095,7 @@ function PlasmicBookings__RenderFunc(props: {
                                   sty.text__joCMm
                                 )}
                               >
-                                {
-                                  "\u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0631\u0632\u0631\u0648\u0647\u0627"
-                                }
+                                {"\u067e\u0627\u0633\u0628\u0627\u0646"}
                               </div>
                               <PlasmicImg__
                                 alt={""}
@@ -14324,7 +14322,7 @@ function PlasmicBookings__RenderFunc(props: {
                 ? (() => {
                     const actionArgs = {
                       customFunction: async () => {
-                        return (async () => {
+                        return async () => {
                           const isPlasmicStudio =
                             Object.values(
                               $ctx?.Fragment?.previewApiConfig || {}
@@ -14418,18 +14416,18 @@ function PlasmicBookings__RenderFunc(props: {
                                   }
                                 );
                                 if (response.ok) {
-                                  return window.location.reload();
+                                  window.location.reload();
                                 } else {
-                                  return (window.location.href = REDIRECT_URL);
+                                  window.location.href = REDIRECT_URL;
                                 }
                               } catch (err) {
-                                return (window.location.href = REDIRECT_URL);
+                                window.location.href = REDIRECT_URL;
                               }
                             } else {
-                              return (window.location.href = REDIRECT_URL);
+                              window.location.href = REDIRECT_URL;
                             }
                           }
-                        })();
+                        };
                       }
                     };
                     return (({ customFunction }) => {

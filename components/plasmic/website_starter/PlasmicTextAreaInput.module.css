@@ -13,26 +13,26 @@
   padding: var(--token-MLwBcAFWQ57Z) var(--token-rGvKy1FLZXMz);
   border-style: none;
 }
-.ariaTextArea[data-focused]:global(.__wab_instance) {
+.ariaTextArea[data-focused][data-focused]:global(.__wab_instance) {
   outline-width: 2px;
   outline-style: solid;
   outline-color: var(--token-qkMXlUhOdBHU);
   outline-offset: 1px;
 }
-.ariaTextArea[data-disabled]:global(.__wab_instance) {
+.ariaTextArea[data-disabled][data-disabled]:global(.__wab_instance) {
   cursor: not-allowed;
 }
 .ariaTextAreatype_soft:global(.__wab_instance) {
   background: var(--token-V6GfKFumB-_r);
   box-shadow: none;
 }
-.ariaTextAreatype_soft[data-hovered]:global(.__wab_instance) {
+.ariaTextAreatype_soft[data-hovered][data-hovered]:global(.__wab_instance) {
   background: var(--token-5bGEKqn06x_E);
 }
 .ariaTextAreatype_plain:global(.__wab_instance) {
   box-shadow: none;
 }
-.ariaTextAreatype_plain[data-hovered]:global(.__wab_instance) {
+.ariaTextAreatype_plain[data-hovered][data-hovered]:global(.__wab_instance) {
   background: var(--token-V6GfKFumB-_r);
 }
 .ariaTextAreaflat_top:global(.__wab_instance) {
