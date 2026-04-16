@@ -300,7 +300,6 @@
     white-space: pre;
     text-overflow: ellipsis;
     overflow: hidden;
-    color: var(--token-bO1LqjK7MCx4);
   }
 }
 @media (max-width: 350px) {
