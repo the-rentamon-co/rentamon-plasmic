@@ -436,7 +436,7 @@ function PlasmicLite__RenderFunc(props: {
                               const actionArgs = {
                                 customFunction: async () => {
                                   return (window.location.href =
-                                    "https://sso.miaan.ir/web/index.html?callback=https://miaan.ir/splash?src=web");
+                                    "http://auth.miaan.ir/login?src=lite");
                                 }
                               };
                               return (({ customFunction }) => {
@@ -865,7 +865,7 @@ function PlasmicLite__RenderFunc(props: {
                         const actionArgs = {
                           customFunction: async () => {
                             return (window.location.href =
-                              "https://sso.miaan.ir/web/index.html?callback=https://miaan.ir/splash?src=web");
+                              "http://auth.miaan.ir/login?src=lite");
                           }
                         };
                         return (({ customFunction }) => {

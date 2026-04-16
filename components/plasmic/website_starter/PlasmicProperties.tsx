@@ -289,7 +289,32 @@ function PlasmicProperties__RenderFunc(props: {
             sty.root
           )}
         >
-          {(hasVariant(globalVariants, "screen", "mobile") ? true : false) ? (
+          {(
+            hasVariant(globalVariants, "screen", "mobile")
+              ? (() => {
+                  try {
+                    return (() => {
+                      try {
+                        return (
+                          typeof document !== "undefined" &&
+                          !document.cookie.includes("from=divar")
+                        );
+                      } catch (e) {
+                        return true;
+                      }
+                    })();
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return true;
+                    }
+                    throw e;
+                  }
+                })()
+              : false
+          ) ? (
             <NavbarMnFooter
               data-plasmic-name={"navbarMnFooter"}
               data-plasmic-override={overrides.navbarMnFooter}

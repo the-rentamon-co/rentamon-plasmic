@@ -544,9 +544,7 @@ function PlasmicHomepage__RenderFunc(props: {
                         controls={true}
                         loop={true}
                         muted={true}
-                        src={
-                          "https://media.rentamon.com/video%2Fali-kermani.mp4"
-                        }
+                        src={"https://media.miaan.ir/video%2Fali-kermani.mp4"}
                       />
                     </div>
                     <div
@@ -590,7 +588,7 @@ function PlasmicHomepage__RenderFunc(props: {
                         code={
                           hasVariant(globalVariants, "screen", "mobile")
                             ? '<video\r\n    src="https://media.rentamon.com/gif%2FHomepage%20Paseban.mp4"\r\n  autoplay\r\n  muted\r\n  loop\r\n  playsinline\r\n  webkit-playsinline\r\n  preload="auto"\r\n  width="640"\r\n></video>'
-                            : '<video\r\n    src="https://media.rentamon.com/gif%2FHomepage%20Paseban.mp4"\r\n  autoplay\r\n  muted\r\n  loop\r\n  playsinline\r\n  webkit-playsinline\r\n  preload="auto"\r\n  width="640"\r\n></video>'
+                            : '<video\r\n    src="https://media.miaan.ir/gif%2FHomepage%20Paseban.mp4"\r\n  autoplay\r\n  muted\r\n  loop\r\n  playsinline\r\n  webkit-playsinline\r\n  preload="auto"\r\n  width="640"\r\n></video>'
                         }
                       />
                     </div>
@@ -749,7 +747,7 @@ function PlasmicHomepage__RenderFunc(props: {
                         sty.embedHtml__gDn1
                       )}
                       code={
-                        '\r\n\r\n\r\n<video\r\n  src="https://media.rentamon.com/gif%2Fmiaan-unified-calendar.mp4"\r\n  autoplay\r\n  muted\r\n  loop\r\n  playsinline\r\n  webkit-playsinline\r\n  preload="auto"\r\n  width="640"\r\n></video>\r\n'
+                        '\r\n\r\n\r\n<video\r\n  src="https://media.miaan.ir/gif%2Fmiaan-unified-calendar.mp4"\r\n  autoplay\r\n  muted\r\n  loop\r\n  playsinline\r\n  webkit-playsinline\r\n  preload="auto"\r\n  width="640"\r\n></video>\r\n'
                       }
                     />
                   </div>

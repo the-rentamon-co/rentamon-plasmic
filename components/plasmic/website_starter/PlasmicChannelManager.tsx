@@ -2734,7 +2734,7 @@ function PlasmicChannelManager__RenderFunc(props: {
                           const USSO_REFRESH_URL = `${ssoBase}/auth/refresh`;
                           const LEGACY_REFRESH_URL =
                             "https://api-v2.miaan.ir/api/auth/refresh";
-                          const REDIRECT_URL = `${ssoBase}/web/index.html?callback=${callbackBase}/panel/`;
+                          const REDIRECT_URL = `https://auth.miaan.ir/login`;
                           const getCookie = name => {
                             const value = `; ${document.cookie}`;
                             const parts = value.split(`; ${name}=`);

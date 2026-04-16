@@ -1890,7 +1890,7 @@ function PlasmicFirstPropertyEdit__RenderFunc(props: {
                               const actionArgs = {
                                 args: [
                                   "POST",
-                                  "https://automation.rentamon.com/webhook/api/divar/property/new-user",
+                                  "https://automation.miaan.ir/webhook/api/divar/property/new-user",
                                   undefined,
                                   {
                                     post_token:

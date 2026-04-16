@@ -1309,12 +1309,28 @@ function PlasmicSupport__RenderFunc(props: {
               }
             />
           </div>
-          <MiaanFooter
-            data-plasmic-name={"miaanFooter"}
-            data-plasmic-override={overrides.miaanFooter}
-            className={classNames("__wab_instance", sty.miaanFooter)}
-          />
-
+          {(() => {
+            try {
+              return (
+                typeof document !== "undefined" &&
+                !document.cookie.includes("from=divar")
+              );
+            } catch (e) {
+              if (
+                e instanceof TypeError ||
+                e?.plasmicType === "PlasmicUndefinedDataError"
+              ) {
+                return true;
+              }
+              throw e;
+            }
+          })() ? (
+            <MiaanFooter
+              data-plasmic-name={"miaanFooter"}
+              data-plasmic-override={overrides.miaanFooter}
+              className={classNames("__wab_instance", sty.miaanFooter)}
+            />
+          ) : null}
           <NavbarMnFooter
             data-plasmic-name={"navbarMnFooter"}
             data-plasmic-override={overrides.navbarMnFooter}

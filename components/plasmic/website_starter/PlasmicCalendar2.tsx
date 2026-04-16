@@ -4501,7 +4501,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                       const actionArgs = {
                         args: [
                           "POST",
-                          "https://api-v2.rentamon.com/api/setunblock",
+                          "https://api-v2.miaan.ir/api/setunblock",
                           undefined,
                           (() => {
                             try {
@@ -5458,7 +5458,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                         const actionArgs = {
                           args: [
                             "POST",
-                            "https://api-v2.rentamon.com/api/setprice",
+                            "https://api-v2.miaan.ir/api/setprice",
                             undefined,
                             (() => {
                               try {
@@ -7044,7 +7044,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                       const actionArgs = {
                         args: [
                           "POST",
-                          "https://api-v2.rentamon.com/api/setblock",
+                          "https://api-v2.miaan.ir/api/setblock",
                           undefined,
                           (() => {
                             try {
@@ -7634,7 +7634,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                       const actionArgs = {
                         args: [
                           "POST",
-                          "https://api-v2.rentamon.com/api/setblock",
+                          "https://api-v2.miaan.ir/api/setblock",
                           undefined,
                           (() => {
                             try {
@@ -10061,7 +10061,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                         const actionArgs = {
                           args: [
                             "POST",
-                            "https://api-v2.rentamon.com/api/setdiscount",
+                            "https://api-v2.miaan.ir/api/setdiscount",
                             undefined,
                             (() => {
                               try {

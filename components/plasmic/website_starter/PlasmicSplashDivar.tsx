@@ -463,6 +463,15 @@ function PlasmicSplashDivar__RenderFunc(props: {
                             document.cookie = `source=divar; ${commonOptions}`;
                             document.cookie = `from=divar; ${commonOptions}`;
                           }
+                          function setNewUserCookie() {
+                            const date = new Date();
+                            date.setTime(
+                              date.getTime() + 7 * 24 * 60 * 60 * 1000
+                            );
+                            const expires = date.toUTCString();
+                            const commonOptions = `expires=${expires}; domain=.miaan.ir; path=/; Secure; SameSite=Lax`;
+                            document.cookie = `new-user=true; ${commonOptions}`;
+                          }
                           async function exchangeCodeForToken(code, postToken) {
                             try {
                               const response = await fetch(CALLBACK_API, {

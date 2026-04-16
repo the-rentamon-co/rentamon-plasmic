@@ -65,6 +65,11 @@
     grid-column: 4;
   }
 }
+@media (max-width: 500px) {
+  .navbarMnFooter:global(.__wab_instance) {
+    display: flex;
+  }
+}
 .header {
   display: flex;
   flex-direction: row;

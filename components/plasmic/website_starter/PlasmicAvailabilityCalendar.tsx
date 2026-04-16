@@ -263,7 +263,7 @@ function PlasmicAvailabilityCalendar__RenderFunc(props: {
 <html lang="fa" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<script src="https://cdn.jsdelivr.net/npm/jalaali-js/dist/jalaali.js"></script>
+<script src="https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/packages%2Fjalaali.js"></script>
 
 <style>
   #custom-calendar-container {
