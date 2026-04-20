@@ -1369,10 +1369,13 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                   onClick={async event => {
                     const $steps = {};
 
-                    $steps["goToHttpAuthMiaanIr"] = true
+                    $steps[
+                      "goToHttpAuthMiaanIrLoginCallbackUrlHttpsMianborMiaanIrForceLegacyLogoutTrue"
+                    ] = true
                       ? (() => {
                           const actionArgs = {
-                            destination: "http://auth.miaan.ir/"
+                            destination:
+                              "http://auth.miaan.ir/login?callbackUrl=https://mianbor.miaan.ir&forceLegacyLogout=true"
                           };
                           return (({ destination }) => {
                             if (
@@ -1389,12 +1392,22 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                         })()
                       : undefined;
                     if (
-                      $steps["goToHttpAuthMiaanIr"] != null &&
-                      typeof $steps["goToHttpAuthMiaanIr"] === "object" &&
-                      typeof $steps["goToHttpAuthMiaanIr"].then === "function"
+                      $steps[
+                        "goToHttpAuthMiaanIrLoginCallbackUrlHttpsMianborMiaanIrForceLegacyLogoutTrue"
+                      ] != null &&
+                      typeof $steps[
+                        "goToHttpAuthMiaanIrLoginCallbackUrlHttpsMianborMiaanIrForceLegacyLogoutTrue"
+                      ] === "object" &&
+                      typeof $steps[
+                        "goToHttpAuthMiaanIrLoginCallbackUrlHttpsMianborMiaanIrForceLegacyLogoutTrue"
+                      ].then === "function"
                     ) {
-                      $steps["goToHttpAuthMiaanIr"] =
-                        await $steps["goToHttpAuthMiaanIr"];
+                      $steps[
+                        "goToHttpAuthMiaanIrLoginCallbackUrlHttpsMianborMiaanIrForceLegacyLogoutTrue"
+                      ] =
+                        await $steps[
+                          "goToHttpAuthMiaanIrLoginCallbackUrlHttpsMianborMiaanIrForceLegacyLogoutTrue"
+                        ];
                     }
                   }}
                 >
