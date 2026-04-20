@@ -318,7 +318,19 @@ function PlasmicInvite__RenderFunc(props: {
             ref={ref => {
               $refs["apiRequest"] = ref;
             }}
-            url={"https://prod.miaan.ir/webhook/get_referral_code_info"}
+            url={(() => {
+              try {
+                return `https://prod.miaan.ir/webhook/get_referral_code_info?code=${$ctx.params.invite_code}`;
+              } catch (e) {
+                if (
+                  e instanceof TypeError ||
+                  e?.plasmicType === "PlasmicUndefinedDataError"
+                ) {
+                  return undefined;
+                }
+                throw e;
+              }
+            })()}
           />
 
           <div className={classNames(projectcss.all, sty.freeBox___73I8V)}>
