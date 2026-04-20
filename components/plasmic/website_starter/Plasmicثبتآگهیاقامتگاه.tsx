@@ -69,6 +69,7 @@ import { AntdTextArea } from "@plasmicpkgs/antd5/skinny/registerInput";
 import { inputHelpers as AntdTextArea_Helpers } from "@plasmicpkgs/antd5/skinny/registerInput";
 import { AntdButton } from "@plasmicpkgs/antd5/skinny/registerButton";
 import { AntdModal } from "@plasmicpkgs/antd5/skinny/registerModal";
+import Button from "../../Button"; // plasmic-import: U5bKCJ5DYhib/component
 import { Video } from "@plasmicpkgs/plasmic-basic-components";
 import MiaanFooter from "../../MiaanFooter"; // plasmic-import: DSdlo5kdtbOe/component
 import ClarityRntComponent from "../../ClarityRntComponent"; // plasmic-import: J5D8c7V05ty1/component
@@ -82,6 +83,9 @@ import "@plasmicapp/react-web/lib/plasmic.css";
 
 import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./Plasmicثبتآگهیاقامتگاه.module.css"; // plasmic-import: 1vN9Eff09IS1/css
+
+import CheckSvgIcon from "./icons/PlasmicIcon__CheckSvg"; // plasmic-import: aHRi_lZjzHt3/icon
+import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: nPWd30PDwgwm/icon
 
 const emptyProxy: any = new Proxy(() => "", {
   get(_, prop) {
@@ -157,7 +161,6 @@ export type Plasmicثبتآگهیاقامتگاه__OverridesType = {
   input?: Flex__<typeof AntdInput>;
   input2?: Flex__<typeof AntdInput>;
   textArea?: Flex__<typeof AntdTextArea>;
-  button?: Flex__<typeof AntdButton>;
   modal?: Flex__<typeof AntdModal>;
   testimonials?: Flex__<"div">;
   title?: Flex__<"div">;
@@ -939,9 +942,10 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                           })()}
                         </FormItemWrapper>
                         <AntdButton
-                          data-plasmic-name={"button"}
-                          data-plasmic-override={overrides.button}
-                          className={classNames("__wab_instance", sty.button)}
+                          className={classNames(
+                            "__wab_instance",
+                            sty.button__gj0C8
+                          )}
                           disabled={false}
                           ghost={true}
                           submitsForm={false}
@@ -1360,6 +1364,42 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                     </AntdModal>
                   </div>
                 </div>
+                <Button
+                  className={classNames("__wab_instance", sty.button__llZwy)}
+                  onClick={async event => {
+                    const $steps = {};
+
+                    $steps["goToHttpAuthMiaanIr"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            destination: "http://auth.miaan.ir/"
+                          };
+                          return (({ destination }) => {
+                            if (
+                              typeof destination === "string" &&
+                              destination.startsWith("#")
+                            ) {
+                              document
+                                .getElementById(destination.substr(1))
+                                .scrollIntoView({ behavior: "smooth" });
+                            } else {
+                              __nextRouter?.push(destination);
+                            }
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["goToHttpAuthMiaanIr"] != null &&
+                      typeof $steps["goToHttpAuthMiaanIr"] === "object" &&
+                      typeof $steps["goToHttpAuthMiaanIr"].then === "function"
+                    ) {
+                      $steps["goToHttpAuthMiaanIr"] =
+                        await $steps["goToHttpAuthMiaanIr"];
+                    }
+                  }}
+                >
+                  {"\u0634\u0631\u0648\u0639 \u0628\u0647 \u06a9\u0627\u0631"}
+                </Button>
               </div>
             </div>
             <div
@@ -2009,6 +2049,7 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                 </div>
               </div>
             </div>
+            <div className={classNames(projectcss.all, sty.freeBox__b7Afr)} />
           </div>
           <MiaanFooter
             data-plasmic-name={"miaanFooter"}
@@ -2059,7 +2100,6 @@ const PlasmicDescendants = {
     "input",
     "input2",
     "textArea",
-    "button",
     "modal",
     "testimonials",
     "title",
@@ -2092,7 +2132,6 @@ const PlasmicDescendants = {
     "input",
     "input2",
     "textArea",
-    "button",
     "modal",
     "testimonials",
     "title",
@@ -2119,23 +2158,13 @@ const PlasmicDescendants = {
     "input",
     "input2",
     "textArea",
-    "button",
     "modal"
   ],
-  regForm: [
-    "regForm",
-    "form",
-    "input",
-    "input2",
-    "textArea",
-    "button",
-    "modal"
-  ],
-  form: ["form", "input", "input2", "textArea", "button"],
+  regForm: ["regForm", "form", "input", "input2", "textArea", "modal"],
+  form: ["form", "input", "input2", "textArea"],
   input: ["input"],
   input2: ["input2"],
   textArea: ["textArea"],
-  button: ["button"],
   modal: ["modal"],
   testimonials: ["testimonials", "title", "videos"],
   title: ["title"],
@@ -2181,7 +2210,6 @@ type NodeDefaultElementType = {
   input: typeof AntdInput;
   input2: typeof AntdInput;
   textArea: typeof AntdTextArea;
-  button: typeof AntdButton;
   modal: typeof AntdModal;
   testimonials: "div";
   title: "div";
@@ -2277,7 +2305,6 @@ export const Plasmicثبتآگهیاقامتگاه = Object.assign(
     input: makeNodeComponent("input"),
     input2: makeNodeComponent("input2"),
     textArea: makeNodeComponent("textArea"),
-    button: makeNodeComponent("button"),
     modal: makeNodeComponent("modal"),
     testimonials: makeNodeComponent("testimonials"),
     title: makeNodeComponent("title"),
