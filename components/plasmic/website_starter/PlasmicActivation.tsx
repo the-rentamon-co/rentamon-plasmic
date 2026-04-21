@@ -1081,7 +1081,23 @@ function PlasmicActivation__RenderFunc(props: {
                               .isChecked
                               ? (() => {
                                   const actionArgs = {
-                                    destination: `/properties`
+                                    destination: (() => {
+                                      try {
+                                        return (
+                                          $ctx.query.callbackurl ||
+                                          "https://miaan.ir/properties/"
+                                        );
+                                      } catch (e) {
+                                        if (
+                                          e instanceof TypeError ||
+                                          e?.plasmicType ===
+                                            "PlasmicUndefinedDataError"
+                                        ) {
+                                          return `/properties`;
+                                        }
+                                        throw e;
+                                      }
+                                    })()
                                   };
                                   return (({ destination }) => {
                                     if (
