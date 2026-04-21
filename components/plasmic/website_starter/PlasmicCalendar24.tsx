@@ -143,9 +143,6 @@ export type PlasmicCalendar24__OverridesType = {
   textInput?: Flex__<typeof TextInput>;
   numberInput2?: Flex__<typeof AntdInputNumber>;
   fetchModals?: Flex__<"div">;
-  changedFetchModal?: Flex__<typeof AntdModal>;
-  editResult2?: Flex__<"div">;
-  loading6?: Flex__<typeof PlasmicImg__>;
   fetchModal?: Flex__<typeof AntdModal>;
   getJabamaSmartPriceStatus2?: Flex__<typeof ApiRequest>;
   userPlatform2?: Flex__<typeof ApiRequest>;
@@ -362,27 +359,6 @@ function PlasmicCalendar24__RenderFunc(props: {
             : hasVariant(globalVariants, "screen", "mobile")
               ? false
               : false
-      },
-      {
-        path: "changedFetchModal.open",
-        type: "private",
-        variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $q, $ctx }) =>
-          hasVariant(globalVariants, "screen", "mobile")
-            ? (() => {
-                try {
-                  return $state.showTutorial2;
-                } catch (e) {
-                  if (
-                    e instanceof TypeError ||
-                    e?.plasmicType === "PlasmicUndefinedDataError"
-                  ) {
-                    return false;
-                  }
-                  throw e;
-                }
-              })()
-            : false
       },
       {
         path: "variable3",
@@ -1727,7 +1703,6 @@ function PlasmicCalendar24__RenderFunc(props: {
                         const formatter = new Intl.NumberFormat("fa-IR");
                         return formatter.format(num);
                       }
-                      $state.changedFetchModal.open = false;
                       $state.block.open = false;
                       $state.modal.open = false;
                       $state.modalChangePrice.open = false;
@@ -1903,7 +1878,6 @@ function PlasmicCalendar24__RenderFunc(props: {
                         const formatter = new Intl.NumberFormat("fa-IR");
                         return formatter.format(num);
                       }
-                      $state.changedFetchModal.open = false;
                       $state.block.open = false;
                       $state.modal.open = false;
                       $state.modalChangePrice.open = false;
@@ -4060,46 +4034,6 @@ function PlasmicCalendar24__RenderFunc(props: {
                       await $steps["updatePlatformRequestStatus"];
                   }
 
-                  $steps["updateFetchModalOpen"] =
-                    $props.calendarType === "pro" &&
-                    $state.changedFetchModal &&
-                    (typeof window !== "undefined"
-                      ? !document.cookie.includes("modalSeen=true")
-                      : false)
-                      ? (() => {
-                          const actionArgs = {
-                            variable: {
-                              objRoot: $state,
-                              variablePath: ["changedFetchModal", "open"]
-                            },
-                            operation: 0,
-                            value: true
-                          };
-                          return (({
-                            variable,
-                            value,
-                            startIndex,
-                            deleteCount
-                          }) => {
-                            if (!variable) {
-                              return;
-                            }
-                            const { objRoot, variablePath } = variable;
-
-                            $stateSet(objRoot, variablePath, value);
-                            return value;
-                          })?.apply(null, [actionArgs]);
-                        })()
-                      : undefined;
-                  if (
-                    $steps["updateFetchModalOpen"] != null &&
-                    typeof $steps["updateFetchModalOpen"] === "object" &&
-                    typeof $steps["updateFetchModalOpen"].then === "function"
-                  ) {
-                    $steps["updateFetchModalOpen"] =
-                      await $steps["updateFetchModalOpen"];
-                  }
-
                   $steps["runCode"] = true
                     ? (() => {
                         const actionArgs = {
@@ -4718,62 +4652,6 @@ function PlasmicCalendar24__RenderFunc(props: {
               )}
               onClick={async event => {
                 const $steps = {};
-
-                $steps["updateFetchModalOpen"] =
-                  $props.calendarType === "pro" &&
-                  $state.changedFetchModal &&
-                  (typeof window !== "undefined"
-                    ? !document.cookie.includes("modalSeen=true")
-                    : false)
-                    ? (() => {
-                        const actionArgs = {
-                          variable: {
-                            objRoot: $state,
-                            variablePath: ["changedFetchModal", "open"]
-                          },
-                          operation: 0,
-                          value: (() => {
-                            const calendar = $state.selectedItem;
-                            const platforms = [
-                              "شب",
-                              "مهمانشو",
-                              "اتاقک",
-                              "جاباما",
-                              "جاجیگا",
-                              "هومسا",
-                              "میزبون"
-                            ];
-
-                            const result = calendar.some(item =>
-                              platforms.includes(item.website)
-                            );
-                            return !result;
-                          })()
-                        };
-                        return (({
-                          variable,
-                          value,
-                          startIndex,
-                          deleteCount
-                        }) => {
-                          if (!variable) {
-                            return;
-                          }
-                          const { objRoot, variablePath } = variable;
-
-                          $stateSet(objRoot, variablePath, value);
-                          return value;
-                        })?.apply(null, [actionArgs]);
-                      })()
-                    : undefined;
-                if (
-                  $steps["updateFetchModalOpen"] != null &&
-                  typeof $steps["updateFetchModalOpen"] === "object" &&
-                  typeof $steps["updateFetchModalOpen"].then === "function"
-                ) {
-                  $steps["updateFetchModalOpen"] =
-                    await $steps["updateFetchModalOpen"];
-                }
 
                 $steps["updatePlatformRequestStatus"] = true
                   ? (() => {
@@ -6012,46 +5890,6 @@ function PlasmicCalendar24__RenderFunc(props: {
                       await $steps["createFetchModalData"];
                   }
 
-                  $steps["updateFetchModalOpen"] =
-                    $props.calendarType === "pro" &&
-                    $state.changedFetchModal &&
-                    (typeof window !== "undefined"
-                      ? !document.cookie.includes("modalSeen=true")
-                      : false)
-                      ? (() => {
-                          const actionArgs = {
-                            variable: {
-                              objRoot: $state,
-                              variablePath: ["changedFetchModal", "open"]
-                            },
-                            operation: 0,
-                            value: true
-                          };
-                          return (({
-                            variable,
-                            value,
-                            startIndex,
-                            deleteCount
-                          }) => {
-                            if (!variable) {
-                              return;
-                            }
-                            const { objRoot, variablePath } = variable;
-
-                            $stateSet(objRoot, variablePath, value);
-                            return value;
-                          })?.apply(null, [actionArgs]);
-                        })()
-                      : undefined;
-                  if (
-                    $steps["updateFetchModalOpen"] != null &&
-                    typeof $steps["updateFetchModalOpen"] === "object" &&
-                    typeof $steps["updateFetchModalOpen"].then === "function"
-                  ) {
-                    $steps["updateFetchModalOpen"] =
-                      await $steps["updateFetchModalOpen"];
-                  }
-
                   $steps["updateStateVariable2"] =
                     $props.calendarType == "lite"
                       ? (() => {
@@ -6327,240 +6165,6 @@ function PlasmicCalendar24__RenderFunc(props: {
           data-plasmic-override={overrides.fetchModals}
           className={classNames(projectcss.all, sty.fetchModals, ``)}
         >
-          <AntdModal
-            data-plasmic-name={"changedFetchModal"}
-            data-plasmic-override={overrides.changedFetchModal}
-            className={classNames("__wab_instance", sty.changedFetchModal)}
-            defaultStylesClassName={classNames(
-              projectcss.root_reset,
-              projectcss.plasmic_default_styles,
-              projectcss.plasmic_mixins,
-              styleTokensClassNames
-            )}
-            hideFooter={true}
-            maskClosable={false}
-            modalContentClassName={classNames({
-              [sty["pcls_ztF8RSkRJoo8"]]: true
-            })}
-            modalScopeClassName={sty["changedFetchModal__modal"]}
-            onOpenChange={async (...eventArgs: any) => {
-              generateStateOnChangeProp($state, [
-                "changedFetchModal",
-                "open"
-              ]).apply(null, eventArgs);
-
-              (async open => {
-                const $steps = {};
-
-                $steps["updateManualResultShow"] = true
-                  ? (() => {
-                      const actionArgs = {
-                        variable: {
-                          objRoot: $state,
-                          variablePath: ["manualResultShow"]
-                        },
-                        operation: 0,
-                        value: true
-                      };
-                      return (({
-                        variable,
-                        value,
-                        startIndex,
-                        deleteCount
-                      }) => {
-                        if (!variable) {
-                          return;
-                        }
-                        const { objRoot, variablePath } = variable;
-
-                        $stateSet(objRoot, variablePath, value);
-                        return value;
-                      })?.apply(null, [actionArgs]);
-                    })()
-                  : undefined;
-                if (
-                  $steps["updateManualResultShow"] != null &&
-                  typeof $steps["updateManualResultShow"] === "object" &&
-                  typeof $steps["updateManualResultShow"].then === "function"
-                ) {
-                  $steps["updateManualResultShow"] =
-                    await $steps["updateManualResultShow"];
-                }
-              }).apply(null, eventArgs);
-            }}
-            open={generateStateValueProp($state, ["changedFetchModal", "open"])}
-            title={
-              <div className={classNames(projectcss.all, sty.freeBox__xk5EO)}>
-                <div
-                  data-plasmic-name={"editResult2"}
-                  data-plasmic-override={overrides.editResult2}
-                  className={classNames(projectcss.all, sty.editResult2)}
-                  onClick={async event => {
-                    const $steps = {};
-                  }}
-                >
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__wUrJx)}
-                  >
-                    <PlasmicImg__
-                      data-plasmic-name={"loading6"}
-                      data-plasmic-override={overrides.loading6}
-                      alt={""}
-                      className={classNames(sty.loading6)}
-                      displayHeight={"34px"}
-                      displayMaxHeight={"none"}
-                      displayMaxWidth={"100%"}
-                      displayMinHeight={"0"}
-                      displayMinWidth={"0"}
-                      displayWidth={"auto"}
-                      loading={"lazy"}
-                      src={{
-                        src: "/plasmic/website_starter/images/image140.gif",
-                        fullWidth: 500,
-                        fullHeight: 500,
-                        aspectRatio: undefined
-                      }}
-                    />
-                  </div>
-                </div>
-              </div>
-            }
-            trigger={null}
-            width={
-              hasVariant(globalVariants, "screen", "smallMobile")
-                ? "320"
-                : hasVariant(globalVariants, "screen", "mobile")
-                  ? "340"
-                  : hasVariant(globalVariants, "screen", "tablet")
-                    ? "320px"
-                    : "350"
-            }
-            wrapClassName={classNames({ [sty["pcls_3wZ0Zk9YgNRd"]]: true })}
-          >
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__w1EHt
-              )}
-            >
-              <React.Fragment>
-                {(() => {
-                  try {
-                    return "برای دیدن نتیجه‌ی \xABویرایش تقویم\xBB روی این دکمه بزن";
-                  } catch (e) {
-                    if (
-                      e instanceof TypeError ||
-                      e?.plasmicType === "PlasmicUndefinedDataError"
-                    ) {
-                      return "";
-                    }
-                    throw e;
-                  }
-                })()}
-              </React.Fragment>
-            </div>
-            <div className={classNames(projectcss.all, sty.freeBox__vhF4O)}>
-              <Button
-                className={classNames("__wab_instance", sty.button__o0Nfm)}
-                onClick={async event => {
-                  const $steps = {};
-
-                  $steps["runCode"] = true
-                    ? (() => {
-                        const actionArgs = {
-                          customFunction: async () => {
-                            return (() => {
-                              const date = new Date();
-                              date.setTime(
-                                date.getTime() + 60 * 24 * 60 * 60 * 1000
-                              );
-                              const expires = date.toUTCString();
-                              const commonOptions = `expires=${expires}; domain=.miaan.ir; path=/; Secure; SameSite=None`;
-                              document.cookie = `modalSeen=true; ${commonOptions}`;
-                              return console.log(
-                                "Cookie set for miaan.ir:",
-                                document.cookie
-                              );
-                            })();
-                          }
-                        };
-                        return (({ customFunction }) => {
-                          return customFunction();
-                        })?.apply(null, [actionArgs]);
-                      })()
-                    : undefined;
-                  if (
-                    $steps["runCode"] != null &&
-                    typeof $steps["runCode"] === "object" &&
-                    typeof $steps["runCode"].then === "function"
-                  ) {
-                    $steps["runCode"] = await $steps["runCode"];
-                  }
-
-                  $steps["updateChangedFetchModalOpen"] = true
-                    ? (() => {
-                        const actionArgs = {
-                          variable: {
-                            objRoot: $state,
-                            variablePath: ["changedFetchModal", "open"]
-                          },
-                          operation: 0,
-                          value: false
-                        };
-                        return (({
-                          variable,
-                          value,
-                          startIndex,
-                          deleteCount
-                        }) => {
-                          if (!variable) {
-                            return;
-                          }
-                          const { objRoot, variablePath } = variable;
-
-                          $stateSet(objRoot, variablePath, value);
-                          return value;
-                        })?.apply(null, [actionArgs]);
-                      })()
-                    : undefined;
-                  if (
-                    $steps["updateChangedFetchModalOpen"] != null &&
-                    typeof $steps["updateChangedFetchModalOpen"] === "object" &&
-                    typeof $steps["updateChangedFetchModalOpen"].then ===
-                      "function"
-                  ) {
-                    $steps["updateChangedFetchModalOpen"] =
-                      await $steps["updateChangedFetchModalOpen"];
-                  }
-                }}
-              >
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__nClRy
-                  )}
-                >
-                  <React.Fragment>
-                    {(() => {
-                      try {
-                        return "باشه";
-                      } catch (e) {
-                        if (
-                          e instanceof TypeError ||
-                          e?.plasmicType === "PlasmicUndefinedDataError"
-                        ) {
-                          return "";
-                        }
-                        throw e;
-                      }
-                    })()}
-                  </React.Fragment>
-                </div>
-              </Button>
-            </div>
-          </AntdModal>
           <AntdModal
             data-plasmic-name={"fetchModal"}
             data-plasmic-override={overrides.fetchModal}
@@ -8508,47 +8112,6 @@ function PlasmicCalendar24__RenderFunc(props: {
                   await $steps["updatePlatformRequestStatus"];
               }
 
-              $steps["updateFetchModalOpen"] =
-                $props.calendarType === "pro" &&
-                $steps.checkConsecutive &&
-                $state.changedFetchModal &&
-                (typeof window !== "undefined"
-                  ? !document.cookie.includes("modalSeen=true")
-                  : false)
-                  ? (() => {
-                      const actionArgs = {
-                        variable: {
-                          objRoot: $state,
-                          variablePath: ["changedFetchModal", "open"]
-                        },
-                        operation: 0,
-                        value: true
-                      };
-                      return (({
-                        variable,
-                        value,
-                        startIndex,
-                        deleteCount
-                      }) => {
-                        if (!variable) {
-                          return;
-                        }
-                        const { objRoot, variablePath } = variable;
-
-                        $stateSet(objRoot, variablePath, value);
-                        return value;
-                      })?.apply(null, [actionArgs]);
-                    })()
-                  : undefined;
-              if (
-                $steps["updateFetchModalOpen"] != null &&
-                typeof $steps["updateFetchModalOpen"] === "object" &&
-                typeof $steps["updateFetchModalOpen"].then === "function"
-              ) {
-                $steps["updateFetchModalOpen"] =
-                  await $steps["updateFetchModalOpen"];
-              }
-
               $steps["updateSelectedDay"] =
                 $steps.checkConsecutive == true
                   ? (() => {
@@ -8999,46 +8562,6 @@ function PlasmicCalendar24__RenderFunc(props: {
                 ) {
                   $steps["createFetchModalData"] =
                     await $steps["createFetchModalData"];
-                }
-
-                $steps["updateFetchModalOpen"] =
-                  $props.calendarType === "pro" &&
-                  $state.changedFetchModal &&
-                  (typeof window !== "undefined"
-                    ? !document.cookie.includes("modalSeen=true")
-                    : false)
-                    ? (() => {
-                        const actionArgs = {
-                          variable: {
-                            objRoot: $state,
-                            variablePath: ["changedFetchModal", "open"]
-                          },
-                          operation: 0,
-                          value: true
-                        };
-                        return (({
-                          variable,
-                          value,
-                          startIndex,
-                          deleteCount
-                        }) => {
-                          if (!variable) {
-                            return;
-                          }
-                          const { objRoot, variablePath } = variable;
-
-                          $stateSet(objRoot, variablePath, value);
-                          return value;
-                        })?.apply(null, [actionArgs]);
-                      })()
-                    : undefined;
-                if (
-                  $steps["updateFetchModalOpen"] != null &&
-                  typeof $steps["updateFetchModalOpen"] === "object" &&
-                  typeof $steps["updateFetchModalOpen"].then === "function"
-                ) {
-                  $steps["updateFetchModalOpen"] =
-                    await $steps["updateFetchModalOpen"];
                 }
 
                 $steps["updateStateVariable2"] =
@@ -10393,41 +9916,6 @@ function PlasmicCalendar24__RenderFunc(props: {
                     await $steps["updateCheckForChangeOpen"];
                 }
 
-                $steps["updateFetchModalOpen"] = true
-                  ? (() => {
-                      const actionArgs = {
-                        variable: {
-                          objRoot: $state,
-                          variablePath: ["changedFetchModal", "open"]
-                        },
-                        operation: 0,
-                        value: true
-                      };
-                      return (({
-                        variable,
-                        value,
-                        startIndex,
-                        deleteCount
-                      }) => {
-                        if (!variable) {
-                          return;
-                        }
-                        const { objRoot, variablePath } = variable;
-
-                        $stateSet(objRoot, variablePath, value);
-                        return value;
-                      })?.apply(null, [actionArgs]);
-                    })()
-                  : undefined;
-                if (
-                  $steps["updateFetchModalOpen"] != null &&
-                  typeof $steps["updateFetchModalOpen"] === "object" &&
-                  typeof $steps["updateFetchModalOpen"].then === "function"
-                ) {
-                  $steps["updateFetchModalOpen"] =
-                    await $steps["updateFetchModalOpen"];
-                }
-
                 $steps["setUnblock"] = true
                   ? (() => {
                       const actionArgs = {
@@ -11586,45 +11074,6 @@ function PlasmicCalendar24__RenderFunc(props: {
                   ) {
                     $steps["createFetchModalData"] =
                       await $steps["createFetchModalData"];
-                  }
-
-                  $steps["updateFetchModalOpen"] =
-                    $state.changedFetchModal &&
-                    (typeof window !== "undefined"
-                      ? !document.cookie.includes("modalSeen=true")
-                      : false)
-                      ? (() => {
-                          const actionArgs = {
-                            variable: {
-                              objRoot: $state,
-                              variablePath: ["changedFetchModal", "open"]
-                            },
-                            operation: 0,
-                            value: true
-                          };
-                          return (({
-                            variable,
-                            value,
-                            startIndex,
-                            deleteCount
-                          }) => {
-                            if (!variable) {
-                              return;
-                            }
-                            const { objRoot, variablePath } = variable;
-
-                            $stateSet(objRoot, variablePath, value);
-                            return value;
-                          })?.apply(null, [actionArgs]);
-                        })()
-                      : undefined;
-                  if (
-                    $steps["updateFetchModalOpen"] != null &&
-                    typeof $steps["updateFetchModalOpen"] === "object" &&
-                    typeof $steps["updateFetchModalOpen"].then === "function"
-                  ) {
-                    $steps["updateFetchModalOpen"] =
-                      await $steps["updateFetchModalOpen"];
                   }
 
                   $steps["updateSelectedDay"] = true
@@ -14784,46 +14233,6 @@ function PlasmicCalendar24__RenderFunc(props: {
                       await $steps["createFetchModalData"];
                   }
 
-                  $steps["updateFetchModalOpen"] =
-                    $props.calendarType === "pro" &&
-                    $state.changedFetchModal &&
-                    (typeof window !== "undefined"
-                      ? !document.cookie.includes("modalSeen=true")
-                      : false)
-                      ? (() => {
-                          const actionArgs = {
-                            variable: {
-                              objRoot: $state,
-                              variablePath: ["changedFetchModal", "open"]
-                            },
-                            operation: 0,
-                            value: true
-                          };
-                          return (({
-                            variable,
-                            value,
-                            startIndex,
-                            deleteCount
-                          }) => {
-                            if (!variable) {
-                              return;
-                            }
-                            const { objRoot, variablePath } = variable;
-
-                            $stateSet(objRoot, variablePath, value);
-                            return value;
-                          })?.apply(null, [actionArgs]);
-                        })()
-                      : undefined;
-                  if (
-                    $steps["updateFetchModalOpen"] != null &&
-                    typeof $steps["updateFetchModalOpen"] === "object" &&
-                    typeof $steps["updateFetchModalOpen"].then === "function"
-                  ) {
-                    $steps["updateFetchModalOpen"] =
-                      await $steps["updateFetchModalOpen"];
-                  }
-
                   $steps["updateStateVariable2"] =
                     $props.calendarType == "lite"
                       ? (() => {
@@ -15167,9 +14576,6 @@ const PlasmicDescendants = {
     "textInput",
     "numberInput2",
     "fetchModals",
-    "changedFetchModal",
-    "editResult2",
-    "loading6",
     "fetchModal",
     "getJabamaSmartPriceStatus2",
     "userPlatform2",
@@ -15287,9 +14693,6 @@ const PlasmicDescendants = {
   numberInput2: ["numberInput2"],
   fetchModals: [
     "fetchModals",
-    "changedFetchModal",
-    "editResult2",
-    "loading6",
     "fetchModal",
     "getJabamaSmartPriceStatus2",
     "userPlatform2",
@@ -15305,9 +14708,6 @@ const PlasmicDescendants = {
     "loading4",
     "ok6"
   ],
-  changedFetchModal: ["changedFetchModal", "editResult2", "loading6"],
-  editResult2: ["editResult2", "loading6"],
-  loading6: ["loading6"],
   fetchModal: [
     "fetchModal",
     "getJabamaSmartPriceStatus2",
@@ -15514,9 +14914,6 @@ type NodeDefaultElementType = {
   textInput: typeof TextInput;
   numberInput2: typeof AntdInputNumber;
   fetchModals: "div";
-  changedFetchModal: typeof AntdModal;
-  editResult2: "div";
-  loading6: typeof PlasmicImg__;
   fetchModal: typeof AntdModal;
   getJabamaSmartPriceStatus2: typeof ApiRequest;
   userPlatform2: typeof ApiRequest;
@@ -15681,9 +15078,6 @@ export const PlasmicCalendar24 = Object.assign(
     textInput: makeNodeComponent("textInput"),
     numberInput2: makeNodeComponent("numberInput2"),
     fetchModals: makeNodeComponent("fetchModals"),
-    changedFetchModal: makeNodeComponent("changedFetchModal"),
-    editResult2: makeNodeComponent("editResult2"),
-    loading6: makeNodeComponent("loading6"),
     fetchModal: makeNodeComponent("fetchModal"),
     getJabamaSmartPriceStatus2: makeNodeComponent("getJabamaSmartPriceStatus2"),
     userPlatform2: makeNodeComponent("userPlatform2"),

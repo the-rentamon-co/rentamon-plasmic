@@ -3428,6 +3428,20 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/login"
+        },
+        {
+          "id": "f8SYQUnLoWQ1",
+          "name": "Upload",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicUpload.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/upload.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicUpload.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/upload"
         }
       ],
       "icons": [
