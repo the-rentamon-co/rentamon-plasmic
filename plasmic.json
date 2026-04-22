@@ -3442,6 +3442,20 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/upload"
+        },
+        {
+          "id": "iXTOkNe51IL1",
+          "name": "تالارجدید",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/Plasmicتالارجدید.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/menu-new.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/Plasmicتالارجدید.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/menu-new"
         }
       ],
       "icons": [

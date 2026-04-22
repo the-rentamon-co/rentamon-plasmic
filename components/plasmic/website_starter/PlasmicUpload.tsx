@@ -120,8 +120,6 @@ export type PlasmicUpload__OverridesType = {
   imageFrame?: Flex__<"div">;
   embedHtml?: Flex__<typeof Embed>;
   upload?: Flex__<typeof UploadWrapper>;
-  newButtons2?: Flex__<"div">;
-  next2?: Flex__<"div">;
   clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
   faviconRntComponent?: Flex__<typeof FaviconRntComponent>;
 };
@@ -269,35 +267,13 @@ function PlasmicUpload__RenderFunc(props: {
               data-plasmic-override={overrides.imageFrame}
               className={classNames(projectcss.all, sty.imageFrame)}
             >
-              <div className={classNames(projectcss.all, sty.freeBox__xVdkd)}>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__kwMaB
-                  )}
-                >
-                  {""}
-                </div>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__r7NcN
-                  )}
-                >
-                  {
-                    "\u0641\u0642\u0637 \u062e\u0648\u062f\u062a \u0639\u06a9\u0633 \u0631\u0648 \u0645\u06cc\u200c\u0628\u06cc\u0646\u06cc"
-                  }
-                </div>
-              </div>
               <div className={classNames(projectcss.all, sty.freeBox___1Atpc)}>
                 <Embed
                   data-plasmic-name={"embedHtml"}
                   data-plasmic-override={overrides.embedHtml}
                   className={classNames("__wab_instance", sty.embedHtml)}
                   code={
-                    '<script src="https://unpkg.com/browser-image-compression@2.0.2/dist/browser-image-compression.js"></script>\r\n\r\n<div class="plasmic_default__all plasmic_default__div FirstPropertyEditTest2__freeBox__nmOuz">\r\n  <span class="ant-upload-wrapper __wab_instance FirstPropertyEditTest2__upload__scmdc css-10hmd9l">\r\n    <div class="ant-upload ant-upload-select">\r\n      <span class="ant-upload">\r\n        <input id="profile-upload" type="file" accept="image/*" style="display: none;" />\r\n        <label for="profile-upload" style="cursor: pointer;">\r\n          <div id="upload-container" style="display: flex; flex-direction: column; align-items: center; justify-content: center;">\r\n            <div class="FirstPropertyEditTest2__img__see5C __wab_img-wrapper">\r\n              <img id="preview-img" alt="" \r\n                src="https://media.rentamon.com/icon%2Fclipicon.svg"\r\n                style="width: 50px; height: 50px; object-fit: cover; border-radius: 6px;" />\r\n            </div>\r\n            <div id="upload-text" style="font-size: 16px; margin-top: 4px; text-align: center;">\r\n              \u0628\u0627\u0631\u06af\u0630\u0627\u0631\u06cc \u062a\u0635\u0648\u06cc\u0631\r\n            </div>\r\n          </div>\r\n        </label>\r\n      </span>\r\n    </div>\r\n    <div class="ant-upload-list ant-upload-list-picture"></div>\r\n  </span>\r\n</div>\r\n\r\n<script>\r\n  const input = document.getElementById(\'profile-upload\');\r\n  const previewImg = document.getElementById(\'preview-img\');\r\n  const uploadText = document.getElementById(\'upload-text\');\r\n\r\n  input.addEventListener(\'change\', async (event) => {\r\n    const file = event.target.files[0];\r\n    if (!file) return;\r\n\r\n    const options = {\r\n      maxSizeMB: 0.3,\r\n      maxWidthOrHeight: 800,\r\n      useWebWorker: true,\r\n    };\r\n\r\n    try {\r\n      uploadText.textContent = "\u062f\u0631 \u062d\u0627\u0644 \u0628\u0627\u0631\u06af\u0630\u0627\u0631\u06cc...";\r\n      uploadText.style.fontSize = "16px";\r\n\r\n      const compressedFile = await imageCompression(file, options);\r\n\r\n      const base64Full = await new Promise((resolve, reject) => {\r\n        const reader = new FileReader();\r\n        reader.onload = () => resolve(reader.result);\r\n        reader.onerror = reject;\r\n        reader.readAsDataURL(compressedFile);\r\n      });\r\n\r\n      const base64Content = base64Full.split(\',\')[1];\r\n\r\n      // \u062a\u063a\u06cc\u06cc\u0631 \u0633\u0627\u06cc\u0632 \u062a\u0635\u0648\u06cc\u0631 \u067e\u06cc\u0634\u200c\u0646\u0645\u0627\u06cc\u0634 \u0628\u0639\u062f \u0627\u0632 \u0622\u067e\u0644\u0648\u062f\r\n      previewImg.src = base64Full;\r\n      previewImg.style.width = "200px";\r\n      previewImg.style.height = "110px";\r\n\r\n      const payload = {\r\n        property_pic: {\r\n          uid: `rc-upload-${Date.now()}-${file.name}`,\r\n          name: file.name,\r\n          size: compressedFile.size,\r\n          type: compressedFile.type,\r\n          lastModified: file.lastModified,\r\n          contents: base64Content\r\n        }\r\n      };\r\n\r\n      await fetch(\'https://nb.miaan.ir/webhook/change_property_pic\', {\r\n        method: \'POST\',\r\n        headers: {\r\n          \'Content-Type\': \'application/json\',\r\n        },\r\n        body: JSON.stringify(payload),\r\n      });\r\n\r\n      uploadText.textContent = "\u2705";\r\n      uploadText.style.color = "#0C9D61";\r\n      uploadText.style.fontSize = "16px";\r\n    } catch (error) {\r\n      console.error(\'Upload error:\', error);\r\n      uploadText.textContent = "\u062e\u0637\u0627 \u062f\u0631 \u0628\u0627\u0631\u06af\u0630\u0627\u0631\u06cc!";\r\n      uploadText.style.color = "#EC2D30";\r\n      uploadText.style.fontSize = "16px";\r\n    }\r\n  });\r\n</script>\r\n'
+                    '<script src="https://unpkg.com/browser-image-compression@2.0.2/dist/browser-image-compression.js"></script>\r\n\r\n<div class="plasmic_default__all plasmic_default__div FirstPropertyEditTest2__freeBox__nmOuz">\r\n  <span class="ant-upload-wrapper __wab_instance FirstPropertyEditTest2__upload__scmdc css-10hmd9l">\r\n    <div class="ant-upload ant-upload-select">\r\n      <span class="ant-upload">\r\n        <input id="profile-upload" type="file" accept="image/*" style="display: none;" />\r\n        <label for="profile-upload" style="cursor: pointer;">\r\n          <div id="upload-container" style="display: flex; flex-direction: column; align-items: center; justify-content: center;">\r\n            <div class="FirstPropertyEditTest2__img__see5C __wab_img-wrapper">\r\n              <img id="preview-img" alt="" \r\n                src="https://media.rentamon.com/icon%2Fclipicon.svg"\r\n                style="width: 50px; height: 50px; object-fit: cover; border-radius: 6px;" />\r\n            </div>\r\n            <div id="upload-text" style="font-size: 16px; margin-top: 4px; text-align: center;">\r\n              Upload file\r\n            </div>\r\n          </div>\r\n        </label>\r\n      </span>\r\n    </div>\r\n  </span>\r\n\r\n  <div id="link-container" style="display: none; margin-top: 15px; text-align: center; direction: ltr;">\r\n    <input type="text" id="link-input" style="width: 80%; padding: 8px; border: 1px solid #ddd; border-radius: 4px; font-size: 12px; margin-bottom: 8px; text-align: left;" readonly>\r\n    <button id="copy-btn" style="background: #1677ff; color: white; border: none; padding: 6px 20px; border-radius: 4px; cursor: pointer; font-family: Tahoma, sans-serif; display: block; margin: 0 auto;">\r\n       Copy link\r\n    </button>\r\n  </div>\r\n</div>\r\n\r\n<script>\r\n  const input = document.getElementById(\'profile-upload\');\r\n  const previewImg = document.getElementById(\'preview-img\');\r\n  const uploadText = document.getElementById(\'upload-text\');\r\n  const linkContainer = document.getElementById(\'link-container\');\r\n  const linkInput = document.getElementById(\'link-input\');\r\n  const copyBtn = document.getElementById(\'copy-btn\');\r\n\r\n  input.addEventListener(\'change\', async (event) => {\r\n    const file = event.target.files[0];\r\n    if (!file) return;\r\n\r\n    // \u06f1. \u0628\u0644\u0627\u0641\u0627\u0635\u0644\u0647 \u0644\u06cc\u0646\u06a9 \u0631\u0627 \u0628\u0633\u0627\u0632 \u0648 \u0646\u0645\u0627\u06cc\u0634 \u0628\u062f\u0647\r\n    const generatedLink = `https://media.miaan.ir/propertypic%2F${file.name}`;\r\n    linkInput.value = generatedLink;\r\n    linkContainer.style.display = "block";\r\n    \r\n    // \u06f2. \u067e\u06cc\u0634\u200c\u0646\u0645\u0627\u06cc\u0634 \u0633\u0631\u06cc\u0639 \u062a\u0635\u0648\u06cc\u0631 (\u0642\u0628\u0644 \u0627\u0632 \u0641\u0634\u0631\u062f\u0647\u200c\u0633\u0627\u0632\u06cc)\r\n    const quickPreview = URL.createObjectURL(file);\r\n    previewImg.src = quickPreview;\r\n    previewImg.style.width = "200px";\r\n    previewImg.style.height = "110px";\r\n\r\n    // \u062a\u0646\u0638\u06cc\u0645\u0627\u062a \u0641\u0634\u0631\u062f\u0647\u200c\u0633\u0627\u0632\u06cc\r\n    const options = {\r\n      maxSizeMB: 0.3,\r\n      maxWidthOrHeight: 800,\r\n      useWebWorker: true,\r\n    };\r\n\r\n    try {\r\n      uploadText.textContent = "Uploading...";\r\n      uploadText.style.color = "#000";\r\n\r\n      const compressedFile = await imageCompression(file, options);\r\n      \r\n      const base64Full = await new Promise((resolve, reject) => {\r\n        const reader = new FileReader();\r\n        reader.onload = () => resolve(reader.result);\r\n        reader.onerror = reject;\r\n        reader.readAsDataURL(compressedFile);\r\n      });\r\n\r\n      const base64Content = base64Full.split(\',\')[1];\r\n\r\n      const payload = {\r\n        property_pic: {\r\n          uid: `rc-upload-${Date.now()}-${file.name}`,\r\n          name: file.name,\r\n          size: compressedFile.size,\r\n          type: compressedFile.type,\r\n          lastModified: file.lastModified,\r\n          contents: base64Content\r\n        }\r\n      };\r\n\r\n      // \u06f3. \u0627\u0631\u0633\u0627\u0644 \u0628\u0647 \u0633\u0631\u0648\u0631 \u062f\u0631 \u067e\u0633\u200c\u0632\u0645\u06cc\u0646\u0647\r\n      await fetch(\'https://nb.miaan.ir/webhook/change_property_pic\', {\r\n        method: \'POST\',\r\n        headers: { \'Content-Type\': \'application/json\' },\r\n        body: JSON.stringify(payload),\r\n      });\r\n\r\n      uploadText.textContent = "\u2705Uploaded";\r\n      uploadText.style.color = "#0C9D61";\r\n\r\n    } catch (error) {\r\n      console.error(\'Upload error:\', error);\r\n      uploadText.textContent = "An error ocurred!";\r\n      uploadText.style.color = "#EC2D30";\r\n    }\r\n  });\r\n\r\n  // \u0639\u0645\u0644\u06a9\u0631\u062f \u062f\u06a9\u0645\u0647 \u06a9\u067e\u06cc \u0628\u0627 \u0645\u062a\u062f \u0633\u0627\u0632\u06af\u0627\u0631\u062a\u0631\r\n  copyBtn.addEventListener(\'click\', () => {\r\n    linkInput.select();\r\n    linkInput.setSelectionRange(0, 99999); // \u0628\u0631\u0627\u06cc \u0645\u0648\u0628\u0627\u06cc\u0644\r\n\r\n    try {\r\n      const successful = document.execCommand(\'copy\');\r\n      if (successful) {\r\n        const originalText = copyBtn.textContent;\r\n        copyBtn.textContent = "Copied! \u2713";\r\n        copyBtn.style.background = "#0C9D61";\r\n        setTimeout(() => {\r\n          copyBtn.textContent = originalText;\r\n          copyBtn.style.background = "#1677ff";\r\n        }, 2000);\r\n      }\r\n    } catch (err) {\r\n      // \u0627\u06af\u0631 \u0647\u0646\u0648\u0632 \u06a9\u0627\u0631 \u0646\u06a9\u0631\u062f\u060c \u0627\u0632 \u0645\u062a\u062f \u062f\u0648\u0645 \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u06a9\u0646\r\n      navigator.clipboard.writeText(linkInput.value).then(() => {\r\n        copyBtn.textContent = "Copied! \u2713";\r\n        copyBtn.style.background = "#0C9D61";\r\n      });\r\n    }\r\n  });\r\n</script>'
                   }
                 />
 
@@ -452,61 +428,6 @@ function PlasmicUpload__RenderFunc(props: {
                   ) : null}
                 </UploadWrapper>
               </div>
-              <div
-                data-plasmic-name={"newButtons2"}
-                data-plasmic-override={overrides.newButtons2}
-                className={classNames(projectcss.all, sty.newButtons2)}
-              >
-                <div
-                  data-plasmic-name={"next2"}
-                  data-plasmic-override={overrides.next2}
-                  className={classNames(projectcss.all, sty.next2, "clickable")}
-                  onClick={async event => {
-                    const $steps = {};
-                  }}
-                >
-                  {(() => {
-                    try {
-                      return $state.loading;
-                    } catch (e) {
-                      if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
-                      ) {
-                        return true;
-                      }
-                      throw e;
-                    }
-                  })() ? (
-                    <PlasmicImg__
-                      alt={""}
-                      className={classNames(sty.img__m1NnK)}
-                      displayHeight={"37px"}
-                      displayMaxHeight={"none"}
-                      displayMaxWidth={"100%"}
-                      displayMinHeight={"0"}
-                      displayMinWidth={"0"}
-                      displayWidth={"auto"}
-                      loading={"lazy"}
-                      src={{
-                        src: "/plasmic/website_starter/images/image140.gif",
-                        fullWidth: 500,
-                        fullHeight: 500,
-                        aspectRatio: undefined
-                      }}
-                    />
-                  ) : null}
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__aNkNu
-                    )}
-                  >
-                    {"\u0630\u062e\u06cc\u0631\u0647"}
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
           <div className={classNames(projectcss.all, sty.freeBox__hohIi)}>
@@ -536,26 +457,14 @@ const PlasmicDescendants = {
     "imageFrame",
     "embedHtml",
     "upload",
-    "newButtons2",
-    "next2",
     "clarityRntComponent",
     "faviconRntComponent"
   ],
-  pic: [
-    "pic",
-    "title",
-    "imageFrame",
-    "embedHtml",
-    "upload",
-    "newButtons2",
-    "next2"
-  ],
+  pic: ["pic", "title", "imageFrame", "embedHtml", "upload"],
   title: ["title"],
-  imageFrame: ["imageFrame", "embedHtml", "upload", "newButtons2", "next2"],
+  imageFrame: ["imageFrame", "embedHtml", "upload"],
   embedHtml: ["embedHtml"],
   upload: ["upload"],
-  newButtons2: ["newButtons2", "next2"],
-  next2: ["next2"],
   clarityRntComponent: ["clarityRntComponent"],
   faviconRntComponent: ["faviconRntComponent"]
 } as const;
@@ -569,8 +478,6 @@ type NodeDefaultElementType = {
   imageFrame: "div";
   embedHtml: typeof Embed;
   upload: typeof UploadWrapper;
-  newButtons2: "div";
-  next2: "div";
   clarityRntComponent: typeof ClarityRntComponent;
   faviconRntComponent: typeof FaviconRntComponent;
 };
@@ -642,8 +549,6 @@ export const PlasmicUpload = Object.assign(
     imageFrame: makeNodeComponent("imageFrame"),
     embedHtml: makeNodeComponent("embedHtml"),
     upload: makeNodeComponent("upload"),
-    newButtons2: makeNodeComponent("newButtons2"),
-    next2: makeNodeComponent("next2"),
     clarityRntComponent: makeNodeComponent("clarityRntComponent"),
     faviconRntComponent: makeNodeComponent("faviconRntComponent"),
 
