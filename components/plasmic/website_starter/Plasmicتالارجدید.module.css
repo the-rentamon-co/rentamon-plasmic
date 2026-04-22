@@ -72,43 +72,11 @@
     grid-column: 4;
   }
 }
-.header {
-  display: flex;
-  flex-direction: row;
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  justify-content: center;
-  align-items: center;
-  grid-column-start: 1 !important;
-  grid-column-end: -1 !important;
-  padding: 2em 16px 0em;
-}
-@media (max-width: 500px) {
-  .header {
-    flex-direction: row;
-    padding-top: 9px;
-    row-gap: 0px;
-    display: none;
-  }
-}
-.freeBox {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  justify-content: flex-start;
-  align-items: center;
-  min-width: 0;
-  padding: 8px;
-}
 .iframe:global(.__wab_instance) {
-  width: 300px;
-  height: 150px;
+  width: 100%;
+  height: 100vh;
   max-width: 100%;
   object-fit: cover;
-  flex-shrink: 0;
+  grid-column-start: 1 !important;
+  grid-column-end: -1 !important;
 }

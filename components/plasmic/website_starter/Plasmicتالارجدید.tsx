@@ -117,8 +117,6 @@ export const Plasmicتالارجدید__ArgProps = new Array<ArgPropType>();
 
 export type Plasmicتالارجدید__OverridesType = {
   root?: Flex__<"div">;
-  header?: Flex__<"div">;
-  freeBox?: Flex__<"div">;
   iframe?: Flex__<typeof Iframe>;
 };
 
@@ -162,8 +160,6 @@ function Plasmicتالارجدید__RenderFunc(props: {
   const $ctx = useDataEnv?.() || {};
   const refsRef = React.useRef({});
   const $refs = refsRef.current;
-
-  const globalVariants = _useGlobalVariants();
 
   const stateSpecs: Parameters<typeof useDollarState>[0] = React.useMemo(
     () => [
@@ -264,26 +260,14 @@ function Plasmicتالارجدید__RenderFunc(props: {
             sty.root
           )}
         >
-          <div
-            data-plasmic-name={"header"}
-            data-plasmic-override={overrides.header}
-            className={classNames(projectcss.all, sty.header)}
+          <Iframe
+            data-plasmic-name={"iframe"}
+            data-plasmic-override={overrides.iframe}
+            className={classNames("__wab_instance", sty.iframe)}
+            src={"https://miaan-front.darkube.ir/menu"}
+            srcDoc={"<div><h3>Heading</h3><p>Example text...</p></div>"}
+            useHtml={false}
           />
-
-          <div
-            data-plasmic-name={"freeBox"}
-            data-plasmic-override={overrides.freeBox}
-            className={classNames(projectcss.all, sty.freeBox)}
-          >
-            <Iframe
-              data-plasmic-name={"iframe"}
-              data-plasmic-override={overrides.iframe}
-              className={classNames("__wab_instance", sty.iframe)}
-              src={"https://miaan-front.darkube.ir/menu"}
-              srcDoc={"<div><h3>Heading</h3><p>Example text...</p></div>"}
-              useHtml={false}
-            />
-          </div>
         </div>
       </div>
     </React.Fragment>
@@ -291,9 +275,7 @@ function Plasmicتالارجدید__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "header", "freeBox", "iframe"],
-  header: ["header"],
-  freeBox: ["freeBox", "iframe"],
+  root: ["root", "iframe"],
   iframe: ["iframe"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -301,8 +283,6 @@ type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
-  header: "div";
-  freeBox: "div";
   iframe: typeof Iframe;
 };
 
@@ -369,8 +349,6 @@ export const Plasmicتالارجدید = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    header: makeNodeComponent("header"),
-    freeBox: makeNodeComponent("freeBox"),
     iframe: makeNodeComponent("iframe"),
 
     // Metadata about props expected for Plasmicتالارجدید
