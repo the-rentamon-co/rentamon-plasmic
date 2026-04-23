@@ -264,7 +264,7 @@ function Plasmicتالارجدید__RenderFunc(props: {
             data-plasmic-name={"iframe"}
             data-plasmic-override={overrides.iframe}
             className={classNames("__wab_instance", sty.iframe)}
-            src={"https://miaan-front.darkube.ir/menu"}
+            src={"https://panel.miaan.ir/menu"}
             srcDoc={"<div><h3>Heading</h3><p>Example text...</p></div>"}
             useHtml={false}
           />
