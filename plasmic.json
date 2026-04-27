@@ -3450,7 +3450,7 @@
           "projectId": "7SNMkB8UMukVgcWJYokeAQ",
           "renderModuleFilePath": "plasmic/website_starter/Plasmicتالارجدید.tsx",
           "importSpec": {
-            "modulePath": "../src/pages/menu-new.tsx"
+            "modulePath": "../src/pages/talar.tsx"
           },
           "cssFilePath": "plasmic/website_starter/Plasmicتالارجدید.module.css",
           "scheme": "blackbox",
@@ -6484,6 +6484,6 @@
   "nextjsConfig": {
     "pagesDir": "../src/pages"
   },
-  "cliVersion": "0.1.359",
-  "$schema": "https://unpkg.com/@plasmicapp/cli@0.1.359/dist/plasmic.schema.json"
+  "cliVersion": "0.1.360",
+  "$schema": "https://unpkg.com/@plasmicapp/cli@0.1.360/dist/plasmic.schema.json"
 }

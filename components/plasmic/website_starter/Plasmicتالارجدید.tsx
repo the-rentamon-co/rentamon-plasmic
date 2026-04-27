@@ -60,6 +60,7 @@ import {
 } from "@plasmicapp/react-web/lib/host";
 
 import { Iframe } from "@plasmicpkgs/plasmic-basic-components";
+import NavbarMnFooter from "../../NavbarMnFooter"; // plasmic-import: y37kcAs9RXYg/component
 import { _useGlobalVariants } from "./plasmic"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectModule
 import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/styleTokensProvider
 
@@ -118,6 +119,7 @@ export const Plasmicتالارجدید__ArgProps = new Array<ArgPropType>();
 export type Plasmicتالارجدید__OverridesType = {
   root?: Flex__<"div">;
   iframe?: Flex__<typeof Iframe>;
+  navbarMnFooter?: Flex__<typeof NavbarMnFooter>;
 };
 
 export interface DefaultتالارجدیدProps {}
@@ -160,6 +162,8 @@ function Plasmicتالارجدید__RenderFunc(props: {
   const $ctx = useDataEnv?.() || {};
   const refsRef = React.useRef({});
   const $refs = refsRef.current;
+
+  const globalVariants = _useGlobalVariants();
 
   const stateSpecs: Parameters<typeof useDollarState>[0] = React.useMemo(
     () => [
@@ -268,6 +272,12 @@ function Plasmicتالارجدید__RenderFunc(props: {
             srcDoc={"<div><h3>Heading</h3><p>Example text...</p></div>"}
             useHtml={false}
           />
+
+          <NavbarMnFooter
+            data-plasmic-name={"navbarMnFooter"}
+            data-plasmic-override={overrides.navbarMnFooter}
+            className={classNames("__wab_instance", sty.navbarMnFooter)}
+          />
         </div>
       </div>
     </React.Fragment>
@@ -275,8 +285,9 @@ function Plasmicتالارجدید__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "iframe"],
-  iframe: ["iframe"]
+  root: ["root", "iframe", "navbarMnFooter"],
+  iframe: ["iframe"],
+  navbarMnFooter: ["navbarMnFooter"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -284,6 +295,7 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   iframe: typeof Iframe;
+  navbarMnFooter: typeof NavbarMnFooter;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -350,6 +362,7 @@ export const Plasmicتالارجدید = Object.assign(
   {
     // Helper components rendering sub-elements
     iframe: makeNodeComponent("iframe"),
+    navbarMnFooter: makeNodeComponent("navbarMnFooter"),
 
     // Metadata about props expected for Plasmicتالارجدید
     internalVariantProps: Plasmicتالارجدید__VariantProps,
@@ -359,8 +372,8 @@ export const Plasmicتالارجدید = Object.assign(
     metadata: { nameRobots: 'content="noindex, nofollow"' },
 
     pageMetadata: generateDynamicMetadata(wrapQueriesWithLoadingProxy({}), {
-      pageRoute: "/menu-new",
-      pagePath: "/menu-new",
+      pageRoute: "/talar",
+      pagePath: "/talar",
       params: {},
       query: {}
     })
