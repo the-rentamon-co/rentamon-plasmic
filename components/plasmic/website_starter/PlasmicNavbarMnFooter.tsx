@@ -120,6 +120,7 @@ export type PlasmicNavbarMnFooter__OverridesType = {
   normProps?: Flex__<"div">;
   sideEffect?: Flex__<typeof SideEffect>;
   checkUserPendingReserve?: Flex__<typeof ApiRequest>;
+  apiRequest?: Flex__<typeof ApiRequest>;
 };
 
 export interface DefaultNavbarMnFooterProps {
@@ -227,6 +228,30 @@ function PlasmicNavbarMnFooter__RenderFunc(props: {
         type: "private",
         variableType: "boolean",
         initFunc: ({ $props, $state, $queries, $q, $ctx }) => false
+      },
+      {
+        path: "apiRequest.data",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
+
+        refName: "apiRequest"
+      },
+      {
+        path: "apiRequest.error",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
+
+        refName: "apiRequest"
+      },
+      {
+        path: "apiRequest.loading",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
+
+        refName: "apiRequest"
       }
     ],
     [$props, $ctx, $refs]
@@ -271,7 +296,8 @@ function PlasmicNavbarMnFooter__RenderFunc(props: {
               const $steps = {};
 
               $steps["goToتالار"] =
-                $props.navPage != "menu"
+                $props.navPage != "menu" &&
+                $state.apiRequest.data.status == false
                   ? (() => {
                       const actionArgs = { destination: `/menu` };
                       return (({ destination }) => {
@@ -294,6 +320,33 @@ function PlasmicNavbarMnFooter__RenderFunc(props: {
                 typeof $steps["goToتالار"].then === "function"
               ) {
                 $steps["goToتالار"] = await $steps["goToتالار"];
+              }
+
+              $steps["goToتالارجدید"] =
+                $props.navPage != "menu" &&
+                $state.apiRequest.data.status == true
+                  ? (() => {
+                      const actionArgs = { destination: `/talar` };
+                      return (({ destination }) => {
+                        if (
+                          typeof destination === "string" &&
+                          destination.startsWith("#")
+                        ) {
+                          document
+                            .getElementById(destination.substr(1))
+                            .scrollIntoView({ behavior: "smooth" });
+                        } else {
+                          __nextRouter?.push(destination);
+                        }
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+              if (
+                $steps["goToتالارجدید"] != null &&
+                typeof $steps["goToتالارجدید"] === "object" &&
+                typeof $steps["goToتالارجدید"].then === "function"
+              ) {
+                $steps["goToتالارجدید"] = await $steps["goToتالارجدید"];
               }
             }}
           >
@@ -858,7 +911,8 @@ function PlasmicNavbarMnFooter__RenderFunc(props: {
               const $steps = {};
 
               $steps["goToProperties"] =
-                $props.navPage != "properties"
+                $props.navPage != "properties" &&
+                $state.apiRequest.data.status == false
                   ? (() => {
                       const actionArgs = { destination: `/properties` };
                       return (({ destination }) => {
@@ -881,6 +935,33 @@ function PlasmicNavbarMnFooter__RenderFunc(props: {
                 typeof $steps["goToProperties"].then === "function"
               ) {
                 $steps["goToProperties"] = await $steps["goToProperties"];
+              }
+
+              $steps["goToProperties2"] =
+                $props.navPage != "properties" &&
+                $state.apiRequest.data.status == true
+                  ? (() => {
+                      const actionArgs = { destination: `/properties-2` };
+                      return (({ destination }) => {
+                        if (
+                          typeof destination === "string" &&
+                          destination.startsWith("#")
+                        ) {
+                          document
+                            .getElementById(destination.substr(1))
+                            .scrollIntoView({ behavior: "smooth" });
+                        } else {
+                          __nextRouter?.push(destination);
+                        }
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+              if (
+                $steps["goToProperties2"] != null &&
+                typeof $steps["goToProperties2"] === "object" &&
+                typeof $steps["goToProperties2"].then === "function"
+              ) {
+                $steps["goToProperties2"] = await $steps["goToProperties2"];
               }
             }}
           >
@@ -1084,6 +1165,59 @@ function PlasmicNavbarMnFooter__RenderFunc(props: {
           }}
           url={"https://api-v3.miaan.ir/webhook/check_user_pending_request"}
         />
+
+        <ApiRequest
+          data-plasmic-name={"apiRequest"}
+          data-plasmic-override={overrides.apiRequest}
+          className={classNames("__wab_instance", sty.apiRequest)}
+          errorDisplay={
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text___3Tmyv
+              )}
+            >
+              {"Error fetching data"}
+            </div>
+          }
+          loadingDisplay={
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__exRq3
+              )}
+            >
+              {"Loading..."}
+            </div>
+          }
+          method={"GET"}
+          onError={async (...eventArgs: any) => {
+            generateStateOnChangeProp($state, ["apiRequest", "error"]).apply(
+              null,
+              eventArgs
+            );
+          }}
+          onLoading={async (...eventArgs: any) => {
+            generateStateOnChangeProp($state, ["apiRequest", "loading"]).apply(
+              null,
+              eventArgs
+            );
+          }}
+          onSuccess={async (...eventArgs: any) => {
+            generateStateOnChangeProp($state, ["apiRequest", "data"]).apply(
+              null,
+              eventArgs
+            );
+          }}
+          ref={ref => {
+            $refs["apiRequest"] = ref;
+          }}
+          url={
+            "https://prod.miaan.ir/webhook/is_user_on/panel?segment=new_menu"
+          }
+        />
       </div>
     ) : null
   ) as React.ReactElement | null;
@@ -1115,7 +1249,8 @@ const PlasmicDescendants = {
     "backProps",
     "normProps",
     "sideEffect",
-    "checkUserPendingReserve"
+    "checkUserPendingReserve",
+    "apiRequest"
   ],
   mainStack: [
     "mainStack",
@@ -1171,7 +1306,8 @@ const PlasmicDescendants = {
   backProps: ["backProps"],
   normProps: ["normProps"],
   sideEffect: ["sideEffect"],
-  checkUserPendingReserve: ["checkUserPendingReserve"]
+  checkUserPendingReserve: ["checkUserPendingReserve"],
+  apiRequest: ["apiRequest"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -1202,6 +1338,7 @@ type NodeDefaultElementType = {
   normProps: "div";
   sideEffect: typeof SideEffect;
   checkUserPendingReserve: typeof ApiRequest;
+  apiRequest: typeof ApiRequest;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -1290,6 +1427,7 @@ export const PlasmicNavbarMnFooter = Object.assign(
     normProps: makeNodeComponent("normProps"),
     sideEffect: makeNodeComponent("sideEffect"),
     checkUserPendingReserve: makeNodeComponent("checkUserPendingReserve"),
+    apiRequest: makeNodeComponent("apiRequest"),
 
     // Metadata about props expected for PlasmicNavbarMnFooter
     internalVariantProps: PlasmicNavbarMnFooter__VariantProps,

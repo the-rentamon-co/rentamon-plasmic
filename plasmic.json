@@ -3470,6 +3470,20 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/menu-new-2"
+        },
+        {
+          "id": "efIN4y5V-79Z",
+          "name": "Properties2",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicProperties2.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/properties-2.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicProperties2.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/properties-2"
         }
       ],
       "icons": [
