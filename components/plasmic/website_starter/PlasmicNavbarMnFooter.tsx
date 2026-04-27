@@ -120,8 +120,8 @@ export type PlasmicNavbarMnFooter__OverridesType = {
   normProps?: Flex__<"div">;
   sideEffect?: Flex__<typeof SideEffect>;
   checkUserPendingReserve?: Flex__<typeof ApiRequest>;
-  apiRequest?: Flex__<typeof ApiRequest>;
-  apiRequest2?: Flex__<typeof ApiRequest>;
+  menu2?: Flex__<typeof ApiRequest>;
+  properties?: Flex__<typeof ApiRequest>;
 };
 
 export interface DefaultNavbarMnFooterProps {
@@ -231,52 +231,52 @@ function PlasmicNavbarMnFooter__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $q, $ctx }) => false
       },
       {
-        path: "apiRequest.data",
+        path: "menu2.data",
         type: "private",
         variableType: "object",
         initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
-        refName: "apiRequest"
+        refName: "menu2"
       },
       {
-        path: "apiRequest.error",
+        path: "menu2.error",
         type: "private",
         variableType: "object",
         initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
-        refName: "apiRequest"
+        refName: "menu2"
       },
       {
-        path: "apiRequest.loading",
+        path: "menu2.loading",
         type: "private",
         variableType: "boolean",
         initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
-        refName: "apiRequest"
+        refName: "menu2"
       },
       {
-        path: "apiRequest2.data",
+        path: "properties.data",
         type: "private",
         variableType: "object",
         initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
-        refName: "apiRequest2"
+        refName: "properties"
       },
       {
-        path: "apiRequest2.error",
+        path: "properties.error",
         type: "private",
         variableType: "object",
         initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
-        refName: "apiRequest2"
+        refName: "properties"
       },
       {
-        path: "apiRequest2.loading",
+        path: "properties.loading",
         type: "private",
         variableType: "boolean",
         initFunc: ({ $props, $state, $queries, $q, $ctx }) => undefined,
 
-        refName: "apiRequest2"
+        refName: "properties"
       }
     ],
     [$props, $ctx, $refs]
@@ -321,8 +321,7 @@ function PlasmicNavbarMnFooter__RenderFunc(props: {
               const $steps = {};
 
               $steps["goToتالار"] =
-                $props.navPage != "menu" &&
-                $state.apiRequest.data.status == false
+                $props.navPage != "menu" && !$state.menu2.data?.status
                   ? (() => {
                       const actionArgs = { destination: `/menu` };
                       return (({ destination }) => {
@@ -348,8 +347,7 @@ function PlasmicNavbarMnFooter__RenderFunc(props: {
               }
 
               $steps["goToHttpsMiaanIrMenuNew"] =
-                $props.navPage != "menu" &&
-                $state.apiRequest.data.status == true
+                $props.navPage != "menu" && $state.menu2.data.status == true
                   ? (() => {
                       const actionArgs = {
                         destination: "https://miaan.ir/menu-new/"
@@ -940,7 +938,7 @@ function PlasmicNavbarMnFooter__RenderFunc(props: {
 
               $steps["goToProperties"] =
                 $props.navPage != "properties" &&
-                $state.apiRequest.data.status == false
+                !$state.properties.data?.status
                   ? (() => {
                       const actionArgs = { destination: `/properties` };
                       return (({ destination }) => {
@@ -967,7 +965,7 @@ function PlasmicNavbarMnFooter__RenderFunc(props: {
 
               $steps["goToProperties2"] =
                 $props.navPage != "properties" &&
-                $state.apiRequest.data.status == true
+                $state.properties.data.status == true
                   ? (() => {
                       const actionArgs = { destination: `/properties-2` };
                       return (({ destination }) => {
@@ -1195,52 +1193,32 @@ function PlasmicNavbarMnFooter__RenderFunc(props: {
         />
 
         <ApiRequest
-          data-plasmic-name={"apiRequest"}
-          data-plasmic-override={overrides.apiRequest}
-          className={classNames("__wab_instance", sty.apiRequest)}
-          errorDisplay={
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text___3Tmyv
-              )}
-            >
-              {"Error fetching data"}
-            </div>
-          }
-          loadingDisplay={
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__exRq3
-              )}
-            >
-              {"Loading..."}
-            </div>
-          }
+          data-plasmic-name={"menu2"}
+          data-plasmic-override={overrides.menu2}
+          className={classNames("__wab_instance", sty.menu2)}
+          errorDisplay={null}
+          loadingDisplay={null}
           method={"GET"}
           onError={async (...eventArgs: any) => {
-            generateStateOnChangeProp($state, ["apiRequest", "error"]).apply(
+            generateStateOnChangeProp($state, ["menu2", "error"]).apply(
               null,
               eventArgs
             );
           }}
           onLoading={async (...eventArgs: any) => {
-            generateStateOnChangeProp($state, ["apiRequest", "loading"]).apply(
+            generateStateOnChangeProp($state, ["menu2", "loading"]).apply(
               null,
               eventArgs
             );
           }}
           onSuccess={async (...eventArgs: any) => {
-            generateStateOnChangeProp($state, ["apiRequest", "data"]).apply(
+            generateStateOnChangeProp($state, ["menu2", "data"]).apply(
               null,
               eventArgs
             );
           }}
           ref={ref => {
-            $refs["apiRequest"] = ref;
+            $refs["menu2"] = ref;
           }}
           url={
             "https://prod.miaan.ir/webhook/is_user_on/panel?segment=new_menu"
@@ -1248,52 +1226,32 @@ function PlasmicNavbarMnFooter__RenderFunc(props: {
         />
 
         <ApiRequest
-          data-plasmic-name={"apiRequest2"}
-          data-plasmic-override={overrides.apiRequest2}
-          className={classNames("__wab_instance", sty.apiRequest2)}
-          errorDisplay={
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__jmJ7K
-              )}
-            >
-              {"Error fetching data"}
-            </div>
-          }
-          loadingDisplay={
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__oz2Mf
-              )}
-            >
-              {"Loading..."}
-            </div>
-          }
+          data-plasmic-name={"properties"}
+          data-plasmic-override={overrides.properties}
+          className={classNames("__wab_instance", sty.properties)}
+          errorDisplay={null}
+          loadingDisplay={null}
           method={"GET"}
           onError={async (...eventArgs: any) => {
-            generateStateOnChangeProp($state, ["apiRequest2", "error"]).apply(
+            generateStateOnChangeProp($state, ["properties", "error"]).apply(
               null,
               eventArgs
             );
           }}
           onLoading={async (...eventArgs: any) => {
-            generateStateOnChangeProp($state, ["apiRequest2", "loading"]).apply(
+            generateStateOnChangeProp($state, ["properties", "loading"]).apply(
               null,
               eventArgs
             );
           }}
           onSuccess={async (...eventArgs: any) => {
-            generateStateOnChangeProp($state, ["apiRequest2", "data"]).apply(
+            generateStateOnChangeProp($state, ["properties", "data"]).apply(
               null,
               eventArgs
             );
           }}
           ref={ref => {
-            $refs["apiRequest2"] = ref;
+            $refs["properties"] = ref;
           }}
           url={
             "https://prod.miaan.ir/webhook/is_user_on/panel?segment=new_properties"
@@ -1331,8 +1289,8 @@ const PlasmicDescendants = {
     "normProps",
     "sideEffect",
     "checkUserPendingReserve",
-    "apiRequest",
-    "apiRequest2"
+    "menu2",
+    "properties"
   ],
   mainStack: [
     "mainStack",
@@ -1389,8 +1347,8 @@ const PlasmicDescendants = {
   normProps: ["normProps"],
   sideEffect: ["sideEffect"],
   checkUserPendingReserve: ["checkUserPendingReserve"],
-  apiRequest: ["apiRequest"],
-  apiRequest2: ["apiRequest2"]
+  menu2: ["menu2"],
+  properties: ["properties"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -1421,8 +1379,8 @@ type NodeDefaultElementType = {
   normProps: "div";
   sideEffect: typeof SideEffect;
   checkUserPendingReserve: typeof ApiRequest;
-  apiRequest: typeof ApiRequest;
-  apiRequest2: typeof ApiRequest;
+  menu2: typeof ApiRequest;
+  properties: typeof ApiRequest;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -1511,8 +1469,8 @@ export const PlasmicNavbarMnFooter = Object.assign(
     normProps: makeNodeComponent("normProps"),
     sideEffect: makeNodeComponent("sideEffect"),
     checkUserPendingReserve: makeNodeComponent("checkUserPendingReserve"),
-    apiRequest: makeNodeComponent("apiRequest"),
-    apiRequest2: makeNodeComponent("apiRequest2"),
+    menu2: makeNodeComponent("menu2"),
+    properties: makeNodeComponent("properties"),
 
     // Metadata about props expected for PlasmicNavbarMnFooter
     internalVariantProps: PlasmicNavbarMnFooter__VariantProps,

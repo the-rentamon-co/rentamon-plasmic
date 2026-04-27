@@ -60,6 +60,7 @@ import {
 } from "@plasmicapp/react-web/lib/host";
 
 import { Iframe } from "@plasmicpkgs/plasmic-basic-components";
+import NavbarMnFooter from "../../NavbarMnFooter"; // plasmic-import: y37kcAs9RXYg/component
 import { _useGlobalVariants } from "./plasmic"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectModule
 import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/styleTokensProvider
 
@@ -113,6 +114,7 @@ export const PlasmicProperties2__ArgProps = new Array<ArgPropType>();
 export type PlasmicProperties2__OverridesType = {
   root?: Flex__<"div">;
   iframe?: Flex__<typeof Iframe>;
+  navbarMnFooter?: Flex__<typeof NavbarMnFooter>;
 };
 
 export interface DefaultProperties2Props {}
@@ -196,6 +198,13 @@ function PlasmicProperties2__RenderFunc(props: {
             srcDoc={"<div><h3>Heading</h3><p>Example text...</p></div>"}
             useHtml={false}
           />
+
+          <NavbarMnFooter
+            data-plasmic-name={"navbarMnFooter"}
+            data-plasmic-override={overrides.navbarMnFooter}
+            className={classNames("__wab_instance", sty.navbarMnFooter)}
+            navPage={"properties"}
+          />
         </div>
       </div>
     </React.Fragment>
@@ -203,8 +212,9 @@ function PlasmicProperties2__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "iframe"],
-  iframe: ["iframe"]
+  root: ["root", "iframe", "navbarMnFooter"],
+  iframe: ["iframe"],
+  navbarMnFooter: ["navbarMnFooter"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -212,6 +222,7 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   iframe: typeof Iframe;
+  navbarMnFooter: typeof NavbarMnFooter;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -277,6 +288,7 @@ export const PlasmicProperties2 = Object.assign(
   {
     // Helper components rendering sub-elements
     iframe: makeNodeComponent("iframe"),
+    navbarMnFooter: makeNodeComponent("navbarMnFooter"),
 
     // Metadata about props expected for PlasmicProperties2
     internalVariantProps: PlasmicProperties2__VariantProps,
