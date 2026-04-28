@@ -321,7 +321,10 @@ function PlasmicNavbarMnFooter__RenderFunc(props: {
               const $steps = {};
 
               $steps["goToتالار"] =
-                $props.navPage != "menu" && !$state.menu2.data?.status
+                $props.navPage != "menu" &&
+                !(localStorage.getItem("is_new_menu") !== null
+                  ? localStorage.getItem("is_new_menu") === "true"
+                  : $state.menu2.data?.status)
                   ? (() => {
                       const actionArgs = { destination: `/menu` };
                       return (({ destination }) => {
@@ -347,7 +350,10 @@ function PlasmicNavbarMnFooter__RenderFunc(props: {
               }
 
               $steps["goToHttpsMiaanIrMenuNew"] =
-                $props.navPage != "menu" && $state.menu2.data.status == true
+                $props.navPage != "menu" &&
+                (localStorage.getItem("is_new_menu") !== null
+                  ? localStorage.getItem("is_new_menu") === "true"
+                  : $state.menu2.data.status)
                   ? (() => {
                       const actionArgs = {
                         destination: "https://miaan.ir/menu-new/"
@@ -938,7 +944,9 @@ function PlasmicNavbarMnFooter__RenderFunc(props: {
 
               $steps["goToProperties"] =
                 $props.navPage != "properties" &&
-                !$state.properties.data?.status
+                !(localStorage.getItem("is_new_property") !== null
+                  ? localStorage.getItem("is_new_property") === "true"
+                  : $state.properties.data?.status)
                   ? (() => {
                       const actionArgs = { destination: `/properties` };
                       return (({ destination }) => {
@@ -965,7 +973,9 @@ function PlasmicNavbarMnFooter__RenderFunc(props: {
 
               $steps["goToProperties2"] =
                 $props.navPage != "properties" &&
-                $state.properties.data.status == true
+                (localStorage.getItem("is_new_property") !== null
+                  ? localStorage.getItem("is_new_property") === "true"
+                  : $state.properties.data.status)
                   ? (() => {
                       const actionArgs = { destination: `/properties-2` };
                       return (({ destination }) => {
@@ -1216,6 +1226,33 @@ function PlasmicNavbarMnFooter__RenderFunc(props: {
               null,
               eventArgs
             );
+
+            (async data => {
+              const $steps = {};
+
+              $steps["runCode"] = true
+                ? (() => {
+                    const actionArgs = {
+                      customFunction: async () => {
+                        return localStorage.setItem(
+                          "is_new_menu",
+                          $state.menu2.data.status
+                        );
+                      }
+                    };
+                    return (({ customFunction }) => {
+                      return customFunction();
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["runCode"] != null &&
+                typeof $steps["runCode"] === "object" &&
+                typeof $steps["runCode"].then === "function"
+              ) {
+                $steps["runCode"] = await $steps["runCode"];
+              }
+            }).apply(null, eventArgs);
           }}
           ref={ref => {
             $refs["menu2"] = ref;
@@ -1249,6 +1286,33 @@ function PlasmicNavbarMnFooter__RenderFunc(props: {
               null,
               eventArgs
             );
+
+            (async data => {
+              const $steps = {};
+
+              $steps["runCode"] = true
+                ? (() => {
+                    const actionArgs = {
+                      customFunction: async () => {
+                        return localStorage.setItem(
+                          "is_new_property",
+                          $state.properties.data.status
+                        );
+                      }
+                    };
+                    return (({ customFunction }) => {
+                      return customFunction();
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["runCode"] != null &&
+                typeof $steps["runCode"] === "object" &&
+                typeof $steps["runCode"].then === "function"
+              ) {
+                $steps["runCode"] = await $steps["runCode"];
+              }
+            }).apply(null, eventArgs);
           }}
           ref={ref => {
             $refs["properties"] = ref;
