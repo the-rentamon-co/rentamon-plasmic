@@ -277,6 +277,7 @@ function Plasmicتالارجدید__RenderFunc(props: {
             data-plasmic-name={"navbarMnFooter"}
             data-plasmic-override={overrides.navbarMnFooter}
             className={classNames("__wab_instance", sty.navbarMnFooter)}
+            navPage={"menu"}
           />
         </div>
       </div>
