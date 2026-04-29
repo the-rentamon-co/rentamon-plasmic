@@ -5805,7 +5805,8 @@ function PlasmicBookings__RenderFunc(props: {
                                           let total_price_toman;
                                           if (
                                             website === "mihmansho" ||
-                                            website === "homsa"
+                                            website === "homsa" ||
+                                            net_price == 0
                                           ) {
                                             return "نامشخص";
                                           }
@@ -5929,7 +5930,8 @@ function PlasmicBookings__RenderFunc(props: {
                                           let total_price_toman;
                                           if (
                                             website === "mihmansho" ||
-                                            website === "homsa"
+                                            website === "homsa" ||
+                                            net_price == 0
                                           ) {
                                             return "نامشخص";
                                           }
@@ -6170,6 +6172,9 @@ function PlasmicBookings__RenderFunc(props: {
                                           let price =
                                             $state.booking.data.reservations
                                               .net_price;
+                                          if (price == null) {
+                                            return "نامشخص";
+                                          }
                                           let real_price =
                                             new Intl.NumberFormat(
                                               "fa-IR"
@@ -6226,6 +6231,9 @@ function PlasmicBookings__RenderFunc(props: {
                                           let price =
                                             $state.booking.data.reservations
                                               .net_price;
+                                          if (price == null) {
+                                            return "نامشخص";
+                                          }
                                           let real_price =
                                             new Intl.NumberFormat(
                                               "fa-IR"
