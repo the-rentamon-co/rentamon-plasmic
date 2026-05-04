@@ -3009,7 +3009,7 @@ function PlasmicBookings__RenderFunc(props: {
                             const actionArgs = {
                               args: [
                                 undefined,
-                                "\u0627\u06cc\u0646 \u06a9\u062f \u0631\u0632\u0631\u0648 \u0634\u0645\u0627 \u062f\u0631 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\u0647",
+                                "\u06a9\u062f \u0631\u0632\u0631\u0648 \u0634\u0645\u0627 \u062f\u0631 \u0645\u06cc\u0627\u0646",
                                 "top-center"
                               ]
                             };

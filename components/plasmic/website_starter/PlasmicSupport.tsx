@@ -154,7 +154,7 @@ export type PlasmicSupport__OverridesType = {
   telegram?: Flex__<"div">;
   icon8?: Flex__<"div">;
   title8?: Flex__<"div">;
-  eitaa?: Flex__<"div">;
+  bale?: Flex__<"div">;
   icon9?: Flex__<"div">;
   title9?: Flex__<"div">;
   infoEmail?: Flex__<"div">;
@@ -1007,11 +1007,11 @@ function PlasmicSupport__RenderFunc(props: {
                       className={classNames(projectcss.all, sty.freeBox__rcAYr)}
                     >
                       <div
-                        data-plasmic-name={"eitaa"}
-                        data-plasmic-override={overrides.eitaa}
+                        data-plasmic-name={"bale"}
+                        data-plasmic-override={overrides.bale}
                         className={classNames(
                           projectcss.all,
-                          sty.eitaa,
+                          sty.bale,
                           "clickable"
                         )}
                         onClick={async event => {
@@ -1022,7 +1022,7 @@ function PlasmicSupport__RenderFunc(props: {
                                 const actionArgs = {
                                   customFunction: async () => {
                                     return window.open(
-                                      "https://ble.ir/miaan_support_bot",
+                                      "https://web.bale.ai/chat?uid=1932483964",
                                       "_blank"
                                     );
                                   }
@@ -1370,7 +1370,7 @@ const PlasmicDescendants = {
     "telegram",
     "icon8",
     "title8",
-    "eitaa",
+    "bale",
     "icon9",
     "title9",
     "infoEmail",
@@ -1413,7 +1413,7 @@ const PlasmicDescendants = {
     "telegram",
     "icon8",
     "title8",
-    "eitaa",
+    "bale",
     "icon9",
     "title9",
     "infoEmail",
@@ -1446,7 +1446,7 @@ const PlasmicDescendants = {
     "telegram",
     "icon8",
     "title8",
-    "eitaa",
+    "bale",
     "icon9",
     "title9",
     "infoEmail",
@@ -1473,7 +1473,7 @@ const PlasmicDescendants = {
     "telegram",
     "icon8",
     "title8",
-    "eitaa",
+    "bale",
     "icon9",
     "title9",
     "infoEmail",
@@ -1496,7 +1496,7 @@ const PlasmicDescendants = {
   telegram: ["telegram", "icon8", "title8"],
   icon8: ["icon8"],
   title8: ["title8"],
-  eitaa: ["eitaa", "icon9", "title9"],
+  bale: ["bale", "icon9", "title9"],
   icon9: ["icon9"],
   title9: ["title9"],
   infoEmail: ["infoEmail", "icon11", "title11", "caption11"],
@@ -1543,7 +1543,7 @@ type NodeDefaultElementType = {
   telegram: "div";
   icon8: "div";
   title8: "div";
-  eitaa: "div";
+  bale: "div";
   icon9: "div";
   title9: "div";
   infoEmail: "div";
@@ -1648,7 +1648,7 @@ export const PlasmicSupport = Object.assign(
     telegram: makeNodeComponent("telegram"),
     icon8: makeNodeComponent("icon8"),
     title8: makeNodeComponent("title8"),
-    eitaa: makeNodeComponent("eitaa"),
+    bale: makeNodeComponent("bale"),
     icon9: makeNodeComponent("icon9"),
     title9: makeNodeComponent("title9"),
     infoEmail: makeNodeComponent("infoEmail"),
