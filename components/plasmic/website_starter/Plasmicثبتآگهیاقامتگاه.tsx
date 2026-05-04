@@ -1352,7 +1352,12 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                           const actionArgs = {
                             args: [
                               "POST",
-                              "https://mkm.miaan.ir/webhook/notif-l-y-p"
+                              "https://mkm.miaan.ir/webhook/host-visit-logs",
+                              undefined,
+                              {
+                                page_slug: "miaan.ir/list_your_property",
+                                session_id: 1
+                              }
                             ]
                           };
                           return $globalActions["Fragment.apiRequest"]?.apply(

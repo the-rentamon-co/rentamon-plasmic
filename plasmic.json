@@ -6368,6 +6368,21 @@
           "id": "oWMiy6WfTUU_",
           "name": "website.png 2",
           "filePath": "../public/plasmic/website_starter/images/websitePng2.png"
+        },
+        {
+          "id": "PUrjNcqRXp3-",
+          "name": "bale-black.png",
+          "filePath": "../public/plasmic/website_starter/images/baleBlackPng.png"
+        },
+        {
+          "id": "mH9QCnPawRf6",
+          "name": "bale-color.png",
+          "filePath": "../public/plasmic/website_starter/images/baleColorPng.png"
+        },
+        {
+          "id": "wLLVo7XAWhL5",
+          "name": "bale-white.svg",
+          "filePath": "../public/plasmic/website_starter/images/baleWhiteSvg.svg"
         }
       ],
       "indirect": false,

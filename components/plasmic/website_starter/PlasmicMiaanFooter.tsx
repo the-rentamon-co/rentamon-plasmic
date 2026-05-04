@@ -85,7 +85,7 @@ export type PlasmicMiaanFooter__OverridesType = {
   embedHtml?: Flex__<typeof Embed>;
   _1st?: Flex__<"div">;
   top?: Flex__<"div">;
-  eitaa?: Flex__<"div">;
+  bale?: Flex__<"div">;
   instagram?: Flex__<"div">;
   twitter?: Flex__<"div">;
   telegram?: Flex__<"div">;
@@ -294,9 +294,9 @@ function PlasmicMiaanFooter__RenderFunc(props: {
         className={classNames(projectcss.all, sty.top)}
       >
         <div
-          data-plasmic-name={"eitaa"}
-          data-plasmic-override={overrides.eitaa}
-          className={classNames(projectcss.all, sty.eitaa)}
+          data-plasmic-name={"bale"}
+          data-plasmic-override={overrides.bale}
+          className={classNames(projectcss.all, sty.bale)}
           onClick={async event => {
             const $steps = {};
 
@@ -304,9 +304,9 @@ function PlasmicMiaanFooter__RenderFunc(props: {
               ? (() => {
                   const actionArgs = {
                     customFunction: async () => {
-                      return (() => {
-                        return window.open("https://eitaa.org/s/miaan_ir/#");
-                      })();
+                      return window.open(
+                        "https://web.bale.ai/chat?uid=4495841472#"
+                      );
                     }
                   };
                   return (({ customFunction }) => {
@@ -334,10 +334,10 @@ function PlasmicMiaanFooter__RenderFunc(props: {
             displayWidth={"100%"}
             loading={"lazy"}
             src={{
-              src: "/plasmic/website_starter/images/image52.png",
-              fullWidth: 120,
-              fullHeight: 120,
-              aspectRatio: undefined
+              src: "/plasmic/website_starter/images/baleWhiteSvg.svg",
+              fullWidth: 1000,
+              fullHeight: 999.63,
+              aspectRatio: 1.00037
             }}
           />
         </div>
@@ -799,7 +799,7 @@ const PlasmicDescendants = {
     "embedHtml",
     "_1st",
     "top",
-    "eitaa",
+    "bale",
     "instagram",
     "twitter",
     "telegram",
@@ -808,8 +808,8 @@ const PlasmicDescendants = {
   mid: ["mid", "embedHtml"],
   embedHtml: ["embedHtml"],
   _1st: ["_1st"],
-  top: ["top", "eitaa", "instagram", "twitter", "telegram"],
-  eitaa: ["eitaa"],
+  top: ["top", "bale", "instagram", "twitter", "telegram"],
+  bale: ["bale"],
   instagram: ["instagram"],
   twitter: ["twitter"],
   telegram: ["telegram"],
@@ -824,7 +824,7 @@ type NodeDefaultElementType = {
   embedHtml: typeof Embed;
   _1st: "div";
   top: "div";
-  eitaa: "div";
+  bale: "div";
   instagram: "div";
   twitter: "div";
   telegram: "div";
@@ -897,7 +897,7 @@ export const PlasmicMiaanFooter = Object.assign(
     embedHtml: makeNodeComponent("embedHtml"),
     _1st: makeNodeComponent("_1st"),
     top: makeNodeComponent("top"),
-    eitaa: makeNodeComponent("eitaa"),
+    bale: makeNodeComponent("bale"),
     instagram: makeNodeComponent("instagram"),
     twitter: makeNodeComponent("twitter"),
     telegram: makeNodeComponent("telegram"),

@@ -1336,9 +1336,7 @@ function PlasmicHomepage__RenderFunc(props: {
                   >
                     {hasVariant(globalVariants, "screen", "smallMobile")
                       ? "\u0648\u0636\u0639\u06cc\u062a \u062a\u0642\u0648\u06cc\u0645 \u062e\u0648\u062f\u06a9\u0627\u0631 \u0628\u0647\u200c\u0631\u0648\u0632\u0647 \u0645\u06cc\u200c\u0634\u0647"
-                      : hasVariant(globalVariants, "screen", "mobile")
-                        ? "\u0648\u0636\u0639\u06cc\u062a \u062a\u0642\u0648\u06cc\u0645 \u062e\u0648\u062f\u06a9\u0627\u0631 \u0628\u0647\u200c\u0631\u0648\u0632\u0647 \u0645\u06cc\u200c\u0634\u0647"
-                        : "\u06a9\u0627\u0631\u0647\u0627 \u062e\u0648\u062f\u06a9\u0627\u0631 \u0627\u0646\u062c\u0627\u0645 \u0645\u06cc\u200c\u0634\u0647"}
+                      : "\u06a9\u0627\u0631\u0647\u0627 \u062e\u0648\u062f\u06a9\u0627\u0631 \u0627\u0646\u062c\u0627\u0645 \u0645\u06cc\u200c\u0634\u0647"}
                   </div>
                 </div>
               </div>
