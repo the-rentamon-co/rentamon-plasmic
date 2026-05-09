@@ -1459,6 +1459,174 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                     "\u062b\u0628\u062a \u0645\u0634\u062e\u0635\u0627\u062a \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
                   }
                 </Button>
+                <Button
+                  className={classNames("__wab_instance", sty.button__xOQa)}
+                  onClick={async event => {
+                    const $steps = {};
+
+                    $steps["invokeGlobalAction"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            args: [
+                              "POST",
+                              "https://mkm.miaan.ir/webhook/host-visit-logs",
+                              undefined,
+                              {
+                                page_slug: "miaan.ir/list_your_property",
+                                session_id: 1
+                              }
+                            ]
+                          };
+                          return $globalActions["Fragment.apiRequest"]?.apply(
+                            null,
+                            [...actionArgs.args]
+                          );
+                        })()
+                      : undefined;
+                    if (
+                      $steps["invokeGlobalAction"] != null &&
+                      typeof $steps["invokeGlobalAction"] === "object" &&
+                      typeof $steps["invokeGlobalAction"].then === "function"
+                    ) {
+                      $steps["invokeGlobalAction"] =
+                        await $steps["invokeGlobalAction"];
+                    }
+
+                    $steps["runCode"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            customFunction: async () => {
+                              return (() => {
+                                function setCookie(name, value, hours) {
+                                  let expires = "";
+                                  if (hours) {
+                                    const date = new Date();
+                                    date.setTime(
+                                      date.getTime() + hours * 60 * 60 * 1000
+                                    );
+                                    expires = "; expires=" + date.toUTCString();
+                                  }
+                                  document.cookie =
+                                    name +
+                                    "=" +
+                                    (value || "") +
+                                    expires +
+                                    "; path=/";
+                                }
+                                return setCookie("source", "miaanbor", 2);
+                              })();
+                            }
+                          };
+                          return (({ customFunction }) => {
+                            return customFunction();
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["runCode"] != null &&
+                      typeof $steps["runCode"] === "object" &&
+                      typeof $steps["runCode"].then === "function"
+                    ) {
+                      $steps["runCode"] = await $steps["runCode"];
+                    }
+
+                    $steps[
+                      "goToHttpAuthMiaanIrLoginCallbackUrlHttpsMianborMiaanIrForceLegacyLogoutTrue"
+                    ] = (() => {
+                      if (document.cookie.includes("access_token=")) {
+                        return true;
+                      }
+                      return false;
+                    })()
+                      ? (() => {
+                          const actionArgs = {
+                            destination:
+                              "http://auth.miaan.ir/login?callbackUrl=https://mianbor.miaan.ir&forceLegacyLogout=true"
+                          };
+                          return (({ destination }) => {
+                            if (
+                              typeof destination === "string" &&
+                              destination.startsWith("#")
+                            ) {
+                              document
+                                .getElementById(destination.substr(1))
+                                .scrollIntoView({ behavior: "smooth" });
+                            } else {
+                              __nextRouter?.push(destination);
+                            }
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps[
+                        "goToHttpAuthMiaanIrLoginCallbackUrlHttpsMianborMiaanIrForceLegacyLogoutTrue"
+                      ] != null &&
+                      typeof $steps[
+                        "goToHttpAuthMiaanIrLoginCallbackUrlHttpsMianborMiaanIrForceLegacyLogoutTrue"
+                      ] === "object" &&
+                      typeof $steps[
+                        "goToHttpAuthMiaanIrLoginCallbackUrlHttpsMianborMiaanIrForceLegacyLogoutTrue"
+                      ].then === "function"
+                    ) {
+                      $steps[
+                        "goToHttpAuthMiaanIrLoginCallbackUrlHttpsMianborMiaanIrForceLegacyLogoutTrue"
+                      ] =
+                        await $steps[
+                          "goToHttpAuthMiaanIrLoginCallbackUrlHttpsMianborMiaanIrForceLegacyLogoutTrue"
+                        ];
+                    }
+
+                    $steps[
+                      "goToHttpAuthMiaanIrLoginCallbackUrlHttpsMianborMiaanIrPropertiesForceLegacyLogoutTrue"
+                    ] = (() => {
+                      if (!document.cookie.includes("access_token=")) {
+                        return true;
+                      }
+                      return false;
+                    })()
+                      ? (() => {
+                          const actionArgs = {
+                            destination:
+                              "http://auth.miaan.ir/login?callbackUrl=https://mianbor.miaan.ir/properties&forceLegacyLogout=true"
+                          };
+                          return (({ destination }) => {
+                            if (
+                              typeof destination === "string" &&
+                              destination.startsWith("#")
+                            ) {
+                              document
+                                .getElementById(destination.substr(1))
+                                .scrollIntoView({ behavior: "smooth" });
+                            } else {
+                              __nextRouter?.push(destination);
+                            }
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps[
+                        "goToHttpAuthMiaanIrLoginCallbackUrlHttpsMianborMiaanIrPropertiesForceLegacyLogoutTrue"
+                      ] != null &&
+                      typeof $steps[
+                        "goToHttpAuthMiaanIrLoginCallbackUrlHttpsMianborMiaanIrPropertiesForceLegacyLogoutTrue"
+                      ] === "object" &&
+                      typeof $steps[
+                        "goToHttpAuthMiaanIrLoginCallbackUrlHttpsMianborMiaanIrPropertiesForceLegacyLogoutTrue"
+                      ].then === "function"
+                    ) {
+                      $steps[
+                        "goToHttpAuthMiaanIrLoginCallbackUrlHttpsMianborMiaanIrPropertiesForceLegacyLogoutTrue"
+                      ] =
+                        await $steps[
+                          "goToHttpAuthMiaanIrLoginCallbackUrlHttpsMianborMiaanIrPropertiesForceLegacyLogoutTrue"
+                        ];
+                    }
+                  }}
+                >
+                  {
+                    "\u062b\u0628\u062a \u0645\u0634\u062e\u0635\u0627\u062a \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
+                  }
+                </Button>
               </div>
             </div>
             <div

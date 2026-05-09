@@ -727,6 +727,15 @@ function Plasmicمشکلاتاجارهروزانهدرایران__RenderFunc(pro
                       <React.Fragment>{""}</React.Fragment>
                     </React.Fragment>
                   </div>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__why5
+                    )}
+                  >
+                    {"Width\r\nBase\r\nstretch"}
+                  </div>
                 </div>
                 <div
                   className={classNames(
