@@ -12185,33 +12185,6 @@ function PlasmicBookings__RenderFunc(props: {
                                 await $steps["updateCancelManualReserveOpen"];
                             }
 
-                            $steps["checkIfReserveBeCancelShowToast"] = true
-                              ? (() => {
-                                  const actionArgs = {
-                                    args: [
-                                      "error",
-                                      "\u0631\u0632\u0631\u0648  \u0644\u063a\u0648 \u0634\u062f\u0647 \u0627\u0633\u062a",
-                                      "top-center"
-                                    ]
-                                  };
-                                  return $globalActions[
-                                    "Fragment.showToast"
-                                  ]?.apply(null, [...actionArgs.args]);
-                                })()
-                              : undefined;
-                            if (
-                              $steps["checkIfReserveBeCancelShowToast"] !=
-                                null &&
-                              typeof $steps[
-                                "checkIfReserveBeCancelShowToast"
-                              ] === "object" &&
-                              typeof $steps["checkIfReserveBeCancelShowToast"]
-                                .then === "function"
-                            ) {
-                              $steps["checkIfReserveBeCancelShowToast"] =
-                                await $steps["checkIfReserveBeCancelShowToast"];
-                            }
-
                             $steps["updateUnblockFor"] = true
                               ? (() => {
                                   const actionArgs = {
