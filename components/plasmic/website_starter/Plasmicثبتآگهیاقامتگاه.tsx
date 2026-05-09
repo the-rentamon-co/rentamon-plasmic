@@ -1414,12 +1414,12 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                     }
 
                     $steps[
-                      "goToHttpAuthMiaanIrLoginCallbackUrlHttpsMianborMiaanIrForceLegacyLogoutTrue"
+                      "goToHttpAuthMiaanIrLoginCallbackUrlHttpsMianborMiaanIrSourceLandingForceLegacyLogoutTrue"
                     ] = true
                       ? (() => {
                           const actionArgs = {
                             destination:
-                              "http://auth.miaan.ir/login?callbackUrl=https://mianbor.miaan.ir&forceLegacyLogout=true"
+                              "http://auth.miaan.ir/login?callbackUrl=https://mianbor.miaan.ir/?source=landing&forceLegacyLogout=true"
                           };
                           return (({ destination }) => {
                             if (
@@ -1437,20 +1437,20 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                       : undefined;
                     if (
                       $steps[
-                        "goToHttpAuthMiaanIrLoginCallbackUrlHttpsMianborMiaanIrForceLegacyLogoutTrue"
+                        "goToHttpAuthMiaanIrLoginCallbackUrlHttpsMianborMiaanIrSourceLandingForceLegacyLogoutTrue"
                       ] != null &&
                       typeof $steps[
-                        "goToHttpAuthMiaanIrLoginCallbackUrlHttpsMianborMiaanIrForceLegacyLogoutTrue"
+                        "goToHttpAuthMiaanIrLoginCallbackUrlHttpsMianborMiaanIrSourceLandingForceLegacyLogoutTrue"
                       ] === "object" &&
                       typeof $steps[
-                        "goToHttpAuthMiaanIrLoginCallbackUrlHttpsMianborMiaanIrForceLegacyLogoutTrue"
+                        "goToHttpAuthMiaanIrLoginCallbackUrlHttpsMianborMiaanIrSourceLandingForceLegacyLogoutTrue"
                       ].then === "function"
                     ) {
                       $steps[
-                        "goToHttpAuthMiaanIrLoginCallbackUrlHttpsMianborMiaanIrForceLegacyLogoutTrue"
+                        "goToHttpAuthMiaanIrLoginCallbackUrlHttpsMianborMiaanIrSourceLandingForceLegacyLogoutTrue"
                       ] =
                         await $steps[
-                          "goToHttpAuthMiaanIrLoginCallbackUrlHttpsMianborMiaanIrForceLegacyLogoutTrue"
+                          "goToHttpAuthMiaanIrLoginCallbackUrlHttpsMianborMiaanIrSourceLandingForceLegacyLogoutTrue"
                         ];
                     }
                   }}
