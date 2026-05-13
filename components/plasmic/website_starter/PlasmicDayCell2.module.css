@@ -1809,7 +1809,7 @@
 @media (max-width: 500px) {
   .freeBoxdayStatus_lastDaySmartBookingPast__vb8YkTgeof {
     width: 100%;
-    height: 40%;
+    height: 35%;
     max-width: 100%;
     column-gap: 0px;
     flex-direction: column;
@@ -1865,16 +1865,16 @@
 .freeBox___7HH4 {
   display: flex;
   flex-direction: column;
-  position: sticky;
   width: 100%;
   height: auto;
   max-width: 100%;
   justify-content: flex-start;
   align-items: center;
-  top: 10px;
-  left: 0px;
-  z-index: 1;
   background: #3d5afe;
+  z-index: 1;
+  left: 0px;
+  top: 10px;
+  position: sticky;
   min-width: 0;
   border-radius: 30px;
   padding: 0px;
@@ -1887,10 +1887,10 @@
   justify-content: flex-start;
   align-items: center;
   overflow: visible;
-  position: relative;
+  max-width: 100%;
   left: auto;
   top: auto;
-  max-width: 100%;
+  position: relative;
   column-gap: 0px;
   min-width: 0;
   display: flex;
@@ -1924,9 +1924,6 @@
 }
 @media (max-width: 500px) {
   .freeBoxdayStatus_reservedV2___7HH475Ot {
-    position: relative;
-    left: auto;
-    top: auto;
     align-items: flex-start;
     justify-content: center;
     background: #3d5afe;
@@ -1935,6 +1932,9 @@
     max-width: 100px;
     column-gap: 0px;
     flex-direction: column;
+    left: auto;
+    top: auto;
+    position: relative;
     min-width: 0;
     min-height: 0;
     border-radius: 10px;
@@ -1957,11 +1957,11 @@
   justify-content: flex-start;
   align-items: center;
   overflow: visible;
-  position: relative;
-  left: auto;
-  top: auto;
   max-width: 100%;
   column-gap: 0px;
+  left: auto;
+  top: auto;
+  position: relative;
   min-width: 0;
   display: flex;
   border-radius: 30px;
@@ -2006,9 +2006,6 @@
 }
 @media (max-width: 500px) {
   .freeBoxdayStatus_passedReservedV2___7HH4ISdsA {
-    position: relative;
-    left: auto;
-    top: auto;
     background: #3d5afe80;
     width: 100%;
     height: 100%;
@@ -2017,6 +2014,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+    left: auto;
+    top: auto;
+    position: relative;
     min-width: 0;
     min-height: 0;
     border-radius: 10px;
@@ -2047,12 +2047,12 @@
   justify-content: flex-start;
   align-items: flex-start;
   overflow: visible;
-  position: relative;
-  left: auto;
-  top: auto;
   max-width: none;
   column-gap: 0px;
   min-height: 22px;
+  left: auto;
+  top: auto;
+  position: relative;
   min-width: 0;
   display: flex;
   border-radius: 0px 30px 30px 0px;
@@ -2114,9 +2114,6 @@
 }
 @media (max-width: 500px) {
   .freeBoxdayStatus_reservedSmartBooking___7HH43RSg2 {
-    position: relative;
-    left: auto;
-    top: auto;
     align-items: flex-start;
     justify-content: center;
     background: #3d5afe;
@@ -2125,6 +2122,9 @@
     max-width: 100px;
     column-gap: 0px;
     flex-direction: column;
+    left: auto;
+    top: auto;
+    position: relative;
     min-width: 0;
     min-height: 0;
     border-radius: 10px;
@@ -2163,12 +2163,12 @@
   justify-content: flex-start;
   align-items: flex-start;
   overflow: visible;
-  position: relative;
-  left: auto;
-  top: auto;
   max-width: none;
   column-gap: 0px;
   min-height: 22px;
+  left: auto;
+  top: auto;
+  position: relative;
   min-width: 0;
   display: flex;
   border-radius: 0px 30px 30px 0px;
@@ -2232,9 +2232,6 @@
 }
 @media (max-width: 500px) {
   .freeBoxdayStatus_reservedSmartBookingPast___7HH48HsPz {
-    position: relative;
-    left: auto;
-    top: auto;
     align-items: flex-start;
     justify-content: center;
     background: #3d5afe99;
@@ -2243,6 +2240,9 @@
     max-width: 100px;
     column-gap: 0px;
     flex-direction: column;
+    left: auto;
+    top: auto;
+    position: relative;
     min-width: 0;
     min-height: 0;
     border-radius: 10px;
