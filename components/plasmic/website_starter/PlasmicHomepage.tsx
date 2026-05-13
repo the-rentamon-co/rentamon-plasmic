@@ -574,7 +574,9 @@ function PlasmicHomepage__RenderFunc(props: {
                     className={classNames(
                       projectcss.all,
                       sty.introCalendarLeft,
-                      "fadein"
+                      hasVariant(globalVariants, "screen", "smallMobile")
+                        ? ""
+                        : "fadein"
                     )}
                   >
                     <div

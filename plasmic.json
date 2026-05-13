@@ -2987,20 +2987,6 @@
           "componentType": "component"
         },
         {
-          "id": "u3GQtj6pGCDB",
-          "name": "Bookings2",
-          "type": "managed",
-          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
-          "renderModuleFilePath": "plasmic/website_starter/PlasmicBookings2.tsx",
-          "importSpec": {
-            "modulePath": "../src/pages/bookings.tsx"
-          },
-          "cssFilePath": "plasmic/website_starter/PlasmicBookings2.module.css",
-          "scheme": "blackbox",
-          "componentType": "page",
-          "path": "/bookings"
-        },
-        {
           "id": "d1R-Hq66izsr",
           "name": "NewPage3",
           "type": "managed",
@@ -3484,6 +3470,48 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/properties-2"
+        },
+        {
+          "id": "u3GQtj6pGCDB",
+          "name": "Bookings3",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicBookings3.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/bookings.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicBookings3.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/bookings"
+        },
+        {
+          "id": "F7Ze7Mc__gmB",
+          "name": "BookingsNeo",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicBookingsNeo.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/bookings-neo.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicBookingsNeo.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/bookings-neo"
+        },
+        {
+          "id": "uU4Rcfd72wDU",
+          "name": "BookingsDetailsNeo",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicBookingsDetailsNeo.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/bookings-neo/[booking_id].tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicBookingsDetailsNeo.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/bookings-neo/[booking_id]"
         }
       ],
       "icons": [

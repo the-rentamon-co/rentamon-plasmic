@@ -2,27 +2,27 @@
 // This file is owned by you, feel free to edit as you see fit.
 import * as React from "react";
 import { PageParamsProvider as PageParamsProvider__ } from "@plasmicapp/react-web/lib/host";
-import GlobalContextsProvider from "../../components/plasmic/website_starter/PlasmicGlobalContextsProvider";
-import { StyleTokensProvider } from "../../components/plasmic/website_starter/PlasmicStyleTokensProvider";
+import GlobalContextsProvider from "../../../components/plasmic/website_starter/PlasmicGlobalContextsProvider";
+import { StyleTokensProvider } from "../../../components/plasmic/website_starter/PlasmicStyleTokensProvider";
 
-import { PlasmicBookings3 } from "../../components/plasmic/website_starter/PlasmicBookings3";
+import { PlasmicBookingsDetailsNeo } from "../../../components/plasmic/website_starter/PlasmicBookingsDetailsNeo";
 import { useRouter } from "next/router";
 import { PlasmicQueryDataProvider } from "@plasmicapp/react-web/lib/query";
 
-function Bookings3() {
-  // Use PlasmicBookings3 to render this component as it was
+function BookingsDetailsNeo() {
+  // Use PlasmicBookingsDetailsNeo to render this component as it was
   // designed in Plasmic, by activating the appropriate variants,
   // attaching the appropriate event handlers, etc.  You
   // can also install whatever React hooks you need here to manage state or
   // fetch data.
   //
-  // Props you can pass into PlasmicBookings3 are:
+  // Props you can pass into PlasmicBookingsDetailsNeo are:
   // 1. Variants you want to activate,
   // 2. Contents for slots you want to fill,
   // 3. Overrides for any named node in the component to attach behavior and data,
   // 4. Props to set on the root node.
   //
-  // By default, PlasmicBookings3 is wrapped by your project's global
+  // By default, PlasmicBookingsDetailsNeo is wrapped by your project's global
   // variant context providers. These wrappers may be moved to
   // Next.js Custom App component
   // (https://nextjs.org/docs/advanced-features/custom-app).
@@ -36,7 +36,7 @@ function Bookings3() {
           query={useRouter()?.query}
         >
           <StyleTokensProvider>
-            <PlasmicBookings3 />
+            <PlasmicBookingsDetailsNeo />
           </StyleTokensProvider>
         </PageParamsProvider__>
       </PlasmicQueryDataProvider>
@@ -44,4 +44,4 @@ function Bookings3() {
   );
 }
 
-export default Bookings3;
+export default BookingsDetailsNeo;
