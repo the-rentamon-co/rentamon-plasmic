@@ -975,21 +975,16 @@ function PlasmicBookingsDetailsNeo__RenderFunc(props: {
                         const actionArgs = {
                           customFunction: async () => {
                             return (() => {
-                              console.log(document.referrer);
-                              const isMiaan =
-                                window.location.hostname.includes("miaan.ir");
-                              const baseUrl = isMiaan
-                                ? "https://miaan.ir"
-                                : "https://rentamon.com";
-                              if (
-                                document.referrer ===
-                                `${baseUrl}/bookings/#today/`
-                              ) {
-                                window.close();
+                              const previousPage = document.referrer;
+                              if (previousPage) {
+                                return window.top.location.replace(
+                                  previousPage
+                                );
+                              } else {
+                                return window.top.location.replace(
+                                  "https://panel.miaan.ir/panel/"
+                                );
                               }
-                              return window.location.replace(
-                                `${baseUrl}/panel/`
-                              );
                             })();
                           }
                         };
