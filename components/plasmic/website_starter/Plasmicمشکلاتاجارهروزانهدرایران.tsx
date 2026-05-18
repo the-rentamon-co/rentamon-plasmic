@@ -210,8 +210,6 @@ function Plasmicمشکلاتاجارهروزانهدرایران__RenderFunc(pro
   const refsRef = React.useRef({});
   const $refs = refsRef.current;
 
-  const globalVariants = _useGlobalVariants();
-
   const stateSpecs: Parameters<typeof useDollarState>[0] = React.useMemo(
     () => [
       {
@@ -223,6 +221,9 @@ function Plasmicمشکلاتاجارهروزانهدرایران__RenderFunc(pro
     ],
     [$props, $ctx, $refs]
   );
+
+  const globalVariants = _useGlobalVariants();
+
   const $state = useDollarState(stateSpecs, {
     $props,
     $ctx,
@@ -726,15 +727,6 @@ function Plasmicمشکلاتاجارهروزانهدرایران__RenderFunc(pro
                       }
                       <React.Fragment>{""}</React.Fragment>
                     </React.Fragment>
-                  </div>
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__why5
-                    )}
-                  >
-                    {"Width\r\nBase\r\nstretch"}
                   </div>
                 </div>
                 <div

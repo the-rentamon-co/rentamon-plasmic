@@ -139,7 +139,6 @@
   width: 100%;
   height: auto;
   max-width: 100%;
-  padding-top: 12px;
   font-size: 17px;
   line-height: 1.8;
   text-align: center;
@@ -153,6 +152,7 @@
   user-select: text;
   text-decoration-line: none;
   text-overflow: clip;
+  padding-top: 12px;
   min-width: 0;
 }
 @media (max-width: 500px) {
@@ -2628,23 +2628,6 @@
 }
 @media (max-width: 350px) {
   .li__i3DkL {
-    font-size: 14px;
-    color: #444444;
-  }
-}
-.li__x5QaD {
-  line-height: 2;
-  padding-top: 9px;
-  color: #444444;
-}
-@media (max-width: 500px) {
-  .li__x5QaD {
-    line-height: 2;
-    padding-top: 10px;
-  }
-}
-@media (max-width: 350px) {
-  .li__x5QaD {
     font-size: 14px;
     color: #444444;
   }

@@ -329,28 +329,7 @@ function Plasmicامکاناتنسخهیپیشرفتهرنتامون__RenderFunc
                   <React.Fragment>{""}</React.Fragment>
                 </React.Fragment>
               ) : (
-                <React.Fragment>
-                  <React.Fragment>
-                    {
-                      "\u0646\u0633\u062e\u0647\u200c\u06cc \u067e\u06cc\u0634\u0631\u0641\u062a\u0647 \u0645\u06cc\u0627\u0646 "
-                    }
-                  </React.Fragment>
-                  <span
-                    className={
-                      "plasmic_default__all plasmic_default__span plasmic_default__span__7SNMk"
-                    }
-                    style={{ fontWeight: 500 }}
-                  >
-                    {
-                      "(\u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0633\u0627\u0628\u0642)"
-                    }
-                  </span>
-                  <React.Fragment>
-                    {
-                      " \u0628\u0627 \u0648\u06cc\u0698\u06af\u06cc\u200c\u0647\u0627\u06cc \u06a9\u0627\u0631\u0628\u0631\u062f\u06cc"
-                    }
-                  </React.Fragment>
-                </React.Fragment>
+                "\u0646\u0633\u062e\u0647\u200c\u06cc \u067e\u06cc\u0634\u0631\u0641\u062a\u0647 \u0645\u06cc\u0627\u0646 \u0628\u0627 \u0648\u06cc\u0698\u06af\u06cc\u200c\u0647\u0627\u06cc \u06a9\u0627\u0631\u0628\u0631\u062f\u06cc"
               )}
             </h1>
             <div

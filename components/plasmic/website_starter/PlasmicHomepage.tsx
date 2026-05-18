@@ -260,10 +260,6 @@ function PlasmicHomepage__RenderFunc(props: {
   const refsRef = React.useRef({});
   const $refs = refsRef.current;
 
-  const globalVariants = _useGlobalVariants();
-
-  const $globalActions = useGlobalActions?.();
-
   const stateSpecs: Parameters<typeof useDollarState>[0] = React.useMemo(
     () => [
       {
@@ -332,6 +328,11 @@ function PlasmicHomepage__RenderFunc(props: {
     ],
     [$props, $ctx, $refs]
   );
+
+  const globalVariants = _useGlobalVariants();
+
+  const $globalActions = useGlobalActions?.();
+
   const $state = useDollarState(stateSpecs, {
     $props,
     $ctx,
@@ -674,7 +675,7 @@ function PlasmicHomepage__RenderFunc(props: {
                       )}
                     >
                       {
-                        "\u0634\u0631\u0648\u0639 \u0628\u0647 \u06a9\u0627\u0631"
+                        "\u0634\u0631\u0648\u0639 \u0628\u0647 \u06a9\u0627\u0631 (\u0631\u0627\u06cc\u06af\u0627\u0646)"
                       }
                     </div>
                   </div>
@@ -689,7 +690,7 @@ function PlasmicHomepage__RenderFunc(props: {
                       )}
                     >
                       {
-                        "\u06f2\u06f0 \u0631\u0632\u0631\u0648 \u0627\u0648\u0644 \u0631\u0627\u06cc\u06af\u0627\u0646"
+                        "\u06f2\u06f0 \u0631\u0632\u0631\u0648 \u0627\u0648\u0644 \u0628\u062f\u0648\u0646 \u06a9\u0627\u0631\u0645\u0632\u062f"
                       }
                     </div>
                   </div>
@@ -1940,7 +1941,9 @@ function PlasmicHomepage__RenderFunc(props: {
                     ``
                   )}
                 >
-                  {"\u0634\u0631\u0648\u0639 \u0628\u0647 \u06a9\u0627\u0631"}
+                  {
+                    "\u0634\u0631\u0648\u0639 \u0628\u0647 \u06a9\u0627\u0631 (\u0631\u0627\u06cc\u06af\u0627\u0646)"
+                  }
                 </div>
               </div>
               <div
@@ -1951,7 +1954,7 @@ function PlasmicHomepage__RenderFunc(props: {
                 )}
               >
                 {
-                  "\u06f2\u06f0 \u0631\u0632\u0631\u0648 \u0627\u0648\u0644 \u0631\u0627\u06cc\u06af\u0627\u0646"
+                  "\u06f2\u06f0 \u0631\u0632\u0631\u0648 \u0627\u0648\u0644 \u0628\u062f\u0648\u0646 \u06a9\u0627\u0631\u0645\u0632\u062f"
                 }
               </div>
             </div>

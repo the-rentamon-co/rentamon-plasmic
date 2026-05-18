@@ -267,87 +267,8 @@
     padding-left: 18px;
   }
 }
-.htmlVideo__ucWOb:global(.__wab_instance) {
-  width: 640px;
-  height: auto;
-  max-width: 100%;
-  object-fit: cover;
-  border-radius: 40px;
-}
-@media (max-width: 500px) {
-  .htmlVideo__ucWOb:global(.__wab_instance) {
-    width: 100%;
-    min-width: 0;
-    border-radius: 50px;
-  }
-}
-.blueIcon {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  width: 100%;
-  height: auto;
-  justify-content: center;
-  align-items: center;
-  min-width: 0;
-  padding: 0px 8px 8px;
-}
-@media (max-width: 1200px) {
-  .blueIcon {
-    row-gap: 10px;
-    column-gap: 0px;
-    padding: 8px;
-  }
-}
-@media (max-width: 500px) {
-  .blueIcon {
-    padding-top: 0px;
-    align-items: center;
-    justify-content: flex-start;
-    max-width: 100%;
-    padding-right: 0px;
-    padding-left: 0px;
-  }
-}
-@media (max-width: 350px) {
-  .blueIcon {
-    padding-right: 0px;
-    padding-left: 0px;
-  }
-}
-.introCalendarRight9 {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  justify-content: center;
-  align-items: center;
-  background: #ffffff;
-  min-width: 0;
-  padding: 8px;
-}
-@media (max-width: 1200px) {
-  .introCalendarRight9 {
-    padding: 0px;
-  }
-}
-@media (max-width: 500px) {
-  .introCalendarRight9 {
-    padding: 0px 0px 8px;
-  }
-}
-@media (max-width: 350px) {
-  .introCalendarRight9 {
-    padding-right: 0px;
-    padding-left: 0px;
-    padding-top: 11px;
-    background: #ffffff;
-  }
-}
 .htmlVideo:global(.__wab_instance) {
-  width: 300px;
+  width: 640px;
   height: auto;
   max-width: 100%;
   object-fit: cover;
@@ -357,53 +278,7 @@
   .htmlVideo:global(.__wab_instance) {
     width: 100%;
     min-width: 0;
-    border-radius: 0px;
-  }
-}
-.بعدازبروزرسانیآیکونبرنامهآبیمیشه {
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  font-size: 17px;
-  text-align: center;
-  font-weight: 500;
-  min-width: 0;
-  padding: 12px;
-}
-@media (max-width: 500px) {
-  .بعدازبروزرسانیآیکونبرنامهآبیمیشه {
-    padding-top: 14px;
-  }
-}
-@media (max-width: 350px) {
-  .بعدازبروزرسانیآیکونبرنامهآبیمیشه {
-    font-size: 16px;
-    padding-top: 18px;
-  }
-}
-.بعدازبروزرسانیآیکونبرنامهآبیمیشه2 {
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  font-size: 16px;
-  text-align: center;
-  font-weight: 400;
-  min-width: 0;
-  padding: 0px 12px 21px;
-}
-@media (max-width: 500px) {
-  .بعدازبروزرسانیآیکونبرنامهآبیمیشه2 {
-    line-height: 1.8;
-    padding: 0px 16px 12px;
-  }
-}
-@media (max-width: 350px) {
-  .بعدازبروزرسانیآیکونبرنامهآبیمیشه2 {
-    font-size: 16px;
-    padding-top: 0px;
-    line-height: 1.8;
+    border-radius: 50px;
   }
 }
 .link {
@@ -437,87 +312,6 @@
   .link {
     padding-top: 3px;
   }
-}
-.freeBox__whTcg {
-  animation: none;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  justify-content: flex-start;
-  align-items: center;
-  min-width: 0;
-  padding: 8px 8px 0px;
-}
-@media (max-width: 1200px) {
-  .freeBox__whTcg {
-    animation: none;
-  }
-}
-@media (max-width: 500px) {
-  .freeBox__whTcg {
-    animation: none;
-    padding-top: 7px;
-    padding-bottom: 0px;
-  }
-}
-@media (max-width: 350px) {
-  .freeBox__whTcg {
-    animation: none;
-  }
-}
-.img__xvDJ {
-  animation: none;
-  object-fit: cover;
-  max-width: 10%;
-}
-.img__xvDJ > picture > img {
-  object-fit: cover;
-}
-@media (max-width: 500px) {
-  .img__xvDJ {
-    animation: none;
-    max-width: 16%;
-  }
-}
-.title {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  justify-content: center;
-  align-items: center;
-  min-width: 0;
-  padding: 10px 8px;
-}
-@media (max-width: 500px) {
-  .title {
-    padding-top: 0px;
-  }
-}
-.freeBox__ja6Zn {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  justify-content: center;
-  align-items: center;
-  min-width: 0;
-  padding: 16px 8px 8px;
-}
-.h2__iRfac {
-  text-align: center;
-  font-size: 20px;
-  font-weight: 600;
-  padding-top: 0px;
-  letter-spacing: 0px;
-  line-height: 2;
 }
 .downloadLinks {
   display: flex;
@@ -1328,7 +1122,7 @@
   min-width: 0;
   padding: 8px;
 }
-.h2__yo4O8 {
+.h2 {
   text-align: right;
   font-size: 17px;
   width: 70%;
@@ -1339,13 +1133,13 @@
   letter-spacing: 0px;
 }
 @media (max-width: 500px) {
-  .h2__yo4O8 {
+  .h2 {
     width: 90%;
     text-align: right;
   }
 }
 @media (max-width: 350px) {
-  .h2__yo4O8 {
+  .h2 {
     width: 100%;
     font-size: 16px;
   }

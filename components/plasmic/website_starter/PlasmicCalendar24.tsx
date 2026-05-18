@@ -274,10 +274,6 @@ function PlasmicCalendar24__RenderFunc(props: {
   const refsRef = React.useRef({});
   const $refs = refsRef.current;
 
-  const globalVariants = _useGlobalVariants();
-
-  const $globalActions = useGlobalActions?.();
-
   const stateSpecs: Parameters<typeof useDollarState>[0] = React.useMemo(
     () => [
       {
@@ -955,6 +951,11 @@ function PlasmicCalendar24__RenderFunc(props: {
     ],
     [$props, $ctx, $refs]
   );
+
+  const globalVariants = _useGlobalVariants();
+
+  const $globalActions = useGlobalActions?.();
+
   const $state = useDollarState(stateSpecs, {
     $props,
     $ctx,
@@ -2549,7 +2550,7 @@ function PlasmicCalendar24__RenderFunc(props: {
                               yesterdayDate.getTime() / 1000
                             );
                             const minTimestamp = yesterdayTimestamp;
-                            const maxTimestamp = 1784764799;
+                            const maxTimestamp = 1787430600;
                             function getDayClass(dateProps, calendarData) {
                               const dayIndex = dateProps.date.day - 1;
                               const calendarItem = calendarData[dayIndex] || {};
@@ -2684,7 +2685,7 @@ function PlasmicCalendar24__RenderFunc(props: {
                               yesterdayDate.getTime() / 1000
                             );
                             const minTimestamp = yesterdayTimestamp;
-                            const maxTimestamp = 1784764799;
+                            const maxTimestamp = 1787430600;
                             function getDayClass(dateProps, calendarData) {
                               const dayIndex = dateProps.date.day - 1;
                               const calendarItem = calendarData[dayIndex] || {};

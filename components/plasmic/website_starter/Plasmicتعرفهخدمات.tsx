@@ -217,8 +217,6 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
   const refsRef = React.useRef({});
   const $refs = refsRef.current;
 
-  const globalVariants = _useGlobalVariants();
-
   const stateSpecs: Parameters<typeof useDollarState>[0] = React.useMemo(
     () => [
       {
@@ -313,6 +311,9 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
     ],
     [$props, $ctx, $refs]
   );
+
+  const globalVariants = _useGlobalVariants();
+
   const $state = useDollarState(stateSpecs, {
     $props,
     $ctx,
@@ -393,7 +394,7 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
                 )}
               >
                 {
-                  "\u0645\u06cc\u0627\u0646 (\u0631\u0646\u062a\u0627\u0645\u0648\u0646) \u0627\u0646\u062c\u0627\u0645 \u06a9\u0627\u0631\u0647\u0627\u06cc \u0645\u0631\u0628\u0648\u0637 \u0628\u0647 \u0627\u062f\u0627\u0631\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0631\u0648 \u062f\u0647\u200c\u0647\u0627 \u0628\u0631\u0627\u0628\u0631 \u0633\u0627\u062f\u0647\u200c\u062a\u0631 \u0645\u06cc\u200c\u06a9\u0646\u0647\u060c \u062a\u0627 \u0634\u0645\u0627 \u0641\u0631\u0635\u062a \u0628\u06cc\u0634\u062a\u0631\u06cc \u0628\u0631\u0627\u06cc \u0641\u06a9\u0631 \u0648 \u06af\u0633\u062a\u0631\u0634 \u06a9\u0633\u0628\u200c\u0648\u06a9\u0627\u0631 \u062f\u0627\u0634\u062a\u0647 \u0628\u0627\u0634\u06cc."
+                  "\u0645\u06cc\u0627\u0646 \u0627\u0646\u062c\u0627\u0645 \u06a9\u0627\u0631\u0647\u0627\u06cc \u0645\u0631\u0628\u0648\u0637 \u0628\u0647 \u0627\u062f\u0627\u0631\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0631\u0648 \u062f\u0647\u200c\u0647\u0627 \u0628\u0631\u0627\u0628\u0631 \u0633\u0627\u062f\u0647\u200c\u062a\u0631 \u0645\u06cc\u200c\u06a9\u0646\u0647\u060c \u062a\u0627 \u0634\u0645\u0627 \u0641\u0631\u0635\u062a \u0628\u06cc\u0634\u062a\u0631\u06cc \u0628\u0631\u0627\u06cc \u0641\u06a9\u0631 \u0648 \u06af\u0633\u062a\u0631\u0634 \u06a9\u0633\u0628\u200c\u0648\u06a9\u0627\u0631 \u062f\u0627\u0634\u062a\u0647 \u0628\u0627\u0634\u06cc."
                 }
               </div>
             </div>
@@ -894,7 +895,7 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
                       )}
                     >
                       {
-                        "\u067e\u0627\u0633\u0628\u0627\u0646 (\u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0645\u0648\u062c\u0648\u062f\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627)"
+                        "\u067e\u0627\u0633\u0628\u0627\u0646 (\u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0645\u0648\u062c\u0648\u062f\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u0648 \u062f\u06cc\u0648\u0627\u0631)"
                       }
                     </div>
                   </Checkbox>
@@ -1147,21 +1148,8 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
                                         <React.Fragment>
                                           <React.Fragment>
                                             {
-                                              "\u06f1\u06f0\u066a \u062a\u062e\u0641\u06cc\u0641 \u0628\u0631\u0627\u06cc \u0645\u06cc\u0632\u0628\u0627\u0646\u0627\u0646\u06cc \u06a9\u0647 "
+                                              "\u06f5\u066a \u062a\u062e\u0641\u06cc\u0641 \u0628\u0631\u0627\u06cc \u0645\u06cc\u0632\u0628\u0627\u0646\u0627\u0646\u06cc \u06a9\u0647 "
                                             }
-                                          </React.Fragment>
-                                          <span
-                                            className={
-                                              "plasmic_default__all plasmic_default__span plasmic_default__span__7SNMk"
-                                            }
-                                            style={{
-                                              textDecorationLine: "underline"
-                                            }}
-                                          >
-                                            {"\u06f5"}
-                                          </span>
-                                          <React.Fragment>
-                                            {" \u0627\u0644\u06cc "}
                                           </React.Fragment>
                                           <span
                                             className={
@@ -1176,63 +1164,6 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
                                           <React.Fragment>
                                             {
                                               " \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0627\u0631\u0646\u062f."
-                                            }
-                                          </React.Fragment>
-                                        </React.Fragment>
-                                      )}
-                                    </li>
-                                    <li
-                                      className={classNames(
-                                        projectcss.all,
-                                        projectcss.li,
-                                        projectcss.li__7SNMk,
-                                        projectcss.__wab_text,
-                                        sty.li__x5QaD
-                                      )}
-                                    >
-                                      {hasVariant(
-                                        globalVariants,
-                                        "screen",
-                                        "smallMobile"
-                                      ) ? (
-                                        <React.Fragment>
-                                          <React.Fragment>
-                                            {"\u0628\u06cc\u0634 \u0627\u0632 "}
-                                          </React.Fragment>
-                                          <span
-                                            className={
-                                              "plasmic_default__all plasmic_default__span plasmic_default__span__7SNMk"
-                                            }
-                                            style={{
-                                              textDecorationLine: "underline"
-                                            }}
-                                          >
-                                            {"\u06f1\u06f0"}
-                                          </span>
-                                          <React.Fragment>
-                                            {
-                                              " \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0627\u0631\u06cc\u062f\u061f \u062a\u0645\u0627\u0633 \u0628\u06af\u06cc\u0631\u06cc\u062f."
-                                            }
-                                          </React.Fragment>
-                                        </React.Fragment>
-                                      ) : (
-                                        <React.Fragment>
-                                          <React.Fragment>
-                                            {"\u0628\u06cc\u0634 \u0627\u0632 "}
-                                          </React.Fragment>
-                                          <span
-                                            className={
-                                              "plasmic_default__all plasmic_default__span plasmic_default__span__7SNMk"
-                                            }
-                                            style={{
-                                              textDecorationLine: "underline"
-                                            }}
-                                          >
-                                            {"\u06f1\u06f0"}
-                                          </span>
-                                          <React.Fragment>
-                                            {
-                                              " \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0627\u0631\u06cc\u062f\u061f \u062a\u0645\u0627\u0633 \u0628\u06af\u06cc\u0631\u06cc\u062f."
                                             }
                                           </React.Fragment>
                                         </React.Fragment>
@@ -1307,21 +1238,8 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
                                         <React.Fragment>
                                           <React.Fragment>
                                             {
-                                              "\u06f1\u06f0\u066a \u062a\u062e\u0641\u06cc\u0641 \u0628\u0631\u0627\u06cc \u0645\u06cc\u0632\u0628\u0627\u0646\u0627\u0646\u06cc \u06a9\u0647 "
+                                              "\u06f5\u066a \u062a\u062e\u0641\u06cc\u0641 \u0628\u0631\u0627\u06cc \u0645\u06cc\u0632\u0628\u0627\u0646\u0627\u0646\u06cc \u06a9\u0647 "
                                             }
-                                          </React.Fragment>
-                                          <span
-                                            className={
-                                              "plasmic_default__all plasmic_default__span plasmic_default__span__7SNMk"
-                                            }
-                                            style={{
-                                              textDecorationLine: "underline"
-                                            }}
-                                          >
-                                            {"\u06f5"}
-                                          </span>
-                                          <React.Fragment>
-                                            {" \u0627\u0644\u06cc "}
                                           </React.Fragment>
                                           <span
                                             className={
@@ -1336,63 +1254,6 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
                                           <React.Fragment>
                                             {
                                               " \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0627\u0631\u0646\u062f."
-                                            }
-                                          </React.Fragment>
-                                        </React.Fragment>
-                                      )}
-                                    </li>
-                                    <li
-                                      className={classNames(
-                                        projectcss.all,
-                                        projectcss.li,
-                                        projectcss.li__7SNMk,
-                                        projectcss.__wab_text,
-                                        sty.li__x5QaD
-                                      )}
-                                    >
-                                      {hasVariant(
-                                        globalVariants,
-                                        "screen",
-                                        "smallMobile"
-                                      ) ? (
-                                        <React.Fragment>
-                                          <React.Fragment>
-                                            {"\u0628\u06cc\u0634 \u0627\u0632 "}
-                                          </React.Fragment>
-                                          <span
-                                            className={
-                                              "plasmic_default__all plasmic_default__span plasmic_default__span__7SNMk"
-                                            }
-                                            style={{
-                                              textDecorationLine: "underline"
-                                            }}
-                                          >
-                                            {"\u06f1\u06f0"}
-                                          </span>
-                                          <React.Fragment>
-                                            {
-                                              " \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0627\u0631\u06cc\u062f\u061f \u062a\u0645\u0627\u0633 \u0628\u06af\u06cc\u0631\u06cc\u062f."
-                                            }
-                                          </React.Fragment>
-                                        </React.Fragment>
-                                      ) : (
-                                        <React.Fragment>
-                                          <React.Fragment>
-                                            {"\u0628\u06cc\u0634 \u0627\u0632 "}
-                                          </React.Fragment>
-                                          <span
-                                            className={
-                                              "plasmic_default__all plasmic_default__span plasmic_default__span__7SNMk"
-                                            }
-                                            style={{
-                                              textDecorationLine: "underline"
-                                            }}
-                                          >
-                                            {"\u06f1\u06f0"}
-                                          </span>
-                                          <React.Fragment>
-                                            {
-                                              " \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0627\u0631\u06cc\u062f\u061f \u062a\u0645\u0627\u0633 \u0628\u06af\u06cc\u0631\u06cc\u062f."
                                             }
                                           </React.Fragment>
                                         </React.Fragment>
@@ -1498,21 +1359,8 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
                                         <React.Fragment>
                                           <React.Fragment>
                                             {
-                                              "\u06f1\u06f0\u066a \u062a\u062e\u0641\u06cc\u0641 \u0628\u0631\u0627\u06cc \u0645\u06cc\u0632\u0628\u0627\u0646\u0627\u0646\u06cc \u06a9\u0647 "
+                                              "\u06f5\u066a \u062a\u062e\u0641\u06cc\u0641 \u0628\u0631\u0627\u06cc \u0645\u06cc\u0632\u0628\u0627\u0646\u0627\u0646\u06cc \u06a9\u0647 "
                                             }
-                                          </React.Fragment>
-                                          <span
-                                            className={
-                                              "plasmic_default__all plasmic_default__span plasmic_default__span__7SNMk"
-                                            }
-                                            style={{
-                                              textDecorationLine: "underline"
-                                            }}
-                                          >
-                                            {"\u06f5"}
-                                          </span>
-                                          <React.Fragment>
-                                            {" \u0627\u0644\u06cc "}
                                           </React.Fragment>
                                           <span
                                             className={
@@ -1527,63 +1375,6 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
                                           <React.Fragment>
                                             {
                                               " \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0627\u0631\u0646\u062f."
-                                            }
-                                          </React.Fragment>
-                                        </React.Fragment>
-                                      )}
-                                    </li>
-                                    <li
-                                      className={classNames(
-                                        projectcss.all,
-                                        projectcss.li,
-                                        projectcss.li__7SNMk,
-                                        projectcss.__wab_text,
-                                        sty.li__x5QaD
-                                      )}
-                                    >
-                                      {hasVariant(
-                                        globalVariants,
-                                        "screen",
-                                        "smallMobile"
-                                      ) ? (
-                                        <React.Fragment>
-                                          <React.Fragment>
-                                            {"\u0628\u06cc\u0634 \u0627\u0632 "}
-                                          </React.Fragment>
-                                          <span
-                                            className={
-                                              "plasmic_default__all plasmic_default__span plasmic_default__span__7SNMk"
-                                            }
-                                            style={{
-                                              textDecorationLine: "underline"
-                                            }}
-                                          >
-                                            {"\u06f1\u06f0"}
-                                          </span>
-                                          <React.Fragment>
-                                            {
-                                              " \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0627\u0631\u06cc\u062f\u061f \u062a\u0645\u0627\u0633 \u0628\u06af\u06cc\u0631\u06cc\u062f."
-                                            }
-                                          </React.Fragment>
-                                        </React.Fragment>
-                                      ) : (
-                                        <React.Fragment>
-                                          <React.Fragment>
-                                            {"\u0628\u06cc\u0634 \u0627\u0632 "}
-                                          </React.Fragment>
-                                          <span
-                                            className={
-                                              "plasmic_default__all plasmic_default__span plasmic_default__span__7SNMk"
-                                            }
-                                            style={{
-                                              textDecorationLine: "underline"
-                                            }}
-                                          >
-                                            {"\u06f1\u06f0"}
-                                          </span>
-                                          <React.Fragment>
-                                            {
-                                              " \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0627\u0631\u06cc\u062f\u061f \u062a\u0645\u0627\u0633 \u0628\u06af\u06cc\u0631\u06cc\u062f."
                                             }
                                           </React.Fragment>
                                         </React.Fragment>
@@ -1658,21 +1449,8 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
                                         <React.Fragment>
                                           <React.Fragment>
                                             {
-                                              "\u06f1\u06f0\u066a \u062a\u062e\u0641\u06cc\u0641 \u0628\u0631\u0627\u06cc \u0645\u06cc\u0632\u0628\u0627\u0646\u0627\u0646\u06cc \u06a9\u0647 "
+                                              "\u06f5\u066a \u062a\u062e\u0641\u06cc\u0641 \u0628\u0631\u0627\u06cc \u0645\u06cc\u0632\u0628\u0627\u0646\u0627\u0646\u06cc \u06a9\u0647 "
                                             }
-                                          </React.Fragment>
-                                          <span
-                                            className={
-                                              "plasmic_default__all plasmic_default__span plasmic_default__span__7SNMk"
-                                            }
-                                            style={{
-                                              textDecorationLine: "underline"
-                                            }}
-                                          >
-                                            {"\u06f5"}
-                                          </span>
-                                          <React.Fragment>
-                                            {" \u0627\u0644\u06cc "}
                                           </React.Fragment>
                                           <span
                                             className={
@@ -1687,63 +1465,6 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
                                           <React.Fragment>
                                             {
                                               " \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0627\u0631\u0646\u062f."
-                                            }
-                                          </React.Fragment>
-                                        </React.Fragment>
-                                      )}
-                                    </li>
-                                    <li
-                                      className={classNames(
-                                        projectcss.all,
-                                        projectcss.li,
-                                        projectcss.li__7SNMk,
-                                        projectcss.__wab_text,
-                                        sty.li__x5QaD
-                                      )}
-                                    >
-                                      {hasVariant(
-                                        globalVariants,
-                                        "screen",
-                                        "smallMobile"
-                                      ) ? (
-                                        <React.Fragment>
-                                          <React.Fragment>
-                                            {"\u0628\u06cc\u0634 \u0627\u0632 "}
-                                          </React.Fragment>
-                                          <span
-                                            className={
-                                              "plasmic_default__all plasmic_default__span plasmic_default__span__7SNMk"
-                                            }
-                                            style={{
-                                              textDecorationLine: "underline"
-                                            }}
-                                          >
-                                            {"\u06f1\u06f0"}
-                                          </span>
-                                          <React.Fragment>
-                                            {
-                                              " \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0627\u0631\u06cc\u062f\u061f \u062a\u0645\u0627\u0633 \u0628\u06af\u06cc\u0631\u06cc\u062f."
-                                            }
-                                          </React.Fragment>
-                                        </React.Fragment>
-                                      ) : (
-                                        <React.Fragment>
-                                          <React.Fragment>
-                                            {"\u0628\u06cc\u0634 \u0627\u0632 "}
-                                          </React.Fragment>
-                                          <span
-                                            className={
-                                              "plasmic_default__all plasmic_default__span plasmic_default__span__7SNMk"
-                                            }
-                                            style={{
-                                              textDecorationLine: "underline"
-                                            }}
-                                          >
-                                            {"\u06f1\u06f0"}
-                                          </span>
-                                          <React.Fragment>
-                                            {
-                                              " \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0627\u0631\u06cc\u062f\u061f \u062a\u0645\u0627\u0633 \u0628\u06af\u06cc\u0631\u06cc\u062f."
                                             }
                                           </React.Fragment>
                                         </React.Fragment>
@@ -1849,21 +1570,8 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
                                         <React.Fragment>
                                           <React.Fragment>
                                             {
-                                              "\u06f1\u06f0\u066a \u062a\u062e\u0641\u06cc\u0641 \u0628\u0631\u0627\u06cc \u0645\u06cc\u0632\u0628\u0627\u0646\u0627\u0646\u06cc \u06a9\u0647 "
+                                              "\u06f5\u066a \u062a\u062e\u0641\u06cc\u0641 \u0628\u0631\u0627\u06cc \u0645\u06cc\u0632\u0628\u0627\u0646\u0627\u0646\u06cc \u06a9\u0647 "
                                             }
-                                          </React.Fragment>
-                                          <span
-                                            className={
-                                              "plasmic_default__all plasmic_default__span plasmic_default__span__7SNMk"
-                                            }
-                                            style={{
-                                              textDecorationLine: "underline"
-                                            }}
-                                          >
-                                            {"\u06f5"}
-                                          </span>
-                                          <React.Fragment>
-                                            {" \u0627\u0644\u06cc "}
                                           </React.Fragment>
                                           <span
                                             className={
@@ -1878,63 +1586,6 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
                                           <React.Fragment>
                                             {
                                               " \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0627\u0631\u0646\u062f."
-                                            }
-                                          </React.Fragment>
-                                        </React.Fragment>
-                                      )}
-                                    </li>
-                                    <li
-                                      className={classNames(
-                                        projectcss.all,
-                                        projectcss.li,
-                                        projectcss.li__7SNMk,
-                                        projectcss.__wab_text,
-                                        sty.li__x5QaD
-                                      )}
-                                    >
-                                      {hasVariant(
-                                        globalVariants,
-                                        "screen",
-                                        "smallMobile"
-                                      ) ? (
-                                        <React.Fragment>
-                                          <React.Fragment>
-                                            {"\u0628\u06cc\u0634 \u0627\u0632 "}
-                                          </React.Fragment>
-                                          <span
-                                            className={
-                                              "plasmic_default__all plasmic_default__span plasmic_default__span__7SNMk"
-                                            }
-                                            style={{
-                                              textDecorationLine: "underline"
-                                            }}
-                                          >
-                                            {"\u06f1\u06f0"}
-                                          </span>
-                                          <React.Fragment>
-                                            {
-                                              " \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0627\u0631\u06cc\u062f\u061f \u062a\u0645\u0627\u0633 \u0628\u06af\u06cc\u0631\u06cc\u062f."
-                                            }
-                                          </React.Fragment>
-                                        </React.Fragment>
-                                      ) : (
-                                        <React.Fragment>
-                                          <React.Fragment>
-                                            {"\u0628\u06cc\u0634 \u0627\u0632 "}
-                                          </React.Fragment>
-                                          <span
-                                            className={
-                                              "plasmic_default__all plasmic_default__span plasmic_default__span__7SNMk"
-                                            }
-                                            style={{
-                                              textDecorationLine: "underline"
-                                            }}
-                                          >
-                                            {"\u06f1\u06f0"}
-                                          </span>
-                                          <React.Fragment>
-                                            {
-                                              " \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0627\u0631\u06cc\u062f\u061f \u062a\u0645\u0627\u0633 \u0628\u06af\u06cc\u0631\u06cc\u062f."
                                             }
                                           </React.Fragment>
                                         </React.Fragment>
@@ -2009,21 +1660,8 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
                                         <React.Fragment>
                                           <React.Fragment>
                                             {
-                                              "\u06f1\u06f0\u066a \u062a\u062e\u0641\u06cc\u0641 \u0628\u0631\u0627\u06cc \u0645\u06cc\u0632\u0628\u0627\u0646\u0627\u0646\u06cc \u06a9\u0647 "
+                                              "\u06f5\u066a \u062a\u062e\u0641\u06cc\u0641 \u0628\u0631\u0627\u06cc \u0645\u06cc\u0632\u0628\u0627\u0646\u0627\u0646\u06cc \u06a9\u0647 "
                                             }
-                                          </React.Fragment>
-                                          <span
-                                            className={
-                                              "plasmic_default__all plasmic_default__span plasmic_default__span__7SNMk"
-                                            }
-                                            style={{
-                                              textDecorationLine: "underline"
-                                            }}
-                                          >
-                                            {"\u06f5"}
-                                          </span>
-                                          <React.Fragment>
-                                            {" \u0627\u0644\u06cc "}
                                           </React.Fragment>
                                           <span
                                             className={
@@ -2038,63 +1676,6 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
                                           <React.Fragment>
                                             {
                                               " \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0627\u0631\u0646\u062f."
-                                            }
-                                          </React.Fragment>
-                                        </React.Fragment>
-                                      )}
-                                    </li>
-                                    <li
-                                      className={classNames(
-                                        projectcss.all,
-                                        projectcss.li,
-                                        projectcss.li__7SNMk,
-                                        projectcss.__wab_text,
-                                        sty.li__x5QaD
-                                      )}
-                                    >
-                                      {hasVariant(
-                                        globalVariants,
-                                        "screen",
-                                        "smallMobile"
-                                      ) ? (
-                                        <React.Fragment>
-                                          <React.Fragment>
-                                            {"\u0628\u06cc\u0634 \u0627\u0632 "}
-                                          </React.Fragment>
-                                          <span
-                                            className={
-                                              "plasmic_default__all plasmic_default__span plasmic_default__span__7SNMk"
-                                            }
-                                            style={{
-                                              textDecorationLine: "underline"
-                                            }}
-                                          >
-                                            {"\u06f1\u06f0"}
-                                          </span>
-                                          <React.Fragment>
-                                            {
-                                              " \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0627\u0631\u06cc\u062f\u061f \u062a\u0645\u0627\u0633 \u0628\u06af\u06cc\u0631\u06cc\u062f."
-                                            }
-                                          </React.Fragment>
-                                        </React.Fragment>
-                                      ) : (
-                                        <React.Fragment>
-                                          <React.Fragment>
-                                            {"\u0628\u06cc\u0634 \u0627\u0632 "}
-                                          </React.Fragment>
-                                          <span
-                                            className={
-                                              "plasmic_default__all plasmic_default__span plasmic_default__span__7SNMk"
-                                            }
-                                            style={{
-                                              textDecorationLine: "underline"
-                                            }}
-                                          >
-                                            {"\u06f1\u06f0"}
-                                          </span>
-                                          <React.Fragment>
-                                            {
-                                              " \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0627\u0631\u06cc\u062f\u061f \u062a\u0645\u0627\u0633 \u0628\u06af\u06cc\u0631\u06cc\u062f."
                                             }
                                           </React.Fragment>
                                         </React.Fragment>
@@ -2510,7 +2091,7 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
                   )}
                 >
                   {
-                    "\u062a\u0623\u062b\u06cc\u0631 \u0645\u06cc\u0627\u0646 (\u0631\u0646\u062a\u0627\u0645\u0648\u0646) \u0628\u0631 \u062f\u0631\u0622\u0645\u062f\u0632\u0627\u06cc\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
+                    "\u062a\u0623\u062b\u06cc\u0631 \u0645\u06cc\u0627\u0646 \u0628\u0631 \u062f\u0631\u0622\u0645\u062f\u0632\u0627\u06cc\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
                   }
                 </div>
                 <div
