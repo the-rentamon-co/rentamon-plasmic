@@ -3512,6 +3512,76 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/bookings-neo/[booking_id]"
+        },
+        {
+          "id": "y6vZNEghOmca",
+          "name": "ConnectionsNeo",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicConnectionsNeo.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/connections-neo.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicConnectionsNeo.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/connections-neo"
+        },
+        {
+          "id": "Ae81LBUhlaQe",
+          "name": "WebsitesConnectionsNeo",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicWebsitesConnectionsNeo.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/websites-neo.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicWebsitesConnectionsNeo.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/websites-neo"
+        },
+        {
+          "id": "E8bImSPcasS6",
+          "name": "StatusesConnectionsNeo",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicStatusesConnectionsNeo.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/statuses-neo.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicStatusesConnectionsNeo.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/statuses-neo"
+        },
+        {
+          "id": "L3NV0-BjfqNQ",
+          "name": "کیفپولNeo",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicکیفپولNeo.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/wallet-neo.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicکیفپولNeo.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/wallet-neo"
+        },
+        {
+          "id": "yN7ky54pSTYH",
+          "name": "Transactions2",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicTransactions2.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/transactions-2.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicTransactions2.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/transactions-2"
         }
       ],
       "icons": [
