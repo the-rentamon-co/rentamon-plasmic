@@ -5,24 +5,24 @@ import { PageParamsProvider as PageParamsProvider__ } from "@plasmicapp/react-we
 import GlobalContextsProvider from "../../components/plasmic/website_starter/PlasmicGlobalContextsProvider";
 import { StyleTokensProvider } from "../../components/plasmic/website_starter/PlasmicStyleTokensProvider";
 
-import { Plasmicامکاناتنسخهیپیشرفتهمیان } from "../../components/plasmic/website_starter/Plasmic\u0627\u0645\u06A9\u0627\u0646\u0627\u062A\u0646\u0633\u062E\u0647\u06CC\u067E\u06CC\u0634\u0631\u0641\u062A\u0647\u0645\u06CC\u0627\u0646";
+import { PlasmicSupportNeo } from "../../components/plasmic/website_starter/PlasmicSupportNeo";
 import { useRouter } from "next/router";
 import { PlasmicQueryDataProvider } from "@plasmicapp/react-web/lib/query";
 
-function امکاناتنسخهیپیشرفتهمیان() {
-  // Use Plasmicامکاناتنسخهیپیشرفتهمیان to render this component as it was
+function SupportNeo() {
+  // Use PlasmicSupportNeo to render this component as it was
   // designed in Plasmic, by activating the appropriate variants,
   // attaching the appropriate event handlers, etc.  You
   // can also install whatever React hooks you need here to manage state or
   // fetch data.
   //
-  // Props you can pass into Plasmicامکاناتنسخهیپیشرفتهمیان are:
+  // Props you can pass into PlasmicSupportNeo are:
   // 1. Variants you want to activate,
   // 2. Contents for slots you want to fill,
   // 3. Overrides for any named node in the component to attach behavior and data,
   // 4. Props to set on the root node.
   //
-  // By default, Plasmicامکاناتنسخهیپیشرفتهمیان is wrapped by your project's global
+  // By default, PlasmicSupportNeo is wrapped by your project's global
   // variant context providers. These wrappers may be moved to
   // Next.js Custom App component
   // (https://nextjs.org/docs/advanced-features/custom-app).
@@ -36,7 +36,7 @@ function امکاناتنسخهیپیشرفتهمیان() {
           query={useRouter()?.query}
         >
           <StyleTokensProvider>
-            <Plasmicامکاناتنسخهیپیشرفتهمیان />
+            <PlasmicSupportNeo />
           </StyleTokensProvider>
         </PageParamsProvider__>
       </PlasmicQueryDataProvider>
@@ -44,4 +44,4 @@ function امکاناتنسخهیپیشرفتهمیان() {
   );
 }
 
-export default امکاناتنسخهیپیشرفتهمیان;
+export default SupportNeo;

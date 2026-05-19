@@ -3378,18 +3378,10 @@ function PlasmicBookingsNeo__RenderFunc(props: {
                                       const actionArgs = {
                                         customFunction: async () => {
                                           return (() => {
-                                            let result = "";
                                             const bookingId =
                                               currentItem.booking_id;
-                                            const isMiaan =
-                                              window.location.hostname.includes(
-                                                "miaan.ir"
-                                              );
-                                            const baseUrl = isMiaan
-                                              ? "https://miaan.ir"
-                                              : "https://rentamon.com";
                                             return window.open(
-                                              `${baseUrl}/bookings-neo/${bookingId}`,
+                                              `https://panel.miaan.ir/bookings/${bookingId}`,
                                               "_blank"
                                             );
                                           })();

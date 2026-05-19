@@ -1740,20 +1740,6 @@
           "componentType": "component"
         },
         {
-          "id": "OUfaFiJLkcrx",
-          "name": "امکاناتنسخهیپیشرفتهرنتامون",
-          "type": "managed",
-          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
-          "renderModuleFilePath": "plasmic/website_starter/Plasmicامکاناتنسخهیپیشرفتهرنتامون.tsx",
-          "importSpec": {
-            "modulePath": "../src/pages/features.tsx"
-          },
-          "cssFilePath": "plasmic/website_starter/Plasmicامکاناتنسخهیپیشرفتهرنتامون.module.css",
-          "scheme": "blackbox",
-          "componentType": "page",
-          "path": "/features"
-        },
-        {
           "id": "eerOzN6iqdPm",
           "name": "Label",
           "type": "managed",
@@ -3570,18 +3556,102 @@
           "path": "/wallet-neo"
         },
         {
-          "id": "yN7ky54pSTYH",
-          "name": "Transactions2",
+          "id": "OUfaFiJLkcrx",
+          "name": "امکاناتنسخهیپیشرفتهمیان",
           "type": "managed",
           "projectId": "7SNMkB8UMukVgcWJYokeAQ",
-          "renderModuleFilePath": "plasmic/website_starter/PlasmicTransactions2.tsx",
+          "renderModuleFilePath": "plasmic/website_starter/Plasmicامکاناتنسخهیپیشرفتهمیان.tsx",
           "importSpec": {
-            "modulePath": "../src/pages/transactions-2.tsx"
+            "modulePath": "../src/pages/features.tsx"
           },
-          "cssFilePath": "plasmic/website_starter/PlasmicTransactions2.module.css",
+          "cssFilePath": "plasmic/website_starter/Plasmicامکاناتنسخهیپیشرفتهمیان.module.css",
           "scheme": "blackbox",
           "componentType": "page",
-          "path": "/transactions-2"
+          "path": "/features"
+        },
+        {
+          "id": "yN7ky54pSTYH",
+          "name": "TransactionsNeo",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicTransactionsNeo.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/transactions-neo.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicTransactionsNeo.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/transactions-neo"
+        },
+        {
+          "id": "K2GIv7FTzPej",
+          "name": "ReferralNeo",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicReferralNeo.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/referral-neo.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicReferralNeo.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/referral-neo"
+        },
+        {
+          "id": "7ViJ3IYQ12xn",
+          "name": "InstantNeo",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicInstantNeo.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/instant-neo.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicInstantNeo.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/instant-neo"
+        },
+        {
+          "id": "SKW388s5L7qJ",
+          "name": "SettingsNeo",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicSettingsNeo.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/settings-neo.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicSettingsNeo.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/settings-neo"
+        },
+        {
+          "id": "27VwWCoKZ_wd",
+          "name": "ContactsNeo",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicContactsNeo.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/contacts-neo.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicContactsNeo.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/contacts-neo"
+        },
+        {
+          "id": "SZ3KYZsbG3tq",
+          "name": "SupportNeo",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicSupportNeo.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/support-neo.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicSupportNeo.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/support-neo"
         }
       ],
       "icons": [

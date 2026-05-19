@@ -71,7 +71,6 @@ import ClarityRntComponent from "../../ClarityRntComponent"; // plasmic-import: 
 import FaviconRntComponent from "../../FaviconRntComponent"; // plasmic-import: 2Chy9NeUIB9Q/component
 import MiaanFooter from "../../MiaanFooter"; // plasmic-import: DSdlo5kdtbOe/component
 import { SideEffect } from "@plasmicpkgs/plasmic-basic-components";
-import NavbarMnFooter from "../../NavbarMnFooter"; // plasmic-import: y37kcAs9RXYg/component
 import { _useGlobalVariants } from "./plasmic"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectModule
 import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/styleTokensProvider
 
@@ -175,7 +174,6 @@ export type PlasmicکیفپولNeo__OverridesType = {
   clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
   faviconRntComponent?: Flex__<typeof FaviconRntComponent>;
   miaanFooter?: Flex__<typeof MiaanFooter>;
-  navbarMnFooter?: Flex__<typeof NavbarMnFooter>;
   apiRequest?: Flex__<typeof ApiRequest>;
 };
 
@@ -557,9 +555,9 @@ function PlasmicکیفپولNeo__RenderFunc(props: {
               onClick={async event => {
                 const $steps = {};
 
-                $steps["goToTransactions"] = true
+                $steps["goToTransactionsNeo"] = true
                   ? (() => {
-                      const actionArgs = { destination: `/transactions` };
+                      const actionArgs = { destination: `/transactions-neo` };
                       return (({ destination }) => {
                         if (
                           typeof destination === "string" &&
@@ -575,11 +573,12 @@ function PlasmicکیفپولNeo__RenderFunc(props: {
                     })()
                   : undefined;
                 if (
-                  $steps["goToTransactions"] != null &&
-                  typeof $steps["goToTransactions"] === "object" &&
-                  typeof $steps["goToTransactions"].then === "function"
+                  $steps["goToTransactionsNeo"] != null &&
+                  typeof $steps["goToTransactionsNeo"] === "object" &&
+                  typeof $steps["goToTransactionsNeo"].then === "function"
                 ) {
-                  $steps["goToTransactions"] = await $steps["goToTransactions"];
+                  $steps["goToTransactionsNeo"] =
+                    await $steps["goToTransactionsNeo"];
                 }
 
                 $steps["log"] = true
@@ -2135,9 +2134,9 @@ function PlasmicکیفپولNeo__RenderFunc(props: {
               onClick={async event => {
                 const $steps = {};
 
-                $steps["goToReferral"] = true
+                $steps["goToReferralNeo"] = true
                   ? (() => {
-                      const actionArgs = { destination: `/referral` };
+                      const actionArgs = { destination: `/referral-neo` };
                       return (({ destination }) => {
                         if (
                           typeof destination === "string" &&
@@ -2153,11 +2152,11 @@ function PlasmicکیفپولNeo__RenderFunc(props: {
                     })()
                   : undefined;
                 if (
-                  $steps["goToReferral"] != null &&
-                  typeof $steps["goToReferral"] === "object" &&
-                  typeof $steps["goToReferral"].then === "function"
+                  $steps["goToReferralNeo"] != null &&
+                  typeof $steps["goToReferralNeo"] === "object" &&
+                  typeof $steps["goToReferralNeo"].then === "function"
                 ) {
-                  $steps["goToReferral"] = await $steps["goToReferral"];
+                  $steps["goToReferralNeo"] = await $steps["goToReferralNeo"];
                 }
               }}
             >
@@ -2655,31 +2654,6 @@ function PlasmicکیفپولNeo__RenderFunc(props: {
             }}
           />
 
-          <NavbarMnFooter
-            data-plasmic-name={"navbarMnFooter"}
-            data-plasmic-override={overrides.navbarMnFooter}
-            className={classNames("__wab_instance", sty.navbarMnFooter)}
-            userType={
-              hasVariant(globalVariants, "screen", "mobile")
-                ? (() => {
-                    try {
-                      return (() => {
-                        return null;
-                      })();
-                    } catch (e) {
-                      if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
-                      ) {
-                        return undefined;
-                      }
-                      throw e;
-                    }
-                  })()
-                : undefined
-            }
-          />
-
           <ApiRequest
             data-plasmic-name={"apiRequest"}
             data-plasmic-override={overrides.apiRequest}
@@ -2797,7 +2771,6 @@ const PlasmicDescendants = {
     "clarityRntComponent",
     "faviconRntComponent",
     "miaanFooter",
-    "navbarMnFooter",
     "apiRequest"
   ],
   header: ["header", "sideBar2", "profile2"],
@@ -2878,7 +2851,6 @@ const PlasmicDescendants = {
   clarityRntComponent: ["clarityRntComponent"],
   faviconRntComponent: ["faviconRntComponent"],
   miaanFooter: ["miaanFooter"],
-  navbarMnFooter: ["navbarMnFooter"],
   apiRequest: ["apiRequest"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -2929,7 +2901,6 @@ type NodeDefaultElementType = {
   clarityRntComponent: typeof ClarityRntComponent;
   faviconRntComponent: typeof FaviconRntComponent;
   miaanFooter: typeof MiaanFooter;
-  navbarMnFooter: typeof NavbarMnFooter;
   apiRequest: typeof ApiRequest;
 };
 
@@ -3038,7 +3009,6 @@ export const PlasmicکیفپولNeo = Object.assign(
     clarityRntComponent: makeNodeComponent("clarityRntComponent"),
     faviconRntComponent: makeNodeComponent("faviconRntComponent"),
     miaanFooter: makeNodeComponent("miaanFooter"),
-    navbarMnFooter: makeNodeComponent("navbarMnFooter"),
     apiRequest: makeNodeComponent("apiRequest"),
 
     // Metadata about props expected for PlasmicکیفپولNeo
