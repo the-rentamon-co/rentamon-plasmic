@@ -2120,20 +2120,6 @@
           "path": "/about-us"
         },
         {
-          "id": "ItZEs9masGCY",
-          "name": "قوانینومقرراتاستفادهازرنتامون",
-          "type": "managed",
-          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
-          "renderModuleFilePath": "plasmic/website_starter/Plasmicقوانینومقرراتاستفادهازرنتامون.tsx",
-          "importSpec": {
-            "modulePath": "../src/pages/terms-of-use.tsx"
-          },
-          "cssFilePath": "plasmic/website_starter/Plasmicقوانینومقرراتاستفادهازرنتامون.module.css",
-          "scheme": "blackbox",
-          "componentType": "page",
-          "path": "/terms-of-use"
-        },
-        {
           "id": "4_Sank-PwTYC",
           "name": "دانلوداپلیکیشنموبایلمیان",
           "type": "managed",
@@ -3652,6 +3638,34 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/support-neo"
+        },
+        {
+          "id": "ItZEs9masGCY",
+          "name": "قوانینومقرراتاستفادهازمیان",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/Plasmicقوانینومقرراتاستفادهازمیان.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/terms-of-use.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/Plasmicقوانینومقرراتاستفادهازمیان.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/terms-of-use"
+        },
+        {
+          "id": "u74lahtT3CaO",
+          "name": "DivarLanding",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicDivarLanding.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/divar.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicDivarLanding.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/divar"
         }
       ],
       "icons": [

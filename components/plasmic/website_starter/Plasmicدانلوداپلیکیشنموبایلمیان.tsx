@@ -97,13 +97,18 @@ export type PageCtx = {
 export function generateDynamicMetadata($q: any, $ctx: PageCtx) {
   return {
     title: "دانلود اپلیکیشن موبایل میان",
-
+    description:
+      "با اپلیکیشن میان، مدیریت ویلا و اقامتگاه رو راحت تجربه کن. همین حالا نسخه جدید برنامه میان رو رایگان دانلود کن و از خدمات استفاده کن.",
     openGraph: {
-      title: "دانلود اپلیکیشن موبایل میان"
+      title: "دانلود اپلیکیشن موبایل میان",
+      description:
+        "با اپلیکیشن میان، مدیریت ویلا و اقامتگاه رو راحت تجربه کن. همین حالا نسخه جدید برنامه میان رو رایگان دانلود کن و از خدمات استفاده کن."
     },
     twitter: {
       card: "summary" as const,
-      title: "دانلود اپلیکیشن موبایل میان"
+      title: "دانلود اپلیکیشن موبایل میان",
+      description:
+        "با اپلیکیشن میان، مدیریت ویلا و اقامتگاه رو راحت تجربه کن. همین حالا نسخه جدید برنامه میان رو رایگان دانلود کن و از خدمات استفاده کن."
     }
   };
 }
@@ -240,6 +245,21 @@ function Plasmicدانلوداپلیکیشنموبایلمیان__RenderFunc(pro
           key="twitter:title"
           property="twitter:title"
           content={pageMetadata.title}
+        />
+        <meta
+          key="description"
+          property="description"
+          content={pageMetadata.description}
+        />
+        <meta
+          key="og:description"
+          property="og:description"
+          content={pageMetadata.description}
+        />
+        <meta
+          key="twitter:description"
+          property="twitter:description"
+          content={pageMetadata.description}
         />
       </Head>
 

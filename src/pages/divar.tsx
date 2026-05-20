@@ -5,24 +5,24 @@ import { PageParamsProvider as PageParamsProvider__ } from "@plasmicapp/react-we
 import GlobalContextsProvider from "../../components/plasmic/website_starter/PlasmicGlobalContextsProvider";
 import { StyleTokensProvider } from "../../components/plasmic/website_starter/PlasmicStyleTokensProvider";
 
-import { Plasmicقوانینومقرراتاستفادهازمیان } from "../../components/plasmic/website_starter/Plasmic\u0642\u0648\u0627\u0646\u06CC\u0646\u0648\u0645\u0642\u0631\u0631\u0627\u062A\u0627\u0633\u062A\u0641\u0627\u062F\u0647\u0627\u0632\u0645\u06CC\u0627\u0646";
+import { PlasmicDivarLanding } from "../../components/plasmic/website_starter/PlasmicDivarLanding";
 import { useRouter } from "next/router";
 import { PlasmicQueryDataProvider } from "@plasmicapp/react-web/lib/query";
 
-function قوانینومقرراتاستفادهازمیان() {
-  // Use Plasmicقوانینومقرراتاستفادهازمیان to render this component as it was
+function DivarLanding() {
+  // Use PlasmicDivarLanding to render this component as it was
   // designed in Plasmic, by activating the appropriate variants,
   // attaching the appropriate event handlers, etc.  You
   // can also install whatever React hooks you need here to manage state or
   // fetch data.
   //
-  // Props you can pass into Plasmicقوانینومقرراتاستفادهازمیان are:
+  // Props you can pass into PlasmicDivarLanding are:
   // 1. Variants you want to activate,
   // 2. Contents for slots you want to fill,
   // 3. Overrides for any named node in the component to attach behavior and data,
   // 4. Props to set on the root node.
   //
-  // By default, Plasmicقوانینومقرراتاستفادهازمیان is wrapped by your project's global
+  // By default, PlasmicDivarLanding is wrapped by your project's global
   // variant context providers. These wrappers may be moved to
   // Next.js Custom App component
   // (https://nextjs.org/docs/advanced-features/custom-app).
@@ -36,7 +36,7 @@ function قوانینومقرراتاستفادهازمیان() {
           query={useRouter()?.query}
         >
           <StyleTokensProvider>
-            <Plasmicقوانینومقرراتاستفادهازمیان />
+            <PlasmicDivarLanding />
           </StyleTokensProvider>
         </PageParamsProvider__>
       </PlasmicQueryDataProvider>
@@ -44,4 +44,4 @@ function قوانینومقرراتاستفادهازمیان() {
   );
 }
 
-export default قوانینومقرراتاستفادهازمیان;
+export default DivarLanding;

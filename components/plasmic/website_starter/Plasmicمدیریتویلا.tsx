@@ -654,7 +654,9 @@ function Plasmicمدیریتویلا__RenderFunc(props: {
               className={classNames(projectcss.all, sty.handsOn)}
             >
               <PlasmicImg__
-                alt={""}
+                alt={
+                  "\u0645\u0634\u0627\u0647\u062f\u0647 \u0648\u0636\u0639\u06cc\u062a \u067e\u0631 \u06cc\u0627 \u062e\u0627\u0644\u06cc \u0628\u0648\u062f\u0646 \u0648\u06cc\u0644\u0627 \u062f\u0631 \u062a\u0642\u0648\u06cc\u0645 \u0628\u0631\u0646\u0627\u0645\u0647 \u0645\u06cc\u0627\u0646 \u0631\u0648\u06cc \u0645\u0648\u0628\u0627\u06cc\u0644"
+                }
                 className={classNames(sty.img__byFiB)}
                 displayHeight={"auto"}
                 displayMaxHeight={"none"}
