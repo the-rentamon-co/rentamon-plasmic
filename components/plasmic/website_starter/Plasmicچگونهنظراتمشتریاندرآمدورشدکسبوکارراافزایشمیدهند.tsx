@@ -96,11 +96,11 @@ export type PageCtx = {
 
 export function generateDynamicMetadata($q: any, $ctx: PageCtx) {
   return {
-    title: "تأثیر نظرات مهمان‌ها بر درآمد صاحبین اقامتگاه",
+    title: "تأثیر نظرات مهمان‌ها بر درآمد صاحبین اقامتگاه –  میان",
     description:
       "نظرات مهمانان کلید افزایش رزروها هستند. یاد بگیرید چگونه امتیازهای ۵ ستاره بیشتری بگیرید، بازخوردهای منفی را مدیریت کنید و درآمد اجاره خود را افزایش دهید.",
     openGraph: {
-      title: "تأثیر نظرات مهمان‌ها بر درآمد صاحبین اقامتگاه",
+      title: "تأثیر نظرات مهمان‌ها بر درآمد صاحبین اقامتگاه –  میان",
       description:
         "نظرات مهمانان کلید افزایش رزروها هستند. یاد بگیرید چگونه امتیازهای ۵ ستاره بیشتری بگیرید، بازخوردهای منفی را مدیریت کنید و درآمد اجاره خود را افزایش دهید.",
       images: [
@@ -109,13 +109,14 @@ export function generateDynamicMetadata($q: any, $ctx: PageCtx) {
     },
     twitter: {
       card: "summary_large_image" as const,
-      title: "تأثیر نظرات مهمان‌ها بر درآمد صاحبین اقامتگاه",
+      title: "تأثیر نظرات مهمان‌ها بر درآمد صاحبین اقامتگاه –  میان",
       description:
         "نظرات مهمانان کلید افزایش رزروها هستند. یاد بگیرید چگونه امتیازهای ۵ ستاره بیشتری بگیرید، بازخوردهای منفی را مدیریت کنید و درآمد اجاره خود را افزایش دهید.",
       images: [
         "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2Fposts%2Freview-1.jpg?versionId="
       ]
-    }
+    },
+    alternates: { canonical: "https://miaan.ir/reviews-and-revenue/" }
   };
 }
 
@@ -276,6 +277,7 @@ function Plasmicچگونهنظراتمشتریاندرآمدورشدکسبوکا
           property="twitter:image"
           content={pageMetadata.ogImageSrc}
         />
+        <link rel="canonical" href={pageMetadata.alternates?.canonical} />
       </Head>
 
       <style>{`

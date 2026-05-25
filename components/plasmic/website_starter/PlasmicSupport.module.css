@@ -773,7 +773,6 @@
   }
 }
 .chat {
-  display: flex;
   flex-direction: column;
   position: relative;
   width: 100%;
@@ -782,6 +781,7 @@
   justify-content: flex-start;
   align-items: center;
   min-width: 0;
+  display: none;
   padding: 8px;
 }
 .nimChat2 {
@@ -975,7 +975,6 @@
   }
 }
 .freeBox__zZfjf {
-  display: flex;
   flex-direction: column;
   position: relative;
   width: 100%;
@@ -984,6 +983,7 @@
   justify-content: flex-start;
   align-items: center;
   min-width: 0;
+  display: none;
   padding: 8px;
 }
 .whatsapp {
@@ -1141,7 +1141,6 @@
   }
 }
 .freeBox__a5Scl {
-  display: flex;
   flex-direction: column;
   position: relative;
   width: 100%;
@@ -1150,6 +1149,7 @@
   justify-content: flex-start;
   align-items: center;
   min-width: 0;
+  display: none;
   padding: 8px;
 }
 .telegram {

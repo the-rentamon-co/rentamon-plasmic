@@ -2397,20 +2397,6 @@
           "path": "/list-your-property"
         },
         {
-          "id": "toyYO-nFHLHU",
-          "name": "چراجارهکوتاهمدت",
-          "type": "managed",
-          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
-          "renderModuleFilePath": "plasmic/website_starter/Plasmicچراجارهکوتاهمدت.tsx",
-          "importSpec": {
-            "modulePath": "../src/pages/short-term-rental.tsx"
-          },
-          "cssFilePath": "plasmic/website_starter/Plasmicچراجارهکوتاهمدت.module.css",
-          "scheme": "blackbox",
-          "componentType": "page",
-          "path": "/short-term-rental"
-        },
-        {
           "id": "lU71surWQVHn",
           "name": "مدیریتویلا",
           "type": "managed",
@@ -3666,6 +3652,20 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/divar"
+        },
+        {
+          "id": "toyYO-nFHLHU",
+          "name": "چرااجارهکوتاهمدت",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/Plasmicچرااجارهکوتاهمدت.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/short-term-rental.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/Plasmicچرااجارهکوتاهمدت.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/short-term-rental"
         }
       ],
       "icons": [

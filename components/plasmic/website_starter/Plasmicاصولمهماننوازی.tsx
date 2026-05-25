@@ -96,11 +96,11 @@ export type PageCtx = {
 
 export function generateDynamicMetadata($q: any, $ctx: PageCtx) {
   return {
-    title: "اصول مهمان‌نوازی و نحوه‌ی تعامل با مهمانان مشکل‌پسند",
+    title: "اصول مهمان‌نوازی و نحوه‌ی تعامل با مهمانان مشکل‌پسند –  میان",
     description:
       "چطور مثل یک میزبان حرفه‌ای باشیم؟ راهنمای خلق تجربه فوق‌العاده برای مهمان و مدیریت چالش‌های میزبانی.",
     openGraph: {
-      title: "اصول مهمان‌نوازی و نحوه‌ی تعامل با مهمانان مشکل‌پسند",
+      title: "اصول مهمان‌نوازی و نحوه‌ی تعامل با مهمانان مشکل‌پسند –  میان",
       description:
         "چطور مثل یک میزبان حرفه‌ای باشیم؟ راهنمای خلق تجربه فوق‌العاده برای مهمان و مدیریت چالش‌های میزبانی.",
       images: [
@@ -109,13 +109,14 @@ export function generateDynamicMetadata($q: any, $ctx: PageCtx) {
     },
     twitter: {
       card: "summary_large_image" as const,
-      title: "اصول مهمان‌نوازی و نحوه‌ی تعامل با مهمانان مشکل‌پسند",
+      title: "اصول مهمان‌نوازی و نحوه‌ی تعامل با مهمانان مشکل‌پسند –  میان",
       description:
         "چطور مثل یک میزبان حرفه‌ای باشیم؟ راهنمای خلق تجربه فوق‌العاده برای مهمان و مدیریت چالش‌های میزبانی.",
       images: [
         "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2Fposts%2Fhospitality-3.jpg?versionId="
       ]
-    }
+    },
+    alternates: { canonical: "https://miaan.ir/hospitality-principles/" }
   };
 }
 
@@ -269,6 +270,7 @@ function Plasmicاصولمهماننوازی__RenderFunc(props: {
           property="twitter:image"
           content={pageMetadata.ogImageSrc}
         />
+        <link rel="canonical" href={pageMetadata.alternates?.canonical} />
       </Head>
 
       <style>{`

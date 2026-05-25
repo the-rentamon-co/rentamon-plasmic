@@ -102,13 +102,18 @@ export type PageCtx = {
 export function generateDynamicMetadata($q: any, $ctx: PageCtx) {
   return {
     title: "تعرفه خدمات میان",
-
+    description:
+      "تعرفه و کارمزد  خدمات میان. با مشاهده در صد کارمزد میان مدیریت ویلا و اقامتگاهت رو به ما بسپار. و درآمدت رو افزایش بده و همین حالا شروع کن.",
     openGraph: {
-      title: "تعرفه خدمات میان"
+      title: "تعرفه خدمات میان",
+      description:
+        "تعرفه و کارمزد  خدمات میان. با مشاهده در صد کارمزد میان مدیریت ویلا و اقامتگاهت رو به ما بسپار. و درآمدت رو افزایش بده و همین حالا شروع کن."
     },
     twitter: {
       card: "summary" as const,
-      title: "تعرفه خدمات میان"
+      title: "تعرفه خدمات میان",
+      description:
+        "تعرفه و کارمزد  خدمات میان. با مشاهده در صد کارمزد میان مدیریت ویلا و اقامتگاهت رو به ما بسپار. و درآمدت رو افزایش بده و همین حالا شروع کن."
     }
   };
 }
@@ -339,6 +344,21 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
           key="twitter:title"
           property="twitter:title"
           content={pageMetadata.title}
+        />
+        <meta
+          key="description"
+          property="description"
+          content={pageMetadata.description}
+        />
+        <meta
+          key="og:description"
+          property="og:description"
+          content={pageMetadata.description}
+        />
+        <meta
+          key="twitter:description"
+          property="twitter:description"
+          content={pageMetadata.description}
         />
       </Head>
 

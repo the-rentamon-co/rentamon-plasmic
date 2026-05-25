@@ -95,14 +95,14 @@ export type PageCtx = {
 
 export function generateDynamicMetadata($q: any, $ctx: PageCtx) {
   return {
-    title: "قوانین و مقررات استفاده از API رنتامون",
+    title: "قوانین و مقررات استفاده از API –  میان",
 
     openGraph: {
-      title: "قوانین و مقررات استفاده از API رنتامون"
+      title: "قوانین و مقررات استفاده از API –  میان"
     },
     twitter: {
       card: "summary" as const,
-      title: "قوانین و مقررات استفاده از API رنتامون"
+      title: "قوانین و مقررات استفاده از API –  میان"
     }
   };
 }

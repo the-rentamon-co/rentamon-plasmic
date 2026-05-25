@@ -95,11 +95,11 @@ export type PageCtx = {
 
 export function generateDynamicMetadata($q: any, $ctx: PageCtx) {
   return {
-    title: "مشکلات و چالش‌های خونه  مبله در اجاره روزانه",
+    title: "مشکلات و چالش‌های خونه  مبله در اجاره روزانه –  میان",
     description:
       "اگه می‌خوای وارد اجاره روزانه بشی، باید بدونی علاوه بر سودش، با چالش‌هایی هم رو‌به‌رو می‌شی مثل نگهداری وسایل، آسیب‌های کوچیک و بزرگ و نهایتا هم دائما توی ذهنت با اجاره سالانه مقایسه‌اش می‌کنی و حتی ممکنه تو ذوقت بخوره وقتی ببینی مهمان‌ها اونقدرا هم مراقب وسایلت نیستن! اما...",
     openGraph: {
-      title: "مشکلات و چالش‌های خونه  مبله در اجاره روزانه",
+      title: "مشکلات و چالش‌های خونه  مبله در اجاره روزانه –  میان",
       description:
         "اگه می‌خوای وارد اجاره روزانه بشی، باید بدونی علاوه بر سودش، با چالش‌هایی هم رو‌به‌رو می‌شی مثل نگهداری وسایل، آسیب‌های کوچیک و بزرگ و نهایتا هم دائما توی ذهنت با اجاره سالانه مقایسه‌اش می‌کنی و حتی ممکنه تو ذوقت بخوره وقتی ببینی مهمان‌ها اونقدرا هم مراقب وسایلت نیستن! اما...",
       images: [
@@ -108,12 +108,15 @@ export function generateDynamicMetadata($q: any, $ctx: PageCtx) {
     },
     twitter: {
       card: "summary_large_image" as const,
-      title: "مشکلات و چالش‌های خونه  مبله در اجاره روزانه",
+      title: "مشکلات و چالش‌های خونه  مبله در اجاره روزانه –  میان",
       description:
         "اگه می‌خوای وارد اجاره روزانه بشی، باید بدونی علاوه بر سودش، با چالش‌هایی هم رو‌به‌رو می‌شی مثل نگهداری وسایل، آسیب‌های کوچیک و بزرگ و نهایتا هم دائما توی ذهنت با اجاره سالانه مقایسه‌اش می‌کنی و حتی ممکنه تو ذوقت بخوره وقتی ببینی مهمان‌ها اونقدرا هم مراقب وسایلت نیستن! اما...",
       images: [
         "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/img%2Fposts%2Ffurniture-hall-2.jpg"
       ]
+    },
+    alternates: {
+      canonical: "https://miaan.ir/furnished-rental-maintenance-guide/"
     }
   };
 }
@@ -255,6 +258,7 @@ function Plasmicنگهداریوسایلدراجارهروزانه__RenderFunc(p
           property="twitter:image"
           content={pageMetadata.ogImageSrc}
         />
+        <link rel="canonical" href={pageMetadata.alternates?.canonical} />
       </Head>
 
       <style>{`
@@ -339,9 +343,7 @@ function Plasmicنگهداریوسایلدراجارهروزانه__RenderFunc(p
                 </div>
                 <div className={classNames(projectcss.all, sty.freeBox__jurJb)}>
                   <PlasmicImg__
-                    alt={
-                      "\u0642\u0648\u0627\u0646\u06cc\u0646 \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627,\u0642\u0648\u0627\u0646\u06cc\u0646 \u0627\u062c\u0627\u0631\u0647 \u0631\u0648\u0632\u0627\u0646\u0647,\u0642\u0631\u0627\u0631\u062f\u0627\u062f \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627,\u0645\u062c\u0648\u0632 \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627, \u0645\u062c\u0648\u0632 \u062e\u0627\u0646\u0647 \u0645\u0633\u0627\u0641\u0631"
-                    }
+                    alt={""}
                     className={classNames(sty.img__mqXDz)}
                     displayHeight={"auto"}
                     displayMaxHeight={"none"}
@@ -1025,9 +1027,7 @@ function Plasmicنگهداریوسایلدراجارهروزانه__RenderFunc(p
                     className={classNames(projectcss.all, sty.img3)}
                   >
                     <PlasmicImg__
-                      alt={
-                        "\u0642\u0648\u0627\u0646\u06cc\u0646 \u0627\u062c\u0627\u0631\u0647 \u0631\u0648\u0632\u0627\u0646\u0647,\u0642\u0648\u0627\u0646\u06cc\u0646 \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u062f\u0631 \u062c\u0627\u0628\u0627\u0645\u0627,\u0642\u0648\u0627\u0646\u06cc\u0646 \u0627\u062c\u0627\u0631\u0647 \u0645\u0646\u0632\u0644,\u0642\u0627\u0646\u0648\u0646 \u0627\u062c\u0627\u0631\u0647 \u0622\u067e\u0627\u0631\u062a\u0645\u0627\u0646,\u0645\u062c\u0648\u0632 \u0627\u062c\u0627\u0631\u0647 \u0633\u0648\u0626\u06cc\u062a,\u0645\u062c\u0648\u0632 \u0627\u062c\u0627\u0631\u0647 \u0633\u0648\u06cc\u06cc\u062a"
-                      }
+                      alt={""}
                       className={classNames(sty.img__pii27)}
                       displayHeight={"auto"}
                       displayMaxHeight={"none"}
@@ -1346,9 +1346,7 @@ function Plasmicنگهداریوسایلدراجارهروزانه__RenderFunc(p
                     className={classNames(projectcss.all, sty.img4)}
                   >
                     <PlasmicImg__
-                      alt={
-                        "\u0642\u0648\u0627\u0646\u06cc\u0646 \u0627\u062c\u0627\u0631\u0647 \u0631\u0648\u0632\u0627\u0646\u0647,\u0642\u0648\u0627\u0646\u06cc\u0646 \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u062f\u0631 \u062c\u0627\u0628\u0627\u0645\u0627,\u0642\u0648\u0627\u0646\u06cc\u0646 \u0627\u062c\u0627\u0631\u0647 \u0645\u0646\u0632\u0644,\u0642\u0627\u0646\u0648\u0646 \u0627\u062c\u0627\u0631\u0647 \u0622\u067e\u0627\u0631\u062a\u0645\u0627\u0646,\u0645\u062c\u0648\u0632 \u0627\u062c\u0627\u0631\u0647 \u0633\u0648\u0626\u06cc\u062a,\u0645\u062c\u0648\u0632 \u0627\u062c\u0627\u0631\u0647 \u0633\u0648\u06cc\u06cc\u062a"
-                      }
+                      alt={""}
                       className={classNames(sty.img__zfCSt)}
                       displayHeight={"auto"}
                       displayMaxHeight={"none"}

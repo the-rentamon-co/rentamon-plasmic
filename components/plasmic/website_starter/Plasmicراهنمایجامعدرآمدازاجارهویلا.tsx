@@ -96,26 +96,27 @@ export type PageCtx = {
 
 export function generateDynamicMetadata($q: any, $ctx: PageCtx) {
   return {
-    title: "راهنمای جامع درآمدزایی از اجاره ویلا",
+    title: "راهنمای جامع درآمدزایی از اجاره ویلا –  میان",
     description:
-      "در این راهنمای جامع، تمام استراتژی‌ها و نکات عملی برای شروع به کار و درآمدزایی از اجاره ویلا ارائه می‌شه. از آماده‌سازی اقامتگاه، تا جذب مهمان...",
+      "در راهنمای جامع، تمام استراتژی‌ها و نکات عملی برای شروع به کار و درآمدزایی از اجاره ویلا و آماده‌سازی اقامتگاه تا جذب مهمان گفته شده. ",
     openGraph: {
-      title: "راهنمای جامع درآمدزایی از اجاره ویلا",
+      title: "راهنمای جامع درآمدزایی از اجاره ویلا –  میان",
       description:
-        "در این راهنمای جامع، تمام استراتژی‌ها و نکات عملی برای شروع به کار و درآمدزایی از اجاره ویلا ارائه می‌شه. از آماده‌سازی اقامتگاه، تا جذب مهمان...",
+        "در راهنمای جامع، تمام استراتژی‌ها و نکات عملی برای شروع به کار و درآمدزایی از اجاره ویلا و آماده‌سازی اقامتگاه تا جذب مهمان گفته شده. ",
       images: [
         "https://site-assets.plasmic.app/15351cdec6468de813a07a902e7e2f8d.jpg"
       ]
     },
     twitter: {
       card: "summary_large_image" as const,
-      title: "راهنمای جامع درآمدزایی از اجاره ویلا",
+      title: "راهنمای جامع درآمدزایی از اجاره ویلا –  میان",
       description:
-        "در این راهنمای جامع، تمام استراتژی‌ها و نکات عملی برای شروع به کار و درآمدزایی از اجاره ویلا ارائه می‌شه. از آماده‌سازی اقامتگاه، تا جذب مهمان...",
+        "در راهنمای جامع، تمام استراتژی‌ها و نکات عملی برای شروع به کار و درآمدزایی از اجاره ویلا و آماده‌سازی اقامتگاه تا جذب مهمان گفته شده. ",
       images: [
         "https://site-assets.plasmic.app/15351cdec6468de813a07a902e7e2f8d.jpg"
       ]
-    }
+    },
+    alternates: { canonical: "https://miaan.ir/vacation-rental-income/" }
   };
 }
 
@@ -262,6 +263,7 @@ function Plasmicراهنمایجامعدرآمدازاجارهویلا__RenderFu
           property="twitter:image"
           content={pageMetadata.ogImageSrc}
         />
+        <link rel="canonical" href={pageMetadata.alternates?.canonical} />
       </Head>
 
       <style>{`
@@ -1394,17 +1396,17 @@ export const Plasmicراهنمایجامعدرآمدازاجارهویلا = Obj
       ogTitle:
         "\u0631\u0627\u0647\u0646\u0645\u0627\u06cc \u062c\u0627\u0645\u0639 \u062f\u0631\u0622\u0645\u062f\u0632\u0627\u06cc\u06cc \u0627\u0632 \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627",
       ogDescription:
-        "\u062f\u0631 \u0627\u06cc\u0646 \u0631\u0627\u0647\u0646\u0645\u0627\u06cc \u062c\u0627\u0645\u0639\u060c \u062a\u0645\u0627\u0645 \u0627\u0633\u062a\u0631\u0627\u062a\u0698\u06cc\u200c\u0647\u0627 \u0648 \u0646\u06a9\u0627\u062a \u0639\u0645\u0644\u06cc \u0628\u0631\u0627\u06cc \u0634\u0631\u0648\u0639 \u0628\u0647 \u06a9\u0627\u0631 \u0648 \u062f\u0631\u0622\u0645\u062f \u0627\u0632 \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u0628\u0631\u0631\u0633\u06cc \u0645\u06cc\u200c\u0634\u0648\u062f.",
-      ogUrl: "https://rentamon.com/vacation-rental-income/",
+        "\u062f\u0631 \u0627\u06cc\u0646 \u0631\u0627\u0647\u0646\u0645\u0627\u06cc \u062c\u0627\u0645\u0639\u060c \u062a\u0645\u0627\u0645 \u0627\u0633\u062a\u0631\u0627\u062a\u0698\u06cc\u200c\u0647\u0627 \u0648 \u0646\u06a9\u0627\u062a \u0639\u0645\u0644\u06cc \u0628\u0631\u0627\u06cc \u0634\u0631\u0648\u0639 \u0628\u0647 \u06a9\u0627\u0631 \u0648 \u062f\u0631\u0622\u0645\u062f \u0627\u0632 \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u0628\u0631\u0631\u0633\u06cc \u0645\u06cc\u0634\u0647",
+      ogUrl: "https://miaan.ir/vacation-rental-income/",
       ogImageAlt:
         "\u062f\u0633\u062a\u200c\u06af\u0631\u0641\u062a\u0646 \u06a9\u0644\u06cc\u062f \u0648\u06cc\u0644\u0627 \u2013 \u0646\u0645\u0627\u062f \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627",
       twitterCard: "summary_large_image",
       twitterTitle:
         "\u0631\u0627\u0647\u0646\u0645\u0627\u06cc \u062c\u0627\u0645\u0639 \u062f\u0631\u0622\u0645\u062f\u0632\u0627\u06cc\u06cc \u0627\u0632 \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627",
       twitterDescription:
-        "\u062f\u0631 \u0627\u06cc\u0646 \u0631\u0627\u0647\u0646\u0645\u0627\u06cc \u062c\u0627\u0645\u0639\u060c \u062a\u0645\u0627\u0645 \u0627\u0633\u062a\u0631\u0627\u062a\u0698\u06cc\u200c\u0647\u0627 \u0648 \u0646\u06a9\u0627\u062a \u0639\u0645\u0644\u06cc \u0628\u0631\u0627\u06cc \u062f\u0631\u0622\u0645\u062f\u0632\u0627\u06cc\u06cc \u0627\u0632 \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u0628\u0631\u0631\u0633\u06cc \u0645\u06cc\u200c\u0634\u0648\u062f.",
+        "\u062f\u0631 \u0627\u06cc\u0646 \u0631\u0627\u0647\u0646\u0645\u0627\u06cc \u062c\u0627\u0645\u0639\u060c \u062a\u0645\u0627\u0645 \u0627\u0633\u062a\u0631\u0627\u062a\u0698\u06cc\u200c\u0647\u0627 \u0648 \u0646\u06a9\u0627\u062a \u0639\u0645\u0644\u06cc \u0628\u0631\u0627\u06cc \u0634\u0631\u0648\u0639 \u0628\u0647 \u06a9\u0627\u0631 \u0648 \u062f\u0631\u0622\u0645\u062f \u0627\u0632 \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u0628\u0631\u0631\u0633\u06cc \u0645\u06cc\u0634\u0647",
       twitterImage:
-        "https://rentamon.com/plasmic/website_starter/images/%D8%A7%D8%AC%D8%A7%D8%B1%D9%87%D9%88%DB%8C%D9%84%D8%A7%D8%A8%D9%87%D9%85%D8%B3%D8%A7%D9%81%D8%B1%D8%A7%D9%86Jpg.jpg"
+        "https://miaan.ir/plasmic/website_starter/images/%D8%A7%D8%AC%D8%A7%D8%B1%D9%87%D9%88%DB%8C%D9%84%D8%A7%D8%A8%D9%87%D9%85%D8%B3%D8%A7%D9%81%D8%B1%D8%A7%D9%86Jpg.jpg"
     },
 
     pageMetadata: generateDynamicMetadata(wrapQueriesWithLoadingProxy({}), {

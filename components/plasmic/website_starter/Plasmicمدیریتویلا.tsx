@@ -97,26 +97,27 @@ export type PageCtx = {
 
 export function generateDynamicMetadata($q: any, $ctx: PageCtx) {
   return {
-    title: "مدیریت ویلا، سنتی یا هوشمند؟",
+    title: "مدیریت ویلا، هوشمند یا سنتی؟ - میان",
     description:
-      "اگه برای مدیریت رزروهای اقامتگاه در سایت‌های اجاره ویلا مثل جاباما، جاجیگا، اتاقک، شب و… همیشه چالش و دردسر داری، یه خبر خوب برات داریم.",
+      "برای مدیریت رزروهای اقامتگاه در سایت‌های اجاره ویلا مثل جاباما، جاجیگا چالش و دردسر داری، یه خبر خوب برات داریم.",
     openGraph: {
-      title: "مدیریت ویلا، سنتی یا هوشمند؟",
+      title: "مدیریت ویلا، هوشمند یا سنتی؟ - میان",
       description:
-        "اگه برای مدیریت رزروهای اقامتگاه در سایت‌های اجاره ویلا مثل جاباما، جاجیگا، اتاقک، شب و… همیشه چالش و دردسر داری، یه خبر خوب برات داریم.",
+        "برای مدیریت رزروهای اقامتگاه در سایت‌های اجاره ویلا مثل جاباما، جاجیگا چالش و دردسر داری، یه خبر خوب برات داریم.",
       images: [
         "https://site-assets.plasmic.app/34f18b9d9c3a2d97d0402c2e7fe04721.png"
       ]
     },
     twitter: {
       card: "summary_large_image" as const,
-      title: "مدیریت ویلا، سنتی یا هوشمند؟",
+      title: "مدیریت ویلا، هوشمند یا سنتی؟ - میان",
       description:
-        "اگه برای مدیریت رزروهای اقامتگاه در سایت‌های اجاره ویلا مثل جاباما، جاجیگا، اتاقک، شب و… همیشه چالش و دردسر داری، یه خبر خوب برات داریم.",
+        "برای مدیریت رزروهای اقامتگاه در سایت‌های اجاره ویلا مثل جاباما، جاجیگا چالش و دردسر داری، یه خبر خوب برات داریم.",
       images: [
         "https://site-assets.plasmic.app/34f18b9d9c3a2d97d0402c2e7fe04721.png"
       ]
-    }
+    },
+    alternates: { canonical: "https://miaan.ir/villa-management/" }
   };
 }
 
@@ -262,6 +263,7 @@ function Plasmicمدیریتویلا__RenderFunc(props: {
           property="twitter:image"
           content={pageMetadata.ogImageSrc}
         />
+        <link rel="canonical" href={pageMetadata.alternates?.canonical} />
       </Head>
 
       <style>{`
@@ -955,13 +957,11 @@ export const Plasmicمدیریتویلا = Object.assign(
     // Key-value metadata
     metadata: {
       ogDescription:
-        "\u0628\u0627 \u0627\u0628\u0632\u0627\u0631 \u0686\u0646\u0644\u200c\u0645\u0646\u06cc\u062c\u0631 \u0631\u0646\u062a\u0627\u0645\u0648\u0646\u060c \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062e\u0648\u062f \u0631\u0627 \u062f\u0631 \u062a\u0645\u0627\u0645 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u0645\u062b\u0644 \u062c\u0627\u0628\u0627\u0645\u0627\u060c \u062c\u0627\u062c\u06cc\u06af\u0627\u060c \u0627\u062a\u0627\u0642\u06a9\u060c \u0634\u0628 \u0648\u2026 \u0628\u0647\u200c\u0635\u0648\u0631\u062a \u062e\u0648\u062f\u06a9\u0627\u0631 \u0647\u0645\u06af\u0627\u0645\u200c\u0633\u0627\u0632\u06cc \u06a9\u0646\u06cc\u062f \u0648 \u0627\u0632 \u062a\u062f\u0627\u062e\u0644 \u0631\u0632\u0631\u0648\u0647\u0627 \u062c\u0644\u0648\u06af\u06cc\u0631\u06cc \u06a9\u0646\u06cc\u062f.",
-      ogUrl: "https://rentamon.com/villa-management",
+        "\u0628\u0627 \u0627\u0628\u0632\u0627\u0631 \u0686\u0646\u0644\u200c\u0645\u0646\u06cc\u062c\u0631 \u0645\u06cc\u0627\u0646\u060c \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062e\u0648\u062f \u0631\u0627 \u062f\u0631 \u062a\u0645\u0627\u0645 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u0645\u062b\u0644 \u062c\u0627\u0628\u0627\u0645\u0627\u060c \u062c\u0627\u062c\u06cc\u06af\u0627\u060c \u0627\u062a\u0627\u0642\u06a9\u060c \u0634\u0628 \u0648\u2026 \u0628\u0647\u200c\u0635\u0648\u0631\u062a \u062e\u0648\u062f\u06a9\u0627\u0631 \u0647\u0645\u06af\u0627\u0645\u200c\u0633\u0627\u0632\u06cc \u06a9\u0646\u06cc\u062f \u0648 \u0627\u0632 \u062a\u062f\u0627\u062e\u0644 \u0631\u0632\u0631\u0648\u0647\u0627 \u062c\u0644\u0648\u06af\u06cc\u0631\u06cc \u06a9\u0646\u06cc\u062f.",
       ogType: "article",
-      ogImage:
-        "https://rentamon.com/plasmic/website_starter/images/handsOnAppPng2.png",
       title:
-        "\u0645\u062f\u06cc\u0631\u06cc\u062a \u0647\u0648\u0634\u0645\u0646\u062f \u0648\u06cc\u0644\u0627 \u0628\u0627 \u0686\u0646\u0644\u200c\u0645\u0646\u06cc\u062c\u0631 \u0645\u06cc\u0627\u0646"
+        "\u0645\u062f\u06cc\u0631\u06cc\u062a \u0647\u0648\u0634\u0645\u0646\u062f \u0648\u06cc\u0644\u0627 \u0628\u0627 \u0686\u0646\u0644\u200c\u0645\u0646\u06cc\u062c\u0631 \u0645\u06cc\u0627\u0646",
+      ogurl: "https:// miaan.ir/villa-management"
     },
 
     pageMetadata: generateDynamicMetadata(wrapQueriesWithLoadingProxy({}), {

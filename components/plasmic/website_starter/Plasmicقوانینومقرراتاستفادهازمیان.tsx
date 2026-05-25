@@ -104,7 +104,8 @@ export function generateDynamicMetadata($q: any, $ctx: PageCtx) {
     twitter: {
       card: "summary" as const,
       title: "قوانین و مقررات استفاده از میان"
-    }
+    },
+    alternates: { canonical: "https://miaan.ir/terms-of-use/" }
   };
 }
 
@@ -218,6 +219,8 @@ function Plasmicقوانینومقرراتاستفادهازمیان__RenderFunc
           property="twitter:title"
           content={pageMetadata.title}
         />
+
+        <link rel="canonical" href={pageMetadata.alternates?.canonical} />
       </Head>
 
       <style>{`

@@ -96,11 +96,11 @@ export type PageCtx = {
 
 export function generateDynamicMetadata($q: any, $ctx: PageCtx) {
   return {
-    title: "قوانین اجاره روزانه ویلا و آپارتمان مبله",
+    title: "قوانین اجاره روزانه ویلا و آپارتمان مبله –  میان",
     description:
       "قوانین اجاره کوتاه‌مدت در ایران: مجوزها، مسئولیت‌ها، مالیات، بیمه و احراز هویت مهمان؛ راهنمای کامل برای صاحبان ویلا و آپارتمان مبله.",
     openGraph: {
-      title: "قوانین اجاره روزانه ویلا و آپارتمان مبله",
+      title: "قوانین اجاره روزانه ویلا و آپارتمان مبله –  میان",
       description:
         "قوانین اجاره کوتاه‌مدت در ایران: مجوزها، مسئولیت‌ها، مالیات، بیمه و احراز هویت مهمان؛ راهنمای کامل برای صاحبان ویلا و آپارتمان مبله.",
       images: [
@@ -109,13 +109,14 @@ export function generateDynamicMetadata($q: any, $ctx: PageCtx) {
     },
     twitter: {
       card: "summary_large_image" as const,
-      title: "قوانین اجاره روزانه ویلا و آپارتمان مبله",
+      title: "قوانین اجاره روزانه ویلا و آپارتمان مبله –  میان",
       description:
         "قوانین اجاره کوتاه‌مدت در ایران: مجوزها، مسئولیت‌ها، مالیات، بیمه و احراز هویت مهمان؛ راهنمای کامل برای صاحبان ویلا و آپارتمان مبله.",
       images: [
         "https://site-assets.plasmic.app/0fa21a59b2c480cb87b67e80efe4956e.jpg"
       ]
-    }
+    },
+    alternates: { canonical: "https://miaan.ir/rental-rules/" }
   };
 }
 
@@ -269,6 +270,7 @@ function Plasmicقوانیناجارهروزانه__RenderFunc(props: {
           property="twitter:image"
           content={pageMetadata.ogImageSrc}
         />
+        <link rel="canonical" href={pageMetadata.alternates?.canonical} />
       </Head>
 
       <style>{`
@@ -1117,7 +1119,7 @@ function Plasmicقوانیناجارهروزانه__RenderFunc(props: {
                     )}
                   >
                     {hasVariant(globalVariants, "screen", "mobile")
-                      ? "\u0627\u06af\u0647 \u0645\u06cc\u200c\u062e\u0648\u0627\u06cc \u0628\u0631\u0627\u06cc \u0631\u0634\u062f \u06af\u0631\u062f\u0634\u06af\u0631\u06cc \u06a9\u0634\u0648\u0631 \u062c\u062f\u06cc \u0641\u0639\u0627\u0644\u06cc\u062a \u06a9\u0646\u06cc\u060c \u0645\u0627 \u062f\u0631 \u00ab\u0631\u0646\u062a\u0627\u0645\u0648\u0646\u00bb \u06a9\u0646\u0627\u0631\u062a\u06cc\u0645."
+                      ? "\u0627\u06af\u0647 \u0645\u06cc\u200c\u062e\u0648\u0627\u06cc \u0628\u0631\u0627\u06cc \u0631\u0634\u062f \u06af\u0631\u062f\u0634\u06af\u0631\u06cc \u06a9\u0634\u0648\u0631 \u062c\u062f\u06cc \u0641\u0639\u0627\u0644\u06cc\u062a \u06a9\u0646\u06cc\u060c \u0645\u0627 \u062f\u0631 \u00ab\u0645\u06cc\u0627\u0646\u00bb \u06a9\u0646\u0627\u0631\u062a\u06cc\u0645."
                       : "\u0627\u06af\u0647 \u0645\u06cc\u200c\u062e\u0648\u0627\u06cc \u0628\u0631\u0627\u06cc \u0631\u0634\u062f \u06af\u0631\u062f\u0634\u06af\u0631\u06cc \u06a9\u0634\u0648\u0631 \u062c\u062f\u06cc \u0641\u0639\u0627\u0644\u06cc\u062a \u06a9\u0646\u06cc\u060c \u0645\u0627 \u062f\u0631 \u00ab\u0645\u06cc\u0627\u0646\u00bb \u06a9\u0646\u0627\u0631\u062a\u06cc\u0645."}
                   </div>
                 </div>
@@ -1439,7 +1441,7 @@ export const Plasmicقوانیناجارهروزانه = Object.assign(
         "\u0642\u0648\u0627\u0646\u06cc\u0646 \u0627\u062c\u0627\u0631\u0647 \u0631\u0648\u0632\u0627\u0646\u0647 \u0648\u06cc\u0644\u0627 \u0648 \u0622\u067e\u0627\u0631\u062a\u0645\u0627\u0646 \u0645\u0628\u0644\u0647",
       description:
         "\u0642\u0648\u0627\u0646\u06cc\u0646 \u0627\u062c\u0627\u0631\u0647 \u06a9\u0648\u062a\u0627\u0647\u200c\u0645\u062f\u062a \u062f\u0631 \u0627\u06cc\u0631\u0627\u0646: \u0645\u062c\u0648\u0632\u0647\u0627\u060c \u0645\u0633\u0626\u0648\u0644\u06cc\u062a\u200c\u0647\u0627\u060c \u0645\u0627\u0644\u06cc\u0627\u062a\u060c \u0628\u06cc\u0645\u0647 \u0648 \u0627\u062d\u0631\u0627\u0632 \u0647\u0648\u06cc\u062a \u0645\u0647\u0645\u0627\u0646\u061b \u0631\u0627\u0647\u0646\u0645\u0627\u06cc \u06a9\u0627\u0645\u0644 \u0628\u0631\u0627\u06cc \u0635\u0627\u062d\u0628\u0627\u0646 \u0648\u06cc\u0644\u0627 \u0648 \u0622\u067e\u0627\u0631\u062a\u0645\u0627\u0646 \u0645\u0628\u0644\u0647.",
-      url: "https://rentamon.com/rental-rules/",
+      url: "https://miaan.ir/rental-rules/",
       imageAlt:
         "\u0642\u0648\u0627\u0646\u06cc\u0646 \u0627\u062c\u0627\u0631\u0647 \u0631\u0648\u0632\u0627\u0646\u0647 \u0648\u06cc\u0644\u0627 \u0648 \u0622\u067e\u0627\u0631\u062a\u0645\u0627\u0646 \u0645\u0628\u0644\u0647",
       image:

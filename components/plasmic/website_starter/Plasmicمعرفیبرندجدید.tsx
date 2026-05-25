@@ -100,11 +100,11 @@ export type PageCtx = {
 
 export function generateDynamicMetadata($q: any, $ctx: PageCtx) {
   return {
-    title: "معرفی برند جدید میان",
+    title: "معرفی برند جدید میان –  میان",
     description:
       "رنتامون با نام و هویت جدید «میان» به بازار آمد. میان با ارائه خدمات هوشمندانه تر، مدیریت ویلا و اقامتگاه رو برای شما راحت‌تر کرده است.",
     openGraph: {
-      title: "معرفی برند جدید میان",
+      title: "معرفی برند جدید میان –  میان",
       description:
         "رنتامون با نام و هویت جدید «میان» به بازار آمد. میان با ارائه خدمات هوشمندانه تر، مدیریت ویلا و اقامتگاه رو برای شما راحت‌تر کرده است.",
       images: [
@@ -113,7 +113,7 @@ export function generateDynamicMetadata($q: any, $ctx: PageCtx) {
     },
     twitter: {
       card: "summary_large_image" as const,
-      title: "معرفی برند جدید میان",
+      title: "معرفی برند جدید میان –  میان",
       description:
         "رنتامون با نام و هویت جدید «میان» به بازار آمد. میان با ارائه خدمات هوشمندانه تر، مدیریت ویلا و اقامتگاه رو برای شما راحت‌تر کرده است.",
       images: [

@@ -130,7 +130,8 @@ export function generateDynamicMetadata($q: any, $ctx: PageCtx) {
       images: [
         "https://site-assets.plasmic.app/33c05b5a2d13ca8a5491f31ff19d2fb3.jpg"
       ]
-    }
+    },
+    alternates: { canonical: "https://miaan.ir/list-your-property/" }
   };
 }
 
@@ -337,6 +338,7 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
           property="twitter:image"
           content={pageMetadata.ogImageSrc}
         />
+        <link rel="canonical" href={pageMetadata.alternates?.canonical} />
       </Head>
 
       <style>{`
@@ -2564,7 +2566,7 @@ export const Plasmicثبتآگهیاقامتگاه = Object.assign(
         "\u0641\u0631\u0645 \u062b\u0628\u062a \u0633\u0631\u06cc\u0639 \u0622\u06af\u0647\u06cc \u0645\u0644\u06a9 \u0634\u0645\u0627 \u062f\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627",
       ogDescription:
         "\u062b\u0628\u062a \u0631\u0627\u06cc\u06af\u0627\u0646 \u0622\u06af\u0647\u06cc \u0648\u06cc\u0644\u0627\u060c \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0648 \u0633\u0648\u06cc\u06cc\u062a \u062f\u0631 \u062c\u0627\u0628\u0627\u0645\u0627\u060c \u062c\u0627\u062c\u06cc\u06af\u0627\u060c \u0627\u062a\u0627\u0642\u06a9\u060c \u0634\u0628 \u0648 \u0647\u0648\u0645\u0633\u0627 \u062a\u0648\u0633\u0637 \u0645\u0627.",
-      ogUrl: "https://rentamon.com/list-your-property/",
+      ogUrl: "https://miaan.ir/list-your-property/",
       ogImageAlt:
         "\u062f\u0631\u0622\u0645\u062f \u0622\u0646\u0644\u0627\u06cc\u0646 \u0627\u0632 \u0627\u062c\u0627\u0631\u0647 \u0645\u0646\u0632\u0644 \u0648 \u0648\u06cc\u0644\u0627",
       twitterCard: "summary_large_image",
