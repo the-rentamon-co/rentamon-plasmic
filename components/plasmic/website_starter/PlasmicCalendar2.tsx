@@ -4502,7 +4502,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                       const actionArgs = {
                         args: [
                           "POST",
-                          "https://api-v2.miaan.ir/api/setunblock",
+                          "https://automation.miaan.ir/webhook/calendar/actions",
                           undefined,
                           (() => {
                             try {
@@ -4566,7 +4566,9 @@ function PlasmicCalendar2__RenderFunc(props: {
                                 const todayInPersian = getTodayInPersian();
                                 const data = {
                                   days: [$state.fragmentDatePicker.values],
-                                  property_id: $props.propertyId
+                                  property_id: $props.propertyId,
+                                  requested_by: "user",
+                                  request_for: "unblock"
                                 };
                                 $state.requestdata = data;
                                 data.days = data.days
@@ -5454,7 +5456,99 @@ function PlasmicCalendar2__RenderFunc(props: {
                       await $steps["updateStateVariable2"];
                   }
 
-                  $steps["setPrice"] = true
+                  $steps["invokeGlobalAction"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          args: [
+                            "POST",
+                            "https://automation.miaan.ir/webhook/calendar/actions",
+                            undefined,
+                            (() => {
+                              function convertPersianNumbersToEnglish(str) {
+                                const persianNumbers = [
+                                  "۰",
+                                  "۱",
+                                  "۲",
+                                  "۳",
+                                  "۴",
+                                  "۵",
+                                  "۶",
+                                  "۷",
+                                  "۸",
+                                  "۹"
+                                ];
+
+                                const englishNumbers = [
+                                  "0",
+                                  "1",
+                                  "2",
+                                  "3",
+                                  "4",
+                                  "5",
+                                  "6",
+                                  "7",
+                                  "8",
+                                  "9"
+                                ];
+
+                                return str.replace(
+                                  /[۰-۹]/g,
+                                  char =>
+                                    englishNumbers[
+                                      persianNumbers.indexOf(char)
+                                    ] || char
+                                );
+                              }
+                              function padZero(num) {
+                                return num.length === 1 ? `0${num}` : num;
+                              }
+                              function convertTimestampToPersianDateWithEnglishNumbers(
+                                timestamp
+                              ) {
+                                const date = new Date(timestamp * 1000);
+                                const [year, month, day] = date
+                                  .toLocaleDateString("fa")
+                                  .split("/");
+                                const formattedDate = `${convertPersianNumbersToEnglish(year)}-${padZero(convertPersianNumbersToEnglish(month))}-${padZero(convertPersianNumbersToEnglish(day))}`;
+                                return formattedDate;
+                              }
+                              const data = {
+                                days: [$state.fragmentDatePicker.values],
+                                property_id: $props.propertyId,
+                                price: String($state.input.value),
+                                requested_by: "user",
+                                request_for: "price"
+                              };
+                              $state.requestdata = data;
+                              data.days = data.days
+                                .map(timestampArray =>
+                                  timestampArray.map(timestamp =>
+                                    convertTimestampToPersianDateWithEnglishNumbers(
+                                      timestamp
+                                    )
+                                  )
+                                )
+                                .flat();
+                              return data;
+                            })()
+                          ]
+                        };
+                        return $globalActions["Fragment.apiRequest"]?.apply(
+                          null,
+                          [...actionArgs.args]
+                        );
+                      })()
+                    : undefined;
+                  if (
+                    $steps["invokeGlobalAction"] != null &&
+                    typeof $steps["invokeGlobalAction"] === "object" &&
+                    typeof $steps["invokeGlobalAction"].then === "function"
+                  ) {
+                    $steps["invokeGlobalAction"] =
+                      await $steps["invokeGlobalAction"];
+                  }
+
+                  $steps["setPrice"] = false
                     ? (() => {
                         const actionArgs = {
                           args: [
@@ -7045,7 +7139,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                       const actionArgs = {
                         args: [
                           "POST",
-                          "https://api-v2.miaan.ir/api/setblock",
+                          "https://automation.miaan.ir/webhook/calendar/actions",
                           undefined,
                           (() => {
                             try {
@@ -7635,7 +7729,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                       const actionArgs = {
                         args: [
                           "POST",
-                          "https://api-v2.miaan.ir/api/setblock",
+                          "https://automation.miaan.ir/webhook/calendar/actions",
                           undefined,
                           (() => {
                             try {
@@ -7685,26 +7779,29 @@ function PlasmicCalendar2__RenderFunc(props: {
                                   const [year, month, day] = date
                                     .toLocaleDateString("fa")
                                     .split("/");
-                                  const formattedDate = `${convertPersianNumbersToEnglish(year)}-${padZero(convertPersianNumbersToEnglish(month))}-${padZero(convertPersianNumbersToEnglish(day))}`;
-                                  return formattedDate;
+                                  return `${convertPersianNumbersToEnglish(year)}-${padZero(convertPersianNumbersToEnglish(month))}-${padZero(convertPersianNumbersToEnglish(day))}`;
                                 }
                                 function getTodayInPersian() {
                                   const today = new Date();
                                   const [year, month, day] = today
                                     .toLocaleDateString("fa")
                                     .split("/");
-                                  const formattedDate = `${convertPersianNumbersToEnglish(year)}-${padZero(convertPersianNumbersToEnglish(month))}-${padZero(convertPersianNumbersToEnglish(day))}`;
-                                  return formattedDate;
+                                  return `${convertPersianNumbersToEnglish(year)}-${padZero(convertPersianNumbersToEnglish(month))}-${padZero(convertPersianNumbersToEnglish(day))}`;
                                 }
                                 const todayInPersian = getTodayInPersian();
-                                const data = {
-                                  days: [$state.fragmentDatePicker.values],
-                                  property_id: $props.propertyId,
-                                  requested_by: "user",
-                                  request_for: "block"
-                                };
-                                $state.requestdata = data;
-                                data.days = data.days
+                                const propId =
+                                  $props.propertyId || $state.propId;
+                                const reqId =
+                                  $state.pollingRequestId ||
+                                  (typeof window !== "undefined" && propId
+                                    ? sessionStorage.getItem(
+                                        `pending_req_${propId}`
+                                      )
+                                    : "");
+                                const rawDays = [
+                                  $state.fragmentDatePicker.values
+                                ];
+                                const formattedDays = rawDays
                                   .map(timestampArray =>
                                     timestampArray
                                       .map(timestamp =>
@@ -7715,7 +7812,13 @@ function PlasmicCalendar2__RenderFunc(props: {
                                       .filter(day => day >= todayInPersian)
                                   )
                                   .flat();
-                                return data;
+                                const backendData = {
+                                  days: formattedDays,
+                                  property_id: propId,
+                                  requested_by: "user",
+                                  request_for: "block"
+                                };
+                                return backendData;
                               })();
                             } catch (e) {
                               if (
@@ -10062,7 +10165,7 @@ function PlasmicCalendar2__RenderFunc(props: {
                         const actionArgs = {
                           args: [
                             "POST",
-                            "https://api-v2.miaan.ir/api/setdiscount",
+                            "https://automation.miaan.ir/webhook/calendar/actions",
                             undefined,
                             (() => {
                               try {
@@ -10118,7 +10221,9 @@ function PlasmicCalendar2__RenderFunc(props: {
                                   const data = {
                                     days: [$state.fragmentDatePicker.values],
                                     property_id: $props.propertyId,
-                                    discount: String($state.textInput4.value)
+                                    discount: String($state.textInput4.value),
+                                    requested_by: "user",
+                                    request_for: "discount"
                                   };
                                   $state.requestdata = data;
                                   data.days = data.days
