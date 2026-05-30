@@ -3666,6 +3666,19 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/short-term-rental"
+        },
+        {
+          "id": "wwEEFlmSNy4p",
+          "name": "UserDebtsModal",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicUserDebtsModal.tsx",
+          "importSpec": {
+            "modulePath": "UserDebtsModal.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicUserDebtsModal.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
         }
       ],
       "icons": [

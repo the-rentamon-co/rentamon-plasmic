@@ -70,6 +70,7 @@ import NavbarMnFooter from "../../NavbarMnFooter"; // plasmic-import: y37kcAs9RX
 import ClarityRntComponent from "../../ClarityRntComponent"; // plasmic-import: J5D8c7V05ty1/component
 import FaviconRntComponent from "../../FaviconRntComponent"; // plasmic-import: 2Chy9NeUIB9Q/component
 import { AntdModal } from "@plasmicpkgs/antd5/skinny/registerModal";
+import UserDebtsModal from "../../UserDebtsModal"; // plasmic-import: wwEEFlmSNy4p/component
 import { _useGlobalVariants } from "./plasmic"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectModule
 import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/styleTokensProvider
 
@@ -159,6 +160,7 @@ export type PlasmicProCalendar2__OverridesType = {
   clarityRntComponent?: Flex__<typeof ClarityRntComponent>;
   faviconRntComponent?: Flex__<typeof FaviconRntComponent>;
   modal?: Flex__<typeof AntdModal>;
+  userDebtsModal?: Flex__<typeof UserDebtsModal>;
 };
 
 export interface DefaultProCalendar2Props {}
@@ -2196,7 +2198,19 @@ function PlasmicProCalendar2__RenderFunc(props: {
               className={classNames("__wab_instance", sty.faviconRntComponent)}
             />
           </div>
-          {false ? (
+          {(() => {
+            try {
+              return true;
+            } catch (e) {
+              if (
+                e instanceof TypeError ||
+                e?.plasmicType === "PlasmicUndefinedDataError"
+              ) {
+                return false;
+              }
+              throw e;
+            }
+          })() ? (
             <AntdModal
               data-plasmic-name={"modal"}
               data-plasmic-override={overrides.modal}
@@ -2322,6 +2336,11 @@ function PlasmicProCalendar2__RenderFunc(props: {
               </div>
             </AntdModal>
           ) : null}
+          <UserDebtsModal
+            data-plasmic-name={"userDebtsModal"}
+            data-plasmic-override={overrides.userDebtsModal}
+            className={classNames("__wab_instance", sty.userDebtsModal)}
+          />
         </div>
       </div>
     </React.Fragment>
@@ -2354,7 +2373,8 @@ const PlasmicDescendants = {
     "navbarMnFooter",
     "clarityRntComponent",
     "faviconRntComponent",
-    "modal"
+    "modal",
+    "userDebtsModal"
   ],
   header2: ["header2", "sideBar2"],
   sideBar2: ["sideBar2"],
@@ -2412,7 +2432,8 @@ const PlasmicDescendants = {
   navbarMnFooter: ["navbarMnFooter"],
   clarityRntComponent: ["clarityRntComponent"],
   faviconRntComponent: ["faviconRntComponent"],
-  modal: ["modal"]
+  modal: ["modal"],
+  userDebtsModal: ["userDebtsModal"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -2443,6 +2464,7 @@ type NodeDefaultElementType = {
   clarityRntComponent: typeof ClarityRntComponent;
   faviconRntComponent: typeof FaviconRntComponent;
   modal: typeof AntdModal;
+  userDebtsModal: typeof UserDebtsModal;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -2531,6 +2553,7 @@ export const PlasmicProCalendar2 = Object.assign(
     clarityRntComponent: makeNodeComponent("clarityRntComponent"),
     faviconRntComponent: makeNodeComponent("faviconRntComponent"),
     modal: makeNodeComponent("modal"),
+    userDebtsModal: makeNodeComponent("userDebtsModal"),
 
     // Metadata about props expected for PlasmicProCalendar2
     internalVariantProps: PlasmicProCalendar2__VariantProps,
