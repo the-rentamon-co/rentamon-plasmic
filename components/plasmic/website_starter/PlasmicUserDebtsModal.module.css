@@ -122,7 +122,8 @@
   line-height: 1.8;
   padding-bottom: 20px;
   padding-top: 20px;
-  font-weight: 600;
+  font-weight: 700;
+  color: var(--token-pZV_D4O-0Dnd);
   min-width: 0;
 }
 @media (max-width: 500px) {
