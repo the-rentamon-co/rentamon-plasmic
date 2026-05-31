@@ -244,7 +244,21 @@ function PlasmicUserDebtsModal__RenderFunc(props: {
             styleTokensClassNames
           )}
           hideFooter={true}
-          maskClosable={false}
+          maskClosable={(() => {
+            try {
+              return $state.userDebtsApi.data.restriction_level === "soft"
+                ? true
+                : false;
+            } catch (e) {
+              if (
+                e instanceof TypeError ||
+                e?.plasmicType === "PlasmicUndefinedDataError"
+              ) {
+                return false;
+              }
+              throw e;
+            }
+          })()}
           modalScopeClassName={sty["modalUserDebts__modal"]}
           onOpenChange={async (...eventArgs: any) => {
             generateStateOnChangeProp($state, ["modalUserDebts", "open"]).apply(
@@ -286,28 +300,24 @@ function PlasmicUserDebtsModal__RenderFunc(props: {
                 sty.text__wvDmz
               )}
             >
-              {hasVariant(globalVariants, "screen", "smallMobile") ? (
-                "\u26a0\ufe0f\r\n\u0628\u0647 \u062f\u0644\u06cc\u0644 \u0627\u062e\u062a\u0644\u0627\u0644 \u0633\u0631\u0627\u0633\u0631\u06cc \u0631\u0648\u06cc \u0627\u06cc\u0646\u062a\u0631\u0646\u062a \u06a9\u0634\u0648\u0631\u060c \u0645\u0645\u06a9\u0646\u0647 \u0628\u0639\u0636\u06cc \u062a\u063a\u06cc\u06cc\u0631\u0627\u062a \u0628\u0627 \u062e\u0637\u0627 \u0645\u0648\u0627\u062c\u0647 \u0628\u0634\u0646"
-              ) : (
-                <React.Fragment>
-                  {(() => {
-                    try {
-                      return (
-                        ($state.userDebtsApi?.data?.user_name || "کاربر") +
-                        " عزیز\u060C موجودیت منفی شده!\nبرای استفاده از امکانات برنامه \xABمیان\xBB\nلطفا صورت‌حسابت رو تسویه کن"
-                      );
-                    } catch (e) {
-                      if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
-                      ) {
-                        return "\u26a0\ufe0f\r\n\u0639\u0632\u06cc\u0632\u060c \u0644\u0637\u0641\u0627\n\u0628\u0631\u0627\u06cc \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u0627\u0645\u06a9\u0627\u0646\u0627\u062a \u0628\u0631\u0646\u0627\u0645\u0647 \u00ab\u0645\u06cc\u0627\u0646\u00bb\n\u0627\u0648\u0644 \u0628\u062f\u0647\u06cc \u0631\u0648 \u062a\u0633\u0648\u06cc\u0647 \u06a9\u0646";
-                      }
-                      throw e;
+              <React.Fragment>
+                {(() => {
+                  try {
+                    return (
+                      ($state.userDebtsApi?.data?.user_name || "کاربر") +
+                      " عزیز\u060C موجودیت منفی شده!\nبرای استفاده از امکانات برنامه \xABمیان\xBB\nلطفا صورت‌حسابت رو تسویه کن"
+                    );
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return "\u26a0\ufe0f\r\n\u0639\u0632\u06cc\u0632\u060c \u0644\u0637\u0641\u0627\n\u0628\u0631\u0627\u06cc \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u0627\u0645\u06a9\u0627\u0646\u0627\u062a \u0628\u0631\u0646\u0627\u0645\u0647 \u00ab\u0645\u06cc\u0627\u0646\u00bb\n\u0627\u0648\u0644 \u0628\u062f\u0647\u06cc \u0631\u0648 \u062a\u0633\u0648\u06cc\u0647 \u06a9\u0646";
                     }
-                  })()}
-                </React.Fragment>
-              )}
+                    throw e;
+                  }
+                })()}
+              </React.Fragment>
             </div>
           </div>
           <div className={classNames(projectcss.all, sty.freeBox__kZmf)}>
@@ -318,35 +328,31 @@ function PlasmicUserDebtsModal__RenderFunc(props: {
                 sty.text__bePAy
               )}
             >
-              {hasVariant(globalVariants, "screen", "smallMobile") ? (
-                "\u26a0\ufe0f\r\n\u0628\u0647 \u062f\u0644\u06cc\u0644 \u0627\u062e\u062a\u0644\u0627\u0644 \u0633\u0631\u0627\u0633\u0631\u06cc \u0631\u0648\u06cc \u0627\u06cc\u0646\u062a\u0631\u0646\u062a \u06a9\u0634\u0648\u0631\u060c \u0645\u0645\u06a9\u0646\u0647 \u0628\u0639\u0636\u06cc \u062a\u063a\u06cc\u06cc\u0631\u0627\u062a \u0628\u0627 \u062e\u0637\u0627 \u0645\u0648\u0627\u062c\u0647 \u0628\u0634\u0646"
-              ) : (
-                <React.Fragment>
-                  {(() => {
-                    try {
-                      return (
-                        "بدهی فعلی: " +
-                        ($state.userDebtsApi?.data?.debt_amount
-                          ? new Intl.NumberFormat("fa-IR", {
-                              maximumFractionDigits: 0
-                            }).format(
-                              Number($state.userDebtsApi.data.debt_amount)
-                            )
-                          : "نامشخص") +
-                        " تومان"
-                      );
-                    } catch (e) {
-                      if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
-                      ) {
-                        return "\u26a0\ufe0f\r\n\u0639\u0632\u06cc\u0632\u060c \u0644\u0637\u0641\u0627\n\u0628\u0631\u0627\u06cc \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u0627\u0645\u06a9\u0627\u0646\u0627\u062a \u0628\u0631\u0646\u0627\u0645\u0647 \u00ab\u0645\u06cc\u0627\u0646\u00bb\n\u0627\u0648\u0644 \u0628\u062f\u0647\u06cc \u0631\u0648 \u062a\u0633\u0648\u06cc\u0647 \u06a9\u0646";
-                      }
-                      throw e;
+              <React.Fragment>
+                {(() => {
+                  try {
+                    return (
+                      "بدهی فعلی: " +
+                      ($state.userDebtsApi?.data?.debt_amount
+                        ? new Intl.NumberFormat("fa-IR", {
+                            maximumFractionDigits: 0
+                          }).format(
+                            Number($state.userDebtsApi.data.debt_amount)
+                          )
+                        : "نامشخص") +
+                      " تومان"
+                    );
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return "\u26a0\ufe0f\r\n\u0639\u0632\u06cc\u0632\u060c \u0644\u0637\u0641\u0627\n\u0628\u0631\u0627\u06cc \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u0627\u0645\u06a9\u0627\u0646\u0627\u062a \u0628\u0631\u0646\u0627\u0645\u0647 \u00ab\u0645\u06cc\u0627\u0646\u00bb\n\u0627\u0648\u0644 \u0628\u062f\u0647\u06cc \u0631\u0648 \u062a\u0633\u0648\u06cc\u0647 \u06a9\u0646";
                     }
-                  })()}
-                </React.Fragment>
-              )}
+                    throw e;
+                  }
+                })()}
+              </React.Fragment>
             </div>
           </div>
           <div
