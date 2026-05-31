@@ -388,44 +388,43 @@ function Plasmicدانلوداپلیکیشنموبایلمیان__RenderFunc(pro
                   onClick={async event => {
                     const $steps = {};
 
-                    $steps[
-                      "goToHttpsRentamonLibraryS3IrThrAt1ArvanstorageIrApk2FmiaanV201600ApkVersionId"
-                    ] = true
-                      ? (() => {
-                          const actionArgs = {
-                            destination:
-                              "https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/apk%2Fmiaan-v20-1.6.0.0.apk?versionId="
-                          };
-                          return (({ destination }) => {
-                            if (
-                              typeof destination === "string" &&
-                              destination.startsWith("#")
-                            ) {
-                              document
-                                .getElementById(destination.substr(1))
-                                .scrollIntoView({ behavior: "smooth" });
-                            } else {
-                              __nextRouter?.push(destination);
-                            }
-                          })?.apply(null, [actionArgs]);
-                        })()
-                      : undefined;
+                    $steps["goToHttpsMediaMiaanIrApk2FD985Db8CD8A7D986V23Apk"] =
+                      true
+                        ? (() => {
+                            const actionArgs = {
+                              destination:
+                                "https://media.miaan.ir/apk%2F%D9%85%DB%8C%D8%A7%D9%86v23.apk"
+                            };
+                            return (({ destination }) => {
+                              if (
+                                typeof destination === "string" &&
+                                destination.startsWith("#")
+                              ) {
+                                document
+                                  .getElementById(destination.substr(1))
+                                  .scrollIntoView({ behavior: "smooth" });
+                              } else {
+                                __nextRouter?.push(destination);
+                              }
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
                     if (
                       $steps[
-                        "goToHttpsRentamonLibraryS3IrThrAt1ArvanstorageIrApk2FmiaanV201600ApkVersionId"
+                        "goToHttpsMediaMiaanIrApk2FD985Db8CD8A7D986V23Apk"
                       ] != null &&
                       typeof $steps[
-                        "goToHttpsRentamonLibraryS3IrThrAt1ArvanstorageIrApk2FmiaanV201600ApkVersionId"
+                        "goToHttpsMediaMiaanIrApk2FD985Db8CD8A7D986V23Apk"
                       ] === "object" &&
                       typeof $steps[
-                        "goToHttpsRentamonLibraryS3IrThrAt1ArvanstorageIrApk2FmiaanV201600ApkVersionId"
+                        "goToHttpsMediaMiaanIrApk2FD985Db8CD8A7D986V23Apk"
                       ].then === "function"
                     ) {
                       $steps[
-                        "goToHttpsRentamonLibraryS3IrThrAt1ArvanstorageIrApk2FmiaanV201600ApkVersionId"
+                        "goToHttpsMediaMiaanIrApk2FD985Db8CD8A7D986V23Apk"
                       ] =
                         await $steps[
-                          "goToHttpsRentamonLibraryS3IrThrAt1ArvanstorageIrApk2FmiaanV201600ApkVersionId"
+                          "goToHttpsMediaMiaanIrApk2FD985Db8CD8A7D986V23Apk"
                         ];
                     }
                   }}
