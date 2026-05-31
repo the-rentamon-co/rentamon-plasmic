@@ -168,6 +168,8 @@ function PlasmicUserDebtsModal__RenderFunc(props: {
 
   const globalVariants = _useGlobalVariants();
 
+  const $globalActions = useGlobalActions?.();
+
   const $state = useDollarState(stateSpecs, {
     $props,
     $ctx,
@@ -412,6 +414,35 @@ function PlasmicUserDebtsModal__RenderFunc(props: {
                 typeof $steps["runCode"].then === "function"
               ) {
                 $steps["runCode"] = await $steps["runCode"];
+              }
+
+              $steps["invokeGlobalAction"] = true
+                ? (() => {
+                    const actionArgs = {
+                      args: [
+                        "POST",
+                        "https://nb.miaan.ir/webhook/wallet-log",
+                        undefined,
+                        {
+                          event_type: "button_click",
+                          event_name: "debt_pay_click",
+                          metadata: { page: "panel" },
+                          source: "page"
+                        }
+                      ]
+                    };
+                    return $globalActions["Fragment.apiRequest"]?.apply(null, [
+                      ...actionArgs.args
+                    ]);
+                  })()
+                : undefined;
+              if (
+                $steps["invokeGlobalAction"] != null &&
+                typeof $steps["invokeGlobalAction"] === "object" &&
+                typeof $steps["invokeGlobalAction"].then === "function"
+              ) {
+                $steps["invokeGlobalAction"] =
+                  await $steps["invokeGlobalAction"];
               }
             }}
           >
