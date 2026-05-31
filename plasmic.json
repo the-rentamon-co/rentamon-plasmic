@@ -6578,6 +6578,16 @@
           "id": "wLLVo7XAWhL5",
           "name": "bale-white.svg",
           "filePath": "../public/plasmic/website_starter/images/baleWhiteSvg.svg"
+        },
+        {
+          "id": "9q8gPNwnO6WS",
+          "name": "walletDebt.svg",
+          "filePath": "../public/plasmic/website_starter/images/walletDebtSvg.svg"
+        },
+        {
+          "id": "hUAsSCwYLXFL",
+          "name": "walletwithDebt.svg",
+          "filePath": "../public/plasmic/website_starter/images/walletwithDebtSvg.svg"
         }
       ],
       "indirect": false,

@@ -45,7 +45,34 @@
     padding-left: 0px;
   }
 }
-.text__d9REo {
+.img {
+  object-fit: cover;
+  max-width: 10%;
+}
+.img > picture > img {
+  object-fit: cover;
+}
+.freeBox__gC7F {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 8px;
+  justify-content: flex-start;
+  align-items: center;
+  min-width: 0;
+}
+@media (max-width: 350px) {
+  .freeBox__gC7F {
+    padding-right: 0px;
+    padding-left: 0px;
+  }
+}
+.text__wvDmz {
   width: 100%;
   height: auto;
   max-width: 100%;
@@ -57,12 +84,54 @@
   min-width: 0;
 }
 @media (max-width: 500px) {
-  .text__d9REo {
+  .text__wvDmz {
     font-size: 16px;
   }
 }
 @media (max-width: 350px) {
-  .text__d9REo {
+  .text__wvDmz {
+    font-size: 15px;
+  }
+}
+.freeBox__kZmf {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 8px;
+  justify-content: flex-start;
+  align-items: center;
+  min-width: 0;
+}
+@media (max-width: 350px) {
+  .freeBox__kZmf {
+    padding-right: 0px;
+    padding-left: 0px;
+  }
+}
+.text__bePAy {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  text-align: center;
+  font-size: 17px;
+  line-height: 1.8;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  font-weight: 600;
+  min-width: 0;
+}
+@media (max-width: 500px) {
+  .text__bePAy {
+    font-size: 16px;
+  }
+}
+@media (max-width: 350px) {
+  .text__bePAy {
     font-size: 15px;
   }
 }
@@ -91,4 +160,24 @@
   min-width: 0;
   border-radius: 30px;
   padding: 8px;
+}
+.freeBox___2DF0Q {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 30px;
+  justify-content: flex-start;
+  align-items: center;
+  min-width: 0;
+}
+@media (max-width: 350px) {
+  .freeBox___2DF0Q {
+    padding-right: 0px;
+    padding-left: 0px;
+  }
 }
