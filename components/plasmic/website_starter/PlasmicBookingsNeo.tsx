@@ -4111,7 +4111,7 @@ function PlasmicBookingsNeo__RenderFunc(props: {
                                         ? "https://miaan.ir"
                                         : "https://rentamon.com";
                                       return window.open(
-                                        `${baseUrl}/bookings/${bookingId}`,
+                                        `${baseUrl}/bookings2/${bookingId}`,
                                         "_blank"
                                       );
                                     })();
