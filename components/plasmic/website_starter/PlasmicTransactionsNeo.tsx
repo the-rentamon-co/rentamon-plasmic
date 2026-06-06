@@ -71,7 +71,6 @@ import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-impor
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicTransactionsNeo.module.css"; // plasmic-import: yN7ky54pSTYH/css
 
 import CheckSvgIcon from "./icons/PlasmicIcon__CheckSvg"; // plasmic-import: aHRi_lZjzHt3/icon
@@ -330,17 +329,17 @@ function PlasmicTransactionsNeo__RenderFunc(props: {
         }
       `}</style>
 
-      <div className={projectcss.plasmic_page_wrapper}>
+      <div className={"plasmic_page_wrapper"}>
         <div
           data-plasmic-name={"root"}
           data-plasmic-override={overrides.root}
           data-plasmic-root={true}
           data-plasmic-for-node={forNode}
           className={classNames(
-            projectcss.all,
-            projectcss.root_reset,
-            projectcss.plasmic_default_styles,
-            projectcss.plasmic_mixins,
+            "all",
+            "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+            "plasmic_default_styles",
+            "plasmic_mixins",
             styleTokensClassNames,
             sty.root
           )}
@@ -348,10 +347,10 @@ function PlasmicTransactionsNeo__RenderFunc(props: {
           <div
             data-plasmic-name={"header"}
             data-plasmic-override={overrides.header}
-            className={classNames(projectcss.all, sty.header)}
+            className={classNames("all", sty.header)}
           >
-            <div className={classNames(projectcss.all, sty.freeBox__ij8B)}>
-              <div className={classNames(projectcss.all, sty.freeBox__jJdRi)}>
+            <div className={classNames("all", sty.freeBox__ij8B)}>
+              <div className={classNames("all", sty.freeBox__jJdRi)}>
                 <SideBar2
                   data-plasmic-name={"sideBar2"}
                   data-plasmic-override={overrides.sideBar2}
@@ -372,11 +371,11 @@ function PlasmicTransactionsNeo__RenderFunc(props: {
                   })()}
                 />
               </div>
-              <div className={classNames(projectcss.all, sty.freeBox___12JaV)}>
+              <div className={classNames("all", sty.freeBox___12JaV)}>
                 <div
                   className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
+                    "all",
+                    "__wab_text",
                     sty.text__cIz,
                     hasVariant(globalVariants, "screen", "mobile")
                       ? "fadeinf"
@@ -389,8 +388,8 @@ function PlasmicTransactionsNeo__RenderFunc(props: {
                 </div>
                 <div
                   className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
+                    "all",
+                    "__wab_text",
                     sty.text___7AsF,
                     hasVariant(globalVariants, "screen", "mobile")
                       ? "fadeinf"
@@ -402,7 +401,7 @@ function PlasmicTransactionsNeo__RenderFunc(props: {
                   }
                 </div>
               </div>
-              <div className={classNames(projectcss.all, sty.freeBox__koMId)}>
+              <div className={classNames("all", sty.freeBox__koMId)}>
                 <ApiRequest
                   data-plasmic-name={"profile"}
                   data-plasmic-override={overrides.profile}
@@ -455,21 +454,19 @@ function PlasmicTransactionsNeo__RenderFunc(props: {
                 />
               </div>
             </div>
-            <div className={classNames(projectcss.all, sty.freeBox__znW9)}>
+            <div className={classNames("all", sty.freeBox__znW9)}>
               <div
                 data-plasmic-name={"tableHeader"}
                 data-plasmic-override={overrides.tableHeader}
                 className={classNames(
-                  projectcss.all,
+                  "all",
                   sty.tableHeader,
                   hasVariant(globalVariants, "screen", "mobile")
                     ? "fadeinf"
                     : "fadeinf"
                 )}
               >
-                <div
-                  className={classNames(projectcss.all, sty.freeBox___2HGuo)}
-                >
+                <div className={classNames("all", sty.freeBox___2HGuo)}>
                   <PlasmicImg__
                     alt={""}
                     className={classNames(sty.img__xcwuq)}
@@ -489,11 +486,7 @@ function PlasmicTransactionsNeo__RenderFunc(props: {
                   />
 
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__i0Mfx
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__i0Mfx)}
                   >
                     {hasVariant(globalVariants, "screen", "smallMobile")
                       ? "\u0639\u0646\u0648\u0627\u0646"
@@ -504,24 +497,16 @@ function PlasmicTransactionsNeo__RenderFunc(props: {
                           : "\u0639\u0646\u0648\u0627\u0646"}
                   </div>
                 </div>
-                <div className={classNames(projectcss.all, sty.freeBox__bcneC)}>
+                <div className={classNames("all", sty.freeBox__bcneC)}>
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__qM7Ry
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__qM7Ry)}
                   >
                     {"\u062a\u0627\u0631\u06cc\u062e"}
                   </div>
                 </div>
-                <div className={classNames(projectcss.all, sty.freeBox__rdyyC)}>
+                <div className={classNames("all", sty.freeBox__rdyyC)}>
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__kxGsa
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__kxGsa)}
                   >
                     {hasVariant(globalVariants, "screen", "smallMobile") ? (
                       <React.Fragment>
@@ -531,9 +516,9 @@ function PlasmicTransactionsNeo__RenderFunc(props: {
                         {
                           <sup
                             className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
-                              projectcss.plasmic_default__inline,
+                              "all",
+                              "__wab_text",
+                              "plasmic_default__inline",
                               sty.sup__lOpBi
                             )}
                           >
@@ -542,9 +527,9 @@ function PlasmicTransactionsNeo__RenderFunc(props: {
                               {
                                 <sub
                                   className={classNames(
-                                    projectcss.all,
-                                    projectcss.__wab_text,
-                                    projectcss.plasmic_default__inline,
+                                    "all",
+                                    "__wab_text",
+                                    "plasmic_default__inline",
                                     sty.sub__fjvDf
                                   )}
                                 >
@@ -565,9 +550,9 @@ function PlasmicTransactionsNeo__RenderFunc(props: {
                         {
                           <sup
                             className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
-                              projectcss.plasmic_default__inline,
+                              "all",
+                              "__wab_text",
+                              "plasmic_default__inline",
                               sty.sup__miuJo
                             )}
                           >
@@ -576,9 +561,9 @@ function PlasmicTransactionsNeo__RenderFunc(props: {
                               {
                                 <sub
                                   className={classNames(
-                                    projectcss.all,
-                                    projectcss.__wab_text,
-                                    projectcss.plasmic_default__inline,
+                                    "all",
+                                    "__wab_text",
+                                    "plasmic_default__inline",
                                     sty.sub__os8Sg
                                   )}
                                 >
@@ -619,7 +604,7 @@ function PlasmicTransactionsNeo__RenderFunc(props: {
                     data-plasmic-name={"item"}
                     data-plasmic-override={overrides.item}
                     className={classNames(
-                      projectcss.all,
+                      "all",
                       sty.item,
                       hasVariant(globalVariants, "screen", "mobile")
                         ? "clickable fadeinf"
@@ -766,12 +751,7 @@ function PlasmicTransactionsNeo__RenderFunc(props: {
                         throw e;
                       }
                     })() ? (
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          sty.freeBox___5OuNi
-                        )}
-                      >
+                      <div className={classNames("all", sty.freeBox___5OuNi)}>
                         <PlasmicImg__
                           alt={""}
                           className={classNames(sty.img__d1OIm)}
@@ -791,9 +771,7 @@ function PlasmicTransactionsNeo__RenderFunc(props: {
                         />
                       </div>
                     ) : null}
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__oLxKn)}
-                    >
+                    <div className={classNames("all", sty.freeBox__oLxKn)}>
                       {(() => {
                         try {
                           return (
@@ -872,8 +850,8 @@ function PlasmicTransactionsNeo__RenderFunc(props: {
                       ) : null}
                       <div
                         className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
+                          "all",
+                          "__wab_text",
                           sty.text___0RaEf
                         )}
                       >
@@ -898,13 +876,11 @@ function PlasmicTransactionsNeo__RenderFunc(props: {
                         </React.Fragment>
                       </div>
                     </div>
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__iuxnn)}
-                    >
+                    <div className={classNames("all", sty.freeBox__iuxnn)}>
                       <div
                         className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
+                          "all",
+                          "__wab_text",
                           sty.text__lhSiw
                         )}
                       >
@@ -956,13 +932,11 @@ function PlasmicTransactionsNeo__RenderFunc(props: {
                         </React.Fragment>
                       </div>
                     </div>
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__utFea)}
-                    >
+                    <div className={classNames("all", sty.freeBox__utFea)}>
                       <div
                         className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
+                          "all",
+                          "__wab_text",
                           sty.text___41Vn3
                         )}
                       >
@@ -1154,13 +1128,7 @@ function PlasmicTransactionsNeo__RenderFunc(props: {
             data-plasmic-override={overrides.apiRequest}
             className={classNames("__wab_instance", sty.apiRequest)}
             errorDisplay={
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__s4ULj
-                )}
-              >
+              <div className={classNames("all", "__wab_text", sty.text__s4ULj)}>
                 {
                   "\u062e\u0637\u0627 \u062f\u0631 \u0628\u0631\u0642\u0631\u0627\u0631\u06cc \u0627\u0631\u062a\u0628\u0627\u0637"
                 }
@@ -1224,8 +1192,8 @@ function PlasmicTransactionsNeo__RenderFunc(props: {
             })() ? (
               <div
                 className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
+                  "all",
+                  "__wab_text",
                   sty.text___2OdNp,
                   hasVariant(globalVariants, "screen", "mobile")
                     ? "fadein"
@@ -1241,15 +1209,11 @@ function PlasmicTransactionsNeo__RenderFunc(props: {
           <div
             data-plasmic-name={"returnButton"}
             data-plasmic-override={overrides.returnButton}
-            className={classNames(projectcss.all, sty.returnButton, "fix")}
+            className={classNames("all", sty.returnButton, "fix")}
           >
-            <div className={classNames(projectcss.all, sty.freeBox__falNy)}>
+            <div className={classNames("all", sty.freeBox__falNy)}>
               <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text___70LgG
-                )}
+                className={classNames("all", "__wab_text", sty.text___70LgG)}
               >
                 {
                   "\u0645\u0648\u062c\u0648\u062f\u06cc: \u06f5\u06f5\u06f0/\u06f0\u06f0\u06f0 \u062a\u0648\u0645\u0627\u0646"
@@ -1257,11 +1221,7 @@ function PlasmicTransactionsNeo__RenderFunc(props: {
               </div>
             </div>
             <div
-              className={classNames(
-                projectcss.all,
-                sty.freeBox__ixM9O,
-                "clickable"
-              )}
+              className={classNames("all", sty.freeBox__ixM9O, "clickable")}
               onClick={async event => {
                 const $steps = {};
 
@@ -1289,11 +1249,7 @@ function PlasmicTransactionsNeo__RenderFunc(props: {
               }}
             >
               <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text___1IvZ6
-                )}
+                className={classNames("all", "__wab_text", sty.text___1IvZ6)}
               >
                 {"\u0628\u0627\u0632\u06af\u0634\u062a "}
               </div>
@@ -1304,9 +1260,9 @@ function PlasmicTransactionsNeo__RenderFunc(props: {
             data-plasmic-override={overrides.withdraw}
             className={classNames("__wab_instance", sty.withdraw)}
             defaultStylesClassName={classNames(
-              projectcss.root_reset,
-              projectcss.plasmic_default_styles,
-              projectcss.plasmic_mixins,
+              "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+              "plasmic_default_styles",
+              "plasmic_mixins",
               styleTokensClassNames
             )}
             hideFooter={true}
@@ -1327,11 +1283,7 @@ function PlasmicTransactionsNeo__RenderFunc(props: {
             open={generateStateValueProp($state, ["withdraw", "open"])}
             title={
               <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text___2R9XG
-                )}
+                className={classNames("all", "__wab_text", sty.text___2R9XG)}
               >
                 {"\u0628\u0631\u062f\u0627\u0634\u062a"}
               </div>
@@ -1339,23 +1291,11 @@ function PlasmicTransactionsNeo__RenderFunc(props: {
             trigger={null}
             width={"450"}
           >
-            <div className={classNames(projectcss.all, sty.freeBox___62G6N)}>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__x9SAb
-                )}
-              >
+            <div className={classNames("all", sty.freeBox___62G6N)}>
+              <div className={classNames("all", "__wab_text", sty.text__x9SAb)}>
                 {"\u062a\u0627\u0631\u06cc\u062e:"}
               </div>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__wGvu7
-                )}
-              >
+              <div className={classNames("all", "__wab_text", sty.text__wGvu7)}>
                 <React.Fragment>
                   {(() => {
                     try {
@@ -1394,23 +1334,11 @@ function PlasmicTransactionsNeo__RenderFunc(props: {
                 </React.Fragment>
               </div>
             </div>
-            <div className={classNames(projectcss.all, sty.freeBox__vBe7H)}>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__iCdqp
-                )}
-              >
+            <div className={classNames("all", sty.freeBox__vBe7H)}>
+              <div className={classNames("all", "__wab_text", sty.text__iCdqp)}>
                 {"\u0628\u0631\u062f\u0627\u0634\u062a:"}
               </div>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__dHDl
-                )}
-              >
+              <div className={classNames("all", "__wab_text", sty.text__dHDl)}>
                 <React.Fragment>
                   {(() => {
                     try {
@@ -1447,15 +1375,13 @@ function PlasmicTransactionsNeo__RenderFunc(props: {
                 throw e;
               }
             })() ? (
-              <div className={classNames(projectcss.all, sty.freeBox__wlS6N)}>
-                <div className={classNames(projectcss.all, sty.freeBox__inHqY)}>
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__r3NIh)}
-                  >
+              <div className={classNames("all", sty.freeBox__wlS6N)}>
+                <div className={classNames("all", sty.freeBox__inHqY)}>
+                  <div className={classNames("all", sty.freeBox__r3NIh)}>
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text___3ClHh
                       )}
                     >
@@ -1463,8 +1389,8 @@ function PlasmicTransactionsNeo__RenderFunc(props: {
                     </div>
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text__fLo5V
                       )}
                     >
@@ -1485,13 +1411,11 @@ function PlasmicTransactionsNeo__RenderFunc(props: {
                       </React.Fragment>
                     </div>
                   </div>
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__zqrOs)}
-                  >
+                  <div className={classNames("all", sty.freeBox__zqrOs)}>
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text___8QMk0
                       )}
                     >
@@ -1499,8 +1423,8 @@ function PlasmicTransactionsNeo__RenderFunc(props: {
                     </div>
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text__mR1Dd
                       )}
                     >
@@ -1521,16 +1445,12 @@ function PlasmicTransactionsNeo__RenderFunc(props: {
                       </React.Fragment>
                     </div>
                   </div>
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox___8HP3R)}
-                  >
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__qPHem)}
-                    >
+                  <div className={classNames("all", sty.freeBox___8HP3R)}>
+                    <div className={classNames("all", sty.freeBox__qPHem)}>
                       <div
                         className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
+                          "all",
+                          "__wab_text",
                           sty.text__pth9Z
                         )}
                       >
@@ -1539,13 +1459,11 @@ function PlasmicTransactionsNeo__RenderFunc(props: {
                         }
                       </div>
                     </div>
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__uadtu)}
-                    >
+                    <div className={classNames("all", sty.freeBox__uadtu)}>
                       <div
                         className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
+                          "all",
+                          "__wab_text",
                           sty.text__hu7D4
                         )}
                       >
@@ -1604,16 +1522,13 @@ function PlasmicTransactionsNeo__RenderFunc(props: {
                     const currentIndex = __plasmic_idx_0;
                     return (
                       <div
-                        className={classNames(
-                          projectcss.all,
-                          sty.freeBox__mZiyy
-                        )}
+                        className={classNames("all", sty.freeBox__mZiyy)}
                         key={currentIndex}
                       >
                         <div
                           className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
+                            "all",
+                            "__wab_text",
                             sty.text__s0BsU
                           )}
                         >
@@ -1654,10 +1569,7 @@ function PlasmicTransactionsNeo__RenderFunc(props: {
                           <div
                             data-plasmic-name={"giftEmoji"}
                             data-plasmic-override={overrides.giftEmoji}
-                            className={classNames(
-                              projectcss.all,
-                              sty.giftEmoji
-                            )}
+                            className={classNames("all", sty.giftEmoji)}
                           >
                             <PlasmicImg__
                               alt={""}
@@ -1687,12 +1599,7 @@ function PlasmicTransactionsNeo__RenderFunc(props: {
                             />
                           </div>
                         ) : null}
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            sty.freeBox__rFvex
-                          )}
-                        >
+                        <div className={classNames("all", sty.freeBox__rFvex)}>
                           {(() => {
                             try {
                               return currentItem.is_free;
@@ -1708,8 +1615,8 @@ function PlasmicTransactionsNeo__RenderFunc(props: {
                           })() ? (
                             <div
                               className={classNames(
-                                projectcss.all,
-                                projectcss.__wab_text,
+                                "all",
+                                "__wab_text",
                                 sty.text__mMb5W
                               )}
                             >
@@ -1745,8 +1652,8 @@ function PlasmicTransactionsNeo__RenderFunc(props: {
                           })() ? (
                             <div
                               className={classNames(
-                                projectcss.all,
-                                projectcss.__wab_text,
+                                "all",
+                                "__wab_text",
                                 sty.text__vcGkw
                               )}
                               style={{
@@ -1793,8 +1700,8 @@ function PlasmicTransactionsNeo__RenderFunc(props: {
                           })() ? (
                             <div
                               className={classNames(
-                                projectcss.all,
-                                projectcss.__wab_text,
+                                "all",
+                                "__wab_text",
                                 sty.text__sxKzH
                               )}
                             >
@@ -1831,15 +1738,11 @@ function PlasmicTransactionsNeo__RenderFunc(props: {
             <div
               data-plasmic-name={"comment"}
               data-plasmic-override={overrides.comment}
-              className={classNames(projectcss.all, sty.comment)}
+              className={classNames("all", sty.comment)}
             >
-              <div className={classNames(projectcss.all, sty.freeBox__hj07K)}>
+              <div className={classNames("all", sty.freeBox__hj07K)}>
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__uddIa
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__uddIa)}
                 >
                   <React.Fragment>
                     {(() => {
@@ -1860,7 +1763,7 @@ function PlasmicTransactionsNeo__RenderFunc(props: {
               </div>
             </div>
             <div
-              className={classNames(projectcss.all, sty.freeBox___6ZhDr)}
+              className={classNames("all", sty.freeBox___6ZhDr)}
               onClick={async event => {
                 const $steps = {};
 
@@ -1913,11 +1816,7 @@ function PlasmicTransactionsNeo__RenderFunc(props: {
               />
 
               <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__jwy4Y
-                )}
+                className={classNames("all", "__wab_text", sty.text__jwy4Y)}
                 onClick={async event => {
                   const $steps = {};
 
@@ -1964,7 +1863,7 @@ function PlasmicTransactionsNeo__RenderFunc(props: {
                 </React.Fragment>
               </div>
             </div>
-            <div className={classNames(projectcss.all, sty.freeBox___5L1Uv)}>
+            <div className={classNames("all", sty.freeBox___5L1Uv)}>
               <Button
                 className={classNames("__wab_instance", sty.button__thHlg)}
                 onClick={async event => {
@@ -2014,9 +1913,9 @@ function PlasmicTransactionsNeo__RenderFunc(props: {
             data-plasmic-override={overrides.deposit}
             className={classNames("__wab_instance", sty.deposit)}
             defaultStylesClassName={classNames(
-              projectcss.root_reset,
-              projectcss.plasmic_default_styles,
-              projectcss.plasmic_mixins,
+              "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+              "plasmic_default_styles",
+              "plasmic_mixins",
               styleTokensClassNames
             )}
             hideFooter={true}
@@ -2029,36 +1928,18 @@ function PlasmicTransactionsNeo__RenderFunc(props: {
             }}
             open={generateStateValueProp($state, ["deposit", "open"])}
             title={
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text___3YqM
-                )}
-              >
+              <div className={classNames("all", "__wab_text", sty.text___3YqM)}>
                 {"\u0648\u0627\u0631\u06cc\u0632"}
               </div>
             }
             trigger={null}
             width={"450"}
           >
-            <div className={classNames(projectcss.all, sty.freeBox__pQbaJ)}>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__rurnb
-                )}
-              >
+            <div className={classNames("all", sty.freeBox__pQbaJ)}>
+              <div className={classNames("all", "__wab_text", sty.text__rurnb)}>
                 {"\u062a\u0627\u0631\u06cc\u062e:"}
               </div>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__iv8Bh
-                )}
-              >
+              <div className={classNames("all", "__wab_text", sty.text__iv8Bh)}>
                 <React.Fragment>
                   {(() => {
                     try {
@@ -2097,23 +1978,11 @@ function PlasmicTransactionsNeo__RenderFunc(props: {
                 </React.Fragment>
               </div>
             </div>
-            <div className={classNames(projectcss.all, sty.freeBox___3UzWd)}>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__oqKu9
-                )}
-              >
+            <div className={classNames("all", sty.freeBox___3UzWd)}>
+              <div className={classNames("all", "__wab_text", sty.text__oqKu9)}>
                 {"\u0648\u0627\u0631\u06cc\u0632:"}
               </div>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__hhoVw
-                )}
-              >
+              <div className={classNames("all", "__wab_text", sty.text__hhoVw)}>
                 <React.Fragment>
                   {(() => {
                     try {
@@ -2131,22 +2000,12 @@ function PlasmicTransactionsNeo__RenderFunc(props: {
                 </React.Fragment>
               </div>
             </div>
-            <div className={classNames(projectcss.all, sty.freeBox___5Y7Yu)}>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__jAz3
-                )}
-              >
+            <div className={classNames("all", sty.freeBox___5Y7Yu)}>
+              <div className={classNames("all", "__wab_text", sty.text__jAz3)}>
                 {"\u0639\u0646\u0648\u0627\u0646:"}
               </div>
               <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text___6Csnk
-                )}
+                className={classNames("all", "__wab_text", sty.text___6Csnk)}
               >
                 <React.Fragment>
                   {(() => {
@@ -2197,13 +2056,13 @@ function PlasmicTransactionsNeo__RenderFunc(props: {
               <div
                 data-plasmic-name={"comment2"}
                 data-plasmic-override={overrides.comment2}
-                className={classNames(projectcss.all, sty.comment2)}
+                className={classNames("all", sty.comment2)}
               >
-                <div className={classNames(projectcss.all, sty.freeBox__mdi47)}>
+                <div className={classNames("all", sty.freeBox__mdi47)}>
                   <div
                     className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
+                      "all",
+                      "__wab_text",
                       sty.text___559IS
                     )}
                   >
@@ -2226,7 +2085,7 @@ function PlasmicTransactionsNeo__RenderFunc(props: {
                 </div>
               </div>
             ) : null}
-            <div className={classNames(projectcss.all, sty.freeBox___7XgG9)}>
+            <div className={classNames("all", sty.freeBox___7XgG9)}>
               <PlasmicImg__
                 alt={""}
                 className={classNames(sty.img__qxr5X)}
@@ -2246,11 +2105,7 @@ function PlasmicTransactionsNeo__RenderFunc(props: {
               />
 
               <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__nZbU
-                )}
+                className={classNames("all", "__wab_text", sty.text__nZbU)}
                 onClick={async event => {
                   const $steps = {};
 
@@ -2297,7 +2152,7 @@ function PlasmicTransactionsNeo__RenderFunc(props: {
                 </React.Fragment>
               </div>
             </div>
-            <div className={classNames(projectcss.all, sty.freeBox__uOWoP)}>
+            <div className={classNames("all", sty.freeBox__uOWoP)}>
               <Button
                 className={classNames("__wab_instance", sty.button__fxA3W)}
                 onClick={async event => {
@@ -2339,11 +2194,7 @@ function PlasmicTransactionsNeo__RenderFunc(props: {
                 }}
               >
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__v1NLf
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__v1NLf)}
                 >
                   {"\u0628\u0627\u0632\u06af\u0634\u062a"}
                 </div>
@@ -2364,7 +2215,7 @@ function PlasmicTransactionsNeo__RenderFunc(props: {
 
           <div
             className={classNames(
-              projectcss.all,
+              "all",
               sty.freeBox__rvYmC,
               (() => {
                 try {
@@ -2390,7 +2241,7 @@ function PlasmicTransactionsNeo__RenderFunc(props: {
               data-plasmic-name={"withdraw2"}
               data-plasmic-override={overrides.withdraw2}
               className={classNames(
-                projectcss.all,
+                "all",
                 sty.withdraw2,
                 (() => {
                   try {
@@ -2413,9 +2264,9 @@ function PlasmicTransactionsNeo__RenderFunc(props: {
               <div
                 data-plasmic-name={"title"}
                 data-plasmic-override={overrides.title}
-                className={classNames(projectcss.all, sty.title)}
+                className={classNames("all", sty.title)}
               >
-                <div className={classNames(projectcss.all, sty.freeBox__d2XtC)}>
+                <div className={classNames("all", sty.freeBox__d2XtC)}>
                   <PlasmicImg__
                     alt={""}
                     className={classNames(sty.img__iNfrX)}
@@ -2472,15 +2323,9 @@ function PlasmicTransactionsNeo__RenderFunc(props: {
                     }}
                   />
                 </div>
-                <div
-                  className={classNames(projectcss.all, sty.freeBox___3Zs2Q)}
-                >
+                <div className={classNames("all", sty.freeBox___3Zs2Q)}>
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__fKEr2
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__fKEr2)}
                   >
                     {"\u0628\u0631\u062f\u0627\u0634\u062a"}
                   </div>
@@ -2506,28 +2351,20 @@ function PlasmicTransactionsNeo__RenderFunc(props: {
               <div
                 data-plasmic-name={"date"}
                 data-plasmic-override={overrides.date}
-                className={classNames(projectcss.all, sty.date)}
+                className={classNames("all", sty.date)}
               >
-                <div className={classNames(projectcss.all, sty.freeBox__jShDr)}>
+                <div className={classNames("all", sty.freeBox__jShDr)}>
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__bRrb
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__bRrb)}
                   >
                     {
                       "\u062a\u0627\u0631\u06cc\u062e \u062a\u0631\u0627\u06a9\u0646\u0634"
                     }
                   </div>
                 </div>
-                <div className={classNames(projectcss.all, sty.freeBox__hAj0J)}>
+                <div className={classNames("all", sty.freeBox__hAj0J)}>
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__kCjvf
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__kCjvf)}
                   >
                     <React.Fragment>
                       {(() => {
@@ -2666,32 +2503,28 @@ function PlasmicTransactionsNeo__RenderFunc(props: {
                   </div>
                 </div>
               </div>
-              <div className={classNames(projectcss.all, sty.freeBox__t7EfT)}>
+              <div className={classNames("all", sty.freeBox__t7EfT)}>
                 <div
                   data-plasmic-name={"properties"}
                   data-plasmic-override={overrides.properties}
-                  className={classNames(projectcss.all, sty.properties)}
+                  className={classNames("all", sty.properties)}
                 >
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__jJ29I)}
-                  >
+                  <div className={classNames("all", sty.freeBox__jJ29I)}>
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text__ahvlk
                       )}
                     >
                       {"\u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"}
                     </div>
                   </div>
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox___37Gib)}
-                  >
+                  <div className={classNames("all", sty.freeBox___37Gib)}>
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text__emjBi
                       )}
                     >
@@ -2714,32 +2547,28 @@ function PlasmicTransactionsNeo__RenderFunc(props: {
                   </div>
                 </div>
               </div>
-              <div className={classNames(projectcss.all, sty.freeBox__chR0D)}>
+              <div className={classNames("all", sty.freeBox__chR0D)}>
                 <div
                   data-plasmic-name={"totalAmount"}
                   data-plasmic-override={overrides.totalAmount}
-                  className={classNames(projectcss.all, sty.totalAmount)}
+                  className={classNames("all", sty.totalAmount)}
                 >
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__h54Y8)}
-                  >
+                  <div className={classNames("all", sty.freeBox__h54Y8)}>
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text__dLq07
                       )}
                     >
                       {"\u0645\u0628\u0644\u063a \u0631\u0632\u0631\u0648"}
                     </div>
                   </div>
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__w5Pr5)}
-                  >
+                  <div className={classNames("all", sty.freeBox__w5Pr5)}>
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text__wWB1
                       )}
                     >
@@ -2762,11 +2591,11 @@ function PlasmicTransactionsNeo__RenderFunc(props: {
                   </div>
                 </div>
               </div>
-              <div className={classNames(projectcss.all, sty.freeBox___06Kkn)}>
+              <div className={classNames("all", sty.freeBox___06Kkn)}>
                 <div
                   data-plasmic-name={"reserveCode"}
                   data-plasmic-override={overrides.reserveCode}
-                  className={classNames(projectcss.all, sty.reserveCode)}
+                  className={classNames("all", sty.reserveCode)}
                   onClick={async event => {
                     const $steps = {};
 
@@ -2797,26 +2626,22 @@ function PlasmicTransactionsNeo__RenderFunc(props: {
                     }
                   }}
                 >
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__ctAuj)}
-                  >
+                  <div className={classNames("all", sty.freeBox__ctAuj)}>
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text__pwAZp
                       )}
                     >
                       {"\u06a9\u062f \u0631\u0632\u0631\u0648"}
                     </div>
                   </div>
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__bxJvr)}
-                  >
+                  <div className={classNames("all", sty.freeBox__bxJvr)}>
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text__sdhV
                       )}
                     >
@@ -2868,19 +2693,15 @@ function PlasmicTransactionsNeo__RenderFunc(props: {
               <div
                 data-plasmic-name={"commission"}
                 data-plasmic-override={overrides.commission}
-                className={classNames(projectcss.all, sty.commission)}
+                className={classNames("all", sty.commission)}
               >
                 <div
                   data-plasmic-name={"title2"}
                   data-plasmic-override={overrides.title2}
-                  className={classNames(projectcss.all, sty.title2)}
+                  className={classNames("all", sty.title2)}
                 >
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__qXwcz
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__qXwcz)}
                   >
                     {
                       "\u06a9\u0627\u0631\u0645\u0632\u062f \u0645\u06cc\u0627\u0646"
@@ -2908,13 +2729,13 @@ function PlasmicTransactionsNeo__RenderFunc(props: {
                     <div
                       data-plasmic-name={"feature"}
                       data-plasmic-override={overrides.feature}
-                      className={classNames(projectcss.all, sty.feature)}
+                      className={classNames("all", sty.feature)}
                       key={currentIndex}
                     >
                       <div
                         className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
+                          "all",
+                          "__wab_text",
                           sty.text__dkx90
                         )}
                         style={(() => {
@@ -2981,8 +2802,8 @@ function PlasmicTransactionsNeo__RenderFunc(props: {
                       </div>
                       <div
                         className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
+                          "all",
+                          "__wab_text",
                           sty.text__ar7MX
                         )}
                         style={(() => {
@@ -3026,12 +2847,7 @@ function PlasmicTransactionsNeo__RenderFunc(props: {
                           })()}
                         </React.Fragment>
                       </div>
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          sty.freeBox__jvCTq
-                        )}
-                      >
+                      <div className={classNames("all", sty.freeBox__jvCTq)}>
                         {(() => {
                           try {
                             return currentItem.is_free;
@@ -3066,8 +2882,8 @@ function PlasmicTransactionsNeo__RenderFunc(props: {
                       </div>
                       <div
                         className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
+                          "all",
+                          "__wab_text",
                           sty.text__wz3UL
                         )}
                       >
@@ -3098,12 +2914,12 @@ function PlasmicTransactionsNeo__RenderFunc(props: {
                 <div
                   data-plasmic-name={"sum"}
                   data-plasmic-override={overrides.sum}
-                  className={classNames(projectcss.all, sty.sum)}
+                  className={classNames("all", sty.sum)}
                 >
                   <div
                     className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
+                      "all",
+                      "__wab_text",
                       sty.text___8Vj9D
                     )}
                   >
@@ -3220,11 +3036,7 @@ function PlasmicTransactionsNeo__RenderFunc(props: {
                     )}
                   </div>
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__z82Z5
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__z82Z5)}
                   >
                     {hasVariant(globalVariants, "screen", "smallMobile") ? (
                       <React.Fragment>
@@ -3357,14 +3169,12 @@ function PlasmicTransactionsNeo__RenderFunc(props: {
                       ? true
                       : false
                   ) ? (
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__hy4WU)}
-                    />
+                    <div className={classNames("all", sty.freeBox__hy4WU)} />
                   ) : null}
                   <div
                     className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
+                      "all",
+                      "__wab_text",
                       sty.text___5UDvg
                     )}
                   >
@@ -3387,12 +3197,12 @@ function PlasmicTransactionsNeo__RenderFunc(props: {
                   <div
                     data-plasmic-name={"comment3"}
                     data-plasmic-override={overrides.comment3}
-                    className={classNames(projectcss.all, sty.comment3)}
+                    className={classNames("all", sty.comment3)}
                   >
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text__rQ888
                       )}
                     >
@@ -3420,7 +3230,7 @@ function PlasmicTransactionsNeo__RenderFunc(props: {
               data-plasmic-name={"deposit2"}
               data-plasmic-override={overrides.deposit2}
               className={classNames(
-                projectcss.all,
+                "all",
                 sty.deposit2,
                 (() => {
                   try {
@@ -3443,11 +3253,9 @@ function PlasmicTransactionsNeo__RenderFunc(props: {
               <div
                 data-plasmic-name={"title3"}
                 data-plasmic-override={overrides.title3}
-                className={classNames(projectcss.all, sty.title3)}
+                className={classNames("all", sty.title3)}
               >
-                <div
-                  className={classNames(projectcss.all, sty.freeBox___09As7)}
-                >
+                <div className={classNames("all", sty.freeBox___09As7)}>
                   <PlasmicImg__
                     alt={""}
                     className={classNames(sty.img__qlDif)}
@@ -3504,13 +3312,9 @@ function PlasmicTransactionsNeo__RenderFunc(props: {
                     }}
                   />
                 </div>
-                <div className={classNames(projectcss.all, sty.freeBox__coExs)}>
+                <div className={classNames("all", sty.freeBox__coExs)}>
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__dJsZ
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__dJsZ)}
                   >
                     {"\u0648\u0627\u0631\u06cc\u0632"}
                   </div>
@@ -3536,28 +3340,20 @@ function PlasmicTransactionsNeo__RenderFunc(props: {
               <div
                 data-plasmic-name={"date2"}
                 data-plasmic-override={overrides.date2}
-                className={classNames(projectcss.all, sty.date2)}
+                className={classNames("all", sty.date2)}
               >
-                <div className={classNames(projectcss.all, sty.freeBox__mPiV1)}>
+                <div className={classNames("all", sty.freeBox__mPiV1)}>
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__bj8Pu
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__bj8Pu)}
                   >
                     {
                       "\u062a\u0627\u0631\u06cc\u062e \u062a\u0631\u0627\u06a9\u0646\u0634"
                     }
                   </div>
                 </div>
-                <div className={classNames(projectcss.all, sty.freeBox__gfFTq)}>
+                <div className={classNames("all", sty.freeBox__gfFTq)}>
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__yMgTj
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__yMgTj)}
                   >
                     <React.Fragment>
                       {(() => {
@@ -3699,26 +3495,18 @@ function PlasmicTransactionsNeo__RenderFunc(props: {
               <div
                 data-plasmic-name={"properties2"}
                 data-plasmic-override={overrides.properties2}
-                className={classNames(projectcss.all, sty.properties2)}
+                className={classNames("all", sty.properties2)}
               >
-                <div className={classNames(projectcss.all, sty.freeBox__frU15)}>
+                <div className={classNames("all", sty.freeBox__frU15)}>
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__z7FPi
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__z7FPi)}
                   >
                     {"\u0648\u0627\u0631\u06cc\u0632"}
                   </div>
                 </div>
-                <div className={classNames(projectcss.all, sty.freeBox__s4SPq)}>
+                <div className={classNames("all", sty.freeBox__s4SPq)}>
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__k4E4L
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__k4E4L)}
                   >
                     <React.Fragment>
                       {(() => {
@@ -3741,26 +3529,20 @@ function PlasmicTransactionsNeo__RenderFunc(props: {
               <div
                 data-plasmic-name={"totalAmount2"}
                 data-plasmic-override={overrides.totalAmount2}
-                className={classNames(projectcss.all, sty.totalAmount2)}
+                className={classNames("all", sty.totalAmount2)}
               >
-                <div
-                  className={classNames(projectcss.all, sty.freeBox___6GTr0)}
-                >
+                <div className={classNames("all", sty.freeBox___6GTr0)}>
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__gPucb
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__gPucb)}
                   >
                     {"\u0639\u0646\u0648\u0627\u0646"}
                   </div>
                 </div>
-                <div className={classNames(projectcss.all, sty.freeBox__aNp0H)}>
+                <div className={classNames("all", sty.freeBox__aNp0H)}>
                   <div
                     className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
+                      "all",
+                      "__wab_text",
                       sty.text___9Kpwd
                     )}
                   >
@@ -3798,14 +3580,10 @@ function PlasmicTransactionsNeo__RenderFunc(props: {
                 <div
                   data-plasmic-name={"comment4"}
                   data-plasmic-override={overrides.comment4}
-                  className={classNames(projectcss.all, sty.comment4)}
+                  className={classNames("all", sty.comment4)}
                 >
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__ik3Ku
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__ik3Ku)}
                   >
                     <React.Fragment>
                       {(() => {

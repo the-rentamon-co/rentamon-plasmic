@@ -67,7 +67,6 @@ import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-impor
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicGds.module.css"; // plasmic-import: -bjQjdFCWABt/css
 
 import SearchSvgIcon from "./icons/PlasmicIcon__SearchSvg"; // plasmic-import: xpwiGbFxHMB2/icon
@@ -208,17 +207,17 @@ function PlasmicGds__RenderFunc(props: {
         }
       `}</style>
 
-      <div className={projectcss.plasmic_page_wrapper}>
+      <div className={"plasmic_page_wrapper"}>
         <div
           data-plasmic-name={"root"}
           data-plasmic-override={overrides.root}
           data-plasmic-root={true}
           data-plasmic-for-node={forNode}
           className={classNames(
-            projectcss.all,
-            projectcss.root_reset,
-            projectcss.plasmic_default_styles,
-            projectcss.plasmic_mixins,
+            "all",
+            "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+            "plasmic_default_styles",
+            "plasmic_mixins",
             styleTokensClassNames,
             sty.root
           )}
@@ -229,30 +228,22 @@ function PlasmicGds__RenderFunc(props: {
             className={classNames("__wab_instance", sty.navbarRntHeader)}
           />
 
-          <div className={classNames(projectcss.all, sty.freeBox__fkBvv)}>
+          <div className={classNames("all", sty.freeBox__fkBvv)}>
             <div
               data-plasmic-name={"intro"}
               data-plasmic-override={overrides.intro}
-              className={classNames(projectcss.all, sty.intro)}
+              className={classNames("all", sty.intro)}
             >
-              <div className={classNames(projectcss.all, sty.freeBox__bTspa)}>
+              <div className={classNames("all", sty.freeBox__bTspa)}>
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__mil54
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__mil54)}
                 >
                   {
                     "\u0641\u0631\u0648\u0634 \u0627\u0632 \u0637\u0631\u06cc\u0642 \u0645\u06cc\u0627\u0646"
                   }
                 </div>
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__tu0MS
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__tu0MS)}
                 >
                   {
                     "\u0628\u0631\u0627\u06cc \u0627\u0641\u0632\u0627\u06cc\u0634 \u0641\u0631\u0648\u0634 \u0648 \u067e\u0631 \u0634\u062f\u0646 \u0638\u0631\u0641\u06cc\u062a \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0634\u0645\u0627\u060c \u00ab\u0645\u06cc\u0627\u0646\u00bb \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0645\u0644\u06a9 \u0634\u0645\u0627 \u0631\u0627 \u062f\u0631 \u0686\u0646\u062f\u06cc\u0646 \u067e\u0644\u062a\u0641\u0631\u0645 \u0645\u0639\u062a\u0628\u0631 (\u0645\u062b\u0644 \u062f\u06cc\u0648\u0627\u0631\u060c \u0633\u0627\u0632\u0645\u0627\u0646\u200c\u0647\u0627\u060c \u0634\u0631\u06a9\u062a\u200c\u0647\u0627 \u0648 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0645\u0634\u0627\u0628\u0647) \u0646\u0645\u0627\u06cc\u0634 \u0645\u06cc\u200c\u062f\u0647\u062f. \u0628\u0627 \u0627\u06cc\u0646 \u06a9\u0627\u0631\u060c \u0634\u0627\u0646\u0633 \u062f\u06cc\u062f\u0647 \u0634\u062f\u0646 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a\u0627\u0646 \u0628\u0647 \u0634\u062f\u062a \u0628\u0627\u0644\u0627 \u0631\u0641\u062a\u0647 \u0648 \u062f\u0631 \u0646\u062a\u06cc\u062c\u0647\u060c \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u0634\u0645\u0627 \u0628\u06cc\u0634\u062a\u0631 \u0645\u06cc\u200c\u0634\u0648\u062f."
@@ -260,25 +251,17 @@ function PlasmicGds__RenderFunc(props: {
                 </div>
               </div>
             </div>
-            <div className={classNames(projectcss.all, sty.freeBox__sb1Hf)}>
-              <div className={classNames(projectcss.all, sty.freeBox__gjWfp)}>
+            <div className={classNames("all", sty.freeBox__sb1Hf)}>
+              <div className={classNames("all", sty.freeBox__gjWfp)}>
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__a6ZIp
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__a6ZIp)}
                 >
                   {
                     "\u0645\u0647\u0645\u0627\u0646\u0627\u0646\u06cc \u0622\u06af\u0627\u0647 \u0648 \u0642\u0627\u0646\u0648\u0646\u200c\u0645\u062f\u0627\u0631"
                   }
                 </div>
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text___2ANxG
-                  )}
+                  className={classNames("all", "__wab_text", sty.text___2ANxG)}
                 >
                   {
                     "\u0645\u0647\u0645\u0627\u0646\u0627\u0646\u06cc \u06a9\u0647 \u0627\u0632 \u0637\u0631\u06cc\u0642 \u0627\u06cc\u0646 \u0634\u0628\u06a9\u0647 \u062c\u0630\u0628 \u0645\u06cc\u200c\u0634\u0648\u0646\u062f\u060c \u067e\u06cc\u0634 \u0627\u0632 \u0631\u0632\u0631\u0648\u060c \u0642\u0648\u0627\u0646\u06cc\u0646 \u062e\u0627\u0635 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0634\u0645\u0627 \u0631\u0627 \u0628\u0647 \u0637\u0648\u0631 \u06a9\u0627\u0645\u0644 \u0645\u0637\u0627\u0644\u0639\u0647 \u0648 \u062a\u0627\u06cc\u06cc\u062f \u0645\u06cc\u200c\u06a9\u0646\u0646\u062f. \u0627\u06cc\u0646 \u06cc\u0639\u0646\u06cc \u062e\u06cc\u0627\u0644\u062a\u0627\u0646 \u0631\u0627\u062d\u062a \u0628\u0627\u0634\u062f \u06a9\u0647 \u0641\u0642\u0637 \u0627\u0641\u0631\u0627\u062f \u0647\u0645\u0627\u0647\u0646\u06af \u0628\u0627 \u0634\u0631\u0627\u06cc\u0637 \u0634\u0645\u0627\u060c \u062f\u0631\u062e\u0648\u0627\u0633\u062a \u0631\u0632\u0631\u0648 \u0645\u06cc\u200c\u062f\u0647\u0646\u062f"
@@ -286,25 +269,17 @@ function PlasmicGds__RenderFunc(props: {
                 </div>
               </div>
             </div>
-            <div className={classNames(projectcss.all, sty.freeBox__jEoBv)}>
-              <div className={classNames(projectcss.all, sty.freeBox__rcsR)}>
+            <div className={classNames("all", sty.freeBox__jEoBv)}>
+              <div className={classNames("all", sty.freeBox__rcsR)}>
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__wNf8V
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__wNf8V)}
                 >
                   {
                     "\u062a\u0633\u0648\u06cc\u0647 \u062d\u0633\u0627\u0628 \u0633\u0631\u06cc\u0639 \u0648 \u0628\u06cc\u200c\u0646\u0642\u0635"
                   }
                 </div>
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__aSgcX
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__aSgcX)}
                 >
                   {
                     "\u00ab\u0645\u06cc\u0627\u0646\u00bb \u062a\u0636\u0645\u06cc\u0646 \u0645\u06cc\u200c\u06a9\u0646\u062f \u06a9\u0647 \u0645\u0628\u0644\u063a \u062e\u0627\u0644\u0635 \u062f\u0631\u06cc\u0627\u0641\u062a\u06cc \u0634\u0645\u0627\u060c \u062a\u0645\u0627\u0645 \u0648 \u06a9\u0645\u0627\u0644 \u0648 \u062f\u0631 \u06a9\u0648\u062a\u0627\u0647\u200c\u062a\u0631\u06cc\u0646 \u0632\u0645\u0627\u0646 \u0628\u0647 \u062d\u0633\u0627\u0628\u062a\u0627\u0646 \u0648\u0627\u0631\u06cc\u0632 \u0634\u0648\u062f. \u0645\u0627 \u062a\u0645\u0627\u0645 \u062f\u063a\u062f\u063a\u0647\u200c\u0647\u0627\u06cc \u0645\u0631\u0628\u0648\u0637 \u0628\u0647 \u0641\u0631\u0622\u06cc\u0646\u062f \u0645\u0627\u0644\u06cc \u0648 \u062a\u0633\u0648\u06cc\u0647 \u062d\u0633\u0627\u0628 \u0631\u0627 \u0627\u0632 \u062f\u0648\u0634 \u0634\u0645\u0627 \u0628\u0631\u0645\u06cc\u200c\u062f\u0627\u0631\u06cc\u0645."
@@ -312,9 +287,9 @@ function PlasmicGds__RenderFunc(props: {
                 </div>
               </div>
             </div>
-            <div className={classNames(projectcss.all, sty.freeBox___21Gzi)}>
+            <div className={classNames("all", sty.freeBox___21Gzi)}>
               <div
-                className={classNames(projectcss.all, sty.freeBox__xF9A)}
+                className={classNames("all", sty.freeBox__xF9A)}
                 onClick={async event => {
                   const $steps = {};
 
@@ -345,11 +320,7 @@ function PlasmicGds__RenderFunc(props: {
                 }}
               >
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__wkSm0
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__wkSm0)}
                 >
                   {
                     "\u062b\u0628\u062a \u0646\u0631\u062e \u0648 \u0634\u0631\u0648\u0639 \u0641\u0631\u0648\u0634"
@@ -357,8 +328,8 @@ function PlasmicGds__RenderFunc(props: {
                 </div>
               </div>
             </div>
-            <div className={classNames(projectcss.all, sty.freeBox__wVirp)}>
-              <div className={classNames(projectcss.all, sty.freeBox__jNSj)}>
+            <div className={classNames("all", sty.freeBox__wVirp)}>
+              <div className={classNames("all", sty.freeBox__jNSj)}>
                 <TextInput
                   data-plasmic-name={"textInput"}
                   data-plasmic-override={overrides.textInput}
@@ -415,13 +386,7 @@ function PlasmicGds__RenderFunc(props: {
                   }
                 />
               </div>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__ypA6W
-                )}
-              >
+              <div className={classNames("all", "__wab_text", sty.text__ypA6W)}>
                 {
                   "\u062f\u0631\u0635\u0648\u0631\u062a \u0648\u062c\u0648\u062f \u0647\u0631\u06af\u0648\u0646\u0647 \u0633\u0648\u0627\u0644 \u06cc\u0627 \u0627\u0628\u0647\u0627\u0645\u060c \u062a\u0645\u0627\u0633 \u0628\u06af\u06cc\u0631\u06cc\u062f: \u06f9\u06f1\u06f0\u06f9\u06f6\u06f2\u06f2\u06f7-\u06f0\u06f2\u06f1\r\n\u0631\u0648\u0632\u0647\u0627\u06cc \u063a\u06cc\u0631 \u062a\u0639\u0637\u06cc\u0644 \u0627\u0632 \u06f9 \u0627\u0644\u06cc \u06f1\u06f7\r"
                 }

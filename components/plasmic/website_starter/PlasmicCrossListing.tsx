@@ -70,7 +70,6 @@ import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-impor
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicCrossListing.module.css"; // plasmic-import: sQu22rJFNRn7/css
 
 const emptyProxy: any = new Proxy(() => "", {
@@ -394,28 +393,22 @@ function PlasmicCrossListing__RenderFunc(props: {
         }
       `}</style>
 
-      <div className={projectcss.plasmic_page_wrapper}>
+      <div className={"plasmic_page_wrapper"}>
         <div
           data-plasmic-name={"crossListingPage"}
           data-plasmic-override={overrides.crossListingPage}
           data-plasmic-root={true}
           data-plasmic-for-node={forNode}
           className={classNames(
-            projectcss.all,
-            projectcss.root_reset,
-            projectcss.plasmic_default_styles,
-            projectcss.plasmic_mixins,
+            "all",
+            "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+            "plasmic_default_styles",
+            "plasmic_mixins",
             styleTokensClassNames,
             sty.crossListingPage
           )}
         >
-          <div
-            className={classNames(
-              projectcss.all,
-              projectcss.__wab_text,
-              sty.text__oeD5Q
-            )}
-          >
+          <div className={classNames("all", "__wab_text", sty.text__oeD5Q)}>
             {
               "\u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0627\u0632 \u062a\u0648\u060c \u062b\u0628\u062a \u0648\u06cc\u0644\u0627 \u062f\u0631 \u0647\u0645\u0647\u200c\u06cc \u067e\u0644\u062a\u0641\u0631\u0645\u200c\u0647\u0627 \u0628\u0627 \u0645\u0646"
             }
@@ -491,12 +484,12 @@ function PlasmicCrossListing__RenderFunc(props: {
                   <div
                     data-plasmic-name={"step1Host"}
                     data-plasmic-override={overrides.step1Host}
-                    className={classNames(projectcss.all, sty.step1Host)}
+                    className={classNames("all", sty.step1Host)}
                   >
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text__xoRtl
                       )}
                     >
@@ -511,8 +504,8 @@ function PlasmicCrossListing__RenderFunc(props: {
                       label={
                         <div
                           className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
+                            "all",
+                            "__wab_text",
                             sty.text___1B0X9
                           )}
                         >
@@ -573,8 +566,8 @@ function PlasmicCrossListing__RenderFunc(props: {
                       label={
                         <div
                           className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
+                            "all",
+                            "__wab_text",
                             sty.text___3Rgwa
                           )}
                         >
@@ -636,8 +629,8 @@ function PlasmicCrossListing__RenderFunc(props: {
                       label={
                         <div
                           className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
+                            "all",
+                            "__wab_text",
                             sty.text__hlrbw
                           )}
                         >
@@ -699,8 +692,8 @@ function PlasmicCrossListing__RenderFunc(props: {
                       label={
                         <div
                           className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
+                            "all",
+                            "__wab_text",
                             sty.text__lh5Yk
                           )}
                         >
@@ -764,8 +757,8 @@ function PlasmicCrossListing__RenderFunc(props: {
                       label={
                         <div
                           className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
+                            "all",
+                            "__wab_text",
                             sty.text___0WQyn
                           )}
                         >
@@ -823,8 +816,8 @@ function PlasmicCrossListing__RenderFunc(props: {
                       label={
                         <div
                           className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
+                            "all",
+                            "__wab_text",
                             sty.text__akXt6
                           )}
                         >
@@ -879,7 +872,7 @@ function PlasmicCrossListing__RenderFunc(props: {
                     <div
                       data-plasmic-name={"step1Buttons"}
                       data-plasmic-override={overrides.step1Buttons}
-                      className={classNames(projectcss.all, sty.step1Buttons)}
+                      className={classNames("all", sty.step1Buttons)}
                     >
                       <AntdButton
                         className={classNames(
@@ -996,8 +989,8 @@ function PlasmicCrossListing__RenderFunc(props: {
                       >
                         <div
                           className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
+                            "all",
+                            "__wab_text",
                             sty.text__lEk8J
                           )}
                         >
@@ -1023,15 +1016,12 @@ function PlasmicCrossListing__RenderFunc(props: {
                   <div
                     data-plasmic-name={"step2Documentation"}
                     data-plasmic-override={overrides.step2Documentation}
-                    className={classNames(
-                      projectcss.all,
-                      sty.step2Documentation
-                    )}
+                    className={classNames("all", sty.step2Documentation)}
                   >
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text__c7GQ9
                       )}
                     >
@@ -1041,8 +1031,8 @@ function PlasmicCrossListing__RenderFunc(props: {
                     </div>
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text__sFIT
                       )}
                     >
@@ -1125,8 +1115,8 @@ function PlasmicCrossListing__RenderFunc(props: {
                       label={
                         <div
                           className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
+                            "all",
+                            "__wab_text",
                             sty.text__bmKs0
                           )}
                         >
@@ -1188,8 +1178,8 @@ function PlasmicCrossListing__RenderFunc(props: {
                       label={
                         <div
                           className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
+                            "all",
+                            "__wab_text",
                             sty.text__dY4KB
                           )}
                         >
@@ -1251,8 +1241,8 @@ function PlasmicCrossListing__RenderFunc(props: {
                       label={
                         <div
                           className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
+                            "all",
+                            "__wab_text",
                             sty.text__pyLg4
                           )}
                         >
@@ -1314,8 +1304,8 @@ function PlasmicCrossListing__RenderFunc(props: {
                       label={
                         <div
                           className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
+                            "all",
+                            "__wab_text",
                             sty.text__rNfQe
                           )}
                         >
@@ -1377,8 +1367,8 @@ function PlasmicCrossListing__RenderFunc(props: {
                       label={
                         <div
                           className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
+                            "all",
+                            "__wab_text",
                             sty.text__beUy
                           )}
                         >
@@ -1432,8 +1422,8 @@ function PlasmicCrossListing__RenderFunc(props: {
                     </FormItemWrapper>
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text___0W6GS
                       )}
                     >
@@ -1444,7 +1434,7 @@ function PlasmicCrossListing__RenderFunc(props: {
                     <div
                       data-plasmic-name={"step2Buttons"}
                       data-plasmic-override={overrides.step2Buttons}
-                      className={classNames(projectcss.all, sty.step2Buttons)}
+                      className={classNames("all", sty.step2Buttons)}
                     >
                       <AntdButton
                         className={classNames(
@@ -1559,8 +1549,8 @@ function PlasmicCrossListing__RenderFunc(props: {
                       >
                         <div
                           className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
+                            "all",
+                            "__wab_text",
                             sty.text___4KfFx
                           )}
                         >
@@ -1621,8 +1611,8 @@ function PlasmicCrossListing__RenderFunc(props: {
                       >
                         <div
                           className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
+                            "all",
+                            "__wab_text",
                             sty.text__tVuDh
                           )}
                         >
@@ -1648,15 +1638,12 @@ function PlasmicCrossListing__RenderFunc(props: {
                   <div
                     data-plasmic-name={"step3PropertyInfo"}
                     data-plasmic-override={overrides.step3PropertyInfo}
-                    className={classNames(
-                      projectcss.all,
-                      sty.step3PropertyInfo
-                    )}
+                    className={classNames("all", sty.step3PropertyInfo)}
                   >
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text__hmWpx
                       )}
                     >
@@ -1671,8 +1658,8 @@ function PlasmicCrossListing__RenderFunc(props: {
                       label={
                         <div
                           className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
+                            "all",
+                            "__wab_text",
                             sty.text__kKCI
                           )}
                         >
@@ -1733,8 +1720,8 @@ function PlasmicCrossListing__RenderFunc(props: {
                       label={
                         <div
                           className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
+                            "all",
+                            "__wab_text",
                             sty.text__hMvr9
                           )}
                         >
@@ -1795,8 +1782,8 @@ function PlasmicCrossListing__RenderFunc(props: {
                       label={
                         <div
                           className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
+                            "all",
+                            "__wab_text",
                             sty.text__xIJsr
                           )}
                         >
@@ -1856,8 +1843,8 @@ function PlasmicCrossListing__RenderFunc(props: {
                       label={
                         <div
                           className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
+                            "all",
+                            "__wab_text",
                             sty.text___00Hm
                           )}
                         >
@@ -1919,8 +1906,8 @@ function PlasmicCrossListing__RenderFunc(props: {
                       label={
                         <div
                           className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
+                            "all",
+                            "__wab_text",
                             sty.text___2SPZy
                           )}
                         >
@@ -1977,8 +1964,8 @@ function PlasmicCrossListing__RenderFunc(props: {
                       label={
                         <div
                           className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
+                            "all",
+                            "__wab_text",
                             sty.text__eSbJo
                           )}
                         >
@@ -2032,7 +2019,7 @@ function PlasmicCrossListing__RenderFunc(props: {
                     <div
                       data-plasmic-name={"step1Buttons3"}
                       data-plasmic-override={overrides.step1Buttons3}
-                      className={classNames(projectcss.all, sty.step1Buttons3)}
+                      className={classNames("all", sty.step1Buttons3)}
                     >
                       <AntdButton
                         className={classNames(
@@ -2147,8 +2134,8 @@ function PlasmicCrossListing__RenderFunc(props: {
                       >
                         <div
                           className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
+                            "all",
+                            "__wab_text",
                             sty.text__vlUPz
                           )}
                         >
@@ -2209,8 +2196,8 @@ function PlasmicCrossListing__RenderFunc(props: {
                       >
                         <div
                           className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
+                            "all",
+                            "__wab_text",
                             sty.text__bIs9I
                           )}
                         >

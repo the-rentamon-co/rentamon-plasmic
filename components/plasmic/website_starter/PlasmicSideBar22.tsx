@@ -66,7 +66,6 @@ import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-impor
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicSideBar22.module.css"; // plasmic-import: RM37OKgPSvTt/css
 
 import Icon26Icon from "./icons/PlasmicIcon__Icon26"; // plasmic-import: re7g4HwqLfNb/icon
@@ -197,16 +196,16 @@ function PlasmicSideBar22__RenderFunc(props: {
       data-plasmic-for-node={forNode}
       className={classNames(
         "__wab_instance",
-        projectcss.root_reset,
-        projectcss.plasmic_default_styles,
-        projectcss.plasmic_mixins,
+        "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+        "plasmic_default_styles",
+        "plasmic_mixins",
         styleTokensClassNames,
         sty.modalSidebar
       )}
       defaultStylesClassName={classNames(
-        projectcss.root_reset,
-        projectcss.plasmic_default_styles,
-        projectcss.plasmic_mixins,
+        "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+        "plasmic_default_styles",
+        "plasmic_mixins",
         styleTokensClassNames
       )}
       hideFooter={true}
@@ -229,7 +228,7 @@ function PlasmicSideBar22__RenderFunc(props: {
       open={generateStateValueProp($state, ["modalSidebar", "open"])}
       title={
         <div
-          className={classNames(projectcss.all, sty.freeBox__vBhOa)}
+          className={classNames("all", sty.freeBox__vBhOa)}
           onClick={async event => {
             const $steps = {};
 
@@ -291,8 +290,8 @@ function PlasmicSideBar22__RenderFunc(props: {
         </div>
       }
       trigger={
-        <div className={classNames(projectcss.all, sty.freeBox__y0Y7)}>
-          <div className={classNames(projectcss.all, sty.freeBox__uk6G)}>
+        <div className={classNames("all", sty.freeBox__y0Y7)}>
+          <div className={classNames("all", sty.freeBox__uk6G)}>
             <PlasmicImg__
               alt={""}
               className={classNames(sty.img__wola0)}
@@ -332,11 +331,11 @@ function PlasmicSideBar22__RenderFunc(props: {
       }
       wrapClassName={classNames({ [sty["pcls_m4P9bRCz6DUB"]]: true })}
     >
-      <div className={classNames(projectcss.all, sty.freeBox__gpuF, "vh")}>
+      <div className={classNames("all", sty.freeBox__gpuF, "vh")}>
         <div
           data-plasmic-name={"profile"}
           data-plasmic-override={overrides.profile}
-          className={classNames(projectcss.all, sty.profile)}
+          className={classNames("all", sty.profile)}
         >
           <PlasmicImg__
             alt={""}
@@ -372,13 +371,7 @@ function PlasmicSideBar22__RenderFunc(props: {
             width={"50px"}
           />
 
-          <div
-            className={classNames(
-              projectcss.all,
-              projectcss.__wab_text,
-              sty.text__npHzU
-            )}
-          >
+          <div className={classNames("all", "__wab_text", sty.text__npHzU)}>
             <React.Fragment>
               {(() => {
                 try {
@@ -401,7 +394,7 @@ function PlasmicSideBar22__RenderFunc(props: {
         </div>
         <div
           className={classNames(
-            projectcss.all,
+            "all",
             sty.freeBox__pOh9S,
             (() => {
               try {
@@ -479,15 +472,11 @@ function PlasmicSideBar22__RenderFunc(props: {
             }
           }}
         >
-          <div className={classNames(projectcss.all, sty.freeBox___7GAsh)}>
+          <div className={classNames("all", sty.freeBox___7GAsh)}>
             <div
               data-plasmic-name={"walletamount"}
               data-plasmic-override={overrides.walletamount}
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.walletamount
-              )}
+              className={classNames("all", "__wab_text", sty.walletamount)}
             >
               <React.Fragment>
                 {(() => {
@@ -516,7 +505,7 @@ function PlasmicSideBar22__RenderFunc(props: {
               </React.Fragment>
             </div>
           </div>
-          <div className={classNames(projectcss.all, sty.freeBox___3TmLe)}>
+          <div className={classNames("all", sty.freeBox___3TmLe)}>
             <PlasmicImg__
               alt={""}
               className={classNames(sty.img___05DyX)}
@@ -537,11 +526,7 @@ function PlasmicSideBar22__RenderFunc(props: {
           </div>
         </div>
         <div
-          className={classNames(
-            projectcss.all,
-            sty.freeBox__ncer8,
-            "clickable"
-          )}
+          className={classNames("all", sty.freeBox__ncer8, "clickable")}
           onClick={async event => {
             const $steps = {};
 
@@ -601,26 +586,16 @@ function PlasmicSideBar22__RenderFunc(props: {
           }}
         >
           <Icon26Icon
-            className={classNames(projectcss.all, sty.svg__uyscy)}
+            className={classNames("all", sty.svg__uyscy)}
             role={"img"}
           />
 
-          <div
-            className={classNames(
-              projectcss.all,
-              projectcss.__wab_text,
-              sty.text__q8SJl
-            )}
-          >
+          <div className={classNames("all", "__wab_text", sty.text__q8SJl)}>
             {"\u0631\u0632\u0631\u0648 \u0647\u0627\u06cc \u0645\u0646"}
           </div>
         </div>
         <div
-          className={classNames(
-            projectcss.all,
-            sty.freeBox__zty81,
-            "clickable"
-          )}
+          className={classNames("all", sty.freeBox__zty81, "clickable")}
           onClick={async event => {
             const $steps = {};
 
@@ -697,24 +672,14 @@ function PlasmicSideBar22__RenderFunc(props: {
             }}
           />
 
-          <div
-            className={classNames(
-              projectcss.all,
-              projectcss.__wab_text,
-              sty.text__iQ5M
-            )}
-          >
+          <div className={classNames("all", "__wab_text", sty.text__iQ5M)}>
             {
               "\u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc \u062e\u0648\u062f\u06a9\u0627\u0631 \u0631\u0632\u0631\u0648\u0647\u0627"
             }
           </div>
         </div>
         <div
-          className={classNames(
-            projectcss.all,
-            sty.freeBox__aVqRd,
-            "clickable"
-          )}
+          className={classNames("all", sty.freeBox__aVqRd, "clickable")}
           onClick={async event => {
             const $steps = {};
 
@@ -774,24 +739,18 @@ function PlasmicSideBar22__RenderFunc(props: {
           }}
         >
           <Icon6Icon
-            className={classNames(projectcss.all, sty.svg__n0MIb)}
+            className={classNames("all", sty.svg__n0MIb)}
             role={"img"}
           />
 
-          <div
-            className={classNames(
-              projectcss.all,
-              projectcss.__wab_text,
-              sty.text__dDeK
-            )}
-          >
+          <div className={classNames("all", "__wab_text", sty.text__dDeK)}>
             {
               "\u062a\u0642\u0648\u06cc\u0645 \u06cc\u06a9\u067e\u0627\u0631\u0686\u0647"
             }
           </div>
         </div>
         <div
-          className={classNames(projectcss.all, sty.freeBox__kiUh, "clickable")}
+          className={classNames("all", sty.freeBox__kiUh, "clickable")}
           onClick={async event => {
             const $steps = {};
 
@@ -851,26 +810,16 @@ function PlasmicSideBar22__RenderFunc(props: {
           }}
         >
           <Icon50Icon
-            className={classNames(projectcss.all, sty.svg__vdfyn)}
+            className={classNames("all", sty.svg__vdfyn)}
             role={"img"}
           />
 
-          <div
-            className={classNames(
-              projectcss.all,
-              projectcss.__wab_text,
-              sty.text__mgbfK
-            )}
-          >
+          <div className={classNames("all", "__wab_text", sty.text__mgbfK)}>
             {"\u062f\u0641\u062a\u0631 \u062a\u0644\u0641\u0646"}
           </div>
         </div>
         <div
-          className={classNames(
-            projectcss.all,
-            sty.freeBox__oifHv,
-            "clickable"
-          )}
+          className={classNames("all", sty.freeBox__oifHv, "clickable")}
           onClick={async event => {
             const $steps = {};
 
@@ -930,28 +879,18 @@ function PlasmicSideBar22__RenderFunc(props: {
           }}
         >
           <Icon7Icon
-            className={classNames(projectcss.all, sty.svg___5ONtG)}
+            className={classNames("all", sty.svg___5ONtG)}
             role={"img"}
           />
 
-          <div
-            className={classNames(
-              projectcss.all,
-              projectcss.__wab_text,
-              sty.text__cCIjk
-            )}
-          >
+          <div className={classNames("all", "__wab_text", sty.text__cCIjk)}>
             {"\u0631\u0632\u0631\u0648 \u0622\u0646\u06cc"}
           </div>
         </div>
-        <div className={classNames(projectcss.all, sty.freeBox__eqeIz)} />
+        <div className={classNames("all", sty.freeBox__eqeIz)} />
 
         <div
-          className={classNames(
-            projectcss.all,
-            sty.freeBox__lGafp,
-            "clickable"
-          )}
+          className={classNames("all", sty.freeBox__lGafp, "clickable")}
           onClick={async event => {
             const $steps = {};
 
@@ -1011,26 +950,16 @@ function PlasmicSideBar22__RenderFunc(props: {
           }}
         >
           <Icon48Icon
-            className={classNames(projectcss.all, sty.svg__fdw0X)}
+            className={classNames("all", sty.svg__fdw0X)}
             role={"img"}
           />
 
-          <div
-            className={classNames(
-              projectcss.all,
-              projectcss.__wab_text,
-              sty.text__qr1G7
-            )}
-          >
+          <div className={classNames("all", "__wab_text", sty.text__qr1G7)}>
             {"\u062a\u0646\u0638\u06cc\u0645\u0627\u062a"}
           </div>
         </div>
         <div
-          className={classNames(
-            projectcss.all,
-            sty.freeBox__mnnjh,
-            "clickable"
-          )}
+          className={classNames("all", sty.freeBox__mnnjh, "clickable")}
           onClick={async event => {
             const $steps = {};
 
@@ -1090,16 +1019,12 @@ function PlasmicSideBar22__RenderFunc(props: {
           }}
         >
           <Icon47Icon
-            className={classNames(projectcss.all, sty.svg__jvfa)}
+            className={classNames("all", sty.svg__jvfa)}
             role={"img"}
           />
 
           <div
-            className={classNames(
-              projectcss.all,
-              projectcss.__wab_text,
-              sty.text__lPCk
-            )}
+            className={classNames("all", "__wab_text", sty.text__lPCk)}
             onClick={async event => {
               const $steps = {};
             }}
@@ -1108,7 +1033,7 @@ function PlasmicSideBar22__RenderFunc(props: {
           </div>
         </div>
         <div
-          className={classNames(projectcss.all, sty.freeBox__jsUt, "clickable")}
+          className={classNames("all", sty.freeBox__jsUt, "clickable")}
           onClick={async event => {
             const $steps = {};
 
@@ -1168,26 +1093,16 @@ function PlasmicSideBar22__RenderFunc(props: {
           }}
         >
           <Icon44Icon
-            className={classNames(projectcss.all, sty.svg__bSnl8)}
+            className={classNames("all", sty.svg__bSnl8)}
             role={"img"}
           />
 
-          <div
-            className={classNames(
-              projectcss.all,
-              projectcss.__wab_text,
-              sty.text___9GYz1
-            )}
-          >
+          <div className={classNames("all", "__wab_text", sty.text___9GYz1)}>
             {"\u0635\u0641\u062d\u0647\u200c\u06cc \u0627\u0635\u0644\u06cc"}
           </div>
         </div>
         <div
-          className={classNames(
-            projectcss.all,
-            sty.freeBox__zg2K1,
-            "clickable"
-          )}
+          className={classNames("all", sty.freeBox__zg2K1, "clickable")}
           onClick={async event => {
             const $steps = {};
 
@@ -1245,23 +1160,17 @@ function PlasmicSideBar22__RenderFunc(props: {
           }}
         >
           <Icon11Icon
-            className={classNames(projectcss.all, sty.svg__zBWkI)}
+            className={classNames("all", sty.svg__zBWkI)}
             role={"img"}
           />
 
-          <div
-            className={classNames(
-              projectcss.all,
-              projectcss.__wab_text,
-              sty.text__mXXm
-            )}
-          >
+          <div className={classNames("all", "__wab_text", sty.text__mXXm)}>
             {"\u062e\u0631\u0648\u062c"}
           </div>
         </div>
-        <div className={classNames(projectcss.all, sty.freeBox__ng5Wl)}>
+        <div className={classNames("all", sty.freeBox__ng5Wl)}>
           <Icon15Icon
-            className={classNames(projectcss.all, sty.svg__hikP7)}
+            className={classNames("all", sty.svg__hikP7)}
             onClick={async event => {
               const $steps = {};
 
@@ -1291,13 +1200,7 @@ function PlasmicSideBar22__RenderFunc(props: {
             role={"img"}
           />
 
-          <div
-            className={classNames(
-              projectcss.all,
-              projectcss.__wab_text,
-              sty.text__ycpGv
-            )}
-          >
+          <div className={classNames("all", "__wab_text", sty.text__ycpGv)}>
             {
               "\u06f0\u06f2\u06f1-\u06f9\u06f1\u06f0\u06f9\u06f6\u06f2\u06f2\u06f7\n\u0631\u0648\u0632\u0647\u0627\u06cc \u0627\u062f\u0627\u0631\u06cc \u0627\u0632 \u06f9 \u062a\u0627 \u06f1\u06f7"
             }

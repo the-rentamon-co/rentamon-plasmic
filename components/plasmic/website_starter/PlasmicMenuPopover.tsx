@@ -69,7 +69,6 @@ import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-impor
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicMenuPopover.module.css"; // plasmic-import: 6Na784QZOm1d/css
 
 createPlasmicElementProxy;
@@ -177,9 +176,9 @@ function PlasmicMenuPopover__RenderFunc(props: {
       data-plasmic-for-node={forNode}
       className={classNames(
         "__wab_instance",
-        projectcss.root_reset,
-        projectcss.plasmic_default_styles,
-        projectcss.plasmic_mixins,
+        "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+        "plasmic_default_styles",
+        "plasmic_mixins",
         styleTokensClassNames,
         sty.root
       )}
@@ -187,9 +186,9 @@ function PlasmicMenuPopover__RenderFunc(props: {
       offset={args.offset}
       placement={"bottom"}
       resetClassName={classNames(
-        projectcss.root_reset,
-        projectcss.plasmic_default_styles,
-        projectcss.plasmic_mixins,
+        "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+        "plasmic_default_styles",
+        "plasmic_mixins",
         styleTokensClassNames
       )}
       shouldFlip={true}

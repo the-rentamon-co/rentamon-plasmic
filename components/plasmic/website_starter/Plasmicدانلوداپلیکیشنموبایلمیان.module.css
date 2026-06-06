@@ -341,7 +341,7 @@
 }
 @media (max-width: 350px) {
   .downloadLinks {
-    max-width: 80%;
+    max-width: 90%;
   }
 }
 .directDl {
@@ -376,7 +376,7 @@
 }
 @media (max-width: 500px) {
   .directDl {
-    max-width: 280px;
+    max-width: 300px;
     margin-left: 0px;
     padding: 0px;
   }
@@ -510,7 +510,7 @@
     width: 100%;
     height: auto;
     min-height: 64px;
-    max-width: 280px;
+    max-width: 300px;
     max-height: none;
     background: var(--token-8nedppYkGVaH);
     opacity: 1;
@@ -686,7 +686,7 @@
     width: 100%;
     height: auto;
     min-height: 64px;
-    max-width: 280px;
+    max-width: 300px;
     max-height: none;
     background: var(--token-8nedppYkGVaH);
     opacity: 1;
@@ -824,7 +824,7 @@
     width: 100%;
     height: auto;
     min-height: 64px;
-    max-width: 280px;
+    max-width: 300px;
     max-height: none;
     background: var(--token-8nedppYkGVaH);
     opacity: 1;
@@ -1015,6 +1015,11 @@
   align-items: center;
   min-width: 0;
   padding: 8px 0px;
+}
+@media (max-width: 1200px) {
+  .introAutoSyncGif2 {
+    padding-left: 8px;
+  }
 }
 @media (max-width: 350px) {
   .introAutoSyncGif2 {

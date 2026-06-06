@@ -67,7 +67,6 @@ import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-impor
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicDiscount.module.css"; // plasmic-import: I6VyETm3Oi6o/css
 
 import CheckSvgIcon from "./icons/PlasmicIcon__CheckSvg"; // plasmic-import: aHRi_lZjzHt3/icon
@@ -201,10 +200,10 @@ function PlasmicDiscount__RenderFunc(props: {
       data-plasmic-root={true}
       data-plasmic-for-node={forNode}
       className={classNames(
-        projectcss.all,
-        projectcss.root_reset,
-        projectcss.plasmic_default_styles,
-        projectcss.plasmic_mixins,
+        "all",
+        "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+        "plasmic_default_styles",
+        "plasmic_mixins",
         styleTokensClassNames,
         sty.root
       )}
@@ -216,9 +215,9 @@ function PlasmicDiscount__RenderFunc(props: {
         className={classNames("__wab_instance", sty.modalDiscount)}
         closeButtonClassName={classNames({ [sty["pcls_WlzVlznZzWIt"]]: true })}
         defaultStylesClassName={classNames(
-          projectcss.root_reset,
-          projectcss.plasmic_default_styles,
-          projectcss.plasmic_mixins,
+          "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+          "plasmic_default_styles",
+          "plasmic_mixins",
           styleTokensClassNames
         )}
         modalContentClassName={classNames({ [sty["pcls_D8H_Dylqgqwp"]]: true })}
@@ -240,9 +239,9 @@ function PlasmicDiscount__RenderFunc(props: {
         <div
           data-plasmic-name={"columns"}
           data-plasmic-override={overrides.columns}
-          className={classNames(projectcss.all, sty.columns)}
+          className={classNames("all", sty.columns)}
         >
-          <div className={classNames(projectcss.all, sty.column__bQ2MZ)}>
+          <div className={classNames("all", sty.column__bQ2MZ)}>
             <Button
               className={classNames("__wab_instance", sty.button__ls8Kb)}
               onClick={async event => {
@@ -283,18 +282,12 @@ function PlasmicDiscount__RenderFunc(props: {
                 }
               }}
             >
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__aF7Ss
-                )}
-              >
+              <div className={classNames("all", "__wab_text", sty.text__aF7Ss)}>
                 {"-"}
               </div>
             </Button>
           </div>
-          <div className={classNames(projectcss.all, sty.column__tJexi)}>
+          <div className={classNames("all", sty.column__tJexi)}>
             <AntdInputNumber
               data-plasmic-name={"numberInput3"}
               data-plasmic-override={overrides.numberInput3}
@@ -314,7 +307,7 @@ function PlasmicDiscount__RenderFunc(props: {
               value={generateStateValueProp($state, ["numberInput3", "value"])}
             />
           </div>
-          <div className={classNames(projectcss.all, sty.column__iqSkX)}>
+          <div className={classNames("all", sty.column__iqSkX)}>
             <Button
               className={classNames("__wab_instance", sty.button__oQt5Q)}
               onClick={async event => {
@@ -355,13 +348,7 @@ function PlasmicDiscount__RenderFunc(props: {
                 }
               }}
             >
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text___4EEz
-                )}
-              >
+              <div className={classNames("all", "__wab_text", sty.text___4EEz)}>
                 {"+"}
               </div>
             </Button>

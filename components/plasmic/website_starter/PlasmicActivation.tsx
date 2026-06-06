@@ -73,7 +73,6 @@ import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-impor
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicActivation.module.css"; // plasmic-import: zXAOwfcgu5NZ/css
 
 import Icon23Icon from "./icons/PlasmicIcon__Icon23"; // plasmic-import: TftNRT31euw0/icon
@@ -339,23 +338,23 @@ function PlasmicActivation__RenderFunc(props: {
         }
       `}</style>
 
-      <div className={projectcss.plasmic_page_wrapper}>
+      <div className={"plasmic_page_wrapper"}>
         <div
           data-plasmic-name={"root"}
           data-plasmic-override={overrides.root}
           data-plasmic-root={true}
           data-plasmic-for-node={forNode}
           className={classNames(
-            projectcss.all,
-            projectcss.root_reset,
-            projectcss.plasmic_default_styles,
-            projectcss.plasmic_mixins,
+            "all",
+            "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+            "plasmic_default_styles",
+            "plasmic_mixins",
             styleTokensClassNames,
             sty.root
           )}
         >
           <div
-            className={classNames(projectcss.all, sty.freeBox__btynj)}
+            className={classNames("all", sty.freeBox__btynj)}
             onClick={async event => {
               const $steps = {};
 
@@ -383,7 +382,7 @@ function PlasmicActivation__RenderFunc(props: {
             <Icon23Icon
               data-plasmic-name={"svg"}
               data-plasmic-override={overrides.svg}
-              className={classNames(projectcss.all, sty.svg)}
+              className={classNames("all", sty.svg)}
               onClick={async event => {
                 const $steps = {};
 
@@ -447,8 +446,8 @@ function PlasmicActivation__RenderFunc(props: {
               role={"img"}
             />
           </div>
-          <div className={classNames(projectcss.all, sty.freeBox__ezxHy)}>
-            <div className={classNames(projectcss.all, sty.freeBox__dL0Eq)}>
+          <div className={classNames("all", sty.freeBox__ezxHy)}>
+            <div className={classNames("all", sty.freeBox__dL0Eq)}>
               <PlasmicImg__
                 data-plasmic-name={"img"}
                 data-plasmic-override={overrides.img}
@@ -477,7 +476,7 @@ function PlasmicActivation__RenderFunc(props: {
             data-plasmic-name={"signup"}
             data-plasmic-override={overrides.signup}
             className={classNames(
-              projectcss.all,
+              "all",
               sty.signup,
               hasVariant(globalVariants, "screen", "mobile")
                 ? "shadow"
@@ -547,13 +546,11 @@ function PlasmicActivation__RenderFunc(props: {
                     name={"platforms"}
                     rules={[]}
                   >
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__gTtK)}
-                    >
+                    <div className={classNames("all", sty.freeBox__gTtK)}>
                       <div
                         className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
+                          "all",
+                          "__wab_text",
                           sty.text__uDhb
                         )}
                       >
@@ -572,12 +569,7 @@ function PlasmicActivation__RenderFunc(props: {
                         </React.Fragment>
                       </div>
                     </div>
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        sty.freeBox___0H6Wx
-                      )}
-                    >
+                    <div className={classNames("all", sty.freeBox___0H6Wx)}>
                       <Checkbox
                         data-plasmic-name={"policiesCheckbox"}
                         data-plasmic-override={overrides.policiesCheckbox}
@@ -790,8 +782,8 @@ function PlasmicActivation__RenderFunc(props: {
                       >
                         <div
                           className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
+                            "all",
+                            "__wab_text",
                             sty.text__lHi
                           )}
                         >
@@ -811,11 +803,11 @@ function PlasmicActivation__RenderFunc(props: {
                                   data-plasmic-name={"link"}
                                   data-plasmic-override={overrides.link}
                                   className={classNames(
-                                    projectcss.all,
-                                    projectcss.a,
-                                    projectcss.a__7SNMk,
-                                    projectcss.__wab_text,
-                                    projectcss.plasmic_default__inline,
+                                    "all",
+                                    "a",
+                                    "a__7SNMk",
+                                    "__wab_text",
+                                    "plasmic_default__inline",
                                     sty.link
                                   )}
                                   component={Link}
@@ -890,11 +882,11 @@ function PlasmicActivation__RenderFunc(props: {
                                   data-plasmic-name={"link"}
                                   data-plasmic-override={overrides.link}
                                   className={classNames(
-                                    projectcss.all,
-                                    projectcss.a,
-                                    projectcss.a__7SNMk,
-                                    projectcss.__wab_text,
-                                    projectcss.plasmic_default__inline,
+                                    "all",
+                                    "a",
+                                    "a__7SNMk",
+                                    "__wab_text",
+                                    "plasmic_default__inline",
                                     sty.link
                                   )}
                                   component={Link}
@@ -957,15 +949,8 @@ function PlasmicActivation__RenderFunc(props: {
                         </div>
                       </Checkbox>
                     </div>
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__zu7N)}
-                    >
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          sty.freeBox__fdLtc
-                        )}
-                      >
+                    <div className={classNames("all", sty.freeBox__zu7N)}>
+                      <div className={classNames("all", sty.freeBox__fdLtc)}>
                         <AntdButton
                           data-plasmic-name={"signupButton"}
                           data-plasmic-override={overrides.signupButton}
@@ -1330,15 +1315,12 @@ function PlasmicActivation__RenderFunc(props: {
                           type={"primary"}
                         >
                           <div
-                            className={classNames(
-                              projectcss.all,
-                              sty.freeBox__gIjbh
-                            )}
+                            className={classNames("all", sty.freeBox__gIjbh)}
                           >
                             <div
                               className={classNames(
-                                projectcss.all,
-                                projectcss.__wab_text,
+                                "all",
+                                "__wab_text",
                                 sty.text__yojJ1
                               )}
                             >
@@ -1402,15 +1384,11 @@ function PlasmicActivation__RenderFunc(props: {
             <div
               data-plasmic-name={"quotes"}
               data-plasmic-override={overrides.quotes}
-              className={classNames(projectcss.all, sty.quotes)}
+              className={classNames("all", sty.quotes)}
             >
-              <div className={classNames(projectcss.all, sty.freeBox__fSXj5)}>
+              <div className={classNames("all", sty.freeBox__fSXj5)}>
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text___4JwlT
-                  )}
+                  className={classNames("all", "__wab_text", sty.text___4JwlT)}
                 >
                   {hasVariant(globalVariants, "screen", "mobile")
                     ? "\u0627\u0639\u062a\u0645\u0627\u062f \u0628\u06cc\u0634 \u0627\u0632 \u06f1\u06f0\u06f0\u06f0 \u0645\u06cc\u0632\u0628\u0627\u0646 \u0628\u0647 \u0645\u06cc\u0627\u0646"
@@ -1427,15 +1405,9 @@ function PlasmicActivation__RenderFunc(props: {
               </div>
             </div>
           ) : null}
-          <div className={classNames(projectcss.all, sty.freeBox__uAwxe)}>
-            <div className={classNames(projectcss.all, sty.freeBox__pMoPs)}>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__p6Vl
-                )}
-              >
+          <div className={classNames("all", sty.freeBox__uAwxe)}>
+            <div className={classNames("all", sty.freeBox__pMoPs)}>
+              <div className={classNames("all", "__wab_text", sty.text__p6Vl)}>
                 {hasVariant(globalVariants, "screen", "mobile")
                   ? "\u0634\u0631\u06a9\u062a \u062a\u0648\u0633\u0639\u0647 \u0641\u0646\u0627\u0648\u0631\u06cc \u0648 \u062a\u0648\u0627\u0646\u0645\u0646\u062f\u0633\u0627\u0632\u06cc \u0634\u0631\u06cc\u0641 (\u0631\u0646\u062a\u0627\u0645\u0648\u0646)\n\u06f0\u06f2\u06f1\u06f9\u06f1\u06f0\u06f9\u06f6\u06f2\u06f2\u06f7  \u0631\u0648\u0632\u0647\u0627\u06cc \u0627\u062f\u0627\u0631\u06cc \u0627\u0632 \u06f9 \u0627\u0644\u06cc \u06f1\u06f7\r\n\r\n\u0642\u0645\u060c \u067e\u0631\u062f\u06cc\u0633\u0627\u0646\u060c \u0628\u0644\u0648\u0627\u0631 \u0645\u0648\u0644\u0648\u06cc\u060c \u067e\u0627\u0631\u06a9 \u0639\u0644\u0645 \u0648 \u0641\u0646\u0627\u0648\u0631\u06cc \u0627\u0633\u062a\u0627\u0646 \u0642\u0645\u060c \u0628\u0644\u0648\u06a9 \u06f1\u060c\u200c \u0637\u0628\u0642\u0647 \u06f3\r"
                   : "\u0634\u0631\u06a9\u062a \u062a\u0648\u0633\u0639\u0647 \u0641\u0646\u0627\u0648\u0631\u06cc \u0648 \u062a\u0648\u0627\u0646\u0645\u0646\u062f\u0633\u0627\u0632\u06cc \u0634\u0631\u06cc\u0641\n\u06f0\u06f2\u06f1\u06f9\u06f1\u06f0\u06f9\u06f6\u06f2\u06f2\u06f7 \u0631\u0648\u0632\u0647\u0627\u06cc \u0627\u062f\u0627\u0631\u06cc \u0627\u0632 \u06f9 \u0627\u0644\u06cc \u06f1\u06f7\r\n\r\n\u0642\u0645\u060c \u067e\u0631\u062f\u06cc\u0633\u0627\u0646\u060c \u0628\u0644\u0648\u0627\u0631 \u0645\u0648\u0644\u0648\u06cc\u060c \u067e\u0627\u0631\u06a9 \u0639\u0644\u0645 \u0648 \u0641\u0646\u0627\u0648\u0631\u06cc \u0627\u0633\u062a\u0627\u0646 \u0642\u0645\u060c \u0628\u0644\u0648\u06a9 \u06f1\u060c\u200c \u0637\u0628\u0642\u0647 \u06f3\r"}
@@ -1445,7 +1417,7 @@ function PlasmicActivation__RenderFunc(props: {
           <div
             data-plasmic-name={"html"}
             data-plasmic-override={overrides.html}
-            className={classNames(projectcss.all, sty.html)}
+            className={classNames("all", sty.html)}
           >
             <Embed
               data-plasmic-name={"nimchat"}
@@ -1454,7 +1426,7 @@ function PlasmicActivation__RenderFunc(props: {
               code={"<div>Paste your embed code via the right sidebar</div>"}
             />
 
-            <div className={classNames(projectcss.all, sty.freeBox__y1Ako)}>
+            <div className={classNames("all", sty.freeBox__y1Ako)}>
               <ClarityRntComponent
                 data-plasmic-name={"clarityRntComponent"}
                 data-plasmic-override={overrides.clarityRntComponent}

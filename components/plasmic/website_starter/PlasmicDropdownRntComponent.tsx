@@ -64,7 +64,6 @@ import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-impor
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicDropdownRntComponent.module.css"; // plasmic-import: g7mACfQqrf7P/css
 
 import Icon82Icon from "./icons/PlasmicIcon__Icon82"; // plasmic-import: 2O4NC5vDxvXg/icon
@@ -176,10 +175,10 @@ function PlasmicDropdownRntComponent__RenderFunc(props: {
       data-plasmic-root={true}
       data-plasmic-for-node={forNode}
       className={classNames(
-        projectcss.all,
-        projectcss.root_reset,
-        projectcss.plasmic_default_styles,
-        projectcss.plasmic_mixins,
+        "all",
+        "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+        "plasmic_default_styles",
+        "plasmic_mixins",
         styleTokensClassNames,
         sty.main
       )}
@@ -187,7 +186,7 @@ function PlasmicDropdownRntComponent__RenderFunc(props: {
       <div
         data-plasmic-name={"selectedItem"}
         data-plasmic-override={overrides.selectedItem}
-        className={classNames(projectcss.all, sty.selectedItem, "clickable")}
+        className={classNames("all", sty.selectedItem, "clickable")}
         onClick={async event => {
           const $steps = {};
 
@@ -225,7 +224,7 @@ function PlasmicDropdownRntComponent__RenderFunc(props: {
         <div
           data-plasmic-name={"image"}
           data-plasmic-override={overrides.image}
-          className={classNames(projectcss.all, sty.image)}
+          className={classNames("all", sty.image)}
         >
           <PlasmicImg__
             alt={""}
@@ -248,15 +247,9 @@ function PlasmicDropdownRntComponent__RenderFunc(props: {
         <div
           data-plasmic-name={"propertyName"}
           data-plasmic-override={overrides.propertyName}
-          className={classNames(projectcss.all, sty.propertyName)}
+          className={classNames("all", sty.propertyName)}
         >
-          <div
-            className={classNames(
-              projectcss.all,
-              projectcss.__wab_text,
-              sty.text___7DA1H
-            )}
-          >
+          <div className={classNames("all", "__wab_text", sty.text___7DA1H)}>
             {
               "\u0648\u06cc\u0644\u0627 \u062f\u0648\u062e\u0648\u0627\u0628\u0647 \u0627\u0631\u0633\u0628\u0627\u0631\u0627\u0646"
             }
@@ -265,12 +258,12 @@ function PlasmicDropdownRntComponent__RenderFunc(props: {
         <div
           data-plasmic-name={"arrowDown"}
           data-plasmic-override={overrides.arrowDown}
-          className={classNames(projectcss.all, sty.arrowDown)}
+          className={classNames("all", sty.arrowDown)}
         >
           <Icon82Icon
             data-plasmic-name={"svg"}
             data-plasmic-override={overrides.svg}
-            className={classNames(projectcss.all, sty.svg)}
+            className={classNames("all", sty.svg)}
             role={"img"}
           />
         </div>
@@ -291,17 +284,17 @@ function PlasmicDropdownRntComponent__RenderFunc(props: {
         <div
           data-plasmic-name={"menuItems"}
           data-plasmic-override={overrides.menuItems}
-          className={classNames(projectcss.all, sty.menuItems, "fadeinf ")}
+          className={classNames("all", sty.menuItems, "fadeinf ")}
         >
           <div
             data-plasmic-name={"dropMenu"}
             data-plasmic-override={overrides.dropMenu}
-            className={classNames(projectcss.all, sty.dropMenu, "clickable")}
+            className={classNames("all", sty.dropMenu, "clickable")}
           >
             <div
               data-plasmic-name={"image2"}
               data-plasmic-override={overrides.image2}
-              className={classNames(projectcss.all, sty.image2)}
+              className={classNames("all", sty.image2)}
             >
               <PlasmicImg__
                 alt={""}
@@ -324,15 +317,9 @@ function PlasmicDropdownRntComponent__RenderFunc(props: {
             <div
               data-plasmic-name={"propertyName2"}
               data-plasmic-override={overrides.propertyName2}
-              className={classNames(projectcss.all, sty.propertyName2)}
+              className={classNames("all", sty.propertyName2)}
             >
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__rrFyO
-                )}
-              >
+              <div className={classNames("all", "__wab_text", sty.text__rrFyO)}>
                 {
                   "\u0648\u06cc\u0644\u0627 \u062f\u0648\u062e\u0648\u0627\u0628\u0647 \u0627\u0631\u0633\u0628\u0627\u0631\u0627\u0646"
                 }

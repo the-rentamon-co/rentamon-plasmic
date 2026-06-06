@@ -71,7 +71,6 @@ import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-impor
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicProperties.module.css"; // plasmic-import: A6vFyD-Zpe1c/css
 
 const emptyProxy: any = new Proxy(() => "", {
@@ -275,17 +274,17 @@ function PlasmicProperties__RenderFunc(props: {
         }
       `}</style>
 
-      <div className={projectcss.plasmic_page_wrapper}>
+      <div className={"plasmic_page_wrapper"}>
         <div
           data-plasmic-name={"root"}
           data-plasmic-override={overrides.root}
           data-plasmic-root={true}
           data-plasmic-for-node={forNode}
           className={classNames(
-            projectcss.all,
-            projectcss.root_reset,
-            projectcss.plasmic_default_styles,
-            projectcss.plasmic_mixins,
+            "all",
+            "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+            "plasmic_default_styles",
+            "plasmic_mixins",
             styleTokensClassNames,
             sty.root
           )}
@@ -339,9 +338,9 @@ function PlasmicProperties__RenderFunc(props: {
           <div
             data-plasmic-name={"header"}
             data-plasmic-override={overrides.header}
-            className={classNames(projectcss.all, sty.header)}
+            className={classNames("all", sty.header)}
           >
-            <div className={classNames(projectcss.all, sty.freeBox__thBtN)}>
+            <div className={classNames("all", sty.freeBox__thBtN)}>
               {(
                 hasVariant(globalVariants, "screen", "mobile")
                   ? true
@@ -359,7 +358,7 @@ function PlasmicProperties__RenderFunc(props: {
                       }
                     })()
               ) ? (
-                <div className={classNames(projectcss.all, sty.freeBox___6EuQ)}>
+                <div className={classNames("all", sty.freeBox___6EuQ)}>
                   <SideBar2
                     data-plasmic-name={"sideBar2"}
                     data-plasmic-override={overrides.sideBar2}
@@ -402,7 +401,7 @@ function PlasmicProperties__RenderFunc(props: {
                       }
                     })()
               ) ? (
-                <div className={classNames(projectcss.all, sty.freeBox__oEewg)}>
+                <div className={classNames("all", sty.freeBox__oEewg)}>
                   <SidebarLite
                     data-plasmic-name={"sidebarLite"}
                     data-plasmic-override={overrides.sidebarLite}
@@ -444,11 +443,11 @@ function PlasmicProperties__RenderFunc(props: {
                   ? true
                   : true
             ) ? (
-              <div className={classNames(projectcss.all, sty.freeBox__ykwHb)}>
+              <div className={classNames("all", sty.freeBox__ykwHb)}>
                 <div
                   className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
+                    "all",
+                    "__wab_text",
                     sty.text__f1AbN,
                     "fadeinf"
                   )}
@@ -459,7 +458,7 @@ function PlasmicProperties__RenderFunc(props: {
                 </div>
               </div>
             ) : null}
-            <div className={classNames(projectcss.all, sty.freeBox__hwczB)}>
+            <div className={classNames("all", sty.freeBox__hwczB)}>
               <ApiRequest
                 data-plasmic-name={"profile2"}
                 data-plasmic-override={overrides.profile2}
@@ -511,15 +510,15 @@ function PlasmicProperties__RenderFunc(props: {
               />
             </div>
           </div>
-          <div className={classNames(projectcss.all, sty.freeBox__hIpz)}>
+          <div className={classNames("all", sty.freeBox__hIpz)}>
             <div
               data-plasmic-name={"property"}
               data-plasmic-override={overrides.property}
-              className={classNames(projectcss.all, sty.property, "fadeinf")}
+              className={classNames("all", sty.property, "fadeinf")}
             >
               <div
                 className={classNames(
-                  projectcss.all,
+                  "all",
                   sty.freeBox__mjr7H,
                   hasVariant(globalVariants, "screen", "mobile") ? "fadein" : ``
                 )}
@@ -532,8 +531,8 @@ function PlasmicProperties__RenderFunc(props: {
                   errorDisplay={
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text__xkWcY
                       )}
                     >
@@ -566,7 +565,7 @@ function PlasmicProperties__RenderFunc(props: {
                       <div
                         data-plasmic-name={"localStorage"}
                         data-plasmic-override={overrides.localStorage}
-                        className={classNames(projectcss.all, sty.localStorage)}
+                        className={classNames("all", sty.localStorage)}
                       >
                         {(_par =>
                           !_par ? [] : Array.isArray(_par) ? _par : [_par])(
@@ -600,15 +599,12 @@ function PlasmicProperties__RenderFunc(props: {
                           const currentIndex = __plasmic_idx_0;
                           return (
                             <div
-                              className={classNames(
-                                projectcss.all,
-                                sty.freeBox___9RsNb
-                              )}
+                              className={classNames("all", sty.freeBox___9RsNb)}
                               key={currentIndex}
                             >
                               <div
                                 className={classNames(
-                                  projectcss.all,
+                                  "all",
                                   sty.freeBox___9MxO,
                                   hasVariant(globalVariants, "screen", "mobile")
                                     ? "clickable"
@@ -681,7 +677,7 @@ function PlasmicProperties__RenderFunc(props: {
                                 })() ? (
                                   <div
                                     className={classNames(
-                                      projectcss.all,
+                                      "all",
                                       sty.freeBox__rfVv
                                     )}
                                   >
@@ -740,14 +736,14 @@ function PlasmicProperties__RenderFunc(props: {
                                 ) : null}
                                 <div
                                   className={classNames(
-                                    projectcss.all,
+                                    "all",
                                     sty.freeBox__oqlgW
                                   )}
                                 >
                                   <div
                                     className={classNames(
-                                      projectcss.all,
-                                      projectcss.__wab_text,
+                                      "all",
+                                      "__wab_text",
                                       sty.text__wir2D
                                     )}
                                   >
@@ -773,15 +769,10 @@ function PlasmicProperties__RenderFunc(props: {
                             </div>
                           );
                         })}
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            sty.freeBox___4Dq7O
-                          )}
-                        >
+                        <div className={classNames("all", sty.freeBox___4Dq7O)}>
                           <div
                             className={classNames(
-                              projectcss.all,
+                              "all",
                               sty.freeBox__sBuze,
                               "clickable fadein"
                             )}
@@ -866,10 +857,7 @@ function PlasmicProperties__RenderFunc(props: {
                             }}
                           >
                             <div
-                              className={classNames(
-                                projectcss.all,
-                                sty.freeBox__mooUv
-                              )}
+                              className={classNames("all", sty.freeBox__mooUv)}
                             >
                               <PlasmicImg__
                                 alt={""}
@@ -894,15 +882,12 @@ function PlasmicProperties__RenderFunc(props: {
                               />
                             </div>
                             <div
-                              className={classNames(
-                                projectcss.all,
-                                sty.freeBox___10ONd
-                              )}
+                              className={classNames("all", sty.freeBox___10ONd)}
                             >
                               <div
                                 className={classNames(
-                                  projectcss.all,
-                                  projectcss.__wab_text,
+                                  "all",
+                                  "__wab_text",
                                   sty.text__nIC
                                 )}
                               >
@@ -976,9 +961,7 @@ function PlasmicProperties__RenderFunc(props: {
                   }}
                   url={"https://nb.miaan.ir/webhook/properties"}
                 >
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__q1Cc)}
-                  >
+                  <div className={classNames("all", sty.freeBox__q1Cc)}>
                     {(_par =>
                       !_par ? [] : Array.isArray(_par) ? _par : [_par])(
                       (() => {
@@ -1002,7 +985,7 @@ function PlasmicProperties__RenderFunc(props: {
                       return (
                         <div
                           className={classNames(
-                            projectcss.all,
+                            "all",
                             sty.freeBox__gAlJf,
                             hasVariant(globalVariants, "screen", "mobile")
                               ? "clickable"
@@ -1069,10 +1052,7 @@ function PlasmicProperties__RenderFunc(props: {
                             }
                           })() ? (
                             <div
-                              className={classNames(
-                                projectcss.all,
-                                sty.freeBox__kzgsv
-                              )}
+                              className={classNames("all", sty.freeBox__kzgsv)}
                             >
                               <PlasmicImg__
                                 alt={""}
@@ -1116,15 +1096,12 @@ function PlasmicProperties__RenderFunc(props: {
                             </div>
                           ) : null}
                           <div
-                            className={classNames(
-                              projectcss.all,
-                              sty.freeBox__gb4Nj
-                            )}
+                            className={classNames("all", sty.freeBox__gb4Nj)}
                           >
                             <div
                               className={classNames(
-                                projectcss.all,
-                                projectcss.__wab_text,
+                                "all",
+                                "__wab_text",
                                 sty.text__a827Q
                               )}
                             >
@@ -1151,7 +1128,7 @@ function PlasmicProperties__RenderFunc(props: {
                     })}
                     <div
                       className={classNames(
-                        projectcss.all,
+                        "all",
                         sty.freeBox__ojr5X,
                         "clickable fadeinf"
                       )}
@@ -1246,12 +1223,7 @@ function PlasmicProperties__RenderFunc(props: {
                         }
                       }}
                     >
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          sty.freeBox__aIuYj
-                        )}
-                      >
+                      <div className={classNames("all", sty.freeBox__aIuYj)}>
                         <PlasmicImg__
                           alt={""}
                           className={classNames(sty.img___1Anx)}
@@ -1274,16 +1246,11 @@ function PlasmicProperties__RenderFunc(props: {
                           }}
                         />
                       </div>
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          sty.freeBox___6NZL
-                        )}
-                      >
+                      <div className={classNames("all", sty.freeBox___6NZL)}>
                         <div
                           className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
+                            "all",
+                            "__wab_text",
                             sty.text__c15Hn
                           )}
                         >
@@ -1294,9 +1261,7 @@ function PlasmicProperties__RenderFunc(props: {
                       </div>
                     </div>
                   </div>
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__sAki9)}
-                  >
+                  <div className={classNames("all", sty.freeBox__sAki9)}>
                     {(
                       hasVariant(globalVariants, "screen", "smallMobile")
                         ? (() => {
@@ -1329,18 +1294,13 @@ function PlasmicProperties__RenderFunc(props: {
                       <div
                         data-plasmic-name={"propGuide"}
                         data-plasmic-override={overrides.propGuide}
-                        className={classNames(projectcss.all, sty.propGuide)}
+                        className={classNames("all", sty.propGuide)}
                       >
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            sty.freeBox__vAuf
-                          )}
-                        >
+                        <div className={classNames("all", sty.freeBox__vAuf)}>
                           <div
                             className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
+                              "all",
+                              "__wab_text",
                               sty.text__qFn33
                             )}
                           >
@@ -1365,10 +1325,7 @@ function PlasmicProperties__RenderFunc(props: {
                       }
                     })() ? (
                       <div
-                        className={classNames(
-                          projectcss.all,
-                          sty.freeBox__hyTnZ
-                        )}
+                        className={classNames("all", sty.freeBox__hyTnZ)}
                         onClick={async event => {
                           const $steps = {};
 
@@ -1409,8 +1366,8 @@ function PlasmicProperties__RenderFunc(props: {
                       >
                         <div
                           className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
+                            "all",
+                            "__wab_text",
                             sty.text__gin1Y
                           )}
                           onClick={async event => {
@@ -1478,11 +1435,7 @@ function PlasmicProperties__RenderFunc(props: {
                       <div
                         data-plasmic-name={"divar"}
                         data-plasmic-override={overrides.divar}
-                        className={classNames(
-                          projectcss.all,
-                          sty.divar,
-                          "clickable"
-                        )}
+                        className={classNames("all", sty.divar, "clickable")}
                         onClick={async event => {
                           const $steps = {};
 
@@ -1510,8 +1463,8 @@ function PlasmicProperties__RenderFunc(props: {
                       >
                         <div
                           className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
+                            "all",
+                            "__wab_text",
                             sty.text__h2Fvz
                           )}
                         >
@@ -1825,7 +1778,7 @@ function PlasmicProperties__RenderFunc(props: {
             }}
           />
 
-          <div className={classNames(projectcss.all, sty.freeBox__ei3Q2)}>
+          <div className={classNames("all", sty.freeBox__ei3Q2)}>
             <ClarityRntComponent
               data-plasmic-name={"clarityRntComponent"}
               data-plasmic-override={overrides.clarityRntComponent}

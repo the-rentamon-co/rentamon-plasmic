@@ -70,7 +70,6 @@ import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-impor
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicDirectBookingNewUser.module.css"; // plasmic-import: immtBa3TQWti/css
 
 const emptyProxy: any = new Proxy(() => "", {
@@ -251,17 +250,17 @@ function PlasmicDirectBookingNewUser__RenderFunc(props: {
         }
       `}</style>
 
-      <div className={projectcss.plasmic_page_wrapper}>
+      <div className={"plasmic_page_wrapper"}>
         <div
           data-plasmic-name={"root"}
           data-plasmic-override={overrides.root}
           data-plasmic-root={true}
           data-plasmic-for-node={forNode}
           className={classNames(
-            projectcss.all,
-            projectcss.root_reset,
-            projectcss.plasmic_default_styles,
-            projectcss.plasmic_mixins,
+            "all",
+            "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+            "plasmic_default_styles",
+            "plasmic_mixins",
             styleTokensClassNames,
             sty.root
           )}
@@ -269,9 +268,9 @@ function PlasmicDirectBookingNewUser__RenderFunc(props: {
           <div
             data-plasmic-name={"header"}
             data-plasmic-override={overrides.header}
-            className={classNames(projectcss.all, sty.header)}
+            className={classNames("all", sty.header)}
           >
-            <div className={classNames(projectcss.all, sty.freeBox___0Vc5O)}>
+            <div className={classNames("all", sty.freeBox___0Vc5O)}>
               <SideBar2
                 data-plasmic-name={"sideBar2"}
                 data-plasmic-override={overrides.sideBar2}
@@ -294,7 +293,7 @@ function PlasmicDirectBookingNewUser__RenderFunc(props: {
                 })()}
               />
             </div>
-            <div className={classNames(projectcss.all, sty.freeBox__b23Pz)} />
+            <div className={classNames("all", sty.freeBox__b23Pz)} />
 
             <ApiRequest
               data-plasmic-name={"profile2"}
@@ -330,27 +329,19 @@ function PlasmicDirectBookingNewUser__RenderFunc(props: {
           <div
             data-plasmic-name={"mainContents"}
             data-plasmic-override={overrides.mainContents}
-            className={classNames(projectcss.all, sty.mainContents)}
+            className={classNames("all", sty.mainContents)}
           >
-            <div className={classNames(projectcss.all, sty.freeBox__znTaS)}>
-              <div className={classNames(projectcss.all, sty.freeBox__dOzRb)}>
+            <div className={classNames("all", sty.freeBox__znTaS)}>
+              <div className={classNames("all", sty.freeBox__dOzRb)}>
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text___5Ykxc
-                  )}
+                  className={classNames("all", "__wab_text", sty.text___5Ykxc)}
                 >
                   {hasVariant(globalVariants, "screen", "mobile")
                     ? "\u0628\u0631\u0627\u06cc \u0641\u0639\u0627\u0644 \u06a9\u0631\u062f\u0646 \u0627\u0628\u0632\u0627\u0631\u06a9\u060c \u0644\u0627\u0632\u0645\u0647 \u062f\u0631 \u00ab\u0645\u06cc\u0627\u0646\u00bb \u062b\u0628\u062a\u200c\u0646\u0627\u0645 \u06a9\u0646\u06cc"
                     : "\u0628\u0631\u0627\u06cc \u0641\u0639\u0627\u0644 \u06a9\u0631\u062f\u0646 \u0627\u0628\u0632\u0627\u0631\u06a9\u060c \u0644\u0627\u0632\u0645\u0647 \u062f\u0631 \u00ab\u0645\u06cc\u0627\u0646\u00bb \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0627\u0634\u062a\u0647 \u0628\u0627\u0634\u06cc"}
                 </div>
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__jZuuS
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__jZuuS)}
                 >
                   {hasVariant(globalVariants, "screen", "mobile")
                     ? "\u0628\u0639\u062f \u0627\u0632 \u0641\u0639\u0627\u0644 \u0634\u062f\u0646 \u062f\u0631 \u00ab\u0645\u06cc\u0627\u0646\u00bb \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u0627\u06cc\u0646 \u0627\u0628\u0632\u0627\u0631\u06a9 \u0631\u0648 \u0641\u0639\u0627\u0644 \u06a9\u0646\u06cc\u060c \u062a\u0627 \u0631\u0648\u0632\u0647\u0627\u06cc \u062e\u0627\u0644\u06cc \u062a\u0642\u0648\u06cc\u0645 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0634\u0645\u0627 \u0628\u0647 \u0645\u0647\u0645\u0627\u0646\u0627\u0646 \u062f\u06cc\u0648\u0627\u0631 \u0646\u0645\u0627\u06cc\u0634 \u062f\u0627\u062f\u0647 \u0628\u0634\u0647."
@@ -361,21 +352,17 @@ function PlasmicDirectBookingNewUser__RenderFunc(props: {
             <div
               data-plasmic-name={"link"}
               data-plasmic-override={overrides.link}
-              className={classNames(projectcss.all, sty.link)}
+              className={classNames("all", sty.link)}
             >
               <div
                 data-plasmic-name={"downloadLinks"}
                 data-plasmic-override={overrides.downloadLinks}
-                className={classNames(projectcss.all, sty.downloadLinks)}
+                className={classNames("all", sty.downloadLinks)}
               >
                 <div
                   data-plasmic-name={"directDl"}
                   data-plasmic-override={overrides.directDl}
-                  className={classNames(
-                    projectcss.all,
-                    sty.directDl,
-                    "clickable"
-                  )}
+                  className={classNames("all", sty.directDl, "clickable")}
                   onClick={async event => {
                     const $steps = {};
 
@@ -405,12 +392,12 @@ function PlasmicDirectBookingNewUser__RenderFunc(props: {
                   <div
                     data-plasmic-name={"text"}
                     data-plasmic-override={overrides.text}
-                    className={classNames(projectcss.all, sty.text)}
+                    className={classNames("all", sty.text)}
                   >
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text__nBqy
                       )}
                     >
@@ -423,7 +410,7 @@ function PlasmicDirectBookingNewUser__RenderFunc(props: {
                 <div
                   data-plasmic-name={"myket"}
                   data-plasmic-override={overrides.myket}
-                  className={classNames(projectcss.all, sty.myket, "clickable")}
+                  className={classNames("all", sty.myket, "clickable")}
                   onClick={async event => {
                     const $steps = {};
 
@@ -450,11 +437,7 @@ function PlasmicDirectBookingNewUser__RenderFunc(props: {
                   }}
                 >
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__tFb5U
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__tFb5U)}
                   >
                     {
                       "\u0628\u0627\u0632\u06af\u0634\u062a \u0628\u0647 \u062f\u06cc\u0648\u0627\u0631"
@@ -476,7 +459,7 @@ function PlasmicDirectBookingNewUser__RenderFunc(props: {
             className={classNames("__wab_instance", sty.navbarMnFooter)}
           />
 
-          <div className={classNames(projectcss.all, sty.freeBox__kNtFb)}>
+          <div className={classNames("all", sty.freeBox__kNtFb)}>
             <ClarityRntComponent
               data-plasmic-name={"clarityRntComponent"}
               data-plasmic-override={overrides.clarityRntComponent}

@@ -69,7 +69,6 @@ import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-impor
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicPropertyAnalytics.module.css"; // plasmic-import: oEgwlD3XbRDL/css
 
 const emptyProxy: any = new Proxy(() => "", {
@@ -335,17 +334,17 @@ function PlasmicPropertyAnalytics__RenderFunc(props: {
         }
       `}</style>
 
-      <div className={projectcss.plasmic_page_wrapper}>
+      <div className={"plasmic_page_wrapper"}>
         <div
           data-plasmic-name={"root"}
           data-plasmic-override={overrides.root}
           data-plasmic-root={true}
           data-plasmic-for-node={forNode}
           className={classNames(
-            projectcss.all,
-            projectcss.root_reset,
-            projectcss.plasmic_default_styles,
-            projectcss.plasmic_mixins,
+            "all",
+            "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+            "plasmic_default_styles",
+            "plasmic_mixins",
             styleTokensClassNames,
             sty.root
           )}
@@ -353,7 +352,7 @@ function PlasmicPropertyAnalytics__RenderFunc(props: {
           <div
             data-plasmic-name={"main"}
             data-plasmic-override={overrides.main}
-            className={classNames(projectcss.all, sty.main)}
+            className={classNames("all", sty.main)}
           >
             <ApiRequest
               data-plasmic-name={"apiRequest"}
@@ -361,11 +360,7 @@ function PlasmicPropertyAnalytics__RenderFunc(props: {
               className={classNames("__wab_instance", sty.apiRequest)}
               errorDisplay={
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text___35Imh
-                  )}
+                  className={classNames("all", "__wab_text", sty.text___35Imh)}
                 >
                   {hasVariant(globalVariants, "screen", "mobile")
                     ? "\u062e\u0637\u0627 \u062f\u0631 \u0628\u0627\u0632\u06cc\u0627\u0628\u06cc \u0627\u0637\u0644\u0627\u0639\u0627\u062a\n"
@@ -373,7 +368,7 @@ function PlasmicPropertyAnalytics__RenderFunc(props: {
                 </div>
               }
               loadingDisplay={
-                <div className={classNames(projectcss.all, sty.freeBox__ei2Gv)}>
+                <div className={classNames("all", sty.freeBox__ei2Gv)}>
                   <PlasmicImg__
                     alt={""}
                     className={classNames(sty.img__uIWf)}
@@ -429,17 +424,11 @@ function PlasmicPropertyAnalytics__RenderFunc(props: {
                 }
               })()}
             >
-              <div
-                className={classNames(
-                  projectcss.all,
-                  sty.freeBox__t8Vqu,
-                  "fadein"
-                )}
-              >
+              <div className={classNames("all", sty.freeBox__t8Vqu, "fadein")}>
                 <div
                   data-plasmic-name={"coverImage"}
                   data-plasmic-override={overrides.coverImage}
-                  className={classNames(projectcss.all, sty.coverImage)}
+                  className={classNames("all", sty.coverImage)}
                 >
                   <PlasmicImg__
                     alt={""}
@@ -488,14 +477,10 @@ function PlasmicPropertyAnalytics__RenderFunc(props: {
                 <div
                   data-plasmic-name={"propertyName"}
                   data-plasmic-override={overrides.propertyName}
-                  className={classNames(projectcss.all, sty.propertyName)}
+                  className={classNames("all", sty.propertyName)}
                 >
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__gsFhN
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__gsFhN)}
                   >
                     <React.Fragment>
                       {(() => {
@@ -519,14 +504,8 @@ function PlasmicPropertyAnalytics__RenderFunc(props: {
               </div>
             </ApiRequest>
           </div>
-          <div className={classNames(projectcss.all, sty.freeBox__n9ASc)}>
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__kgk1O
-              )}
-            >
+          <div className={classNames("all", sty.freeBox__n9ASc)}>
+            <div className={classNames("all", "__wab_text", sty.text__kgk1O)}>
               {hasVariant(globalVariants, "screen", "smallMobile") ? (
                 <React.Fragment>
                   <React.Fragment>
@@ -577,26 +556,14 @@ function PlasmicPropertyAnalytics__RenderFunc(props: {
                 </React.Fragment>
               )}
             </div>
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text___4QJhz
-              )}
-            >
+            <div className={classNames("all", "__wab_text", sty.text___4QJhz)}>
               {hasVariant(globalVariants, "screen", "smallMobile")
                 ? "\u0627\u06cc\u0646\u062c\u0627 \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u0628\u0628\u06cc\u0646\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0686\u0642\u062f\u0631 \u062f\u0631\u0622\u0645\u062f \u062f\u0627\u0634\u062a\u0647\u060c \u0627\u0632 \u06a9\u062f\u0648\u0645 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u0628\u06cc\u0634\u062a\u0631 \u0631\u0632\u0631\u0648 \u06af\u0631\u0641\u062a\u0647\u060c \u0686\u0646\u062f \u0634\u0628 \u067e\u0631 \u0628\u0648\u062f\u0647 \u0648...\n\u0627\u06cc\u0646 \u06af\u0632\u0627\u0631\u0634\u0627\u062a \u06cc\u0647 \u062a\u0635\u0648\u06cc\u0631 \u0634\u0641\u0627\u0641 \u0627\u0632 \u0639\u0645\u0644\u06a9\u0631\u062f \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0627\u0631\u0627\u0626\u0647 \u0645\u06cc\u200c\u062f\u0647 \u0648 \u06a9\u0645\u06a9 \u0645\u06cc\u200c\u06a9\u0646\u0647 \u062a\u0635\u0645\u06cc\u0645\u200c\u0647\u0627\u06cc \u0647\u0648\u0634\u0645\u0646\u062f\u0627\u0646\u0647\u200c\u062a\u0631\u06cc \u0628\u06af\u06cc\u0631\u06cc."
                 : hasVariant(globalVariants, "screen", "mobile")
                   ? "\u0627\u06cc\u0646\u062c\u0627 \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u0628\u0628\u06cc\u0646\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0686\u0642\u062f\u0631 \u062f\u0631\u0622\u0645\u062f \u062f\u0627\u0634\u062a\u0647\u060c \u0627\u0632 \u06a9\u062f\u0648\u0645 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u0628\u06cc\u0634\u062a\u0631 \u0631\u0632\u0631\u0648 \u06af\u0631\u0641\u062a\u0647\u060c \u0686\u0646\u062f \u0634\u0628 \u067e\u0631 \u0628\u0648\u062f\u0647 \u0648...\n\u0627\u06cc\u0646 \u06af\u0632\u0627\u0631\u0634\u0627\u062a \u06cc\u0647 \u062a\u0635\u0648\u06cc\u0631 \u0634\u0641\u0627\u0641 \u0627\u0632 \u0639\u0645\u0644\u06a9\u0631\u062f \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0627\u0631\u0627\u0626\u0647 \u0645\u06cc\u200c\u062f\u0647 \u0648 \u06a9\u0645\u06a9 \u0645\u06cc\u200c\u06a9\u0646\u0647 \u062a\u0635\u0645\u06cc\u0645\u200c\u0647\u0627\u06cc \u0647\u0648\u0634\u0645\u0646\u062f\u0627\u0646\u0647\u200c\u062a\u0631\u06cc \u0628\u06af\u06cc\u0631\u06cc."
                   : "\u0627\u06cc\u0646\u062c\u0627 \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u0628\u0628\u06cc\u0646\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0686\u0642\u062f\u0631 \u062f\u0631\u0622\u0645\u062f \u062f\u0627\u0634\u062a\u0647\u060c \u0627\u0632 \u06a9\u062f\u0648\u0645 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u0628\u06cc\u0634\u062a\u0631 \u0631\u0632\u0631\u0648 \u06af\u0631\u0641\u062a\u0647\u060c \u0686\u0646\u062f \u0634\u0628 \u067e\u0631 \u0628\u0648\u062f\u0647 \u0648...\n\u0627\u06cc\u0646 \u06af\u0632\u0627\u0631\u0634\u0627\u062a \u06cc\u0647 \u062a\u0635\u0648\u06cc\u0631 \u0634\u0641\u0627\u0641 \u0627\u0632 \u0639\u0645\u0644\u06a9\u0631\u062f \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0627\u0631\u0627\u0626\u0647 \u0645\u06cc\u200c\u062f\u0647 \u0648 \u06a9\u0645\u06a9 \u0645\u06cc\u200c\u06a9\u0646\u0647 \u062a\u0635\u0645\u06cc\u0645\u200c\u0647\u0627\u06cc \u0647\u0648\u0634\u0645\u0646\u062f\u0627\u0646\u0647\u200c\u062a\u0631\u06cc \u0628\u06af\u06cc\u0631\u06cc."}
             </div>
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__o9YdZ
-              )}
-            >
+            <div className={classNames("all", "__wab_text", sty.text__o9YdZ)}>
               {hasVariant(globalVariants, "screen", "smallMobile")
                 ? "\u0645\u0646\u0628\u0639 \u06af\u0632\u0627\u0631\u0634\u200c\u0647\u0627\u06cc \u0627\u06cc\u0646 \u0635\u0641\u062d\u0647\u060c \u0631\u0632\u0631\u0648\u0647\u0627\u06cc\u06cc \u0647\u0633\u062a \u06a9\u0647 \u0631\u0648\u06cc \u0646\u0633\u062e\u0647\u200c\u06cc \u067e\u06cc\u0634\u0631\u0641\u062a\u0647 (\u0648 \u0627\u0632 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627) \u062f\u0631\u06cc\u0627\u0641\u062a \u06a9\u0631\u062f\u06cc \u0647\u0633\u062a."
                 : hasVariant(globalVariants, "screen", "mobile")
@@ -607,42 +574,30 @@ function PlasmicPropertyAnalytics__RenderFunc(props: {
           <div
             data-plasmic-name={"analytics"}
             data-plasmic-override={overrides.analytics}
-            className={classNames(projectcss.all, sty.analytics)}
+            className={classNames("all", sty.analytics)}
           >
             <div
               data-plasmic-name={"monthlyIncome2"}
               data-plasmic-override={overrides.monthlyIncome2}
-              className={classNames(
-                projectcss.all,
-                sty.monthlyIncome2,
-                "fadein"
-              )}
+              className={classNames("all", sty.monthlyIncome2, "fadein")}
             >
               <div
                 data-plasmic-name={"monthlyIncome"}
                 data-plasmic-override={overrides.monthlyIncome}
-                className={classNames(projectcss.all, sty.monthlyIncome)}
+                className={classNames("all", sty.monthlyIncome)}
               >
-                <div className={classNames(projectcss.all, sty.freeBox__zGsQx)}>
+                <div className={classNames("all", sty.freeBox__zGsQx)}>
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__tqtWf
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__tqtWf)}
                   >
                     {hasVariant(globalVariants, "screen", "mobile")
                       ? "\u062f\u0631\u0622\u0645\u062f \u0645\u0627\u0647\u06cc\u0627\u0646\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0627\u0632 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627"
                       : "\u062f\u0631\u0622\u0645\u062f \u0645\u0627\u0647\u06cc\u0627\u0646\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0627\u0632 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627"}
                   </div>
                 </div>
-                <div className={classNames(projectcss.all, sty.freeBox__zKZqp)}>
+                <div className={classNames("all", sty.freeBox__zKZqp)}>
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__yPIke
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__yPIke)}
                   >
                     {hasVariant(globalVariants, "screen", "mobile")
                       ? "(\u0645\u06cc\u0644\u06cc\u0648\u0646 \u062a\u0648\u0645\u0627\u0646)"
@@ -674,8 +629,8 @@ function PlasmicPropertyAnalytics__RenderFunc(props: {
                   errorDisplay={
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text___9XuYa
                       )}
                     >
@@ -768,9 +723,7 @@ function PlasmicPropertyAnalytics__RenderFunc(props: {
                   url={"https://gateway.rentamon.com/webhook/monthly-income"}
                 />
 
-                <div
-                  className={classNames(projectcss.all, sty.freeBox___9Uhb6)}
-                >
+                <div className={classNames("all", sty.freeBox___9Uhb6)}>
                   <Chart
                     cartesianGrid={[]}
                     chartConfig={(() => {
@@ -891,7 +844,7 @@ function PlasmicPropertyAnalytics__RenderFunc(props: {
               data-plasmic-name={"sourcesOfReserves2"}
               data-plasmic-override={overrides.sourcesOfReserves2}
               className={classNames(
-                projectcss.all,
+                "all",
                 sty.sourcesOfReserves2,
                 hasVariant(globalVariants, "screen", "mobile")
                   ? "fadein"
@@ -901,15 +854,11 @@ function PlasmicPropertyAnalytics__RenderFunc(props: {
               <div
                 data-plasmic-name={"sourcesOfReserves"}
                 data-plasmic-override={overrides.sourcesOfReserves}
-                className={classNames(projectcss.all, sty.sourcesOfReserves)}
+                className={classNames("all", sty.sourcesOfReserves)}
               >
-                <div className={classNames(projectcss.all, sty.freeBox__ftUj2)}>
+                <div className={classNames("all", sty.freeBox__ftUj2)}>
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__vNRpn
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__vNRpn)}
                   >
                     {
                       "\u062a\u0639\u062f\u0627\u062f \u0631\u0632\u0631\u0648  \u0627\u0632 \u0647\u0631 \u0633\u0627\u06cc\u062a"
@@ -940,8 +889,8 @@ function PlasmicPropertyAnalytics__RenderFunc(props: {
                     errorDisplay={
                       <div
                         className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
+                          "all",
+                          "__wab_text",
                           sty.text__dwhAi
                         )}
                       >
@@ -1033,7 +982,7 @@ function PlasmicPropertyAnalytics__RenderFunc(props: {
                     url={"https://gateway.rentamon.com/webhook/reserves-source"}
                   />
                 </div>
-                <div className={classNames(projectcss.all, sty.freeBox__zxn3)}>
+                <div className={classNames("all", sty.freeBox__zxn3)}>
                   <Chart
                     cartesianGrid={[]}
                     chartConfig={(() => {
@@ -1146,7 +1095,7 @@ function PlasmicPropertyAnalytics__RenderFunc(props: {
               data-plasmic-name={"occupancyRate2"}
               data-plasmic-override={overrides.occupancyRate2}
               className={classNames(
-                projectcss.all,
+                "all",
                 sty.occupancyRate2,
                 hasVariant(globalVariants, "screen", "mobile")
                   ? "fadein"
@@ -1156,14 +1105,10 @@ function PlasmicPropertyAnalytics__RenderFunc(props: {
               <div
                 data-plasmic-name={"occupancyRate"}
                 data-plasmic-override={overrides.occupancyRate}
-                className={classNames(projectcss.all, sty.occupancyRate)}
+                className={classNames("all", sty.occupancyRate)}
               >
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__hLv2K
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__hLv2K)}
                 >
                   {hasVariant(globalVariants, "screen", "mobile")
                     ? "\u062a\u0639\u062f\u0627\u062f \u0634\u0628\u200c\u0647\u0627\u06cc \u067e\u0631 \u0634\u062f\u0647 \u0627\u0632 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627"
@@ -1194,8 +1139,8 @@ function PlasmicPropertyAnalytics__RenderFunc(props: {
                   errorDisplay={
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text__zLd8H
                       )}
                     >
@@ -1287,7 +1232,7 @@ function PlasmicPropertyAnalytics__RenderFunc(props: {
                   url={"https://gateway.rentamon.com/webhook/cccupancy-rate"}
                 />
 
-                <div className={classNames(projectcss.all, sty.freeBox__jXf6)}>
+                <div className={classNames("all", sty.freeBox__jXf6)}>
                   <Chart
                     cartesianGrid={
                       hasVariant(globalVariants, "screen", "smallMobile")
@@ -1347,7 +1292,7 @@ function PlasmicPropertyAnalytics__RenderFunc(props: {
               data-plasmic-name={"avgDailyRate2"}
               data-plasmic-override={overrides.avgDailyRate2}
               className={classNames(
-                projectcss.all,
+                "all",
                 sty.avgDailyRate2,
                 hasVariant(globalVariants, "screen", "mobile")
                   ? "fadein"
@@ -1357,15 +1302,11 @@ function PlasmicPropertyAnalytics__RenderFunc(props: {
               <div
                 data-plasmic-name={"avgDailyRate"}
                 data-plasmic-override={overrides.avgDailyRate}
-                className={classNames(projectcss.all, sty.avgDailyRate)}
+                className={classNames("all", sty.avgDailyRate)}
               >
-                <div className={classNames(projectcss.all, sty.freeBox__dm6F)}>
+                <div className={classNames("all", sty.freeBox__dm6F)}>
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__mkzmO
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__mkzmO)}
                   >
                     {hasVariant(globalVariants, "screen", "mobile")
                       ? "\u0645\u0639\u062f\u0644 \u0646\u0631\u062e \u0627\u062c\u0627\u0631\u0647 \u0628\u0647 \u0627\u0632\u0627\u06cc \u0647\u0631 \u0634\u0628"
@@ -1378,8 +1319,8 @@ function PlasmicPropertyAnalytics__RenderFunc(props: {
                   ) ? (
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text__ncFgK
                       )}
                     >
@@ -1414,8 +1355,8 @@ function PlasmicPropertyAnalytics__RenderFunc(props: {
                   errorDisplay={
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text___3C64Y
                       )}
                     >
@@ -1464,9 +1405,7 @@ function PlasmicPropertyAnalytics__RenderFunc(props: {
                     </div>
                   }
                   loadingDisplay={
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__fHyra)}
-                    >
+                    <div className={classNames("all", sty.freeBox__fHyra)}>
                       <PlasmicImg__
                         alt={""}
                         className={classNames(sty.img__puJuO)}
@@ -1511,11 +1450,11 @@ function PlasmicPropertyAnalytics__RenderFunc(props: {
                   url={"https://gateway.rentamon.com/webhook/avg-daily-rate"}
                 />
 
-                <div className={classNames(projectcss.all, sty.freeBox__nC6Cn)}>
+                <div className={classNames("all", sty.freeBox__nC6Cn)}>
                   <div
                     className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
+                      "all",
+                      "__wab_text",
                       sty.text___6KSbr
                     )}
                   >
@@ -1606,10 +1545,10 @@ function PlasmicPropertyAnalytics__RenderFunc(props: {
           <div
             data-plasmic-name={"back"}
             data-plasmic-override={overrides.back}
-            className={classNames(projectcss.all, sty.back)}
+            className={classNames("all", sty.back)}
           >
             <div
-              className={classNames(projectcss.all, sty.freeBox__vJxva)}
+              className={classNames("all", sty.freeBox__vJxva)}
               onClick={async event => {
                 const $steps = {};
 
@@ -1637,11 +1576,7 @@ function PlasmicPropertyAnalytics__RenderFunc(props: {
               }}
             >
               <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text___4Hvqf
-                )}
+                className={classNames("all", "__wab_text", sty.text___4Hvqf)}
               >
                 {"\u0628\u0627\u0632\u06af\u0634\u062a"}
               </div>
@@ -1651,10 +1586,10 @@ function PlasmicPropertyAnalytics__RenderFunc(props: {
             <div
               data-plasmic-name={"spacer"}
               data-plasmic-override={overrides.spacer}
-              className={classNames(projectcss.all, sty.spacer)}
+              className={classNames("all", sty.spacer)}
             />
           ) : null}
-          <div className={classNames(projectcss.all, sty.freeBox__q1Y2R)}>
+          <div className={classNames("all", sty.freeBox__q1Y2R)}>
             <ClarityRntComponent
               data-plasmic-name={"clarityRntComponent"}
               data-plasmic-override={overrides.clarityRntComponent}

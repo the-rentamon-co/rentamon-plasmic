@@ -64,7 +64,6 @@ import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-impor
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicCard.module.css"; // plasmic-import: mE-vol2uSpJp/css
 
 createPlasmicElementProxy;
@@ -170,10 +169,10 @@ function PlasmicCard__RenderFunc(props: {
       data-plasmic-root={true}
       data-plasmic-for-node={forNode}
       className={classNames(
-        projectcss.all,
-        projectcss.root_reset,
-        projectcss.plasmic_default_styles,
-        projectcss.plasmic_mixins,
+        "all",
+        "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+        "plasmic_default_styles",
+        "plasmic_mixins",
         styleTokensClassNames,
         sty.root
       )}
@@ -181,14 +180,14 @@ function PlasmicCard__RenderFunc(props: {
       <div
         data-plasmic-name={"header"}
         data-plasmic-override={overrides.header}
-        className={classNames(projectcss.all, sty.header, {
+        className={classNames("all", sty.header, {
           [sty.headernoTitle]: hasVariant($state, "noTitle", "noTitle")
         })}
       >
         <div
           data-plasmic-name={"freeBox"}
           data-plasmic-override={overrides.freeBox}
-          className={classNames(projectcss.all, sty.freeBox, {
+          className={classNames("all", sty.freeBox, {
             [sty.freeBoxnoTitle]: hasVariant($state, "noTitle", "noTitle")
           })}
         >
@@ -202,29 +201,17 @@ function PlasmicCard__RenderFunc(props: {
       <div
         data-plasmic-name={"body"}
         data-plasmic-override={overrides.body}
-        className={classNames(projectcss.all, sty.body, {
+        className={classNames("all", sty.body, {
           [sty.bodynoTitle]: hasVariant($state, "noTitle", "noTitle")
         })}
       >
         {renderPlasmicSlot({
           defaultContents: (
             <React.Fragment>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__x5Ojq
-                )}
-              >
+              <div className={classNames("all", "__wab_text", sty.text__x5Ojq)}>
                 {"something here"}
               </div>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__diH4R
-                )}
-              >
+              <div className={classNames("all", "__wab_text", sty.text__diH4R)}>
                 {"something here"}
               </div>
             </React.Fragment>

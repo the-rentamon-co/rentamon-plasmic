@@ -66,7 +66,6 @@ import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-impor
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicSelect__Option.module.css"; // plasmic-import: PSgBvLRmwT1D/css
 
 import SUPER__PlasmicSelect from "./PlasmicSelect"; // plasmic-import: GgjLI5qwOqwu/render
@@ -194,10 +193,10 @@ function PlasmicSelect__Option__RenderFunc(props: {
       data-plasmic-root={true}
       data-plasmic-for-node={forNode}
       className={classNames(
-        projectcss.all,
-        projectcss.root_reset,
-        projectcss.plasmic_default_styles,
-        projectcss.plasmic_mixins,
+        "all",
+        "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+        "plasmic_default_styles",
+        "plasmic_mixins",
         styleTokensClassNames,
         sty.root,
         {
@@ -214,7 +213,7 @@ function PlasmicSelect__Option__RenderFunc(props: {
       <div
         data-plasmic-name={"labelContainer"}
         data-plasmic-override={overrides.labelContainer}
-        className={classNames(projectcss.all, sty.labelContainer)}
+        className={classNames("all", sty.labelContainer)}
       >
         {renderPlasmicSlot({
           defaultContents: "Option",

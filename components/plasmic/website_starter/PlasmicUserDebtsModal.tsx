@@ -66,7 +66,6 @@ import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-impor
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicUserDebtsModal.module.css"; // plasmic-import: wwEEFlmSNy4p/css
 
 createPlasmicElementProxy;
@@ -188,9 +187,9 @@ function PlasmicUserDebtsModal__RenderFunc(props: {
       data-plasmic-for-node={forNode}
       className={classNames(
         "__wab_instance",
-        projectcss.root_reset,
-        projectcss.plasmic_default_styles,
-        projectcss.plasmic_mixins,
+        "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+        "plasmic_default_styles",
+        "plasmic_mixins",
         styleTokensClassNames,
         sty.userDebtsApi
       )}
@@ -238,9 +237,9 @@ function PlasmicUserDebtsModal__RenderFunc(props: {
           data-plasmic-override={overrides.modalUserDebts}
           className={classNames("__wab_instance", sty.modalUserDebts)}
           defaultStylesClassName={classNames(
-            projectcss.root_reset,
-            projectcss.plasmic_default_styles,
-            projectcss.plasmic_mixins,
+            "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+            "plasmic_default_styles",
+            "plasmic_mixins",
             styleTokensClassNames
           )}
           hideFooter={true}
@@ -271,7 +270,7 @@ function PlasmicUserDebtsModal__RenderFunc(props: {
           trigger={null}
           wrapClassName={classNames({ [sty["pcls_pZyCtK2KPPwR"]]: true })}
         >
-          <div className={classNames(projectcss.all, sty.freeBox__ud6U)}>
+          <div className={classNames("all", sty.freeBox__ud6U)}>
             <PlasmicImg__
               data-plasmic-name={"img"}
               data-plasmic-override={overrides.img}
@@ -292,14 +291,8 @@ function PlasmicUserDebtsModal__RenderFunc(props: {
               }}
             />
           </div>
-          <div className={classNames(projectcss.all, sty.freeBox__gC7F)}>
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__wvDmz
-              )}
-            >
+          <div className={classNames("all", sty.freeBox__gC7F)}>
+            <div className={classNames("all", "__wab_text", sty.text__wvDmz)}>
               <React.Fragment>
                 {(() => {
                   try {
@@ -320,14 +313,8 @@ function PlasmicUserDebtsModal__RenderFunc(props: {
               </React.Fragment>
             </div>
           </div>
-          <div className={classNames(projectcss.all, sty.freeBox__kZmf)}>
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__bePAy
-              )}
-            >
+          <div className={classNames("all", sty.freeBox__kZmf)}>
+            <div className={classNames("all", "__wab_text", sty.text__bePAy)}>
               <React.Fragment>
                 {(() => {
                   try {
@@ -356,7 +343,7 @@ function PlasmicUserDebtsModal__RenderFunc(props: {
             </div>
           </div>
           <div
-            className={classNames(projectcss.all, sty.freeBox__y0Cex)}
+            className={classNames("all", sty.freeBox__y0Cex)}
             onClick={async event => {
               const $steps = {};
 
@@ -453,11 +440,7 @@ function PlasmicUserDebtsModal__RenderFunc(props: {
             }}
           >
             <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__njklO
-              )}
+              className={classNames("all", "__wab_text", sty.text__njklO)}
               onClick={async event => {
                 const $steps = {};
 
@@ -491,15 +474,15 @@ function PlasmicUserDebtsModal__RenderFunc(props: {
                 ? "\u0634\u0627\u0631\u0698 \u06a9\u06cc\u0641 \u067e\u0648\u0644"
                 : "\u0634\u0627\u0631\u0698 \u06a9\u06cc\u0641 \u067e\u0648\u0644"}
             </div>
-            <div className={classNames(projectcss.all, sty.freeBox___2DF0Q)}>
+            <div className={classNames("all", sty.freeBox___2DF0Q)}>
               <PlasmicLink__
                 data-plasmic-name={"link"}
                 data-plasmic-override={overrides.link}
                 className={classNames(
-                  projectcss.all,
-                  projectcss.a,
-                  projectcss.a__7SNMk,
-                  projectcss.__wab_text,
+                  "all",
+                  "a",
+                  "a__7SNMk",
+                  "__wab_text",
                   sty.link
                 )}
                 component={Link}

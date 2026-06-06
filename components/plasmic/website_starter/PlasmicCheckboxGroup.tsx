@@ -68,7 +68,6 @@ import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-impor
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicCheckboxGroup.module.css"; // plasmic-import: Vs0xTpAY08mF/css
 
 createPlasmicElementProxy;
@@ -215,9 +214,9 @@ function PlasmicCheckboxGroup__RenderFunc(props: {
       aria-label={args.ariaLabel}
       className={classNames(
         "__wab_instance",
-        projectcss.root_reset,
-        projectcss.plasmic_default_styles,
-        projectcss.plasmic_mixins,
+        "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+        "plasmic_default_styles",
+        "plasmic_mixins",
         styleTokensClassNames,
         sty.ariaCheckboxGroup
       )}
@@ -247,7 +246,7 @@ function PlasmicCheckboxGroup__RenderFunc(props: {
       ) : null}
       {renderPlasmicSlot({
         defaultContents: (
-          <div className={classNames(projectcss.all, sty.freeBox__zPush)}>
+          <div className={classNames("all", sty.freeBox__zPush)}>
             <Checkbox2
               className={classNames("__wab_instance", sty.checkbox2__cgsN)}
               label={"Option 1"}

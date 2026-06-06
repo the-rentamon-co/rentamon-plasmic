@@ -65,7 +65,6 @@ import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-impor
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./Plasmicثبتآگهیاقامتگاه2.module.css"; // plasmic-import: HZSvfOagQfiC/css
 
 const emptyProxy: any = new Proxy(() => "", {
@@ -201,17 +200,17 @@ function Plasmicثبتآگهیاقامتگاه2__RenderFunc(props: {
         }
       `}</style>
 
-      <div className={projectcss.plasmic_page_wrapper}>
+      <div className={"plasmic_page_wrapper"}>
         <div
           data-plasmic-name={"root"}
           data-plasmic-override={overrides.root}
           data-plasmic-root={true}
           data-plasmic-for-node={forNode}
           className={classNames(
-            projectcss.all,
-            projectcss.root_reset,
-            projectcss.plasmic_default_styles,
-            projectcss.plasmic_mixins,
+            "all",
+            "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+            "plasmic_default_styles",
+            "plasmic_mixins",
             styleTokensClassNames,
             sty.root
           )}
@@ -221,11 +220,7 @@ function Plasmicثبتآگهیاقامتگاه2__RenderFunc(props: {
               "\u062b\u0628\u062a\u0622\u06af\u0647\u06cc\u0627\u0642\u0627\u0645\u062a\u06af\u0627\u06472"
             }
             data-plasmic-override={overrides.ثبتآگهیاقامتگاه2}
-            className={classNames(
-              projectcss.all,
-              projectcss.__wab_text,
-              sty.ثبتآگهیاقامتگاه2
-            )}
+            className={classNames("all", "__wab_text", sty.ثبتآگهیاقامتگاه2)}
           >
             {
               "\u062f\u0631 \u062d\u0627\u0644 \u0627\u0646\u062a\u0642\u0627\u0644..."

@@ -67,7 +67,6 @@ import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-impor
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicNavbarMnFooter.module.css"; // plasmic-import: y37kcAs9RXYg/css
 
 import NavMenuSvgBlueSvg2Icon from "./icons/PlasmicIcon__NavMenuSvgBlueSvg2"; // plasmic-import: keSZXIx0M0Or/icon
@@ -300,10 +299,10 @@ function PlasmicNavbarMnFooter__RenderFunc(props: {
         data-plasmic-root={true}
         data-plasmic-for-node={forNode}
         className={classNames(
-          projectcss.all,
-          projectcss.root_reset,
-          projectcss.plasmic_default_styles,
-          projectcss.plasmic_mixins,
+          "all",
+          "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+          "plasmic_default_styles",
+          "plasmic_mixins",
           styleTokensClassNames,
           sty.navFoot,
           "fix"
@@ -312,12 +311,12 @@ function PlasmicNavbarMnFooter__RenderFunc(props: {
         <div
           data-plasmic-name={"mainStack"}
           data-plasmic-override={overrides.mainStack}
-          className={classNames(projectcss.all, sty.mainStack)}
+          className={classNames("all", sty.mainStack)}
         >
           <div
             data-plasmic-name={"menu"}
             data-plasmic-override={overrides.menu}
-            className={classNames(projectcss.all, sty.menu, "clickable")}
+            className={classNames("all", sty.menu, "clickable")}
             onClick={async event => {
               const $steps = {};
 
@@ -386,7 +385,7 @@ function PlasmicNavbarMnFooter__RenderFunc(props: {
             <div
               data-plasmic-name={"notifStackFixator"}
               data-plasmic-override={overrides.notifStackFixator}
-              className={classNames(projectcss.all, sty.notifStackFixator)}
+              className={classNames("all", sty.notifStackFixator)}
             >
               {(
                 hasVariant(globalVariants, "screen", "mobile")
@@ -409,13 +408,13 @@ function PlasmicNavbarMnFooter__RenderFunc(props: {
                 <div
                   data-plasmic-name={"notifBadge"}
                   data-plasmic-override={overrides.notifBadge}
-                  className={classNames(projectcss.all, sty.notifBadge)}
+                  className={classNames("all", sty.notifBadge)}
                 />
               ) : null}
               <div
                 data-plasmic-name={"stack"}
                 data-plasmic-override={overrides.stack}
-                className={classNames(projectcss.all, sty.stack)}
+                className={classNames("all", sty.stack)}
               />
             </div>
             <Reveal
@@ -459,19 +458,15 @@ function PlasmicNavbarMnFooter__RenderFunc(props: {
                 <div
                   data-plasmic-name={"top4"}
                   data-plasmic-override={overrides.top4}
-                  className={classNames(projectcss.all, sty.top4)}
+                  className={classNames("all", sty.top4)}
                 >
                   <div
                     data-plasmic-name={"backMenu"}
                     data-plasmic-override={overrides.backMenu}
-                    className={classNames(projectcss.all, sty.backMenu)}
+                    className={classNames("all", sty.backMenu)}
                   >
                     <NavMenuSvgBlueSvg2Icon
-                      className={classNames(
-                        projectcss.all,
-                        sty.svg___6PDfU,
-                        "fadeinf"
-                      )}
+                      className={classNames("all", sty.svg___6PDfU, "fadeinf")}
                       role={"img"}
                     />
                   </div>
@@ -512,21 +507,17 @@ function PlasmicNavbarMnFooter__RenderFunc(props: {
               <div
                 data-plasmic-name={"normMenu"}
                 data-plasmic-override={overrides.normMenu}
-                className={classNames(projectcss.all, sty.normMenu)}
+                className={classNames("all", sty.normMenu)}
               >
                 <Icon64Icon
-                  className={classNames(projectcss.all, sty.svg__y8AJf)}
+                  className={classNames("all", sty.svg__y8AJf)}
                   role={"img"}
                 />
               </div>
             ) : null}
-            <div className={classNames(projectcss.all, sty.freeBox__n9Wh1)}>
+            <div className={classNames("all", sty.freeBox__n9Wh1)}>
               <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text___7A8Zo
-                )}
+                className={classNames("all", "__wab_text", sty.text___7A8Zo)}
               >
                 {hasVariant(globalVariants, "screen", "smallMobile")
                   ? "\u062a\u0627\u0644\u0627\u0631"
@@ -537,7 +528,7 @@ function PlasmicNavbarMnFooter__RenderFunc(props: {
           <div
             data-plasmic-name={"cal"}
             data-plasmic-override={overrides.cal}
-            className={classNames(projectcss.all, sty.cal, "clickable")}
+            className={classNames("all", sty.cal, "clickable")}
             onClick={async event => {
               const $steps = {};
 
@@ -648,19 +639,15 @@ function PlasmicNavbarMnFooter__RenderFunc(props: {
                 <div
                   data-plasmic-name={"top1"}
                   data-plasmic-override={overrides.top1}
-                  className={classNames(projectcss.all, sty.top1)}
+                  className={classNames("all", sty.top1)}
                 >
                   <div
                     data-plasmic-name={"backCal"}
                     data-plasmic-override={overrides.backCal}
-                    className={classNames(projectcss.all, sty.backCal)}
+                    className={classNames("all", sty.backCal)}
                   >
                     <NavCalendarSvgBlueSvgIcon
-                      className={classNames(
-                        projectcss.all,
-                        sty.svg___5FnM,
-                        "fadeinf"
-                      )}
+                      className={classNames("all", sty.svg___5FnM, "fadeinf")}
                       role={"img"}
                     />
                   </div>
@@ -687,22 +674,16 @@ function PlasmicNavbarMnFooter__RenderFunc(props: {
               <div
                 data-plasmic-name={"normCal"}
                 data-plasmic-override={overrides.normCal}
-                className={classNames(projectcss.all, sty.normCal)}
+                className={classNames("all", sty.normCal)}
               >
                 <Icon52Icon
-                  className={classNames(projectcss.all, sty.svg__aZ9Q4)}
+                  className={classNames("all", sty.svg__aZ9Q4)}
                   role={"img"}
                 />
               </div>
             ) : null}
-            <div className={classNames(projectcss.all, sty.freeBox__ubiag)}>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__lJohS
-                )}
-              >
+            <div className={classNames("all", sty.freeBox__ubiag)}>
+              <div className={classNames("all", "__wab_text", sty.text__lJohS)}>
                 {"\u062a\u0642\u0648\u06cc\u0645"}
               </div>
             </div>
@@ -710,11 +691,7 @@ function PlasmicNavbarMnFooter__RenderFunc(props: {
           <div
             data-plasmic-name={"res"}
             data-plasmic-override={overrides.res}
-            className={classNames(
-              projectcss.all,
-              sty.res,
-              "side_bar_border clickable"
-            )}
+            className={classNames("all", sty.res, "side_bar_border clickable")}
             onClick={async event => {
               const $steps = {};
 
@@ -782,14 +759,10 @@ function PlasmicNavbarMnFooter__RenderFunc(props: {
               <div
                 data-plasmic-name={"notifStackFixator3"}
                 data-plasmic-override={overrides.notifStackFixator3}
-                className={classNames(projectcss.all, sty.notifStackFixator3)}
+                className={classNames("all", sty.notifStackFixator3)}
               >
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__to7Y
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__to7Y)}
                 >
                   <React.Fragment>
                     {(() => {
@@ -812,7 +785,7 @@ function PlasmicNavbarMnFooter__RenderFunc(props: {
                 <div
                   data-plasmic-name={"stack3"}
                   data-plasmic-override={overrides.stack3}
-                  className={classNames(projectcss.all, sty.stack3)}
+                  className={classNames("all", sty.stack3)}
                 />
               </div>
             ) : null}
@@ -842,12 +815,12 @@ function PlasmicNavbarMnFooter__RenderFunc(props: {
                 <div
                   data-plasmic-name={"top2"}
                   data-plasmic-override={overrides.top2}
-                  className={classNames(projectcss.all, sty.top2)}
+                  className={classNames("all", sty.top2)}
                 >
                   <div
                     data-plasmic-name={"backRes"}
                     data-plasmic-override={overrides.backRes}
-                    className={classNames(projectcss.all, sty.backRes)}
+                    className={classNames("all", sty.backRes)}
                   >
                     <PlasmicImg__
                       alt={""}
@@ -899,7 +872,7 @@ function PlasmicNavbarMnFooter__RenderFunc(props: {
               <div
                 data-plasmic-name={"normRes"}
                 data-plasmic-override={overrides.normRes}
-                className={classNames(projectcss.all, sty.normRes)}
+                className={classNames("all", sty.normRes)}
               >
                 <PlasmicImg__
                   alt={""}
@@ -920,13 +893,9 @@ function PlasmicNavbarMnFooter__RenderFunc(props: {
                 />
               </div>
             ) : null}
-            <div className={classNames(projectcss.all, sty.freeBox__e0Sqm)}>
+            <div className={classNames("all", sty.freeBox__e0Sqm)}>
               <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text___4RjZj
-                )}
+                className={classNames("all", "__wab_text", sty.text___4RjZj)}
               >
                 {"\u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u0645\u0646"}
               </div>
@@ -936,7 +905,7 @@ function PlasmicNavbarMnFooter__RenderFunc(props: {
             data-plasmic-name={"props"}
             data-plasmic-override={overrides.props}
             className={classNames(
-              projectcss.all,
+              "all",
               sty.props,
               `clickable${$state.isTheFirstVisit == true ? "blinkBorderTourGuide clickable" : "clickable"}`
             )}
@@ -1028,19 +997,15 @@ function PlasmicNavbarMnFooter__RenderFunc(props: {
                 <div
                   data-plasmic-name={"top3"}
                   data-plasmic-override={overrides.top3}
-                  className={classNames(projectcss.all, sty.top3)}
+                  className={classNames("all", sty.top3)}
                 >
                   <div
                     data-plasmic-name={"backProps"}
                     data-plasmic-override={overrides.backProps}
-                    className={classNames(projectcss.all, sty.backProps, ``)}
+                    className={classNames("all", sty.backProps, ``)}
                   >
                     <NavPropertiesSvgBlueSvgIcon
-                      className={classNames(
-                        projectcss.all,
-                        sty.svg__cpVuT,
-                        "fadeinf"
-                      )}
+                      className={classNames("all", sty.svg__cpVuT, "fadeinf")}
                       role={"img"}
                     />
                   </div>
@@ -1067,22 +1032,16 @@ function PlasmicNavbarMnFooter__RenderFunc(props: {
               <div
                 data-plasmic-name={"normProps"}
                 data-plasmic-override={overrides.normProps}
-                className={classNames(projectcss.all, sty.normProps)}
+                className={classNames("all", sty.normProps)}
               >
                 <Icon57Icon
-                  className={classNames(projectcss.all, sty.svg___3Yheu)}
+                  className={classNames("all", sty.svg___3Yheu)}
                   role={"img"}
                 />
               </div>
             ) : null}
-            <div className={classNames(projectcss.all, sty.freeBox__jY1W2)}>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__ybLty
-                )}
-              >
+            <div className={classNames("all", sty.freeBox__jY1W2)}>
+              <div className={classNames("all", "__wab_text", sty.text__ybLty)}>
                 {hasVariant(globalVariants, "screen", "smallMobile")
                   ? "\u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
                   : "\u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u200c\u0647\u0627"}

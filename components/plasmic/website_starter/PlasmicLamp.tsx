@@ -64,7 +64,6 @@ import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-impor
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicLamp.module.css"; // plasmic-import: V7sstJTUGr4K/css
 
 import LampLightOfficeSvgrepoComSvgIcon from "./icons/PlasmicIcon__LampLightOfficeSvgrepoComSvg"; // plasmic-import: mJzoZEg-FD56/icon
@@ -139,10 +138,10 @@ function PlasmicLamp__RenderFunc(props: {
       data-plasmic-root={true}
       data-plasmic-for-node={forNode}
       className={classNames(
-        projectcss.all,
-        projectcss.root_reset,
-        projectcss.plasmic_default_styles,
-        projectcss.plasmic_mixins,
+        "all",
+        "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+        "plasmic_default_styles",
+        "plasmic_mixins",
         styleTokensClassNames,
         sty.root
       )}
@@ -163,14 +162,14 @@ function PlasmicLamp__RenderFunc(props: {
         <LampLightOfficeSvgrepoComSvgIcon
           data-plasmic-name={"on"}
           data-plasmic-override={overrides.on}
-          className={classNames(projectcss.all, sty.on)}
+          className={classNames("all", sty.on)}
           role={"img"}
         />
       ) : null}
       <LampDeskLightSvgrepoComSvgIcon
         data-plasmic-name={"off"}
         data-plasmic-override={overrides.off}
-        className={classNames(projectcss.all, sty.off)}
+        className={classNames("all", sty.off)}
         role={"img"}
       />
     </div>

@@ -66,7 +66,6 @@ import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-impor
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicSelect__Overlay.module.css"; // plasmic-import: ylePlweKDXpe/css
 
 import SUPER__PlasmicSelect from "./PlasmicSelect"; // plasmic-import: GgjLI5qwOqwu/render
@@ -178,10 +177,10 @@ function PlasmicSelect__Overlay__RenderFunc(props: {
       data-plasmic-root={true}
       data-plasmic-for-node={forNode}
       className={classNames(
-        projectcss.all,
-        projectcss.root_reset,
-        projectcss.plasmic_default_styles,
-        projectcss.plasmic_mixins,
+        "all",
+        "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+        "plasmic_default_styles",
+        "plasmic_mixins",
         styleTokensClassNames,
         sty.root
       )}
@@ -190,7 +189,7 @@ function PlasmicSelect__Overlay__RenderFunc(props: {
         <div
           data-plasmic-name={"top"}
           data-plasmic-override={overrides.top}
-          className={classNames(projectcss.all, sty.top, {
+          className={classNames("all", sty.top, {
             [sty.toprelativePlacement_bottom]: hasVariant(
               $state,
               "relativePlacement",
@@ -202,13 +201,13 @@ function PlasmicSelect__Overlay__RenderFunc(props: {
       <div
         data-plasmic-name={"middle"}
         data-plasmic-override={overrides.middle}
-        className={classNames(projectcss.all, sty.middle)}
+        className={classNames("all", sty.middle)}
       >
         {(hasVariant($state, "relativePlacement", "right") ? true : false) ? (
           <div
             data-plasmic-name={"left"}
             data-plasmic-override={overrides.left}
-            className={classNames(projectcss.all, sty.left, {
+            className={classNames("all", sty.left, {
               [sty.leftrelativePlacement_right]: hasVariant(
                 $state,
                 "relativePlacement",
@@ -220,7 +219,7 @@ function PlasmicSelect__Overlay__RenderFunc(props: {
         <div
           data-plasmic-name={"main"}
           data-plasmic-override={overrides.main}
-          className={classNames(projectcss.all, sty.main)}
+          className={classNames("all", sty.main)}
         >
           {renderPlasmicSlot({
             defaultContents: null,
@@ -231,7 +230,7 @@ function PlasmicSelect__Overlay__RenderFunc(props: {
           <div
             data-plasmic-name={"right"}
             data-plasmic-override={overrides.right}
-            className={classNames(projectcss.all, sty.right, {
+            className={classNames("all", sty.right, {
               [sty.rightrelativePlacement_left]: hasVariant(
                 $state,
                 "relativePlacement",
@@ -245,7 +244,7 @@ function PlasmicSelect__Overlay__RenderFunc(props: {
         <div
           data-plasmic-name={"bottom"}
           data-plasmic-override={overrides.bottom}
-          className={classNames(projectcss.all, sty.bottom, {
+          className={classNames("all", sty.bottom, {
             [sty.bottomrelativePlacement_top]: hasVariant(
               $state,
               "relativePlacement",

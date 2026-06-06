@@ -69,7 +69,6 @@ import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-impor
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./Plasmicآموزشمبلهکردنخونهشیکوارزان.module.css"; // plasmic-import: n9L7ZTN9ZWVp/css
 
 const emptyProxy: any = new Proxy(() => "", {
@@ -276,17 +275,17 @@ function Plasmicآموزشمبلهکردنخونهشیکوارزان__RenderFunc
         }
       `}</style>
 
-      <div className={projectcss.plasmic_page_wrapper}>
+      <div className={"plasmic_page_wrapper"}>
         <div
           data-plasmic-name={"content"}
           data-plasmic-override={overrides.content}
           data-plasmic-root={true}
           data-plasmic-for-node={forNode}
           className={classNames(
-            projectcss.all,
-            projectcss.root_reset,
-            projectcss.plasmic_default_styles,
-            projectcss.plasmic_mixins,
+            "all",
+            "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+            "plasmic_default_styles",
+            "plasmic_mixins",
             styleTokensClassNames,
             sty.content
           )}
@@ -300,26 +299,26 @@ function Plasmicآموزشمبلهکردنخونهشیکوارزان__RenderFunc
           <div
             data-plasmic-name={"mainContents"}
             data-plasmic-override={overrides.mainContents}
-            className={classNames(projectcss.all, sty.mainContents)}
+            className={classNames("all", sty.mainContents)}
           >
             <div
               data-plasmic-name={"intro"}
               data-plasmic-override={overrides.intro}
-              className={classNames(projectcss.all, sty.intro)}
+              className={classNames("all", sty.intro)}
             >
               <div
                 data-plasmic-name={"introTitle"}
                 data-plasmic-override={overrides.introTitle}
-                className={classNames(projectcss.all, sty.introTitle)}
+                className={classNames("all", sty.introTitle)}
               >
                 <h1
                   data-plasmic-name={"h1"}
                   data-plasmic-override={overrides.h1}
                   className={classNames(
-                    projectcss.all,
-                    projectcss.h1,
-                    projectcss.h1__7SNMk,
-                    projectcss.__wab_text,
+                    "all",
+                    "h1",
+                    "h1__7SNMk",
+                    "__wab_text",
                     sty.h1
                   )}
                 >
@@ -331,32 +330,28 @@ function Plasmicآموزشمبلهکردنخونهشیکوارزان__RenderFunc
               <div
                 data-plasmic-name={"introDesc"}
                 data-plasmic-override={overrides.introDesc}
-                className={classNames(projectcss.all, sty.introDesc)}
+                className={classNames("all", sty.introDesc)}
               >
                 <h2
                   className={classNames(
-                    projectcss.all,
-                    projectcss.h2,
-                    projectcss.h2__7SNMk,
-                    projectcss.__wab_text,
+                    "all",
+                    "h2",
+                    "h2__7SNMk",
+                    "__wab_text",
                     sty.h2__bxkaK
                   )}
                 >
                   {""}
                 </h2>
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__wzM4W
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__wzM4W)}
                 >
                   {
                     "\u0627\u06af\u0647 \u0628\u062e\u0648\u0627\u06cc \u0648\u06cc\u0644\u0627 \u06cc\u0627 \u062e\u0648\u0646\u0647\u200c\u062a \u0631\u0648 \u0628\u0631\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u06a9\u0648\u062a\u0627\u0647\u200c\u0645\u062f\u062a \u0622\u0645\u0627\u062f\u0647 \u06a9\u0646\u06cc\u060c \u06cc\u06a9\u06cc \u0627\u0632 \u0645\u0647\u0645\u200c\u062a\u0631\u06cc\u0646 \u0686\u06cc\u0632\u0647\u0627 \u0686\u06cc\u062f\u0645\u0627\u0646 \u0648 \u0638\u0627\u0647\u0631 \u062e\u0648\u0646\u0647\u200c\u0633\u062a. \u0627\u0645\u0627 \u0644\u0627\u0632\u0645 \u0646\u06cc\u0633\u062a \u067e\u0648\u0644 \u0632\u06cc\u0627\u062f\u06cc \u062e\u0631\u062c \u06a9\u0646\u06cc \u06cc\u0627 \u0647\u0645\u0647\u200c\u0686\u06cc\u0632 \u0644\u0648\u06a9\u0633 \u0628\u0627\u0634\u0647! \u0628\u0627 \u0686\u0646\u062f \u062a\u0627 \u062a\u06a9\u0646\u06cc\u06a9 \u0633\u0627\u062f\u0647 \u0648 \u06a9\u0645\u200c\u0647\u0632\u06cc\u0646\u0647\u200c\u060c \u0645\u06cc\u200c\u0634\u0647 \u062e\u0648\u0646\u0647 \u0631\u0648 \u0647\u0645 \u062c\u0630\u0627\u0628 \u06a9\u0631\u062f \u0647\u0645 \u0631\u0627\u062d\u062a \u0648 \u062f\u0644\u0646\u0634\u06cc\u0646. \u0637\u0648\u0631\u06cc \u06a9\u0647 \u0645\u0647\u0645\u0627\u0646 \u0648\u0642\u062a\u06cc \u0648\u0627\u0631\u062f \u0634\u062f\u060c \u062d\u0633 \u06a9\u0646\u0647 \u06cc\u0647 \u062c\u0627\u06cc \u0645\u0631\u062a\u0628\u060c \u0634\u06cc\u06a9 \u0648 \u062e\u0648\u0634\u200c\u062d\u0627\u0644\u200c\u06a9\u0646\u0646\u062f\u0647 \u067e\u06cc\u062f\u0627 \u06a9\u0631\u062f\u0647. \u062a\u0648 \u0627\u06cc\u0646 \u0645\u0637\u0644\u0628 \u0645\u06cc\u200c\u062e\u0648\u0627\u06cc\u0645 \u0647\u0645\u06cc\u0646 \u0631\u0627\u0632\u0647\u0627 \u0648 \u0646\u06a9\u0627\u062a \u0639\u0645\u0644\u06cc \u0631\u0648 \u0628\u0627 \u0647\u0645 \u0645\u0631\u0648\u0631 \u06a9\u0646\u06cc\u0645 \u062a\u0627 \u0647\u0645 \u0647\u0632\u06cc\u0646\u0647 \u06a9\u0645 \u0628\u0634\u0647 \u0648 \u0647\u0645 \u062f\u0631\u0622\u0645\u062f\u062a \u0627\u0641\u0632\u0627\u06cc\u0634 \u067e\u06cc\u062f\u0627 \u06a9\u0646\u0647."
                   }
                 </div>
               </div>
-              <div className={classNames(projectcss.all, sty.freeBox___86Cfd)}>
+              <div className={classNames("all", sty.freeBox___86Cfd)}>
                 <PlasmicImg__
                   alt={
                     "\u0642\u0648\u0627\u0646\u06cc\u0646 \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627,\u0642\u0648\u0627\u0646\u06cc\u0646 \u0627\u062c\u0627\u0631\u0647 \u0631\u0648\u0632\u0627\u0646\u0647,\u0642\u0631\u0627\u0631\u062f\u0627\u062f \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627,\u0645\u062c\u0648\u0632 \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627, \u0645\u062c\u0648\u0632 \u062e\u0627\u0646\u0647 \u0645\u0633\u0627\u0641\u0631"
@@ -387,19 +382,19 @@ function Plasmicآموزشمبلهکردنخونهشیکوارزان__RenderFunc
               <div
                 data-plasmic-name={"str"}
                 data-plasmic-override={overrides.str}
-                className={classNames(projectcss.all, sty.str)}
+                className={classNames("all", sty.str)}
               >
                 <div
                   data-plasmic-name={"strDefinition"}
                   data-plasmic-override={overrides.strDefinition}
-                  className={classNames(projectcss.all, sty.strDefinition)}
+                  className={classNames("all", sty.strDefinition)}
                 >
                   <h2
                     className={classNames(
-                      projectcss.all,
-                      projectcss.h2,
-                      projectcss.h2__7SNMk,
-                      projectcss.__wab_text,
+                      "all",
+                      "h2",
+                      "h2__7SNMk",
+                      "__wab_text",
                       sty.h2__eEutj
                     )}
                   >
@@ -408,11 +403,7 @@ function Plasmicآموزشمبلهکردنخونهشیکوارزان__RenderFunc
                     }
                   </h2>
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__puh8L
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__puh8L)}
                   >
                     <React.Fragment>
                       <React.Fragment>
@@ -423,11 +414,11 @@ function Plasmicآموزشمبلهکردنخونهشیکوارزان__RenderFunc
                       {
                         <PlasmicLink__
                           className={classNames(
-                            projectcss.all,
-                            projectcss.a,
-                            projectcss.a__7SNMk,
-                            projectcss.__wab_text,
-                            projectcss.plasmic_default__inline,
+                            "all",
+                            "a",
+                            "a__7SNMk",
+                            "__wab_text",
+                            "plasmic_default__inline",
                             sty.link__wVSy
                           )}
                           component={Link}
@@ -447,14 +438,14 @@ function Plasmicآموزشمبلهکردنخونهشیکوارزان__RenderFunc
                 <div
                   data-plasmic-name={"strDefinition2"}
                   data-plasmic-override={overrides.strDefinition2}
-                  className={classNames(projectcss.all, sty.strDefinition2)}
+                  className={classNames("all", sty.strDefinition2)}
                 >
                   <h2
                     className={classNames(
-                      projectcss.all,
-                      projectcss.h2,
-                      projectcss.h2__7SNMk,
-                      projectcss.__wab_text,
+                      "all",
+                      "h2",
+                      "h2__7SNMk",
+                      "__wab_text",
                       sty.h2__zkhdS
                     )}
                   >
@@ -463,11 +454,7 @@ function Plasmicآموزشمبلهکردنخونهشیکوارزان__RenderFunc
                     }
                   </h2>
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__pdcvF
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__pdcvF)}
                   >
                     {
                       "\u06f1. \u062a\u0646\u0638\u06cc\u0645 \u0646\u0648\u0631: \u0628\u06cc\u0634\u062a\u0631\u06cc\u0646 \u062a\u0627\u062b\u06cc\u0631 \u0628\u0627 \u06a9\u0645\u062a\u0631\u06cc\u0646 \u0647\u0632\u06cc\u0646\u0647\r\n\u0648\u0642\u062a\u06cc \u0627\u0632 \u0646\u0648\u0631 \u062a\u0648\u06cc \u0632\u06cc\u0628\u0627\u0633\u0627\u0632\u06cc \u0641\u0636\u0627 (Property Make-up) \u0635\u062d\u0628\u062a \u0645\u06cc\u200c\u06a9\u0646\u06cc\u0645\u060c \u0648\u0627\u0642\u0639\u0627\u064b \u06cc\u0647 \u0686\u06cc\u0632 \u0633\u0627\u062f\u0647 \u0648\u0644\u06cc \u0645\u0639\u062c\u0632\u0647\u200c\u0622\u0633\u0627\u0633\u062a. \u0644\u0627\u0632\u0645 \u0646\u06cc\u0633\u062a \u0686\u0631\u0627\u063a\u200c\u0647\u0627\u06cc \u06af\u0631\u0648\u0646\u200c\u0642\u06cc\u0645\u062a \u0628\u062e\u0631\u06cc\u061b \u0647\u0645\u06cc\u0646 \u06a9\u0647 \u0646\u0648\u0631 \u0637\u0628\u06cc\u0639\u06cc \u0631\u0648 \u0628\u0647 \u062d\u062f\u0627\u06a9\u062b\u0631 \u0628\u0631\u0633\u0648\u0646\u06cc \u0648 \u067e\u0631\u062f\u0647\u200c\u0647\u0627 \u0631\u0648 \u06a9\u0646\u0627\u0631 \u0628\u0632\u0646\u06cc\u060c \u0641\u0636\u0627 \u0628\u0627\u0632 \u0648 \u0631\u0648\u0634\u0646 \u062f\u06cc\u062f\u0647 \u0645\u06cc\u200c\u0634\u0647. \u0646\u0648\u0631 \u062e\u0648\u0628\u060c \u062d\u0633 \u062a\u0645\u06cc\u0632\u06cc \u0648 \u0631\u0627\u062d\u062a\u06cc \u0645\u06cc\u200c\u062f\u0647 \u0648 \u0639\u06a9\u0633\u200c\u0647\u0627 \u0631\u0648 \u0647\u0645 \u062d\u0631\u0641\u0647\u200c\u0627\u06cc\u200c\u062a\u0631 \u0646\u0634\u0648\u0646 \u0645\u06cc\u200c\u062f\u0647\u060c \u0628\u062f\u0648\u0646 \u0627\u06cc\u0646\u06a9\u0647 \u0647\u0632\u06cc\u0646\u0647 \u0632\u06cc\u0627\u062f\u06cc \u0631\u0648\u06cc \u062f\u0648\u0634\u062a \u0628\u0627\u0634\u0647. \u06a9\u0627\u0631\u0647\u0627\u06cc \u0633\u0627\u062f\u0647\u200c\u0627\u06cc \u06a9\u0647 \u0628\u0631\u0627\u06cc \u0628\u0647\u062a\u0631 \u0634\u062f\u0646 \u0646\u0648\u0631 \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u0627\u0646\u062c\u0627\u0645 \u0628\u062f\u06cc:\r\n- \u0644\u0627\u0645\u067e\u200c\u0647\u0627 \u0631\u0648 \u0628\u0627 \u0646\u0648\u0631 \u0622\u0641\u062a\u0627\u0628\u06cc \u0639\u0648\u0636 \u06a9\u0646\r\n- \u0622\u0628\u0627\u0698\u0648\u0631 \u0633\u0627\u062f\u0647 \u06af\u0648\u0634\u0647\u200c\u06cc \u067e\u0630\u06cc\u0631\u0627\u06cc\u06cc\r\n- \u0646\u0648\u0631 \u0645\u062e\u0641\u06cc \u0632\u06cc\u0631 \u06a9\u0627\u0628\u06cc\u0646\u062a \u06cc\u0627 \u067e\u0634\u062a \u062a\u0644\u0648\u06cc\u0632\u06cc\u0648\u0646\n\n2. \u067e\u0627\u0631\u0686\u0647\u200c\u0647\u0627: \u062a\u063a\u06cc\u06cc\u0631 \u0633\u0631\u06cc\u0639 \u0641\u0636\u0627\r\n\u06cc\u06a9\u06cc \u0627\u0632 \u0633\u0627\u062f\u0647\u200c\u062a\u0631\u06cc\u0646 \u0648 \u06a9\u0645\u200c\u0647\u0632\u06cc\u0646\u0647\u200c\u062a\u0631\u06cc\u0646 \u062a\u06a9\u0646\u06cc\u06a9\u200c\u0647\u0627\u06cc \u0632\u06cc\u0628\u0627\u0633\u0627\u0632\u06cc\u060c \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u067e\u0627\u0631\u0686\u0647\u200c\u0647\u0627 \u0628\u0631\u0627\u06cc \u062a\u063a\u06cc\u06cc\u0631 \u0633\u0631\u06cc\u0639 \u0641\u0636\u0627\u0633\u062a. \u0627\u06cc\u0646 \u06a9\u0627\u0631 \u0646\u0647 \u0641\u0642\u0637 \u0641\u0636\u0627 \u0631\u0648 \u062c\u0630\u0627\u0628\u200c\u062a\u0631 \u0648 \u062f\u0644\u0646\u0634\u06cc\u0646\u200c\u062a\u0631 \u0646\u0634\u0648\u0646 \u0645\u06cc\u200c\u062f\u0647\u060c \u0628\u0644\u06a9\u0647 \u062a\u0648 \u0639\u06a9\u0633\u200c\u0647\u0627 \u0647\u0645 \u062e\u06cc\u0644\u06cc \u062d\u0631\u0641\u0647\u200c\u0627\u06cc \u0648 \u0645\u0631\u062a\u0628 \u062f\u06cc\u062f\u0647 \u0645\u06cc\u200c\u0634\u0647\u060c \u0628\u062f\u0648\u0646 \u0627\u06cc\u0646\u06a9\u0647 \u0644\u0627\u0632\u0645 \u0628\u0627\u0634\u0647 \u0647\u0632\u06cc\u0646\u0647 \u0632\u06cc\u0627\u062f\u06cc \u0635\u0631\u0641 \u06a9\u0646\u06cc \u06cc\u0627 \u062a\u063a\u06cc\u06cc\u0631\u0627\u062a \u0628\u0632\u0631\u06af \u0627\u06cc\u062c\u0627\u062f \u06a9\u0646\u06cc. \u0628\u0627 \u0647\u0632\u06cc\u0646\u0647\u200c\u06cc \u06a9\u0645 \u0645\u06cc\u200c\u0634\u0647 \u0641\u0636\u0627 \u0631\u0648 \u062e\u06cc\u0644\u06cc \u0634\u06cc\u06a9 \u06a9\u0631\u062f:\r\n- \u0631\u0648\u06a9\u0634 \u06a9\u0648\u0633\u0646\u200c\u0647\u0627\u06cc \u062c\u062f\u06cc\u062f\r\n- \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u0634\u0627\u0644 \u0645\u0628\u0644\r\n- \u0631\u0648\u062a\u062e\u062a\u06cc \u0633\u0627\u062f\u0647 \u0627\u0645\u0627 \u0634\u06cc\u06a9 (\u0631\u0648\u0634\u0646 \u06cc\u0627 \u062e\u0646\u062b\u06cc)\r\n- \u067e\u0631\u062f\u0647\u200c \u062a\u0645\u06cc\u0632 \u0648 \u0633\u0627\u062f\u0647\n\n3. \u062f\u06cc\u0648\u0627\u0631\u0647\u0627: \u062c\u0644\u0648\u0647\u200c\u062f\u0647\u06cc\u060c \u0628\u062f\u0648\u0646 \u0631\u0646\u06af\u200c\u06a9\u0627\u0631\u06cc \u0627\u0633\u0627\u0633\u06cc\r\n\u0648\u0642\u062a\u06cc \u0645\u06cc\u200c\u062e\u0648\u0627\u06cc \u0628\u0627 \u06a9\u0645\u062a\u0631\u06cc\u0646 \u0647\u0632\u06cc\u0646\u0647 \u062f\u06cc\u0648\u0627\u0631\u0647\u0627 \u0631\u0648 \u062c\u0630\u0627\u0628 \u06a9\u0646\u06cc \u0628\u062f\u0648\u0646 \u0631\u0646\u06af\u200c\u06a9\u0627\u0631\u06cc \u0627\u0633\u0627\u0633\u06cc\u060c \u0686\u0646\u062f \u062a\u0627 \u0631\u0627\u0647 \u0633\u0627\u062f\u0647 \u0647\u0633\u062a \u06a9\u0647 \u062e\u06cc\u0644\u06cc \u062a\u0627\u062b\u06cc\u0631 \u062f\u0627\u0631\u0647. \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u0627\u0632 \u0627\u0633\u062a\u06cc\u06a9\u0631\u0647\u0627\u06cc \u0645\u06cc\u0646\u06cc\u0645\u0627\u0644\u060c \u062a\u0627\u0628\u0644\u0648\u0647\u0627\u06cc \u06a9\u0648\u0686\u06a9 \u06cc\u0627 \u067e\u0648\u0633\u062a\u0631\u0647\u0627\u06cc \u0642\u0627\u0628\u200c\u062f\u0627\u0631 \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u06a9\u0646\u06cc \u06cc\u0627 \u062d\u062a\u06cc \u06cc\u0647 \u062f\u06cc\u0648\u0627\u0631 \u062a\u0627\u06a9\u06cc\u062f\u06cc \u0633\u0627\u062f\u0647 \u0628\u0627 \u0631\u0646\u06af \u0645\u0648\u0642\u062a \u06cc\u0627 \u06a9\u0627\u063a\u0630 \u062f\u06cc\u0648\u0627\u0631\u06cc \u0627\u0631\u0632\u0627\u0646 \u062f\u0631\u0633\u062a \u06a9\u0646\u06cc. \u0647\u0645\u0686\u0646\u06cc\u0646 \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u0622\u06cc\u06cc\u0646\u0647 \u0648 \u0686\u0648\u0628\u200c\u0647\u0627\u06cc \u0627\u0631\u0632\u0627\u0646\u200c\u0642\u06cc\u0645\u062a(\u062a\u0631\u0645\u0648\u0648\u0627\u0644) \u0628\u0631\u0627\u06cc \u0632\u06cc\u0628\u0627\u0633\u0627\u0632\u06cc \u0641\u0636\u0627\u06cc \u062e\u0648\u0646\u0647 \u067e\u06cc\u0634\u0646\u0647\u0627\u062f \u0645\u06cc\u200c\u0634\u0647. \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u0631\u0646\u06af\u200c\u0647\u0627\u06cc \u0634\u0627\u062f \u062f\u0631 \u062f\u06a9\u0648\u0631 \u0628\u0627\u0639\u062b \u0645\u06cc\u200c\u0634\u0647 \u0628\u062a\u0648\u0646\u06cc \u0639\u06a9\u0633\u200c\u0647\u0627\u06cc \u0642\u0634\u0646\u06af\u200c\u062a\u0631\u06cc \u0627\u0632 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u0628\u06af\u06cc\u0631\u06cc \u0648 \u0647\u0645 \u0628\u0647 \u062e\u0648\u0646\u0647 \u0631\u0648\u062d \u0645\u06cc\u200c\u062f\u0647. \u0627\u06cc\u0646 \u06a9\u0627\u0631\u0647\u0627 \u0647\u0632\u06cc\u0646\u0647\u200c\u0634\u0648\u0646 \u06a9\u0645 \u0648\u0644\u06cc \u062a\u0627\u062b\u06cc\u0631 \u0628\u0635\u0631\u06cc\u200c\u0634\u0648\u0646 \u0632\u06cc\u0627\u062f\u0647 \u0648 \u0628\u0627\u0639\u062b \u0645\u06cc\u200c\u0634\u0647 \u062e\u0648\u0646\u0647 \u0634\u06cc\u06a9 \u0648 \u0645\u0631\u062a\u0628 \u062f\u06cc\u062f\u0647 \u0628\u0634\u0647\u060c \u0628\u062f\u0648\u0646 \u0627\u06cc\u0646\u06a9\u0647 \u0628\u062e\u0648\u0627\u06cc \u062f\u0633\u062a \u0628\u0647 \u0642\u0644\u0645\u0648 \u0648 \u0631\u0646\u06af \u0628\u0632\u0646\u06cc!"
@@ -476,7 +463,7 @@ function Plasmicآموزشمبلهکردنخونهشیکوارزان__RenderFunc
                   <div
                     data-plasmic-name={"img4"}
                     data-plasmic-override={overrides.img4}
-                    className={classNames(projectcss.all, sty.img4)}
+                    className={classNames("all", sty.img4)}
                   >
                     <PlasmicImg__
                       alt={
@@ -506,11 +493,7 @@ function Plasmicآموزشمبلهکردنخونهشیکوارزان__RenderFunc
                     />
                   </div>
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__gnC44
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__gnC44)}
                   >
                     <React.Fragment>
                       <React.Fragment>
@@ -521,11 +504,11 @@ function Plasmicآموزشمبلهکردنخونهشیکوارزان__RenderFunc
                       {
                         <PlasmicLink__
                           className={classNames(
-                            projectcss.all,
-                            projectcss.a,
-                            projectcss.a__7SNMk,
-                            projectcss.__wab_text,
-                            projectcss.plasmic_default__inline,
+                            "all",
+                            "a",
+                            "a__7SNMk",
+                            "__wab_text",
+                            "plasmic_default__inline",
                             sty.link__oCg54
                           )}
                           component={Link}
@@ -551,19 +534,19 @@ function Plasmicآموزشمبلهکردنخونهشیکوارزان__RenderFunc
             <div
               data-plasmic-name={"ownership"}
               data-plasmic-override={overrides.ownership}
-              className={classNames(projectcss.all, sty.ownership)}
+              className={classNames("all", sty.ownership)}
             >
               <div
                 data-plasmic-name={"ownershipDesc"}
                 data-plasmic-override={overrides.ownershipDesc}
-                className={classNames(projectcss.all, sty.ownershipDesc)}
+                className={classNames("all", sty.ownershipDesc)}
               >
                 <h2
                   className={classNames(
-                    projectcss.all,
-                    projectcss.h2,
-                    projectcss.h2__7SNMk,
-                    projectcss.__wab_text,
+                    "all",
+                    "h2",
+                    "h2__7SNMk",
+                    "__wab_text",
                     sty.h2__iGf
                   )}
                 >
@@ -572,11 +555,7 @@ function Plasmicآموزشمبلهکردنخونهشیکوارزان__RenderFunc
                   }
                 </h2>
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text___8H1Cq
-                  )}
+                  className={classNames("all", "__wab_text", sty.text___8H1Cq)}
                 >
                   <React.Fragment>
                     <React.Fragment>
@@ -636,27 +615,25 @@ function Plasmicآموزشمبلهکردنخونهشیکوارزان__RenderFunc
             <div
               data-plasmic-name={"bot"}
               data-plasmic-override={overrides.bot}
-              className={classNames(projectcss.all, sty.bot)}
+              className={classNames("all", sty.bot)}
             >
               <div
                 data-plasmic-name={"more"}
                 data-plasmic-override={overrides.more}
-                className={classNames(projectcss.all, sty.more)}
+                className={classNames("all", sty.more)}
               >
                 <div
                   data-plasmic-name={"certificates"}
                   data-plasmic-override={overrides.certificates}
-                  className={classNames(projectcss.all, sty.certificates)}
+                  className={classNames("all", sty.certificates)}
                 >
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox___6BS7)}
-                  >
+                  <div className={classNames("all", sty.freeBox___6BS7)}>
                     <h2
                       className={classNames(
-                        projectcss.all,
-                        projectcss.h2,
-                        projectcss.h2__7SNMk,
-                        projectcss.__wab_text,
+                        "all",
+                        "h2",
+                        "h2__7SNMk",
+                        "__wab_text",
                         sty.h2__xpvTw
                       )}
                     >
@@ -666,8 +643,8 @@ function Plasmicآموزشمبلهکردنخونهشیکوارزان__RenderFunc
                     </h2>
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text__kiEgn
                       )}
                     >
@@ -678,11 +655,11 @@ function Plasmicآموزشمبلهکردنخونهشیکوارزان__RenderFunc
                         {
                           <PlasmicLink__
                             className={classNames(
-                              projectcss.all,
-                              projectcss.a,
-                              projectcss.a__7SNMk,
-                              projectcss.__wab_text,
-                              projectcss.plasmic_default__inline,
+                              "all",
+                              "a",
+                              "a__7SNMk",
+                              "__wab_text",
+                              "plasmic_default__inline",
                               sty.link__qcLde
                             )}
                             component={Link}
@@ -707,7 +684,7 @@ function Plasmicآموزشمبلهکردنخونهشیکوارزان__RenderFunc
                 <div
                   data-plasmic-name={"iamges"}
                   data-plasmic-override={overrides.iamges}
-                  className={classNames(projectcss.all, sty.iamges)}
+                  className={classNames("all", sty.iamges)}
                 >
                   <PlasmicImg__
                     alt={
@@ -750,30 +727,22 @@ function Plasmicآموزشمبلهکردنخونهشیکوارزان__RenderFunc
               <div
                 data-plasmic-name={"neighbours"}
                 data-plasmic-override={overrides.neighbours}
-                className={classNames(projectcss.all, sty.neighbours)}
+                className={classNames("all", sty.neighbours)}
               >
                 <div
                   data-plasmic-name={"benefitsTitle2"}
                   data-plasmic-override={overrides.benefitsTitle2}
-                  className={classNames(projectcss.all, sty.benefitsTitle2)}
+                  className={classNames("all", sty.benefitsTitle2)}
                 >
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__o8Ah
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__o8Ah)}
                   >
                     {
                       "\u062c\u0645\u0639\u200c\u0628\u0646\u062f\u06cc: \u062a\u063a\u06cc\u06cc\u0631\u0627\u062a \u06a9\u0648\u0686\u06cc\u06a9\u060c \u0646\u062a\u06cc\u062c\u0647\u200c\u06cc \u0628\u0632\u0631\u06af"
                     }
                   </div>
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__hdk5I
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__hdk5I)}
                   >
                     {
                       "\u0648\u0627\u0633\u0647 \u0627\u06cc\u0646\u06a9\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u0628\u06cc\u0634\u062a\u0631 \u0627\u0648\u0642\u0627\u062a \u067e\u0631 \u0628\u0627\u0634\u0647\u060c \u0644\u0627\u0632\u0645 \u0646\u06cc\u0633\u062a \u06a9\u0644 \u062f\u06a9\u0648\u0631\u0627\u0633\u06cc\u0648\u0646 \u0631\u0648 \u0628\u06a9\u0648\u0628\u06cc \u0648 \u0627\u0632 \u0646\u0648 \u0628\u0633\u0627\u0632\u06cc. \u0641\u0631\u0645\u0648\u0644 \u0645\u0648\u0641\u0642\u06cc\u062a \u062a\u0648\u06cc \u00ab\u062a\u063a\u06cc\u06cc\u0631\u0627\u062a \u0647\u0648\u0634\u0645\u0646\u062f\u0627\u0646\u0647 \u0628\u0627 \u0647\u0632\u06cc\u0646\u0647 \u06a9\u0645\u0647\u00bb. \u0628\u06cc\u0627\u06cc\u0645 \u06cc\u0647 \u0628\u0627\u0631 \u062f\u06cc\u06af\u0647 \u0645\u0633\u06cc\u0631 \u0631\u0648 \u062e\u06cc\u0644\u06cc \u062e\u0644\u0627\u0635\u0647 \u0645\u0631\u0648\u0631 \u06a9\u0646\u06cc\u0645:\n- \u0646\u0648\u0631 \u0631\u0648 \u062c\u0648\u0646\u200c\u062f\u0627\u0631 \u06a9\u0646 \u062a\u0627 \u062e\u0648\u0646\u0647 \u062f\u0644\u0628\u0627\u0632 \u0648 \u062a\u0645\u06cc\u0632 \u062f\u06cc\u062f\u0647 \u0628\u0634\u0647.\n- \u0628\u0627 \u06a9\u0648\u0633\u0646 \u0648 \u067e\u0627\u0631\u0686\u0647\u200c\u0647\u0627 \u0628\u0647 \u0641\u0636\u0627 \u0631\u0646\u06af \u0648 \u06af\u0631\u0645\u0627 \u0628\u062f\u0647.\n- \u0628\u0627 \u0686\u0646\u062f \u062a\u0627 \u06af\u06cc\u0627\u0647 (\u062d\u062a\u06cc \u0645\u0635\u0646\u0648\u0639\u06cc) \u062d\u0633 \u0632\u0646\u062f\u06af\u06cc \u0631\u0648 \u0628\u0647 \u062e\u0648\u0646\u0647 \u0628\u06cc\u0627\u0631.\n- \u0642\u0627\u0646\u0648\u0646 \u0647\u062a\u0644 \u0631\u0648 \u0627\u062c\u0631\u0627 \u06a9\u0646\u061b \u06cc\u0639\u0646\u06cc \u0641\u0636\u0627 \u0631\u0648 \u062e\u0644\u0648\u062a\u060c \u0634\u06cc\u06a9 \u0648 \u0645\u0631\u062a\u0628 \u0646\u06af\u0647 \u062f\u0627\u0631.\n\n\u0627\u0646\u062c\u0627\u0645 \u0647\u0645\u06cc\u0646 \u0686\u0646\u062f \u062a\u0627 \u06a9\u0627\u0631 \u0633\u0627\u062f\u0647\u060c \u062e\u0648\u0646\u0647\u200c\u062a \u0631\u0648 \u0627\u0632 \u06cc\u0647 \u062c\u0627\u06cc \u0645\u0639\u0645\u0648\u0644\u06cc \u0628\u0647 \u06cc\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062d\u0631\u0641\u0647\u200c\u0627\u06cc \u062a\u0628\u062f\u06cc\u0644 \u0645\u06cc\u200c\u06a9\u0646\u0647. \u0646\u062a\u06cc\u062c\u0647\u200c\u0634 \u0686\u06cc \u0645\u06cc\u200c\u0634\u0647\u061f \u0639\u06a9\u0633\u200c\u0647\u0627\u06cc \u0622\u06af\u0647\u06cc\u062a \u0628\u0631\u0642 \u0645\u06cc\u200c\u0632\u0646\u0647\u060c \u0645\u0647\u0645\u0627\u0646\u200c\u0647\u0627 \u062d\u0633 \u0628\u0647\u062a\u0631\u06cc \u067e\u06cc\u062f\u0627 \u0645\u06cc\u200c\u06a9\u0646\u0646 \u0648 \u062f\u0631 \u0646\u0647\u0627\u06cc\u062a\u060c \u0647\u0645 \u0631\u0632\u0631\u0648\u0647\u0627\u062a \u0628\u06cc\u0634\u062a\u0631 \u0645\u06cc\u200c\u0634\u0647 \u0648 \u0647\u0645 \u062f\u0631\u0622\u0645\u062f\u062a \u0628\u0627\u0644\u0627\u062a\u0631 \u0645\u06cc\u200c\u0631\u0647.\r\n"
@@ -783,7 +752,7 @@ function Plasmicآموزشمبلهکردنخونهشیکوارزان__RenderFunc
                 <div
                   data-plasmic-name={"img3"}
                   data-plasmic-override={overrides.img3}
-                  className={classNames(projectcss.all, sty.img3)}
+                  className={classNames("all", sty.img3)}
                 >
                   <PlasmicImg__
                     alt={
@@ -816,19 +785,15 @@ function Plasmicآموزشمبلهکردنخونهشیکوارزان__RenderFunc
               <div
                 data-plasmic-name={"cta"}
                 data-plasmic-override={overrides.cta}
-                className={classNames(projectcss.all, sty.cta)}
+                className={classNames("all", sty.cta)}
               >
                 <div
                   data-plasmic-name={"button"}
                   data-plasmic-override={overrides.button}
-                  className={classNames(projectcss.all, sty.button)}
+                  className={classNames("all", sty.button)}
                 >
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__biZme
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__biZme)}
                   >
                     {
                       "\u0646\u0631\u0645\u200c\u0627\u0641\u0632\u0627\u0631 \u0645\u062f\u06cc\u0631\u06cc\u062a \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u00ab\u0645\u06cc\u0627\u0646\u00bb \u0631\u0648 \u0631\u0627\u06cc\u06af\u0627\u0646 \u0627\u0645\u062a\u062d\u0627\u0646 \u06a9\u0646 \u0648 \u0628\u062f\u0648\u0646 \u062a\u062d\u0645\u0644 \u0633\u062e\u062a\u06cc\u060c \u0648\u0627\u0631\u062f \u0644\u06cc\u06af \u06a9\u0633\u0628\u200c\u0648\u06a9\u0627\u0631\u0647\u0627\u06cc \u062d\u0631\u0641\u0647\u200c\u0627\u06cc \u0634\u0648"
@@ -836,8 +801,8 @@ function Plasmicآموزشمبلهکردنخونهشیکوارزان__RenderFunc
                   </div>
                   <div
                     className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
+                      "all",
+                      "__wab_text",
                       sty.text__o2Rme,
                       "clickable"
                     )}
@@ -884,7 +849,7 @@ function Plasmicآموزشمبلهکردنخونهشیکوارزان__RenderFunc
             className={classNames("__wab_instance", sty.miaanFooter)}
           />
 
-          <div className={classNames(projectcss.all, sty.freeBox___0TMFj)}>
+          <div className={classNames("all", sty.freeBox___0TMFj)}>
             <ClarityRntComponent
               data-plasmic-name={"clarityRntComponent"}
               data-plasmic-override={overrides.clarityRntComponent}

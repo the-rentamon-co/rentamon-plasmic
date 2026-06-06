@@ -81,7 +81,6 @@ import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-impor
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicLiteCalendar.module.css"; // plasmic-import: wDX6CsUVKNmL/css
 
 const emptyProxy: any = new Proxy(() => "", {
@@ -393,17 +392,17 @@ function PlasmicLiteCalendar__RenderFunc(props: {
         }
       `}</style>
 
-      <div className={projectcss.plasmic_page_wrapper}>
+      <div className={"plasmic_page_wrapper"}>
         <div
           data-plasmic-name={"root"}
           data-plasmic-override={overrides.root}
           data-plasmic-root={true}
           data-plasmic-for-node={forNode}
           className={classNames(
-            projectcss.all,
-            projectcss.root_reset,
-            projectcss.plasmic_default_styles,
-            projectcss.plasmic_mixins,
+            "all",
+            "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+            "plasmic_default_styles",
+            "plasmic_mixins",
             styleTokensClassNames,
             sty.root
           )}
@@ -846,7 +845,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
             data-plasmic-name={"headerMain"}
             data-plasmic-override={overrides.headerMain}
             className={classNames(
-              projectcss.all,
+              "all",
               sty.headerMain,
               hasVariant(globalVariants, "screen", "mobile")
                 ? "fadeinf"
@@ -856,17 +855,17 @@ function PlasmicLiteCalendar__RenderFunc(props: {
             <div
               data-plasmic-name={"header"}
               data-plasmic-override={overrides.header}
-              className={classNames(projectcss.all, sty.header)}
+              className={classNames("all", sty.header)}
             >
               <div
                 data-plasmic-name={"right"}
                 data-plasmic-override={overrides.right}
-                className={classNames(projectcss.all, sty.right)}
+                className={classNames("all", sty.right)}
               >
                 <div
                   data-plasmic-name={"right2"}
                   data-plasmic-override={overrides.right2}
-                  className={classNames(projectcss.all, sty.right2)}
+                  className={classNames("all", sty.right2)}
                 >
                   <Select
                     data-plasmic-name={"select2"}
@@ -1009,8 +1008,8 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                     placeholder={
                       <div
                         className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
+                          "all",
+                          "__wab_text",
                           sty.text__kFSkm
                         )}
                       >
@@ -1026,7 +1025,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
               <div
                 data-plasmic-name={"left"}
                 data-plasmic-override={overrides.left}
-                className={classNames(projectcss.all, sty.left)}
+                className={classNames("all", sty.left)}
               >
                 {(() => {
                   try {
@@ -1045,11 +1044,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                   }
                 })() ? (
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      sty.freeBox__y2KmV,
-                      "fadein"
-                    )}
+                    className={classNames("all", sty.freeBox__y2KmV, "fadein")}
                   >
                     <PlasmicImg__
                       data-plasmic-name={"img"}
@@ -1141,7 +1136,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                       })()
                 ) ? (
                   <div
-                    className={classNames(projectcss.all, sty.freeBox__j6D2M)}
+                    className={classNames("all", sty.freeBox__j6D2M)}
                     onClick={async event => {
                       const $steps = {};
 
@@ -1174,8 +1169,8 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                   >
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text__cQc5Q
                       )}
                     >
@@ -1309,11 +1304,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                 })()}
               >
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__ovxMl
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__ovxMl)}
                 >
                   {"Enter some text"}
                 </div>
@@ -1322,7 +1313,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
             <div
               data-plasmic-name={"deskTablet"}
               data-plasmic-override={overrides.deskTablet}
-              className={classNames(projectcss.all, sty.deskTablet)}
+              className={classNames("all", sty.deskTablet)}
             >
               <SidebarLite
                 data-plasmic-name={"sidebarLite"}
@@ -1396,9 +1387,9 @@ function PlasmicLiteCalendar__RenderFunc(props: {
             data-plasmic-override={overrides.divarGuide}
             className={classNames("__wab_instance", sty.divarGuide)}
             defaultStylesClassName={classNames(
-              projectcss.root_reset,
-              projectcss.plasmic_default_styles,
-              projectcss.plasmic_mixins,
+              "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+              "plasmic_default_styles",
+              "plasmic_mixins",
               styleTokensClassNames
             )}
             hideFooter={true}
@@ -1412,13 +1403,9 @@ function PlasmicLiteCalendar__RenderFunc(props: {
             }}
             open={generateStateValueProp($state, ["divarGuide", "open"])}
             title={
-              <div className={classNames(projectcss.all, sty.freeBox___3NGj7)}>
+              <div className={classNames("all", sty.freeBox___3NGj7)}>
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__i1AZf
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__i1AZf)}
                 >
                   {
                     "\u0631\u0648\u0632 \u0647\u0627\u06cc \u067e\u0631 \u0648 \u062e\u0627\u0644\u06cc \u0631\u0648 \u0628\u0647 \u0645\u0647\u0645\u0627\u0646 \u0646\u0634\u0648\u0646 \u0628\u062f\u0647"
@@ -1428,13 +1415,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
             }
             trigger={null}
           >
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__nk47U
-              )}
-            >
+            <div className={classNames("all", "__wab_text", sty.text__nk47U)}>
               <React.Fragment>
                 <React.Fragment>{""}</React.Fragment>
                 {
@@ -1442,18 +1423,18 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                     data-plasmic-name={"selectDay"}
                     data-plasmic-override={overrides.selectDay}
                     className={classNames(
-                      projectcss.all,
-                      projectcss.ul,
-                      projectcss.ul__7SNMk,
+                      "all",
+                      "ul",
+                      "ul__7SNMk",
                       sty.selectDay
                     )}
                   >
                     <li
                       className={classNames(
-                        projectcss.all,
-                        projectcss.li,
-                        projectcss.li__7SNMk,
-                        projectcss.__wab_text,
+                        "all",
+                        "li",
+                        "li__7SNMk",
+                        "__wab_text",
                         sty.li__sljoJ
                       )}
                     >
@@ -1469,18 +1450,18 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                     data-plasmic-name={"selectEdit"}
                     data-plasmic-override={overrides.selectEdit}
                     className={classNames(
-                      projectcss.all,
-                      projectcss.ul,
-                      projectcss.ul__7SNMk,
+                      "all",
+                      "ul",
+                      "ul__7SNMk",
                       sty.selectEdit
                     )}
                   >
                     <li
                       className={classNames(
-                        projectcss.all,
-                        projectcss.li,
-                        projectcss.li__7SNMk,
-                        projectcss.__wab_text,
+                        "all",
+                        "li",
+                        "li__7SNMk",
+                        "__wab_text",
                         sty.li___4H3Ac
                       )}
                     >
@@ -1496,18 +1477,18 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                     data-plasmic-name={"selectEdit3"}
                     data-plasmic-override={overrides.selectEdit3}
                     className={classNames(
-                      projectcss.all,
-                      projectcss.ul,
-                      projectcss.ul__7SNMk,
+                      "all",
+                      "ul",
+                      "ul__7SNMk",
                       sty.selectEdit3
                     )}
                   >
                     <li
                       className={classNames(
-                        projectcss.all,
-                        projectcss.li,
-                        projectcss.li__7SNMk,
-                        projectcss.__wab_text,
+                        "all",
+                        "li",
+                        "li__7SNMk",
+                        "__wab_text",
                         sty.li__ptpYi
                       )}
                     >
@@ -1523,18 +1504,18 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                     data-plasmic-name={"selectEdit2"}
                     data-plasmic-override={overrides.selectEdit2}
                     className={classNames(
-                      projectcss.all,
-                      projectcss.ul,
-                      projectcss.ul__7SNMk,
+                      "all",
+                      "ul",
+                      "ul__7SNMk",
                       sty.selectEdit2
                     )}
                   >
                     <li
                       className={classNames(
-                        projectcss.all,
-                        projectcss.li,
-                        projectcss.li__7SNMk,
-                        projectcss.__wab_text,
+                        "all",
+                        "li",
+                        "li__7SNMk",
+                        "__wab_text",
                         sty.li__wlRx3
                       )}
                     >
@@ -1547,21 +1528,15 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                 <React.Fragment>{""}</React.Fragment>
               </React.Fragment>
             </div>
-            <div className={classNames(projectcss.all, sty.freeBox__fqKew)}>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__rpnRj
-                )}
-              >
+            <div className={classNames("all", sty.freeBox__fqKew)}>
+              <div className={classNames("all", "__wab_text", sty.text__rpnRj)}>
                 {
                   "\u062d\u0627\u0644\u0627 \u0645\u0633\u0627\u0641\u0631 \u0645\u06cc\u062a\u0648\u0646\u0647 \u062f\u0627\u062e\u0644 \u062a\u0642\u0648\u06cc\u0645 \u062f\u06cc\u0648\u0627\u0631\u060c \u0631\u0648\u0632 \u0647\u0627\u06cc \u062e\u0627\u0644\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0631\u0648 \u0628\u0628\u06cc\u0646\u0647"
                 }
               </div>
             </div>
             <div
-              className={classNames(projectcss.all, sty.freeBox__txXe5)}
+              className={classNames("all", sty.freeBox__txXe5)}
               onClick={async event => {
                 const $steps = {};
 
@@ -1624,13 +1599,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                 }
               }}
             >
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__vyXCk
-                )}
-              >
+              <div className={classNames("all", "__wab_text", sty.text__vyXCk)}>
                 {"\u0628\u0627\u0634\u0647"}
               </div>
             </div>
@@ -1638,7 +1607,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
           <div
             data-plasmic-name={"spacerDontTouch"}
             data-plasmic-override={overrides.spacerDontTouch}
-            className={classNames(projectcss.all, sty.spacerDontTouch)}
+            className={classNames("all", sty.spacerDontTouch)}
           />
 
           {false ? (
@@ -1647,9 +1616,9 @@ function PlasmicLiteCalendar__RenderFunc(props: {
               data-plasmic-override={overrides.proPanelModal}
               className={classNames("__wab_instance", sty.proPanelModal)}
               defaultStylesClassName={classNames(
-                projectcss.root_reset,
-                projectcss.plasmic_default_styles,
-                projectcss.plasmic_mixins,
+                "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+                "plasmic_default_styles",
+                "plasmic_mixins",
                 styleTokensClassNames
               )}
               hideFooter={true}
@@ -1718,7 +1687,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField__i8Oxc
+                        sty.formField__mkLsj
                       )}
                       label={"Name"}
                       name={"name"}
@@ -1730,7 +1699,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                     <FormItemWrapper
                       className={classNames(
                         "__wab_instance",
-                        sty.formField___60O6Y
+                        sty.formField__bQbld
                       )}
                       label={"Message"}
                       name={"message"}
@@ -1746,9 +1715,9 @@ function PlasmicLiteCalendar__RenderFunc(props: {
                     >
                       <div
                         className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text__pNd4T
+                          "all",
+                          "__wab_text",
+                          sty.text__yyou5
                         )}
                       >
                         {"Submit"}
@@ -1766,7 +1735,7 @@ function PlasmicLiteCalendar__RenderFunc(props: {
             navPage={"calendar"}
           />
 
-          <div className={classNames(projectcss.all, sty.freeBox__aHy6S)}>
+          <div className={classNames("all", sty.freeBox__aHy6S)}>
             <ClarityRntComponent
               data-plasmic-name={"clarityRntComponent"}
               data-plasmic-override={overrides.clarityRntComponent}

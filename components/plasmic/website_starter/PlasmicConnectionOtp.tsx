@@ -68,7 +68,6 @@ import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-impor
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicConnectionOtp.module.css"; // plasmic-import: 1PmLaqEvRFmS/css
 
 import CheckSvgIcon from "./icons/PlasmicIcon__CheckSvg"; // plasmic-import: aHRi_lZjzHt3/icon
@@ -209,10 +208,10 @@ function PlasmicConnectionOtp__RenderFunc(props: {
       data-plasmic-root={true}
       data-plasmic-for-node={forNode}
       className={classNames(
-        projectcss.all,
-        projectcss.root_reset,
-        projectcss.plasmic_default_styles,
-        projectcss.plasmic_mixins,
+        "all",
+        "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+        "plasmic_default_styles",
+        "plasmic_mixins",
         styleTokensClassNames,
         sty.root
       )}
@@ -255,8 +254,8 @@ function PlasmicConnectionOtp__RenderFunc(props: {
       >
         <DataCtxReader__>
           {$ctx => (
-            <div className={classNames(projectcss.all, sty.freeBox__i6ViB)}>
-              <div className={classNames(projectcss.all, sty.freeBox__jL3SF)}>
+            <div className={classNames("all", sty.freeBox__i6ViB)}>
+              <div className={classNames("all", sty.freeBox__jL3SF)}>
                 <PlasmicImg__
                   data-plasmic-name={"homsaDis"}
                   data-plasmic-override={overrides.homsaDis}
@@ -697,9 +696,9 @@ function PlasmicConnectionOtp__RenderFunc(props: {
                   children={null}
                   className={classNames("__wab_instance", sty.jabamaModal)}
                   defaultStylesClassName={classNames(
-                    projectcss.root_reset,
-                    projectcss.plasmic_default_styles,
-                    projectcss.plasmic_mixins,
+                    "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+                    "plasmic_default_styles",
+                    "plasmic_mixins",
                     styleTokensClassNames
                   )}
                   modalScopeClassName={sty["jabamaModal__modal"]}
@@ -714,8 +713,8 @@ function PlasmicConnectionOtp__RenderFunc(props: {
                     <React.Fragment>
                       <div
                         className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
+                          "all",
+                          "__wab_text",
                           sty.text__tckma
                         )}
                       >
@@ -747,8 +746,8 @@ function PlasmicConnectionOtp__RenderFunc(props: {
 
                       <div
                         className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
+                          "all",
+                          "__wab_text",
                           sty.text__ciX43
                         )}
                       >
@@ -766,9 +765,9 @@ function PlasmicConnectionOtp__RenderFunc(props: {
                   data-plasmic-override={overrides.jajigaModal}
                   className={classNames("__wab_instance", sty.jajigaModal)}
                   defaultStylesClassName={classNames(
-                    projectcss.root_reset,
-                    projectcss.plasmic_default_styles,
-                    projectcss.plasmic_mixins,
+                    "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+                    "plasmic_default_styles",
+                    "plasmic_mixins",
                     styleTokensClassNames
                   )}
                   hideFooter={true}
@@ -788,15 +787,10 @@ function PlasmicConnectionOtp__RenderFunc(props: {
                     <div
                       data-plasmic-name={"columns"}
                       data-plasmic-override={overrides.columns}
-                      className={classNames(projectcss.all, sty.columns)}
+                      className={classNames("all", sty.columns)}
                       dir={"rtl"}
                     >
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          sty.column__j2Fnn
-                        )}
-                      >
+                      <div className={classNames("all", sty.column__j2Fnn)}>
                         <PlasmicImg__
                           data-plasmic-name={"img"}
                           data-plasmic-override={overrides.img}
@@ -816,13 +810,11 @@ function PlasmicConnectionOtp__RenderFunc(props: {
                           width={"42"}
                         />
                       </div>
-                      <div
-                        className={classNames(projectcss.all, sty.column__vWCq)}
-                      >
+                      <div className={classNames("all", sty.column__vWCq)}>
                         <div
                           className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
+                            "all",
+                            "__wab_text",
                             sty.text__nFqim
                           )}
                         >
@@ -938,8 +930,8 @@ function PlasmicConnectionOtp__RenderFunc(props: {
                   >
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text___7Q462
                       )}
                     >
@@ -978,13 +970,7 @@ function PlasmicConnectionOtp__RenderFunc(props: {
         </DataCtxReader__>
       </DataFetcher>
       <Button className={classNames("__wab_instance", sty.button__zh9R)}>
-        <div
-          className={classNames(
-            projectcss.all,
-            projectcss.__wab_text,
-            sty.text__iDt9
-          )}
-        >
+        <div className={classNames("all", "__wab_text", sty.text__iDt9)}>
           {"    call   "}
         </div>
       </Button>

@@ -69,7 +69,6 @@ import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-impor
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicContactsNeo.module.css"; // plasmic-import: 27VwWCoKZ_wd/css
 
 const emptyProxy: any = new Proxy(() => "", {
@@ -259,23 +258,23 @@ function PlasmicContactsNeo__RenderFunc(props: {
         }
       `}</style>
 
-      <div className={projectcss.plasmic_page_wrapper}>
+      <div className={"plasmic_page_wrapper"}>
         <div
           data-plasmic-name={"contacts"}
           data-plasmic-override={overrides.contacts}
           data-plasmic-root={true}
           data-plasmic-for-node={forNode}
           className={classNames(
-            projectcss.all,
-            projectcss.root_reset,
-            projectcss.plasmic_default_styles,
-            projectcss.plasmic_mixins,
+            "all",
+            "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+            "plasmic_default_styles",
+            "plasmic_mixins",
             styleTokensClassNames,
             sty.contacts
           )}
         >
-          <div className={classNames(projectcss.all, sty.freeBox__jx1B2)}>
-            <div className={classNames(projectcss.all, sty.freeBox__cULe3)}>
+          <div className={classNames("all", sty.freeBox__jx1B2)}>
+            <div className={classNames("all", sty.freeBox__cULe3)}>
               <SideBar2
                 data-plasmic-name={"sideBar2"}
                 data-plasmic-override={overrides.sideBar2}
@@ -296,11 +295,11 @@ function PlasmicContactsNeo__RenderFunc(props: {
                 })()}
               />
             </div>
-            <div className={classNames(projectcss.all, sty.freeBox__cqewD)}>
+            <div className={classNames("all", sty.freeBox__cqewD)}>
               <div
                 className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
+                  "all",
+                  "__wab_text",
                   sty.text__ztpOl,
                   hasVariant(globalVariants, "screen", "mobile")
                     ? "fadeinf"
@@ -310,7 +309,7 @@ function PlasmicContactsNeo__RenderFunc(props: {
                 {"\u062f\u0641\u062a\u0631 \u062a\u0644\u0641\u0646"}
               </div>
             </div>
-            <div className={classNames(projectcss.all, sty.freeBox__p3Wpr)}>
+            <div className={classNames("all", sty.freeBox__p3Wpr)}>
               <ApiRequest
                 data-plasmic-name={"profile"}
                 data-plasmic-override={overrides.profile}
@@ -365,14 +364,10 @@ function PlasmicContactsNeo__RenderFunc(props: {
           <div
             data-plasmic-name={"returnButton"}
             data-plasmic-override={overrides.returnButton}
-            className={classNames(projectcss.all, sty.returnButton, "fix")}
+            className={classNames("all", sty.returnButton, "fix")}
           >
             <div
-              className={classNames(
-                projectcss.all,
-                sty.freeBox__v3Fy0,
-                "clickable"
-              )}
+              className={classNames("all", sty.freeBox__v3Fy0, "clickable")}
               onClick={async event => {
                 const $steps = {};
 
@@ -400,11 +395,7 @@ function PlasmicContactsNeo__RenderFunc(props: {
               }}
             >
               <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__h0J47
-                )}
+                className={classNames("all", "__wab_text", sty.text__h0J47)}
                 onClick={async event => {
                   const $steps = {};
 
@@ -481,7 +472,7 @@ function PlasmicContactsNeo__RenderFunc(props: {
               <div
                 data-plasmic-name={"frame"}
                 data-plasmic-override={overrides.frame}
-                className={classNames(projectcss.all, sty.frame, "fadein")}
+                className={classNames("all", sty.frame, "fadein")}
               >
                 {(_par => (!_par ? [] : Array.isArray(_par) ? _par : [_par]))(
                   (() => {
@@ -505,7 +496,7 @@ function PlasmicContactsNeo__RenderFunc(props: {
                       data-plasmic-name={"contactsRow"}
                       data-plasmic-override={overrides.contactsRow}
                       className={classNames(
-                        projectcss.all,
+                        "all",
                         sty.contactsRow,
                         hasVariant(globalVariants, "screen", "mobile")
                           ? "clickable"
@@ -516,14 +507,14 @@ function PlasmicContactsNeo__RenderFunc(props: {
                       <div
                         data-plasmic-name={"names"}
                         data-plasmic-override={overrides.names}
-                        className={classNames(projectcss.all, sty.names)}
+                        className={classNames("all", sty.names)}
                       >
                         <div
                           data-plasmic-name={"guestName"}
                           data-plasmic-override={overrides.guestName}
                           className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
+                            "all",
+                            "__wab_text",
                             sty.guestName
                           )}
                         >
@@ -548,16 +539,16 @@ function PlasmicContactsNeo__RenderFunc(props: {
                       <div
                         data-plasmic-name={"phones"}
                         data-plasmic-override={overrides.phones}
-                        className={classNames(projectcss.all, sty.phones)}
+                        className={classNames("all", sty.phones)}
                       >
                         <PlasmicLink__
                           data-plasmic-name={"guestPhone"}
                           data-plasmic-override={overrides.guestPhone}
                           className={classNames(
-                            projectcss.all,
-                            projectcss.a,
-                            projectcss.a__7SNMk,
-                            projectcss.__wab_text,
+                            "all",
+                            "a",
+                            "a__7SNMk",
+                            "__wab_text",
                             sty.guestPhone
                           )}
                           component={Link}
@@ -619,11 +610,7 @@ function PlasmicContactsNeo__RenderFunc(props: {
               }
             })() ? (
               <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text___0KgVk
-                )}
+                className={classNames("all", "__wab_text", sty.text___0KgVk)}
               >
                 {
                   "\u0647\u0646\u0648\u0632 \u0647\u06cc\u0686 \u0634\u0645\u0627\u0631\u0647 \u0645\u0633\u0627\u0641\u0631\u06cc \u062b\u0628\u062a \u0646\u06a9\u0631\u062f\u06cc"
@@ -765,11 +752,11 @@ function PlasmicContactsNeo__RenderFunc(props: {
             }}
           />
 
-          <div className={classNames(projectcss.all, sty.freeBox__wrskK)}>
+          <div className={classNames("all", sty.freeBox__wrskK)}>
             <div
               className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
+                "all",
+                "__wab_text",
                 sty.text__lqo9R,
                 "fadein"
               )}
@@ -780,7 +767,7 @@ function PlasmicContactsNeo__RenderFunc(props: {
             </div>
           </div>
           {(hasVariant(globalVariants, "screen", "mobile") ? true : false) ? (
-            <div className={classNames(projectcss.all, sty.freeBox__vBo1D)}>
+            <div className={classNames("all", sty.freeBox__vBo1D)}>
               <ClarityRntComponent
                 data-plasmic-name={"clarityRntComponent"}
                 data-plasmic-override={overrides.clarityRntComponent}

@@ -72,7 +72,6 @@ import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-impor
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicSupport.module.css"; // plasmic-import: _jWDmDgs08t7/css
 
 import Icon99Icon from "./icons/PlasmicIcon__Icon99"; // plasmic-import: 6B_Ilcn7d77Z/icon
@@ -300,17 +299,17 @@ function PlasmicSupport__RenderFunc(props: {
         }
       `}</style>
 
-      <div className={projectcss.plasmic_page_wrapper}>
+      <div className={"plasmic_page_wrapper"}>
         <div
           data-plasmic-name={"root"}
           data-plasmic-override={overrides.root}
           data-plasmic-root={true}
           data-plasmic-for-node={forNode}
           className={classNames(
-            projectcss.all,
-            projectcss.root_reset,
-            projectcss.plasmic_default_styles,
-            projectcss.plasmic_mixins,
+            "all",
+            "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+            "plasmic_default_styles",
+            "plasmic_mixins",
             styleTokensClassNames,
             sty.root
           )}
@@ -318,9 +317,9 @@ function PlasmicSupport__RenderFunc(props: {
           <div
             data-plasmic-name={"header"}
             data-plasmic-override={overrides.header}
-            className={classNames(projectcss.all, sty.header)}
+            className={classNames("all", sty.header)}
           >
-            <div className={classNames(projectcss.all, sty.freeBox__fil3J)}>
+            <div className={classNames("all", sty.freeBox__fil3J)}>
               <SideBar2
                 data-plasmic-name={"sideBar2"}
                 data-plasmic-override={overrides.sideBar2}
@@ -343,11 +342,11 @@ function PlasmicSupport__RenderFunc(props: {
                 })()}
               />
             </div>
-            <div className={classNames(projectcss.all, sty.freeBox__maJ5L)}>
+            <div className={classNames("all", sty.freeBox__maJ5L)}>
               <div
                 className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
+                  "all",
+                  "__wab_text",
                   sty.text__fyrea,
                   "fadeinf"
                 )}
@@ -389,22 +388,22 @@ function PlasmicSupport__RenderFunc(props: {
           <div
             data-plasmic-name={"mainContents"}
             data-plasmic-override={overrides.mainContents}
-            className={classNames(projectcss.all, sty.mainContents)}
+            className={classNames("all", sty.mainContents)}
           >
             <div
               data-plasmic-name={"introduction"}
               data-plasmic-override={overrides.introduction}
-              className={classNames(projectcss.all, sty.introduction)}
+              className={classNames("all", sty.introduction)}
             >
               <div
                 data-plasmic-name={"teamImage2"}
                 data-plasmic-override={overrides.teamImage2}
-                className={classNames(projectcss.all, sty.teamImage2)}
+                className={classNames("all", sty.teamImage2)}
               >
                 <div
                   data-plasmic-name={"introCalendarLeft2"}
                   data-plasmic-override={overrides.introCalendarLeft2}
-                  className={classNames(projectcss.all, sty.introCalendarLeft2)}
+                  className={classNames("all", sty.introCalendarLeft2)}
                 >
                   <PlasmicImg__
                     alt={""}
@@ -429,13 +428,11 @@ function PlasmicSupport__RenderFunc(props: {
                     }}
                   />
 
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__rLgi9)}
-                  >
+                  <div className={classNames("all", sty.freeBox__rLgi9)}>
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text__jmi7A
                       )}
                     >
@@ -446,13 +443,7 @@ function PlasmicSupport__RenderFunc(props: {
                   </div>
                 </div>
               </div>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__edH9K
-                )}
-              >
+              <div className={classNames("all", "__wab_text", sty.text__edH9K)}>
                 {
                   "\u0645\u0627 \u0627\u06cc\u0646\u062c\u0627 \u0647\u0633\u062a\u06cc\u0645 \u062a\u0627 \u0628\u0647 \u0634\u0645\u0627 \u0645\u06cc\u0632\u0628\u0627\u0646 \u0639\u0632\u06cc\u0632 \u06a9\u0645\u06a9 \u06a9\u0646\u06cc\u0645 \u062a\u062c\u0631\u0628\u0647\u200c\u0627\u06cc \u0628\u06cc\u200c\u062f\u0631\u062f\u0633\u0631 \u062f\u0631 \u0645\u062f\u06cc\u0631\u06cc\u062a \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0627\u0634\u062a\u0647 \u0628\u0627\u0634\u06cc \u0648 \u0628\u0647\u200c\u0631\u0627\u062d\u062a\u06cc \u0628\u0627 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u062a\u0639\u0627\u0645\u0644 \u06a9\u0646\u06cc. \u0645\u0648\u0642\u0639 \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u0645\u06cc\u0627\u0646\u060c \u0647\u0631 \u062c\u0627 \u0633\u0648\u0627\u0644 \u0648 \u06cc\u0627 \u0627\u0628\u0647\u0627\u0645\u06cc \u062f\u0627\u0634\u062a\u06cc\u060c \u06a9\u0627\u0641\u06cc\u0647 \u0628\u0647 \u0645\u0627 \u067e\u06cc\u0627\u0645 \u0628\u062f\u06cc :)"
                 }
@@ -461,49 +452,33 @@ function PlasmicSupport__RenderFunc(props: {
             <div
               data-plasmic-name={"accessWays"}
               data-plasmic-override={overrides.accessWays}
-              className={classNames(projectcss.all, sty.accessWays)}
+              className={classNames("all", sty.accessWays)}
             >
-              <div
-                className={classNames(
-                  projectcss.all,
-                  sty.freeBox__yjk5I,
-                  "fadein"
-                )}
-              >
+              <div className={classNames("all", sty.freeBox__yjk5I, "fadein")}>
                 <div
                   data-plasmic-name={"sectionTitle"}
                   data-plasmic-override={overrides.sectionTitle}
-                  className={classNames(projectcss.all, sty.sectionTitle)}
+                  className={classNames("all", sty.sectionTitle)}
                 >
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__nIXpV
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__nIXpV)}
                   >
                     {
                       "\u0631\u0627\u0647\u200c\u0647\u0627\u06cc \u062f\u0633\u062a\u0631\u0633\u06cc \u0628\u0647 \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc \u00ab\u0645\u06cc\u0627\u0646\u00bb"
                     }
                   </div>
                 </div>
-                <div className={classNames(projectcss.all, sty.freeBox__tt6Mw)}>
+                <div className={classNames("all", sty.freeBox__tt6Mw)}>
                   <div
                     data-plasmic-name={"ways"}
                     data-plasmic-override={overrides.ways}
-                    className={classNames(projectcss.all, sty.ways)}
+                    className={classNames("all", sty.ways)}
                   >
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__ryaQa)}
-                    >
+                    <div className={classNames("all", sty.freeBox__ryaQa)}>
                       <div
                         data-plasmic-name={"contact6"}
                         data-plasmic-override={overrides.contact6}
-                        className={classNames(
-                          projectcss.all,
-                          sty.contact6,
-                          "clickable"
-                        )}
+                        className={classNames("all", sty.contact6, "clickable")}
                         onClick={async event => {
                           const $steps = {};
 
@@ -533,7 +508,7 @@ function PlasmicSupport__RenderFunc(props: {
                         <div
                           data-plasmic-name={"icon6"}
                           data-plasmic-override={overrides.icon6}
-                          className={classNames(projectcss.all, sty.icon6)}
+                          className={classNames("all", sty.icon6)}
                         >
                           <PlasmicImg__
                             alt={""}
@@ -556,12 +531,12 @@ function PlasmicSupport__RenderFunc(props: {
                         <div
                           data-plasmic-name={"title6"}
                           data-plasmic-override={overrides.title6}
-                          className={classNames(projectcss.all, sty.title6)}
+                          className={classNames("all", sty.title6)}
                         >
                           <div
                             className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
+                              "all",
+                              "__wab_text",
                               sty.text__mtUqr
                             )}
                             onClick={async event => {
@@ -613,12 +588,12 @@ function PlasmicSupport__RenderFunc(props: {
                         <div
                           data-plasmic-name={"caption6"}
                           data-plasmic-override={overrides.caption6}
-                          className={classNames(projectcss.all, sty.caption6)}
+                          className={classNames("all", sty.caption6)}
                         >
                           <div
                             className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
+                              "all",
+                              "__wab_text",
                               sty.text__r5HTk
                             )}
                           >
@@ -632,16 +607,12 @@ function PlasmicSupport__RenderFunc(props: {
                     <div
                       data-plasmic-name={"chat"}
                       data-plasmic-override={overrides.chat}
-                      className={classNames(projectcss.all, sty.chat)}
+                      className={classNames("all", sty.chat)}
                     >
                       <div
                         data-plasmic-name={"nimChat2"}
                         data-plasmic-override={overrides.nimChat2}
-                        className={classNames(
-                          projectcss.all,
-                          sty.nimChat2,
-                          "clickable"
-                        )}
+                        className={classNames("all", sty.nimChat2, "clickable")}
                         onClick={async event => {
                           const $steps = {};
 
@@ -672,25 +643,22 @@ function PlasmicSupport__RenderFunc(props: {
                         <div
                           data-plasmic-name={"icon10"}
                           data-plasmic-override={overrides.icon10}
-                          className={classNames(projectcss.all, sty.icon10)}
+                          className={classNames("all", sty.icon10)}
                         >
                           <Icon99Icon
-                            className={classNames(
-                              projectcss.all,
-                              sty.svg__m8Afc
-                            )}
+                            className={classNames("all", sty.svg__m8Afc)}
                             role={"img"}
                           />
                         </div>
                         <div
                           data-plasmic-name={"title10"}
                           data-plasmic-override={overrides.title10}
-                          className={classNames(projectcss.all, sty.title10)}
+                          className={classNames("all", sty.title10)}
                         >
                           <div
                             className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
+                              "all",
+                              "__wab_text",
                               sty.text___5Uugk
                             )}
                             onClick={async event => {
@@ -742,12 +710,12 @@ function PlasmicSupport__RenderFunc(props: {
                         <div
                           data-plasmic-name={"caption10"}
                           data-plasmic-override={overrides.caption10}
-                          className={classNames(projectcss.all, sty.caption10)}
+                          className={classNames("all", sty.caption10)}
                         >
                           <div
                             className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
+                              "all",
+                              "__wab_text",
                               sty.text__thdzA
                             )}
                           >
@@ -756,17 +724,11 @@ function PlasmicSupport__RenderFunc(props: {
                         </div>
                       </div>
                     </div>
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__zZfjf)}
-                    >
+                    <div className={classNames("all", sty.freeBox__zZfjf)}>
                       <div
                         data-plasmic-name={"whatsapp"}
                         data-plasmic-override={overrides.whatsapp}
-                        className={classNames(
-                          projectcss.all,
-                          sty.whatsapp,
-                          "clickable"
-                        )}
+                        className={classNames("all", sty.whatsapp, "clickable")}
                         onClick={async event => {
                           const $steps = {};
 
@@ -799,7 +761,7 @@ function PlasmicSupport__RenderFunc(props: {
                         <div
                           data-plasmic-name={"icon7"}
                           data-plasmic-override={overrides.icon7}
-                          className={classNames(projectcss.all, sty.icon7)}
+                          className={classNames("all", sty.icon7)}
                         >
                           <PlasmicImg__
                             alt={""}
@@ -826,12 +788,12 @@ function PlasmicSupport__RenderFunc(props: {
                         <div
                           data-plasmic-name={"title7"}
                           data-plasmic-override={overrides.title7}
-                          className={classNames(projectcss.all, sty.title7)}
+                          className={classNames("all", sty.title7)}
                         >
                           <div
                             className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
+                              "all",
+                              "__wab_text",
                               sty.text__yenud
                             )}
                             onClick={async event => {
@@ -880,17 +842,11 @@ function PlasmicSupport__RenderFunc(props: {
                         </div>
                       </div>
                     </div>
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__a5Scl)}
-                    >
+                    <div className={classNames("all", sty.freeBox__a5Scl)}>
                       <div
                         data-plasmic-name={"telegram"}
                         data-plasmic-override={overrides.telegram}
-                        className={classNames(
-                          projectcss.all,
-                          sty.telegram,
-                          "clickable"
-                        )}
+                        className={classNames("all", sty.telegram, "clickable")}
                         onClick={async event => {
                           const $steps = {};
 
@@ -923,7 +879,7 @@ function PlasmicSupport__RenderFunc(props: {
                         <div
                           data-plasmic-name={"icon8"}
                           data-plasmic-override={overrides.icon8}
-                          className={classNames(projectcss.all, sty.icon8)}
+                          className={classNames("all", sty.icon8)}
                         >
                           <PlasmicImg__
                             alt={""}
@@ -950,12 +906,12 @@ function PlasmicSupport__RenderFunc(props: {
                         <div
                           data-plasmic-name={"title8"}
                           data-plasmic-override={overrides.title8}
-                          className={classNames(projectcss.all, sty.title8)}
+                          className={classNames("all", sty.title8)}
                         >
                           <div
                             className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
+                              "all",
+                              "__wab_text",
                               sty.text__rv0Au
                             )}
                             onClick={async event => {
@@ -1004,17 +960,11 @@ function PlasmicSupport__RenderFunc(props: {
                         </div>
                       </div>
                     </div>
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__rcAYr)}
-                    >
+                    <div className={classNames("all", sty.freeBox__rcAYr)}>
                       <div
                         data-plasmic-name={"bale"}
                         data-plasmic-override={overrides.bale}
-                        className={classNames(
-                          projectcss.all,
-                          sty.bale,
-                          "clickable"
-                        )}
+                        className={classNames("all", sty.bale, "clickable")}
                         onClick={async event => {
                           const $steps = {};
 
@@ -1045,7 +995,7 @@ function PlasmicSupport__RenderFunc(props: {
                         <div
                           data-plasmic-name={"icon9"}
                           data-plasmic-override={overrides.icon9}
-                          className={classNames(projectcss.all, sty.icon9)}
+                          className={classNames("all", sty.icon9)}
                         >
                           <PlasmicImg__
                             alt={""}
@@ -1068,12 +1018,12 @@ function PlasmicSupport__RenderFunc(props: {
                         <div
                           data-plasmic-name={"title9"}
                           data-plasmic-override={overrides.title9}
-                          className={classNames(projectcss.all, sty.title9)}
+                          className={classNames("all", sty.title9)}
                         >
                           <div
                             className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
+                              "all",
+                              "__wab_text",
                               sty.text___3Ygg3
                             )}
                             onClick={async event => {
@@ -1122,14 +1072,12 @@ function PlasmicSupport__RenderFunc(props: {
                         </div>
                       </div>
                     </div>
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__cdAo)}
-                    >
+                    <div className={classNames("all", sty.freeBox__cdAo)}>
                       <div
                         data-plasmic-name={"infoEmail"}
                         data-plasmic-override={overrides.infoEmail}
                         className={classNames(
-                          projectcss.all,
+                          "all",
                           sty.infoEmail,
                           "clickable"
                         )}
@@ -1165,25 +1113,22 @@ function PlasmicSupport__RenderFunc(props: {
                         <div
                           data-plasmic-name={"icon11"}
                           data-plasmic-override={overrides.icon11}
-                          className={classNames(projectcss.all, sty.icon11)}
+                          className={classNames("all", sty.icon11)}
                         >
                           <Icon28Icon
-                            className={classNames(
-                              projectcss.all,
-                              sty.svg__eXlOd
-                            )}
+                            className={classNames("all", sty.svg__eXlOd)}
                             role={"img"}
                           />
                         </div>
                         <div
                           data-plasmic-name={"title11"}
                           data-plasmic-override={overrides.title11}
-                          className={classNames(projectcss.all, sty.title11)}
+                          className={classNames("all", sty.title11)}
                         >
                           <div
                             className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
+                              "all",
+                              "__wab_text",
                               sty.text__or6Za
                             )}
                             onClick={async event => {
@@ -1233,12 +1178,12 @@ function PlasmicSupport__RenderFunc(props: {
                         <div
                           data-plasmic-name={"caption11"}
                           data-plasmic-override={overrides.caption11}
-                          className={classNames(projectcss.all, sty.caption11)}
+                          className={classNames("all", sty.caption11)}
                         >
                           <div
                             className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
+                              "all",
+                              "__wab_text",
                               sty.text__rxk2A
                             )}
                           >
@@ -1252,14 +1197,10 @@ function PlasmicSupport__RenderFunc(props: {
                 <div
                   data-plasmic-name={"sectionTitle2"}
                   data-plasmic-override={overrides.sectionTitle2}
-                  className={classNames(projectcss.all, sty.sectionTitle2)}
+                  className={classNames("all", sty.sectionTitle2)}
                 >
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__jqKIv
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__jqKIv)}
                   >
                     {hasVariant(globalVariants, "screen", "smallMobile")
                       ? "\u067e\u0627\u0633\u062e\u06af\u0648\u06cc\u06cc \u06f9 \u0627\u0644\u06cc \u06f1\u06f7 \u0631\u0648\u0632\u0647\u0627\u06cc \u063a\u06cc\u0631\u062a\u0639\u0637\u06cc\u0644"
@@ -1273,7 +1214,7 @@ function PlasmicSupport__RenderFunc(props: {
             <div
               data-plasmic-name={"address"}
               data-plasmic-override={overrides.address}
-              className={classNames(projectcss.all, sty.address)}
+              className={classNames("all", sty.address)}
             >
               <MiaanAddress
                 data-plasmic-name={"miaanAddress"}
@@ -1285,7 +1226,7 @@ function PlasmicSupport__RenderFunc(props: {
           <div
             data-plasmic-name={"html"}
             data-plasmic-override={overrides.html}
-            className={classNames(projectcss.all, sty.html)}
+            className={classNames("all", sty.html)}
           >
             <FaviconRntComponent
               data-plasmic-name={"faviconRntComponent"}

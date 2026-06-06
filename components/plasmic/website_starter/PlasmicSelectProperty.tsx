@@ -68,7 +68,6 @@ import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-impor
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicSelectProperty.module.css"; // plasmic-import: 3WANQH2QE7qG/css
 
 const emptyProxy: any = new Proxy(() => "", {
@@ -254,17 +253,17 @@ function PlasmicSelectProperty__RenderFunc(props: {
         }
       `}</style>
 
-      <div className={projectcss.plasmic_page_wrapper}>
+      <div className={"plasmic_page_wrapper"}>
         <div
           data-plasmic-name={"root"}
           data-plasmic-override={overrides.root}
           data-plasmic-root={true}
           data-plasmic-for-node={forNode}
           className={classNames(
-            projectcss.all,
-            projectcss.root_reset,
-            projectcss.plasmic_default_styles,
-            projectcss.plasmic_mixins,
+            "all",
+            "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+            "plasmic_default_styles",
+            "plasmic_mixins",
             styleTokensClassNames,
             sty.root
           )}
@@ -272,16 +271,12 @@ function PlasmicSelectProperty__RenderFunc(props: {
           <div
             data-plasmic-name={"main"}
             data-plasmic-override={overrides.main}
-            className={classNames(projectcss.all, sty.main)}
+            className={classNames("all", sty.main)}
           >
-            <div className={classNames(projectcss.all, sty.freeBox__mbFo)}>
-              <div className={classNames(projectcss.all, sty.freeBox__g4NWg)}>
+            <div className={classNames("all", sty.freeBox__mbFo)}>
+              <div className={classNames("all", sty.freeBox__g4NWg)}>
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__hl4ZP
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__hl4ZP)}
                 >
                   {hasVariant(globalVariants, "screen", "mobile")
                     ? "\u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u06cc \u06a9\u0647 \u0628\u0627\u0628\u062a\u0634 \u0622\u06af\u0647\u06cc \u062f\u06cc\u0648\u0627\u0631 \u06af\u0630\u0627\u0634\u062a\u06cc\u062f \u0631\u0648 \u0627\u0632 \u0644\u06cc\u0633\u062a \u0632\u06cc\u0631 \u0627\u0646\u062a\u062e\u0627\u0628 \u06a9\u0646\u06cc\u062f"
@@ -320,7 +315,7 @@ function PlasmicSelectProperty__RenderFunc(props: {
                   "https://automation.miaan.ir/webhook/get-property-id-from-token"
                 }
               >
-                <div className={classNames(projectcss.all, sty.freeBox__uOhxY)}>
+                <div className={classNames("all", sty.freeBox__uOhxY)}>
                   <Select
                     data-plasmic-name={"selectProperty"}
                     data-plasmic-override={overrides.selectProperty}
@@ -357,8 +352,8 @@ function PlasmicSelectProperty__RenderFunc(props: {
                     placeholder={
                       <div
                         className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
+                          "all",
+                          "__wab_text",
                           sty.text__dtY2R
                         )}
                       >
@@ -372,9 +367,9 @@ function PlasmicSelectProperty__RenderFunc(props: {
                   />
                 </div>
               </ApiRequest>
-              <div className={classNames(projectcss.all, sty.freeBox__nDs68)}>
+              <div className={classNames("all", sty.freeBox__nDs68)}>
                 <div
-                  className={classNames(projectcss.all, sty.freeBox__uDjI6)}
+                  className={classNames("all", sty.freeBox__uDjI6)}
                   onClick={async event => {
                     const $steps = {};
 
@@ -461,7 +456,7 @@ function PlasmicSelectProperty__RenderFunc(props: {
                     }
                   />
                 </div>
-                <div className={classNames(projectcss.all, sty.freeBox__swQz)}>
+                <div className={classNames("all", sty.freeBox__swQz)}>
                   <Embed
                     className={classNames(
                       "__wab_instance",
@@ -474,14 +469,10 @@ function PlasmicSelectProperty__RenderFunc(props: {
                 </div>
               </div>
             </div>
-            <div className={classNames(projectcss.all, sty.freeBox__zxxOc)}>
-              <div className={classNames(projectcss.all, sty.freeBox__q5W0)}>
+            <div className={classNames("all", sty.freeBox__zxxOc)}>
+              <div className={classNames("all", sty.freeBox__q5W0)}>
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__cqfiG
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__cqfiG)}
                 >
                   {
                     "\u0631\u0648\u0632 \u0647\u0627\u06cc \u067e\u064f\u0631\u062a \u0631\u0648 \u0627\u0646\u062a\u062e\u0627\u0628 \u06a9\u0646:"
@@ -775,9 +766,9 @@ function PlasmicSelectProperty__RenderFunc(props: {
                 })()}
               />
 
-              <div className={classNames(projectcss.all, sty.freeBox__kMwNp)}>
+              <div className={classNames("all", sty.freeBox__kMwNp)}>
                 <div
-                  className={classNames(projectcss.all, sty.freeBox__if6Ec)}
+                  className={classNames("all", sty.freeBox__if6Ec)}
                   onClick={async event => {
                     const $steps = {};
 
@@ -837,7 +828,7 @@ function PlasmicSelectProperty__RenderFunc(props: {
                     }
                   />
                 </div>
-                <div className={classNames(projectcss.all, sty.freeBox__qvYhi)}>
+                <div className={classNames("all", sty.freeBox__qvYhi)}>
                   <Embed
                     className={classNames(
                       "__wab_instance",

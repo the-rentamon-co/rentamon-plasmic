@@ -65,7 +65,6 @@ import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-impor
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicMiaanFooter.module.css"; // plasmic-import: DSdlo5kdtbOe/css
 
 createPlasmicElementProxy;
@@ -146,22 +145,22 @@ function PlasmicMiaanFooter__RenderFunc(props: {
       data-plasmic-root={true}
       data-plasmic-for-node={forNode}
       className={classNames(
-        projectcss.all,
-        projectcss.root_reset,
-        projectcss.plasmic_default_styles,
-        projectcss.plasmic_mixins,
+        "all",
+        "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+        "plasmic_default_styles",
+        "plasmic_mixins",
         styleTokensClassNames,
         sty.footer
       )}
     >
-      <div className={classNames(projectcss.all, sty.freeBox__bbk5A)}>
+      <div className={classNames("all", sty.freeBox__bbk5A)}>
         <div
           data-plasmic-name={"mid"}
           data-plasmic-override={overrides.mid}
-          className={classNames(projectcss.all, sty.mid)}
+          className={classNames("all", sty.mid)}
         >
-          <div className={classNames(projectcss.all, sty.freeBox__bKwGn)}>
-            <div className={classNames(projectcss.all, sty.freeBox___8NVqX)}>
+          <div className={classNames("all", sty.freeBox__bKwGn)}>
+            <div className={classNames("all", sty.freeBox___8NVqX)}>
               <Embed
                 data-plasmic-name={"embedHtml"}
                 data-plasmic-override={overrides.embedHtml}
@@ -171,14 +170,8 @@ function PlasmicMiaanFooter__RenderFunc(props: {
                 }
               />
             </div>
-            <div className={classNames(projectcss.all, sty.freeBox__zeOcA)}>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__musna
-                )}
-              >
+            <div className={classNames("all", sty.freeBox__zeOcA)}>
+              <div className={classNames("all", "__wab_text", sty.text__musna)}>
                 {hasVariant(globalVariants, "screen", "mobile")
                   ? "\u0646\u0645\u0627\u062f \u0627\u0639\u062a\u0645\u0627\u062f \u062a\u062c\u0627\u0631\u062a \u0627\u0644\u06a9\u062a\u0631\u0648\u0646\u06cc\u06a9 (\u0627\u06cc\u0646\u0645\u0627\u062f)\r\n\r"
                   : hasVariant(globalVariants, "screen", "tablet")
@@ -187,8 +180,8 @@ function PlasmicMiaanFooter__RenderFunc(props: {
               </div>
             </div>
           </div>
-          <div className={classNames(projectcss.all, sty.freeBox___6NgD)}>
-            <div className={classNames(projectcss.all, sty.freeBox__kl8Ks)}>
+          <div className={classNames("all", sty.freeBox___6NgD)}>
+            <div className={classNames("all", sty.freeBox__kl8Ks)}>
               <PlasmicImg__
                 alt={""}
                 className={classNames(sty.img__fgjwb)}
@@ -213,22 +206,16 @@ function PlasmicMiaanFooter__RenderFunc(props: {
                 }}
               />
             </div>
-            <div className={classNames(projectcss.all, sty.freeBox__zpfjo)}>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__xral5
-                )}
-              >
+            <div className={classNames("all", sty.freeBox__zpfjo)}>
+              <div className={classNames("all", "__wab_text", sty.text__xral5)}>
                 {
                   "\u0639\u0636\u0648 \u067e\u0627\u0631\u06a9 \u0639\u0644\u0645 \u0648 \u0641\u0646\u0627\u0648\u0631\u06cc \u0627\u0633\u062a\u0627\u0646 \u0642\u0645"
                 }
               </div>
             </div>
           </div>
-          <div className={classNames(projectcss.all, sty.freeBox__wrGuV)}>
-            <div className={classNames(projectcss.all, sty.freeBox__nzeHy)}>
+          <div className={classNames("all", sty.freeBox__wrGuV)}>
+            <div className={classNames("all", sty.freeBox__nzeHy)}>
               <PlasmicImg__
                 alt={""}
                 className={classNames(sty.img__kSPbT)}
@@ -253,13 +240,9 @@ function PlasmicMiaanFooter__RenderFunc(props: {
                 }}
               />
             </div>
-            <div className={classNames(projectcss.all, sty.freeBox__s2BqG)}>
+            <div className={classNames("all", sty.freeBox__s2BqG)}>
               <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text___45Xuh
-                )}
+                className={classNames("all", "__wab_text", sty.text___45Xuh)}
               >
                 {
                   "\u067e\u0631\u062f\u0627\u062e\u062a \u0627\u0645\u0646 \u0628\u0627\u0646\u06a9\u06cc (\u0634\u0627\u067e\u0631\u06a9)"
@@ -272,16 +255,10 @@ function PlasmicMiaanFooter__RenderFunc(props: {
       <div
         data-plasmic-name={"_1st"}
         data-plasmic-override={overrides._1st}
-        className={classNames(projectcss.all, sty._1st)}
+        className={classNames("all", sty._1st)}
       >
-        <div className={classNames(projectcss.all, sty.freeBox___4Otdk)}>
-          <div
-            className={classNames(
-              projectcss.all,
-              projectcss.__wab_text,
-              sty.text__xugAr
-            )}
-          >
+        <div className={classNames("all", sty.freeBox___4Otdk)}>
+          <div className={classNames("all", "__wab_text", sty.text__xugAr)}>
             {
               "\u0645\u06cc\u0627\u0646 \u062f\u0631 \u0634\u0628\u06a9\u0647\u200c\u0647\u0627\u06cc \u0627\u062c\u062a\u0645\u0627\u0639\u06cc"
             }
@@ -291,12 +268,12 @@ function PlasmicMiaanFooter__RenderFunc(props: {
       <div
         data-plasmic-name={"top"}
         data-plasmic-override={overrides.top}
-        className={classNames(projectcss.all, sty.top)}
+        className={classNames("all", sty.top)}
       >
         <div
           data-plasmic-name={"bale"}
           data-plasmic-override={overrides.bale}
-          className={classNames(projectcss.all, sty.bale)}
+          className={classNames("all", sty.bale)}
           onClick={async event => {
             const $steps = {};
 
@@ -344,7 +321,7 @@ function PlasmicMiaanFooter__RenderFunc(props: {
         <div
           data-plasmic-name={"instagram"}
           data-plasmic-override={overrides.instagram}
-          className={classNames(projectcss.all, sty.instagram)}
+          className={classNames("all", sty.instagram)}
           onClick={async event => {
             const $steps = {};
 
@@ -394,7 +371,7 @@ function PlasmicMiaanFooter__RenderFunc(props: {
         <div
           data-plasmic-name={"twitter"}
           data-plasmic-override={overrides.twitter}
-          className={classNames(projectcss.all, sty.twitter)}
+          className={classNames("all", sty.twitter)}
           onClick={async event => {
             const $steps = {};
 
@@ -442,7 +419,7 @@ function PlasmicMiaanFooter__RenderFunc(props: {
         <div
           data-plasmic-name={"telegram"}
           data-plasmic-override={overrides.telegram}
-          className={classNames(projectcss.all, sty.telegram)}
+          className={classNames("all", sty.telegram)}
           onClick={async event => {
             const $steps = {};
 
@@ -491,16 +468,10 @@ function PlasmicMiaanFooter__RenderFunc(props: {
       <div
         data-plasmic-name={"but"}
         data-plasmic-override={overrides.but}
-        className={classNames(projectcss.all, sty.but)}
+        className={classNames("all", sty.but)}
       >
-        <div className={classNames(projectcss.all, sty.freeBox__hVQnd)}>
-          <div
-            className={classNames(
-              projectcss.all,
-              projectcss.__wab_text,
-              sty.text__cednT
-            )}
-          >
+        <div className={classNames("all", sty.freeBox__hVQnd)}>
+          <div className={classNames("all", "__wab_text", sty.text__cednT)}>
             <React.Fragment>
               <React.Fragment>
                 {
@@ -510,11 +481,11 @@ function PlasmicMiaanFooter__RenderFunc(props: {
               {
                 <PlasmicLink__
                   className={classNames(
-                    projectcss.all,
-                    projectcss.a,
-                    projectcss.a__7SNMk,
-                    projectcss.__wab_text,
-                    projectcss.plasmic_default__inline,
+                    "all",
+                    "a",
+                    "a__7SNMk",
+                    "__wab_text",
+                    "plasmic_default__inline",
                     sty.link__dLt1I
                   )}
                   component={Link}
@@ -558,35 +529,23 @@ function PlasmicMiaanFooter__RenderFunc(props: {
             </React.Fragment>
           </div>
         </div>
-        <div className={classNames(projectcss.all, sty.freeBox__js4R)}>
-          <div
-            className={classNames(
-              projectcss.all,
-              projectcss.__wab_text,
-              sty.text__gLJN
-            )}
-          >
+        <div className={classNames("all", sty.freeBox__js4R)}>
+          <div className={classNames("all", "__wab_text", sty.text__gLJN)}>
             {
               "\u0644\u06cc\u0646\u06a9\u200c\u0647\u0627\u06cc \u067e\u0631 \u06a9\u0627\u0631\u0628\u0631\u062f:\r"
             }
           </div>
-          <div
-            className={classNames(
-              projectcss.all,
-              projectcss.__wab_text,
-              sty.text__tJKbf
-            )}
-          >
+          <div className={classNames("all", "__wab_text", sty.text__tJKbf)}>
             <React.Fragment>
               <React.Fragment>{""}</React.Fragment>
               {
                 <PlasmicLink__
                   className={classNames(
-                    projectcss.all,
-                    projectcss.a,
-                    projectcss.a__7SNMk,
-                    projectcss.__wab_text,
-                    projectcss.plasmic_default__inline,
+                    "all",
+                    "a",
+                    "a__7SNMk",
+                    "__wab_text",
+                    "plasmic_default__inline",
                     sty.link__dOCjC
                   )}
                   component={Link}
@@ -621,11 +580,11 @@ function PlasmicMiaanFooter__RenderFunc(props: {
               {
                 <PlasmicLink__
                   className={classNames(
-                    projectcss.all,
-                    projectcss.a,
-                    projectcss.a__7SNMk,
-                    projectcss.__wab_text,
-                    projectcss.plasmic_default__inline,
+                    "all",
+                    "a",
+                    "a__7SNMk",
+                    "__wab_text",
+                    "plasmic_default__inline",
                     sty.link__xvVyt
                   )}
                   component={Link}
@@ -669,11 +628,11 @@ function PlasmicMiaanFooter__RenderFunc(props: {
               {
                 <PlasmicLink__
                   className={classNames(
-                    projectcss.all,
-                    projectcss.a,
-                    projectcss.a__7SNMk,
-                    projectcss.__wab_text,
-                    projectcss.plasmic_default__inline,
+                    "all",
+                    "a",
+                    "a__7SNMk",
+                    "__wab_text",
+                    "plasmic_default__inline",
                     sty.link__ddjit
                   )}
                   component={Link}
@@ -708,11 +667,11 @@ function PlasmicMiaanFooter__RenderFunc(props: {
               {
                 <PlasmicLink__
                   className={classNames(
-                    projectcss.all,
-                    projectcss.a,
-                    projectcss.a__7SNMk,
-                    projectcss.__wab_text,
-                    projectcss.plasmic_default__inline,
+                    "all",
+                    "a",
+                    "a__7SNMk",
+                    "__wab_text",
+                    "plasmic_default__inline",
                     sty.link___2L0X0
                   )}
                   component={Link}
@@ -738,14 +697,8 @@ function PlasmicMiaanFooter__RenderFunc(props: {
             </React.Fragment>
           </div>
         </div>
-        <div className={classNames(projectcss.all, sty.freeBox__rLfH4)}>
-          <div
-            className={classNames(
-              projectcss.all,
-              projectcss.__wab_text,
-              sty.text__zFLzn
-            )}
-          >
+        <div className={classNames("all", sty.freeBox__rLfH4)}>
+          <div className={classNames("all", "__wab_text", sty.text__zFLzn)}>
             {hasVariant(globalVariants, "screen", "smallMobile") ? (
               <React.Fragment>
                 <React.Fragment>
@@ -773,13 +726,7 @@ function PlasmicMiaanFooter__RenderFunc(props: {
               "\u06f0\u06f2\u06f1\u06f9\u06f1\u06f0\u06f9\u06f6\u06f2\u06f2\u06f7 \u0631\u0648\u0632\u0647\u0627\u06cc \u0627\u062f\u0627\u0631\u06cc \u0627\u0632 \u06f9 \u0627\u0644\u06cc \u06f1\u06f7\r"
             )}
           </div>
-          <div
-            className={classNames(
-              projectcss.all,
-              projectcss.__wab_text,
-              sty.text__cOA3
-            )}
-          >
+          <div className={classNames("all", "__wab_text", sty.text__cOA3)}>
             {hasVariant(globalVariants, "screen", "mobile")
               ? "info [@] miaan.ir\n\u0642\u0645\u060c \u067e\u0631\u062f\u06cc\u0633\u0627\u0646\u060c \u0628\u0644\u0648\u0627\u0631 \u0645\u0648\u0644\u0648\u06cc\u060c \u067e\u0627\u0631\u06a9 \u0639\u0644\u0645 \u0648 \u0641\u0646\u0627\u0648\u0631\u06cc \u0627\u0633\u062a\u0627\u0646 \u0642\u0645\u060c \u0628\u0644\u0648\u06a9 \u06f1\u060c\u200c \u0637\u0628\u0642\u0647 \u06f3\n\u0634\u0631\u06a9\u062a \u062a\u0648\u0633\u0639\u0647 \u0641\u0646\u0627\u0648\u0631\u06cc \u0648 \u062a\u0648\u0627\u0646\u0645\u0646\u062f\u0633\u0627\u0632\u06cc \u0634\u0631\u06cc\u0641"
               : hasVariant(globalVariants, "screen", "tablet")

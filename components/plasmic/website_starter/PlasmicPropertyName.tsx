@@ -69,7 +69,6 @@ import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-impor
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicPropertyName.module.css"; // plasmic-import: 35iXAFb28kzU/css
 
 createPlasmicElementProxy;
@@ -181,9 +180,9 @@ function PlasmicPropertyName__RenderFunc(props: {
       data-plasmic-for-node={forNode}
       className={classNames(
         "__wab_instance",
-        projectcss.root_reset,
-        projectcss.plasmic_default_styles,
-        projectcss.plasmic_mixins,
+        "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+        "plasmic_default_styles",
+        "plasmic_mixins",
         styleTokensClassNames,
         sty.root
       )}
@@ -255,18 +254,18 @@ function PlasmicPropertyName__RenderFunc(props: {
               <DataCtxReader__>
                 {$ctx => (
                   <div
-                    className={classNames(projectcss.all, sty.freeBox__zyRLp)}
+                    className={classNames("all", sty.freeBox__zyRLp)}
                     dir={"rtl"}
                   >
                     <div
                       data-plasmic-name={"columns"}
                       data-plasmic-override={overrides.columns}
-                      className={classNames(projectcss.all, sty.columns)}
+                      className={classNames("all", sty.columns)}
                     >
                       <div
                         data-plasmic-name={"column"}
                         data-plasmic-override={overrides.column}
-                        className={classNames(projectcss.all, sty.column)}
+                        className={classNames("all", sty.column)}
                       >
                         <Popover
                           data-plasmic-name={"fragmentPopover"}
@@ -277,10 +276,7 @@ function PlasmicPropertyName__RenderFunc(props: {
                           )}
                           content={
                             <div
-                              className={classNames(
-                                projectcss.all,
-                                sty.freeBox__xWr2Q
-                              )}
+                              className={classNames("all", sty.freeBox__xWr2Q)}
                             >
                               {(_par =>
                                 !_par
@@ -308,7 +304,7 @@ function PlasmicPropertyName__RenderFunc(props: {
                                 return (
                                   <div
                                     className={classNames(
-                                      projectcss.all,
+                                      "all",
                                       sty.freeBox__hUpT
                                     )}
                                     key={currentIndex}
@@ -360,8 +356,8 @@ function PlasmicPropertyName__RenderFunc(props: {
                                   >
                                     <div
                                       className={classNames(
-                                        projectcss.all,
-                                        projectcss.__wab_text,
+                                        "all",
+                                        "__wab_text",
                                         sty.text__vsvCd
                                       )}
                                       dir={"rtl"}
@@ -449,14 +445,11 @@ function PlasmicPropertyName__RenderFunc(props: {
                           }}
                           trigger={
                             <div
-                              className={classNames(
-                                projectcss.all,
-                                sty.freeBox__uiJtD
-                              )}
+                              className={classNames("all", sty.freeBox__uiJtD)}
                             >
                               <div
                                 className={classNames(
-                                  projectcss.all,
+                                  "all",
                                   sty.freeBox__dFaIx
                                 )}
                                 onClick={async event => {
@@ -506,8 +499,8 @@ function PlasmicPropertyName__RenderFunc(props: {
                               >
                                 <div
                                   className={classNames(
-                                    projectcss.all,
-                                    projectcss.__wab_text,
+                                    "all",
+                                    "__wab_text",
                                     sty.text__ieLs
                                   )}
                                   dir={"rtl"}
@@ -613,11 +606,7 @@ function PlasmicPropertyName__RenderFunc(props: {
                 className: classNames("__wab_instance", sty.collapse),
                 label2: (
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__sBmWv
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__sBmWv)}
                   >
                     <React.Fragment>
                       {(() => {
@@ -675,8 +664,8 @@ function PlasmicPropertyName__RenderFunc(props: {
                     return (
                       <div
                         className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
+                          "all",
+                          "__wab_text",
                           sty.text__hxVp8
                         )}
                         key={currentIndex}

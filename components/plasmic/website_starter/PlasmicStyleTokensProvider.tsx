@@ -12,13 +12,8 @@ import {
 
 import { _useGlobalVariants } from "./plasmic"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectModule
 
-import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
-
-import plasmic_antd_5_hostless_css from "../antd_5_hostless/plasmic.module.css"; // plasmic-import: ohDidvG9XsCeFumugENU3J/projectcss
-import plasmic_plasmic_rich_components_css from "../plasmic_rich_components/plasmic.module.css"; // plasmic-import: jkU633o1Cz7HrJdwdxhVHk/projectcss
-
 const data = {
-  base: `${projectcss.plasmic_tokens} ${plasmic_antd_5_hostless_css.plasmic_tokens} ${plasmic_plasmic_rich_components_css.plasmic_tokens}`,
+  base: `${"plasmic_tokens_7SNMkB8UMukVgcWJYokeAQ"} ${"plasmic_tokens_ohDidvG9XsCeFumugENU3J"} ${"plasmic_tokens_jkU633o1Cz7HrJdwdxhVHk"}`,
   varianted: []
 };
 
@@ -26,7 +21,7 @@ export const _useStyleTokens = createUseStyleTokens(data, _useGlobalVariants);
 
 export const StyleTokensProvider = createStyleTokensProvider(
   {
-    base: `${projectcss.plasmic_tokens_override} ${data.base}`,
+    base: `${"plasmic_tokens_override_7SNMkB8UMukVgcWJYokeAQ"} ${data.base}`,
     varianted: data.varianted
   },
   _useGlobalVariants

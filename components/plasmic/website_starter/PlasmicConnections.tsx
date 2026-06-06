@@ -73,7 +73,6 @@ import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-impor
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicConnections.module.css"; // plasmic-import: X6rxWka4Bgj1/css
 
 import Icon23Icon from "./icons/PlasmicIcon__Icon23"; // plasmic-import: TftNRT31euw0/icon
@@ -565,23 +564,23 @@ function PlasmicConnections__RenderFunc(props: {
         }
       `}</style>
 
-      <div className={projectcss.plasmic_page_wrapper}>
+      <div className={"plasmic_page_wrapper"}>
         <div
           data-plasmic-name={"root"}
           data-plasmic-override={overrides.root}
           data-plasmic-root={true}
           data-plasmic-for-node={forNode}
           className={classNames(
-            projectcss.all,
-            projectcss.root_reset,
-            projectcss.plasmic_default_styles,
-            projectcss.plasmic_mixins,
+            "all",
+            "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+            "plasmic_default_styles",
+            "plasmic_mixins",
             styleTokensClassNames,
             sty.root
           )}
         >
           <div
-            className={classNames(projectcss.all, sty.freeBox__rUp55)}
+            className={classNames("all", sty.freeBox__rUp55)}
             onClick={async event => {
               const $steps = {};
 
@@ -609,7 +608,7 @@ function PlasmicConnections__RenderFunc(props: {
             <Icon23Icon
               data-plasmic-name={"svg"}
               data-plasmic-override={overrides.svg}
-              className={classNames(projectcss.all, sty.svg)}
+              className={classNames("all", sty.svg)}
               onClick={async event => {
                 const $steps = {};
 
@@ -673,8 +672,8 @@ function PlasmicConnections__RenderFunc(props: {
               role={"img"}
             />
           </div>
-          <div className={classNames(projectcss.all, sty.freeBox__r1Dz)}>
-            <div className={classNames(projectcss.all, sty.freeBox___06Csm)}>
+          <div className={classNames("all", sty.freeBox__r1Dz)}>
+            <div className={classNames("all", sty.freeBox___06Csm)}>
               <PlasmicImg__
                 alt={""}
                 className={classNames(sty.img__sbaPk)}
@@ -701,7 +700,7 @@ function PlasmicConnections__RenderFunc(props: {
             data-plasmic-name={"connect"}
             data-plasmic-override={overrides.connect}
             className={classNames(
-              projectcss.all,
+              "all",
               sty.connect,
               hasVariant(globalVariants, "screen", "mobile")
                 ? "shadow"
@@ -766,7 +765,7 @@ function PlasmicConnections__RenderFunc(props: {
                   <div
                     data-plasmic-name={"jabama"}
                     data-plasmic-override={overrides.jabama}
-                    className={classNames(projectcss.all, sty.jabama)}
+                    className={classNames("all", sty.jabama)}
                   >
                     {(() => {
                       try {
@@ -787,16 +786,10 @@ function PlasmicConnections__RenderFunc(props: {
                         className={classNames("__wab_instance", sty.jabamaSend)}
                         label={
                           <div
-                            className={classNames(
-                              projectcss.all,
-                              sty.freeBox___8LG4D
-                            )}
+                            className={classNames("all", sty.freeBox___8LG4D)}
                           >
                             <div
-                              className={classNames(
-                                projectcss.all,
-                                sty.freeBox__mqhAz
-                              )}
+                              className={classNames("all", sty.freeBox__mqhAz)}
                             >
                               <PlasmicImg__
                                 alt={""}
@@ -831,15 +824,12 @@ function PlasmicConnections__RenderFunc(props: {
                               />
                             </div>
                             <div
-                              className={classNames(
-                                projectcss.all,
-                                sty.freeBox__ieXxf
-                              )}
+                              className={classNames("all", sty.freeBox__ieXxf)}
                             >
                               <div
                                 className={classNames(
-                                  projectcss.all,
-                                  projectcss.__wab_text,
+                                  "all",
+                                  "__wab_text",
                                   sty.text___3DpmI
                                 )}
                               >
@@ -862,8 +852,8 @@ function PlasmicConnections__RenderFunc(props: {
                               </div>
                               <div
                                 className={classNames(
-                                  projectcss.all,
-                                  projectcss.__wab_text,
+                                  "all",
+                                  "__wab_text",
                                   sty.text__fTfkX
                                 )}
                               >
@@ -887,10 +877,7 @@ function PlasmicConnections__RenderFunc(props: {
                         ]}
                       >
                         <div
-                          className={classNames(
-                            projectcss.all,
-                            sty.freeBox__eTpk2
-                          )}
+                          className={classNames("all", sty.freeBox__eTpk2)}
                         />
 
                         <Input
@@ -913,12 +900,7 @@ function PlasmicConnections__RenderFunc(props: {
                           ])}
                         />
 
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            sty.freeBox__g2Zhg
-                          )}
-                        >
+                        <div className={classNames("all", sty.freeBox__g2Zhg)}>
                           <AntdButton
                             data-plasmic-name={"jabamasend2"}
                             data-plasmic-override={overrides.jabamasend2}
@@ -1070,8 +1052,8 @@ function PlasmicConnections__RenderFunc(props: {
                           >
                             <div
                               className={classNames(
-                                projectcss.all,
-                                projectcss.__wab_text,
+                                "all",
+                                "__wab_text",
                                 sty.text___2FwI
                               )}
                             >
@@ -1150,8 +1132,8 @@ function PlasmicConnections__RenderFunc(props: {
                           >
                             <div
                               className={classNames(
-                                projectcss.all,
-                                projectcss.__wab_text,
+                                "all",
+                                "__wab_text",
                                 sty.text__hwggq
                               )}
                             >
@@ -1184,8 +1166,8 @@ function PlasmicConnections__RenderFunc(props: {
                         label={
                           <div
                             className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
+                              "all",
+                              "__wab_text",
                               sty.text__g7BNm
                             )}
                           >
@@ -1251,17 +1233,9 @@ function PlasmicConnections__RenderFunc(props: {
                             />
                           );
                         })()}
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            sty.freeBox__jJma1
-                          )}
-                        >
+                        <div className={classNames("all", sty.freeBox__jJma1)}>
                           <div
-                            className={classNames(
-                              projectcss.all,
-                              sty.freeBox__ilgzK
-                            )}
+                            className={classNames("all", sty.freeBox__ilgzK)}
                           >
                             <AntdButton
                               data-plasmic-name={"jabamaverify"}
@@ -1564,8 +1538,8 @@ function PlasmicConnections__RenderFunc(props: {
                             >
                               <div
                                 className={classNames(
-                                  projectcss.all,
-                                  projectcss.__wab_text,
+                                  "all",
+                                  "__wab_text",
                                   sty.text__dfcQp
                                 )}
                               >
@@ -1580,7 +1554,7 @@ function PlasmicConnections__RenderFunc(props: {
                   <div
                     data-plasmic-name={"jajiga"}
                     data-plasmic-override={overrides.jajiga}
-                    className={classNames(projectcss.all, sty.jajiga)}
+                    className={classNames("all", sty.jajiga)}
                   >
                     {(() => {
                       try {
@@ -1607,16 +1581,10 @@ function PlasmicConnections__RenderFunc(props: {
                         )}
                         label={
                           <div
-                            className={classNames(
-                              projectcss.all,
-                              sty.freeBox__evOtu
-                            )}
+                            className={classNames("all", sty.freeBox__evOtu)}
                           >
                             <div
-                              className={classNames(
-                                projectcss.all,
-                                sty.freeBox__eKxq
-                              )}
+                              className={classNames("all", sty.freeBox__eKxq)}
                             >
                               <PlasmicImg__
                                 alt={""}
@@ -1651,15 +1619,12 @@ function PlasmicConnections__RenderFunc(props: {
                               />
                             </div>
                             <div
-                              className={classNames(
-                                projectcss.all,
-                                sty.freeBox__aOzja
-                              )}
+                              className={classNames("all", sty.freeBox__aOzja)}
                             >
                               <div
                                 className={classNames(
-                                  projectcss.all,
-                                  projectcss.__wab_text,
+                                  "all",
+                                  "__wab_text",
                                   sty.text__zzuFq
                                 )}
                               >
@@ -1682,8 +1647,8 @@ function PlasmicConnections__RenderFunc(props: {
                               </div>
                               <div
                                 className={classNames(
-                                  projectcss.all,
-                                  projectcss.__wab_text,
+                                  "all",
+                                  "__wab_text",
                                   sty.text__qqGvc
                                 )}
                               >
@@ -1707,10 +1672,7 @@ function PlasmicConnections__RenderFunc(props: {
                         ]}
                       >
                         <div
-                          className={classNames(
-                            projectcss.all,
-                            sty.freeBox__uMsAr
-                          )}
+                          className={classNames("all", sty.freeBox__uMsAr)}
                         />
 
                         <Input
@@ -1733,12 +1695,7 @@ function PlasmicConnections__RenderFunc(props: {
                           ])}
                         />
 
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            sty.freeBox__xndOh
-                          )}
-                        >
+                        <div className={classNames("all", sty.freeBox__xndOh)}>
                           <AntdButton
                             data-plasmic-name={"jajigasend"}
                             data-plasmic-override={overrides.jajigasend}
@@ -1840,8 +1797,8 @@ function PlasmicConnections__RenderFunc(props: {
                           >
                             <div
                               className={classNames(
-                                projectcss.all,
-                                projectcss.__wab_text,
+                                "all",
+                                "__wab_text",
                                 sty.text__rRfLg
                               )}
                             >
@@ -1920,8 +1877,8 @@ function PlasmicConnections__RenderFunc(props: {
                           >
                             <div
                               className={classNames(
-                                projectcss.all,
-                                projectcss.__wab_text,
+                                "all",
+                                "__wab_text",
                                 sty.text__mu4Nk
                               )}
                             >
@@ -1954,8 +1911,8 @@ function PlasmicConnections__RenderFunc(props: {
                         label={
                           <div
                             className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
+                              "all",
+                              "__wab_text",
                               sty.text__nd8Qp
                             )}
                           >
@@ -2018,12 +1975,7 @@ function PlasmicConnections__RenderFunc(props: {
                             />
                           );
                         })()}
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            sty.freeBox__e5Bhm
-                          )}
-                        >
+                        <div className={classNames("all", sty.freeBox__e5Bhm)}>
                           <AntdButton
                             data-plasmic-name={"jajigaverify"}
                             data-plasmic-override={overrides.jajigaverify}
@@ -2255,8 +2207,8 @@ function PlasmicConnections__RenderFunc(props: {
                           >
                             <div
                               className={classNames(
-                                projectcss.all,
-                                projectcss.__wab_text,
+                                "all",
+                                "__wab_text",
                                 sty.text__sto5U
                               )}
                             >
@@ -2270,7 +2222,7 @@ function PlasmicConnections__RenderFunc(props: {
                   <div
                     data-plasmic-name={"snapp"}
                     data-plasmic-override={overrides.snapp}
-                    className={classNames(projectcss.all, sty.snapp)}
+                    className={classNames("all", sty.snapp)}
                   >
                     {(() => {
                       try {
@@ -2297,16 +2249,10 @@ function PlasmicConnections__RenderFunc(props: {
                         )}
                         label={
                           <div
-                            className={classNames(
-                              projectcss.all,
-                              sty.freeBox__yqXt7
-                            )}
+                            className={classNames("all", sty.freeBox__yqXt7)}
                           >
                             <div
-                              className={classNames(
-                                projectcss.all,
-                                sty.freeBox__y6G8J
-                              )}
+                              className={classNames("all", sty.freeBox__y6G8J)}
                             >
                               <PlasmicImg__
                                 alt={""}
@@ -2341,15 +2287,12 @@ function PlasmicConnections__RenderFunc(props: {
                               />
                             </div>
                             <div
-                              className={classNames(
-                                projectcss.all,
-                                sty.freeBox___1RizT
-                              )}
+                              className={classNames("all", sty.freeBox___1RizT)}
                             >
                               <div
                                 className={classNames(
-                                  projectcss.all,
-                                  projectcss.__wab_text,
+                                  "all",
+                                  "__wab_text",
                                   sty.text__dZ32L
                                 )}
                               >
@@ -2372,8 +2315,8 @@ function PlasmicConnections__RenderFunc(props: {
                               </div>
                               <div
                                 className={classNames(
-                                  projectcss.all,
-                                  projectcss.__wab_text,
+                                  "all",
+                                  "__wab_text",
                                   sty.text__bvtXs
                                 )}
                               >
@@ -2397,10 +2340,7 @@ function PlasmicConnections__RenderFunc(props: {
                         ]}
                       >
                         <div
-                          className={classNames(
-                            projectcss.all,
-                            sty.freeBox__h90OY
-                          )}
+                          className={classNames("all", sty.freeBox__h90OY)}
                         />
 
                         <Input
@@ -2423,12 +2363,7 @@ function PlasmicConnections__RenderFunc(props: {
                           ])}
                         />
 
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            sty.freeBox__rb6O
-                          )}
-                        >
+                        <div className={classNames("all", sty.freeBox__rb6O)}>
                           <AntdButton
                             data-plasmic-name={"snappsend"}
                             data-plasmic-override={overrides.snappsend}
@@ -2553,8 +2488,8 @@ function PlasmicConnections__RenderFunc(props: {
                           >
                             <div
                               className={classNames(
-                                projectcss.all,
-                                projectcss.__wab_text,
+                                "all",
+                                "__wab_text",
                                 sty.text__ync0B
                               )}
                             >
@@ -2633,8 +2568,8 @@ function PlasmicConnections__RenderFunc(props: {
                           >
                             <div
                               className={classNames(
-                                projectcss.all,
-                                projectcss.__wab_text,
+                                "all",
+                                "__wab_text",
                                 sty.text__gCh0T
                               )}
                             >
@@ -2667,8 +2602,8 @@ function PlasmicConnections__RenderFunc(props: {
                         label={
                           <div
                             className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
+                              "all",
+                              "__wab_text",
                               sty.text__mrfr2
                             )}
                           >
@@ -2731,12 +2666,7 @@ function PlasmicConnections__RenderFunc(props: {
                             />
                           );
                         })()}
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            sty.freeBox___0Go4
-                          )}
-                        >
+                        <div className={classNames("all", sty.freeBox___0Go4)}>
                           <AntdButton
                             data-plasmic-name={"snappverify"}
                             data-plasmic-override={overrides.snappverify}
@@ -2958,8 +2888,8 @@ function PlasmicConnections__RenderFunc(props: {
                           >
                             <div
                               className={classNames(
-                                projectcss.all,
-                                projectcss.__wab_text,
+                                "all",
+                                "__wab_text",
                                 sty.text__imyM
                               )}
                             >
@@ -2973,7 +2903,7 @@ function PlasmicConnections__RenderFunc(props: {
                   <div
                     data-plasmic-name={"shab"}
                     data-plasmic-override={overrides.shab}
-                    className={classNames(projectcss.all, sty.shab)}
+                    className={classNames("all", sty.shab)}
                   >
                     {(() => {
                       try {
@@ -2996,17 +2926,9 @@ function PlasmicConnections__RenderFunc(props: {
                         data-plasmic-override={overrides.shabSend}
                         className={classNames("__wab_instance", sty.shabSend)}
                         label={
-                          <div
-                            className={classNames(
-                              projectcss.all,
-                              sty.freeBox__ig9A
-                            )}
-                          >
+                          <div className={classNames("all", sty.freeBox__ig9A)}>
                             <div
-                              className={classNames(
-                                projectcss.all,
-                                sty.freeBox__qBaZ
-                              )}
+                              className={classNames("all", sty.freeBox__qBaZ)}
                             >
                               <PlasmicImg__
                                 alt={""}
@@ -3041,15 +2963,12 @@ function PlasmicConnections__RenderFunc(props: {
                               />
                             </div>
                             <div
-                              className={classNames(
-                                projectcss.all,
-                                sty.freeBox__cYoHm
-                              )}
+                              className={classNames("all", sty.freeBox__cYoHm)}
                             >
                               <div
                                 className={classNames(
-                                  projectcss.all,
-                                  projectcss.__wab_text,
+                                  "all",
+                                  "__wab_text",
                                   sty.text___1FI1U
                                 )}
                               >
@@ -3072,8 +2991,8 @@ function PlasmicConnections__RenderFunc(props: {
                               </div>
                               <div
                                 className={classNames(
-                                  projectcss.all,
-                                  projectcss.__wab_text,
+                                  "all",
+                                  "__wab_text",
                                   sty.text__xqVd5
                                 )}
                               >
@@ -3097,10 +3016,7 @@ function PlasmicConnections__RenderFunc(props: {
                         ]}
                       >
                         <div
-                          className={classNames(
-                            projectcss.all,
-                            sty.freeBox__aTdJd
-                          )}
+                          className={classNames("all", sty.freeBox__aTdJd)}
                         />
 
                         <Input
@@ -3123,12 +3039,7 @@ function PlasmicConnections__RenderFunc(props: {
                           ])}
                         />
 
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            sty.freeBox__h01Oz
-                          )}
-                        >
+                        <div className={classNames("all", sty.freeBox__h01Oz)}>
                           <AntdButton
                             data-plasmic-name={"shabSendButton"}
                             data-plasmic-override={overrides.shabSendButton}
@@ -3294,8 +3205,8 @@ function PlasmicConnections__RenderFunc(props: {
                           >
                             <div
                               className={classNames(
-                                projectcss.all,
-                                projectcss.__wab_text,
+                                "all",
+                                "__wab_text",
                                 sty.text___7SvYg
                               )}
                             >
@@ -3374,8 +3285,8 @@ function PlasmicConnections__RenderFunc(props: {
                           >
                             <div
                               className={classNames(
-                                projectcss.all,
-                                projectcss.__wab_text,
+                                "all",
+                                "__wab_text",
                                 sty.text__dMwUi
                               )}
                             >
@@ -3405,8 +3316,8 @@ function PlasmicConnections__RenderFunc(props: {
                         label={
                           <div
                             className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
+                              "all",
+                              "__wab_text",
                               sty.text__ynWSi
                             )}
                           >
@@ -3472,12 +3383,7 @@ function PlasmicConnections__RenderFunc(props: {
                             />
                           );
                         })()}
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            sty.freeBox__rmhyO
-                          )}
-                        >
+                        <div className={classNames("all", sty.freeBox__rmhyO)}>
                           <AntdButton
                             data-plasmic-name={"shabverify"}
                             data-plasmic-override={overrides.shabverify}
@@ -3815,8 +3721,8 @@ function PlasmicConnections__RenderFunc(props: {
                           >
                             <div
                               className={classNames(
-                                projectcss.all,
-                                projectcss.__wab_text,
+                                "all",
+                                "__wab_text",
                                 sty.text__eOw1L
                               )}
                             >
@@ -3830,7 +3736,7 @@ function PlasmicConnections__RenderFunc(props: {
                   <div
                     data-plasmic-name={"otaghak"}
                     data-plasmic-override={overrides.otaghak}
-                    className={classNames(projectcss.all, sty.otaghak)}
+                    className={classNames("all", sty.otaghak)}
                   >
                     {(() => {
                       try {
@@ -3854,16 +3760,10 @@ function PlasmicConnections__RenderFunc(props: {
                         )}
                         label={
                           <div
-                            className={classNames(
-                              projectcss.all,
-                              sty.freeBox__phep7
-                            )}
+                            className={classNames("all", sty.freeBox__phep7)}
                           >
                             <div
-                              className={classNames(
-                                projectcss.all,
-                                sty.freeBox__c3Imr
-                              )}
+                              className={classNames("all", sty.freeBox__c3Imr)}
                             >
                               <PlasmicImg__
                                 alt={""}
@@ -3898,15 +3798,12 @@ function PlasmicConnections__RenderFunc(props: {
                               />
                             </div>
                             <div
-                              className={classNames(
-                                projectcss.all,
-                                sty.freeBox__vdQim
-                              )}
+                              className={classNames("all", sty.freeBox__vdQim)}
                             >
                               <div
                                 className={classNames(
-                                  projectcss.all,
-                                  projectcss.__wab_text,
+                                  "all",
+                                  "__wab_text",
                                   sty.text__t0C1J
                                 )}
                               >
@@ -3929,8 +3826,8 @@ function PlasmicConnections__RenderFunc(props: {
                               </div>
                               <div
                                 className={classNames(
-                                  projectcss.all,
-                                  projectcss.__wab_text,
+                                  "all",
+                                  "__wab_text",
                                   sty.text__ewPm5
                                 )}
                               >
@@ -3958,10 +3855,7 @@ function PlasmicConnections__RenderFunc(props: {
                         ]}
                       >
                         <div
-                          className={classNames(
-                            projectcss.all,
-                            sty.freeBox__p63Lx
-                          )}
+                          className={classNames("all", sty.freeBox__p63Lx)}
                         />
 
                         <Input
@@ -3985,12 +3879,7 @@ function PlasmicConnections__RenderFunc(props: {
                           ])}
                         />
 
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            sty.freeBox__oe77W
-                          )}
-                        >
+                        <div className={classNames("all", sty.freeBox__oe77W)}>
                           <AntdButton
                             data-plasmic-name={"otaghaksend"}
                             data-plasmic-override={overrides.otaghaksend}
@@ -4093,8 +3982,8 @@ function PlasmicConnections__RenderFunc(props: {
                           >
                             <div
                               className={classNames(
-                                projectcss.all,
-                                projectcss.__wab_text,
+                                "all",
+                                "__wab_text",
                                 sty.text__zsykB
                               )}
                             >
@@ -4173,8 +4062,8 @@ function PlasmicConnections__RenderFunc(props: {
                           >
                             <div
                               className={classNames(
-                                projectcss.all,
-                                projectcss.__wab_text,
+                                "all",
+                                "__wab_text",
                                 sty.text__mXrku
                               )}
                             >
@@ -4207,8 +4096,8 @@ function PlasmicConnections__RenderFunc(props: {
                         label={
                           <div
                             className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
+                              "all",
+                              "__wab_text",
                               sty.text__gLgpq
                             )}
                           >
@@ -4274,12 +4163,7 @@ function PlasmicConnections__RenderFunc(props: {
                             />
                           );
                         })()}
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            sty.freeBox__yiWyj
-                          )}
-                        >
+                        <div className={classNames("all", sty.freeBox__yiWyj)}>
                           <AntdButton
                             data-plasmic-name={"otaghakverify"}
                             data-plasmic-override={overrides.otaghakverify}
@@ -4515,8 +4399,8 @@ function PlasmicConnections__RenderFunc(props: {
                           >
                             <div
                               className={classNames(
-                                projectcss.all,
-                                projectcss.__wab_text,
+                                "all",
+                                "__wab_text",
                                 sty.text__hz1A3
                               )}
                             >
@@ -4546,7 +4430,7 @@ function PlasmicConnections__RenderFunc(props: {
                     <div
                       data-plasmic-name={"mihmansho"}
                       data-plasmic-override={overrides.mihmansho}
-                      className={classNames(projectcss.all, sty.mihmansho)}
+                      className={classNames("all", sty.mihmansho)}
                     >
                       <FormItemWrapper
                         data-plasmic-name={"mihmanshoSend"}
@@ -4557,16 +4441,10 @@ function PlasmicConnections__RenderFunc(props: {
                         )}
                         label={
                           <div
-                            className={classNames(
-                              projectcss.all,
-                              sty.freeBox__wAwRc
-                            )}
+                            className={classNames("all", sty.freeBox__wAwRc)}
                           >
                             <div
-                              className={classNames(
-                                projectcss.all,
-                                sty.freeBox__eNbG
-                              )}
+                              className={classNames("all", sty.freeBox__eNbG)}
                             >
                               <PlasmicImg__
                                 alt={""}
@@ -4601,15 +4479,12 @@ function PlasmicConnections__RenderFunc(props: {
                               />
                             </div>
                             <div
-                              className={classNames(
-                                projectcss.all,
-                                sty.freeBox__rYl9H
-                              )}
+                              className={classNames("all", sty.freeBox__rYl9H)}
                             >
                               <div
                                 className={classNames(
-                                  projectcss.all,
-                                  projectcss.__wab_text,
+                                  "all",
+                                  "__wab_text",
                                   sty.text__sSwrm
                                 )}
                               >
@@ -4632,8 +4507,8 @@ function PlasmicConnections__RenderFunc(props: {
                               </div>
                               <div
                                 className={classNames(
-                                  projectcss.all,
-                                  projectcss.__wab_text,
+                                  "all",
+                                  "__wab_text",
                                   sty.text__i6JFy
                                 )}
                               >
@@ -4744,12 +4619,7 @@ function PlasmicConnections__RenderFunc(props: {
                             />
                           );
                         })()}
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            sty.freeBox__uXkCg
-                          )}
-                        >
+                        <div className={classNames("all", sty.freeBox__uXkCg)}>
                           <AntdButton
                             data-plasmic-name={"mihmanshosend"}
                             data-plasmic-override={overrides.mihmanshosend}
@@ -4849,8 +4719,8 @@ function PlasmicConnections__RenderFunc(props: {
                           >
                             <div
                               className={classNames(
-                                projectcss.all,
-                                projectcss.__wab_text,
+                                "all",
+                                "__wab_text",
                                 sty.text__czL2P
                               )}
                             >
@@ -4910,8 +4780,8 @@ function PlasmicConnections__RenderFunc(props: {
                           >
                             <div
                               className={classNames(
-                                projectcss.all,
-                                projectcss.__wab_text,
+                                "all",
+                                "__wab_text",
                                 sty.text__uiKj
                               )}
                             >
@@ -4941,8 +4811,8 @@ function PlasmicConnections__RenderFunc(props: {
                         label={
                           <div
                             className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
+                              "all",
+                              "__wab_text",
                               sty.text__pvZr9
                             )}
                           >
@@ -5014,12 +4884,7 @@ function PlasmicConnections__RenderFunc(props: {
                             />
                           );
                         })()}
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            sty.freeBox___2Jv4G
-                          )}
-                        >
+                        <div className={classNames("all", sty.freeBox___2Jv4G)}>
                           <AntdButton
                             data-plasmic-name={"mihmanshoVerify3"}
                             data-plasmic-override={overrides.mihmanshoVerify3}
@@ -5308,8 +5173,8 @@ function PlasmicConnections__RenderFunc(props: {
                           >
                             <div
                               className={classNames(
-                                projectcss.all,
-                                projectcss.__wab_text,
+                                "all",
+                                "__wab_text",
                                 sty.text__e8Swt
                               )}
                             >
@@ -5386,8 +5251,8 @@ function PlasmicConnections__RenderFunc(props: {
                           >
                             <div
                               className={classNames(
-                                projectcss.all,
-                                projectcss.__wab_text,
+                                "all",
+                                "__wab_text",
                                 sty.text___4KMmK
                               )}
                             >
@@ -5417,7 +5282,7 @@ function PlasmicConnections__RenderFunc(props: {
                     <div
                       data-plasmic-name={"homsa"}
                       data-plasmic-override={overrides.homsa}
-                      className={classNames(projectcss.all, sty.homsa)}
+                      className={classNames("all", sty.homsa)}
                     >
                       <FormItemWrapper
                         data-plasmic-name={"homsaSend"}
@@ -5425,16 +5290,10 @@ function PlasmicConnections__RenderFunc(props: {
                         className={classNames("__wab_instance", sty.homsaSend)}
                         label={
                           <div
-                            className={classNames(
-                              projectcss.all,
-                              sty.freeBox__x5GRo
-                            )}
+                            className={classNames("all", sty.freeBox__x5GRo)}
                           >
                             <div
-                              className={classNames(
-                                projectcss.all,
-                                sty.freeBox__dt87P
-                              )}
+                              className={classNames("all", sty.freeBox__dt87P)}
                             >
                               <PlasmicImg__
                                 alt={""}
@@ -5469,15 +5328,12 @@ function PlasmicConnections__RenderFunc(props: {
                               />
                             </div>
                             <div
-                              className={classNames(
-                                projectcss.all,
-                                sty.freeBox__eKcNc
-                              )}
+                              className={classNames("all", sty.freeBox__eKcNc)}
                             >
                               <div
                                 className={classNames(
-                                  projectcss.all,
-                                  projectcss.__wab_text,
+                                  "all",
+                                  "__wab_text",
                                   sty.text__hYqC
                                 )}
                               >
@@ -5500,8 +5356,8 @@ function PlasmicConnections__RenderFunc(props: {
                               </div>
                               <div
                                 className={classNames(
-                                  projectcss.all,
-                                  projectcss.__wab_text,
+                                  "all",
+                                  "__wab_text",
                                   sty.text__crIyh
                                 )}
                               >
@@ -5581,8 +5437,8 @@ function PlasmicConnections__RenderFunc(props: {
                         label={
                           <div
                             className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
+                              "all",
+                              "__wab_text",
                               sty.text__xFLwU
                             )}
                           >
@@ -5654,12 +5510,7 @@ function PlasmicConnections__RenderFunc(props: {
                             />
                           );
                         })()}
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            sty.freeBox__b1AiH
-                          )}
-                        >
+                        <div className={classNames("all", sty.freeBox__b1AiH)}>
                           <AntdButton
                             data-plasmic-name={"homsaVerify"}
                             data-plasmic-override={overrides.homsaVerify}
@@ -5814,8 +5665,8 @@ function PlasmicConnections__RenderFunc(props: {
                           >
                             <div
                               className={classNames(
-                                projectcss.all,
-                                projectcss.__wab_text,
+                                "all",
+                                "__wab_text",
                                 sty.text___4Um3T
                               )}
                             >
@@ -5892,8 +5743,8 @@ function PlasmicConnections__RenderFunc(props: {
                           >
                             <div
                               className={classNames(
-                                projectcss.all,
-                                projectcss.__wab_text,
+                                "all",
+                                "__wab_text",
                                 sty.text__kl42N
                               )}
                             >
@@ -6026,14 +5877,9 @@ function PlasmicConnections__RenderFunc(props: {
                     <div
                       data-plasmic-name={"security"}
                       data-plasmic-override={overrides.security}
-                      className={classNames(projectcss.all, sty.security)}
+                      className={classNames("all", sty.security)}
                     >
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          sty.freeBox__fPlz3
-                        )}
-                      >
+                      <div className={classNames("all", sty.freeBox__fPlz3)}>
                         <PlasmicImg__
                           alt={""}
                           className={classNames(sty.img__xOgIh)}
@@ -6054,8 +5900,8 @@ function PlasmicConnections__RenderFunc(props: {
 
                         <div
                           className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
+                            "all",
+                            "__wab_text",
                             sty.text__gAJi
                           )}
                         >
@@ -6141,22 +5987,14 @@ function PlasmicConnections__RenderFunc(props: {
               className={classNames("__wab_instance", sty.apiRequest)}
               errorDisplay={
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__wawK5
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__wawK5)}
                 >
                   {"Error fetching data"}
                 </div>
               }
               loadingDisplay={
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__nIwUv
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__nIwUv)}
                 >
                   {"Loading..."}
                 </div>
@@ -6185,23 +6023,11 @@ function PlasmicConnections__RenderFunc(props: {
               }}
               url={"https://nb.miaan.ir/webhook/connection-phone"}
             >
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__wtrKd
-                )}
-              >
+              <div className={classNames("all", "__wab_text", sty.text__wtrKd)}>
                 <React.Fragment>{undefined}</React.Fragment>
               </div>
             </ApiRequest>
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__zdlQi
-              )}
-            >
+            <div className={classNames("all", "__wab_text", sty.text__zdlQi)}>
               <React.Fragment>{undefined}</React.Fragment>
             </div>
           </div>
@@ -6209,15 +6035,11 @@ function PlasmicConnections__RenderFunc(props: {
             <div
               data-plasmic-name={"footer"}
               data-plasmic-override={overrides.footer}
-              className={classNames(projectcss.all, sty.footer)}
+              className={classNames("all", sty.footer)}
             >
-              <div className={classNames(projectcss.all, sty.freeBox__xnh1K)}>
+              <div className={classNames("all", sty.freeBox__xnh1K)}>
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__rDMy0
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__rDMy0)}
                 >
                   {hasVariant(globalVariants, "screen", "mobile")
                     ? "\u0634\u0631\u06a9\u062a \u062a\u0648\u0633\u0639\u0647 \u0641\u0646\u0627\u0648\u0631\u06cc \u0648 \u062a\u0648\u0627\u0646\u0645\u0646\u062f\u0633\u0627\u0632\u06cc \u0634\u0631\u06cc\u0641 (\u0645\u06cc\u0627\u0646)\n\u06f0\u06f2\u06f1\u06f9\u06f1\u06f0\u06f9\u06f6\u06f2\u06f2\u06f7  \u0631\u0648\u0632\u0647\u0627\u06cc \u0627\u062f\u0627\u0631\u06cc \u0627\u0632 \u06f9 \u0627\u0644\u06cc \u06f1\u06f7\r\n\r\n\u0642\u0645\u060c \u067e\u0631\u062f\u06cc\u0633\u0627\u0646\u060c \u0628\u0644\u0648\u0627\u0631 \u0645\u0648\u0644\u0648\u06cc\u060c \u067e\u0627\u0631\u06a9 \u0639\u0644\u0645 \u0648 \u0641\u0646\u0627\u0648\u0631\u06cc \u0627\u0633\u062a\u0627\u0646 \u0642\u0645\u060c \u0628\u0644\u0648\u06a9 \u06f1\u060c\u200c \u0637\u0628\u0642\u0647 \u06f3\r"

@@ -72,7 +72,6 @@ import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-impor
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicPlatformsProfile.module.css"; // plasmic-import: 3zHUjsxpYABR/css
 
 import CheckSvgIcon from "./icons/PlasmicIcon__CheckSvg"; // plasmic-import: aHRi_lZjzHt3/icon
@@ -249,17 +248,17 @@ function PlasmicPlatformsProfile__RenderFunc(props: {
         }
       `}</style>
 
-      <div className={projectcss.plasmic_page_wrapper}>
+      <div className={"plasmic_page_wrapper"}>
         <div
           data-plasmic-name={"platformsProfile"}
           data-plasmic-override={overrides.platformsProfile}
           data-plasmic-root={true}
           data-plasmic-for-node={forNode}
           className={classNames(
-            projectcss.all,
-            projectcss.root_reset,
-            projectcss.plasmic_default_styles,
-            projectcss.plasmic_mixins,
+            "all",
+            "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+            "plasmic_default_styles",
+            "plasmic_mixins",
             styleTokensClassNames,
             sty.platformsProfile
           )}
@@ -308,13 +307,9 @@ function PlasmicPlatformsProfile__RenderFunc(props: {
           >
             <DataCtxReader__>
               {$ctx => (
-                <div className={classNames(projectcss.all, sty.freeBox__s5BqJ)}>
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox___48ObF)}
-                  >
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__kl6Ov)}
-                    >
+                <div className={classNames("all", sty.freeBox__s5BqJ)}>
+                  <div className={classNames("all", sty.freeBox___48ObF)}>
+                    <div className={classNames("all", sty.freeBox__kl6Ov)}>
                       <PlasmicImg__
                         data-plasmic-name={"img"}
                         data-plasmic-override={overrides.img}
@@ -356,19 +351,12 @@ function PlasmicPlatformsProfile__RenderFunc(props: {
                         }
                       />
                     </div>
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__rwd8X)}
-                    >
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          sty.freeBox__nrqPr
-                        )}
-                      >
+                    <div className={classNames("all", sty.freeBox__rwd8X)}>
+                      <div className={classNames("all", sty.freeBox__nrqPr)}>
                         <div
                           className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
+                            "all",
+                            "__wab_text",
                             sty.text__qlNl
                           )}
                         >
@@ -391,8 +379,8 @@ function PlasmicPlatformsProfile__RenderFunc(props: {
                       </div>
                       <div
                         className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
+                          "all",
+                          "__wab_text",
                           sty.text__tEs0A
                         )}
                       >
@@ -414,8 +402,8 @@ function PlasmicPlatformsProfile__RenderFunc(props: {
                       </div>
                       <div
                         className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
+                          "all",
+                          "__wab_text",
                           sty.text__qOu1H
                         )}
                       >
@@ -450,13 +438,11 @@ function PlasmicPlatformsProfile__RenderFunc(props: {
                       </div>
                     </div>
                   </div>
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__hTDv)}
-                  >
+                  <div className={classNames("all", sty.freeBox__hTDv)}>
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text__tpdpv
                       )}
                     >
@@ -496,8 +482,8 @@ function PlasmicPlatformsProfile__RenderFunc(props: {
                     </div>
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text__iUwZu
                       )}
                     >
@@ -537,19 +523,12 @@ function PlasmicPlatformsProfile__RenderFunc(props: {
                         </React.Fragment>
                       )}
                     </div>
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__ljlIv)}
-                    >
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          sty.freeBox__pzWfc
-                        )}
-                      >
+                    <div className={classNames("all", sty.freeBox__ljlIv)}>
+                      <div className={classNames("all", sty.freeBox__pzWfc)}>
                         <div
                           className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
+                            "all",
+                            "__wab_text",
                             sty.text__ryyHn
                           )}
                         >
@@ -597,8 +576,8 @@ function PlasmicPlatformsProfile__RenderFunc(props: {
                         </div>
                         <div
                           className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
+                            "all",
+                            "__wab_text",
                             sty.text__zn1R8
                           )}
                         >
@@ -647,8 +626,8 @@ function PlasmicPlatformsProfile__RenderFunc(props: {
                         </div>
                         <div
                           className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
+                            "all",
+                            "__wab_text",
                             sty.text__gqy8E
                           )}
                         >
@@ -696,8 +675,8 @@ function PlasmicPlatformsProfile__RenderFunc(props: {
                         </div>
                         <div
                           className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
+                            "all",
+                            "__wab_text",
                             sty.text__kflBb
                           )}
                         >
@@ -745,8 +724,8 @@ function PlasmicPlatformsProfile__RenderFunc(props: {
                         </div>
                         <div
                           className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
+                            "all",
+                            "__wab_text",
                             sty.text___5KnYr
                           )}
                         >
@@ -800,8 +779,8 @@ function PlasmicPlatformsProfile__RenderFunc(props: {
                       ) ? (
                         <div
                           className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
+                            "all",
+                            "__wab_text",
                             sty.text__ors9
                           )}
                         >
@@ -851,9 +830,7 @@ function PlasmicPlatformsProfile__RenderFunc(props: {
                         </div>
                       ) : null}
                     </div>
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__jEvgr)}
-                    >
+                    <div className={classNames("all", sty.freeBox__jEvgr)}>
                       {(
                         hasVariant(globalVariants, "screen", "mobile")
                           ? true
@@ -861,8 +838,8 @@ function PlasmicPlatformsProfile__RenderFunc(props: {
                       ) ? (
                         <div
                           className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
+                            "all",
+                            "__wab_text",
                             sty.text__n8EfN
                           )}
                         >
@@ -884,13 +861,11 @@ function PlasmicPlatformsProfile__RenderFunc(props: {
                         </div>
                       ) : null}
                     </div>
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__uHhnV)}
-                    >
+                    <div className={classNames("all", sty.freeBox__uHhnV)}>
                       <div
                         className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
+                          "all",
+                          "__wab_text",
                           sty.text__cn8Pk
                         )}
                       >
@@ -915,8 +890,8 @@ function PlasmicPlatformsProfile__RenderFunc(props: {
                       </div>
                       <div
                         className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
+                          "all",
+                          "__wab_text",
                           sty.text__kuxpr
                         )}
                       >
@@ -938,16 +913,11 @@ function PlasmicPlatformsProfile__RenderFunc(props: {
                         </React.Fragment>
                       </div>
                     </div>
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        sty.freeBox___98Vvy
-                      )}
-                    >
+                    <div className={classNames("all", sty.freeBox___98Vvy)}>
                       <div
                         className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
+                          "all",
+                          "__wab_text",
                           sty.text__oJqiH
                         )}
                       >
@@ -972,8 +942,8 @@ function PlasmicPlatformsProfile__RenderFunc(props: {
                       </div>
                       <div
                         className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
+                          "all",
+                          "__wab_text",
                           sty.text__hquPd
                         )}
                       >
@@ -995,13 +965,11 @@ function PlasmicPlatformsProfile__RenderFunc(props: {
                         </React.Fragment>
                       </div>
                     </div>
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__o0Ow2)}
-                    >
+                    <div className={classNames("all", sty.freeBox__o0Ow2)}>
                       <div
                         className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
+                          "all",
+                          "__wab_text",
                           sty.text__tH3D1
                         )}
                       >
@@ -1026,8 +994,8 @@ function PlasmicPlatformsProfile__RenderFunc(props: {
                       </div>
                       <div
                         className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
+                          "all",
+                          "__wab_text",
                           sty.text__lEVj0
                         )}
                       >
@@ -1104,8 +1072,8 @@ function PlasmicPlatformsProfile__RenderFunc(props: {
                   >
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text__sTSed
                       )}
                     >
@@ -1135,13 +1103,11 @@ function PlasmicPlatformsProfile__RenderFunc(props: {
                       ? true
                       : false
                   ) ? (
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__yfkxN)}
-                    >
+                    <div className={classNames("all", sty.freeBox__yfkxN)}>
                       <div
                         className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
+                          "all",
+                          "__wab_text",
                           sty.text__w7GIp
                         )}
                       >
@@ -1187,8 +1153,8 @@ function PlasmicPlatformsProfile__RenderFunc(props: {
                       </div>
                       <div
                         className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
+                          "all",
+                          "__wab_text",
                           sty.text__m4Kud
                         )}
                       >
@@ -1287,8 +1253,8 @@ function PlasmicPlatformsProfile__RenderFunc(props: {
                       >
                         <div
                           className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
+                            "all",
+                            "__wab_text",
                             sty.text__kMUa4
                           )}
                         >
@@ -1318,12 +1284,12 @@ function PlasmicPlatformsProfile__RenderFunc(props: {
                   <div
                     data-plasmic-name={"survey"}
                     data-plasmic-override={overrides.survey}
-                    className={classNames(projectcss.all, sty.survey)}
+                    className={classNames("all", sty.survey)}
                   >
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text__oQdWn
                       )}
                     >
@@ -1349,8 +1315,8 @@ function PlasmicPlatformsProfile__RenderFunc(props: {
                     </div>
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text__ie4Fa
                       )}
                     >
@@ -1358,31 +1324,14 @@ function PlasmicPlatformsProfile__RenderFunc(props: {
                         ? "\u0628\u0627\u0632\u062e\u0648\u0631\u062f \u0634\u0645\u0627 \u0628\u0647 \u0627\u0646\u062a\u062e\u0627\u0628 \u0648 \u062a\u0635\u0645\u06cc\u0645\u200c\u06af\u06cc\u0631\u06cc \u0628\u0647\u062a\u0631 \u0633\u0627\u06cc\u0632 \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627 \u062f\u0631 \u0627\u0646\u062a\u062e\u0627\u0628 \u0634\u0631\u06cc\u06a9 \u06a9\u0633\u0628\u200c\u0648\u06a9\u0627\u0631\u0634\u0648\u0646 \u06a9\u0645\u06a9 \u0645\u06cc\u200c\u06a9\u0646\u0647."
                         : "\u0628\u0627\u0632\u062e\u0648\u0631\u062f \u0634\u0645\u0627 \u0628\u0647 \u062f\u06cc\u06af\u0631\u0627\u0646 \u06a9\u0645\u06a9 \u0645\u06cc\u200c\u06a9\u0646\u062f \u062a\u0627 \u0634\u0631\u06cc\u06a9 \u062e\u0648\u062f \u0631\u0627 \u0628\u0647\u062a\u0631 \u0627\u0646\u062a\u062e\u0627\u0628 \u06a9\u0646\u0646\u062f."}
                     </div>
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__laFLy)}
-                    >
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          sty.columns__spTc
-                        )}
-                      >
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            sty.column__xeiyb
-                          )}
-                        >
-                          <div
-                            className={classNames(
-                              projectcss.all,
-                              sty.freeBox__mAu
-                            )}
-                          >
+                    <div className={classNames("all", sty.freeBox__laFLy)}>
+                      <div className={classNames("all", sty.columns__spTc)}>
+                        <div className={classNames("all", sty.column__xeiyb)}>
+                          <div className={classNames("all", sty.freeBox__mAu)}>
                             <div
                               className={classNames(
-                                projectcss.all,
-                                projectcss.__wab_text,
+                                "all",
+                                "__wab_text",
                                 sty.text___9MYqx
                               )}
                             >
@@ -1392,12 +1341,7 @@ function PlasmicPlatformsProfile__RenderFunc(props: {
                             </div>
                           </div>
                         </div>
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            sty.column__eoPuj
-                          )}
-                        >
+                        <div className={classNames("all", sty.column__eoPuj)}>
                           <Select
                             data-plasmic-name={"supportAccess"}
                             data-plasmic-override={overrides.supportAccess}
@@ -1446,8 +1390,8 @@ function PlasmicPlatformsProfile__RenderFunc(props: {
                             placeholder={
                               <div
                                 className={classNames(
-                                  projectcss.all,
-                                  projectcss.__wab_text,
+                                  "all",
+                                  "__wab_text",
                                   sty.text__agVku
                                 )}
                               >
@@ -1463,28 +1407,15 @@ function PlasmicPlatformsProfile__RenderFunc(props: {
                           />
                         </div>
                       </div>
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          sty.columns__boBt
-                        )}
-                      >
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            sty.column__xmHdg
-                          )}
-                        >
+                      <div className={classNames("all", sty.columns__boBt)}>
+                        <div className={classNames("all", sty.column__xmHdg)}>
                           <div
-                            className={classNames(
-                              projectcss.all,
-                              sty.freeBox__yPopI
-                            )}
+                            className={classNames("all", sty.freeBox__yPopI)}
                           >
                             <div
                               className={classNames(
-                                projectcss.all,
-                                projectcss.__wab_text,
+                                "all",
+                                "__wab_text",
                                 sty.text__o3Stp
                               )}
                             >
@@ -1494,12 +1425,7 @@ function PlasmicPlatformsProfile__RenderFunc(props: {
                             </div>
                           </div>
                         </div>
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            sty.column__dCcIi
-                          )}
-                        >
+                        <div className={classNames("all", sty.column__dCcIi)}>
                           <Select
                             data-plasmic-name={"supportSpeed"}
                             data-plasmic-override={overrides.supportSpeed}
@@ -1548,8 +1474,8 @@ function PlasmicPlatformsProfile__RenderFunc(props: {
                             placeholder={
                               <div
                                 className={classNames(
-                                  projectcss.all,
-                                  projectcss.__wab_text,
+                                  "all",
+                                  "__wab_text",
                                   sty.text__qg9C6
                                 )}
                               >
@@ -1565,28 +1491,15 @@ function PlasmicPlatformsProfile__RenderFunc(props: {
                           />
                         </div>
                       </div>
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          sty.columns___710M2
-                        )}
-                      >
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            sty.column__qf1Xs
-                          )}
-                        >
+                      <div className={classNames("all", sty.columns___710M2)}>
+                        <div className={classNames("all", sty.column__qf1Xs)}>
                           <div
-                            className={classNames(
-                              projectcss.all,
-                              sty.freeBox__s2M2O
-                            )}
+                            className={classNames("all", sty.freeBox__s2M2O)}
                           >
                             <div
                               className={classNames(
-                                projectcss.all,
-                                projectcss.__wab_text,
+                                "all",
+                                "__wab_text",
                                 sty.text__tUj6E
                               )}
                             >
@@ -1596,12 +1509,7 @@ function PlasmicPlatformsProfile__RenderFunc(props: {
                             </div>
                           </div>
                         </div>
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            sty.column__fkUjV
-                          )}
-                        >
+                        <div className={classNames("all", sty.column__fkUjV)}>
                           <Select
                             data-plasmic-name={"supportJudgment"}
                             data-plasmic-override={overrides.supportJudgment}
@@ -1650,8 +1558,8 @@ function PlasmicPlatformsProfile__RenderFunc(props: {
                             placeholder={
                               <div
                                 className={classNames(
-                                  projectcss.all,
-                                  projectcss.__wab_text,
+                                  "all",
+                                  "__wab_text",
                                   sty.text__eud5R
                                 )}
                               >
@@ -1772,8 +1680,8 @@ function PlasmicPlatformsProfile__RenderFunc(props: {
                     >
                       <div
                         className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
+                          "all",
+                          "__wab_text",
                           sty.text__jm4Ux
                         )}
                       >
@@ -1784,7 +1692,7 @@ function PlasmicPlatformsProfile__RenderFunc(props: {
                     </Button>
                   </div>
                   <div
-                    className={classNames(projectcss.all, sty.freeBox__fjWbg)}
+                    className={classNames("all", sty.freeBox__fjWbg)}
                     onClick={async event => {
                       const $steps = {};
 
@@ -1832,8 +1740,8 @@ function PlasmicPlatformsProfile__RenderFunc(props: {
                   >
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text__rGlTw
                       )}
                     >
@@ -1856,12 +1764,12 @@ function PlasmicPlatformsProfile__RenderFunc(props: {
             </DataCtxReader__>
           </DataFetcher>
           {(hasVariant(globalVariants, "screen", "mobile") ? true : false) ? (
-            <div className={classNames(projectcss.all, sty.freeBox__cJr7H)} />
+            <div className={classNames("all", sty.freeBox__cJr7H)} />
           ) : null}
           {(hasVariant(globalVariants, "screen", "mobile") ? true : false) ? (
-            <div className={classNames(projectcss.all, sty.freeBox___1Jlei)} />
+            <div className={classNames("all", sty.freeBox___1Jlei)} />
           ) : null}
-          <div className={classNames(projectcss.all, sty.freeBox__woUao)}>
+          <div className={classNames("all", sty.freeBox__woUao)}>
             <ClarityRntComponent
               data-plasmic-name={"clarityRntComponent"}
               data-plasmic-override={overrides.clarityRntComponent}

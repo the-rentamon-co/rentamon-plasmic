@@ -69,7 +69,6 @@ import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-impor
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./Plasmicدستیارهوشمصنوعیرنتامون.module.css"; // plasmic-import: juphYAqvVhVp/css
 
 const emptyProxy: any = new Proxy(() => "", {
@@ -225,17 +224,17 @@ function Plasmicدستیارهوشمصنوعیرنتامون__RenderFunc(props: 
         }
       `}</style>
 
-      <div className={projectcss.plasmic_page_wrapper}>
+      <div className={"plasmic_page_wrapper"}>
         <div
           data-plasmic-name={"root"}
           data-plasmic-override={overrides.root}
           data-plasmic-root={true}
           data-plasmic-for-node={forNode}
           className={classNames(
-            projectcss.all,
-            projectcss.root_reset,
-            projectcss.plasmic_default_styles,
-            projectcss.plasmic_mixins,
+            "all",
+            "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+            "plasmic_default_styles",
+            "plasmic_mixins",
             styleTokensClassNames,
             sty.root
           )}
@@ -249,28 +248,24 @@ function Plasmicدستیارهوشمصنوعیرنتامون__RenderFunc(props: 
           <div
             data-plasmic-name={"mainContents"}
             data-plasmic-override={overrides.mainContents}
-            className={classNames(projectcss.all, sty.mainContents)}
+            className={classNames("all", sty.mainContents)}
           >
             <div
               data-plasmic-name={"intro1st"}
               data-plasmic-override={overrides.intro1st}
-              className={classNames(projectcss.all, sty.intro1st)}
+              className={classNames("all", sty.intro1st)}
             >
               <div
                 data-plasmic-name={"introTitle"}
                 data-plasmic-override={overrides.introTitle}
-                className={classNames(projectcss.all, sty.introTitle)}
+                className={classNames("all", sty.introTitle)}
               >
                 <div
                   data-plasmic-name={
                     "\u062f\u0631\u0628\u0627\u0631\u0647\u0645\u0627"
                   }
                   data-plasmic-override={overrides.دربارهما}
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.دربارهما
-                  )}
+                  className={classNames("all", "__wab_text", sty.دربارهما)}
                 >
                   {
                     "\u062f\u0633\u062a\u06cc\u0627\u0631 \u0647\u0648\u0634 \u0645\u0635\u0646\u0648\u0639\u06cc \u0631\u0646\u062a\u0627\u0645\u0648\u0646 (\u063a\u06cc\u0631 \u0641\u0639\u0627\u0644 \u0634\u062f\u0647)"
@@ -280,7 +275,7 @@ function Plasmicدستیارهوشمصنوعیرنتامون__RenderFunc(props: 
               <div
                 data-plasmic-name={"introCalendarLeft"}
                 data-plasmic-override={overrides.introCalendarLeft}
-                className={classNames(projectcss.all, sty.introCalendarLeft)}
+                className={classNames("all", sty.introCalendarLeft)}
               >
                 <PlasmicImg__
                   alt={""}
@@ -301,11 +296,7 @@ function Plasmicدستیارهوشمصنوعیرنتامون__RenderFunc(props: 
                 />
 
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__j0An
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__j0An)}
                 >
                   {hasVariant(globalVariants, "screen", "tablet")
                     ? "\u062f\u0633\u062a\u06cc\u0627\u0631 \u0647\u0648\u0634 \u0645\u0635\u0646\u0648\u0639\u06cc \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u06a9\u0645\u06a9 \u0645\u06cc\u200c\u06a9\u0646\u0647 \u0631\u0627\u062d\u062a\u200c\u062a\u0631 \u0628\u0627 \u0627\u067e\u0644\u06cc\u06a9\u06cc\u0634\u0646 \u06a9\u0627\u0631 \u06a9\u0646\u06cc\u060c \u0642\u06cc\u0645\u062a\u200c\u06af\u0630\u0627\u0631\u06cc \u062f\u0642\u06cc\u0642\u200c\u062a\u0631\u06cc \u062f\u0627\u0634\u062a\u0647 \u0628\u0627\u0634\u06cc\u060c \u0646\u06a9\u0627\u062a \u06a9\u0627\u0631\u0628\u0631\u062f\u06cc \u0628\u0631\u0627\u06cc \u0628\u0647\u0628\u0648\u062f \u0648\u06cc\u0644\u0627 \u06cc\u0627\u062f \u0628\u06af\u06cc\u0631\u06cc \u0648 \u062a\u062c\u0631\u0628\u0647\u200c\u06cc \u0628\u0647\u062a\u0631\u06cc \u0628\u0631\u0627\u06cc \u0645\u0647\u0645\u0627\u0646\u200c\u0647\u0627 \u062e\u0644\u0642 \u06a9\u0646\u06cc. "
@@ -313,8 +304,8 @@ function Plasmicدستیارهوشمصنوعیرنتامون__RenderFunc(props: 
                 </div>
               </div>
             </div>
-            <div className={classNames(projectcss.all, sty.freeBox__mtZ2O)}>
-              <div className={classNames(projectcss.all, sty.freeBox__fuF1X)}>
+            <div className={classNames("all", sty.freeBox__mtZ2O)}>
+              <div className={classNames("all", sty.freeBox__fuF1X)}>
                 <Iframe
                   data-plasmic-name={"ai"}
                   data-plasmic-override={overrides.ai}
@@ -359,36 +350,18 @@ function Plasmicدستیارهوشمصنوعیرنتامون__RenderFunc(props: 
           <div
             data-plasmic-name={"introCalendarLeft2"}
             data-plasmic-override={overrides.introCalendarLeft2}
-            className={classNames(projectcss.all, sty.introCalendarLeft2)}
+            className={classNames("all", sty.introCalendarLeft2)}
           >
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text___8PpNb
-              )}
-            >
+            <div className={classNames("all", "__wab_text", sty.text___8PpNb)}>
               {"\u0645\u062b\u0644\u0627 \u0628\u067e\u0631\u0633:"}
             </div>
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__xt10Q
-              )}
-            >
+            <div className={classNames("all", "__wab_text", sty.text__xt10Q)}>
               {hasVariant(globalVariants, "screen", "mobile")
                 ? "- \u0645\u0647\u0645\u0627\u0646 \u0646\u0638\u0631 \u06af\u0630\u0627\u0634\u062a\u0647 \u00ab\u0633\u0631\u0648\u06cc\u0633 \u0628\u0647\u062f\u0627\u0634\u062a\u06cc \u0634\u0633\u062a\u0647 \u0648 \u0636\u062f\u0639\u0641\u0648\u0646\u06cc \u0646\u0634\u062f\u0647 \u0628\u0648\u062f\r\u00bb \u062d\u0627\u0644\u0627 \u0645\u0646 \u0686\u0637\u0648\u0631 \u067e\u0627\u0633\u062e \u0628\u062f\u0645\u061f\n- \u062a\u0627\u0632\u0647 \u0634\u0631\u0648\u0639 \u06a9\u0631\u062f\u0645. \u0686\u0637\u0648\u0631 \u0645\u0633\u0627\u0641\u0631\u0647\u0627\u06cc \u0628\u06cc\u0634\u062a\u0631\u06cc \u0628\u06af\u06cc\u0631\u0645\u061f\n- \u0686\u0637\u0648\u0631 \u0627\u0645\u062a\u06cc\u0627\u0632 \u06f5 \u0633\u062a\u0627\u0631\u0647 \u0628\u06af\u06cc\u0631\u0645\u061f\n- \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0686\u0647 \u062e\u062f\u0645\u0627\u062a\u06cc \u062f\u0627\u0631\u0647\u061f\n- \u06a9\u0627\u0631\u0645\u0632\u062f \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0686\u0642\u062f\u0631\u0647\u061f"
                 : "- \u0645\u0647\u0645\u0627\u0646 \u0646\u0638\u0631 \u06af\u0630\u0627\u0634\u062a\u0647 \u00ab\u0633\u0631\u0648\u06cc\u0633 \u0628\u0647\u062f\u0627\u0634\u062a\u06cc \u0634\u0633\u062a\u0647 \u0648 \u0636\u062f\u0639\u0641\u0648\u0646\u06cc \u0646\u0634\u062f\u0647 \u0628\u0648\u062f\r\u00bb \u062d\u0627\u0644\u0627 \u0645\u0646 \u0686\u0637\u0648\u0631 \u067e\u0627\u0633\u062e \u0628\u062f\u0645\u061f\n- \u062a\u0627\u0632\u0647 \u0634\u0631\u0648\u0639 \u06a9\u0631\u062f\u0645. \u0686\u0637\u0648\u0631 \u0645\u0633\u0627\u0641\u0631\u0647\u0627\u06cc \u0628\u06cc\u0634\u062a\u0631\u06cc \u0628\u06af\u06cc\u0631\u0645\u061f\n- \u0686\u0637\u0648\u0631 \u0627\u0645\u062a\u06cc\u0627\u0632 \u06f5 \u0633\u062a\u0627\u0631\u0647 \u0628\u06af\u06cc\u0631\u0645\u061f\n- \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0686\u0647 \u062e\u062f\u0645\u0627\u062a\u06cc \u062f\u0627\u0631\u0647\u061f\n- \u06a9\u0627\u0631\u0645\u0632\u062f \u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0686\u0642\u062f\u0631\u0647\u061f"}
             </div>
-            <div className={classNames(projectcss.all, sty.freeBox__oLz4E)}>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__b6WLs
-                )}
-              >
+            <div className={classNames("all", sty.freeBox__oLz4E)}>
+              <div className={classNames("all", "__wab_text", sty.text__b6WLs)}>
                 {hasVariant(globalVariants, "screen", "tablet")
                   ? "\u0627\u0645\u06cc\u062f\u0648\u0627\u0631\u06cc\u0645 \u0628\u0627 \u06a9\u0645\u06a9 \u0627\u06cc\u0646 \u062f\u0633\u062a\u06cc\u0627\u0631\u060c \u0645\u06cc\u0632\u0628\u0627\u0646 \u0645\u0648\u0641\u0642\u200c\u062a\u0631\u06cc \u0628\u0634\u06cc \u0648 \u0628\u0627 \u0627\u0641\u0632\u0627\u06cc\u0634 \u062f\u0631\u0622\u0645\u062f\u060c \u06a9\u0633\u0628\u200c\u0648\u06a9\u0627\u0631\u062a \u0631\u0648 \u062d\u0633\u0627\u0628\u06cc \u0631\u0634\u062f \u0628\u062f\u06cc. \u270c\ufe0f"
                   : "\u0627\u0645\u06cc\u062f\u0648\u0627\u0631\u06cc\u0645 \u0628\u0627 \u06a9\u0645\u06a9 \u0627\u06cc\u0646 \u062f\u0633\u062a\u06cc\u0627\u0631\u060c \u0645\u06cc\u0632\u0628\u0627\u0646 \u0645\u0648\u0641\u0642\u200c\u062a\u0631\u06cc \u0628\u0634\u06cc \u0648 \u0628\u0627 \u0627\u0641\u0632\u0627\u06cc\u0634 \u062f\u0631\u0622\u0645\u062f\u060c \u06a9\u0633\u0628\u200c\u0648\u06a9\u0627\u0631\u062a \u0631\u0648 \u062d\u0633\u0627\u0628\u06cc \u0631\u0634\u062f \u0628\u062f\u06cc. \u270c\ufe0f"}
@@ -419,9 +392,9 @@ function Plasmicدستیارهوشمصنوعیرنتامون__RenderFunc(props: 
           <div
             data-plasmic-name={"html"}
             data-plasmic-override={overrides.html}
-            className={classNames(projectcss.all, sty.html)}
+            className={classNames("all", sty.html)}
           >
-            <div className={classNames(projectcss.all, sty.freeBox___9Ex4O)}>
+            <div className={classNames("all", sty.freeBox___9Ex4O)}>
               <ClarityRntComponent
                 data-plasmic-name={"clarityRntComponent"}
                 data-plasmic-override={overrides.clarityRntComponent}

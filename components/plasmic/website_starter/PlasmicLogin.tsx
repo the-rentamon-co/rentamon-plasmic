@@ -65,7 +65,6 @@ import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-impor
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicLogin.module.css"; // plasmic-import: r6cXxRuC6LPO/css
 
 import SearchSvgIcon from "./icons/PlasmicIcon__SearchSvg"; // plasmic-import: xpwiGbFxHMB2/icon
@@ -212,22 +211,22 @@ function PlasmicLogin__RenderFunc(props: {
         }
       `}</style>
 
-      <div className={projectcss.plasmic_page_wrapper}>
+      <div className={"plasmic_page_wrapper"}>
         <div
           data-plasmic-name={"root"}
           data-plasmic-override={overrides.root}
           data-plasmic-root={true}
           data-plasmic-for-node={forNode}
           className={classNames(
-            projectcss.all,
-            projectcss.root_reset,
-            projectcss.plasmic_default_styles,
-            projectcss.plasmic_mixins,
+            "all",
+            "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+            "plasmic_default_styles",
+            "plasmic_mixins",
             styleTokensClassNames,
             sty.root
           )}
         >
-          <div className={classNames(projectcss.all, sty.freeBox__fXnNy)}>
+          <div className={classNames("all", sty.freeBox__fXnNy)}>
             <PlasmicImg__
               data-plasmic-name={"img"}
               data-plasmic-override={overrides.img}
@@ -248,7 +247,7 @@ function PlasmicLogin__RenderFunc(props: {
               }}
             />
 
-            <div className={classNames(projectcss.all, sty.freeBox__eeJzj)}>
+            <div className={classNames("all", sty.freeBox__eeJzj)}>
               {(() => {
                 try {
                   return $state.step == 0;
@@ -263,11 +262,7 @@ function PlasmicLogin__RenderFunc(props: {
                 }
               })() ? (
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__bF4H9
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__bF4H9)}
                 >
                   <React.Fragment>
                     <React.Fragment>
@@ -298,11 +293,7 @@ function PlasmicLogin__RenderFunc(props: {
                 }
               })() ? (
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__bsOl
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__bsOl)}
                 >
                   {
                     "\u062a\u0627\u06cc\u06cc\u062f \u0634\u0645\u0627\u0631\u0647 \u0645\u0648\u0628\u0627\u06cc\u0644"
@@ -323,11 +314,7 @@ function PlasmicLogin__RenderFunc(props: {
                 }
               })() ? (
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__ieX2Z
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__ieX2Z)}
                 >
                   <React.Fragment>
                     <span
@@ -357,11 +344,7 @@ function PlasmicLogin__RenderFunc(props: {
                 }
               })() ? (
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__qmvgj
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__qmvgj)}
                 >
                   <React.Fragment>
                     <span
@@ -391,7 +374,7 @@ function PlasmicLogin__RenderFunc(props: {
                 throw e;
               }
             })() ? (
-              <div className={classNames(projectcss.all, sty.freeBox__cbUzn)}>
+              <div className={classNames("all", sty.freeBox__cbUzn)}>
                 <TextInput
                   data-plasmic-name={"textInput"}
                   data-plasmic-override={overrides.textInput}
@@ -420,11 +403,7 @@ function PlasmicLogin__RenderFunc(props: {
                 />
 
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__nW7N
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__nW7N)}
                   onClick={async event => {
                     const $steps = {};
 
@@ -507,7 +486,7 @@ function PlasmicLogin__RenderFunc(props: {
                 throw e;
               }
             })() ? (
-              <div className={classNames(projectcss.all, sty.freeBox__qaXp7)}>
+              <div className={classNames("all", sty.freeBox__qaXp7)}>
                 <TextInput
                   data-plasmic-name={"textInput2"}
                   data-plasmic-override={overrides.textInput2}
@@ -536,11 +515,7 @@ function PlasmicLogin__RenderFunc(props: {
                 />
 
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__luyKo
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__luyKo)}
                   onClick={async event => {
                     const $steps = {};
 

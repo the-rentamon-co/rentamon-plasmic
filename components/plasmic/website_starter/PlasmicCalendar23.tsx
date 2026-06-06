@@ -78,7 +78,6 @@ import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-impor
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicCalendar23.module.css"; // plasmic-import: 9y5OemMhUNlV/css
 
 import CheckSvgIcon from "./icons/PlasmicIcon__CheckSvg"; // plasmic-import: aHRi_lZjzHt3/icon
@@ -947,10 +946,10 @@ function PlasmicCalendar23__RenderFunc(props: {
       data-plasmic-root={true}
       data-plasmic-for-node={forNode}
       className={classNames(
-        projectcss.all,
-        projectcss.root_reset,
-        projectcss.plasmic_default_styles,
-        projectcss.plasmic_mixins,
+        "all",
+        "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+        "plasmic_default_styles",
+        "plasmic_mixins",
         styleTokensClassNames,
         sty.root
       )}
@@ -1861,7 +1860,7 @@ function PlasmicCalendar23__RenderFunc(props: {
 
       <div
         className={classNames(
-          projectcss.all,
+          "all",
           sty.freeBox__r3Nm0,
           (() => {
             try {
@@ -1910,7 +1909,7 @@ function PlasmicCalendar23__RenderFunc(props: {
           <div
             data-plasmic-name={"guide1"}
             data-plasmic-override={overrides.guide1}
-            className={classNames(projectcss.all, sty.guide1, "fadein2")}
+            className={classNames("all", sty.guide1, "fadein2")}
           >
             {(() => {
               try {
@@ -1927,8 +1926,8 @@ function PlasmicCalendar23__RenderFunc(props: {
             })() ? (
               <div
                 className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
+                  "all",
+                  "__wab_text",
                   sty.text__qCqYq,
                   "fadein2"
                 )}
@@ -1954,13 +1953,7 @@ function PlasmicCalendar23__RenderFunc(props: {
                 throw e;
               }
             })() ? (
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__icqRi
-                )}
-              >
+              <div className={classNames("all", "__wab_text", sty.text__icqRi)}>
                 {hasVariant(globalVariants, "screen", "mobile") ? (
                   <React.Fragment>
                     <React.Fragment>
@@ -2016,13 +2009,7 @@ function PlasmicCalendar23__RenderFunc(props: {
                 throw e;
               }
             })() ? (
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__wb4Rh
-                )}
-              >
+              <div className={classNames("all", "__wab_text", sty.text__wb4Rh)}>
                 <React.Fragment>
                   <React.Fragment>
                     {
@@ -2177,10 +2164,7 @@ function PlasmicCalendar23__RenderFunc(props: {
                 const $steps = {};
               }}
             >
-              <div
-                className={classNames(projectcss.all, sty.freeBox__wW1T)}
-                id={``}
-              />
+              <div className={classNames("all", sty.freeBox__wW1T)} id={``} />
 
               <DayCell2
                 data-plasmic-name={"dayCell2"}
@@ -3090,9 +3074,9 @@ function PlasmicCalendar23__RenderFunc(props: {
             [sty["pcls_OvBF-DKWV-aO"]]: true
           })}
           defaultStylesClassName={classNames(
-            projectcss.root_reset,
-            projectcss.plasmic_default_styles,
-            projectcss.plasmic_mixins,
+            "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+            "plasmic_default_styles",
+            "plasmic_mixins",
             styleTokensClassNames
           )}
           hideFooter={
@@ -3114,20 +3098,14 @@ function PlasmicCalendar23__RenderFunc(props: {
           }}
           open={generateStateValueProp($state, ["modalDiscount", "open"])}
           title={
-            <div className={classNames(projectcss.all, sty.freeBox__jYOh)}>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__rvB96
-                )}
-              >
+            <div className={classNames("all", sty.freeBox__jYOh)}>
+              <div className={classNames("all", "__wab_text", sty.text__rvB96)}>
                 {
                   "\u062f\u0631\u0635\u062f \u062a\u062e\u0641\u06cc\u0641\ud83d\udd25\u0631\u0648 \u0645\u0634\u062e\u0635 \u06a9\u0646\n"
                 }
               </div>
               <Icon23Icon
-                className={classNames(projectcss.all, sty.svg__ufFeg)}
+                className={classNames("all", sty.svg__ufFeg)}
                 onClick={async event => {
                   const $steps = {};
 
@@ -3213,13 +3191,13 @@ function PlasmicCalendar23__RenderFunc(props: {
           }
           wrapClassName={classNames({ [sty["pcls_zxwQJY1rIhry"]]: true })}
         >
-          <div className={classNames(projectcss.all, sty.freeBox__bUbfH)}>
+          <div className={classNames("all", sty.freeBox__bUbfH)}>
             <div
               data-plasmic-name={"main"}
               data-plasmic-override={overrides.main}
-              className={classNames(projectcss.all, sty.main, "bordeRadius")}
+              className={classNames("all", sty.main, "bordeRadius")}
             >
-              <div className={classNames(projectcss.all, sty.freeBox__iSiNf)}>
+              <div className={classNames("all", sty.freeBox__iSiNf)}>
                 <Button
                   className={classNames("__wab_instance", sty.button__cMvV4)}
                   color={"softSand"}
@@ -3293,16 +3271,12 @@ function PlasmicCalendar23__RenderFunc(props: {
                   }}
                 >
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__pWim8
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__pWim8)}
                   >
                     {"+"}
                   </div>
                 </Button>
-                <div className={classNames(projectcss.all, sty.freeBox__kWapX)}>
+                <div className={classNames("all", sty.freeBox__kWapX)}>
                   <TextInput
                     data-plasmic-name={"textInput2"}
                     data-plasmic-override={overrides.textInput2}
@@ -3404,11 +3378,7 @@ function PlasmicCalendar23__RenderFunc(props: {
                   }}
                 >
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text___2DsC
-                    )}
+                    className={classNames("all", "__wab_text", sty.text___2DsC)}
                   >
                     {"-"}
                   </div>
@@ -3433,14 +3403,12 @@ function PlasmicCalendar23__RenderFunc(props: {
                   throw e;
                 }
               })() ? (
-                <div className={classNames(projectcss.all, sty.columns__jBMbG)}>
-                  <div
-                    className={classNames(projectcss.all, sty.column___0YHhI)}
-                  >
+                <div className={classNames("all", sty.columns__jBMbG)}>
+                  <div className={classNames("all", sty.column___0YHhI)}>
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text__amRpA
                       )}
                     >
@@ -3470,14 +3438,12 @@ function PlasmicCalendar23__RenderFunc(props: {
                   throw e;
                 }
               })() ? (
-                <div className={classNames(projectcss.all, sty.columns__zRzEf)}>
-                  <div
-                    className={classNames(projectcss.all, sty.column___2MLwQ)}
-                  >
+                <div className={classNames("all", sty.columns__zRzEf)}>
+                  <div className={classNames("all", sty.column___2MLwQ)}>
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text__fPcu
                       )}
                     >
@@ -3510,14 +3476,12 @@ function PlasmicCalendar23__RenderFunc(props: {
                   throw e;
                 }
               })() ? (
-                <div className={classNames(projectcss.all, sty.columns__kpl1O)}>
-                  <div
-                    className={classNames(projectcss.all, sty.column__ye1Yk)}
-                  >
+                <div className={classNames("all", sty.columns__kpl1O)}>
+                  <div className={classNames("all", sty.column__ye1Yk)}>
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text__zi5C5
                       )}
                     >
@@ -3528,14 +3492,10 @@ function PlasmicCalendar23__RenderFunc(props: {
                   </div>
                 </div>
               ) : null}
-              <div className={classNames(projectcss.all, sty.columns__eTo7H)}>
-                <div className={classNames(projectcss.all, sty.column__saDUw)}>
+              <div className={classNames("all", sty.columns__eTo7H)}>
+                <div className={classNames("all", sty.column__saDUw)}>
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__mHxkF
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__mHxkF)}
                   >
                     {
                       "\u0627\u0645\u06a9\u0627\u0646 \u062a\u062e\u0641\u06cc\u0641 \u0628\u0627\u0644\u0627\u06cc \u06f7\u06f0\u066a \u0628\u0631\u0627\u06cc \u0634\u0628 \u0646\u06cc\u0633\u062a"
@@ -3556,10 +3516,8 @@ function PlasmicCalendar23__RenderFunc(props: {
                   throw e;
                 }
               })() ? (
-                <div
-                  className={classNames(projectcss.all, sty.columns___4Y6Hc)}
-                >
-                  <div className={classNames(projectcss.all, sty.column__wlOH)}>
+                <div className={classNames("all", sty.columns___4Y6Hc)}>
+                  <div className={classNames("all", sty.column__wlOH)}>
                     {(() => {
                       try {
                         return (() => {
@@ -3589,8 +3547,8 @@ function PlasmicCalendar23__RenderFunc(props: {
                     })() ? (
                       <div
                         className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
+                          "all",
+                          "__wab_text",
                           sty.text__w7YQ
                         )}
                       >
@@ -3626,8 +3584,8 @@ function PlasmicCalendar23__RenderFunc(props: {
                     })() ? (
                       <div
                         className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
+                          "all",
+                          "__wab_text",
                           sty.text__dWi3G
                         )}
                       >
@@ -3889,11 +3847,7 @@ function PlasmicCalendar23__RenderFunc(props: {
                 }}
               >
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__talIn
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__talIn)}
                 >
                   {
                     "\u0627\u0639\u0645\u0627\u0644 \u062a\u062e\u0641\u06cc\u0641"
@@ -3912,9 +3866,9 @@ function PlasmicCalendar23__RenderFunc(props: {
             [sty["pcls_jrPigKLsyAk8"]]: true
           })}
           defaultStylesClassName={classNames(
-            projectcss.root_reset,
-            projectcss.plasmic_default_styles,
-            projectcss.plasmic_mixins,
+            "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+            "plasmic_default_styles",
+            "plasmic_mixins",
             styleTokensClassNames
           )}
           hideFooter={true}
@@ -3935,9 +3889,9 @@ function PlasmicCalendar23__RenderFunc(props: {
           }}
           open={generateStateValueProp($state, ["modal", "open"])}
           title={
-            <div className={classNames(projectcss.all, sty.freeBox__x8Z51)}>
+            <div className={classNames("all", sty.freeBox__x8Z51)}>
               <Icon23Icon
-                className={classNames(projectcss.all, sty.svg__jZId)}
+                className={classNames("all", sty.svg__jZId)}
                 onClick={async event => {
                   const $steps = {};
 
@@ -3992,15 +3946,9 @@ function PlasmicCalendar23__RenderFunc(props: {
               "\u062b\u0628\u062a\u062a\u063a\u06cc\u06cc\u0631\u0627\u062a"
             }
             data-plasmic-override={overrides.ثبتتغییرات}
-            className={classNames(projectcss.all, sty.ثبتتغییرات)}
+            className={classNames("all", sty.ثبتتغییرات)}
           >
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__m2Hip
-              )}
-            >
+            <div className={classNames("all", "__wab_text", sty.text__m2Hip)}>
               <React.Fragment>
                 {(() => {
                   try {
@@ -4071,7 +4019,7 @@ function PlasmicCalendar23__RenderFunc(props: {
             data-plasmic-name={"\u067e\u0631"}
             data-plasmic-override={overrides.پر}
             className={classNames(
-              projectcss.all,
+              "all",
               sty.پر,
               ` ${$props.isFirstVisit == true && $state.tourSteps == 2 ? "blinkBorderTourGuide clickable" : ""}`
             )}
@@ -4134,18 +4082,12 @@ function PlasmicCalendar23__RenderFunc(props: {
               }
             }}
           >
-            <div className={classNames(projectcss.all, sty.freeBox__kG5HF, ``)}>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__k92Qu
-                )}
-              >
+            <div className={classNames("all", sty.freeBox__kG5HF, ``)}>
+              <div className={classNames("all", "__wab_text", sty.text__k92Qu)}>
                 {"\u067e\u064f\u0640\u0631"}
               </div>
               <Icon16Icon
-                className={classNames(projectcss.all, sty.svg__tOely)}
+                className={classNames("all", sty.svg__tOely)}
                 role={"img"}
               />
             </div>
@@ -4163,14 +4105,8 @@ function PlasmicCalendar23__RenderFunc(props: {
               throw e;
             }
           })() ? (
-            <div className={classNames(projectcss.all, sty.freeBox__rkzCj)}>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  sty.freeBox__ghIx,
-                  "fadein2"
-                )}
-              >
+            <div className={classNames("all", sty.freeBox__rkzCj)}>
+              <div className={classNames("all", sty.freeBox__ghIx, "fadein2")}>
                 {(() => {
                   try {
                     return $state.tourSteps == 2;
@@ -4185,11 +4121,7 @@ function PlasmicCalendar23__RenderFunc(props: {
                   }
                 })() ? (
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__pJldv
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__pJldv)}
                   >
                     <React.Fragment>
                       <React.Fragment>
@@ -4212,7 +4144,7 @@ function PlasmicCalendar23__RenderFunc(props: {
                 ) : null}
               </div>
               <div
-                className={classNames(projectcss.all, sty.freeBox__x6USm)}
+                className={classNames("all", sty.freeBox__x6USm)}
                 onClick={async event => {
                   const $steps = {};
 
@@ -4251,11 +4183,7 @@ function PlasmicCalendar23__RenderFunc(props: {
                 }}
               >
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__v0ND
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__v0ND)}
                   onClick={async event => {
                     const $steps = {};
 
@@ -4304,7 +4232,7 @@ function PlasmicCalendar23__RenderFunc(props: {
               "\u062e\u0627\u0644\u06cc\u0642\u06cc\u0645\u062a\u062a\u062e\u0641\u06cc\u0641Parent"
             }
             data-plasmic-override={overrides.خالیقیمتتخفیفParent}
-            className={classNames(projectcss.all, sty.خالیقیمتتخفیفParent)}
+            className={classNames("all", sty.خالیقیمتتخفیفParent)}
             onClick={async event => {
               const $steps = {};
 
@@ -4336,7 +4264,7 @@ function PlasmicCalendar23__RenderFunc(props: {
               data-plasmic-name={"\u062e\u0627\u0644\u06cc"}
               data-plasmic-override={overrides.خالی}
               className={classNames(
-                projectcss.all,
+                "all",
                 sty.خالی,
                 (() => {
                   try {
@@ -4670,15 +4598,9 @@ function PlasmicCalendar23__RenderFunc(props: {
                 }
               }}
             >
-              <div
-                className={classNames(projectcss.all, sty.freeBox__r8P9K, ``)}
-              >
+              <div className={classNames("all", sty.freeBox__r8P9K, ``)}>
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__h5Rxl
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__h5Rxl)}
                   onClick={async event => {
                     const $steps = {};
                   }}
@@ -4691,7 +4613,7 @@ function PlasmicCalendar23__RenderFunc(props: {
               data-plasmic-name={"\u0642\u06cc\u0645\u062a"}
               data-plasmic-override={overrides.قیمت}
               className={classNames(
-                projectcss.all,
+                "all",
                 sty.قیمت,
                 (() => {
                   try {
@@ -4817,22 +4739,16 @@ function PlasmicCalendar23__RenderFunc(props: {
                 }
               }}
             >
-              <div
-                className={classNames(projectcss.all, sty.freeBox__remGa, ``)}
-              >
+              <div className={classNames("all", sty.freeBox__remGa, ``)}>
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__bpfL3
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__bpfL3)}
                 >
                   {
                     "\u0648\u06cc\u0631\u0627\u06cc\u0634 \u0642\u06cc\u0645\u062a"
                   }
                 </div>
                 <Icon16Icon
-                  className={classNames(projectcss.all, sty.svg___3D7Tn)}
+                  className={classNames("all", sty.svg___3D7Tn)}
                   role={"img"}
                 />
               </div>
@@ -4841,7 +4757,7 @@ function PlasmicCalendar23__RenderFunc(props: {
               data-plasmic-name={"\u062a\u062e\u0641\u06cc\u0641"}
               data-plasmic-override={overrides.تخفیف}
               className={classNames(
-                projectcss.all,
+                "all",
                 sty.تخفیف,
                 (() => {
                   try {
@@ -4930,22 +4846,16 @@ function PlasmicCalendar23__RenderFunc(props: {
                 }
               }}
             >
-              <div
-                className={classNames(projectcss.all, sty.freeBox__j65OM, ``)}
-              >
+              <div className={classNames("all", sty.freeBox__j65OM, ``)}>
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text___2AHu
-                  )}
+                  className={classNames("all", "__wab_text", sty.text___2AHu)}
                 >
                   {
                     "\u0648\u06cc\u0631\u0627\u06cc\u0634 \u062a\u062e\u0641\u06cc\u0641"
                   }
                 </div>
                 <Icon16Icon
-                  className={classNames(projectcss.all, sty.svg__pXkC)}
+                  className={classNames("all", sty.svg__pXkC)}
                   role={"img"}
                 />
               </div>
@@ -4961,9 +4871,9 @@ function PlasmicCalendar23__RenderFunc(props: {
             [sty["pcls_WyZP4aceYO9b"]]: true
           })}
           defaultStylesClassName={classNames(
-            projectcss.root_reset,
-            projectcss.plasmic_default_styles,
-            projectcss.plasmic_mixins,
+            "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+            "plasmic_default_styles",
+            "plasmic_mixins",
             styleTokensClassNames
           )}
           hideFooter={true}
@@ -4981,9 +4891,9 @@ function PlasmicCalendar23__RenderFunc(props: {
           }}
           open={generateStateValueProp($state, ["modalChangePrice", "open"])}
           title={
-            <div className={classNames(projectcss.all, sty.freeBox__lNrIo)}>
+            <div className={classNames("all", sty.freeBox__lNrIo)}>
               <Icon23Icon
-                className={classNames(projectcss.all, sty.svg__dViH)}
+                className={classNames("all", sty.svg__dViH)}
                 onClick={async event => {
                   const $steps = {};
 
@@ -5059,13 +4969,7 @@ function PlasmicCalendar23__RenderFunc(props: {
                 role={"img"}
               />
 
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__jjgi5
-                )}
-              >
+              <div className={classNames("all", "__wab_text", sty.text__jjgi5)}>
                 {
                   "\u0646\u0631\u062e \ud83d\udcb5 \u0631\u0648 \u0628\u0647 \u062a\u0648\u0645\u0646 \u0648\u0627\u0631\u062f \u06a9\u0646"
                 }
@@ -5081,11 +4985,11 @@ function PlasmicCalendar23__RenderFunc(props: {
                 : "320px"
           }
         >
-          <div className={classNames(projectcss.all, sty.freeBox__y81Tb)}>
+          <div className={classNames("all", sty.freeBox__y81Tb)}>
             <div
               data-plasmic-name={"main2"}
               data-plasmic-override={overrides.main2}
-              className={classNames(projectcss.all, sty.main2)}
+              className={classNames("all", sty.main2)}
             >
               <Input
                 data-plasmic-name={"input"}
@@ -5155,13 +5059,7 @@ function PlasmicCalendar23__RenderFunc(props: {
                   ])}
                 />
               ) : null}
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__xUoaD
-                )}
-              >
+              <div className={classNames("all", "__wab_text", sty.text__xUoaD)}>
                 <React.Fragment>
                   {(() => {
                     try {
@@ -5294,7 +5192,7 @@ function PlasmicCalendar23__RenderFunc(props: {
                 </React.Fragment>
               </div>
             </div>
-            <div className={classNames(projectcss.all, sty.freeBox__gDo1)}>
+            <div className={classNames("all", sty.freeBox__gDo1)}>
               <Button
                 className={classNames("__wab_instance", sty.button__vNpt8)}
                 isDisabled={(() => {
@@ -5540,11 +5438,7 @@ function PlasmicCalendar23__RenderFunc(props: {
                 }}
               >
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__wEXuL
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__wEXuL)}
                 >
                   {
                     "\u062b\u0628\u062a \u062a\u063a\u06cc\u06cc\u0631\u0627\u062a"
@@ -5563,9 +5457,9 @@ function PlasmicCalendar23__RenderFunc(props: {
             [sty["pcls_CIb4t1gEq1iF"]]: true
           })}
           defaultStylesClassName={classNames(
-            projectcss.root_reset,
-            projectcss.plasmic_default_styles,
-            projectcss.plasmic_mixins,
+            "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+            "plasmic_default_styles",
+            "plasmic_mixins",
             styleTokensClassNames
           )}
           hideFooter={true}
@@ -5583,9 +5477,9 @@ function PlasmicCalendar23__RenderFunc(props: {
           }}
           open={generateStateValueProp($state, ["modalChangePrice2", "open"])}
           title={
-            <div className={classNames(projectcss.all, sty.freeBox__vCUds)}>
+            <div className={classNames("all", sty.freeBox__vCUds)}>
               <Icon23Icon
-                className={classNames(projectcss.all, sty.svg___6Pqqb)}
+                className={classNames("all", sty.svg___6Pqqb)}
                 onClick={async event => {
                   const $steps = {};
 
@@ -5661,13 +5555,7 @@ function PlasmicCalendar23__RenderFunc(props: {
                 role={"img"}
               />
 
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__jjbg0
-                )}
-              >
+              <div className={classNames("all", "__wab_text", sty.text__jjbg0)}>
                 {
                   "\u0646\u0631\u062e \u0631\u0627 \u0648\u0627\u0631\u062f \u06a9\u0646"
                 }
@@ -5683,11 +5571,11 @@ function PlasmicCalendar23__RenderFunc(props: {
                 : "320px"
           }
         >
-          <div className={classNames(projectcss.all, sty.freeBox__s8W84)}>
+          <div className={classNames("all", sty.freeBox__s8W84)}>
             <div
               data-plasmic-name={"main3"}
               data-plasmic-override={overrides.main3}
-              className={classNames(projectcss.all, sty.main3)}
+              className={classNames("all", sty.main3)}
             >
               <Input
                 data-plasmic-name={"input3"}
@@ -5757,13 +5645,7 @@ function PlasmicCalendar23__RenderFunc(props: {
                   ])}
                 />
               ) : null}
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__mAt6C
-                )}
-              >
+              <div className={classNames("all", "__wab_text", sty.text__mAt6C)}>
                 <React.Fragment>
                   {(() => {
                     try {
@@ -5895,19 +5777,13 @@ function PlasmicCalendar23__RenderFunc(props: {
                   })()}
                 </React.Fragment>
               </div>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__cBu94
-                )}
-              >
+              <div className={classNames("all", "__wab_text", sty.text__cBu94)}>
                 {
                   "\u0645\u0628\u0644\u063a \u0628\u0627\u0644\u0627 \u00ab\u067e\u0633 \u0627\u0632 \u06a9\u0633\u0631 \u06a9\u0627\u0631\u0645\u0632\u062f\u00bb \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u0627\u0633\u062a. \u06cc\u0639\u0646\u06cc \u0645\u0628\u0644\u063a\u06cc \u06a9\u0647 \u0628\u0647 \u062d\u0633\u0627\u0628\u062a \u0645\u06cc\u0627\u062f"
                 }
               </div>
             </div>
-            <div className={classNames(projectcss.all, sty.freeBox__nFpXi)}>
+            <div className={classNames("all", sty.freeBox__nFpXi)}>
               <Button
                 className={classNames("__wab_instance", sty.button__cJeNe)}
                 color={"miaanColor"}
@@ -6155,11 +6031,7 @@ function PlasmicCalendar23__RenderFunc(props: {
                 }}
               >
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text___2RHn1
-                  )}
+                  className={classNames("all", "__wab_text", sty.text___2RHn1)}
                 >
                   {
                     "\u062b\u0628\u062a \u062a\u063a\u06cc\u06cc\u0631\u0627\u062a"
@@ -6199,15 +6071,15 @@ function PlasmicCalendar23__RenderFunc(props: {
             url={"https://prod.miaan.ir/webhook/markups"}
           />
         </AntdModal>
-        <div className={classNames(projectcss.all, sty.freeBox__ox6V, ``)}>
+        <div className={classNames("all", sty.freeBox__ox6V, ``)}>
           <AntdModal
             data-plasmic-name={"fetchModal"}
             data-plasmic-override={overrides.fetchModal}
             className={classNames("__wab_instance", sty.fetchModal)}
             defaultStylesClassName={classNames(
-              projectcss.root_reset,
-              projectcss.plasmic_default_styles,
-              projectcss.plasmic_mixins,
+              "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+              "plasmic_default_styles",
+              "plasmic_mixins",
               styleTokensClassNames
             )}
             hideFooter={true}
@@ -6238,7 +6110,7 @@ function PlasmicCalendar23__RenderFunc(props: {
                 }
               })() ? (
                 <div
-                  className={classNames(projectcss.all, sty.freeBox___7BQk4)}
+                  className={classNames("all", sty.freeBox___7BQk4)}
                   onClick={async event => {
                     const $steps = {};
 
@@ -6292,7 +6164,7 @@ function PlasmicCalendar23__RenderFunc(props: {
                     }
                   })() ? (
                     <Icon23Icon
-                      className={classNames(projectcss.all, sty.svg__dhgzD, ``)}
+                      className={classNames("all", sty.svg__dhgzD, ``)}
                       role={"img"}
                     />
                   ) : null}
@@ -6363,17 +6235,13 @@ function PlasmicCalendar23__RenderFunc(props: {
               className={classNames("__wab_instance", sty.userPlatform)}
               errorDisplay={
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__bwRKl
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__bwRKl)}
                 >
                   {"Error fetching data"}
                 </div>
               }
               loadingDisplay={
-                <div className={classNames(projectcss.all, sty.freeBox__niOyd)}>
+                <div className={classNames("all", sty.freeBox__niOyd)}>
                   {(() => {
                     try {
                       return (() => {
@@ -6463,13 +6331,9 @@ function PlasmicCalendar23__RenderFunc(props: {
                 }
               })()}
             >
-              <div className={classNames(projectcss.all, sty.freeBox__hGcs0)}>
+              <div className={classNames("all", sty.freeBox__hGcs0)}>
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text___7Wyg
-                  )}
+                  className={classNames("all", "__wab_text", sty.text___7Wyg)}
                 >
                   <React.Fragment>
                     {(() => {
@@ -6550,7 +6414,7 @@ function PlasmicCalendar23__RenderFunc(props: {
                   </React.Fragment>
                 </div>
               </div>
-              <div className={classNames(projectcss.all, sty.freeBox__trzgj)}>
+              <div className={classNames("all", sty.freeBox__trzgj)}>
                 {(_par => (!_par ? [] : Array.isArray(_par) ? _par : [_par]))(
                   (() => {
                     try {
@@ -6574,15 +6438,10 @@ function PlasmicCalendar23__RenderFunc(props: {
                   const currentIndex = __plasmic_idx_0;
                   return (
                     <div
-                      className={classNames(projectcss.all, sty.freeBox__oGczx)}
+                      className={classNames("all", sty.freeBox__oGczx)}
                       key={currentIndex}
                     >
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          sty.freeBox__kd5Ft
-                        )}
-                      >
+                      <div className={classNames("all", sty.freeBox__kd5Ft)}>
                         {(() => {
                           try {
                             return currentItem == "otaghak";
@@ -6812,8 +6671,8 @@ function PlasmicCalendar23__RenderFunc(props: {
                         ) : null}
                         <div
                           className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
+                            "all",
+                            "__wab_text",
                             sty.text__pxdZx
                           )}
                         >
@@ -6847,12 +6706,7 @@ function PlasmicCalendar23__RenderFunc(props: {
                             })()}
                           </React.Fragment>
                         </div>
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            sty.freeBox__spdba
-                          )}
-                        >
+                        <div className={classNames("all", sty.freeBox__spdba)}>
                           {(() => {
                             try {
                               return (() => {
@@ -7198,8 +7052,8 @@ function PlasmicCalendar23__RenderFunc(props: {
                           })() ? (
                             <div
                               className={classNames(
-                                projectcss.all,
-                                projectcss.__wab_text,
+                                "all",
+                                "__wab_text",
                                 sty.text__zgQve
                               )}
                             >
@@ -7238,8 +7092,8 @@ function PlasmicCalendar23__RenderFunc(props: {
                           })() ? (
                             <div
                               className={classNames(
-                                projectcss.all,
-                                projectcss.__wab_text,
+                                "all",
+                                "__wab_text",
                                 sty.text__ax0K0
                               )}
                             >
@@ -7266,13 +7120,11 @@ function PlasmicCalendar23__RenderFunc(props: {
                     throw e;
                   }
                 })() ? (
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__aThqI)}
-                  >
+                  <div className={classNames("all", sty.freeBox__aThqI)}>
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text__itGo4
                       )}
                     >
@@ -7292,9 +7144,7 @@ function PlasmicCalendar23__RenderFunc(props: {
                         })()}
                       </React.Fragment>
                     </div>
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__nzVwF)}
-                    >
+                    <div className={classNames("all", sty.freeBox__nzVwF)}>
                       <PlasmicImg__
                         data-plasmic-name={"ok2"}
                         data-plasmic-override={overrides.ok2}
@@ -7323,7 +7173,7 @@ function PlasmicCalendar23__RenderFunc(props: {
                 ) : null}
                 <div
                   className={classNames(
-                    projectcss.all,
+                    "all",
                     sty.freeBox__tUjr7,
                     (() => {
                       try {
@@ -7484,8 +7334,8 @@ function PlasmicCalendar23__RenderFunc(props: {
                   >
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text__tf9Vu
                       )}
                     >
@@ -7523,9 +7373,9 @@ function PlasmicCalendar23__RenderFunc(props: {
           className={classNames("__wab_instance", sty.block)}
           closeIcon={null}
           defaultStylesClassName={classNames(
-            projectcss.root_reset,
-            projectcss.plasmic_default_styles,
-            projectcss.plasmic_mixins,
+            "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+            "plasmic_default_styles",
+            "plasmic_mixins",
             styleTokensClassNames
           )}
           hideFooter={true}
@@ -7538,9 +7388,9 @@ function PlasmicCalendar23__RenderFunc(props: {
           }}
           open={generateStateValueProp($state, ["block", "open"])}
           title={
-            <div className={classNames(projectcss.all, sty.freeBox__ahicQ)}>
+            <div className={classNames("all", sty.freeBox__ahicQ)}>
               <Icon23Icon
-                className={classNames(projectcss.all, sty.svg__cC0K)}
+                className={classNames("all", sty.svg__cC0K)}
                 onClick={async event => {
                   const $steps = {};
 
@@ -7614,13 +7464,7 @@ function PlasmicCalendar23__RenderFunc(props: {
                 role={"img"}
               />
 
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__nhXaw
-                )}
-              >
+              <div className={classNames("all", "__wab_text", sty.text__nhXaw)}>
                 {"\u0686\u0631\u0627 \u067e\u0631\u0647\u061f"}
               </div>
             </div>
@@ -7643,19 +7487,9 @@ function PlasmicCalendar23__RenderFunc(props: {
               throw e;
             }
           })() ? (
-            <div
-              className={classNames(
-                projectcss.all,
-                sty.freeBox__az6Bg,
-                "fadein2"
-              )}
-            >
+            <div className={classNames("all", sty.freeBox__az6Bg, "fadein2")}>
               <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text___5QZrA
-                )}
+                className={classNames("all", "__wab_text", sty.text___5QZrA)}
               >
                 {hasVariant(globalVariants, "screen", "smallMobile") ? (
                   <React.Fragment>
@@ -7719,7 +7553,7 @@ function PlasmicCalendar23__RenderFunc(props: {
             data-plasmic-name={"reserve"}
             data-plasmic-override={overrides.reserve}
             className={classNames(
-              projectcss.all,
+              "all",
               sty.reserve,
               (() => {
                 try {
@@ -8159,24 +7993,18 @@ function PlasmicCalendar23__RenderFunc(props: {
             }}
           >
             <Icon25Icon
-              className={classNames(projectcss.all, sty.svg__rXwgE)}
+              className={classNames("all", sty.svg__rXwgE)}
               role={"img"}
             />
 
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__zMp0H
-              )}
-            >
+            <div className={classNames("all", "__wab_text", sty.text__zMp0H)}>
               {"\u0645\u0633\u0627\u0641\u0631 \u062f\u0627\u0631\u0645"}
             </div>
           </div>
           <div
             data-plasmic-name={"blockParent"}
             data-plasmic-override={overrides.blockParent}
-            className={classNames(projectcss.all, sty.blockParent)}
+            className={classNames("all", sty.blockParent)}
             onClick={async event => {
               const $steps = {};
 
@@ -8208,7 +8036,7 @@ function PlasmicCalendar23__RenderFunc(props: {
               data-plasmic-name={"block2"}
               data-plasmic-override={overrides.block2}
               className={classNames(
-                projectcss.all,
+                "all",
                 sty.block2,
                 (() => {
                   try {
@@ -8485,17 +8313,11 @@ function PlasmicCalendar23__RenderFunc(props: {
               }}
             >
               <Icon24Icon
-                className={classNames(projectcss.all, sty.svg__qX63H)}
+                className={classNames("all", sty.svg__qX63H)}
                 role={"img"}
               />
 
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__mdH8C
-                )}
-              >
+              <div className={classNames("all", "__wab_text", sty.text__mdH8C)}>
                 {
                   "\u0641\u0639\u0644\u0627 \u0627\u062c\u0627\u0631\u0647 \u0646\u0645\u06cc\u200c\u062f\u0645"
                 }
@@ -8508,9 +8330,9 @@ function PlasmicCalendar23__RenderFunc(props: {
           data-plasmic-override={overrides.noteModal}
           className={classNames("__wab_instance", sty.noteModal)}
           defaultStylesClassName={classNames(
-            projectcss.root_reset,
-            projectcss.plasmic_default_styles,
-            projectcss.plasmic_mixins,
+            "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+            "plasmic_default_styles",
+            "plasmic_mixins",
             styleTokensClassNames
           )}
           hideFooter={true}
@@ -8526,15 +8348,9 @@ function PlasmicCalendar23__RenderFunc(props: {
           trigger={null}
           width={"320"}
         >
-          <div className={classNames(projectcss.all, sty.freeBox___6V5Wl)}>
-            <div className={classNames(projectcss.all, sty.freeBox__a6Kcp)}>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__zboTv
-                )}
-              >
+          <div className={classNames("all", sty.freeBox___6V5Wl)}>
+            <div className={classNames("all", sty.freeBox__a6Kcp)}>
+              <div className={classNames("all", "__wab_text", sty.text__zboTv)}>
                 <React.Fragment>
                   {(() => {
                     try {
@@ -8712,9 +8528,9 @@ function PlasmicCalendar23__RenderFunc(props: {
                 }}
               />
             </div>
-            <div className={classNames(projectcss.all, sty.freeBox__rtY8D)} />
+            <div className={classNames("all", sty.freeBox__rtY8D)} />
           </div>
-          <div className={classNames(projectcss.all, sty.freeBox__cOjQh)}>
+          <div className={classNames("all", sty.freeBox__cOjQh)}>
             <Button
               className={classNames("__wab_instance", sty.button__n4Dfb)}
               onClick={async event => {
@@ -8803,11 +8619,7 @@ function PlasmicCalendar23__RenderFunc(props: {
               type={"primary"}
             >
               <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text___7CsO1
-                )}
+                className={classNames("all", "__wab_text", sty.text___7CsO1)}
               >
                 {"\u0628\u0627\u0632\u06af\u0634\u062a"}
               </div>
@@ -8819,9 +8631,9 @@ function PlasmicCalendar23__RenderFunc(props: {
           data-plasmic-override={overrides.writeNoteModal}
           className={classNames("__wab_instance", sty.writeNoteModal)}
           defaultStylesClassName={classNames(
-            projectcss.root_reset,
-            projectcss.plasmic_default_styles,
-            projectcss.plasmic_mixins,
+            "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+            "plasmic_default_styles",
+            "plasmic_mixins",
             styleTokensClassNames
           )}
           hideFooter={true}
@@ -8837,7 +8649,7 @@ function PlasmicCalendar23__RenderFunc(props: {
           trigger={null}
           width={"320"}
         >
-          <div className={classNames(projectcss.all, sty.freeBox__ttR90)}>
+          <div className={classNames("all", sty.freeBox__ttR90)}>
             <Textarea
               data-plasmic-name={"textarea"}
               data-plasmic-override={overrides.textarea}
@@ -9022,9 +8834,9 @@ function PlasmicCalendar23__RenderFunc(props: {
           data-plasmic-override={overrides.updateNoteModal}
           className={classNames("__wab_instance", sty.updateNoteModal)}
           defaultStylesClassName={classNames(
-            projectcss.root_reset,
-            projectcss.plasmic_default_styles,
-            projectcss.plasmic_mixins,
+            "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+            "plasmic_default_styles",
+            "plasmic_mixins",
             styleTokensClassNames
           )}
           hideFooter={true}
@@ -9040,7 +8852,7 @@ function PlasmicCalendar23__RenderFunc(props: {
           trigger={null}
           width={"320"}
         >
-          <div className={classNames(projectcss.all, sty.freeBox__eFkPu)}>
+          <div className={classNames("all", sty.freeBox__eFkPu)}>
             {(() => {
               const child$Props = {
                 className: classNames("__wab_instance", sty.textarea2),
@@ -9181,13 +8993,7 @@ function PlasmicCalendar23__RenderFunc(props: {
                 />
               );
             })()}
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__ueWaN
-              )}
-            >
+            <div className={classNames("all", "__wab_text", sty.text__ueWaN)}>
               {"Enter some text"}
             </div>
             <Button
@@ -9381,9 +9187,9 @@ function PlasmicCalendar23__RenderFunc(props: {
           data-plasmic-override={overrides.checkForChange}
           className={classNames("__wab_instance", sty.checkForChange)}
           defaultStylesClassName={classNames(
-            projectcss.root_reset,
-            projectcss.plasmic_default_styles,
-            projectcss.plasmic_mixins,
+            "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+            "plasmic_default_styles",
+            "plasmic_mixins",
             styleTokensClassNames
           )}
           hideFooter={true}
@@ -9399,33 +9205,21 @@ function PlasmicCalendar23__RenderFunc(props: {
           trigger={null}
           width={"320"}
         >
-          <div
-            className={classNames(
-              projectcss.all,
-              projectcss.__wab_text,
-              sty.text__z6Y9
-            )}
-          >
+          <div className={classNames("all", "__wab_text", sty.text__z6Y9)}>
             {
               "\u0628\u0627\u0632\u0647\u200c\u0627\u06cc \u06a9\u0647 \u0627\u0646\u062a\u062e\u0627\u0628 \u06a9\u0631\u062f\u06cc \u0627\u0632 \u06cc\u06a9 \u0633\u0627\u06cc\u062a \u0631\u0632\u0631\u0648 \u0634\u062f\u0647!"
             }
           </div>
-          <div
-            className={classNames(
-              projectcss.all,
-              projectcss.__wab_text,
-              sty.text__rq0Dv
-            )}
-          >
+          <div className={classNames("all", "__wab_text", sty.text__rq0Dv)}>
             {
               "\u0645\u0637\u0645\u0626\u0646\u06cc \u0645\u06cc\u062e\u0648\u0627\u06cc \u062a\u0648\u06cc \u0628\u0642\u06cc\u0647 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u0627\u06cc\u0646 \u0628\u0627\u0632\u0647 \u0632\u0645\u0627\u0646\u06cc \u00ab\u062e\u0627\u0644\u06cc\u00bb \u0628\u0634\u0647\u061f"
             }
           </div>
-          <div className={classNames(projectcss.all, sty.freeBox___6PyMi)}>
+          <div className={classNames("all", sty.freeBox___6PyMi)}>
             <div
               data-plasmic-name={"buttonYes"}
               data-plasmic-override={overrides.buttonYes}
-              className={classNames(projectcss.all, sty.buttonYes, "clickable")}
+              className={classNames("all", sty.buttonYes, "clickable")}
               onClick={async event => {
                 const $steps = {};
 
@@ -9631,13 +9425,7 @@ function PlasmicCalendar23__RenderFunc(props: {
                 }
               }}
             >
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__lC25A
-                )}
-              >
+              <div className={classNames("all", "__wab_text", sty.text__lC25A)}>
                 {"\u0628\u0644\u0647"}
               </div>
             </div>
@@ -9685,13 +9473,7 @@ function PlasmicCalendar23__RenderFunc(props: {
               size={"medium"}
               type={"primary"}
             >
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__i0MRw
-                )}
-              >
+              <div className={classNames("all", "__wab_text", sty.text__i0MRw)}>
                 {"\u0646\u0647"}
               </div>
             </AntdButton>
@@ -9702,9 +9484,9 @@ function PlasmicCalendar23__RenderFunc(props: {
           data-plasmic-override={overrides.newDiscountModal}
           className={classNames("__wab_instance", sty.newDiscountModal)}
           defaultStylesClassName={classNames(
-            projectcss.root_reset,
-            projectcss.plasmic_default_styles,
-            projectcss.plasmic_mixins,
+            "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+            "plasmic_default_styles",
+            "plasmic_mixins",
             styleTokensClassNames
           )}
           hideFooter={true}
@@ -9717,20 +9499,16 @@ function PlasmicCalendar23__RenderFunc(props: {
           }}
           open={generateStateValueProp($state, ["newDiscountModal", "open"])}
           title={
-            <div className={classNames(projectcss.all, sty.freeBox__wmdTn)}>
+            <div className={classNames("all", sty.freeBox__wmdTn)}>
               <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text___8Qf8W
-                )}
+                className={classNames("all", "__wab_text", sty.text___8Qf8W)}
               >
                 {
                   "\u062f\u0631\u0635\u062f \u062a\u062e\u0641\u06cc\u0641\ud83d\udd25\u0631\u0648 \u0645\u0634\u062e\u0635 \u06a9\u0646\n"
                 }
               </div>
               <Icon23Icon
-                className={classNames(projectcss.all, sty.svg__oba8E)}
+                className={classNames("all", sty.svg__oba8E)}
                 onClick={async event => {
                   const $steps = {};
 
@@ -9810,11 +9588,11 @@ function PlasmicCalendar23__RenderFunc(props: {
           trigger={null}
           width={"320"}
         >
-          <div className={classNames(projectcss.all, sty.freeBox__jc3Yw)}>
-            <div className={classNames(projectcss.all, sty.freeBox___54V1K)}>
+          <div className={classNames("all", sty.freeBox__jc3Yw)}>
+            <div className={classNames("all", sty.freeBox___54V1K)}>
               <div
                 className={classNames(
-                  projectcss.all,
+                  "all",
                   sty.freeBox__f3Cg9,
                   (() => {
                     try {
@@ -9902,16 +9680,12 @@ function PlasmicCalendar23__RenderFunc(props: {
                 }}
               >
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__gjuY
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__gjuY)}
                 >
                   {"+"}
                 </div>
               </div>
-              <div className={classNames(projectcss.all, sty.freeBox__rcFs7)}>
+              <div className={classNames("all", sty.freeBox__rcFs7)}>
                 <TextInput
                   data-plasmic-name={"textInput4"}
                   data-plasmic-override={overrides.textInput4}
@@ -9942,7 +9716,7 @@ function PlasmicCalendar23__RenderFunc(props: {
               </div>
               <div
                 className={classNames(
-                  projectcss.all,
+                  "all",
                   sty.freeBox__gSjKe,
                   (() => {
                     try {
@@ -10033,11 +9807,7 @@ function PlasmicCalendar23__RenderFunc(props: {
                 }}
               >
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__hzjVn
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__hzjVn)}
                 >
                   {"-"}
                 </div>
@@ -10081,13 +9851,9 @@ function PlasmicCalendar23__RenderFunc(props: {
                 throw e;
               }
             })() ? (
-              <div className={classNames(projectcss.all, sty.freeBox___4DQqs)}>
+              <div className={classNames("all", sty.freeBox___4DQqs)}>
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__kmoyU
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__kmoyU)}
                 >
                   <React.Fragment>
                     {(() => {
@@ -10164,14 +9930,12 @@ function PlasmicCalendar23__RenderFunc(props: {
                     })()}
                   </React.Fragment>
                 </div>
-                <div className={classNames(projectcss.all, sty.freeBox__rHggX)}>
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox___0Fv2V)}
-                  >
+                <div className={classNames("all", sty.freeBox__rHggX)}>
+                  <div className={classNames("all", sty.freeBox___0Fv2V)}>
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text__x05W1
                       )}
                     >
@@ -10196,11 +9960,7 @@ function PlasmicCalendar23__RenderFunc(props: {
                   </div>
                 </div>
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__aGd7P
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__aGd7P)}
                 >
                   <React.Fragment>
                     {(() => {
@@ -10219,11 +9979,7 @@ function PlasmicCalendar23__RenderFunc(props: {
                   </React.Fragment>
                 </div>
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__dYhl
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__dYhl)}
                 >
                   <React.Fragment>
                     {(() => {
@@ -10305,7 +10061,7 @@ function PlasmicCalendar23__RenderFunc(props: {
                 </div>
               </div>
             ) : null}
-            <div className={classNames(projectcss.all, sty.freeBox__iqdZr)}>
+            <div className={classNames("all", sty.freeBox__iqdZr)}>
               {(() => {
                 try {
                   return (() => {
@@ -10325,12 +10081,12 @@ function PlasmicCalendar23__RenderFunc(props: {
                   throw e;
                 }
               })() ? (
-                <div className={classNames(projectcss.all, sty.columns__x830)}>
-                  <div className={classNames(projectcss.all, sty.column__v7Dh)}>
+                <div className={classNames("all", sty.columns__x830)}>
+                  <div className={classNames("all", sty.column__v7Dh)}>
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text___4CxIg
                       )}
                     >
@@ -10360,14 +10116,12 @@ function PlasmicCalendar23__RenderFunc(props: {
                   throw e;
                 }
               })() ? (
-                <div className={classNames(projectcss.all, sty.columns__dIl1)}>
-                  <div
-                    className={classNames(projectcss.all, sty.column__xC5Cy)}
-                  >
+                <div className={classNames("all", sty.columns__dIl1)}>
+                  <div className={classNames("all", sty.column__xC5Cy)}>
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text___3SeU6
                       )}
                     >
@@ -10400,16 +10154,12 @@ function PlasmicCalendar23__RenderFunc(props: {
                   throw e;
                 }
               })() ? (
-                <div
-                  className={classNames(projectcss.all, sty.columns___2Lw8W)}
-                >
-                  <div
-                    className={classNames(projectcss.all, sty.column__sRhk3)}
-                  >
+                <div className={classNames("all", sty.columns___2Lw8W)}>
+                  <div className={classNames("all", sty.column__sRhk3)}>
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text__cfq75
                       )}
                     >
@@ -10433,10 +10183,8 @@ function PlasmicCalendar23__RenderFunc(props: {
                   throw e;
                 }
               })() ? (
-                <div className={classNames(projectcss.all, sty.columns__lnV0)}>
-                  <div
-                    className={classNames(projectcss.all, sty.column__cBtlT)}
-                  >
+                <div className={classNames("all", sty.columns__lnV0)}>
+                  <div className={classNames("all", sty.column__cBtlT)}>
                     {(() => {
                       try {
                         return (() => {
@@ -10466,8 +10214,8 @@ function PlasmicCalendar23__RenderFunc(props: {
                     })() ? (
                       <div
                         className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
+                          "all",
+                          "__wab_text",
                           sty.text__kd7Ha
                         )}
                       >
@@ -10503,8 +10251,8 @@ function PlasmicCalendar23__RenderFunc(props: {
                     })() ? (
                       <div
                         className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
+                          "all",
+                          "__wab_text",
                           sty.text__s5DSb
                         )}
                       >
@@ -10517,7 +10265,7 @@ function PlasmicCalendar23__RenderFunc(props: {
                 </div>
               ) : null}
             </div>
-            <div className={classNames(projectcss.all, sty.freeBox__p7Ty2)}>
+            <div className={classNames("all", sty.freeBox__p7Ty2)}>
               <Button
                 className={classNames("__wab_instance", sty.button__ua5K)}
                 onClick={async event => {
@@ -10754,31 +10502,25 @@ function PlasmicCalendar23__RenderFunc(props: {
         <div
           data-plasmic-name={"tourguide"}
           data-plasmic-override={overrides.tourguide}
-          className={classNames(projectcss.all, sty.tourguide)}
+          className={classNames("all", sty.tourguide)}
         >
           <div
             data-plasmic-name={"block3"}
             data-plasmic-override={overrides.block3}
-            className={classNames(projectcss.all, sty.block3)}
+            className={classNames("all", sty.block3)}
           >
             <div
               data-plasmic-name={"color"}
               data-plasmic-override={overrides.color}
-              className={classNames(projectcss.all, sty.color)}
+              className={classNames("all", sty.color)}
             />
 
             <div
               data-plasmic-name={"text"}
               data-plasmic-override={overrides.text}
-              className={classNames(projectcss.all, sty.text)}
+              className={classNames("all", sty.text)}
             >
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__tmsAx
-                )}
-              >
+              <div className={classNames("all", "__wab_text", sty.text__tmsAx)}>
                 {
                   "\u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u0628\u0633\u062a\u0647"
                 }
@@ -10788,26 +10530,20 @@ function PlasmicCalendar23__RenderFunc(props: {
           <div
             data-plasmic-name={"smartBookings"}
             data-plasmic-override={overrides.smartBookings}
-            className={classNames(projectcss.all, sty.smartBookings)}
+            className={classNames("all", sty.smartBookings)}
           >
             <div
               data-plasmic-name={"color2"}
               data-plasmic-override={overrides.color2}
-              className={classNames(projectcss.all, sty.color2)}
+              className={classNames("all", sty.color2)}
             />
 
             <div
               data-plasmic-name={"text2"}
               data-plasmic-override={overrides.text2}
-              className={classNames(projectcss.all, sty.text2)}
+              className={classNames("all", sty.text2)}
             >
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__hAkWo
-                )}
-              >
+              <div className={classNames("all", "__wab_text", sty.text__hAkWo)}>
                 {
                   "\u0631\u0632\u0631\u0648 \u0647\u0648\u0634\u0645\u0646\u062f"
                 }
@@ -10817,26 +10553,20 @@ function PlasmicCalendar23__RenderFunc(props: {
           <div
             data-plasmic-name={"discount"}
             data-plasmic-override={overrides.discount}
-            className={classNames(projectcss.all, sty.discount)}
+            className={classNames("all", sty.discount)}
           >
             <div
               data-plasmic-name={"color3"}
               data-plasmic-override={overrides.color3}
-              className={classNames(projectcss.all, sty.color3)}
+              className={classNames("all", sty.color3)}
             />
 
             <div
               data-plasmic-name={"text3"}
               data-plasmic-override={overrides.text3}
-              className={classNames(projectcss.all, sty.text3)}
+              className={classNames("all", sty.text3)}
             >
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__jjN5U
-                )}
-              >
+              <div className={classNames("all", "__wab_text", sty.text__jjN5U)}>
                 {"\u062a\u062e\u0641\u06cc\u0641"}
               </div>
             </div>
@@ -10844,7 +10574,7 @@ function PlasmicCalendar23__RenderFunc(props: {
           <div
             data-plasmic-name={"note"}
             data-plasmic-override={overrides.note}
-            className={classNames(projectcss.all, sty.note)}
+            className={classNames("all", sty.note)}
           >
             <PlasmicImg__
               alt={""}
@@ -10867,15 +10597,9 @@ function PlasmicCalendar23__RenderFunc(props: {
             <div
               data-plasmic-name={"text4"}
               data-plasmic-override={overrides.text4}
-              className={classNames(projectcss.all, sty.text4)}
+              className={classNames("all", sty.text4)}
             >
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__vLfvl
-                )}
-              >
+              <div className={classNames("all", "__wab_text", sty.text__vLfvl)}>
                 {"\u06cc\u0627\u062f\u062f\u0627\u0634\u062a"}
               </div>
             </div>
@@ -10885,11 +10609,11 @@ function PlasmicCalendar23__RenderFunc(props: {
       <div
         data-plasmic-name={"submitChange"}
         data-plasmic-override={overrides.submitChange}
-        className={classNames(projectcss.all, sty.submitChange)}
+        className={classNames("all", sty.submitChange)}
       >
         <div
           className={classNames(
-            projectcss.all,
+            "all",
             sty.freeBox__tzf5H,
             (() => {
               try {
@@ -10958,11 +10682,7 @@ function PlasmicCalendar23__RenderFunc(props: {
                 })()
           ) ? (
             <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__m5OnU
-              )}
+              className={classNames("all", "__wab_text", sty.text__m5OnU)}
               onClick={async event => {
                 const $steps = {};
 
@@ -11177,11 +10897,7 @@ function PlasmicCalendar23__RenderFunc(props: {
             }
           })() ? (
             <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__vTlif
-              )}
+              className={classNames("all", "__wab_text", sty.text__vTlif)}
               onClick={async event => {
                 const $steps = {};
 
@@ -11235,9 +10951,9 @@ function PlasmicCalendar23__RenderFunc(props: {
         data-plasmic-override={overrides.addingGuestInfo}
         className={classNames("__wab_instance", sty.addingGuestInfo)}
         defaultStylesClassName={classNames(
-          projectcss.root_reset,
-          projectcss.plasmic_default_styles,
-          projectcss.plasmic_mixins,
+          "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+          "plasmic_default_styles",
+          "plasmic_mixins",
           styleTokensClassNames
         )}
         hideFooter={true}
@@ -11250,20 +10966,14 @@ function PlasmicCalendar23__RenderFunc(props: {
         }}
         open={generateStateValueProp($state, ["addingGuestInfo", "open"])}
         title={
-          <div className={classNames(projectcss.all, sty.freeBox___4Q9G9)}>
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__f6HTx
-              )}
-            >
+          <div className={classNames("all", sty.freeBox___4Q9G9)}>
+            <div className={classNames("all", "__wab_text", sty.text__f6HTx)}>
               {hasVariant(globalVariants, "screen", "mobile")
                 ? "\u062b\u0628\u062a \u062f\u0633\u062a\u06cc \u0631\u0632\u0631\u0648"
                 : "\u062b\u0628\u062a \u062f\u0633\u062a\u06cc \u0631\u0632\u0631\u0648"}
             </div>
             <Icon23Icon
-              className={classNames(projectcss.all, sty.svg__gacl0)}
+              className={classNames("all", sty.svg__gacl0)}
               onClick={async event => {
                 const $steps = {};
 
@@ -11313,17 +11023,17 @@ function PlasmicCalendar23__RenderFunc(props: {
         <div
           data-plasmic-name={"form"}
           data-plasmic-override={overrides.form}
-          className={classNames(projectcss.all, sty.form)}
+          className={classNames("all", sty.form)}
         >
           <div
             data-plasmic-name={"p4"}
             data-plasmic-override={overrides.p4}
-            className={classNames(projectcss.all, sty.p4)}
+            className={classNames("all", sty.p4)}
           >
             <div
               data-plasmic-name={"referrer"}
               data-plasmic-override={overrides.referrer}
-              className={classNames(projectcss.all, sty.referrer)}
+              className={classNames("all", sty.referrer)}
             >
               <Select
                 data-plasmic-name={"guestReferrer"}
@@ -11373,11 +11083,7 @@ function PlasmicCalendar23__RenderFunc(props: {
                 })()}
                 placeholder={
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__ov4Tb
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__ov4Tb)}
                   >
                     {"\u0645\u0639\u0631\u0641 \u0645\u0647\u0645\u0627\u0646"}
                   </div>
@@ -11391,7 +11097,7 @@ function PlasmicCalendar23__RenderFunc(props: {
             <div
               data-plasmic-name={"count2"}
               data-plasmic-override={overrides.count2}
-              className={classNames(projectcss.all, sty.count2)}
+              className={classNames("all", sty.count2)}
             >
               <AntdInputNumber
                 data-plasmic-name={"guestCount"}
@@ -11432,7 +11138,7 @@ function PlasmicCalendar23__RenderFunc(props: {
               />
 
               <Icon83Icon
-                className={classNames(projectcss.all, sty.svg__fQ4Au)}
+                className={classNames("all", sty.svg__fQ4Au)}
                 role={"img"}
               />
             </div>
@@ -11440,7 +11146,7 @@ function PlasmicCalendar23__RenderFunc(props: {
           <div
             data-plasmic-name={"p3"}
             data-plasmic-override={overrides.p3}
-            className={classNames(projectcss.all, sty.p3)}
+            className={classNames("all", sty.p3)}
           >
             <Input
               data-plasmic-name={"input2"}
@@ -11476,13 +11182,7 @@ function PlasmicCalendar23__RenderFunc(props: {
               value={generateStateValueProp($state, ["amount", "value"])}
             />
 
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text___8TE0P
-              )}
-            >
+            <div className={classNames("all", "__wab_text", sty.text___8TE0P)}>
               <React.Fragment>
                 {(() => {
                   try {
@@ -11617,7 +11317,7 @@ function PlasmicCalendar23__RenderFunc(props: {
           <div
             data-plasmic-name={"p1"}
             data-plasmic-override={overrides.p1}
-            className={classNames(projectcss.all, sty.p1)}
+            className={classNames("all", sty.p1)}
           >
             <TextInput
               data-plasmic-name={"guestName"}
@@ -11647,7 +11347,7 @@ function PlasmicCalendar23__RenderFunc(props: {
           <div
             data-plasmic-name={"p2"}
             data-plasmic-override={overrides.p2}
-            className={classNames(projectcss.all, sty.p2)}
+            className={classNames("all", sty.p2)}
           >
             <TextInput
               data-plasmic-name={"phoneNumber"}
@@ -11689,13 +11389,7 @@ function PlasmicCalendar23__RenderFunc(props: {
                 throw e;
               }
             })() ? (
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__on8JC
-                )}
-              >
+              <div className={classNames("all", "__wab_text", sty.text__on8JC)}>
                 <React.Fragment>
                   <span
                     className={
@@ -11714,11 +11408,11 @@ function PlasmicCalendar23__RenderFunc(props: {
           <div
             data-plasmic-name={"p5"}
             data-plasmic-override={overrides.p5}
-            className={classNames(projectcss.all, sty.p5)}
+            className={classNames("all", sty.p5)}
           >
             <div
               className={classNames(
-                projectcss.all,
+                "all",
                 sty.freeBox__gkdW,
                 (() => {
                   try {
@@ -12198,11 +11892,7 @@ function PlasmicCalendar23__RenderFunc(props: {
                 submitsForm={false}
               >
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text___0Dqa1
-                  )}
+                  className={classNames("all", "__wab_text", sty.text___0Dqa1)}
                 >
                   {
                     "\u062b\u0628\u062a \u062f\u0631 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u0645\u0646"
@@ -12224,31 +11914,13 @@ function PlasmicCalendar23__RenderFunc(props: {
               throw e;
             }
           })() ? (
-            <div
-              className={classNames(
-                projectcss.all,
-                sty.freeBox__f7We2,
-                "fadein2"
-              )}
-            >
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__gEYrd
-                )}
-              >
+            <div className={classNames("all", sty.freeBox__f7We2, "fadein2")}>
+              <div className={classNames("all", "__wab_text", sty.text__gEYrd)}>
                 {
                   "\u0645\u0634\u062e\u0635\u0627\u062a \u0631\u0632\u0631\u0648 \u0631\u0648 \u0628\u0631\u0627\u06cc \u0627\u0631\u062a\u0628\u0627\u0637\u0627\u062a \u0628\u0639\u062f\u06cc\u062a \u062b\u0628\u062a \u06a9\u0646 \n\u0648 \u0631\u0648\u06cc \u062f\u06a9\u0645\u0647 \u067e\u0627\u06cc\u06cc\u0646 \u0628\u0632\u0646"
                 }
               </div>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__hCcCw
-                )}
-              >
+              <div className={classNames("all", "__wab_text", sty.text__hCcCw)}>
                 {
                   "(\u062b\u0628\u062a \u0645\u0634\u062e\u0635\u0627\u062a \u0627\u062e\u062a\u06cc\u0627\u0631\u06cc \u0648 \u0628\u0631\u0627\u06cc \u062e\u0648\u062f\u062a \u0645\u062d\u0641\u0648\u0638\u0647)"
                 }
@@ -12336,7 +12008,7 @@ function PlasmicCalendar23__RenderFunc(props: {
 
       <div
         className={classNames(
-          projectcss.all,
+          "all",
           sty.freeBox__pOy81,
           hasVariant(globalVariants, "screen", "mobile")
             ? $state.modalActions != ""
@@ -12349,13 +12021,13 @@ function PlasmicCalendar23__RenderFunc(props: {
       >
         <div
           className={classNames(
-            projectcss.all,
+            "all",
             sty.freeBox__sd7O9,
             "modal-bottom-content"
           )}
         >
           <div
-            className={classNames(projectcss.all, sty.freeBox__eBEks)}
+            className={classNames("all", sty.freeBox__eBEks)}
             onClick={async event => {
               const $steps = {};
 
@@ -12411,20 +12083,14 @@ function PlasmicCalendar23__RenderFunc(props: {
           <div
             data-plasmic-name={"price"}
             data-plasmic-override={overrides.price}
-            className={classNames(projectcss.all, sty.price)}
+            className={classNames("all", sty.price)}
           >
             <div
               data-plasmic-name={"title"}
               data-plasmic-override={overrides.title}
-              className={classNames(projectcss.all, sty.title)}
+              className={classNames("all", sty.title)}
             >
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__bl9
-                )}
-              >
+              <div className={classNames("all", "__wab_text", sty.text__bl9)}>
                 {
                   "\u0646\u0631\u062e \u0631\u0648 \u0648\u0627\u0631\u062f \u06a9\u0646"
                 }
@@ -12433,7 +12099,7 @@ function PlasmicCalendar23__RenderFunc(props: {
             <div
               data-plasmic-name={"priceInput"}
               data-plasmic-override={overrides.priceInput}
-              className={classNames(projectcss.all, sty.priceInput)}
+              className={classNames("all", sty.priceInput)}
             >
               <Input
                 data-plasmic-name={"getPrice"}
@@ -12455,15 +12121,9 @@ function PlasmicCalendar23__RenderFunc(props: {
             <div
               data-plasmic-name={"priceText"}
               data-plasmic-override={overrides.priceText}
-              className={classNames(projectcss.all, sty.priceText)}
+              className={classNames("all", sty.priceText)}
             >
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__eZPo
-                )}
-              >
+              <div className={classNames("all", "__wab_text", sty.text__eZPo)}>
                 <React.Fragment>
                   {(() => {
                     function numberToPersian(num) {
@@ -12585,15 +12245,9 @@ function PlasmicCalendar23__RenderFunc(props: {
             <div
               data-plasmic-name={"info"}
               data-plasmic-override={overrides.info}
-              className={classNames(projectcss.all, sty.info)}
+              className={classNames("all", sty.info)}
             >
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__xMdbQ
-                )}
-              >
+              <div className={classNames("all", "__wab_text", sty.text__xMdbQ)}>
                 {
                   "\u0645\u0628\u0644\u063a \u0628\u0627\u0644\u0627 \u00ab\u0642\u06cc\u0645\u062a \u062f\u0631\u06cc\u0627\u0641\u062a\u06cc\u00bb \u0634\u0645\u0627 \u0627\u0632 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u0627\u0633\u062a. \u0645\u0628\u0644\u063a\u06cc \u06a9\u0647 \u0628\u0647 \u062d\u0633\u0627\u0628\u062a \u0645\u06cc\u0627\u062f"
                 }
@@ -12602,7 +12256,7 @@ function PlasmicCalendar23__RenderFunc(props: {
             <div
               data-plasmic-name={"info2"}
               data-plasmic-override={overrides.info2}
-              className={classNames(projectcss.all, sty.info2)}
+              className={classNames("all", sty.info2)}
             >
               {(() => {
                 try {
@@ -12618,7 +12272,7 @@ function PlasmicCalendar23__RenderFunc(props: {
                 }
               })() ? (
                 <div
-                  className={classNames(projectcss.all, sty.freeBox___4SEdn)}
+                  className={classNames("all", sty.freeBox___4SEdn)}
                   onClick={async event => {
                     const $steps = {};
 
@@ -12659,11 +12313,7 @@ function PlasmicCalendar23__RenderFunc(props: {
                   }}
                 >
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__f0Kdj
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__f0Kdj)}
                   >
                     {
                       "\u0646\u0645\u0627\u06cc\u0634 \u0642\u06cc\u0645\u062a \u062f\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627"
@@ -12701,19 +12351,17 @@ function PlasmicCalendar23__RenderFunc(props: {
                   throw e;
                 }
               })() ? (
-                <div className={classNames(projectcss.all, sty.freeBox__eUkqZ)}>
+                <div className={classNames("all", sty.freeBox__eUkqZ)}>
                   <div
                     data-plasmic-name={"header"}
                     data-plasmic-override={overrides.header}
-                    className={classNames(projectcss.all, sty.header)}
+                    className={classNames("all", sty.header)}
                   >
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__pxCf9)}
-                    >
+                    <div className={classNames("all", sty.freeBox__pxCf9)}>
                       <div
                         className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
+                          "all",
+                          "__wab_text",
                           sty.text__xaZpA
                         )}
                       >
@@ -12722,26 +12370,22 @@ function PlasmicCalendar23__RenderFunc(props: {
                         }
                       </div>
                     </div>
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__noJfT)}
-                    >
+                    <div className={classNames("all", sty.freeBox__noJfT)}>
                       <div
                         className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
+                          "all",
+                          "__wab_text",
                           sty.text__e9HNz
                         )}
                       >
                         {"\u0628\u0647\u0631\u0647"}
                       </div>
                     </div>
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__owQpt)}
-                    >
+                    <div className={classNames("all", sty.freeBox__owQpt)}>
                       <div
                         className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
+                          "all",
+                          "__wab_text",
                           sty.text__yRXnw
                         )}
                       >
@@ -12782,21 +12426,16 @@ function PlasmicCalendar23__RenderFunc(props: {
                       <div
                         data-plasmic-name={"content"}
                         data-plasmic-override={overrides.content}
-                        className={classNames(projectcss.all, sty.content)}
+                        className={classNames("all", sty.content)}
                         key={currentIndex}
                       >
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            sty.freeBox__fNfpT
-                          )}
-                        >
+                        <div className={classNames("all", sty.freeBox__fNfpT)}>
                           <div
                             data-plasmic-name={"grossPrice"}
                             data-plasmic-override={overrides.grossPrice}
                             className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
+                              "all",
+                              "__wab_text",
                               sty.grossPrice
                             )}
                           >
@@ -12814,8 +12453,8 @@ function PlasmicCalendar23__RenderFunc(props: {
                             data-plasmic-name={"websiteName"}
                             data-plasmic-override={overrides.websiteName}
                             className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
+                              "all",
+                              "__wab_text",
                               sty.websiteName
                             )}
                           >
@@ -12851,16 +12490,11 @@ function PlasmicCalendar23__RenderFunc(props: {
                             </React.Fragment>
                           </div>
                         </div>
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            sty.freeBox___382Ks
-                          )}
-                        >
+                        <div className={classNames("all", sty.freeBox___382Ks)}>
                           <div
                             className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
+                              "all",
+                              "__wab_text",
                               sty.text__k0Jtg
                             )}
                           >
@@ -12882,16 +12516,11 @@ function PlasmicCalendar23__RenderFunc(props: {
                             </React.Fragment>
                           </div>
                         </div>
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            sty.freeBox___3M3C
-                          )}
-                        >
+                        <div className={classNames("all", sty.freeBox___3M3C)}>
                           <div
                             className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
+                              "all",
+                              "__wab_text",
                               sty.text__pvLpo
                             )}
                           >
@@ -12899,8 +12528,8 @@ function PlasmicCalendar23__RenderFunc(props: {
                           </div>
                           <div
                             className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
+                              "all",
+                              "__wab_text",
                               sty.text__iEwHz
                             )}
                           >
@@ -12937,7 +12566,7 @@ function PlasmicCalendar23__RenderFunc(props: {
                 </div>
               ) : null}
             </div>
-            <div className={classNames(projectcss.all, sty.freeBox__l008F)}>
+            <div className={classNames("all", sty.freeBox__l008F)}>
               <Button
                 className={classNames("__wab_instance", sty.button___9ZQf7)}
                 isDisabled={(() => {
@@ -13187,13 +12816,7 @@ function PlasmicCalendar23__RenderFunc(props: {
                   }
                 }}
               >
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__mv3
-                  )}
-                >
+                <div className={classNames("all", "__wab_text", sty.text__mv3)}>
                   {
                     "\u062b\u0628\u062a \u062a\u063a\u06cc\u06cc\u0631\u0627\u062a"
                   }

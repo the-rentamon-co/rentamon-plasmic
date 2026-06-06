@@ -72,7 +72,6 @@ import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-impor
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicSelect2.module.css"; // plasmic-import: rBgPhSTTtzLT/css
 
 import ChevronDownIcon from "./icons/PlasmicIcon__ChevronDown"; // plasmic-import: BTVUACcl_W-Y/icon
@@ -250,9 +249,9 @@ function PlasmicSelect2__RenderFunc(props: {
       aria-label={args.ariaLabel}
       className={classNames(
         "__wab_instance",
-        projectcss.root_reset,
-        projectcss.plasmic_default_styles,
-        projectcss.plasmic_mixins,
+        "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+        "plasmic_default_styles",
+        "plasmic_mixins",
         styleTokensClassNames,
         sty.ariaSelect,
         { [sty.ariaSelecttype_soft]: hasVariant($state, "type", "soft") }
@@ -306,11 +305,7 @@ function PlasmicSelect2__RenderFunc(props: {
           <div
             data-plasmic-name={"text"}
             data-plasmic-override={overrides.text}
-            className={classNames(
-              projectcss.all,
-              projectcss.__wab_text,
-              sty.text
-            )}
+            className={classNames("all", "__wab_text", sty.text)}
           >
             <React.Fragment>
               {(() => {
@@ -332,7 +327,7 @@ function PlasmicSelect2__RenderFunc(props: {
         <ChevronDownIcon
           data-plasmic-name={"svg"}
           data-plasmic-override={overrides.svg}
-          className={classNames(projectcss.all, sty.svg)}
+          className={classNames("all", sty.svg)}
           role={"img"}
         />
       </BaseButton>
@@ -365,11 +360,7 @@ function PlasmicSelect2__RenderFunc(props: {
                 className={classNames("__wab_instance", sty.menuSection__gCon7)}
                 header={
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__dkShE
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__dkShE)}
                   >
                     {"Section"}
                   </div>

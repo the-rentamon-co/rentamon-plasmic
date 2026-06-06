@@ -64,7 +64,6 @@ import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-impor
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicAlert.module.css"; // plasmic-import: RUWcL-66g8Jn/css
 
 import Icon3Icon from "./icons/PlasmicIcon__Icon3"; // plasmic-import: MOdODf-qwVQb/icon
@@ -195,17 +194,17 @@ function PlasmicAlert__RenderFunc(props: {
       data-plasmic-root={true}
       data-plasmic-for-node={forNode}
       className={classNames(
-        projectcss.all,
-        projectcss.root_reset,
-        projectcss.plasmic_default_styles,
-        projectcss.plasmic_mixins,
+        "all",
+        "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+        "plasmic_default_styles",
+        "plasmic_mixins",
         styleTokensClassNames,
         sty.root,
         { [sty.rootnoBody]: hasVariant($state, "noBody", "noBody") }
       )}
     >
       <div
-        className={classNames(projectcss.all, sty.freeBox__qaWwW, {
+        className={classNames("all", sty.freeBox__qaWwW, {
           [sty.freeBoxnoBody__qaWwWSfxaZ]: hasVariant(
             $state,
             "noBody",
@@ -224,7 +223,7 @@ function PlasmicAlert__RenderFunc(props: {
         })}
       >
         <div
-          className={classNames(projectcss.all, sty.freeBox___1JpUa, {
+          className={classNames("all", sty.freeBox___1JpUa, {
             [sty.freeBoxnoIcon___1JpUaopJi2]: hasVariant(
               $state,
               "noIcon",
@@ -235,7 +234,7 @@ function PlasmicAlert__RenderFunc(props: {
           {renderPlasmicSlot({
             defaultContents: (
               <Icon3Icon
-                className={classNames(projectcss.all, sty.svg__qzYq1)}
+                className={classNames("all", sty.svg__qzYq1)}
                 role={"img"}
               />
             ),
@@ -244,7 +243,7 @@ function PlasmicAlert__RenderFunc(props: {
           })}
         </div>
         <div
-          className={classNames(projectcss.all, sty.freeBox__vBhI, {
+          className={classNames("all", sty.freeBox__vBhI, {
             [sty.freeBoxnoHeader__vBhIIo6YW]: hasVariant(
               $state,
               "noHeader",
@@ -260,16 +259,10 @@ function PlasmicAlert__RenderFunc(props: {
           <h6
             data-plasmic-name={"h6"}
             data-plasmic-override={overrides.h6}
-            className={classNames(
-              projectcss.all,
-              projectcss.h6,
-              projectcss.h6__7SNMk,
-              sty.h6,
-              {
-                [sty.h6noHeader]: hasVariant($state, "noHeader", "noHeader"),
-                [sty.h6noIcon]: hasVariant($state, "noIcon", "noIcon")
-              }
-            )}
+            className={classNames("all", "h6", "h6__7SNMk", sty.h6, {
+              [sty.h6noHeader]: hasVariant($state, "noHeader", "noHeader"),
+              [sty.h6noIcon]: hasVariant($state, "noIcon", "noIcon")
+            })}
           >
             {renderPlasmicSlot({
               defaultContents: "Heads up!",
@@ -277,7 +270,7 @@ function PlasmicAlert__RenderFunc(props: {
             })}
           </h6>
           <div
-            className={classNames(projectcss.all, sty.freeBox__wDrFb, {
+            className={classNames("all", sty.freeBox__wDrFb, {
               [sty.freeBoxnoBody__wDrFbSfxaZ]: hasVariant(
                 $state,
                 "noBody",

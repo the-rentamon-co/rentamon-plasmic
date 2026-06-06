@@ -65,7 +65,6 @@ import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-impor
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicWallet.module.css"; // plasmic-import: bHX7IYOtGqc7/css
 
 import CheckSvgIcon from "./icons/PlasmicIcon__CheckSvg"; // plasmic-import: aHRi_lZjzHt3/icon
@@ -139,32 +138,22 @@ function PlasmicWallet__RenderFunc(props: {
       data-plasmic-root={true}
       data-plasmic-for-node={forNode}
       className={classNames(
-        projectcss.all,
-        projectcss.root_reset,
-        projectcss.plasmic_default_styles,
-        projectcss.plasmic_mixins,
+        "all",
+        "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+        "plasmic_default_styles",
+        "plasmic_mixins",
         styleTokensClassNames,
         sty.root
       )}
       dir={"rtl"}
     >
-      <div
-        className={classNames(
-          projectcss.all,
-          projectcss.__wab_text,
-          sty.text__voldv
-        )}
-      >
+      <div className={classNames("all", "__wab_text", sty.text__voldv)}>
         {
           "\u0645\u0627\u0646\u062f\u0647 \u0627\u0639\u062a\u0628\u0627\u0631: "
         }
       </div>
       <div
-        className={classNames(
-          projectcss.all,
-          projectcss.__wab_text,
-          sty.text__rwfBf
-        )}
+        className={classNames("all", "__wab_text", sty.text__rwfBf)}
         dir={"rtl"}
       >
         <React.Fragment>
@@ -190,13 +179,7 @@ function PlasmicWallet__RenderFunc(props: {
         data-plasmic-override={overrides.شارژکیفپول}
         className={classNames("__wab_instance", sty.شارژکیفپول)}
       >
-        <div
-          className={classNames(
-            projectcss.all,
-            projectcss.__wab_text,
-            sty.text__gc37
-          )}
-        >
+        <div className={classNames("all", "__wab_text", sty.text__gc37)}>
           {"\u0634\u0627\u0631\u0698"}
         </div>
       </Button>

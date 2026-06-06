@@ -65,7 +65,6 @@ import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-impor
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicButton3.module.css"; // plasmic-import: 5VoVqiGmU3In/css
 
 import CircleIcon from "./icons/PlasmicIcon__Circle"; // plasmic-import: ElHWritzoqrj/icon
@@ -292,9 +291,9 @@ function PlasmicButton3__RenderFunc(props: {
       aria-label={args.ariaLabel}
       className={classNames(
         "__wab_instance",
-        projectcss.root_reset,
-        projectcss.plasmic_default_styles,
-        projectcss.plasmic_mixins,
+        "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+        "plasmic_default_styles",
+        "plasmic_mixins",
         styleTokensClassNames,
         sty.root,
         {
@@ -388,7 +387,7 @@ function PlasmicButton3__RenderFunc(props: {
         <div
           data-plasmic-name={"softBackground"}
           data-plasmic-override={overrides.softBackground}
-          className={classNames(projectcss.all, sty.softBackground, {
+          className={classNames("all", sty.softBackground, {
             [sty.softBackgroundcolor_errorDestructive]: hasVariant(
               $state,
               "color",
@@ -433,7 +432,7 @@ function PlasmicButton3__RenderFunc(props: {
         <div
           data-plasmic-name={"border"}
           data-plasmic-override={overrides.border}
-          className={classNames(projectcss.all, sty.border, {
+          className={classNames("all", sty.border, {
             [sty.bordercolor_errorDestructive]: hasVariant(
               $state,
               "color",
@@ -468,7 +467,7 @@ function PlasmicButton3__RenderFunc(props: {
       <div
         data-plasmic-name={"interactionEffect"}
         data-plasmic-override={overrides.interactionEffect}
-        className={classNames(projectcss.all, sty.interactionEffect, {
+        className={classNames("all", sty.interactionEffect, {
           [sty.interactionEffectcolor_errorDestructive]: hasVariant(
             $state,
             "color",
@@ -527,7 +526,7 @@ function PlasmicButton3__RenderFunc(props: {
       />
 
       <div
-        className={classNames(projectcss.all, sty.freeBox___5RLn, {
+        className={classNames("all", sty.freeBox___5RLn, {
           [sty.freeBoxcolor_neutral___5RLn0KaVb]: hasVariant(
             $state,
             "color",
@@ -569,7 +568,7 @@ function PlasmicButton3__RenderFunc(props: {
         })}
       >
         <div
-          className={classNames(projectcss.all, sty.freeBox__hdlfp, {
+          className={classNames("all", sty.freeBox__hdlfp, {
             [sty.freeBoxcolor_neutral__hdlfp0KaVb]: hasVariant(
               $state,
               "color",
@@ -608,7 +607,7 @@ function PlasmicButton3__RenderFunc(props: {
           {renderPlasmicSlot({
             defaultContents: (
               <CircleIcon
-                className={classNames(projectcss.all, sty.svg__fksk6)}
+                className={classNames("all", sty.svg__fksk6)}
                 role={"img"}
               />
             ),
@@ -710,13 +709,7 @@ function PlasmicButton3__RenderFunc(props: {
         </div>
         {renderPlasmicSlot({
           defaultContents: (
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__lxhWh
-              )}
-            >
+            <div className={classNames("all", "__wab_text", sty.text__lxhWh)}>
               {"Text"}
             </div>
           ),
@@ -816,7 +809,7 @@ function PlasmicButton3__RenderFunc(props: {
           })
         })}
         <div
-          className={classNames(projectcss.all, sty.freeBox__vW0Os, {
+          className={classNames("all", sty.freeBox__vW0Os, {
             [sty.freeBoxiconEnd__vW0OsGrXvW]: hasVariant(
               $state,
               "iconEnd",
@@ -842,7 +835,7 @@ function PlasmicButton3__RenderFunc(props: {
           {renderPlasmicSlot({
             defaultContents: (
               <ChevronDownIcon
-                className={classNames(projectcss.all, sty.svg__zolIf)}
+                className={classNames("all", sty.svg__zolIf)}
                 role={"img"}
               />
             ),

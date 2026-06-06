@@ -70,7 +70,6 @@ import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-impor
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./Plasmic_404.module.css"; // plasmic-import: MCY7hgSl3pBE/css
 
 const emptyProxy: any = new Proxy(() => "", {
@@ -246,17 +245,17 @@ function Plasmic_404__RenderFunc(props: {
         }
       `}</style>
 
-      <div className={projectcss.plasmic_page_wrapper}>
+      <div className={"plasmic_page_wrapper"}>
         <div
           data-plasmic-name={"root"}
           data-plasmic-override={overrides.root}
           data-plasmic-root={true}
           data-plasmic-for-node={forNode}
           className={classNames(
-            projectcss.all,
-            projectcss.root_reset,
-            projectcss.plasmic_default_styles,
-            projectcss.plasmic_mixins,
+            "all",
+            "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+            "plasmic_default_styles",
+            "plasmic_mixins",
             styleTokensClassNames,
             sty.root
           )}
@@ -264,9 +263,9 @@ function Plasmic_404__RenderFunc(props: {
           <div
             data-plasmic-name={"header"}
             data-plasmic-override={overrides.header}
-            className={classNames(projectcss.all, sty.header)}
+            className={classNames("all", sty.header)}
           >
-            <div className={classNames(projectcss.all, sty.freeBox__meGr5)}>
+            <div className={classNames("all", sty.freeBox__meGr5)}>
               <SideBar2
                 data-plasmic-name={"sideBar2"}
                 data-plasmic-override={overrides.sideBar2}
@@ -289,7 +288,7 @@ function Plasmic_404__RenderFunc(props: {
                 })()}
               />
             </div>
-            <div className={classNames(projectcss.all, sty.freeBox__pYvYj)} />
+            <div className={classNames("all", sty.freeBox__pYvYj)} />
 
             <ApiRequest
               data-plasmic-name={"profile2"}
@@ -325,9 +324,9 @@ function Plasmic_404__RenderFunc(props: {
           <div
             data-plasmic-name={"mainContents"}
             data-plasmic-override={overrides.mainContents}
-            className={classNames(projectcss.all, sty.mainContents)}
+            className={classNames("all", sty.mainContents)}
           >
-            <div className={classNames(projectcss.all, sty.freeBox__cBplt)}>
+            <div className={classNames("all", sty.freeBox__cBplt)}>
               <PlasmicImg__
                 data-plasmic-name={"img"}
                 data-plasmic-override={overrides.img}
@@ -348,14 +347,10 @@ function Plasmic_404__RenderFunc(props: {
                 }}
               />
             </div>
-            <div className={classNames(projectcss.all, sty.freeBox__dgbbL)}>
-              <div className={classNames(projectcss.all, sty.freeBox__oXrIp)}>
+            <div className={classNames("all", sty.freeBox__dgbbL)}>
+              <div className={classNames("all", sty.freeBox__oXrIp)}>
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__nnxTo
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__nnxTo)}
                 >
                   {
                     "\u0645\u062b\u0644 \u0627\u06cc\u0646\u06a9\u0647 \u0627\u06cc\u0646 \u0635\u0641\u062d\u0647 \u0631\u0648 \u0646\u062f\u0627\u0631\u06cc\u0645!\n\u06f4\u06f0\u06f4"
@@ -363,11 +358,7 @@ function Plasmic_404__RenderFunc(props: {
                 </div>
               </div>
               <div
-                className={classNames(
-                  projectcss.all,
-                  sty.freeBox__ylNq0,
-                  "clickable"
-                )}
+                className={classNames("all", sty.freeBox__ylNq0, "clickable")}
                 onClick={async event => {
                   const $steps = {};
 
@@ -399,8 +390,8 @@ function Plasmic_404__RenderFunc(props: {
               >
                 <div
                   className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
+                    "all",
+                    "__wab_text",
                     sty.text___8ACS,
                     ``
                   )}
@@ -409,9 +400,9 @@ function Plasmic_404__RenderFunc(props: {
                 </div>
               </div>
             </div>
-            <div className={classNames(projectcss.all, sty.freeBox__my6Xn)}>
+            <div className={classNames("all", sty.freeBox__my6Xn)}>
               <div
-                className={classNames(projectcss.all, sty.freeBox__hESl, ``)}
+                className={classNames("all", sty.freeBox__hESl, ``)}
                 onClick={async event => {
                   const $steps = {};
 
@@ -448,8 +439,8 @@ function Plasmic_404__RenderFunc(props: {
               >
                 <div
                   className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
+                    "all",
+                    "__wab_text",
                     sty.text__oEa27,
                     "clickable"
                   )}
@@ -460,7 +451,7 @@ function Plasmic_404__RenderFunc(props: {
                 </div>
               </div>
               <div
-                className={classNames(projectcss.all, sty.freeBox__uuj9S, ``)}
+                className={classNames("all", sty.freeBox__uuj9S, ``)}
                 onClick={async event => {
                   const $steps = {};
 
@@ -497,8 +488,8 @@ function Plasmic_404__RenderFunc(props: {
               >
                 <div
                   className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
+                    "all",
+                    "__wab_text",
                     sty.text__qFge,
                     "clickable"
                   )}
@@ -509,7 +500,7 @@ function Plasmic_404__RenderFunc(props: {
                 </div>
               </div>
               <div
-                className={classNames(projectcss.all, sty.freeBox__ajAll, ``)}
+                className={classNames("all", sty.freeBox__ajAll, ``)}
                 onClick={async event => {
                   const $steps = {};
 
@@ -542,8 +533,8 @@ function Plasmic_404__RenderFunc(props: {
               >
                 <div
                   className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
+                    "all",
+                    "__wab_text",
                     sty.text___9Fi4P,
                     "clickable"
                   )}
@@ -567,7 +558,7 @@ function Plasmic_404__RenderFunc(props: {
             className={classNames("__wab_instance", sty.navbarMnFooter)}
           />
 
-          <div className={classNames(projectcss.all, sty.freeBox__mmxHh)}>
+          <div className={classNames("all", sty.freeBox__mmxHh)}>
             <ClarityRntComponent
               data-plasmic-name={"clarityRntComponent"}
               data-plasmic-override={overrides.clarityRntComponent}

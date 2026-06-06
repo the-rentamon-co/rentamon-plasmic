@@ -64,7 +64,6 @@ import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-impor
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicDayCell.module.css"; // plasmic-import: cU6Nt4MA6DXT/css
 
 createPlasmicElementProxy;
@@ -275,10 +274,10 @@ function PlasmicDayCell__RenderFunc(props: {
       data-plasmic-root={true}
       data-plasmic-for-node={forNode}
       className={classNames(
-        projectcss.all,
-        projectcss.root_reset,
-        projectcss.plasmic_default_styles,
-        projectcss.plasmic_mixins,
+        "all",
+        "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+        "plasmic_default_styles",
+        "plasmic_mixins",
         styleTokensClassNames,
         sty.root,
         hasVariant($state, "dayStatus", "disabledV2")
@@ -397,7 +396,7 @@ function PlasmicDayCell__RenderFunc(props: {
       )}
     >
       <div
-        className={classNames(projectcss.all, sty.freeBox__jPegP, {
+        className={classNames("all", sty.freeBox__jPegP, {
           [sty.freeBoxdayStatus_disabledV2__jPegPhaJHg]: hasVariant(
             $state,
             "dayStatus",
@@ -458,7 +457,7 @@ function PlasmicDayCell__RenderFunc(props: {
         <div
           data-plasmic-name={"cell"}
           data-plasmic-override={overrides.cell}
-          className={classNames(projectcss.all, sty.cell, "noteEffect", {
+          className={classNames("all", sty.cell, "noteEffect", {
             [sty.celldayStatus_blocked]: hasVariant(
               $state,
               "dayStatus",
@@ -568,7 +567,7 @@ function PlasmicDayCell__RenderFunc(props: {
           })}
         >
           <div
-            className={classNames(projectcss.all, sty.freeBox__aE9Ge, {
+            className={classNames("all", sty.freeBox__aE9Ge, {
               [sty.freeBoxdayStatus_disabledV2__aE9GehaJHg]: hasVariant(
                 $state,
                 "dayStatus",
@@ -633,97 +632,97 @@ function PlasmicDayCell__RenderFunc(props: {
               }
             })() ? (
               <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__sLeDq,
-                  {
-                    [sty.textdayStatus_blocked__sLeDq77F30]: hasVariant(
-                      $state,
-                      "dayStatus",
-                      "blocked"
-                    ),
-                    [sty.textdayStatus_disabledV2__sLeDqhaJHg]: hasVariant(
-                      $state,
-                      "dayStatus",
-                      "disabledV2"
-                    ),
-                    [sty.textdayStatus_disabled__sLeDqOkz0Z]: hasVariant(
-                      $state,
-                      "dayStatus",
-                      "disabled"
-                    ),
-                    [sty.textdayStatus_discount__sLeDq2ON9H]: hasVariant(
-                      $state,
-                      "dayStatus",
-                      "discount"
-                    ),
-                    [sty.textdayStatus_firstDayReserveV2__sLeDq7GAmv]:
-                      hasVariant($state, "dayStatus", "firstDayReserveV2"),
-                    [sty.textdayStatus_firstDayReserve__sLeDqyp11Q]: hasVariant(
-                      $state,
-                      "dayStatus",
-                      "firstDayReserve"
-                    ),
-                    [sty.textdayStatus_lastDayReserveV2__sLeDqkfRpo]:
-                      hasVariant($state, "dayStatus", "lastDayReserveV2"),
-                    [sty.textdayStatus_lastDayReserve__sLeDqvreYs]: hasVariant(
-                      $state,
-                      "dayStatus",
-                      "lastDayReserve"
-                    ),
-                    [sty.textdayStatus_midDayReserveV2__sLeDqBi4Ie]: hasVariant(
-                      $state,
-                      "dayStatus",
-                      "midDayReserveV2"
-                    ),
-                    [sty.textdayStatus_midDayReserve__sLeDqxrGdN]: hasVariant(
-                      $state,
-                      "dayStatus",
-                      "midDayReserve"
-                    ),
-                    [sty.textdayStatus_passedFirstDayReserveV2__sLeDqLYuad]:
-                      hasVariant(
-                        $state,
-                        "dayStatus",
-                        "passedFirstDayReserveV2"
-                      ),
-                    [sty.textdayStatus_passedFirstDayReserve__sLeDqohsA4]:
-                      hasVariant($state, "dayStatus", "passedFirstDayReserve"),
-                    [sty.textdayStatus_passedLastDayReserveV2__sLeDqOkKzh]:
-                      hasVariant($state, "dayStatus", "passedLastDayReserveV2"),
-                    [sty.textdayStatus_passedLastDayReserve__sLeDqMjPP]:
-                      hasVariant($state, "dayStatus", "passedLastDayReserve"),
-                    [sty.textdayStatus_passedMidDayReserveV2__sLeDqMnIj]:
-                      hasVariant($state, "dayStatus", "passedMidDayReserveV2"),
-                    [sty.textdayStatus_passedMidDayReserve__sLeDqo7Nt2]:
-                      hasVariant($state, "dayStatus", "passedMidDayReserve"),
-                    [sty.textdayStatus_passedReservedV2__sLeDqrqoWb]:
-                      hasVariant($state, "dayStatus", "passedReservedV2"),
-                    [sty.textdayStatus_passedSingleReserve__sLeDqfNqAx]:
-                      hasVariant($state, "dayStatus", "passedSingleReserve"),
-                    [sty.textdayStatus_reservedV2__sLeDqSbYT]: hasVariant(
-                      $state,
-                      "dayStatus",
-                      "reservedV2"
-                    ),
-                    [sty.textdayStatus_reserved__sLeDq6WcTl]: hasVariant(
-                      $state,
-                      "dayStatus",
-                      "reserved"
-                    ),
-                    [sty.textdayStatus_selected__sLeDqmbNkx]: hasVariant(
-                      $state,
-                      "dayStatus",
-                      "selected"
-                    ),
-                    [sty.textselected__sLeDq2Pr1U]: hasVariant(
-                      $state,
-                      "selected",
-                      "selected"
-                    )
-                  }
-                )}
+                className={classNames("all", "__wab_text", sty.text__sLeDq, {
+                  [sty.textdayStatus_blocked__sLeDq77F30]: hasVariant(
+                    $state,
+                    "dayStatus",
+                    "blocked"
+                  ),
+                  [sty.textdayStatus_disabledV2__sLeDqhaJHg]: hasVariant(
+                    $state,
+                    "dayStatus",
+                    "disabledV2"
+                  ),
+                  [sty.textdayStatus_disabled__sLeDqOkz0Z]: hasVariant(
+                    $state,
+                    "dayStatus",
+                    "disabled"
+                  ),
+                  [sty.textdayStatus_discount__sLeDq2ON9H]: hasVariant(
+                    $state,
+                    "dayStatus",
+                    "discount"
+                  ),
+                  [sty.textdayStatus_firstDayReserveV2__sLeDq7GAmv]: hasVariant(
+                    $state,
+                    "dayStatus",
+                    "firstDayReserveV2"
+                  ),
+                  [sty.textdayStatus_firstDayReserve__sLeDqyp11Q]: hasVariant(
+                    $state,
+                    "dayStatus",
+                    "firstDayReserve"
+                  ),
+                  [sty.textdayStatus_lastDayReserveV2__sLeDqkfRpo]: hasVariant(
+                    $state,
+                    "dayStatus",
+                    "lastDayReserveV2"
+                  ),
+                  [sty.textdayStatus_lastDayReserve__sLeDqvreYs]: hasVariant(
+                    $state,
+                    "dayStatus",
+                    "lastDayReserve"
+                  ),
+                  [sty.textdayStatus_midDayReserveV2__sLeDqBi4Ie]: hasVariant(
+                    $state,
+                    "dayStatus",
+                    "midDayReserveV2"
+                  ),
+                  [sty.textdayStatus_midDayReserve__sLeDqxrGdN]: hasVariant(
+                    $state,
+                    "dayStatus",
+                    "midDayReserve"
+                  ),
+                  [sty.textdayStatus_passedFirstDayReserveV2__sLeDqLYuad]:
+                    hasVariant($state, "dayStatus", "passedFirstDayReserveV2"),
+                  [sty.textdayStatus_passedFirstDayReserve__sLeDqohsA4]:
+                    hasVariant($state, "dayStatus", "passedFirstDayReserve"),
+                  [sty.textdayStatus_passedLastDayReserveV2__sLeDqOkKzh]:
+                    hasVariant($state, "dayStatus", "passedLastDayReserveV2"),
+                  [sty.textdayStatus_passedLastDayReserve__sLeDqMjPP]:
+                    hasVariant($state, "dayStatus", "passedLastDayReserve"),
+                  [sty.textdayStatus_passedMidDayReserveV2__sLeDqMnIj]:
+                    hasVariant($state, "dayStatus", "passedMidDayReserveV2"),
+                  [sty.textdayStatus_passedMidDayReserve__sLeDqo7Nt2]:
+                    hasVariant($state, "dayStatus", "passedMidDayReserve"),
+                  [sty.textdayStatus_passedReservedV2__sLeDqrqoWb]: hasVariant(
+                    $state,
+                    "dayStatus",
+                    "passedReservedV2"
+                  ),
+                  [sty.textdayStatus_passedSingleReserve__sLeDqfNqAx]:
+                    hasVariant($state, "dayStatus", "passedSingleReserve"),
+                  [sty.textdayStatus_reservedV2__sLeDqSbYT]: hasVariant(
+                    $state,
+                    "dayStatus",
+                    "reservedV2"
+                  ),
+                  [sty.textdayStatus_reserved__sLeDq6WcTl]: hasVariant(
+                    $state,
+                    "dayStatus",
+                    "reserved"
+                  ),
+                  [sty.textdayStatus_selected__sLeDqmbNkx]: hasVariant(
+                    $state,
+                    "dayStatus",
+                    "selected"
+                  ),
+                  [sty.textselected__sLeDq2Pr1U]: hasVariant(
+                    $state,
+                    "selected",
+                    "selected"
+                  )
+                })}
               >
                 <React.Fragment>
                   {(() => {
@@ -764,124 +763,118 @@ function PlasmicDayCell__RenderFunc(props: {
               <div
                 data-plasmic-name={"holidays2"}
                 data-plasmic-override={overrides.holidays2}
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.holidays2,
-                  {
-                    [sty.holidays2dayStatus_blocked]: hasVariant(
-                      $state,
-                      "dayStatus",
-                      "blocked"
-                    ),
-                    [sty.holidays2dayStatus_disabledV2]: hasVariant(
-                      $state,
-                      "dayStatus",
-                      "disabledV2"
-                    ),
-                    [sty.holidays2dayStatus_disabled]: hasVariant(
-                      $state,
-                      "dayStatus",
-                      "disabled"
-                    ),
-                    [sty.holidays2dayStatus_discount]: hasVariant(
-                      $state,
-                      "dayStatus",
-                      "discount"
-                    ),
-                    [sty.holidays2dayStatus_firstDayReserveV2]: hasVariant(
-                      $state,
-                      "dayStatus",
-                      "firstDayReserveV2"
-                    ),
-                    [sty.holidays2dayStatus_firstDayReserve]: hasVariant(
-                      $state,
-                      "dayStatus",
-                      "firstDayReserve"
-                    ),
-                    [sty.holidays2dayStatus_lastDayReserveV2]: hasVariant(
-                      $state,
-                      "dayStatus",
-                      "lastDayReserveV2"
-                    ),
-                    [sty.holidays2dayStatus_lastDayReserve]: hasVariant(
-                      $state,
-                      "dayStatus",
-                      "lastDayReserve"
-                    ),
-                    [sty.holidays2dayStatus_midDayReserveV2]: hasVariant(
-                      $state,
-                      "dayStatus",
-                      "midDayReserveV2"
-                    ),
-                    [sty.holidays2dayStatus_midDayReserve]: hasVariant(
-                      $state,
-                      "dayStatus",
-                      "midDayReserve"
-                    ),
-                    [sty.holidays2dayStatus_passedFirstDayReserveV2]:
-                      hasVariant(
-                        $state,
-                        "dayStatus",
-                        "passedFirstDayReserveV2"
-                      ),
-                    [sty.holidays2dayStatus_passedFirstDayReserve]: hasVariant(
-                      $state,
-                      "dayStatus",
-                      "passedFirstDayReserve"
-                    ),
-                    [sty.holidays2dayStatus_passedLastDayReserveV2]: hasVariant(
-                      $state,
-                      "dayStatus",
-                      "passedLastDayReserveV2"
-                    ),
-                    [sty.holidays2dayStatus_passedLastDayReserve]: hasVariant(
-                      $state,
-                      "dayStatus",
-                      "passedLastDayReserve"
-                    ),
-                    [sty.holidays2dayStatus_passedMidDayReserveV2]: hasVariant(
-                      $state,
-                      "dayStatus",
-                      "passedMidDayReserveV2"
-                    ),
-                    [sty.holidays2dayStatus_passedMidDayReserve]: hasVariant(
-                      $state,
-                      "dayStatus",
-                      "passedMidDayReserve"
-                    ),
-                    [sty.holidays2dayStatus_passedReservedV2]: hasVariant(
-                      $state,
-                      "dayStatus",
-                      "passedReservedV2"
-                    ),
-                    [sty.holidays2dayStatus_passedSingleReserve]: hasVariant(
-                      $state,
-                      "dayStatus",
-                      "passedSingleReserve"
-                    ),
-                    [sty.holidays2dayStatus_reservedV2]: hasVariant(
-                      $state,
-                      "dayStatus",
-                      "reservedV2"
-                    ),
-                    [sty.holidays2dayStatus_reserved]: hasVariant(
-                      $state,
-                      "dayStatus",
-                      "reserved"
-                    ),
-                    [sty.holidays2dayStatus_selected]: hasVariant(
-                      $state,
-                      "dayStatus",
-                      "selected"
-                    ),
-                    [sty.holidays2selected]: hasVariant(
-                      $state,
-                      "selected",
-                      "selected"
-                    )
-                  }
-                )}
+                className={classNames("all", "__wab_text", sty.holidays2, {
+                  [sty.holidays2dayStatus_blocked]: hasVariant(
+                    $state,
+                    "dayStatus",
+                    "blocked"
+                  ),
+                  [sty.holidays2dayStatus_disabledV2]: hasVariant(
+                    $state,
+                    "dayStatus",
+                    "disabledV2"
+                  ),
+                  [sty.holidays2dayStatus_disabled]: hasVariant(
+                    $state,
+                    "dayStatus",
+                    "disabled"
+                  ),
+                  [sty.holidays2dayStatus_discount]: hasVariant(
+                    $state,
+                    "dayStatus",
+                    "discount"
+                  ),
+                  [sty.holidays2dayStatus_firstDayReserveV2]: hasVariant(
+                    $state,
+                    "dayStatus",
+                    "firstDayReserveV2"
+                  ),
+                  [sty.holidays2dayStatus_firstDayReserve]: hasVariant(
+                    $state,
+                    "dayStatus",
+                    "firstDayReserve"
+                  ),
+                  [sty.holidays2dayStatus_lastDayReserveV2]: hasVariant(
+                    $state,
+                    "dayStatus",
+                    "lastDayReserveV2"
+                  ),
+                  [sty.holidays2dayStatus_lastDayReserve]: hasVariant(
+                    $state,
+                    "dayStatus",
+                    "lastDayReserve"
+                  ),
+                  [sty.holidays2dayStatus_midDayReserveV2]: hasVariant(
+                    $state,
+                    "dayStatus",
+                    "midDayReserveV2"
+                  ),
+                  [sty.holidays2dayStatus_midDayReserve]: hasVariant(
+                    $state,
+                    "dayStatus",
+                    "midDayReserve"
+                  ),
+                  [sty.holidays2dayStatus_passedFirstDayReserveV2]: hasVariant(
+                    $state,
+                    "dayStatus",
+                    "passedFirstDayReserveV2"
+                  ),
+                  [sty.holidays2dayStatus_passedFirstDayReserve]: hasVariant(
+                    $state,
+                    "dayStatus",
+                    "passedFirstDayReserve"
+                  ),
+                  [sty.holidays2dayStatus_passedLastDayReserveV2]: hasVariant(
+                    $state,
+                    "dayStatus",
+                    "passedLastDayReserveV2"
+                  ),
+                  [sty.holidays2dayStatus_passedLastDayReserve]: hasVariant(
+                    $state,
+                    "dayStatus",
+                    "passedLastDayReserve"
+                  ),
+                  [sty.holidays2dayStatus_passedMidDayReserveV2]: hasVariant(
+                    $state,
+                    "dayStatus",
+                    "passedMidDayReserveV2"
+                  ),
+                  [sty.holidays2dayStatus_passedMidDayReserve]: hasVariant(
+                    $state,
+                    "dayStatus",
+                    "passedMidDayReserve"
+                  ),
+                  [sty.holidays2dayStatus_passedReservedV2]: hasVariant(
+                    $state,
+                    "dayStatus",
+                    "passedReservedV2"
+                  ),
+                  [sty.holidays2dayStatus_passedSingleReserve]: hasVariant(
+                    $state,
+                    "dayStatus",
+                    "passedSingleReserve"
+                  ),
+                  [sty.holidays2dayStatus_reservedV2]: hasVariant(
+                    $state,
+                    "dayStatus",
+                    "reservedV2"
+                  ),
+                  [sty.holidays2dayStatus_reserved]: hasVariant(
+                    $state,
+                    "dayStatus",
+                    "reserved"
+                  ),
+                  [sty.holidays2dayStatus_selected]: hasVariant(
+                    $state,
+                    "dayStatus",
+                    "selected"
+                  ),
+                  [sty.holidays2selected]: hasVariant(
+                    $state,
+                    "selected",
+                    "selected"
+                  )
+                })}
               >
                 <React.Fragment>
                   {(() => {
@@ -902,7 +895,7 @@ function PlasmicDayCell__RenderFunc(props: {
             ) : null}
           </div>
           <div
-            className={classNames(projectcss.all, sty.freeBox__gKj3, {
+            className={classNames("all", sty.freeBox__gKj3, {
               [sty.freeBoxdayStatus_blocked__gKj377F30]: hasVariant(
                 $state,
                 "dayStatus",
@@ -989,97 +982,104 @@ function PlasmicDayCell__RenderFunc(props: {
             })}
           >
             <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__kqTC,
-                {
-                  [sty.textdayStatus_blocked__kqTC77F30]: hasVariant(
-                    $state,
-                    "dayStatus",
-                    "blocked"
-                  ),
-                  [sty.textdayStatus_disabledV2__kqTChaJHg]: hasVariant(
-                    $state,
-                    "dayStatus",
-                    "disabledV2"
-                  ),
-                  [sty.textdayStatus_disabled__kqTCokz0Z]: hasVariant(
-                    $state,
-                    "dayStatus",
-                    "disabled"
-                  ),
-                  [sty.textdayStatus_discount__kqTC2ON9H]: hasVariant(
-                    $state,
-                    "dayStatus",
-                    "discount"
-                  ),
-                  [sty.textdayStatus_firstDayReserveV2__kqTC7GAmv]: hasVariant(
-                    $state,
-                    "dayStatus",
-                    "firstDayReserveV2"
-                  ),
-                  [sty.textdayStatus_firstDayReserve__kqTCyp11Q]: hasVariant(
-                    $state,
-                    "dayStatus",
-                    "firstDayReserve"
-                  ),
-                  [sty.textdayStatus_lastDayReserveV2__kqTCkfRpo]: hasVariant(
-                    $state,
-                    "dayStatus",
-                    "lastDayReserveV2"
-                  ),
-                  [sty.textdayStatus_lastDayReserve__kqTCvreYs]: hasVariant(
-                    $state,
-                    "dayStatus",
-                    "lastDayReserve"
-                  ),
-                  [sty.textdayStatus_midDayReserveV2__kqTCbi4Ie]: hasVariant(
-                    $state,
-                    "dayStatus",
-                    "midDayReserveV2"
-                  ),
-                  [sty.textdayStatus_midDayReserve__kqTCxrGdN]: hasVariant(
-                    $state,
-                    "dayStatus",
-                    "midDayReserve"
-                  ),
-                  [sty.textdayStatus_passedFirstDayReserveV2__kqTClYuad]:
-                    hasVariant($state, "dayStatus", "passedFirstDayReserveV2"),
-                  [sty.textdayStatus_passedFirstDayReserve__kqTCohsA4]:
-                    hasVariant($state, "dayStatus", "passedFirstDayReserve"),
-                  [sty.textdayStatus_passedLastDayReserveV2__kqTCOkKzh]:
-                    hasVariant($state, "dayStatus", "passedLastDayReserveV2"),
-                  [sty.textdayStatus_passedLastDayReserve__kqTCMjPP]:
-                    hasVariant($state, "dayStatus", "passedLastDayReserve"),
-                  [sty.textdayStatus_passedMidDayReserveV2__kqTCMnIj]:
-                    hasVariant($state, "dayStatus", "passedMidDayReserveV2"),
-                  [sty.textdayStatus_passedMidDayReserve__kqTCo7Nt2]:
-                    hasVariant($state, "dayStatus", "passedMidDayReserve"),
-                  [sty.textdayStatus_passedReservedV2__kqTCrqoWb]: hasVariant(
-                    $state,
-                    "dayStatus",
-                    "passedReservedV2"
-                  ),
-                  [sty.textdayStatus_passedSingleReserve__kqTCfNqAx]:
-                    hasVariant($state, "dayStatus", "passedSingleReserve"),
-                  [sty.textdayStatus_reservedV2__kqTCSbYT]: hasVariant(
-                    $state,
-                    "dayStatus",
-                    "reservedV2"
-                  ),
-                  [sty.textdayStatus_reserved__kqTC6WcTl]: hasVariant(
-                    $state,
-                    "dayStatus",
-                    "reserved"
-                  ),
-                  [sty.textselected__kqTC2Pr1U]: hasVariant(
-                    $state,
-                    "selected",
-                    "selected"
-                  )
-                }
-              )}
+              className={classNames("all", "__wab_text", sty.text__kqTC, {
+                [sty.textdayStatus_blocked__kqTC77F30]: hasVariant(
+                  $state,
+                  "dayStatus",
+                  "blocked"
+                ),
+                [sty.textdayStatus_disabledV2__kqTChaJHg]: hasVariant(
+                  $state,
+                  "dayStatus",
+                  "disabledV2"
+                ),
+                [sty.textdayStatus_disabled__kqTCokz0Z]: hasVariant(
+                  $state,
+                  "dayStatus",
+                  "disabled"
+                ),
+                [sty.textdayStatus_discount__kqTC2ON9H]: hasVariant(
+                  $state,
+                  "dayStatus",
+                  "discount"
+                ),
+                [sty.textdayStatus_firstDayReserveV2__kqTC7GAmv]: hasVariant(
+                  $state,
+                  "dayStatus",
+                  "firstDayReserveV2"
+                ),
+                [sty.textdayStatus_firstDayReserve__kqTCyp11Q]: hasVariant(
+                  $state,
+                  "dayStatus",
+                  "firstDayReserve"
+                ),
+                [sty.textdayStatus_lastDayReserveV2__kqTCkfRpo]: hasVariant(
+                  $state,
+                  "dayStatus",
+                  "lastDayReserveV2"
+                ),
+                [sty.textdayStatus_lastDayReserve__kqTCvreYs]: hasVariant(
+                  $state,
+                  "dayStatus",
+                  "lastDayReserve"
+                ),
+                [sty.textdayStatus_midDayReserveV2__kqTCbi4Ie]: hasVariant(
+                  $state,
+                  "dayStatus",
+                  "midDayReserveV2"
+                ),
+                [sty.textdayStatus_midDayReserve__kqTCxrGdN]: hasVariant(
+                  $state,
+                  "dayStatus",
+                  "midDayReserve"
+                ),
+                [sty.textdayStatus_passedFirstDayReserveV2__kqTClYuad]:
+                  hasVariant($state, "dayStatus", "passedFirstDayReserveV2"),
+                [sty.textdayStatus_passedFirstDayReserve__kqTCohsA4]:
+                  hasVariant($state, "dayStatus", "passedFirstDayReserve"),
+                [sty.textdayStatus_passedLastDayReserveV2__kqTCOkKzh]:
+                  hasVariant($state, "dayStatus", "passedLastDayReserveV2"),
+                [sty.textdayStatus_passedLastDayReserve__kqTCMjPP]: hasVariant(
+                  $state,
+                  "dayStatus",
+                  "passedLastDayReserve"
+                ),
+                [sty.textdayStatus_passedMidDayReserveV2__kqTCMnIj]: hasVariant(
+                  $state,
+                  "dayStatus",
+                  "passedMidDayReserveV2"
+                ),
+                [sty.textdayStatus_passedMidDayReserve__kqTCo7Nt2]: hasVariant(
+                  $state,
+                  "dayStatus",
+                  "passedMidDayReserve"
+                ),
+                [sty.textdayStatus_passedReservedV2__kqTCrqoWb]: hasVariant(
+                  $state,
+                  "dayStatus",
+                  "passedReservedV2"
+                ),
+                [sty.textdayStatus_passedSingleReserve__kqTCfNqAx]: hasVariant(
+                  $state,
+                  "dayStatus",
+                  "passedSingleReserve"
+                ),
+                [sty.textdayStatus_reservedV2__kqTCSbYT]: hasVariant(
+                  $state,
+                  "dayStatus",
+                  "reservedV2"
+                ),
+                [sty.textdayStatus_reserved__kqTC6WcTl]: hasVariant(
+                  $state,
+                  "dayStatus",
+                  "reserved"
+                ),
+                [sty.textselected__kqTC2Pr1U]: hasVariant(
+                  $state,
+                  "selected",
+                  "selected"
+                )
+              })}
             >
               {hasVariant(globalVariants, "screen", "smallMobile") ? (
                 <React.Fragment>
@@ -1133,7 +1133,7 @@ function PlasmicDayCell__RenderFunc(props: {
             </div>
           </div>
           <div
-            className={classNames(projectcss.all, sty.freeBox__cD9Fr, {
+            className={classNames("all", sty.freeBox__cD9Fr, {
               [sty.freeBoxdayStatus_firstDayReserveV2__cD9Fr7GAmv]: hasVariant(
                 $state,
                 "dayStatus",
@@ -1264,7 +1264,7 @@ function PlasmicDayCell__RenderFunc(props: {
                                 : true
             ) ? (
               <div
-                className={classNames(projectcss.all, sty.freeBox__rEGp, {
+                className={classNames("all", sty.freeBox__rEGp, {
                   [sty.freeBoxdayStatus_disabled__rEGpokz0Z]: hasVariant(
                     $state,
                     "dayStatus",
@@ -1438,8 +1438,8 @@ function PlasmicDayCell__RenderFunc(props: {
                 ) ? (
                   <div
                     className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
+                      "all",
+                      "__wab_text",
                       sty.text__ltKp2,
                       {
                         [sty.textdayStatus_blocked__ltKp277F30]: hasVariant(
@@ -1740,97 +1740,97 @@ function PlasmicDayCell__RenderFunc(props: {
                                                   : false
             ) ? (
               <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__ieD1X,
-                  {
-                    [sty.textdayStatus_blocked__ieD1X77F30]: hasVariant(
-                      $state,
-                      "dayStatus",
-                      "blocked"
-                    ),
-                    [sty.textdayStatus_disabledV2__ieD1XhaJHg]: hasVariant(
-                      $state,
-                      "dayStatus",
-                      "disabledV2"
-                    ),
-                    [sty.textdayStatus_disabled__ieD1Xokz0Z]: hasVariant(
-                      $state,
-                      "dayStatus",
-                      "disabled"
-                    ),
-                    [sty.textdayStatus_discount__ieD1X2ON9H]: hasVariant(
-                      $state,
-                      "dayStatus",
-                      "discount"
-                    ),
-                    [sty.textdayStatus_firstDayReserveV2__ieD1X7GAmv]:
-                      hasVariant($state, "dayStatus", "firstDayReserveV2"),
-                    [sty.textdayStatus_firstDayReserve__ieD1Xyp11Q]: hasVariant(
-                      $state,
-                      "dayStatus",
-                      "firstDayReserve"
-                    ),
-                    [sty.textdayStatus_lastDayReserveV2__ieD1XkfRpo]:
-                      hasVariant($state, "dayStatus", "lastDayReserveV2"),
-                    [sty.textdayStatus_lastDayReserve__ieD1XvreYs]: hasVariant(
-                      $state,
-                      "dayStatus",
-                      "lastDayReserve"
-                    ),
-                    [sty.textdayStatus_midDayReserveV2__ieD1Xbi4Ie]: hasVariant(
-                      $state,
-                      "dayStatus",
-                      "midDayReserveV2"
-                    ),
-                    [sty.textdayStatus_midDayReserve__ieD1XxrGdN]: hasVariant(
-                      $state,
-                      "dayStatus",
-                      "midDayReserve"
-                    ),
-                    [sty.textdayStatus_passedFirstDayReserveV2__ieD1XlYuad]:
-                      hasVariant(
-                        $state,
-                        "dayStatus",
-                        "passedFirstDayReserveV2"
-                      ),
-                    [sty.textdayStatus_passedFirstDayReserve__ieD1XohsA4]:
-                      hasVariant($state, "dayStatus", "passedFirstDayReserve"),
-                    [sty.textdayStatus_passedLastDayReserveV2__ieD1XOkKzh]:
-                      hasVariant($state, "dayStatus", "passedLastDayReserveV2"),
-                    [sty.textdayStatus_passedLastDayReserve__ieD1XMjPP]:
-                      hasVariant($state, "dayStatus", "passedLastDayReserve"),
-                    [sty.textdayStatus_passedMidDayReserveV2__ieD1XMnIj]:
-                      hasVariant($state, "dayStatus", "passedMidDayReserveV2"),
-                    [sty.textdayStatus_passedMidDayReserve__ieD1Xo7Nt2]:
-                      hasVariant($state, "dayStatus", "passedMidDayReserve"),
-                    [sty.textdayStatus_passedReservedV2__ieD1XrqoWb]:
-                      hasVariant($state, "dayStatus", "passedReservedV2"),
-                    [sty.textdayStatus_passedSingleReserve__ieD1XfNqAx]:
-                      hasVariant($state, "dayStatus", "passedSingleReserve"),
-                    [sty.textdayStatus_reservedV2__ieD1XSbYT]: hasVariant(
-                      $state,
-                      "dayStatus",
-                      "reservedV2"
-                    ),
-                    [sty.textdayStatus_reserved__ieD1X6WcTl]: hasVariant(
-                      $state,
-                      "dayStatus",
-                      "reserved"
-                    ),
-                    [sty.textdayStatus_selected__ieD1XmbNkx]: hasVariant(
-                      $state,
-                      "dayStatus",
-                      "selected"
-                    ),
-                    [sty.textselected__ieD1X2Pr1U]: hasVariant(
-                      $state,
-                      "selected",
-                      "selected"
-                    )
-                  }
-                )}
+                className={classNames("all", "__wab_text", sty.text__ieD1X, {
+                  [sty.textdayStatus_blocked__ieD1X77F30]: hasVariant(
+                    $state,
+                    "dayStatus",
+                    "blocked"
+                  ),
+                  [sty.textdayStatus_disabledV2__ieD1XhaJHg]: hasVariant(
+                    $state,
+                    "dayStatus",
+                    "disabledV2"
+                  ),
+                  [sty.textdayStatus_disabled__ieD1Xokz0Z]: hasVariant(
+                    $state,
+                    "dayStatus",
+                    "disabled"
+                  ),
+                  [sty.textdayStatus_discount__ieD1X2ON9H]: hasVariant(
+                    $state,
+                    "dayStatus",
+                    "discount"
+                  ),
+                  [sty.textdayStatus_firstDayReserveV2__ieD1X7GAmv]: hasVariant(
+                    $state,
+                    "dayStatus",
+                    "firstDayReserveV2"
+                  ),
+                  [sty.textdayStatus_firstDayReserve__ieD1Xyp11Q]: hasVariant(
+                    $state,
+                    "dayStatus",
+                    "firstDayReserve"
+                  ),
+                  [sty.textdayStatus_lastDayReserveV2__ieD1XkfRpo]: hasVariant(
+                    $state,
+                    "dayStatus",
+                    "lastDayReserveV2"
+                  ),
+                  [sty.textdayStatus_lastDayReserve__ieD1XvreYs]: hasVariant(
+                    $state,
+                    "dayStatus",
+                    "lastDayReserve"
+                  ),
+                  [sty.textdayStatus_midDayReserveV2__ieD1Xbi4Ie]: hasVariant(
+                    $state,
+                    "dayStatus",
+                    "midDayReserveV2"
+                  ),
+                  [sty.textdayStatus_midDayReserve__ieD1XxrGdN]: hasVariant(
+                    $state,
+                    "dayStatus",
+                    "midDayReserve"
+                  ),
+                  [sty.textdayStatus_passedFirstDayReserveV2__ieD1XlYuad]:
+                    hasVariant($state, "dayStatus", "passedFirstDayReserveV2"),
+                  [sty.textdayStatus_passedFirstDayReserve__ieD1XohsA4]:
+                    hasVariant($state, "dayStatus", "passedFirstDayReserve"),
+                  [sty.textdayStatus_passedLastDayReserveV2__ieD1XOkKzh]:
+                    hasVariant($state, "dayStatus", "passedLastDayReserveV2"),
+                  [sty.textdayStatus_passedLastDayReserve__ieD1XMjPP]:
+                    hasVariant($state, "dayStatus", "passedLastDayReserve"),
+                  [sty.textdayStatus_passedMidDayReserveV2__ieD1XMnIj]:
+                    hasVariant($state, "dayStatus", "passedMidDayReserveV2"),
+                  [sty.textdayStatus_passedMidDayReserve__ieD1Xo7Nt2]:
+                    hasVariant($state, "dayStatus", "passedMidDayReserve"),
+                  [sty.textdayStatus_passedReservedV2__ieD1XrqoWb]: hasVariant(
+                    $state,
+                    "dayStatus",
+                    "passedReservedV2"
+                  ),
+                  [sty.textdayStatus_passedSingleReserve__ieD1XfNqAx]:
+                    hasVariant($state, "dayStatus", "passedSingleReserve"),
+                  [sty.textdayStatus_reservedV2__ieD1XSbYT]: hasVariant(
+                    $state,
+                    "dayStatus",
+                    "reservedV2"
+                  ),
+                  [sty.textdayStatus_reserved__ieD1X6WcTl]: hasVariant(
+                    $state,
+                    "dayStatus",
+                    "reserved"
+                  ),
+                  [sty.textdayStatus_selected__ieD1XmbNkx]: hasVariant(
+                    $state,
+                    "dayStatus",
+                    "selected"
+                  ),
+                  [sty.textselected__ieD1X2Pr1U]: hasVariant(
+                    $state,
+                    "selected",
+                    "selected"
+                  )
+                })}
               >
                 <React.Fragment>
                   {(() => {
@@ -1899,9 +1899,9 @@ function PlasmicDayCell__RenderFunc(props: {
           data-plasmic-name={"p"}
           data-plasmic-override={overrides.p}
           className={classNames(
-            projectcss.all,
-            projectcss.p,
-            projectcss.p__7SNMk,
+            "all",
+            "p",
+            "p__7SNMk",
             sty.p,
             hasVariant($state, "dayStatus", "disabledV2")
               ? "2"

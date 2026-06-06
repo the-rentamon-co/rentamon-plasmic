@@ -66,7 +66,6 @@ import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-impor
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicTextInput.module.css"; // plasmic-import: 7KjdVT2JykAk/css
 
 import SearchSvgIcon from "./icons/PlasmicIcon__SearchSvg"; // plasmic-import: xpwiGbFxHMB2/icon
@@ -265,10 +264,10 @@ function PlasmicTextInput__RenderFunc(props: {
       data-plasmic-root={true}
       data-plasmic-for-node={forNode}
       className={classNames(
-        projectcss.all,
-        projectcss.root_reset,
-        projectcss.plasmic_default_styles,
-        projectcss.plasmic_mixins,
+        "all",
+        "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+        "plasmic_default_styles",
+        "plasmic_mixins",
         styleTokensClassNames,
         sty.root,
         {
@@ -292,7 +291,7 @@ function PlasmicTextInput__RenderFunc(props: {
       <div
         data-plasmic-name={"startIconContainer"}
         data-plasmic-override={overrides.startIconContainer}
-        className={classNames(projectcss.all, sty.startIconContainer, {
+        className={classNames("all", sty.startIconContainer, {
           [sty.startIconContainer___focusVisibleWithin]:
             triggers.focusVisibleWithin_root,
           [sty.startIconContainercolor_dark]: hasVariant(
@@ -315,7 +314,7 @@ function PlasmicTextInput__RenderFunc(props: {
         {renderPlasmicSlot({
           defaultContents: (
             <SearchSvgIcon
-              className={classNames(projectcss.all, sty.svg__hwcE7)}
+              className={classNames("all", sty.svg__hwcE7)}
               role={"img"}
             />
           ),
@@ -341,31 +340,21 @@ function PlasmicTextInput__RenderFunc(props: {
         aria-label={args["aria-label"]}
         aria-labelledby={args["aria-labelledby"]}
         autoFocus={args.autoFocus}
-        className={classNames(
-          projectcss.all,
-          projectcss.input,
-          projectcss.input__7SNMk,
-          sty.input,
-          {
-            [sty.input___focusVisibleWithin]: triggers.focusVisibleWithin_root,
-            [sty.inputcolor_dark]: hasVariant($state, "color", "dark"),
-            [sty.inputisDisabled]: hasVariant(
-              $state,
-              "isDisabled",
-              "isDisabled"
-            ),
-            [sty.inputshowEndIcon]: hasVariant(
-              $state,
-              "showEndIcon",
-              "showEndIcon"
-            ),
-            [sty.inputshowStartIcon]: hasVariant(
-              $state,
-              "showStartIcon",
-              "showStartIcon"
-            )
-          }
-        )}
+        className={classNames("all", "input", "input__7SNMk", sty.input, {
+          [sty.input___focusVisibleWithin]: triggers.focusVisibleWithin_root,
+          [sty.inputcolor_dark]: hasVariant($state, "color", "dark"),
+          [sty.inputisDisabled]: hasVariant($state, "isDisabled", "isDisabled"),
+          [sty.inputshowEndIcon]: hasVariant(
+            $state,
+            "showEndIcon",
+            "showEndIcon"
+          ),
+          [sty.inputshowStartIcon]: hasVariant(
+            $state,
+            "showStartIcon",
+            "showStartIcon"
+          )
+        })}
         disabled={
           hasVariant($state, "isDisabled", "isDisabled") ? true : undefined
         }
@@ -382,7 +371,7 @@ function PlasmicTextInput__RenderFunc(props: {
       <div
         data-plasmic-name={"endIconContainer"}
         data-plasmic-override={overrides.endIconContainer}
-        className={classNames(projectcss.all, sty.endIconContainer, {
+        className={classNames("all", sty.endIconContainer, {
           [sty.endIconContainercolor_dark]: hasVariant($state, "color", "dark"),
           [sty.endIconContainershowEndIcon]: hasVariant(
             $state,
@@ -394,7 +383,7 @@ function PlasmicTextInput__RenderFunc(props: {
         {renderPlasmicSlot({
           defaultContents: (
             <CheckSvgIcon
-              className={classNames(projectcss.all, sty.svg__s3Bra)}
+              className={classNames("all", sty.svg__s3Bra)}
               role={"img"}
             />
           ),

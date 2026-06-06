@@ -70,7 +70,6 @@ import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-impor
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicStatusesConnectionsNeo.module.css"; // plasmic-import: E8bImSPcasS6/css
 
 const emptyProxy: any = new Proxy(() => "", {
@@ -281,17 +280,17 @@ function PlasmicStatusesConnectionsNeo__RenderFunc(props: {
         }
       `}</style>
 
-      <div className={projectcss.plasmic_page_wrapper}>
+      <div className={"plasmic_page_wrapper"}>
         <div
           data-plasmic-name={"root"}
           data-plasmic-override={overrides.root}
           data-plasmic-root={true}
           data-plasmic-for-node={forNode}
           className={classNames(
-            projectcss.all,
-            projectcss.root_reset,
-            projectcss.plasmic_default_styles,
-            projectcss.plasmic_mixins,
+            "all",
+            "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+            "plasmic_default_styles",
+            "plasmic_mixins",
             styleTokensClassNames,
             sty.root
           )}
@@ -299,9 +298,9 @@ function PlasmicStatusesConnectionsNeo__RenderFunc(props: {
           <div
             data-plasmic-name={"header"}
             data-plasmic-override={overrides.header}
-            className={classNames(projectcss.all, sty.header)}
+            className={classNames("all", sty.header)}
           >
-            <div className={classNames(projectcss.all, sty.freeBox__vCmzQ)}>
+            <div className={classNames("all", sty.freeBox__vCmzQ)}>
               {(
                 hasVariant(globalVariants, "screen", "mobile")
                   ? true
@@ -319,7 +318,7 @@ function PlasmicStatusesConnectionsNeo__RenderFunc(props: {
                       }
                     })()
               ) ? (
-                <div className={classNames(projectcss.all, sty.freeBox__tj50E)}>
+                <div className={classNames("all", sty.freeBox__tj50E)}>
                   <SideBar2
                     data-plasmic-name={"sideBar2"}
                     data-plasmic-override={overrides.sideBar2}
@@ -362,7 +361,7 @@ function PlasmicStatusesConnectionsNeo__RenderFunc(props: {
                       }
                     })()
               ) ? (
-                <div className={classNames(projectcss.all, sty.freeBox__utmZk)}>
+                <div className={classNames("all", sty.freeBox__utmZk)}>
                   <SidebarLite
                     data-plasmic-name={"sidebarLite"}
                     data-plasmic-override={overrides.sidebarLite}
@@ -454,11 +453,11 @@ function PlasmicStatusesConnectionsNeo__RenderFunc(props: {
                   ? true
                   : true
             ) ? (
-              <div className={classNames(projectcss.all, sty.freeBox__azHwa)}>
+              <div className={classNames("all", sty.freeBox__azHwa)}>
                 <div
                   className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
+                    "all",
+                    "__wab_text",
                     sty.text__oyyqU,
                     "fadeinf"
                   )}
@@ -473,16 +472,16 @@ function PlasmicStatusesConnectionsNeo__RenderFunc(props: {
           <div
             data-plasmic-name={"platformsStack"}
             data-plasmic-override={overrides.platformsStack}
-            className={classNames(projectcss.all, sty.platformsStack)}
+            className={classNames("all", sty.platformsStack)}
           >
             <div
               data-plasmic-name={"platforms"}
               data-plasmic-override={overrides.platforms}
-              className={classNames(projectcss.all, sty.platforms, "fadeinf")}
+              className={classNames("all", sty.platforms, "fadeinf")}
             >
               <div
                 className={classNames(
-                  projectcss.all,
+                  "all",
                   sty.freeBox__fGv7O,
                   hasVariant(globalVariants, "screen", "mobile") ? "fadein" : ``
                 )}
@@ -494,8 +493,8 @@ function PlasmicStatusesConnectionsNeo__RenderFunc(props: {
                   errorDisplay={
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text__nozEj
                       )}
                     >
@@ -533,10 +532,7 @@ function PlasmicStatusesConnectionsNeo__RenderFunc(props: {
                         <div
                           data-plasmic-name={"localStorage"}
                           data-plasmic-override={overrides.localStorage}
-                          className={classNames(
-                            projectcss.all,
-                            sty.localStorage
-                          )}
+                          className={classNames("all", sty.localStorage)}
                         >
                           {(_par =>
                             !_par ? [] : Array.isArray(_par) ? _par : [_par])(
@@ -563,7 +559,7 @@ function PlasmicStatusesConnectionsNeo__RenderFunc(props: {
                                   overrides.connectedPlatforms
                                 }
                                 className={classNames(
-                                  projectcss.all,
+                                  "all",
                                   sty.connectedPlatforms,
                                   hasVariant(globalVariants, "screen", "mobile")
                                     ? `clickable fadeinf ${`${currentItems.status === "false" ? "disconnected" : currentItems.status === "true" ? "connected" : ""}`}`
@@ -725,7 +721,7 @@ function PlasmicStatusesConnectionsNeo__RenderFunc(props: {
                                 })() ? (
                                   <div
                                     className={classNames(
-                                      projectcss.all,
+                                      "all",
                                       sty.freeBox__b9OoP
                                     )}
                                   >
@@ -872,14 +868,14 @@ function PlasmicStatusesConnectionsNeo__RenderFunc(props: {
                                 ) : null}
                                 <div
                                   className={classNames(
-                                    projectcss.all,
+                                    "all",
                                     sty.freeBox__n60Ke
                                   )}
                                 >
                                   <div
                                     className={classNames(
-                                      projectcss.all,
-                                      projectcss.__wab_text,
+                                      "all",
+                                      "__wab_text",
                                       sty.text__tRgo1
                                     )}
                                   >
@@ -949,7 +945,7 @@ function PlasmicStatusesConnectionsNeo__RenderFunc(props: {
                               data-plasmic-name={"newPlatform"}
                               data-plasmic-override={overrides.newPlatform}
                               className={classNames(
-                                projectcss.all,
+                                "all",
                                 sty.newPlatform,
                                 "clickable fadein"
                               )}
@@ -998,7 +994,7 @@ function PlasmicStatusesConnectionsNeo__RenderFunc(props: {
                             >
                               <div
                                 className={classNames(
-                                  projectcss.all,
+                                  "all",
                                   sty.freeBox__uuSli
                                 )}
                               >
@@ -1029,15 +1025,12 @@ function PlasmicStatusesConnectionsNeo__RenderFunc(props: {
                                 />
                               </div>
                               <div
-                                className={classNames(
-                                  projectcss.all,
-                                  sty.freeBox__yNot
-                                )}
+                                className={classNames("all", sty.freeBox__yNot)}
                               >
                                 <div
                                   className={classNames(
-                                    projectcss.all,
-                                    projectcss.__wab_text,
+                                    "all",
+                                    "__wab_text",
                                     sty.text___9WgZm
                                   )}
                                 >
@@ -1116,9 +1109,7 @@ function PlasmicStatusesConnectionsNeo__RenderFunc(props: {
                   }}
                   url={"https://nb.miaan.ir/webhook/connection-statuses"}
                 >
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__pEaWx)}
-                  >
+                  <div className={classNames("all", sty.freeBox__pEaWx)}>
                     {(_par =>
                       !_par ? [] : Array.isArray(_par) ? _par : [_par])(
                       (() => {
@@ -1142,7 +1133,7 @@ function PlasmicStatusesConnectionsNeo__RenderFunc(props: {
                           data-plasmic-name={"connectedPlatforms2"}
                           data-plasmic-override={overrides.connectedPlatforms2}
                           className={classNames(
-                            projectcss.all,
+                            "all",
                             sty.connectedPlatforms2,
                             hasVariant(globalVariants, "screen", "mobile")
                               ? `clickable fadeinf ${`${currentItems.status === "false" ? "disconnected" : currentItems.status === "true" ? "connected" : ""}`}`
@@ -1295,14 +1286,11 @@ function PlasmicStatusesConnectionsNeo__RenderFunc(props: {
                             }
                           })() ? (
                             <div
-                              className={classNames(
-                                projectcss.all,
-                                sty.freeBox__aAcIw
-                              )}
+                              className={classNames("all", sty.freeBox__aAcIw)}
                             >
                               <div
                                 className={classNames(
-                                  projectcss.all,
+                                  "all",
                                   sty.freeBox__gn3Ea
                                 )}
                               >
@@ -1397,7 +1385,7 @@ function PlasmicStatusesConnectionsNeo__RenderFunc(props: {
                               </div>
                               <div
                                 className={classNames(
-                                  projectcss.all,
+                                  "all",
                                   sty.freeBox__os5Gy
                                 )}
                               >
@@ -1470,15 +1458,12 @@ function PlasmicStatusesConnectionsNeo__RenderFunc(props: {
                             </div>
                           ) : null}
                           <div
-                            className={classNames(
-                              projectcss.all,
-                              sty.freeBox__eE3Dv
-                            )}
+                            className={classNames("all", sty.freeBox__eE3Dv)}
                           >
                             <div
                               className={classNames(
-                                projectcss.all,
-                                projectcss.__wab_text,
+                                "all",
+                                "__wab_text",
                                 sty.text__g8RGa
                               )}
                             >
@@ -1599,7 +1584,7 @@ function PlasmicStatusesConnectionsNeo__RenderFunc(props: {
                         data-plasmic-name={"newPlatform2"}
                         data-plasmic-override={overrides.newPlatform2}
                         className={classNames(
-                          projectcss.all,
+                          "all",
                           sty.newPlatform2,
                           "clickable fadein"
                         )}
@@ -1644,12 +1629,7 @@ function PlasmicStatusesConnectionsNeo__RenderFunc(props: {
                           }
                         }}
                       >
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            sty.freeBox___5Aarx
-                          )}
-                        >
+                        <div className={classNames("all", sty.freeBox___5Aarx)}>
                           <PlasmicImg__
                             alt={""}
                             className={classNames(sty.img__o4QPk)}
@@ -1678,16 +1658,11 @@ function PlasmicStatusesConnectionsNeo__RenderFunc(props: {
                             }}
                           />
                         </div>
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            sty.freeBox___8TBv
-                          )}
-                        >
+                        <div className={classNames("all", sty.freeBox___8TBv)}>
                           <div
                             className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
+                              "all",
+                              "__wab_text",
                               sty.text__iHtB
                             )}
                           >
@@ -1703,7 +1678,7 @@ function PlasmicStatusesConnectionsNeo__RenderFunc(props: {
               </div>
             </div>
             <div
-              className={classNames(projectcss.all, sty.freeBox__b6Dma)}
+              className={classNames("all", sty.freeBox__b6Dma)}
               onClick={async event => {
                 const $steps = {};
 
@@ -1728,13 +1703,9 @@ function PlasmicStatusesConnectionsNeo__RenderFunc(props: {
                 }
               }}
             >
-              <div className={classNames(projectcss.all, sty.freeBox__y7YDw)}>
+              <div className={classNames("all", sty.freeBox__y7YDw)}>
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__g39Jc
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__g39Jc)}
                 >
                   {"\u0627\u0646\u0635\u0631\u0627\u0641"}
                 </div>
@@ -1743,7 +1714,7 @@ function PlasmicStatusesConnectionsNeo__RenderFunc(props: {
             <div
               data-plasmic-name={"dontDeleteSpacer"}
               data-plasmic-override={overrides.dontDeleteSpacer}
-              className={classNames(projectcss.all, sty.dontDeleteSpacer)}
+              className={classNames("all", sty.dontDeleteSpacer)}
             />
           </div>
           <SideEffect
@@ -1857,7 +1828,7 @@ function PlasmicStatusesConnectionsNeo__RenderFunc(props: {
             }}
           />
 
-          <div className={classNames(projectcss.all, sty.freeBox___619G5)}>
+          <div className={classNames("all", sty.freeBox___619G5)}>
             <ClarityRntComponent
               data-plasmic-name={"clarityRntComponent"}
               data-plasmic-override={overrides.clarityRntComponent}

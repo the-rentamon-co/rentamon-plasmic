@@ -65,7 +65,6 @@ import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-impor
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicDivarSuccess.module.css"; // plasmic-import: LS9_g588N4dw/css
 
 const emptyProxy: any = new Proxy(() => "", {
@@ -176,23 +175,23 @@ function PlasmicDivarSuccess__RenderFunc(props: {
         }
       `}</style>
 
-      <div className={projectcss.plasmic_page_wrapper}>
+      <div className={"plasmic_page_wrapper"}>
         <div
           data-plasmic-name={"root"}
           data-plasmic-override={overrides.root}
           data-plasmic-root={true}
           data-plasmic-for-node={forNode}
           className={classNames(
-            projectcss.all,
-            projectcss.root_reset,
-            projectcss.plasmic_default_styles,
-            projectcss.plasmic_mixins,
+            "all",
+            "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+            "plasmic_default_styles",
+            "plasmic_mixins",
             styleTokensClassNames,
             sty.root
           )}
         >
-          <div className={classNames(projectcss.all, sty.freeBox__clEhK)}>
-            <div className={classNames(projectcss.all, sty.freeBox__zfPB)}>
+          <div className={classNames("all", sty.freeBox__clEhK)}>
+            <div className={classNames("all", sty.freeBox__zfPB)}>
               <PlasmicImg__
                 data-plasmic-name={"successful"}
                 data-plasmic-override={overrides.successful}
@@ -217,38 +216,22 @@ function PlasmicDivarSuccess__RenderFunc(props: {
                 }}
               />
             </div>
-            <div className={classNames(projectcss.all, sty.freeBox__hV0I7)}>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__u7Oi
-                )}
-              >
+            <div className={classNames("all", sty.freeBox__hV0I7)}>
+              <div className={classNames("all", "__wab_text", sty.text__u7Oi)}>
                 {hasVariant(globalVariants, "screen", "mobile")
                   ? "\u062a\u0642\u0648\u06cc\u0645 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0628\u0627 \u0645\u0648\u0641\u0642\u06cc\u062a \u0628\u0647 \u0622\u06af\u0647\u06cc \u062f\u06cc\u0648\u0627\u0631 \u0627\u0636\u0627\u0641\u0647 \u0634\u062f"
                   : "\u062a\u0642\u0648\u06cc\u0645 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0628\u0627 \u0645\u0648\u0641\u0642\u06cc\u062a \u0628\u0647 \u0622\u06af\u0647\u06cc \u062f\u06cc\u0648\u0627\u0631 \u0627\u0636\u0627\u0641\u0647 \u0634\u062f"}
               </div>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__tZnNh
-                )}
-              >
+              <div className={classNames("all", "__wab_text", sty.text__tZnNh)}>
                 {hasVariant(globalVariants, "screen", "mobile")
                   ? "\u062d\u0627\u0644\u0627 \u0645\u0647\u0645\u0648\u0646\u200c\u0647\u0627 \u0645\u06cc\u200c\u062a\u0648\u0646\u0646 \u062f\u0631 \u0622\u06af\u0647\u06cc \u062f\u06cc\u0648\u0627\u0631\u060c \u0631\u0648\u0632\u0647\u0627\u06cc \u062e\u0627\u0644\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0634\u0645\u0627 \u0631\u0648 \u0628\u0628\u06cc\u0646\u0646"
                   : "\u062d\u0627\u0644\u0627 \u0645\u0647\u0645\u0648\u0646\u200c\u0647\u0627 \u0645\u06cc\u200c\u062a\u0648\u0646\u0646 \u062f\u0631 \u0622\u06af\u0647\u06cc \u062f\u06cc\u0648\u0627\u0631\u060c \u0631\u0648\u0632\u0647\u0627\u06cc \u062e\u0627\u0644\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0634\u0645\u0627 \u0631\u0648 \u0628\u0628\u06cc\u0646\u0646"}
               </div>
             </div>
-            <div className={classNames(projectcss.all, sty.freeBox__aiXp)}>
-              <div className={classNames(projectcss.all, sty.freeBox__vaKeo)}>
+            <div className={classNames("all", sty.freeBox__aiXp)}>
+              <div className={classNames("all", sty.freeBox__vaKeo)}>
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__bRfUa
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__bRfUa)}
                   onClick={async event => {
                     const $steps = {};
 
@@ -284,7 +267,7 @@ function PlasmicDivarSuccess__RenderFunc(props: {
                   }
                 </div>
               </div>
-              <div className={classNames(projectcss.all, sty.freeBox__jzd2Z)}>
+              <div className={classNames("all", sty.freeBox__jzd2Z)}>
                 <Embed
                   data-plasmic-name={"embedHtml"}
                   data-plasmic-override={overrides.embedHtml}

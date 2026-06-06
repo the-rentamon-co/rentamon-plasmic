@@ -75,7 +75,6 @@ import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-impor
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicInstantReserve.module.css"; // plasmic-import: qnoSvk5APDQU/css
 
 const emptyProxy: any = new Proxy(() => "", {
@@ -677,17 +676,17 @@ function PlasmicInstantReserve__RenderFunc(props: {
         }
       `}</style>
 
-      <div className={projectcss.plasmic_page_wrapper}>
+      <div className={"plasmic_page_wrapper"}>
         <div
           data-plasmic-name={"root"}
           data-plasmic-override={overrides.root}
           data-plasmic-root={true}
           data-plasmic-for-node={forNode}
           className={classNames(
-            projectcss.all,
-            projectcss.root_reset,
-            projectcss.plasmic_default_styles,
-            projectcss.plasmic_mixins,
+            "all",
+            "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+            "plasmic_default_styles",
+            "plasmic_mixins",
             styleTokensClassNames,
             sty.root
           )}
@@ -882,9 +881,9 @@ function PlasmicInstantReserve__RenderFunc(props: {
           <div
             data-plasmic-name={"header"}
             data-plasmic-override={overrides.header}
-            className={classNames(projectcss.all, sty.header)}
+            className={classNames("all", sty.header)}
           >
-            <div className={classNames(projectcss.all, sty.freeBox__sWlgm)}>
+            <div className={classNames("all", sty.freeBox__sWlgm)}>
               {(() => {
                 try {
                   return $state.isOld == false;
@@ -923,11 +922,11 @@ function PlasmicInstantReserve__RenderFunc(props: {
                 />
               ) : null}
             </div>
-            <div className={classNames(projectcss.all, sty.freeBox__okh64)}>
+            <div className={classNames("all", sty.freeBox__okh64)}>
               <div
                 className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
+                  "all",
+                  "__wab_text",
                   sty.text__esBa,
                   "fadeinf"
                 )}
@@ -937,7 +936,7 @@ function PlasmicInstantReserve__RenderFunc(props: {
                 }
               </div>
             </div>
-            <div className={classNames(projectcss.all, sty.freeBox__hxCw1)}>
+            <div className={classNames("all", sty.freeBox__hxCw1)}>
               <ApiRequest
                 data-plasmic-name={"profile2"}
                 data-plasmic-override={overrides.profile2}
@@ -992,15 +991,9 @@ function PlasmicInstantReserve__RenderFunc(props: {
           <section
             data-plasmic-name={"topContainer"}
             data-plasmic-override={overrides.topContainer}
-            className={classNames(projectcss.all, sty.topContainer, "fadeinf")}
+            className={classNames("all", sty.topContainer, "fadeinf")}
           >
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__o44RS
-              )}
-            >
+            <div className={classNames("all", "__wab_text", sty.text__o44RS)}>
               {
                 "\u0628\u0627 \u0641\u0639\u0627\u0644 \u06a9\u0631\u062f\u0646 \u0622\u0646\u06cc \u0647\u0631 \u0633\u0627\u06cc\u062a\u060c \u062a\u0642\u0648\u06cc\u0645\u062a \u0622\u0646\u06cc \u0645\u06cc\u200c\u0645\u0648\u0646\u0647 \u062a\u0627 \u0648\u0642\u062a\u06cc \u062e\u0627\u0645\u0648\u0634\u0634 \u06a9\u0646\u06cc"
               }
@@ -1009,14 +1002,14 @@ function PlasmicInstantReserve__RenderFunc(props: {
           <section
             data-plasmic-name={"topContainer2"}
             data-plasmic-override={overrides.topContainer2}
-            className={classNames(projectcss.all, sty.topContainer2)}
+            className={classNames("all", sty.topContainer2)}
           >
             {false ? (
-              <div className={classNames(projectcss.all, sty.freeBox__pbFP)}>
+              <div className={classNames("all", sty.freeBox__pbFP)}>
                 <div
                   data-plasmic-name={"alertIcon"}
                   data-plasmic-override={overrides.alertIcon}
-                  className={classNames(projectcss.all, sty.alertIcon)}
+                  className={classNames("all", sty.alertIcon)}
                 >
                   <PlasmicImg__
                     alt={""}
@@ -1045,14 +1038,10 @@ function PlasmicInstantReserve__RenderFunc(props: {
                 <div
                   data-plasmic-name={"alertText"}
                   data-plasmic-override={overrides.alertText}
-                  className={classNames(projectcss.all, sty.alertText)}
+                  className={classNames("all", sty.alertText)}
                 >
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__rnDcz
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__rnDcz)}
                   >
                     {hasVariant(globalVariants, "screen", "smallMobile")
                       ? "\u0628\u0647\u200c\u062f\u0644\u06cc\u0644 \u0627\u062e\u062a\u0644\u0627\u0644\u0627\u062a \u0627\u06cc\u0646\u062a\u0631\u0646\u062a \u0631\u0632\u0631\u0648 \u0622\u0646\u06cc \u0645\u0648\u0642\u062a\u0627 \u062f\u0631 \u062f\u0633\u062a\u0631\u0633 \u0646\u06cc\u0633\u062a."
@@ -1062,12 +1051,12 @@ function PlasmicInstantReserve__RenderFunc(props: {
                 <div
                   data-plasmic-name={"alertButton"}
                   data-plasmic-override={overrides.alertButton}
-                  className={classNames(projectcss.all, sty.alertButton)}
+                  className={classNames("all", sty.alertButton)}
                 >
                   <div
                     data-plasmic-name={"button"}
                     data-plasmic-override={overrides.button}
-                    className={classNames(projectcss.all, sty.button)}
+                    className={classNames("all", sty.button)}
                     onClick={async event => {
                       const $steps = {};
 
@@ -1099,8 +1088,8 @@ function PlasmicInstantReserve__RenderFunc(props: {
                   >
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text__mg9Jn
                       )}
                     >
@@ -1114,7 +1103,7 @@ function PlasmicInstantReserve__RenderFunc(props: {
           <section
             data-plasmic-name={"mainSection"}
             data-plasmic-override={overrides.mainSection}
-            className={classNames(projectcss.all, sty.mainSection, "fadein")}
+            className={classNames("all", sty.mainSection, "fadein")}
           >
             <ApiRequest
               data-plasmic-name={"properties"}
@@ -1122,22 +1111,14 @@ function PlasmicInstantReserve__RenderFunc(props: {
               className={classNames("__wab_instance", sty.properties)}
               errorDisplay={
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__xsnPs
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__xsnPs)}
                 >
                   {"Error fetching data"}
                 </div>
               }
               loadingDisplay={
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__yosUl
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__yosUl)}
                 >
                   {"Loading..."}
                 </div>
@@ -1244,8 +1225,8 @@ function PlasmicInstantReserve__RenderFunc(props: {
                 placeholder={
                   <div
                     className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
+                      "all",
+                      "__wab_text",
                       sty.text___8SwRt
                     )}
                   >
@@ -1271,19 +1252,14 @@ function PlasmicInstantReserve__RenderFunc(props: {
                   throw e;
                 }
               })() ? (
-                <div className={classNames(projectcss.all, sty.freeBox__kJN)}>
+                <div className={classNames("all", sty.freeBox__kJN)}>
                   {false ? (
                     <div
                       data-plasmic-name={"homsaContainer"}
                       data-plasmic-override={overrides.homsaContainer}
-                      className={classNames(projectcss.all, sty.homsaContainer)}
+                      className={classNames("all", sty.homsaContainer)}
                     >
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          sty.freeBox__lIt1N
-                        )}
-                      >
+                      <div className={classNames("all", sty.freeBox__lIt1N)}>
                         <PlasmicImg__
                           alt={""}
                           className={classNames(sty.img__n5Kpd)}
@@ -1304,8 +1280,8 @@ function PlasmicInstantReserve__RenderFunc(props: {
 
                         <div
                           className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
+                            "all",
+                            "__wab_text",
                             sty.text__oaKOv
                           )}
                         >
@@ -1620,17 +1596,9 @@ function PlasmicInstantReserve__RenderFunc(props: {
                     <div
                       data-plasmic-name={"mihmanshoContainer"}
                       data-plasmic-override={overrides.mihmanshoContainer}
-                      className={classNames(
-                        projectcss.all,
-                        sty.mihmanshoContainer
-                      )}
+                      className={classNames("all", sty.mihmanshoContainer)}
                     >
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          sty.freeBox__raZzS
-                        )}
-                      >
+                      <div className={classNames("all", sty.freeBox__raZzS)}>
                         <PlasmicImg__
                           alt={""}
                           className={classNames(sty.img__bfX3D)}
@@ -1651,8 +1619,8 @@ function PlasmicInstantReserve__RenderFunc(props: {
 
                         <div
                           className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
+                            "all",
+                            "__wab_text",
                             sty.text___9KcOi
                           )}
                         >
@@ -1973,14 +1941,9 @@ function PlasmicInstantReserve__RenderFunc(props: {
                     <div
                       data-plasmic-name={"shabContainer"}
                       data-plasmic-override={overrides.shabContainer}
-                      className={classNames(projectcss.all, sty.shabContainer)}
+                      className={classNames("all", sty.shabContainer)}
                     >
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          sty.freeBox___3UtGf
-                        )}
-                      >
+                      <div className={classNames("all", sty.freeBox___3UtGf)}>
                         <PlasmicImg__
                           alt={""}
                           className={classNames(sty.img__df0I0)}
@@ -2001,8 +1964,8 @@ function PlasmicInstantReserve__RenderFunc(props: {
 
                         <div
                           className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
+                            "all",
+                            "__wab_text",
                             sty.text___2RycJ
                           )}
                         >
@@ -2314,17 +2277,9 @@ function PlasmicInstantReserve__RenderFunc(props: {
                     <div
                       data-plasmic-name={"otaghakContainer"}
                       data-plasmic-override={overrides.otaghakContainer}
-                      className={classNames(
-                        projectcss.all,
-                        sty.otaghakContainer
-                      )}
+                      className={classNames("all", sty.otaghakContainer)}
                     >
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          sty.freeBox__cm7Ha
-                        )}
-                      >
+                      <div className={classNames("all", sty.freeBox__cm7Ha)}>
                         <PlasmicImg__
                           alt={""}
                           className={classNames(sty.img__fPt4F)}
@@ -2345,8 +2300,8 @@ function PlasmicInstantReserve__RenderFunc(props: {
 
                         <div
                           className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
+                            "all",
+                            "__wab_text",
                             sty.text__bQnww
                           )}
                         >
@@ -2661,17 +2616,9 @@ function PlasmicInstantReserve__RenderFunc(props: {
                     <div
                       data-plasmic-name={"jabamaContainer"}
                       data-plasmic-override={overrides.jabamaContainer}
-                      className={classNames(
-                        projectcss.all,
-                        sty.jabamaContainer
-                      )}
+                      className={classNames("all", sty.jabamaContainer)}
                     >
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          sty.freeBox__mr1ZJ
-                        )}
-                      >
+                      <div className={classNames("all", sty.freeBox__mr1ZJ)}>
                         <PlasmicImg__
                           alt={""}
                           className={classNames(sty.img__rgd1N)}
@@ -2692,8 +2639,8 @@ function PlasmicInstantReserve__RenderFunc(props: {
 
                         <div
                           className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
+                            "all",
+                            "__wab_text",
                             sty.text__r1CfW
                           )}
                         >
@@ -3008,10 +2955,7 @@ function PlasmicInstantReserve__RenderFunc(props: {
                     <div
                       data-plasmic-name={"jajigaContainer"}
                       data-plasmic-override={overrides.jajigaContainer}
-                      className={classNames(
-                        projectcss.all,
-                        sty.jajigaContainer
-                      )}
+                      className={classNames("all", sty.jajigaContainer)}
                       onClick={async event => {
                         const $steps = {};
 
@@ -3053,12 +2997,7 @@ function PlasmicInstantReserve__RenderFunc(props: {
                         }
                       }}
                     >
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          sty.freeBox__ofiI
-                        )}
-                      >
+                      <div className={classNames("all", sty.freeBox__ofiI)}>
                         <PlasmicImg__
                           alt={""}
                           className={classNames(sty.img__mhrv)}
@@ -3079,8 +3018,8 @@ function PlasmicInstantReserve__RenderFunc(props: {
 
                         <div
                           className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
+                            "all",
+                            "__wab_text",
                             sty.text__bDj29
                           )}
                         >
@@ -3439,7 +3378,7 @@ function PlasmicInstantReserve__RenderFunc(props: {
             </ApiRequest>
           </section>
           <div
-            className={classNames(projectcss.all, sty.freeBox___3NzG5)}
+            className={classNames("all", sty.freeBox___3NzG5)}
             onClick={async event => {
               const $steps = {};
 
@@ -3466,13 +3405,7 @@ function PlasmicInstantReserve__RenderFunc(props: {
               }
             }}
           >
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__uDvHu
-              )}
-            >
+            <div className={classNames("all", "__wab_text", sty.text__uDvHu)}>
               <React.Fragment>
                 <span
                   className={
@@ -3494,22 +3427,18 @@ function PlasmicInstantReserve__RenderFunc(props: {
             }
           />
 
-          <div className={classNames(projectcss.all, sty.freeBox__ddIf3)}>
+          <div className={classNames("all", sty.freeBox__ddIf3)}>
             <div
               data-plasmic-name={"desc"}
               data-plasmic-override={overrides.desc}
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.desc
-              )}
+              className={classNames("all", "__wab_text", sty.desc)}
             >
               {
                 "\u00ab\u0631\u0632\u0631\u0648 \u0622\u0646\u06cc\u00bb \u0628\u0647 \u0645\u0647\u0645\u0627\u0646 \u0627\u062c\u0627\u0632\u0647 \u0645\u06cc\u200c\u062f\u0647 \u06a9\u0647 \u0628\u062f\u0648\u0646 \u0646\u06cc\u0627\u0632 \u0628\u0647 \u062a\u0627\u06cc\u06cc\u062f \u0645\u06cc\u0632\u0628\u0627\u0646\u060c \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0631\u0648 \u0628\u0644\u0627\u0641\u0627\u0635\u0644\u0647 \u0631\u0632\u0631\u0648 \u06a9\u0646\u0647. \u0627\u06cc\u0646 \u0648\u06cc\u0698\u06af\u06cc \u0628\u0627\u0639\u062b \u0628\u06cc\u0634\u200c\u062a\u0631 \u0634\u062f\u0646 \u062a\u0639\u062f\u0627\u062f \u0631\u0632\u0631\u0648\u0647\u0627\u060c \u06a9\u0627\u0647\u0634 \u0632\u0645\u0627\u0646 \u0645\u062f\u06cc\u0631\u06cc\u062a \u062f\u0631\u062e\u0648\u0627\u0633\u062a\u200c\u0647\u0627 \u0648 \u0628\u0627\u0644\u0627\u062a\u0631 \u0631\u0641\u062a\u0646 \u062f\u0631 \u0646\u062a\u0627\u06cc\u062c \u062c\u0633\u062a\u062c\u0648\u06cc \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0622\u06af\u0647\u06cc \u0648\u06cc\u0644\u0627 \u0645\u06cc\u200c\u0634\u0647."
               }
             </div>
           </div>
-          <div className={classNames(projectcss.all, sty.freeBox__x7Fvp)} />
+          <div className={classNames("all", sty.freeBox__x7Fvp)} />
 
           <Embed
             className={classNames("__wab_instance", sty.embedHtml___64Fi)}
@@ -3666,14 +3595,10 @@ function PlasmicInstantReserve__RenderFunc(props: {
           <div
             data-plasmic-name={"returnButton"}
             data-plasmic-override={overrides.returnButton}
-            className={classNames(projectcss.all, sty.returnButton, "fix")}
+            className={classNames("all", sty.returnButton, "fix")}
           >
             <div
-              className={classNames(
-                projectcss.all,
-                sty.freeBox___0QIg,
-                "clickable"
-              )}
+              className={classNames("all", sty.freeBox___0QIg, "clickable")}
               onClick={async event => {
                 const $steps = {};
 
@@ -3700,13 +3625,7 @@ function PlasmicInstantReserve__RenderFunc(props: {
                 }
               }}
             >
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__e1Gx7
-                )}
-              >
+              <div className={classNames("all", "__wab_text", sty.text__e1Gx7)}>
                 {"\u0628\u0627\u0632\u06af\u0634\u062a "}
               </div>
             </div>
@@ -3732,7 +3651,7 @@ function PlasmicInstantReserve__RenderFunc(props: {
             })()}
           />
 
-          <div className={classNames(projectcss.all, sty.freeBox__hf61W)}>
+          <div className={classNames("all", sty.freeBox__hf61W)}>
             <ClarityRntComponent
               data-plasmic-name={"clarityRntComponent"}
               data-plasmic-override={overrides.clarityRntComponent}
@@ -3750,9 +3669,9 @@ function PlasmicInstantReserve__RenderFunc(props: {
             data-plasmic-override={overrides.jajigaModal}
             className={classNames("__wab_instance", sty.jajigaModal)}
             defaultStylesClassName={classNames(
-              projectcss.root_reset,
-              projectcss.plasmic_default_styles,
-              projectcss.plasmic_mixins,
+              "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+              "plasmic_default_styles",
+              "plasmic_mixins",
               styleTokensClassNames
             )}
             hideFooter={true}
@@ -3769,13 +3688,7 @@ function PlasmicInstantReserve__RenderFunc(props: {
             }}
             open={generateStateValueProp($state, ["jajigaModal", "open"])}
             title={
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__xeidh
-                )}
-              >
+              <div className={classNames("all", "__wab_text", sty.text__xeidh)}>
                 <React.Fragment>
                   <span
                     className={
@@ -3795,31 +3708,21 @@ function PlasmicInstantReserve__RenderFunc(props: {
               hasVariant(globalVariants, "screen", "mobile") ? "80%" : undefined
             }
           >
-            <div className={classNames(projectcss.all, sty.freeBox___5ObgL)}>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__sOhpd
-                )}
-              >
+            <div className={classNames("all", sty.freeBox___5ObgL)}>
+              <div className={classNames("all", "__wab_text", sty.text__sOhpd)}>
                 {
                   "\ud83d\udcc5\u062a\u0642\u0648\u06cc\u0645\u062a \u0631\u0648 \u0647\u0645\u06cc\u0634\u0647 \u0628\u0647\u200c\u0631\u0648\u0632 \u0646\u06af\u0647 \u062f\u0627\u0631\n\u2705\u0647\u0645\u0647\u200c\u06cc \u062f\u0631\u062e\u0648\u0627\u0633\u062a\u200c\u0647\u0627 \u0631\u0648 \u062a\u0627\u06cc\u06cc\u062f \u06a9\u0646\n\ud83d\udcac\u0627\u0632 \u0645\u0647\u0645\u0627\u0646\u200c\u0647\u0627 \u0628\u062e\u0648\u0627\u0647 \u0628\u0631\u0627\u062a \u0646\u0638\u0631 \u0628\u0630\u0627\u0631\u0646\n\n\u062a\u0627 \u0633\u0631\u06cc\u0639\u200c\u062a\u0631 \u0627\u0645\u062a\u06cc\u0627\u0632\u062a \u0628\u0627\u0644\u0627 \u0628\u0631\u0647 \u0648 \u0628\u062a\u0648\u0646\u06cc \u062c\u0627\u062c\u06cc\u06af\u0627 \u0631\u0648 \u0622\u0646\u06cc \u06a9\u0646\u06cc."
                 }
               </div>
             </div>
-            <div className={classNames(projectcss.all, sty.freeBox__uhiD1)}>
+            <div className={classNames("all", sty.freeBox__uhiD1)}>
               <div
                 data-plasmic-name={"active4"}
                 data-plasmic-override={overrides.active4}
-                className={classNames(projectcss.all, sty.active4)}
+                className={classNames("all", sty.active4)}
               >
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__hxzdw
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__hxzdw)}
                   onClick={async event => {
                     const $steps = {};
 
@@ -3907,9 +3810,9 @@ function PlasmicInstantReserve__RenderFunc(props: {
             data-plasmic-override={overrides.notificationModal}
             className={classNames("__wab_instance", sty.notificationModal)}
             defaultStylesClassName={classNames(
-              projectcss.root_reset,
-              projectcss.plasmic_default_styles,
-              projectcss.plasmic_mixins,
+              "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+              "plasmic_default_styles",
+              "plasmic_mixins",
               styleTokensClassNames
             )}
             hideFooter={true}
@@ -3926,13 +3829,7 @@ function PlasmicInstantReserve__RenderFunc(props: {
             }}
             open={generateStateValueProp($state, ["notificationModal", "open"])}
             title={
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text___7JlJ
-                )}
-              >
+              <div className={classNames("all", "__wab_text", sty.text___7JlJ)}>
                 <React.Fragment>
                   <span
                     className={
@@ -3952,31 +3849,21 @@ function PlasmicInstantReserve__RenderFunc(props: {
               hasVariant(globalVariants, "screen", "mobile") ? "80%" : undefined
             }
           >
-            <div className={classNames(projectcss.all, sty.freeBox__a7Wi1)}>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__vlR79
-                )}
-              >
+            <div className={classNames("all", sty.freeBox__a7Wi1)}>
+              <div className={classNames("all", "__wab_text", sty.text__vlR79)}>
                 {
                   "\u0627\u06cc\u0646 \u0635\u0641\u062d\u0647 \u062f\u0631 \u062d\u0627\u0644 \u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc \u0633\u062a.\n\u062a\u0627 \u0633\u0627\u0639\u0627\u062a\u06cc \u062f\u06cc\u06af\u0647 \u0628\u0631\u0645\u06cc\u200c\u06af\u0631\u062f\u06cc\u0645."
                 }
               </div>
             </div>
-            <div className={classNames(projectcss.all, sty.freeBox__cZJsO)}>
+            <div className={classNames("all", sty.freeBox__cZJsO)}>
               <div
                 data-plasmic-name={"active5"}
                 data-plasmic-override={overrides.active5}
-                className={classNames(projectcss.all, sty.active5)}
+                className={classNames("all", sty.active5)}
               >
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__cB7TD
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__cB7TD)}
                   onClick={async event => {
                     const $steps = {};
 

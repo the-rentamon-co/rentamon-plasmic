@@ -65,7 +65,6 @@ import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-impor
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicPolicies.module.css"; // plasmic-import: 4kdcaD2KbS-w/css
 
 createPlasmicElementProxy;
@@ -180,13 +179,7 @@ function PlasmicPolicies__RenderFunc(props: {
       <PlasmicLink__
         data-plasmic-name={"link"}
         data-plasmic-override={overrides.link}
-        className={classNames(
-          projectcss.all,
-          projectcss.a,
-          projectcss.a__7SNMk,
-          projectcss.__wab_text,
-          sty.link
-        )}
+        className={classNames("all", "a", "a__7SNMk", "__wab_text", sty.link)}
         component={Link}
         href={
           "https://rentamon.com/%d9%82%d9%88%d8%a7%d9%86%db%8c%d9%86-%d8%b1%d9%86%d8%aa%d8%a7%d9%85%d9%88%d9%86/"
@@ -202,7 +195,7 @@ function PlasmicPolicies__RenderFunc(props: {
       <div
         data-plasmic-name={"text"}
         data-plasmic-override={overrides.text}
-        className={classNames(projectcss.all, projectcss.__wab_text, sty.text)}
+        className={classNames("all", "__wab_text", sty.text)}
       >
         <React.Fragment>
           <span

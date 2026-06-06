@@ -74,7 +74,6 @@ import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-impor
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicChannelManager.module.css"; // plasmic-import: TARn4RyKgOfz/css
 
 import CheckSvgIcon from "./icons/PlasmicIcon__CheckSvg"; // plasmic-import: aHRi_lZjzHt3/icon
@@ -329,17 +328,17 @@ function PlasmicChannelManager__RenderFunc(props: {
         }
       `}</style>
 
-      <div className={projectcss.plasmic_page_wrapper}>
+      <div className={"plasmic_page_wrapper"}>
         <div
           data-plasmic-name={"root"}
           data-plasmic-override={overrides.root}
           data-plasmic-root={true}
           data-plasmic-for-node={forNode}
           className={classNames(
-            projectcss.all,
-            projectcss.root_reset,
-            projectcss.plasmic_default_styles,
-            projectcss.plasmic_mixins,
+            "all",
+            "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+            "plasmic_default_styles",
+            "plasmic_mixins",
             styleTokensClassNames,
             sty.root
           )}
@@ -347,9 +346,9 @@ function PlasmicChannelManager__RenderFunc(props: {
           <div
             data-plasmic-name={"header"}
             data-plasmic-override={overrides.header}
-            className={classNames(projectcss.all, sty.header)}
+            className={classNames("all", sty.header)}
           >
-            <div className={classNames(projectcss.all, sty.freeBox___7S7O2)}>
+            <div className={classNames("all", sty.freeBox___7S7O2)}>
               <SideBar2
                 data-plasmic-name={"sideBar2"}
                 data-plasmic-override={overrides.sideBar2}
@@ -370,11 +369,11 @@ function PlasmicChannelManager__RenderFunc(props: {
                 })()}
               />
             </div>
-            <div className={classNames(projectcss.all, sty.freeBox__mfzC7)}>
+            <div className={classNames("all", sty.freeBox__mfzC7)}>
               <div
                 className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
+                  "all",
+                  "__wab_text",
                   sty.text__wv5Tm,
                   hasVariant(globalVariants, "screen", "mobile")
                     ? "fadeinf"
@@ -386,7 +385,7 @@ function PlasmicChannelManager__RenderFunc(props: {
                 }
               </div>
             </div>
-            <div className={classNames(projectcss.all, sty.freeBox__wi6An)}>
+            <div className={classNames("all", sty.freeBox__wi6An)}>
               <ApiRequest
                 data-plasmic-name={"profile"}
                 data-plasmic-override={overrides.profile}
@@ -419,18 +418,14 @@ function PlasmicChannelManager__RenderFunc(props: {
               />
             </div>
           </div>
-          <div className={classNames(projectcss.all, sty.freeBox__odazp)}>
+          <div className={classNames("all", sty.freeBox__odazp)}>
             <ApiRequest
               data-plasmic-name={"apiRequest2"}
               data-plasmic-override={overrides.apiRequest2}
               className={classNames("__wab_instance", sty.apiRequest2)}
               errorDisplay={
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__ixBoV
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__ixBoV)}
                 >
                   {"Error fetching data"}
                 </div>
@@ -474,7 +469,7 @@ function PlasmicChannelManager__RenderFunc(props: {
                   throw e;
                 }
               })() ? (
-                <div className={classNames(projectcss.all, sty.freeBox__dOM)}>
+                <div className={classNames("all", sty.freeBox__dOM)}>
                   <ToastMessageRnt
                     data-plasmic-name={"toastMessageRnt"}
                     data-plasmic-override={overrides.toastMessageRnt}
@@ -507,13 +502,7 @@ function PlasmicChannelManager__RenderFunc(props: {
             data-plasmic-override={overrides.apiRequest}
             className={classNames("__wab_instance", sty.apiRequest)}
             errorDisplay={
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__vg0K
-                )}
-              >
+              <div className={classNames("all", "__wab_text", sty.text__vg0K)}>
                 {"Error fetching data"}
               </div>
             }
@@ -542,20 +531,20 @@ function PlasmicChannelManager__RenderFunc(props: {
             }}
             url={"https://gateway.rentamon.com/webhook/get_status"}
           >
-            <div className={classNames(projectcss.all, sty.freeBox__y4L)}>
+            <div className={classNames("all", sty.freeBox__y4L)}>
               <div
                 data-plasmic-name={"tableHeader"}
                 data-plasmic-override={overrides.tableHeader}
-                className={classNames(projectcss.all, sty.tableHeader)}
+                className={classNames("all", sty.tableHeader)}
               >
                 <AntdModal
                   data-plasmic-name={"statusModal"}
                   data-plasmic-override={overrides.statusModal}
                   className={classNames("__wab_instance", sty.statusModal)}
                   defaultStylesClassName={classNames(
-                    projectcss.root_reset,
-                    projectcss.plasmic_default_styles,
-                    projectcss.plasmic_mixins,
+                    "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+                    "plasmic_default_styles",
+                    "plasmic_mixins",
                     styleTokensClassNames
                   )}
                   hideFooter={true}
@@ -573,12 +562,8 @@ function PlasmicChannelManager__RenderFunc(props: {
                   title={null}
                   trigger={null}
                 >
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox___5NVyJ)}
-                  >
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__dTzEi)}
-                    >
+                  <div className={classNames("all", sty.freeBox___5NVyJ)}>
+                    <div className={classNames("all", sty.freeBox__dTzEi)}>
                       {(() => {
                         try {
                           return $state.modalData.request_for == "cancelled";
@@ -594,8 +579,8 @@ function PlasmicChannelManager__RenderFunc(props: {
                       })() ? (
                         <div
                           className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
+                            "all",
+                            "__wab_text",
                             sty.text__du2HZ
                           )}
                         >
@@ -703,8 +688,8 @@ function PlasmicChannelManager__RenderFunc(props: {
                       })() ? (
                         <div
                           className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
+                            "all",
+                            "__wab_text",
                             sty.text__xn25L
                           )}
                         >
@@ -1015,19 +1000,12 @@ function PlasmicChannelManager__RenderFunc(props: {
                         />
                       ) : null}
                     </div>
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__m3Fs2)}
-                    >
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          sty.freeBox__xEoLb
-                        )}
-                      >
+                    <div className={classNames("all", sty.freeBox__m3Fs2)}>
+                      <div className={classNames("all", sty.freeBox__xEoLb)}>
                         <div
                           className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
+                            "all",
+                            "__wab_text",
                             sty.text__hmxr8
                           )}
                         >
@@ -1049,8 +1027,8 @@ function PlasmicChannelManager__RenderFunc(props: {
                         </div>
                         <div
                           className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
+                            "all",
+                            "__wab_text",
                             sty.text__d2Qq8
                           )}
                         >
@@ -1182,13 +1160,11 @@ function PlasmicChannelManager__RenderFunc(props: {
                         </div>
                       </div>
                     </div>
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__wkvAq)}
-                    >
+                    <div className={classNames("all", sty.freeBox__wkvAq)}>
                       <div
                         className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
+                          "all",
+                          "__wab_text",
                           sty.text__yX8Qq
                         )}
                       >
@@ -1196,8 +1172,8 @@ function PlasmicChannelManager__RenderFunc(props: {
                       </div>
                       <div
                         className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
+                          "all",
+                          "__wab_text",
                           sty.text__mvRiB
                         )}
                       >
@@ -1234,13 +1210,11 @@ function PlasmicChannelManager__RenderFunc(props: {
                         </React.Fragment>
                       </div>
                     </div>
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__qOxct)}
-                    >
+                    <div className={classNames("all", sty.freeBox__qOxct)}>
                       <div
                         className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
+                          "all",
+                          "__wab_text",
                           sty.text__q44Ip
                         )}
                       >
@@ -1248,8 +1222,8 @@ function PlasmicChannelManager__RenderFunc(props: {
                       </div>
                       <div
                         className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
+                          "all",
+                          "__wab_text",
                           sty.text__zyaZv
                         )}
                       >
@@ -1287,9 +1261,7 @@ function PlasmicChannelManager__RenderFunc(props: {
                       </div>
                     </div>
                   </div>
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__bYbS4)}
-                  >
+                  <div className={classNames("all", sty.freeBox__bYbS4)}>
                     {(() => {
                       try {
                         return $state.modalData.request_for == "reserve";
@@ -1305,8 +1277,8 @@ function PlasmicChannelManager__RenderFunc(props: {
                     })() ? (
                       <div
                         className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
+                          "all",
+                          "__wab_text",
                           sty.text__nuB4
                         )}
                       >
@@ -1330,8 +1302,8 @@ function PlasmicChannelManager__RenderFunc(props: {
                     })() ? (
                       <div
                         className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
+                          "all",
+                          "__wab_text",
                           sty.text__q0Ym
                         )}
                       >
@@ -1341,12 +1313,8 @@ function PlasmicChannelManager__RenderFunc(props: {
                       </div>
                     ) : null}
                   </div>
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__adLW)}
-                  >
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__enMwu)}
-                    >
+                  <div className={classNames("all", sty.freeBox__adLW)}>
+                    <div className={classNames("all", sty.freeBox__enMwu)}>
                       {(() => {
                         try {
                           return (() => {
@@ -1377,12 +1345,12 @@ function PlasmicChannelManager__RenderFunc(props: {
                         <div
                           data-plasmic-name={"shab"}
                           data-plasmic-override={overrides.shab}
-                          className={classNames(projectcss.all, sty.shab)}
+                          className={classNames("all", sty.shab)}
                         >
                           <div
                             className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
+                              "all",
+                              "__wab_text",
                               sty.text__a3Naa
                             )}
                           >
@@ -1498,12 +1466,12 @@ function PlasmicChannelManager__RenderFunc(props: {
                         <div
                           data-plasmic-name={"jajiga"}
                           data-plasmic-override={overrides.jajiga}
-                          className={classNames(projectcss.all, sty.jajiga)}
+                          className={classNames("all", sty.jajiga)}
                         >
                           <div
                             className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
+                              "all",
+                              "__wab_text",
                               sty.text__x26Bn
                             )}
                           >
@@ -1627,12 +1595,12 @@ function PlasmicChannelManager__RenderFunc(props: {
                         <div
                           data-plasmic-name={"jabama"}
                           data-plasmic-override={overrides.jabama}
-                          className={classNames(projectcss.all, sty.jabama)}
+                          className={classNames("all", sty.jabama)}
                         >
                           <div
                             className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
+                              "all",
+                              "__wab_text",
                               sty.text__nWgZ5
                             )}
                           >
@@ -1756,12 +1724,12 @@ function PlasmicChannelManager__RenderFunc(props: {
                         <div
                           data-plasmic-name={"otaaghak"}
                           data-plasmic-override={overrides.otaaghak}
-                          className={classNames(projectcss.all, sty.otaaghak)}
+                          className={classNames("all", sty.otaaghak)}
                         >
                           <div
                             className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
+                              "all",
+                              "__wab_text",
                               sty.text__semYg
                             )}
                           >
@@ -1915,12 +1883,12 @@ function PlasmicChannelManager__RenderFunc(props: {
                         <div
                           data-plasmic-name={"mizboon"}
                           data-plasmic-override={overrides.mizboon}
-                          className={classNames(projectcss.all, sty.mizboon)}
+                          className={classNames("all", sty.mizboon)}
                         >
                           <div
                             className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
+                              "all",
+                              "__wab_text",
                               sty.text__fu7D
                             )}
                           >
@@ -2036,12 +2004,12 @@ function PlasmicChannelManager__RenderFunc(props: {
                         <div
                           data-plasmic-name={"mihmansho"}
                           data-plasmic-override={overrides.mihmansho}
-                          className={classNames(projectcss.all, sty.mihmansho)}
+                          className={classNames("all", sty.mihmansho)}
                         >
                           <div
                             className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
+                              "all",
+                              "__wab_text",
                               sty.text__vbvpg
                             )}
                           >
@@ -2165,12 +2133,12 @@ function PlasmicChannelManager__RenderFunc(props: {
                         <div
                           data-plasmic-name={"homsa"}
                           data-plasmic-override={overrides.homsa}
-                          className={classNames(projectcss.all, sty.homsa)}
+                          className={classNames("all", sty.homsa)}
                         >
                           <div
                             className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
+                              "all",
+                              "__wab_text",
                               sty.text__wJzju
                             )}
                           >
@@ -2266,9 +2234,7 @@ function PlasmicChannelManager__RenderFunc(props: {
                       ) : null}
                     </div>
                   </div>
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox___1IJ9K)}
-                  >
+                  <div className={classNames("all", sty.freeBox___1IJ9K)}>
                     <Button
                       className={classNames(
                         "__wab_instance",
@@ -2315,8 +2281,8 @@ function PlasmicChannelManager__RenderFunc(props: {
                     >
                       <div
                         className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
+                          "all",
+                          "__wab_text",
                           sty.text__d7OzV
                         )}
                       >
@@ -2325,46 +2291,36 @@ function PlasmicChannelManager__RenderFunc(props: {
                     </Button>
                   </div>
                 </AntdModal>
-                <div
-                  className={classNames(projectcss.all, sty.freeBox___0DlVa)}
-                >
+                <div className={classNames("all", sty.freeBox___0DlVa)}>
                   <div
                     className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
+                      "all",
+                      "__wab_text",
                       sty.text___3UBqc
                     )}
                   >
                     {"\u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"}
                   </div>
                 </div>
-                <div className={classNames(projectcss.all, sty.freeBox__eF7Bt)}>
+                <div className={classNames("all", sty.freeBox__eF7Bt)}>
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__caISk
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__caISk)}
                   >
                     {"\u0648\u0631\u0648\u062f"}
                   </div>
                 </div>
-                <div className={classNames(projectcss.all, sty.freeBox__pFS8)}>
+                <div className={classNames("all", sty.freeBox__pFS8)}>
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__f3HgU
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__f3HgU)}
                   >
                     {"\u062e\u0631\u0648\u062c"}
                   </div>
                 </div>
-                <div className={classNames(projectcss.all, sty.freeBox__nu0J)}>
+                <div className={classNames("all", sty.freeBox__nu0J)}>
                   <div
                     className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
+                      "all",
+                      "__wab_text",
                       sty.text___06Pll
                     )}
                   >
@@ -2394,7 +2350,7 @@ function PlasmicChannelManager__RenderFunc(props: {
                     data-plasmic-name={"item"}
                     data-plasmic-override={overrides.item}
                     className={classNames(
-                      projectcss.all,
+                      "all",
                       sty.item,
                       (() => {
                         try {
@@ -2504,13 +2460,11 @@ function PlasmicChannelManager__RenderFunc(props: {
                       }
                     }}
                   >
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__haSnf)}
-                    >
+                    <div className={classNames("all", sty.freeBox__haSnf)}>
                       <div
                         className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
+                          "all",
+                          "__wab_text",
                           sty.text__vhrhd
                         )}
                       >
@@ -2532,13 +2486,11 @@ function PlasmicChannelManager__RenderFunc(props: {
                         </React.Fragment>
                       </div>
                     </div>
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__p5KJm)}
-                    >
+                    <div className={classNames("all", sty.freeBox__p5KJm)}>
                       <div
                         className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
+                          "all",
+                          "__wab_text",
                           sty.text__m86Ki
                         )}
                       >
@@ -2594,13 +2546,11 @@ function PlasmicChannelManager__RenderFunc(props: {
                         </React.Fragment>
                       </div>
                     </div>
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__e45Hx)}
-                    >
+                    <div className={classNames("all", sty.freeBox__e45Hx)}>
                       <div
                         className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
+                          "all",
+                          "__wab_text",
                           sty.text__cBjcT
                         )}
                       >
@@ -2657,13 +2607,11 @@ function PlasmicChannelManager__RenderFunc(props: {
                         </React.Fragment>
                       </div>
                     </div>
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__mRxCx)}
-                    >
+                    <div className={classNames("all", sty.freeBox__mRxCx)}>
                       <div
                         className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
+                          "all",
+                          "__wab_text",
                           sty.text__hWfFd
                         )}
                       >
@@ -2873,15 +2821,9 @@ function PlasmicChannelManager__RenderFunc(props: {
           <div
             data-plasmic-name={"intro"}
             data-plasmic-override={overrides.intro}
-            className={classNames(projectcss.all, sty.intro)}
+            className={classNames("all", sty.intro)}
           >
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__p2AEp
-              )}
-            >
+            <div className={classNames("all", "__wab_text", sty.text__p2AEp)}>
               {
                 "\u0627\u06cc\u0646 \u0648\u06cc\u0698\u06af\u06cc\u060c \u06f2\u06f4 \u0633\u0627\u0639\u062a\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u0631\u0648 \u062f\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u0631\u0635\u062f \u0645\u06cc\u200c\u06a9\u0646\u0647. \u062f\u0631 \u0635\u0648\u0631\u062a \u062f\u0631\u06cc\u0627\u0641\u062a \u0631\u0632\u0631\u0648 \u0627\u0632 \u06cc\u06a9\u06cc\u060c \u0627\u0648\u0646 \u062a\u0627\u0631\u06cc\u062e \u0631\u0648 \u062f\u0631 \u0633\u0627\u06cc\u0631 \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u0647\u0627 \u0631\u0648 \u0628\u0647\u200c\u0635\u0648\u0631\u062a \u062e\u0648\u062f\u06a9\u0627\u0631 \u0645\u06cc\u200c\u0628\u0646\u062f\u0647 \u062a\u0627 \u062a\u062f\u0627\u062e\u0644 \u0631\u0632\u0631\u0648 \u067e\u06cc\u0634 \u0646\u06cc\u0627\u062f. \u0646\u062a\u06cc\u062c\u0647\u200c\u0627\u0634 \u0627\u06cc\u0646 \u0639\u0645\u0644\u06cc\u0627\u062a \u0631\u0648 \u0627\u06cc\u0646\u062c\u0627 \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u0628\u0628\u06cc\u0646\u06cc."
               }
@@ -2890,14 +2832,10 @@ function PlasmicChannelManager__RenderFunc(props: {
           <div
             data-plasmic-name={"returnButton"}
             data-plasmic-override={overrides.returnButton}
-            className={classNames(projectcss.all, sty.returnButton, "fix")}
+            className={classNames("all", sty.returnButton, "fix")}
           >
             <div
-              className={classNames(
-                projectcss.all,
-                sty.freeBox___9ZxWb,
-                "clickable"
-              )}
+              className={classNames("all", sty.freeBox___9ZxWb, "clickable")}
               onClick={async event => {
                 const $steps = {};
 
@@ -2924,13 +2862,7 @@ function PlasmicChannelManager__RenderFunc(props: {
                 }
               }}
             >
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__ayiQa
-                )}
-              >
+              <div className={classNames("all", "__wab_text", sty.text__ayiQa)}>
                 {"\u0628\u0627\u0632\u06af\u0634\u062a "}
               </div>
             </div>
@@ -2956,8 +2888,8 @@ function PlasmicChannelManager__RenderFunc(props: {
             })()}
           />
 
-          <div className={classNames(projectcss.all, sty.freeBox___6SjlZ)}>
-            <div className={classNames(projectcss.all, sty.freeBox__j18U)}>
+          <div className={classNames("all", sty.freeBox___6SjlZ)}>
+            <div className={classNames("all", sty.freeBox__j18U)}>
               <ClarityRntComponent
                 data-plasmic-name={"clarityRntComponent"}
                 data-plasmic-override={overrides.clarityRntComponent}
@@ -2982,9 +2914,9 @@ function PlasmicChannelManager__RenderFunc(props: {
             data-plasmic-override={overrides.modal}
             className={classNames("__wab_instance", sty.modal)}
             defaultStylesClassName={classNames(
-              projectcss.root_reset,
-              projectcss.plasmic_default_styles,
-              projectcss.plasmic_mixins,
+              "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+              "plasmic_default_styles",
+              "plasmic_mixins",
               styleTokensClassNames
             )}
             hideFooter={true}
@@ -2998,7 +2930,7 @@ function PlasmicChannelManager__RenderFunc(props: {
             }}
             open={generateStateValueProp($state, ["modal", "open"])}
             title={
-              <div className={classNames(projectcss.all, sty.freeBox__cXlW)}>
+              <div className={classNames("all", sty.freeBox__cXlW)}>
                 <PlasmicImg__
                   alt={""}
                   className={classNames(sty.img__u4SVx)}
@@ -3064,18 +2996,12 @@ function PlasmicChannelManager__RenderFunc(props: {
               hasVariant(globalVariants, "screen", "mobile") ? "320" : undefined
             }
           >
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__f2Wh4
-              )}
-            >
+            <div className={classNames("all", "__wab_text", sty.text__f2Wh4)}>
               {
                 "\u062f\u0631 \u062d\u0627\u0644 \u0627\u0646\u062a\u0642\u0627\u0644 \u0628\u0647\n \u0635\u0641\u062d\u0647 \u00ab\u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u0645\u0646\u00bb"
               }
             </div>
-            <div className={classNames(projectcss.all, sty.freeBox__fhtrm)}>
+            <div className={classNames("all", sty.freeBox__fhtrm)}>
               <Video
                 data-plasmic-name={"htmlVideo"}
                 data-plasmic-override={overrides.htmlVideo}
@@ -3088,7 +3014,7 @@ function PlasmicChannelManager__RenderFunc(props: {
                 }
               />
             </div>
-            <div className={classNames(projectcss.all, sty.freeBox__bRfdf)}>
+            <div className={classNames("all", sty.freeBox__bRfdf)}>
               <Button
                 className={classNames("__wab_instance", sty.button__qLHuH)}
                 onClick={async event => {
@@ -3122,11 +3048,7 @@ function PlasmicChannelManager__RenderFunc(props: {
                 }}
               >
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__dYoH9
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__dYoH9)}
                 >
                   {
                     "\u0645\u0634\u0627\u0647\u062f\u0647 \u062c\u0632\u06cc\u06cc\u0627\u062a \u0631\u0632\u0631\u0648"

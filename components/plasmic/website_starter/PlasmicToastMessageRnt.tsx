@@ -65,7 +65,6 @@ import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-impor
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicToastMessageRnt.module.css"; // plasmic-import: _mkSLPxHmSdr/css
 
 createPlasmicElementProxy;
@@ -208,10 +207,10 @@ function PlasmicToastMessageRnt__RenderFunc(props: {
         data-plasmic-root={true}
         data-plasmic-for-node={forNode}
         className={classNames(
-          projectcss.all,
-          projectcss.root_reset,
-          projectcss.plasmic_default_styles,
-          projectcss.plasmic_mixins,
+          "all",
+          "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+          "plasmic_default_styles",
+          "plasmic_mixins",
           styleTokensClassNames,
           sty.root
         )}
@@ -219,12 +218,12 @@ function PlasmicToastMessageRnt__RenderFunc(props: {
         <div
           data-plasmic-name={"freeBox"}
           data-plasmic-override={overrides.freeBox}
-          className={classNames(projectcss.all, sty.freeBox, "fadein")}
+          className={classNames("all", sty.freeBox, "fadein")}
         >
           <div
             data-plasmic-name={"alertIcon"}
             data-plasmic-override={overrides.alertIcon}
-            className={classNames(projectcss.all, sty.alertIcon)}
+            className={classNames("all", sty.alertIcon)}
           >
             <PlasmicImg__
               alt={""}
@@ -267,15 +266,9 @@ function PlasmicToastMessageRnt__RenderFunc(props: {
           <div
             data-plasmic-name={"alertText"}
             data-plasmic-override={overrides.alertText}
-            className={classNames(projectcss.all, sty.alertText)}
+            className={classNames("all", sty.alertText)}
           >
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__c238
-              )}
-            >
+            <div className={classNames("all", "__wab_text", sty.text__c238)}>
               {hasVariant(globalVariants, "screen", "mobile") ? (
                 <React.Fragment>
                   {(() => {
@@ -314,12 +307,12 @@ function PlasmicToastMessageRnt__RenderFunc(props: {
           <div
             data-plasmic-name={"alertButton"}
             data-plasmic-override={overrides.alertButton}
-            className={classNames(projectcss.all, sty.alertButton)}
+            className={classNames("all", sty.alertButton)}
           >
             <div
               data-plasmic-name={"button"}
               data-plasmic-override={overrides.button}
-              className={classNames(projectcss.all, sty.button, "clickable")}
+              className={classNames("all", sty.button, "clickable")}
               onClick={async event => {
                 const $steps = {};
 
@@ -363,13 +356,7 @@ function PlasmicToastMessageRnt__RenderFunc(props: {
                 }
               }}
             >
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__rKwK3
-                )}
-              >
+              <div className={classNames("all", "__wab_text", sty.text__rKwK3)}>
                 <React.Fragment>
                   {(() => {
                     try {
@@ -391,7 +378,7 @@ function PlasmicToastMessageRnt__RenderFunc(props: {
           <div
             data-plasmic-name={"closeButton"}
             data-plasmic-override={overrides.closeButton}
-            className={classNames(projectcss.all, sty.closeButton)}
+            className={classNames("all", sty.closeButton)}
             onClick={async event => {
               const $steps = {};
 

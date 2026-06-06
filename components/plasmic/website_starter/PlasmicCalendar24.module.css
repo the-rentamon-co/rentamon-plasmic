@@ -3153,7 +3153,7 @@
   object-fit: cover;
 }
 .editResult {
-  animation: fadeInLeft4B8ZYZskL8T 1s ease 0s 1 normal none running;
+  animation: var(--anim-4b8z_yZskL8t) 1s ease 0s 1 normal none running;
   display: flex;
   width: 60px;
   height: 100%;
@@ -3173,7 +3173,7 @@
 }
 @media (max-width: 500px) {
   .editResult {
-    animation: fadeInLeft4B8ZYZskL8T 1s ease 0s 1 normal none running;
+    animation: var(--anim-4b8z_yZskL8t) 1s ease 0s 1 normal none running;
     width: 50px;
     border-top-width: 2px;
     border-right-width: 2px;

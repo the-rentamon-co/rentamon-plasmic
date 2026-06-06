@@ -65,7 +65,6 @@ import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-impor
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicNavbarRntHeader.module.css"; // plasmic-import: gWac1FMbIJat/css
 
 createPlasmicElementProxy;
@@ -139,10 +138,10 @@ function PlasmicNavbarRntHeader__RenderFunc(props: {
       data-plasmic-root={true}
       data-plasmic-for-node={forNode}
       className={classNames(
-        projectcss.all,
-        projectcss.root_reset,
-        projectcss.plasmic_default_styles,
-        projectcss.plasmic_mixins,
+        "all",
+        "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+        "plasmic_default_styles",
+        "plasmic_mixins",
         styleTokensClassNames,
         sty.navBarFaghih,
         hasVariant(globalVariants, "screen", "smallMobile")
@@ -156,14 +155,9 @@ function PlasmicNavbarRntHeader__RenderFunc(props: {
         data-plasmic-name={"navigationBar"}
         data-plasmic-override={overrides.navigationBar}
         brand={
-          <div className={classNames(projectcss.all, sty.freeBox__pWLj)}>
+          <div className={classNames("all", sty.freeBox__pWLj)}>
             <PlasmicLink__
-              className={classNames(
-                projectcss.all,
-                projectcss.a,
-                projectcss.a__7SNMk,
-                sty.link__uJuXj
-              )}
+              className={classNames("all", "a", "a__7SNMk", sty.link__uJuXj)}
               component={Link}
               href={`/`}
               legacyBehavior={false}
@@ -264,10 +258,10 @@ function PlasmicNavbarRntHeader__RenderFunc(props: {
         itemsGap={8}
         menuItems={
           <React.Fragment>
-            <div className={classNames(projectcss.all, sty.freeBox__qrXoX, ``)}>
+            <div className={classNames("all", sty.freeBox__qrXoX, ``)}>
               <div
                 className={classNames(
-                  projectcss.all,
+                  "all",
                   sty.freeBox___1StDi,
                   hasVariant(globalVariants, "screen", "mobile")
                     ? "clickable"
@@ -344,10 +338,10 @@ function PlasmicNavbarRntHeader__RenderFunc(props: {
               >
                 <PlasmicLink__
                   className={classNames(
-                    projectcss.all,
-                    projectcss.a,
-                    projectcss.a__7SNMk,
-                    projectcss.__wab_text,
+                    "all",
+                    "a",
+                    "a__7SNMk",
+                    "__wab_text",
                     sty.link__qiqR
                   )}
                   component={Link}
@@ -405,10 +399,10 @@ function PlasmicNavbarRntHeader__RenderFunc(props: {
               </div>
               <PlasmicLink__
                 className={classNames(
-                  projectcss.all,
-                  projectcss.a,
-                  projectcss.a__7SNMk,
-                  projectcss.__wab_text,
+                  "all",
+                  "a",
+                  "a__7SNMk",
+                  "__wab_text",
                   sty.link__cwZwa
                 )}
                 component={Link}
@@ -421,11 +415,7 @@ function PlasmicNavbarRntHeader__RenderFunc(props: {
                 }
               </PlasmicLink__>
               <div
-                className={classNames(
-                  projectcss.all,
-                  sty.freeBox__g7Rl3,
-                  "clickable"
-                )}
+                className={classNames("all", sty.freeBox__g7Rl3, "clickable")}
                 onClick={async event => {
                   const $steps = {};
 
@@ -457,10 +447,10 @@ function PlasmicNavbarRntHeader__RenderFunc(props: {
               >
                 <PlasmicLink__
                   className={classNames(
-                    projectcss.all,
-                    projectcss.a,
-                    projectcss.a__7SNMk,
-                    projectcss.__wab_text,
+                    "all",
+                    "a",
+                    "a__7SNMk",
+                    "__wab_text",
                     sty.link__kh6Yr
                   )}
                   component={Link}
@@ -471,11 +461,7 @@ function PlasmicNavbarRntHeader__RenderFunc(props: {
                 </PlasmicLink__>
               </div>
               <div
-                className={classNames(
-                  projectcss.all,
-                  sty.freeBox__uzdNm,
-                  "clickable"
-                )}
+                className={classNames("all", sty.freeBox__uzdNm, "clickable")}
                 onClick={async event => {
                   const $steps = {};
 
@@ -508,10 +494,10 @@ function PlasmicNavbarRntHeader__RenderFunc(props: {
               >
                 <PlasmicLink__
                   className={classNames(
-                    projectcss.all,
-                    projectcss.a,
-                    projectcss.a__7SNMk,
-                    projectcss.__wab_text,
+                    "all",
+                    "a",
+                    "a__7SNMk",
+                    "__wab_text",
                     sty.link___9Ui3
                   )}
                   component={Link}
@@ -524,11 +510,7 @@ function PlasmicNavbarRntHeader__RenderFunc(props: {
                 </PlasmicLink__>
               </div>
               <div
-                className={classNames(
-                  projectcss.all,
-                  sty.freeBox___5WeAb,
-                  "clickable"
-                )}
+                className={classNames("all", sty.freeBox___5WeAb, "clickable")}
                 onClick={async event => {
                   const $steps = {};
 
@@ -560,10 +542,10 @@ function PlasmicNavbarRntHeader__RenderFunc(props: {
               >
                 <PlasmicLink__
                   className={classNames(
-                    projectcss.all,
-                    projectcss.a,
-                    projectcss.a__7SNMk,
-                    projectcss.__wab_text,
+                    "all",
+                    "a",
+                    "a__7SNMk",
+                    "__wab_text",
                     sty.link__vseFw
                   )}
                   component={Link}
@@ -576,10 +558,10 @@ function PlasmicNavbarRntHeader__RenderFunc(props: {
             </div>
             <PlasmicLink__
               className={classNames(
-                projectcss.all,
-                projectcss.a,
-                projectcss.a__7SNMk,
-                projectcss.__wab_text,
+                "all",
+                "a",
+                "a__7SNMk",
+                "__wab_text",
                 sty.link__ryWoj
               )}
               component={Link}
@@ -632,10 +614,10 @@ function PlasmicNavbarRntHeader__RenderFunc(props: {
             </PlasmicLink__>
             <PlasmicLink__
               className={classNames(
-                projectcss.all,
-                projectcss.a,
-                projectcss.a__7SNMk,
-                projectcss.__wab_text,
+                "all",
+                "a",
+                "a__7SNMk",
+                "__wab_text",
                 sty.link__ytkiw
               )}
               component={Link}
@@ -649,10 +631,10 @@ function PlasmicNavbarRntHeader__RenderFunc(props: {
             </PlasmicLink__>
             <PlasmicLink__
               className={classNames(
-                projectcss.all,
-                projectcss.a,
-                projectcss.a__7SNMk,
-                projectcss.__wab_text,
+                "all",
+                "a",
+                "a__7SNMk",
+                "__wab_text",
                 sty.link__jRxEo
               )}
               component={Link}
@@ -664,10 +646,10 @@ function PlasmicNavbarRntHeader__RenderFunc(props: {
             </PlasmicLink__>
             <PlasmicLink__
               className={classNames(
-                projectcss.all,
-                projectcss.a,
-                projectcss.a__7SNMk,
-                projectcss.__wab_text,
+                "all",
+                "a",
+                "a__7SNMk",
+                "__wab_text",
                 sty.link___4LkUn
               )}
               component={Link}
@@ -681,10 +663,10 @@ function PlasmicNavbarRntHeader__RenderFunc(props: {
             </PlasmicLink__>
             <PlasmicLink__
               className={classNames(
-                projectcss.all,
-                projectcss.a,
-                projectcss.a__7SNMk,
-                projectcss.__wab_text,
+                "all",
+                "a",
+                "a__7SNMk",
+                "__wab_text",
                 sty.link___01Gak
               )}
               component={Link}

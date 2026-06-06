@@ -66,7 +66,6 @@ import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-impor
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicChangePrice.module.css"; // plasmic-import: sqOPHlPEQq33/css
 
 createPlasmicElementProxy;
@@ -185,10 +184,10 @@ function PlasmicChangePrice__RenderFunc(props: {
       data-plasmic-root={true}
       data-plasmic-for-node={forNode}
       className={classNames(
-        projectcss.all,
-        projectcss.root_reset,
-        projectcss.plasmic_default_styles,
-        projectcss.plasmic_mixins,
+        "all",
+        "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+        "plasmic_default_styles",
+        "plasmic_mixins",
         styleTokensClassNames,
         sty.root
       )}
@@ -200,9 +199,9 @@ function PlasmicChangePrice__RenderFunc(props: {
         className={classNames("__wab_instance", sty.modalChangePrice)}
         closeButtonClassName={classNames({ [sty["pcls_T7s1DEPGsHqK"]]: true })}
         defaultStylesClassName={classNames(
-          projectcss.root_reset,
-          projectcss.plasmic_default_styles,
-          projectcss.plasmic_mixins,
+          "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+          "plasmic_default_styles",
+          "plasmic_mixins",
           styleTokensClassNames
         )}
         modalScopeClassName={sty["modalChangePrice__modal"]}
@@ -222,12 +221,12 @@ function PlasmicChangePrice__RenderFunc(props: {
         <div
           data-plasmic-name={"columns"}
           data-plasmic-override={overrides.columns}
-          className={classNames(projectcss.all, sty.columns)}
+          className={classNames("all", sty.columns)}
         >
           <div
             data-plasmic-name={"column"}
             data-plasmic-override={overrides.column}
-            className={classNames(projectcss.all, sty.column)}
+            className={classNames("all", sty.column)}
           >
             <AntdInputNumber
               data-plasmic-name={"numberInput2"}

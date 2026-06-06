@@ -73,7 +73,6 @@ import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-impor
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./Plasmicمعرفیبرندجدید.module.css"; // plasmic-import: vfdAdNB4GVjb/css
 
 const emptyProxy: any = new Proxy(() => "", {
@@ -293,17 +292,17 @@ function Plasmicمعرفیبرندجدید__RenderFunc(props: {
         }
       `}</style>
 
-      <div className={projectcss.plasmic_page_wrapper}>
+      <div className={"plasmic_page_wrapper"}>
         <div
           data-plasmic-name={"root"}
           data-plasmic-override={overrides.root}
           data-plasmic-root={true}
           data-plasmic-for-node={forNode}
           className={classNames(
-            projectcss.all,
-            projectcss.root_reset,
-            projectcss.plasmic_default_styles,
-            projectcss.plasmic_mixins,
+            "all",
+            "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+            "plasmic_default_styles",
+            "plasmic_mixins",
             styleTokensClassNames,
             sty.root
           )}
@@ -317,17 +316,17 @@ function Plasmicمعرفیبرندجدید__RenderFunc(props: {
           <div
             data-plasmic-name={"mainContents"}
             data-plasmic-override={overrides.mainContents}
-            className={classNames(projectcss.all, sty.mainContents)}
+            className={classNames("all", sty.mainContents)}
           >
             <div
               data-plasmic-name={"intro1st"}
               data-plasmic-override={overrides.intro1st}
-              className={classNames(projectcss.all, sty.intro1st)}
+              className={classNames("all", sty.intro1st)}
             >
               <div
                 data-plasmic-name={"introTitle"}
                 data-plasmic-override={overrides.introTitle}
-                className={classNames(projectcss.all, sty.introTitle)}
+                className={classNames("all", sty.introTitle)}
               >
                 <div
                   data-plasmic-name={
@@ -335,8 +334,8 @@ function Plasmicمعرفیبرندجدید__RenderFunc(props: {
                   }
                   data-plasmic-override={overrides.دربارهما}
                   className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
+                    "all",
+                    "__wab_text",
                     sty.دربارهما,
                     hasVariant(globalVariants, "screen", "mobile")
                       ? "fadeinf"
@@ -353,10 +352,10 @@ function Plasmicمعرفیبرندجدید__RenderFunc(props: {
                   }
                   data-plasmic-override={overrides.دربارهما2}
                   className={classNames(
-                    projectcss.all,
-                    projectcss.h1,
-                    projectcss.h1__7SNMk,
-                    projectcss.__wab_text,
+                    "all",
+                    "h1",
+                    "h1__7SNMk",
+                    "__wab_text",
                     sty.دربارهما2,
                     hasVariant(globalVariants, "screen", "mobile")
                       ? "fadeinf"
@@ -371,19 +370,15 @@ function Plasmicمعرفیبرندجدید__RenderFunc(props: {
               <div
                 data-plasmic-name={"teamImage"}
                 data-plasmic-override={overrides.teamImage}
-                className={classNames(projectcss.all, sty.teamImage)}
+                className={classNames("all", sty.teamImage)}
               >
                 <div
                   data-plasmic-name={"introduction1Text"}
                   data-plasmic-override={overrides.introduction1Text}
-                  className={classNames(projectcss.all, sty.introduction1Text)}
+                  className={classNames("all", sty.introduction1Text)}
                 >
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__bte4Q
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__bte4Q)}
                   >
                     {hasVariant(globalVariants, "screen", "smallMobile")
                       ? "\u0646\u0632\u062f\u06cc\u06a9 \u0628\u0647 \u06f2 \u0633\u0627\u0644 \u0628\u0627 \u0646\u0627\u0645 \u00ab\u0631\u0646\u062a\u0627\u0645\u0648\u0646\u00bb \u06a9\u0627\u0631 \u06a9\u0631\u062f\u06cc\u0645\u061b \u062f\u0631 \u06a9\u0646\u0627\u0631 \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627 \u0648 \u067e\u0644\u062a\u0641\u0631\u0645\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647. \u06a9\u0645\u200c\u06a9\u0645 \u0641\u0647\u0645\u06cc\u062f\u06cc\u0645 \u06a9\u0627\u0631\u06cc \u06a9\u0647 \u0627\u0646\u062c\u0627\u0645 \u0645\u06cc\u200c\u062f\u06cc\u0645 \u0635\u0631\u0641\u0627\u064b \u0645\u062f\u06cc\u0631\u06cc\u062a \u0631\u0632\u0631\u0648\u0647\u0627 \u06cc\u0627 \u062a\u0642\u0648\u06cc\u0645 \u0646\u06cc\u0633\u062a. \u0645\u0627 \u062f\u0631 \u0645\u06cc\u0627\u0646 \u0627\u0646\u0633\u0627\u0646\u200c\u0647\u0627 \u0648 \u067e\u0644\u062a\u0641\u0631\u0645\u200c\u0647\u0627 \u0628\u0648\u062f\u06cc\u0645\u061b \u062c\u0627\u06cc\u06cc \u06a9\u0647 \u0633\u06cc\u0633\u062a\u0645\u200c\u0647\u0627 \u0628\u0627\u06cc\u062f \u06a9\u0627\u0631\u0647\u0627\u06cc \u062a\u06a9\u0631\u0627\u0631\u06cc \u0631\u0648 \u0627\u0646\u062c\u0627\u0645 \u0628\u062f\u0646 \u062a\u0627 \u0622\u062f\u0645\u200c\u0647\u0627 \u0648\u0642\u062a\u200c\u0634\u0648\u0646 \u0631\u0648 \u0635\u0631\u0641 \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u0631\u06cc\u0632\u06cc \u0648 \u06af\u0633\u062a\u0631\u0634 \u06a9\u0633\u0628\u200c\u0648\u06a9\u0627\u0631 \u06a9\u0646\u0646. \u0647\u0645\u06cc\u0646\u200c\u062c\u0627 \u0628\u0648\u062f \u06a9\u0647 \u062d\u0633 \u06a9\u0631\u062f\u06cc\u0645 \u0646\u0627\u0645 \u0642\u0628\u0644\u06cc \u062f\u06cc\u06af\u0647 \u0627\u0646\u062f\u0627\u0632\u0647\u200c\u06cc \u06a9\u0627\u0631 \u0645\u0627 \u0646\u06cc\u0633\u062a."
@@ -395,14 +390,9 @@ function Plasmicمعرفیبرندجدید__RenderFunc(props: {
                 <div
                   data-plasmic-name={"introduction2TextPics"}
                   data-plasmic-override={overrides.introduction2TextPics}
-                  className={classNames(
-                    projectcss.all,
-                    sty.introduction2TextPics
-                  )}
+                  className={classNames("all", sty.introduction2TextPics)}
                 >
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__j3ADy)}
-                  >
+                  <div className={classNames("all", sty.freeBox__j3ADy)}>
                     <PlasmicImg__
                       alt={""}
                       className={classNames(sty.img__za7Ah)}
@@ -460,8 +450,8 @@ function Plasmicمعرفیبرندجدید__RenderFunc(props: {
 
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text___7EPgn
                       )}
                     >
@@ -475,11 +465,11 @@ function Plasmicمعرفیبرندجدید__RenderFunc(props: {
                           {
                             <PlasmicLink__
                               className={classNames(
-                                projectcss.all,
-                                projectcss.a,
-                                projectcss.a__7SNMk,
-                                projectcss.__wab_text,
-                                projectcss.plasmic_default__inline,
+                                "all",
+                                "a",
+                                "a__7SNMk",
+                                "__wab_text",
+                                "plasmic_default__inline",
                                 sty.link__qhoZz
                               )}
                               component={Link}
@@ -549,11 +539,11 @@ function Plasmicمعرفیبرندجدید__RenderFunc(props: {
                           {
                             <PlasmicLink__
                               className={classNames(
-                                projectcss.all,
-                                projectcss.a,
-                                projectcss.a__7SNMk,
-                                projectcss.__wab_text,
-                                projectcss.plasmic_default__inline,
+                                "all",
+                                "a",
+                                "a__7SNMk",
+                                "__wab_text",
+                                "plasmic_default__inline",
                                 sty.link__qhoZz
                               )}
                               component={Link}
@@ -623,11 +613,11 @@ function Plasmicمعرفیبرندجدید__RenderFunc(props: {
                           {
                             <PlasmicLink__
                               className={classNames(
-                                projectcss.all,
-                                projectcss.a,
-                                projectcss.a__7SNMk,
-                                projectcss.__wab_text,
-                                projectcss.plasmic_default__inline,
+                                "all",
+                                "a",
+                                "a__7SNMk",
+                                "__wab_text",
+                                "plasmic_default__inline",
                                 sty.link__qhoZz
                               )}
                               component={Link}
@@ -694,14 +684,9 @@ function Plasmicمعرفیبرندجدید__RenderFunc(props: {
                 <div
                   data-plasmic-name={"introduction2TextPics2"}
                   data-plasmic-override={overrides.introduction2TextPics2}
-                  className={classNames(
-                    projectcss.all,
-                    sty.introduction2TextPics2
-                  )}
+                  className={classNames("all", sty.introduction2TextPics2)}
                 >
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__g7EOv)}
-                  >
+                  <div className={classNames("all", sty.freeBox__g7EOv)}>
                     <Embed
                       className={classNames(
                         "__wab_instance",
@@ -716,14 +701,14 @@ function Plasmicمعرفیبرندجدید__RenderFunc(props: {
                 <div
                   data-plasmic-name={"introduction3"}
                   data-plasmic-override={overrides.introduction3}
-                  className={classNames(projectcss.all, sty.introduction3)}
+                  className={classNames("all", sty.introduction3)}
                 >
                   <h2
                     className={classNames(
-                      projectcss.all,
-                      projectcss.h2,
-                      projectcss.h2__7SNMk,
-                      projectcss.__wab_text,
+                      "all",
+                      "h2",
+                      "h2__7SNMk",
+                      "__wab_text",
                       sty.h2__jbiLl
                     )}
                   >
@@ -732,11 +717,7 @@ function Plasmicمعرفیبرندجدید__RenderFunc(props: {
                     }
                   </h2>
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__uXggy
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__uXggy)}
                   >
                     {hasVariant(globalVariants, "screen", "smallMobile")
                       ? "\u0646\u0627\u0645\u06cc \u0633\u0627\u062f\u0647 \u0648 \u0631\u0648\u0634\u0646\u061b \u0645\u062a\u0646\u0627\u0633\u0628 \u0628\u0627 \u06a9\u0627\u0631\u06cc \u06a9\u0647 \u0647\u0631 \u0631\u0648\u0632 \u0627\u0646\u062c\u0627\u0645 \u0645\u06cc\u200c\u062f\u06cc\u0645.\r\n\u0645\u0627 \u062f\u0642\u06cc\u0642\u0627 \u062f\u0631 \u0645\u06cc\u0627\u0646\u0650 \u062c\u0627\u06cc\u06cc \u0647\u0633\u062a\u06cc\u0645 \u06a9\u0647 \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0639\u0628\u0648\u0631 \u0645\u06cc\u200c\u06a9\u0646\u0647\u060c \u0647\u0645\u0627\u0647\u0646\u06af\u06cc \u0634\u06a9\u0644 \u0645\u06cc\u200c\u06af\u06cc\u0631\u0647 \u0648 \u06a9\u0627\u0631\u0647\u0627 \u0628\u062f\u0648\u0646 \u0686\u0627\u0644\u0634 \u067e\u06cc\u0634 \u0645\u06cc\u200c\u0631\u0647.\r\n\u0627\u06cc\u0646 \u062a\u063a\u06cc\u06cc\u0631 \u0646\u0627\u0645\u060c \u062c\u0647\u062a \u062c\u062f\u06cc\u062f\u06cc \u0646\u06cc\u0633\u062a\u061b \u0627\u062f\u0627\u0645\u0647\u200c\u06cc \u0647\u0645\u0648\u0646 \u0645\u0633\u06cc\u0631\u06cc \u0647\u0633\u062a \u06a9\u0647 \u0642\u0628\u0644\u0627 \u0634\u0631\u0648\u0639 \u06a9\u0631\u062f\u06cc\u0645."
@@ -745,11 +726,7 @@ function Plasmicمعرفیبرندجدید__RenderFunc(props: {
                         : "\u0646\u0627\u0645\u06cc \u0633\u0627\u062f\u0647 \u0648 \u0631\u0648\u0634\u0646\u061b \u0645\u062a\u0646\u0627\u0633\u0628 \u0628\u0627 \u06a9\u0627\u0631\u06cc \u06a9\u0647 \u0647\u0631 \u0631\u0648\u0632 \u0627\u0646\u062c\u0627\u0645 \u0645\u06cc\u200c\u062f\u06cc\u0645.\r\n\u0645\u0627 \u062f\u0642\u06cc\u0642\u0627 \u062f\u0631 \u0645\u06cc\u0627\u0646\u0650 \u062c\u0627\u06cc\u06cc \u0647\u0633\u062a\u06cc\u0645 \u06a9\u0647 \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0639\u0628\u0648\u0631 \u0645\u06cc\u200c\u06a9\u0646\u0647\u060c \u0647\u0645\u0627\u0647\u0646\u06af\u06cc \u0634\u06a9\u0644 \u0645\u06cc\u200c\u06af\u06cc\u0631\u0647 \u0648 \u06a9\u0627\u0631\u0647\u0627 \u0628\u062f\u0648\u0646 \u0686\u0627\u0644\u0634 \u067e\u06cc\u0634 \u0645\u06cc\u200c\u0631\u0647.\r\n\u0627\u06cc\u0646 \u062a\u063a\u06cc\u06cc\u0631 \u0646\u0627\u0645\u060c \u062c\u0647\u062a \u062c\u062f\u06cc\u062f\u06cc \u0646\u06cc\u0633\u062a\u061b \u0627\u062f\u0627\u0645\u0647\u200c\u06cc \u0647\u0645\u0648\u0646 \u0645\u0633\u06cc\u0631\u06cc \u0647\u0633\u062a \u06a9\u0647 \u0642\u0628\u0644\u0627 \u0634\u0631\u0648\u0639 \u06a9\u0631\u062f\u06cc\u0645."}
                   </div>
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__jN0MC
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__jN0MC)}
                   >
                     {
                       "\u0627\u0632 \u0646\u06af\u0627\u0647 \u0628\u06cc\u0631\u0648\u0646\u06cc \u0634\u0627\u06cc\u062f \u06a9\u0627\u0631 \u0645\u0627 \u06cc\u06a9 \u0627\u062a\u0635\u0627\u0644\u060c \u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc\u060c \u06cc\u0627 \u0647\u0645\u0627\u0647\u0646\u06af\u06cc \u0628\u0647 \u0646\u0638\u0631 \u0628\u0631\u0633\u0647. \u0627\u0645\u0627 \u0647\u0645\u06cc\u0646\u200c\u0647\u0627 \u0648\u0642\u062a\u06cc \u062f\u0631\u0633\u062a \u0627\u0646\u062c\u0627\u0645 \u0628\u0634\u0647\u060c \u0627\u0639\u062a\u0645\u0627\u062f \u0645\u06cc\u200c\u0633\u0627\u0632\u0647.\r\n\u0627\u0639\u062a\u0645\u0627\u062f\u06cc \u06a9\u0647 \u0646\u0647\u200c\u062a\u0646\u0647\u0627 \u0645\u0648\u062a\u0648\u0631 \u0645\u062d\u0631\u06a9 \u06af\u0631\u062f\u0634\u06af\u0631\u06cc \u06a9\u0634\u0648\u0631\u060c \u0628\u0644\u06a9\u0647 \u0632\u06cc\u0631\u0628\u0646\u0627\u06cc \u0647\u0631 \u0628\u0627\u0632\u0627\u0631\u06cc \u0647\u0633\u062a.\r\n\u00ab\u0645\u06cc\u0627\u0646\u00bb \u06a9\u0645\u06a9 \u0645\u06cc\u200c\u06a9\u0646\u0647 \u0686\u06cc\u0632\u0647\u0627\u060c \u062f\u0631 \u062c\u0627\u06cc \u062f\u0631\u0633\u062a\u200c\u0634\u0648\u0646 \u0642\u0631\u0627\u0631 \u0628\u06af\u06cc\u0631\u0646."
@@ -757,7 +734,7 @@ function Plasmicمعرفیبرندجدید__RenderFunc(props: {
                   </div>
                 </div>
               </div>
-              <div className={classNames(projectcss.all, sty.freeBox___7YKcY)}>
+              <div className={classNames("all", sty.freeBox___7YKcY)}>
                 <PlasmicImg__
                   alt={""}
                   className={classNames(
@@ -784,15 +761,9 @@ function Plasmicمعرفیبرندجدید__RenderFunc(props: {
             <div
               data-plasmic-name={"principles"}
               data-plasmic-override={overrides.principles}
-              className={classNames(projectcss.all, sty.principles)}
+              className={classNames("all", sty.principles)}
             >
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__v4EEe
-                )}
-              >
+              <div className={classNames("all", "__wab_text", sty.text__v4EEe)}>
                 {hasVariant(globalVariants, "screen", "smallMobile") ? (
                   <React.Fragment>
                     <React.Fragment>
@@ -832,7 +803,7 @@ function Plasmicمعرفیبرندجدید__RenderFunc(props: {
                 )}
               </div>
             </div>
-            <div className={classNames(projectcss.all, sty.freeBox___0HluV)}>
+            <div className={classNames("all", sty.freeBox___0HluV)}>
               <PlasmicImg__
                 alt={""}
                 className={classNames(sty.img__xG38X)}
@@ -888,13 +859,7 @@ function Plasmicمعرفیبرندجدید__RenderFunc(props: {
                 }
               />
 
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__fNdf
-                )}
-              >
+              <div className={classNames("all", "__wab_text", sty.text__fNdf)}>
                 {hasVariant(globalVariants, "screen", "mobile") ? (
                   <React.Fragment>
                     <React.Fragment>
@@ -914,11 +879,11 @@ function Plasmicمعرفیبرندجدید__RenderFunc(props: {
                     {
                       <PlasmicLink__
                         className={classNames(
-                          projectcss.all,
-                          projectcss.a,
-                          projectcss.a__7SNMk,
-                          projectcss.__wab_text,
-                          projectcss.plasmic_default__inline,
+                          "all",
+                          "a",
+                          "a__7SNMk",
+                          "__wab_text",
+                          "plasmic_default__inline",
                           sty.link__x77Rb
                         )}
                         component={Link}
@@ -956,11 +921,11 @@ function Plasmicمعرفیبرندجدید__RenderFunc(props: {
                     {
                       <PlasmicLink__
                         className={classNames(
-                          projectcss.all,
-                          projectcss.a,
-                          projectcss.a__7SNMk,
-                          projectcss.__wab_text,
-                          projectcss.plasmic_default__inline,
+                          "all",
+                          "a",
+                          "a__7SNMk",
+                          "__wab_text",
+                          "plasmic_default__inline",
                           sty.link__qpMrd
                         )}
                         component={Link}
@@ -987,24 +952,18 @@ function Plasmicمعرفیبرندجدید__RenderFunc(props: {
                 )}
               </div>
             </div>
-            <div className={classNames(projectcss.all, sty.freeBox__bgxuF)}>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__tMlwq
-                )}
-              >
+            <div className={classNames("all", sty.freeBox__bgxuF)}>
+              <div className={classNames("all", "__wab_text", sty.text__tMlwq)}>
                 {hasVariant(globalVariants, "screen", "mobile")
                   ? "\u062d\u0636\u0648\u0631 \u00ab\u0645\u06cc\u0627\u0646\u00bb \u0628\u0647 \u0628\u0627\u0632\u0627\u0631 \u0627\u0631\u0632\u0634 \u0627\u0636\u0627\u0641\u0647 \u0645\u06cc\u200c\u06a9\u0646\u0647.\n\u0645\u0627 \u0686\u06cc\u0632\u06cc \u0631\u0648 \u062c\u0627\u06cc\u06af\u0632\u06cc\u0646 \u0646\u0645\u06cc\u200c\u06a9\u0646\u06cc\u0645\u061b \u0641\u0642\u0637 \u06a9\u0627\u0631\u0647\u0627 \u0631\u0648 \u0631\u0648\u0627\u0646\u200c\u062a\u0631 \u0645\u06cc\u200c\u06a9\u0646\u06cc\u0645\u060c\r\n\u062a\u0627 \u00ab\u0632\u0645\u0627\u0646\u00bb \u06a9\u0647 \u0627\u0631\u0632\u0634\u0645\u0646\u062f\u062a\u0631\u06cc\u0646 \u062f\u0627\u0631\u0627\u06cc\u06cc \u0627\u0646\u0633\u0627\u0646\u0647\u060c \u0627\u0632 \u062f\u0633\u062a \u0646\u0631\u0647\u060c\r\n\u0648 \u0622\u062f\u0645\u200c\u0647\u0627 \u0628\u062a\u0648\u0646\u0646 \u0631\u0648\u06cc \u06a9\u0627\u0631 \u0627\u0635\u0644\u06cc\u200c\u0634\u0648\u0646 \u062a\u0645\u0631\u06a9\u0632 \u06a9\u0646\u0646."
                   : "\u062d\u0636\u0648\u0631 \u00ab\u0645\u06cc\u0627\u0646\u00bb \u0628\u0647 \u0628\u0627\u0632\u0627\u0631 \u0627\u0631\u0632\u0634 \u0627\u0636\u0627\u0641\u0647 \u0645\u06cc\u200c\u06a9\u0646\u0647.\r\n\r\n\u0645\u0627 \u0686\u06cc\u0632\u06cc \u0631\u0648 \u062c\u0627\u06cc\u06af\u0632\u06cc\u0646 \u0646\u0645\u06cc\u200c\u06a9\u0646\u06cc\u0645\u061b \u0641\u0642\u0637 \u06a9\u0627\u0631\u0647\u0627 \u0631\u0648 \u0631\u0648\u0627\u0646\u200c\u062a\u0631 \u0645\u06cc\u200c\u06a9\u0646\u06cc\u0645\u060c\r\n\u062a\u0627 \u00ab\u0632\u0645\u0627\u0646\u00bb \u06a9\u0647 \u0627\u0631\u0632\u0634\u0645\u0646\u062f\u062a\u0631\u06cc\u0646 \u062f\u0627\u0631\u0627\u06cc\u06cc \u0627\u0646\u0633\u0627\u0646\u0647\u060c \u0627\u0632 \u062f\u0633\u062a \u0646\u0631\u0647\u060c\r\n\u0648 \u0622\u062f\u0645\u200c\u0647\u0627 \u0628\u062a\u0648\u0646\u0646 \u0631\u0648\u06cc \u06a9\u0627\u0631 \u0627\u0635\u0644\u06cc\u200c\u0634\u0648\u0646 \u062a\u0645\u0631\u06a9\u0632 \u06a9\u0646\u0646."}
               </div>
             </div>
-            <div className={classNames(projectcss.all, sty.freeBox___1LmYu)}>
+            <div className={classNames("all", sty.freeBox___1LmYu)}>
               <div
                 data-plasmic-name={"icon17"}
                 data-plasmic-override={overrides.icon17}
-                className={classNames(projectcss.all, sty.icon17)}
+                className={classNames("all", sty.icon17)}
               >
                 <PlasmicImg__
                   alt={""}
@@ -1060,11 +1019,7 @@ function Plasmicمعرفیبرندجدید__RenderFunc(props: {
                 />
               </div>
               <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text___6Ux8S
-                )}
+                className={classNames("all", "__wab_text", sty.text___6Ux8S)}
               >
                 {hasVariant(globalVariants, "screen", "smallMobile")
                   ? "\u0633\u06cc\u062f \u0645\u0635\u0637\u0641\u06cc \u0641\u0642\u06cc\u0647\u060c \u0645\u062f\u06cc\u0631\u0639\u0627\u0645\u0644\n\u0628\u0647 \u0646\u0645\u0627\u06cc\u0646\u062f\u06af\u06cc \u0627\u0632 \u062a\u06cc\u0645\n\u06f1\u06f5 \u0622\u0628\u0627\u0646 \u06f1\u06f4\u06f0\u06f4"
@@ -1093,14 +1048,10 @@ function Plasmicمعرفیبرندجدید__RenderFunc(props: {
               }
             />
 
-            <div className={classNames(projectcss.all, sty.freeBox__aa8Gg)}>
-              <div className={classNames(projectcss.all, sty.freeBox__hTPk8)}>
+            <div className={classNames("all", sty.freeBox__aa8Gg)}>
+              <div className={classNames("all", sty.freeBox__hTPk8)}>
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__peu4P
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__peu4P)}
                 >
                   {hasVariant(globalVariants, "screen", "mobile") ? (
                     <React.Fragment>
@@ -1148,15 +1099,11 @@ function Plasmicمعرفیبرندجدید__RenderFunc(props: {
                 </div>
               </div>
             </div>
-            <div className={classNames(projectcss.all, sty.freeBox__vrx5N)}>
+            <div className={classNames("all", sty.freeBox__vrx5N)}>
               <div
                 data-plasmic-name={"introCalendarLeft"}
                 data-plasmic-override={overrides.introCalendarLeft}
-                className={classNames(
-                  projectcss.all,
-                  sty.introCalendarLeft,
-                  "fadein"
-                )}
+                className={classNames("all", sty.introCalendarLeft, "fadein")}
               >
                 <Embed
                   className={classNames("__wab_instance", sty.embedHtml__hARs)}
@@ -1166,13 +1113,9 @@ function Plasmicمعرفیبرندجدید__RenderFunc(props: {
                 />
               </div>
             </div>
-            <div className={classNames(projectcss.all, sty.freeBox__szepv)}>
+            <div className={classNames("all", sty.freeBox__szepv)}>
               <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text___13X2X
-                )}
+                className={classNames("all", "__wab_text", sty.text___13X2X)}
               >
                 {hasVariant(globalVariants, "screen", "smallMobile") ? (
                   <React.Fragment>
@@ -1253,15 +1196,15 @@ function Plasmicمعرفیبرندجدید__RenderFunc(props: {
             <div
               data-plasmic-name={"qA"}
               data-plasmic-override={overrides.qA}
-              className={classNames(projectcss.all, sty.qA)}
+              className={classNames("all", sty.qA)}
             >
-              <div className={classNames(projectcss.all, sty.freeBox__envrc)}>
+              <div className={classNames("all", sty.freeBox__envrc)}>
                 <h2
                   className={classNames(
-                    projectcss.all,
-                    projectcss.h2,
-                    projectcss.h2__7SNMk,
-                    projectcss.__wab_text,
+                    "all",
+                    "h2",
+                    "h2__7SNMk",
+                    "__wab_text",
                     sty.h2__nuJ5U
                   )}
                 >
@@ -1270,7 +1213,7 @@ function Plasmicمعرفیبرندجدید__RenderFunc(props: {
                   }
                 </h2>
               </div>
-              <div className={classNames(projectcss.all, sty.freeBox__oDoPg)}>
+              <div className={classNames("all", sty.freeBox__oDoPg)}>
                 {(() => {
                   const child$Props = {
                     activeKey: generateStateValueProp($state, [
@@ -1292,8 +1235,8 @@ function Plasmicمعرفیبرندجدید__RenderFunc(props: {
                               data-plasmic-name={"_1"}
                               data-plasmic-override={overrides._1}
                               className={classNames(
-                                projectcss.all,
-                                projectcss.__wab_text,
+                                "all",
+                                "__wab_text",
                                 sty._1
                               )}
                             >
@@ -1306,8 +1249,8 @@ function Plasmicمعرفیبرندجدید__RenderFunc(props: {
                         >
                           <div
                             className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
+                              "all",
+                              "__wab_text",
                               sty.text__bea79
                             )}
                           >
@@ -1324,8 +1267,8 @@ function Plasmicمعرفیبرندجدید__RenderFunc(props: {
                           label2={
                             <div
                               className={classNames(
-                                projectcss.all,
-                                projectcss.__wab_text,
+                                "all",
+                                "__wab_text",
                                 sty.text__xNmRb
                               )}
                             >
@@ -1338,8 +1281,8 @@ function Plasmicمعرفیبرندجدید__RenderFunc(props: {
                         >
                           <div
                             className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
+                              "all",
+                              "__wab_text",
                               sty.text__n82G5
                             )}
                           >
@@ -1356,8 +1299,8 @@ function Plasmicمعرفیبرندجدید__RenderFunc(props: {
                           label2={
                             <div
                               className={classNames(
-                                projectcss.all,
-                                projectcss.__wab_text,
+                                "all",
+                                "__wab_text",
                                 sty.text__lhwKl
                               )}
                             >
@@ -1370,8 +1313,8 @@ function Plasmicمعرفیبرندجدید__RenderFunc(props: {
                         >
                           <div
                             className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
+                              "all",
+                              "__wab_text",
                               sty.text__hajBe
                             )}
                           >
@@ -1388,8 +1331,8 @@ function Plasmicمعرفیبرندجدید__RenderFunc(props: {
                           label2={
                             <div
                               className={classNames(
-                                projectcss.all,
-                                projectcss.__wab_text,
+                                "all",
+                                "__wab_text",
                                 sty.text___0F6Gt
                               )}
                             >
@@ -1402,8 +1345,8 @@ function Plasmicمعرفیبرندجدید__RenderFunc(props: {
                         >
                           <div
                             className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
+                              "all",
+                              "__wab_text",
                               sty.text__n6DU
                             )}
                           >
@@ -1437,8 +1380,8 @@ function Plasmicمعرفیبرندجدید__RenderFunc(props: {
                           label2={
                             <div
                               className={classNames(
-                                projectcss.all,
-                                projectcss.__wab_text,
+                                "all",
+                                "__wab_text",
                                 sty.text__nFvGw
                               )}
                             >
@@ -1451,8 +1394,8 @@ function Plasmicمعرفیبرندجدید__RenderFunc(props: {
                         >
                           <div
                             className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
+                              "all",
+                              "__wab_text",
                               sty.text__qnsii
                             )}
                           >
@@ -1498,7 +1441,7 @@ function Plasmicمعرفیبرندجدید__RenderFunc(props: {
               <div
                 data-plasmic-name={"html2"}
                 data-plasmic-override={overrides.html2}
-                className={classNames(projectcss.all, sty.html2)}
+                className={classNames("all", sty.html2)}
               >
                 <Embed
                   data-plasmic-name={"goftino2"}
@@ -1509,7 +1452,7 @@ function Plasmicمعرفیبرندجدید__RenderFunc(props: {
                   }
                 />
 
-                <div className={classNames(projectcss.all, sty.freeBox__qOxyp)}>
+                <div className={classNames("all", sty.freeBox__qOxyp)}>
                   <ClarityRntComponent
                     className={classNames(
                       "__wab_instance",
@@ -1528,15 +1471,12 @@ function Plasmicمعرفیبرندجدید__RenderFunc(props: {
               <div
                 data-plasmic-name={"addingVillaIntoPltforms"}
                 data-plasmic-override={overrides.addingVillaIntoPltforms}
-                className={classNames(
-                  projectcss.all,
-                  sty.addingVillaIntoPltforms
-                )}
+                className={classNames("all", sty.addingVillaIntoPltforms)}
               >
                 <div
                   data-plasmic-name={"reg"}
                   data-plasmic-override={overrides.reg}
-                  className={classNames(projectcss.all, sty.reg)}
+                  className={classNames("all", sty.reg)}
                   onClick={async event => {
                     const $steps = {};
 
@@ -1568,8 +1508,8 @@ function Plasmicمعرفیبرندجدید__RenderFunc(props: {
                 >
                   <div
                     className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
+                      "all",
+                      "__wab_text",
                       sty.text__hrTv,
                       "clickable"
                     )}
@@ -1586,9 +1526,9 @@ function Plasmicمعرفیبرندجدید__RenderFunc(props: {
           <div
             data-plasmic-name={"html"}
             data-plasmic-override={overrides.html}
-            className={classNames(projectcss.all, sty.html)}
+            className={classNames("all", sty.html)}
           >
-            <div className={classNames(projectcss.all, sty.freeBox__leXku)}>
+            <div className={classNames("all", sty.freeBox__leXku)}>
               <Embed
                 data-plasmic-name={"goftino"}
                 data-plasmic-override={overrides.goftino}

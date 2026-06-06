@@ -70,7 +70,6 @@ import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-impor
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./Plasmicمدیریتویلا.module.css"; // plasmic-import: lU71surWQVHn/css
 
 const emptyProxy: any = new Proxy(() => "", {
@@ -278,10 +277,10 @@ function Plasmicمدیریتویلا__RenderFunc(props: {
         data-plasmic-root={true}
         data-plasmic-for-node={forNode}
         className={classNames(
-          projectcss.all,
-          projectcss.root_reset,
-          projectcss.plasmic_default_styles,
-          projectcss.plasmic_mixins,
+          "all",
+          "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+          "plasmic_default_styles",
+          "plasmic_mixins",
           styleTokensClassNames,
           sty.content
         )}
@@ -295,36 +294,36 @@ function Plasmicمدیریتویلا__RenderFunc(props: {
         <div
           data-plasmic-name={"mainContents"}
           data-plasmic-override={overrides.mainContents}
-          className={classNames(projectcss.all, sty.mainContents)}
+          className={classNames("all", sty.mainContents)}
         >
           <div
             data-plasmic-name={"intro"}
             data-plasmic-override={overrides.intro}
-            className={classNames(projectcss.all, sty.intro)}
+            className={classNames("all", sty.intro)}
           >
             <div
               data-plasmic-name={"top"}
               data-plasmic-override={overrides.top}
-              className={classNames(projectcss.all, sty.top)}
+              className={classNames("all", sty.top)}
             >
               <div
                 data-plasmic-name={"right"}
                 data-plasmic-override={overrides.right}
-                className={classNames(projectcss.all, sty.right)}
+                className={classNames("all", sty.right)}
               >
                 <div
                   data-plasmic-name={"introTitle"}
                   data-plasmic-override={overrides.introTitle}
-                  className={classNames(projectcss.all, sty.introTitle)}
+                  className={classNames("all", sty.introTitle)}
                 >
                   <h1
                     data-plasmic-name={"h1"}
                     data-plasmic-override={overrides.h1}
                     className={classNames(
-                      projectcss.all,
-                      projectcss.h1,
-                      projectcss.h1__7SNMk,
-                      projectcss.__wab_text,
+                      "all",
+                      "h1",
+                      "h1__7SNMk",
+                      "__wab_text",
                       sty.h1
                     )}
                   >
@@ -336,14 +335,10 @@ function Plasmicمدیریتویلا__RenderFunc(props: {
                 <div
                   data-plasmic-name={"introDesc"}
                   data-plasmic-override={overrides.introDesc}
-                  className={classNames(projectcss.all, sty.introDesc)}
+                  className={classNames("all", sty.introDesc)}
                 >
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__aF6Ny
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__aF6Ny)}
                   >
                     <React.Fragment>
                       <React.Fragment>
@@ -354,11 +349,11 @@ function Plasmicمدیریتویلا__RenderFunc(props: {
                       {
                         <PlasmicLink__
                           className={classNames(
-                            projectcss.all,
-                            projectcss.a,
-                            projectcss.a__7SNMk,
-                            projectcss.__wab_text,
-                            projectcss.plasmic_default__inline,
+                            "all",
+                            "a",
+                            "a__7SNMk",
+                            "__wab_text",
+                            "plasmic_default__inline",
                             sty.link__rRq0M
                           )}
                           component={Link}
@@ -384,12 +379,12 @@ function Plasmicمدیریتویلا__RenderFunc(props: {
             <div
               data-plasmic-name={"culture"}
               data-plasmic-override={overrides.culture}
-              className={classNames(projectcss.all, sty.culture)}
+              className={classNames("all", sty.culture)}
             >
               <div
                 data-plasmic-name={"left"}
                 data-plasmic-override={overrides.left}
-                className={classNames(projectcss.all, sty.left)}
+                className={classNames("all", sty.left)}
               >
                 <PlasmicImg__
                   alt={""}
@@ -412,15 +407,11 @@ function Plasmicمدیریتویلا__RenderFunc(props: {
               <div
                 data-plasmic-name={"strDefinition"}
                 data-plasmic-override={overrides.strDefinition}
-                className={classNames(projectcss.all, sty.strDefinition)}
+                className={classNames("all", sty.strDefinition)}
               >
-                <div className={classNames(projectcss.all, sty.freeBox__ulnC)}>
+                <div className={classNames("all", sty.freeBox__ulnC)}>
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__ccThC
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__ccThC)}
                   >
                     {
                       "\u0627\u0645\u0627 \u00ab\u0686\u0646\u0644\u200c\u0645\u0646\u06cc\u062c\u0631\u00bb \u06cc\u0627 channel manager \u0645\u0634\u06a9\u0644 \u0628\u0647\u200c\u0631\u0648\u0632 \u0646\u0628\u0648\u062f\u0646 \u062a\u0642\u0648\u06cc\u0645 \u0648\u06cc\u0644\u0627 \u062f\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0645\u062e\u062a\u0644\u0641 \u0631\u0648 \u0628\u0631\u0637\u0631\u0641 \u0645\u06cc\u200c\u06a9\u0646\u0647. \u0627\u06cc\u0646 \u0627\u0628\u0632\u0627\u0631 \u0647\u0645\u0647\u200c\u06cc \u06a9\u0627\u0646\u0627\u0644\u200c\u0647\u0627\u06cc \u0641\u0631\u0648\u0634 \u0645\u06cc\u0632\u0628\u0627\u0646 \u0631\u0648 \u0628\u0647\u200c\u0637\u0648\u0631 \u062e\u0648\u062f\u06a9\u0627\u0631 \u0647\u0645\u0633\u0627\u0646\u200c\u0633\u0627\u0632\u06cc \u0645\u06cc\u200c\u06a9\u0646\u0647. \u0628\u0647 \u0627\u06cc\u0646 \u0634\u06a9\u0644 \u06a9\u0647 \u0627\u06af\u0647 \u0645\u06cc\u0632\u0628\u0627\u0646 \u0628\u0631\u0627\u06cc \u0622\u062e\u0631 \u0647\u0641\u062a\u0647 \u0627\u0632 \u06cc\u06a9 \u0633\u0627\u06cc\u062a \u0645\u062b\u0644 \u062c\u0627\u0628\u0627\u0645\u0627 \u0631\u0632\u0631\u0648 \u062f\u0631\u06cc\u0627\u0641\u062a \u06a9\u0646\u0647\u060c \u0686\u0646\u0644\u200c\u0645\u0646\u06cc\u062c\u0631 \u0622\u062e\u0631 \u0647\u0641\u062a\u0647 \u0631\u0648 \u062f\u0631 \u0633\u0627\u06cc\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u063a\u06cc\u0631\u0641\u0639\u0627\u0644 \u0645\u06cc\u200c\u06a9\u0646\u0647 \u062a\u0627 \u0627\u0648\u0646 \u062a\u0627\u0631\u06cc\u062e \u0628\u0647 \u0627\u0634\u062a\u0628\u0627\u0647 \u0627\u0632 \u06f2 \u062c\u0627\u06cc \u0645\u062e\u062a\u0644\u0641 \u0631\u0632\u0631\u0648 \u0646\u0634\u0647."
@@ -433,12 +424,12 @@ function Plasmicمدیریتویلا__RenderFunc(props: {
           <div
             data-plasmic-name={"button2"}
             data-plasmic-override={overrides.button2}
-            className={classNames(projectcss.all, sty.button2)}
+            className={classNames("all", sty.button2)}
           >
             <div
               className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
+                "all",
+                "__wab_text",
                 sty.text__iBKi4,
                 "clickable"
               )}
@@ -479,15 +470,15 @@ function Plasmicمدیریتویلا__RenderFunc(props: {
           <div
             data-plasmic-name={"investment"}
             data-plasmic-override={overrides.investment}
-            className={classNames(projectcss.all, sty.investment)}
+            className={classNames("all", sty.investment)}
           >
-            <div className={classNames(projectcss.all, sty.freeBox__xaHrs)}>
+            <div className={classNames("all", sty.freeBox__xaHrs)}>
               <h2
                 className={classNames(
-                  projectcss.all,
-                  projectcss.h2,
-                  projectcss.h2__7SNMk,
-                  projectcss.__wab_text,
+                  "all",
+                  "h2",
+                  "h2__7SNMk",
+                  "__wab_text",
                   sty.h2__b1Xpc
                 )}
               >
@@ -495,23 +486,17 @@ function Plasmicمدیریتویلا__RenderFunc(props: {
                   "\u062d\u0627\u0644\u0627 \u0628\u0631\u0627\u06cc \u0647\u0645\u0647\u200c\u06cc \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u0647\u0627 \u00ab\u0631\u0632\u0631\u0648 \u0622\u0646\u06cc\u00bb \u0628\u0630\u0627\u0631\u060c \u0648 \u062f\u06cc\u06af\u0647 \u0646\u06af\u0631\u0627\u0646 \u062f\u0631\u06cc\u0627\u0641\u062a \u0631\u0632\u0631\u0648 \u0647\u0645\u0632\u0645\u0627\u0646 \u0628\u0631\u0627\u06cc \u06cc\u06a9 \u062a\u0627\u0631\u06cc\u062e \u0648 \u06a9\u0646\u0633\u0644\u06cc \u0646\u0628\u0627\u0634 :\u200c)"
                 }
               </h2>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__jsyHk
-                )}
-              >
+              <div className={classNames("all", "__wab_text", sty.text__jsyHk)}>
                 <React.Fragment>
                   <React.Fragment>{""}</React.Fragment>
                   {
                     <PlasmicLink__
                       className={classNames(
-                        projectcss.all,
-                        projectcss.a,
-                        projectcss.a__7SNMk,
-                        projectcss.__wab_text,
-                        projectcss.plasmic_default__inline,
+                        "all",
+                        "a",
+                        "a__7SNMk",
+                        "__wab_text",
+                        "plasmic_default__inline",
                         sty.link__qmN1B
                       )}
                       component={Link}
@@ -530,7 +515,7 @@ function Plasmicمدیریتویلا__RenderFunc(props: {
                 </React.Fragment>
               </div>
             </div>
-            <div className={classNames(projectcss.all, sty.freeBox___5JIsE)}>
+            <div className={classNames("all", sty.freeBox___5JIsE)}>
               <Embed
                 data-plasmic-name={"embedHtml"}
                 data-plasmic-override={overrides.embedHtml}
@@ -540,13 +525,7 @@ function Plasmicمدیریتویلا__RenderFunc(props: {
                 }
               />
 
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__wOmpp
-                )}
-              >
+              <div className={classNames("all", "__wab_text", sty.text__wOmpp)}>
                 {
                   "\u06cc\u06a9\u067e\u0627\u0631\u0686\u0647\u200c\u0633\u0627\u0632\u06cc \u062a\u0645\u0627\u0645 \u06a9\u0627\u0646\u0627\u0644\u200c\u0647\u0627\u06cc \u0641\u0631\u0648\u0634"
                 }
@@ -556,14 +535,14 @@ function Plasmicمدیریتویلا__RenderFunc(props: {
           <div
             data-plasmic-name={"incomeAnual"}
             data-plasmic-override={overrides.incomeAnual}
-            className={classNames(projectcss.all, sty.incomeAnual)}
+            className={classNames("all", sty.incomeAnual)}
           >
             <h2
               className={classNames(
-                projectcss.all,
-                projectcss.h2,
-                projectcss.h2__7SNMk,
-                projectcss.__wab_text,
+                "all",
+                "h2",
+                "h2__7SNMk",
+                "__wab_text",
                 sty.h2__qwJsl
               )}
             >
@@ -571,24 +550,12 @@ function Plasmicمدیریتویلا__RenderFunc(props: {
                 "\u062a\u0641\u0627\u0648\u062a \u00ab\u0645\u06cc\u0627\u0646\u00bb \u0628\u0627 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u0686\u06cc\u0647\u061f"
               }
             </h2>
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text___4D9Cs
-              )}
-            >
+            <div className={classNames("all", "__wab_text", sty.text___4D9Cs)}>
               {
                 "\u0628\u0631\u0646\u0627\u0645\u0647\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u0627\u0645\u06a9\u0627\u0646 \u06af\u0630\u0627\u0634\u062a\u0646 \u0622\u06af\u0647\u06cc\u060c \u0645\u0639\u0631\u0641\u06cc \u0627\u0645\u06a9\u0627\u0646\u0627\u062a \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0648 \u06af\u0631\u0641\u062a\u0646 \u0645\u0633\u0627\u0641\u0631 \u0631\u0648 \u0628\u0647 \u0634\u0645\u0627 \u0645\u06cc\u200c\u062f\u0646. \u062f\u0631\u062d\u0627\u0644\u06cc \u06a9\u0647 \u06a9\u0627\u0631\u06a9\u0631\u062f \u00ab\u0645\u06cc\u0627\u0646\u00bb \u0647\u0645\u200c\u0633\u0627\u0646\u200c\u0633\u0627\u0632\u06cc \u0647\u0645\u0647\u200c\u06cc \u0627\u06cc\u0646 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u0628\u0627 \u06cc\u06a9\u062f\u06cc\u06af\u0647 \u0647\u0633\u062a. \u062f\u0631 \u0648\u0627\u0642\u0639 \u0645\u06cc\u0627\u0646 \u06cc\u06a9 \u062a\u0633\u0647\u06cc\u0644\u06af\u0631 \u0628\u0631\u0627\u06cc \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u0628\u0647\u200c\u062d\u0633\u0627\u0628 \u0645\u06cc\u0627\u062f\u060c \u0648 \u06a9\u0627\u0631\u0627\u06cc\u06cc \u0645\u0634\u0627\u0628\u0647 \u0627\u0648\u0646\u200c\u0647\u0627 \u0631\u0648 \u0646\u062f\u0627\u0631\u0647."
               }
             </div>
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__kdUko
-              )}
-            >
+            <div className={classNames("all", "__wab_text", sty.text__kdUko)}>
               <React.Fragment>
                 <React.Fragment>
                   {
@@ -598,11 +565,11 @@ function Plasmicمدیریتویلا__RenderFunc(props: {
                 {
                   <PlasmicLink__
                     className={classNames(
-                      projectcss.all,
-                      projectcss.a,
-                      projectcss.a__7SNMk,
-                      projectcss.__wab_text,
-                      projectcss.plasmic_default__inline,
+                      "all",
+                      "a",
+                      "a__7SNMk",
+                      "__wab_text",
+                      "plasmic_default__inline",
                       sty.link__xrieE
                     )}
                     component={Link}
@@ -622,15 +589,15 @@ function Plasmicمدیریتویلا__RenderFunc(props: {
           <div
             data-plasmic-name={"efforts"}
             data-plasmic-override={overrides.efforts}
-            className={classNames(projectcss.all, sty.efforts)}
+            className={classNames("all", sty.efforts)}
           >
-            <div className={classNames(projectcss.all, sty.freeBox__kV7Tt)}>
+            <div className={classNames("all", sty.freeBox__kV7Tt)}>
               <h2
                 className={classNames(
-                  projectcss.all,
-                  projectcss.h2,
-                  projectcss.h2__7SNMk,
-                  projectcss.__wab_text,
+                  "all",
+                  "h2",
+                  "h2__7SNMk",
+                  "__wab_text",
                   sty.h2__mSg6D
                 )}
               >
@@ -638,13 +605,7 @@ function Plasmicمدیریتویلا__RenderFunc(props: {
                   "\u0648\u06cc\u0698\u06af\u06cc\u200c\u0647\u0627\u06cc \u0627\u0635\u0644\u06cc \u0628\u0631\u0646\u0627\u0645\u0647 \u0645\u062f\u06cc\u0631\u06cc\u062a \u0648\u06cc\u0644\u0627 \u0645\u06cc\u0627\u0646"
                 }
               </h2>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__pfHU
-                )}
-              >
+              <div className={classNames("all", "__wab_text", sty.text__pfHU)}>
                 {hasVariant(globalVariants, "screen", "mobile")
                   ? "\u2705 \u062c\u0644\u0648\u06af\u06cc\u0631\u06cc \u0627\u0632 \u062f\u0631\u06cc\u0627\u0641\u062a \u0631\u0632\u0631\u0648 \u0647\u0645\u200c\u0632\u0645\u0627\u0646 \u0628\u0631\u0627\u06cc \u06cc\u06a9 \u062a\u0627\u0631\u06cc\u062e\r\n\u2705 \u0645\u062f\u06cc\u0631\u06cc\u062a \u062a\u0642\u0648\u06cc\u0645 \u062f\u0631 \u062a\u0645\u0627\u0645 \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u0647\u0627 \u0627\u0632 \u06cc\u06a9\u200c\u062c\u0627\r\n\u2705 \u0646\u06af\u0647\u062f\u0627\u0631\u06cc \u06a9\u0644\u06cc\u0647\u200c\u06cc \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0631\u0632\u0631\u0648\u0647\u0627"
                   : "\u2705 \u062c\u0644\u0648\u06af\u06cc\u0631\u06cc \u0627\u0632 \u062f\u0631\u06cc\u0627\u0641\u062a \u0631\u0632\u0631\u0648 \u0647\u0645\u200c\u0632\u0645\u0627\u0646 \u0628\u0631\u0627\u06cc \u06cc\u06a9 \u062a\u0627\u0631\u06cc\u062e\r\n\u2705 \u0645\u062f\u06cc\u0631\u06cc\u062a \u062a\u0642\u0648\u06cc\u0645 \u062f\u0631 \u062a\u0645\u0627\u0645 \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u0647\u0627 \u0627\u0632 \u06cc\u06a9\u200c\u062c\u0627\r\n\u2705 \u0645\u062f\u06cc\u0631\u06cc\u062a \u0622\u0633\u0627\u0646 \u0648 \u0628\u0647\u200c\u0631\u0648\u0632 \u0646\u06af\u0647\u200c\u062f\u0627\u0634\u062a\u0646 \u062a\u0642\u0648\u06cc\u0645\u200c\u0647\u0627"}
@@ -653,7 +614,7 @@ function Plasmicمدیریتویلا__RenderFunc(props: {
             <div
               data-plasmic-name={"handsOn"}
               data-plasmic-override={overrides.handsOn}
-              className={classNames(projectcss.all, sty.handsOn)}
+              className={classNames("all", sty.handsOn)}
             >
               <PlasmicImg__
                 alt={
@@ -679,13 +640,7 @@ function Plasmicمدیریتویلا__RenderFunc(props: {
                 }}
               />
 
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__plqeO
-                )}
-              >
+              <div className={classNames("all", "__wab_text", sty.text__plqeO)}>
                 {
                   "\u062a\u062c\u0645\u06cc\u0639 \u0647\u0645\u0647\u200c\u06cc \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u062f\u0631 \u06cc\u06a9 \u0628\u0631\u0646\u0627\u0645\u0647"
                 }
@@ -696,12 +651,12 @@ function Plasmicمدیریتویلا__RenderFunc(props: {
         <div
           data-plasmic-name={"button"}
           data-plasmic-override={overrides.button}
-          className={classNames(projectcss.all, sty.button)}
+          className={classNames("all", sty.button)}
         >
           <div
             className={classNames(
-              projectcss.all,
-              projectcss.__wab_text,
+              "all",
+              "__wab_text",
               sty.text__wUgC,
               "clickable"
             )}
@@ -745,7 +700,7 @@ function Plasmicمدیریتویلا__RenderFunc(props: {
           className={classNames("__wab_instance", sty.miaanFooter)}
         />
 
-        <div className={classNames(projectcss.all, sty.freeBox__snm9Z)}>
+        <div className={classNames("all", sty.freeBox__snm9Z)}>
           <ClarityRntComponent
             data-plasmic-name={"clarityRntComponent"}
             data-plasmic-override={overrides.clarityRntComponent}

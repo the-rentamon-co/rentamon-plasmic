@@ -75,7 +75,6 @@ import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-impor
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicInvite.module.css"; // plasmic-import: _g5mpGGn_lAP/css
 
 import CheckSvgIcon from "./icons/PlasmicIcon__CheckSvg"; // plasmic-import: aHRi_lZjzHt3/icon
@@ -276,17 +275,17 @@ function PlasmicInvite__RenderFunc(props: {
         }
       `}</style>
 
-      <div className={projectcss.plasmic_page_wrapper}>
+      <div className={"plasmic_page_wrapper"}>
         <div
           data-plasmic-name={"root"}
           data-plasmic-override={overrides.root}
           data-plasmic-root={true}
           data-plasmic-for-node={forNode}
           className={classNames(
-            projectcss.all,
-            projectcss.root_reset,
-            projectcss.plasmic_default_styles,
-            projectcss.plasmic_mixins,
+            "all",
+            "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+            "plasmic_default_styles",
+            "plasmic_mixins",
             styleTokensClassNames,
             sty.root
           )}
@@ -334,9 +333,9 @@ function PlasmicInvite__RenderFunc(props: {
             })()}
           />
 
-          <div className={classNames(projectcss.all, sty.freeBox___73I8V)}>
-            <div className={classNames(projectcss.all, sty.freeBox__pdbF7)}>
-              <div className={classNames(projectcss.all, sty.freeBox__lIzAm)}>
+          <div className={classNames("all", sty.freeBox___73I8V)}>
+            <div className={classNames("all", sty.freeBox__pdbF7)}>
+              <div className={classNames("all", sty.freeBox__lIzAm)}>
                 <PlasmicImg__
                   alt={""}
                   className={classNames(sty.img___2Zl6T)}
@@ -403,12 +402,12 @@ function PlasmicInvite__RenderFunc(props: {
                   })()}
                 />
               </div>
-              <div className={classNames(projectcss.all, sty.freeBox__op8Pv)}>
-                <div className={classNames(projectcss.all, sty.freeBox__euiv1)}>
+              <div className={classNames("all", sty.freeBox__op8Pv)}>
+                <div className={classNames("all", sty.freeBox__euiv1)}>
                   <div
                     className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
+                      "all",
+                      "__wab_text",
                       sty.text___7R8Gd
                     )}
                   >
@@ -437,13 +436,9 @@ function PlasmicInvite__RenderFunc(props: {
                     </React.Fragment>
                   </div>
                 </div>
-                <div className={classNames(projectcss.all, sty.freeBox__ogPS)}>
+                <div className={classNames("all", sty.freeBox__ogPS)}>
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__bC4N
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__bC4N)}
                   >
                     <React.Fragment>
                       {(() => {
@@ -476,14 +471,10 @@ function PlasmicInvite__RenderFunc(props: {
                   </div>
                 </div>
               </div>
-              <div className={classNames(projectcss.all, sty.freeBox__r2Yx)}>
-                <div className={classNames(projectcss.all, sty.freeBox__nc1Oo)}>
+              <div className={classNames("all", sty.freeBox__r2Yx)}>
+                <div className={classNames("all", sty.freeBox__nc1Oo)}>
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__irRLm
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__irRLm)}
                   >
                     <React.Fragment>
                       {(() => {
@@ -527,14 +518,10 @@ function PlasmicInvite__RenderFunc(props: {
                 </div>
               </div>
             </div>
-            <div className={classNames(projectcss.all, sty.freeBox___8Ivdf)}>
-              <div className={classNames(projectcss.all, sty.freeBox__vy7Gw)}>
+            <div className={classNames("all", sty.freeBox___8Ivdf)}>
+              <div className={classNames("all", sty.freeBox__vy7Gw)}>
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__kLvIj
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__kLvIj)}
                 >
                   <React.Fragment>
                     {(() => {
@@ -553,11 +540,7 @@ function PlasmicInvite__RenderFunc(props: {
                   </React.Fragment>
                 </div>
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text___7F7JG
-                  )}
+                  className={classNames("all", "__wab_text", sty.text___7F7JG)}
                 >
                   {
                     "\u0628\u0647 \u062c\u0645\u0639 \u06a9\u0627\u0631\u0622\u0641\u0631\u06cc\u0646\u200c\u0647\u0627\u06cc\u06cc \u06a9\u0647 \u062f\u0631 \u062a\u0644\u0627\u0634 \u0628\u0631\u0627\u06cc \u0631\u0634\u062f \u06a9\u0633\u0628\u200c\u0648\u06a9\u0627\u0631\u0634\u0648\u0646 \u0648 \u062a\u0648\u0633\u0639\u0647\u200c\u06cc \u06af\u0631\u062f\u0634\u06af\u0631\u06cc\u0650 \u06a9\u0634\u0648\u0631 \u0632\u06cc\u0628\u0627\u0645\u0648\u0646 \u0647\u0633\u062a\u0646 :)"
@@ -565,20 +548,14 @@ function PlasmicInvite__RenderFunc(props: {
                 </div>
               </div>
             </div>
-            <div className={classNames(projectcss.all, sty.freeBox__jn6Yz)}>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__hEvvJ
-                )}
-              >
+            <div className={classNames("all", sty.freeBox__jn6Yz)}>
+              <div className={classNames("all", "__wab_text", sty.text__hEvvJ)}>
                 {
                   "\u0647\u0645\u06cc\u0646 \u0627\u0644\u0627\u0646 \u062f\u0631 \u0645\u06cc\u0627\u0646 \u062b\u0628\u062a \u0646\u0627\u0645 \u06a9\u0646"
                 }
               </div>
-              <div className={classNames(projectcss.all, sty.freeBox__oi07T)}>
-                <div className={classNames(projectcss.all, sty.freeBox__rz8Me)}>
+              <div className={classNames("all", sty.freeBox__oi07T)}>
+                <div className={classNames("all", sty.freeBox__rz8Me)}>
                   <Button
                     className={classNames("__wab_instance", sty.button___9Wqe)}
                     onClick={async event => {
@@ -679,8 +656,8 @@ function PlasmicInvite__RenderFunc(props: {
                   >
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text__hLLaC
                       )}
                     >
@@ -690,11 +667,7 @@ function PlasmicInvite__RenderFunc(props: {
                 </div>
               </div>
               <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text___9OOaM
-                )}
+                className={classNames("all", "__wab_text", sty.text___9OOaM)}
               >
                 {
                   "\u0648 \u06f1\u06f0\u06f0 \u0647\u0632\u0627\u0631 \u062a\u0648\u0645\u0627\u0646 \u0647\u062f\u06cc\u0647 \u0628\u06af\u06cc\u0631 + \u067e\u0631\u062f\u0627\u0632\u0634 \u06f2\u06f0 \u0631\u0632\u0631\u0648 \u0631\u0627\u06cc\u06af\u0627\u0646"
@@ -704,19 +677,15 @@ function PlasmicInvite__RenderFunc(props: {
             <div
               data-plasmic-name={"image"}
               data-plasmic-override={overrides.image}
-              className={classNames(projectcss.all, sty.image)}
+              className={classNames("all", sty.image)}
             >
               <div
                 data-plasmic-name={"introAutoSyncTitle2"}
                 data-plasmic-override={overrides.introAutoSyncTitle2}
-                className={classNames(projectcss.all, sty.introAutoSyncTitle2)}
+                className={classNames("all", sty.introAutoSyncTitle2)}
               >
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__ppLu
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__ppLu)}
                 >
                   {
                     "\u062a\u0642\u0648\u06cc\u0645 \u062c\u0627\u062c\u06cc\u06af\u0627\u060c \u062c\u0627\u0628\u0627\u0645\u0627\u060c \u0627\u062a\u0627\u0642\u06a9 \u0648... \u0631\u0648 \u0647\u0645\u200c\u0632\u0645\u0627\u0646 \u0627\u0632 \u0628\u0631\u0646\u0627\u0645\u0647\u200c\u06cc \u00ab\u0645\u06cc\u0627\u0646\u00bb \u062a\u063a\u06cc\u06cc\u0631 \u0628\u062f\u0647\r"
@@ -726,17 +695,10 @@ function PlasmicInvite__RenderFunc(props: {
               <div
                 data-plasmic-name={"introAutoSyncCaption2"}
                 data-plasmic-override={overrides.introAutoSyncCaption2}
-                className={classNames(
-                  projectcss.all,
-                  sty.introAutoSyncCaption2
-                )}
+                className={classNames("all", sty.introAutoSyncCaption2)}
               >
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text___4YgAn
-                  )}
+                  className={classNames("all", "__wab_text", sty.text___4YgAn)}
                 >
                   {
                     "\u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u062f\u0633\u062a\u06cc\u0627\u0631 \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627\u0633\u062a \u0648 \u06a9\u0627\u0631\u0647\u0627\u06cc \u0645\u0631\u0628\u0648\u0637 \u0628\u0647 \u0645\u062f\u06cc\u0631\u06cc\u062a \u062a\u0642\u0648\u06cc\u0645 \u0648 \u0628\u0631\u0648\u0632 \u0631\u0633\u0627\u0646\u06cc \u0631\u0648 \u0633\u0631\u06cc\u0639\u200c\u062a\u0631 \u0645\u06cc\u200c\u06a9\u0646\u0647!"
@@ -746,12 +708,12 @@ function PlasmicInvite__RenderFunc(props: {
               <div
                 data-plasmic-name={"introAutoSyncDesc2"}
                 data-plasmic-override={overrides.introAutoSyncDesc2}
-                className={classNames(projectcss.all, sty.introAutoSyncDesc2)}
+                className={classNames("all", sty.introAutoSyncDesc2)}
               >
                 <div
                   data-plasmic-name={"introAutoSyncGif2"}
                   data-plasmic-override={overrides.introAutoSyncGif2}
-                  className={classNames(projectcss.all, sty.introAutoSyncGif2)}
+                  className={classNames("all", sty.introAutoSyncGif2)}
                 >
                   <PlasmicImg__
                     alt={""}
@@ -785,30 +747,27 @@ function PlasmicInvite__RenderFunc(props: {
             <div
               data-plasmic-name={"introCalendar"}
               data-plasmic-override={overrides.introCalendar}
-              className={classNames(projectcss.all, sty.introCalendar)}
+              className={classNames("all", sty.introCalendar)}
             >
               <div
                 data-plasmic-name={"introCalendar4"}
                 data-plasmic-override={overrides.introCalendar4}
-                className={classNames(projectcss.all, sty.introCalendar4)}
+                className={classNames("all", sty.introCalendar4)}
               >
                 <div
                   data-plasmic-name={"introCalendarRight"}
                   data-plasmic-override={overrides.introCalendarRight}
-                  className={classNames(projectcss.all, sty.introCalendarRight)}
+                  className={classNames("all", sty.introCalendarRight)}
                 >
                   <div
                     data-plasmic-name={"introCalendarRight3"}
                     data-plasmic-override={overrides.introCalendarRight3}
-                    className={classNames(
-                      projectcss.all,
-                      sty.introCalendarRight3
-                    )}
+                    className={classNames("all", sty.introCalendarRight3)}
                   >
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text__c3YV
                       )}
                     >
@@ -821,7 +780,7 @@ function PlasmicInvite__RenderFunc(props: {
                 <div
                   data-plasmic-name={"introCalendarLeft"}
                   data-plasmic-override={overrides.introCalendarLeft}
-                  className={classNames(projectcss.all, sty.introCalendarLeft)}
+                  className={classNames("all", sty.introCalendarLeft)}
                 >
                   <Video
                     data-plasmic-name={"htmlVideo"}
@@ -838,18 +797,14 @@ function PlasmicInvite__RenderFunc(props: {
                 </div>
               </div>
             </div>
-            <div className={classNames(projectcss.all, sty.freeBox___5Eq8E)}>
+            <div className={classNames("all", sty.freeBox___5Eq8E)}>
               <div
                 data-plasmic-name={"titlePart"}
                 data-plasmic-override={overrides.titlePart}
-                className={classNames(projectcss.all, sty.titlePart)}
+                className={classNames("all", sty.titlePart)}
               >
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__fJyaW
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__fJyaW)}
                 >
                   <React.Fragment>
                     <React.Fragment>
@@ -873,7 +828,7 @@ function PlasmicInvite__RenderFunc(props: {
                   </React.Fragment>
                 </div>
               </div>
-              <div className={classNames(projectcss.all, sty.freeBox__llEcH)}>
+              <div className={classNames("all", sty.freeBox__llEcH)}>
                 <TestimonialsScrolling
                   data-plasmic-name={"testimonialsScrolling"}
                   data-plasmic-override={overrides.testimonialsScrolling}
@@ -884,24 +839,14 @@ function PlasmicInvite__RenderFunc(props: {
                 />
               </div>
             </div>
-            <div className={classNames(projectcss.all, sty.freeBox__kb3W2)}>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__pvaXy
-                )}
-              >
+            <div className={classNames("all", sty.freeBox__kb3W2)}>
+              <div className={classNames("all", "__wab_text", sty.text__pvaXy)}>
                 {hasVariant(globalVariants, "screen", "mobile")
                   ? "\u0647\u0645\u06cc\u0646 \u0627\u0644\u0627\u0646 \u062b\u0628\u062a \u0646\u0627\u0645 \u06a9\u0646"
                   : "\u0647\u0645\u06cc\u0646 \u0627\u0644\u0627\u0646 \u062f\u0631 \u0645\u06cc\u0627\u0646 \u062b\u0628\u062a \u0646\u0627\u0645 \u06a9\u0646"}
               </div>
               <div
-                className={classNames(
-                  projectcss.all,
-                  sty.freeBox__vMItQ,
-                  "clickable"
-                )}
+                className={classNames("all", sty.freeBox__vMItQ, "clickable")}
               >
                 <Button
                   className={classNames("__wab_instance", sty.button__uW0Sj)}
@@ -988,29 +933,19 @@ function PlasmicInvite__RenderFunc(props: {
                   }}
                 >
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__fVk7O
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__fVk7O)}
                   >
                     {"\u062b\u0628\u062a \u0646\u0627\u0645"}
                   </div>
                 </Button>
               </div>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__kEqxE
-                )}
-              >
+              <div className={classNames("all", "__wab_text", sty.text__kEqxE)}>
                 {
                   "\u0648 \u06f1\u06f0\u06f0 \u0647\u0632\u0627\u0631 \u062a\u0648\u0645\u0627\u0646 \u0647\u062f\u06cc\u0647 \u0628\u06af\u06cc\u0631 + \u067e\u0631\u062f\u0627\u0632\u0634 \u06f2\u06f0 \u0631\u0632\u0631\u0648 \u0631\u0627\u06cc\u06af\u0627\u0646"
                 }
               </div>
             </div>
-            <div className={classNames(projectcss.all, sty.freeBox__zaC0Z)}>
+            <div className={classNames("all", sty.freeBox__zaC0Z)}>
               <Embed
                 data-plasmic-name={"embedHtml"}
                 data-plasmic-override={overrides.embedHtml}
@@ -1023,23 +958,19 @@ function PlasmicInvite__RenderFunc(props: {
             <div
               data-plasmic-name={"qA"}
               data-plasmic-override={overrides.qA}
-              className={classNames(projectcss.all, sty.qA)}
+              className={classNames("all", sty.qA)}
             >
-              <div className={classNames(projectcss.all, sty.freeBox__olMls)}>
+              <div className={classNames("all", sty.freeBox__olMls)}>
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__mx6Cy
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__mx6Cy)}
                 >
                   {
                     "\u0633\u0648\u0627\u0644\u0627\u062a \u0645\u062a\u062f\u0627\u0648\u0644:\r\n\r"
                   }
                 </div>
               </div>
-              <div className={classNames(projectcss.all, sty.freeBox__eGSt)}>
-                <div className={classNames(projectcss.all, sty.freeBox__uNcyb)}>
+              <div className={classNames("all", sty.freeBox__eGSt)}>
+                <div className={classNames("all", sty.freeBox__uNcyb)}>
                   {(() => {
                     const child$Props = {
                       activeKey: generateStateValueProp($state, [
@@ -1064,8 +995,8 @@ function PlasmicInvite__RenderFunc(props: {
                                 data-plasmic-name={"_8"}
                                 data-plasmic-override={overrides._8}
                                 className={classNames(
-                                  projectcss.all,
-                                  projectcss.__wab_text,
+                                  "all",
+                                  "__wab_text",
                                   sty._8
                                 )}
                               >
@@ -1078,8 +1009,8 @@ function PlasmicInvite__RenderFunc(props: {
                           >
                             <div
                               className={classNames(
-                                projectcss.all,
-                                projectcss.__wab_text,
+                                "all",
+                                "__wab_text",
                                 sty.text__eLfc4
                               )}
                             >
@@ -1096,8 +1027,8 @@ function PlasmicInvite__RenderFunc(props: {
                             label2={
                               <div
                                 className={classNames(
-                                  projectcss.all,
-                                  projectcss.__wab_text,
+                                  "all",
+                                  "__wab_text",
                                   sty.text__cmOh
                                 )}
                               >
@@ -1110,8 +1041,8 @@ function PlasmicInvite__RenderFunc(props: {
                           >
                             <div
                               className={classNames(
-                                projectcss.all,
-                                projectcss.__wab_text,
+                                "all",
+                                "__wab_text",
                                 sty.text__hZ6I
                               )}
                             >
@@ -1128,8 +1059,8 @@ function PlasmicInvite__RenderFunc(props: {
                             label2={
                               <div
                                 className={classNames(
-                                  projectcss.all,
-                                  projectcss.__wab_text,
+                                  "all",
+                                  "__wab_text",
                                   sty.text__algcO
                                 )}
                               >
@@ -1142,8 +1073,8 @@ function PlasmicInvite__RenderFunc(props: {
                           >
                             <div
                               className={classNames(
-                                projectcss.all,
-                                projectcss.__wab_text,
+                                "all",
+                                "__wab_text",
                                 sty.text__bvqG
                               )}
                             >
@@ -1164,8 +1095,8 @@ function PlasmicInvite__RenderFunc(props: {
                             label2={
                               <div
                                 className={classNames(
-                                  projectcss.all,
-                                  projectcss.__wab_text,
+                                  "all",
+                                  "__wab_text",
                                   sty.text__aPsyx
                                 )}
                               >
@@ -1178,8 +1109,8 @@ function PlasmicInvite__RenderFunc(props: {
                           >
                             <div
                               className={classNames(
-                                projectcss.all,
-                                projectcss.__wab_text,
+                                "all",
+                                "__wab_text",
                                 sty.text__mEdmk
                               )}
                             >
@@ -1196,8 +1127,8 @@ function PlasmicInvite__RenderFunc(props: {
                             label2={
                               <div
                                 className={classNames(
-                                  projectcss.all,
-                                  projectcss.__wab_text,
+                                  "all",
+                                  "__wab_text",
                                   sty.text__xsawK
                                 )}
                               >
@@ -1210,8 +1141,8 @@ function PlasmicInvite__RenderFunc(props: {
                           >
                             <div
                               className={classNames(
-                                projectcss.all,
-                                projectcss.__wab_text,
+                                "all",
+                                "__wab_text",
                                 sty.text__oCwNe
                               )}
                             >
@@ -1229,8 +1160,8 @@ function PlasmicInvite__RenderFunc(props: {
                             label2={
                               <div
                                 className={classNames(
-                                  projectcss.all,
-                                  projectcss.__wab_text,
+                                  "all",
+                                  "__wab_text",
                                   sty.text__sjSRd
                                 )}
                               >
@@ -1243,8 +1174,8 @@ function PlasmicInvite__RenderFunc(props: {
                           >
                             <div
                               className={classNames(
-                                projectcss.all,
-                                projectcss.__wab_text,
+                                "all",
+                                "__wab_text",
                                 sty.text__tzYzL
                               )}
                             >
@@ -1262,8 +1193,8 @@ function PlasmicInvite__RenderFunc(props: {
                             label2={
                               <div
                                 className={classNames(
-                                  projectcss.all,
-                                  projectcss.__wab_text,
+                                  "all",
+                                  "__wab_text",
                                   sty.text__oZNkG
                                 )}
                               >
@@ -1276,8 +1207,8 @@ function PlasmicInvite__RenderFunc(props: {
                           >
                             <div
                               className={classNames(
-                                projectcss.all,
-                                projectcss.__wab_text,
+                                "all",
+                                "__wab_text",
                                 sty.text__bIg9D
                               )}
                             >
@@ -1295,8 +1226,8 @@ function PlasmicInvite__RenderFunc(props: {
                             label2={
                               <div
                                 className={classNames(
-                                  projectcss.all,
-                                  projectcss.__wab_text,
+                                  "all",
+                                  "__wab_text",
                                   sty.text___67DLc
                                 )}
                               >
@@ -1309,8 +1240,8 @@ function PlasmicInvite__RenderFunc(props: {
                           >
                             <div
                               className={classNames(
-                                projectcss.all,
-                                projectcss.__wab_text,
+                                "all",
+                                "__wab_text",
                                 sty.text__utjBm
                               )}
                             >
@@ -1328,8 +1259,8 @@ function PlasmicInvite__RenderFunc(props: {
                             label2={
                               <div
                                 className={classNames(
-                                  projectcss.all,
-                                  projectcss.__wab_text,
+                                  "all",
+                                  "__wab_text",
                                   sty.text__sr4H1
                                 )}
                               >
@@ -1342,8 +1273,8 @@ function PlasmicInvite__RenderFunc(props: {
                           >
                             <div
                               className={classNames(
-                                projectcss.all,
-                                projectcss.__wab_text,
+                                "all",
+                                "__wab_text",
                                 sty.text__ii719
                               )}
                             >
@@ -1361,11 +1292,11 @@ function PlasmicInvite__RenderFunc(props: {
                                   {
                                     <PlasmicLink__
                                       className={classNames(
-                                        projectcss.all,
-                                        projectcss.a,
-                                        projectcss.a__7SNMk,
-                                        projectcss.__wab_text,
-                                        projectcss.plasmic_default__inline,
+                                        "all",
+                                        "a",
+                                        "a__7SNMk",
+                                        "__wab_text",
+                                        "plasmic_default__inline",
                                         sty.link__jtd7J
                                       )}
                                       component={Link}
@@ -1392,11 +1323,11 @@ function PlasmicInvite__RenderFunc(props: {
                                   {
                                     <PlasmicLink__
                                       className={classNames(
-                                        projectcss.all,
-                                        projectcss.a,
-                                        projectcss.a__7SNMk,
-                                        projectcss.__wab_text,
-                                        projectcss.plasmic_default__inline,
+                                        "all",
+                                        "a",
+                                        "a__7SNMk",
+                                        "__wab_text",
+                                        "plasmic_default__inline",
                                         sty.link__pqUkl
                                       )}
                                       component={Link}
@@ -1415,11 +1346,11 @@ function PlasmicInvite__RenderFunc(props: {
                                   {
                                     <PlasmicLink__
                                       className={classNames(
-                                        projectcss.all,
-                                        projectcss.a,
-                                        projectcss.a__7SNMk,
-                                        projectcss.__wab_text,
-                                        projectcss.plasmic_default__inline,
+                                        "all",
+                                        "a",
+                                        "a__7SNMk",
+                                        "__wab_text",
+                                        "plasmic_default__inline",
                                         sty.link__m54U
                                       )}
                                       component={Link}
@@ -1474,14 +1405,14 @@ function PlasmicInvite__RenderFunc(props: {
               </div>
             </div>
           </div>
-          <div className={classNames(projectcss.all, sty.freeBox__rh9Bm)}>
+          <div className={classNames("all", sty.freeBox__rh9Bm)}>
             <MiaanFooter
               data-plasmic-name={"miaanFooter"}
               data-plasmic-override={overrides.miaanFooter}
               className={classNames("__wab_instance", sty.miaanFooter)}
             />
           </div>
-          <div className={classNames(projectcss.all, sty.freeBox__xiW2W)}>
+          <div className={classNames("all", sty.freeBox__xiW2W)}>
             <ClarityRntComponent
               data-plasmic-name={"clarityRntComponent"}
               data-plasmic-override={overrides.clarityRntComponent}

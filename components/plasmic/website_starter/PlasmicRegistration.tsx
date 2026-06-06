@@ -74,7 +74,6 @@ import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-impor
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicRegistration.module.css"; // plasmic-import: 6Wv1NvT4ZD0j/css
 
 import Icon23Icon from "./icons/PlasmicIcon__Icon23"; // plasmic-import: TftNRT31euw0/icon
@@ -339,17 +338,17 @@ function PlasmicRegistration__RenderFunc(props: {
         }
       `}</style>
 
-      <div className={projectcss.plasmic_page_wrapper}>
+      <div className={"plasmic_page_wrapper"}>
         <div
           data-plasmic-name={"registration"}
           data-plasmic-override={overrides.registration}
           data-plasmic-root={true}
           data-plasmic-for-node={forNode}
           className={classNames(
-            projectcss.all,
-            projectcss.root_reset,
-            projectcss.plasmic_default_styles,
-            projectcss.plasmic_mixins,
+            "all",
+            "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+            "plasmic_default_styles",
+            "plasmic_mixins",
             styleTokensClassNames,
             sty.registration
           )}
@@ -357,7 +356,7 @@ function PlasmicRegistration__RenderFunc(props: {
           <div
             data-plasmic-name={"html"}
             data-plasmic-override={overrides.html}
-            className={classNames(projectcss.all, sty.html)}
+            className={classNames("all", sty.html)}
           >
             <Embed
               data-plasmic-name={"goftino"}
@@ -366,7 +365,7 @@ function PlasmicRegistration__RenderFunc(props: {
               code={"<div>Paste your embed code via the right sidebar</div>"}
             />
 
-            <div className={classNames(projectcss.all, sty.freeBox__vnN4N)}>
+            <div className={classNames("all", sty.freeBox__vnN4N)}>
               <ClarityRntComponent
                 data-plasmic-name={"clarityRntComponent"}
                 data-plasmic-override={overrides.clarityRntComponent}
@@ -387,7 +386,7 @@ function PlasmicRegistration__RenderFunc(props: {
             </div>
           </div>
           <div
-            className={classNames(projectcss.all, sty.freeBox__lWbm5)}
+            className={classNames("all", sty.freeBox__lWbm5)}
             onClick={async event => {
               const $steps = {};
 
@@ -413,7 +412,7 @@ function PlasmicRegistration__RenderFunc(props: {
             }}
           >
             <Icon23Icon
-              className={classNames(projectcss.all, sty.svg__vaqDi)}
+              className={classNames("all", sty.svg__vaqDi)}
               onClick={async event => {
                 const $steps = {};
 
@@ -443,8 +442,8 @@ function PlasmicRegistration__RenderFunc(props: {
               role={"img"}
             />
           </div>
-          <div className={classNames(projectcss.all, sty.freeBox___3CbM)}>
-            <div className={classNames(projectcss.all, sty.freeBox___2EXtv)}>
+          <div className={classNames("all", sty.freeBox___3CbM)}>
+            <div className={classNames("all", sty.freeBox___2EXtv)}>
               <PlasmicImg__
                 alt={""}
                 className={classNames(sty.img__nL6Or)}
@@ -463,13 +462,13 @@ function PlasmicRegistration__RenderFunc(props: {
               />
 
               {false ? (
-                <div className={classNames(projectcss.all, sty.freeBox__uegPz)}>
+                <div className={classNames("all", sty.freeBox__uegPz)}>
                   <button
                     className={classNames(
-                      projectcss.all,
-                      projectcss.button,
-                      projectcss.button__7SNMk,
-                      projectcss.__wab_text,
+                      "all",
+                      "button",
+                      "button__7SNMk",
+                      "__wab_text",
                       sty.button__lgvVx
                     )}
                   >
@@ -480,13 +479,13 @@ function PlasmicRegistration__RenderFunc(props: {
                     color={"clear"}
                     endIcon={
                       <IconIcon
-                        className={classNames(projectcss.all, sty.svg__pQZy)}
+                        className={classNames("all", sty.svg__pQZy)}
                         role={"img"}
                       />
                     }
                     startIcon={
                       <CheckSvgIcon
-                        className={classNames(projectcss.all, sty.svg__qoip)}
+                        className={classNames("all", sty.svg__qoip)}
                         role={"img"}
                       />
                     }
@@ -494,8 +493,8 @@ function PlasmicRegistration__RenderFunc(props: {
                   >
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text__stifY
                       )}
                     >
@@ -508,7 +507,7 @@ function PlasmicRegistration__RenderFunc(props: {
           </div>
           <div
             className={classNames(
-              projectcss.all,
+              "all",
               sty.freeBox__uA9Ls,
               hasVariant(globalVariants, "screen", "mobile")
                 ? "shadow"
@@ -590,8 +589,8 @@ function PlasmicRegistration__RenderFunc(props: {
                       label={
                         <div
                           className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
+                            "all",
+                            "__wab_text",
                             sty.text__nGxwp
                           )}
                         >
@@ -615,16 +614,11 @@ function PlasmicRegistration__RenderFunc(props: {
                       name={"platforms"}
                       rules={[]}
                     >
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          sty.freeBox__vVqK4
-                        )}
-                      >
+                      <div className={classNames("all", sty.freeBox__vVqK4)}>
                         <div
                           className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
+                            "all",
+                            "__wab_text",
                             sty.text__aeVwz
                           )}
                         >
@@ -646,52 +640,25 @@ function PlasmicRegistration__RenderFunc(props: {
                           </React.Fragment>
                         </div>
                       </div>
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          sty.freeBox__qreW
-                        )}
-                      >
+                      <div className={classNames("all", sty.freeBox__qreW)}>
                         <div
-                          className={classNames(
-                            projectcss.all,
-                            sty.freeBox___6OjGg
-                          )}
+                          className={classNames("all", sty.freeBox___6OjGg)}
                         />
 
                         <div
-                          className={classNames(
-                            projectcss.all,
-                            sty.freeBox___394Fv
-                          )}
+                          className={classNames("all", sty.freeBox___394Fv)}
                         />
                       </div>
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          sty.freeBox__gwXSj
-                        )}
-                      >
+                      <div className={classNames("all", sty.freeBox__gwXSj)}>
                         <div
-                          className={classNames(
-                            projectcss.all,
-                            sty.freeBox__kjn26
-                          )}
+                          className={classNames("all", sty.freeBox__kjn26)}
                         />
 
                         <div
-                          className={classNames(
-                            projectcss.all,
-                            sty.freeBox__vxza4
-                          )}
+                          className={classNames("all", sty.freeBox__vxza4)}
                         />
                       </div>
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          sty.freeBox__otQDl
-                        )}
-                      >
+                      <div className={classNames("all", sty.freeBox__otQDl)}>
                         <Checkbox
                           data-plasmic-name={"policiesCheckbox"}
                           data-plasmic-override={overrides.policiesCheckbox}
@@ -894,8 +861,8 @@ function PlasmicRegistration__RenderFunc(props: {
                         >
                           <div
                             className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
+                              "all",
+                              "__wab_text",
                               sty.text__mnS78
                             )}
                           >
@@ -915,11 +882,11 @@ function PlasmicRegistration__RenderFunc(props: {
                                     data-plasmic-name={"link"}
                                     data-plasmic-override={overrides.link}
                                     className={classNames(
-                                      projectcss.all,
-                                      projectcss.a,
-                                      projectcss.a__7SNMk,
-                                      projectcss.__wab_text,
-                                      projectcss.plasmic_default__inline,
+                                      "all",
+                                      "a",
+                                      "a__7SNMk",
+                                      "__wab_text",
+                                      "plasmic_default__inline",
                                       sty.link
                                     )}
                                     component={Link}
@@ -994,11 +961,11 @@ function PlasmicRegistration__RenderFunc(props: {
                                     data-plasmic-name={"link"}
                                     data-plasmic-override={overrides.link}
                                     className={classNames(
-                                      projectcss.all,
-                                      projectcss.a,
-                                      projectcss.a__7SNMk,
-                                      projectcss.__wab_text,
-                                      projectcss.plasmic_default__inline,
+                                      "all",
+                                      "a",
+                                      "a__7SNMk",
+                                      "__wab_text",
+                                      "plasmic_default__inline",
                                       sty.link
                                     )}
                                     component={Link}
@@ -1061,18 +1028,8 @@ function PlasmicRegistration__RenderFunc(props: {
                           </div>
                         </Checkbox>
                       </div>
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          sty.freeBox__w4VD
-                        )}
-                      >
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            sty.freeBox__rFltZ
-                          )}
-                        >
+                      <div className={classNames("all", sty.freeBox__w4VD)}>
+                        <div className={classNames("all", sty.freeBox__rFltZ)}>
                           <AntdButton
                             data-plasmic-name={"submitButton"}
                             data-plasmic-override={overrides.submitButton}
@@ -1267,15 +1224,12 @@ function PlasmicRegistration__RenderFunc(props: {
                             type={"primary"}
                           >
                             <div
-                              className={classNames(
-                                projectcss.all,
-                                sty.freeBox__jDhVy
-                              )}
+                              className={classNames("all", sty.freeBox__jDhVy)}
                             >
                               <div
                                 className={classNames(
-                                  projectcss.all,
-                                  projectcss.__wab_text,
+                                  "all",
+                                  "__wab_text",
                                   sty.text__sgXNi
                                 )}
                               >
@@ -1336,7 +1290,7 @@ function PlasmicRegistration__RenderFunc(props: {
             <div
               data-plasmic-name={"guide"}
               data-plasmic-override={overrides.guide}
-              className={classNames(projectcss.all, sty.guide)}
+              className={classNames("all", sty.guide)}
             >
               {(() => {
                 try {
@@ -1354,7 +1308,7 @@ function PlasmicRegistration__RenderFunc(props: {
                 <div
                   data-plasmic-name={"_1"}
                   data-plasmic-override={overrides._1}
-                  className={classNames(projectcss.all, sty._1)}
+                  className={classNames("all", sty._1)}
                 >
                   <PlasmicImg__
                     alt={""}
@@ -1457,7 +1411,7 @@ function PlasmicRegistration__RenderFunc(props: {
                 <div
                   data-plasmic-name={"_2"}
                   data-plasmic-override={overrides._2}
-                  className={classNames(projectcss.all, sty._2)}
+                  className={classNames("all", sty._2)}
                 >
                   <PlasmicImg__
                     alt={""}
@@ -1616,7 +1570,7 @@ function PlasmicRegistration__RenderFunc(props: {
                 <div
                   data-plasmic-name={"_3"}
                   data-plasmic-override={overrides._3}
-                  className={classNames(projectcss.all, sty._3)}
+                  className={classNames("all", sty._3)}
                 >
                   <PlasmicImg__
                     alt={""}
@@ -1777,7 +1731,7 @@ function PlasmicRegistration__RenderFunc(props: {
             <div
               data-plasmic-name={"guidePanel"}
               data-plasmic-override={overrides.guidePanel}
-              className={classNames(projectcss.all, sty.guidePanel)}
+              className={classNames("all", sty.guidePanel)}
             >
               {(() => {
                 try {
@@ -1795,7 +1749,7 @@ function PlasmicRegistration__RenderFunc(props: {
                 <div
                   data-plasmic-name={"_4"}
                   data-plasmic-override={overrides._4}
-                  className={classNames(projectcss.all, sty._4)}
+                  className={classNames("all", sty._4)}
                 >
                   <PlasmicImg__
                     alt={""}
@@ -1894,7 +1848,7 @@ function PlasmicRegistration__RenderFunc(props: {
                 <div
                   data-plasmic-name={"_5"}
                   data-plasmic-override={overrides._5}
-                  className={classNames(projectcss.all, sty._5)}
+                  className={classNames("all", sty._5)}
                 >
                   <PlasmicImg__
                     alt={""}
@@ -2047,7 +2001,7 @@ function PlasmicRegistration__RenderFunc(props: {
                 <div
                   data-plasmic-name={"_6"}
                   data-plasmic-override={overrides._6}
-                  className={classNames(projectcss.all, sty._6)}
+                  className={classNames("all", sty._6)}
                 >
                   <PlasmicImg__
                     alt={""}
@@ -2197,15 +2151,11 @@ function PlasmicRegistration__RenderFunc(props: {
             <div
               data-plasmic-name={"quotes"}
               data-plasmic-override={overrides.quotes}
-              className={classNames(projectcss.all, sty.quotes)}
+              className={classNames("all", sty.quotes)}
             >
-              <div className={classNames(projectcss.all, sty.freeBox__q2O4A)}>
+              <div className={classNames("all", sty.freeBox__q2O4A)}>
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__xVk4J
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__xVk4J)}
                 >
                   {hasVariant(globalVariants, "screen", "mobile")
                     ? "\u0627\u0639\u062a\u0645\u0627\u062f \u0628\u06cc\u0634 \u0627\u0632 \u06f8\u06f0\u06f0 \u0645\u06cc\u0632\u0628\u0627\u0646 \u0628\u0647 \u0631\u0646\u062a\u0627\u0645\u0648\u0646"
@@ -2222,14 +2172,8 @@ function PlasmicRegistration__RenderFunc(props: {
               </div>
             </div>
           ) : null}
-          <div className={classNames(projectcss.all, sty.freeBox__w7DQc)}>
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__hzm4Y
-              )}
-            >
+          <div className={classNames("all", sty.freeBox__w7DQc)}>
+            <div className={classNames("all", "__wab_text", sty.text__hzm4Y)}>
               <React.Fragment>
                 {(() => {
                   try {
@@ -2247,15 +2191,9 @@ function PlasmicRegistration__RenderFunc(props: {
               </React.Fragment>
             </div>
           </div>
-          <div className={classNames(projectcss.all, sty.freeBox__zrxbm)}>
-            <div className={classNames(projectcss.all, sty.freeBox___9PhAq)}>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__tvlDc
-                )}
-              >
+          <div className={classNames("all", sty.freeBox__zrxbm)}>
+            <div className={classNames("all", sty.freeBox___9PhAq)}>
+              <div className={classNames("all", "__wab_text", sty.text__tvlDc)}>
                 {hasVariant(globalVariants, "screen", "mobile")
                   ? "\u0634\u0631\u06a9\u062a \u062a\u0648\u0633\u0639\u0647 \u0641\u0646\u0627\u0648\u0631\u06cc \u0648 \u062a\u0648\u0627\u0646\u0645\u0646\u062f\u0633\u0627\u0632\u06cc \u0634\u0631\u06cc\u0641 (\u0631\u0646\u062a\u0627\u0645\u0648\u0646)\n\u06f0\u06f2\u06f1\u06f9\u06f1\u06f0\u06f9\u06f6\u06f2\u06f2\u06f7  \u0631\u0648\u0632\u0647\u0627\u06cc \u0627\u062f\u0627\u0631\u06cc \u0627\u0632 \u06f9 \u0627\u0644\u06cc \u06f1\u06f7\r\n\r\n\u0642\u0645\u060c \u067e\u0631\u062f\u06cc\u0633\u0627\u0646\u060c \u0628\u0644\u0648\u0627\u0631 \u0645\u0648\u0644\u0648\u06cc\u060c \u067e\u0627\u0631\u06a9 \u0639\u0644\u0645 \u0648 \u0641\u0646\u0627\u0648\u0631\u06cc \u0627\u0633\u062a\u0627\u0646 \u0642\u0645\u060c \u0628\u0644\u0648\u06a9 \u06f1\u060c\u200c \u0637\u0628\u0642\u0647 \u06f3\r"
                   : "\u0634\u0631\u06a9\u062a \u062a\u0648\u0633\u0639\u0647 \u0641\u0646\u0627\u0648\u0631\u06cc \u0648 \u062a\u0648\u0627\u0646\u0645\u0646\u062f\u0633\u0627\u0632\u06cc \u0634\u0631\u06cc\u0641\n\u06f0\u06f2\u06f1\u06f9\u06f1\u06f0\u06f9\u06f6\u06f2\u06f2\u06f7 \u0631\u0648\u0632\u0647\u0627\u06cc \u0627\u062f\u0627\u0631\u06cc \u0627\u0632 \u06f9 \u0627\u0644\u06cc \u06f1\u06f7\r\n\r\n\u0642\u0645\u060c \u067e\u0631\u062f\u06cc\u0633\u0627\u0646\u060c \u0628\u0644\u0648\u0627\u0631 \u0645\u0648\u0644\u0648\u06cc\u060c \u067e\u0627\u0631\u06a9 \u0639\u0644\u0645 \u0648 \u0641\u0646\u0627\u0648\u0631\u06cc \u0627\u0633\u062a\u0627\u0646 \u0642\u0645\u060c \u0628\u0644\u0648\u06a9 \u06f1\u060c\u200c \u0637\u0628\u0642\u0647 \u06f3\r"}

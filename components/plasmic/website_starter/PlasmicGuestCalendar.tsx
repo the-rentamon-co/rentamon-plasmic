@@ -67,7 +67,6 @@ import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-impor
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicGuestCalendar.module.css"; // plasmic-import: lbsIEMOgeDFC/css
 
 const emptyProxy: any = new Proxy(() => "", {
@@ -282,17 +281,17 @@ function PlasmicGuestCalendar__RenderFunc(props: {
         }
       `}</style>
 
-      <div className={projectcss.plasmic_page_wrapper}>
+      <div className={"plasmic_page_wrapper"}>
         <div
           data-plasmic-name={"root"}
           data-plasmic-override={overrides.root}
           data-plasmic-root={true}
           data-plasmic-for-node={forNode}
           className={classNames(
-            projectcss.all,
-            projectcss.root_reset,
-            projectcss.plasmic_default_styles,
-            projectcss.plasmic_mixins,
+            "all",
+            "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+            "plasmic_default_styles",
+            "plasmic_mixins",
             styleTokensClassNames,
             sty.root
           )}
@@ -364,13 +363,11 @@ function PlasmicGuestCalendar__RenderFunc(props: {
             <div
               data-plasmic-name={"main"}
               data-plasmic-override={overrides.main}
-              className={classNames(projectcss.all, sty.main)}
+              className={classNames("all", sty.main)}
             >
-              <div className={classNames(projectcss.all, sty.freeBox__igYn)}>
-                <div className={classNames(projectcss.all, sty.freeBox__zCrVo)}>
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox___0GSiN)}
-                  >
+              <div className={classNames("all", sty.freeBox__igYn)}>
+                <div className={classNames("all", sty.freeBox__zCrVo)}>
+                  <div className={classNames("all", sty.freeBox___0GSiN)}>
                     <ApiRequest
                       data-plasmic-name={"profile2"}
                       data-plasmic-override={overrides.profile2}
@@ -429,15 +426,8 @@ function PlasmicGuestCalendar__RenderFunc(props: {
                             })()
                       }
                     >
-                      <div
-                        className={classNames(projectcss.all, sty.freeBox__beO)}
-                      >
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            sty.freeBox__lPfxN
-                          )}
-                        >
+                      <div className={classNames("all", sty.freeBox__beO)}>
+                        <div className={classNames("all", sty.freeBox__lPfxN)}>
                           <PlasmicImg__
                             data-plasmic-name={"img"}
                             data-plasmic-override={overrides.img}
@@ -470,16 +460,11 @@ function PlasmicGuestCalendar__RenderFunc(props: {
                             }
                           />
                         </div>
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            sty.freeBox__v1Es5
-                          )}
-                        >
+                        <div className={classNames("all", sty.freeBox__v1Es5)}>
                           <div
                             className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
+                              "all",
+                              "__wab_text",
                               sty.text__fGyFp
                             )}
                           >
@@ -506,16 +491,11 @@ function PlasmicGuestCalendar__RenderFunc(props: {
                             </React.Fragment>
                           </div>
                         </div>
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            sty.freeBox__eMum9
-                          )}
-                        >
+                        <div className={classNames("all", sty.freeBox__eMum9)}>
                           <div
                             className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
+                              "all",
+                              "__wab_text",
                               sty.text__aAXi1
                             )}
                           >
@@ -571,9 +551,7 @@ function PlasmicGuestCalendar__RenderFunc(props: {
                   }
                 })()}
               >
-                <div
-                  className={classNames(projectcss.all, sty.freeBox___4XXp2)}
-                >
+                <div className={classNames("all", sty.freeBox___4XXp2)}>
                   <ApiRequest
                     data-plasmic-name={"apiRequest"}
                     data-plasmic-override={overrides.apiRequest}
@@ -1026,12 +1004,8 @@ window.smartCal = (function() {
                       })()}
                     />
                   </ApiRequest>
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__iARnn)}
-                  >
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__qnFsX)}
-                    >
+                  <div className={classNames("all", sty.freeBox__iARnn)}>
+                    <div className={classNames("all", sty.freeBox__qnFsX)}>
                       <Embed
                         className={classNames(
                           "__wab_instance",
@@ -1262,12 +1236,7 @@ window.smartCal = (function() {
                         })()}
                       />
                     </div>
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        sty.freeBox___1JsbU
-                      )}
-                    >
+                    <div className={classNames("all", sty.freeBox___1JsbU)}>
                       <Embed
                         className={classNames(
                           "__wab_instance",

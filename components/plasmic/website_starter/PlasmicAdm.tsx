@@ -66,7 +66,6 @@ import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-impor
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicAdm.module.css"; // plasmic-import: WavKunY9bKkc/css
 
 import CheckSvgIcon from "./icons/PlasmicIcon__CheckSvg"; // plasmic-import: aHRi_lZjzHt3/icon
@@ -179,17 +178,17 @@ function PlasmicAdm__RenderFunc(props: {
         }
       `}</style>
 
-      <div className={projectcss.plasmic_page_wrapper}>
+      <div className={"plasmic_page_wrapper"}>
         <div
           data-plasmic-name={"root"}
           data-plasmic-override={overrides.root}
           data-plasmic-root={true}
           data-plasmic-for-node={forNode}
           className={classNames(
-            projectcss.all,
-            projectcss.root_reset,
-            projectcss.plasmic_default_styles,
-            projectcss.plasmic_mixins,
+            "all",
+            "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+            "plasmic_default_styles",
+            "plasmic_mixins",
             styleTokensClassNames,
             sty.root
           )}
@@ -307,16 +306,12 @@ function PlasmicAdm__RenderFunc(props: {
             }}
           />
 
-          <div className={classNames(projectcss.all, sty.freeBox___2FDqD)}>
-            <div className={classNames(projectcss.all, sty.freeBox__iiFpa)}>
+          <div className={classNames("all", sty.freeBox___2FDqD)}>
+            <div className={classNames("all", sty.freeBox__iiFpa)}>
               <div
                 data-plasmic-name={"text"}
                 data-plasmic-override={overrides.text}
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text
-                )}
+                className={classNames("all", "__wab_text", sty.text)}
               >
                 {"\u0627\u0633\u062a\u0627\u0631\u062a"}
               </div>

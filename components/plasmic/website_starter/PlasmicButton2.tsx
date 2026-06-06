@@ -66,7 +66,6 @@ import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-impor
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicButton2.module.css"; // plasmic-import: E5zyD1YnD0UJ/css
 
 createPlasmicElementProxy;
@@ -267,12 +266,12 @@ function PlasmicButton2__RenderFunc(props: {
       data-plasmic-root={true}
       data-plasmic-for-node={forNode}
       className={classNames(
-        projectcss.all,
-        projectcss.button,
-        projectcss.button__7SNMk,
-        projectcss.root_reset,
-        projectcss.plasmic_default_styles,
-        projectcss.plasmic_mixins,
+        "all",
+        "button",
+        "button__7SNMk",
+        "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+        "plasmic_default_styles",
+        "plasmic_mixins",
         styleTokensClassNames,
         sty.root,
         {
@@ -404,10 +403,7 @@ function PlasmicButton2__RenderFunc(props: {
       )
         ? renderPlasmicSlot({
             defaultContents: (
-              <svg
-                className={classNames(projectcss.all, sty.svg__x9Yit)}
-                role={"img"}
-              />
+              <svg className={classNames("all", sty.svg__x9Yit)} role={"img"} />
             ),
 
             value: args.endIcon,
@@ -486,10 +482,7 @@ function PlasmicButton2__RenderFunc(props: {
       )
         ? renderPlasmicSlot({
             defaultContents: (
-              <svg
-                className={classNames(projectcss.all, sty.svg__sw0Mg)}
-                role={"img"}
-              />
+              <svg className={classNames("all", sty.svg__sw0Mg)} role={"img"} />
             ),
 
             value: args.startIcon,

@@ -69,7 +69,6 @@ import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-impor
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicWebsitesConnections.module.css"; // plasmic-import: wjpY8LK3df7G/css
 
 const emptyProxy: any = new Proxy(() => "", {
@@ -277,17 +276,17 @@ function PlasmicWebsitesConnections__RenderFunc(props: {
         }
       `}</style>
 
-      <div className={projectcss.plasmic_page_wrapper}>
+      <div className={"plasmic_page_wrapper"}>
         <div
           data-plasmic-name={"root"}
           data-plasmic-override={overrides.root}
           data-plasmic-root={true}
           data-plasmic-for-node={forNode}
           className={classNames(
-            projectcss.all,
-            projectcss.root_reset,
-            projectcss.plasmic_default_styles,
-            projectcss.plasmic_mixins,
+            "all",
+            "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+            "plasmic_default_styles",
+            "plasmic_mixins",
             styleTokensClassNames,
             sty.root
           )}
@@ -316,9 +315,9 @@ function PlasmicWebsitesConnections__RenderFunc(props: {
           <div
             data-plasmic-name={"header"}
             data-plasmic-override={overrides.header}
-            className={classNames(projectcss.all, sty.header)}
+            className={classNames("all", sty.header)}
           >
-            <div className={classNames(projectcss.all, sty.freeBox__htHp)}>
+            <div className={classNames("all", sty.freeBox__htHp)}>
               {(
                 hasVariant(globalVariants, "screen", "mobile")
                   ? true
@@ -336,7 +335,7 @@ function PlasmicWebsitesConnections__RenderFunc(props: {
                       }
                     })()
               ) ? (
-                <div className={classNames(projectcss.all, sty.freeBox__tkFlx)}>
+                <div className={classNames("all", sty.freeBox__tkFlx)}>
                   <SideBar2
                     data-plasmic-name={"sideBar2"}
                     data-plasmic-override={overrides.sideBar2}
@@ -379,7 +378,7 @@ function PlasmicWebsitesConnections__RenderFunc(props: {
                       }
                     })()
               ) ? (
-                <div className={classNames(projectcss.all, sty.freeBox__xAjdI)}>
+                <div className={classNames("all", sty.freeBox__xAjdI)}>
                   <SidebarLite
                     data-plasmic-name={"sidebarLite"}
                     data-plasmic-override={overrides.sidebarLite}
@@ -471,11 +470,11 @@ function PlasmicWebsitesConnections__RenderFunc(props: {
                   ? true
                   : true
             ) ? (
-              <div className={classNames(projectcss.all, sty.freeBox___6NrM)}>
+              <div className={classNames("all", sty.freeBox___6NrM)}>
                 <div
                   className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
+                    "all",
+                    "__wab_text",
                     sty.text__yYh0Q,
                     "fadeinf"
                   )}
@@ -490,16 +489,16 @@ function PlasmicWebsitesConnections__RenderFunc(props: {
           <div
             data-plasmic-name={"platformsStack"}
             data-plasmic-override={overrides.platformsStack}
-            className={classNames(projectcss.all, sty.platformsStack)}
+            className={classNames("all", sty.platformsStack)}
           >
             <div
               data-plasmic-name={"platforms"}
               data-plasmic-override={overrides.platforms}
-              className={classNames(projectcss.all, sty.platforms, "fadeinf")}
+              className={classNames("all", sty.platforms, "fadeinf")}
             >
               <div
                 className={classNames(
-                  projectcss.all,
+                  "all",
                   sty.freeBox__k08LC,
                   hasVariant(globalVariants, "screen", "mobile") ? "fadein" : ``
                 )}
@@ -511,8 +510,8 @@ function PlasmicWebsitesConnections__RenderFunc(props: {
                   errorDisplay={
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text__sNeZu
                       )}
                     >
@@ -546,10 +545,7 @@ function PlasmicWebsitesConnections__RenderFunc(props: {
                         <div
                           data-plasmic-name={"localStorage"}
                           data-plasmic-override={overrides.localStorage}
-                          className={classNames(
-                            projectcss.all,
-                            sty.localStorage
-                          )}
+                          className={classNames("all", sty.localStorage)}
                         >
                           {(_par =>
                             !_par ? [] : Array.isArray(_par) ? _par : [_par])(
@@ -576,7 +572,7 @@ function PlasmicWebsitesConnections__RenderFunc(props: {
                                   overrides.connectedPlatforms
                                 }
                                 className={classNames(
-                                  projectcss.all,
+                                  "all",
                                   sty.connectedPlatforms,
                                   hasVariant(globalVariants, "screen", "mobile")
                                     ? "clickable"
@@ -738,7 +734,7 @@ function PlasmicWebsitesConnections__RenderFunc(props: {
                                 })() ? (
                                   <div
                                     className={classNames(
-                                      projectcss.all,
+                                      "all",
                                       sty.freeBox__w8NDc
                                     )}
                                   >
@@ -889,14 +885,14 @@ function PlasmicWebsitesConnections__RenderFunc(props: {
                                 ) : null}
                                 <div
                                   className={classNames(
-                                    projectcss.all,
+                                    "all",
                                     sty.freeBox__oKrbb
                                   )}
                                 >
                                   <div
                                     className={classNames(
-                                      projectcss.all,
-                                      projectcss.__wab_text,
+                                      "all",
+                                      "__wab_text",
                                       sty.text__iYook
                                     )}
                                   >
@@ -968,7 +964,7 @@ function PlasmicWebsitesConnections__RenderFunc(props: {
                               data-plasmic-name={"newPlatform"}
                               data-plasmic-override={overrides.newPlatform}
                               className={classNames(
-                                projectcss.all,
+                                "all",
                                 sty.newPlatform,
                                 "clickable fadein"
                               )}
@@ -1017,7 +1013,7 @@ function PlasmicWebsitesConnections__RenderFunc(props: {
                             >
                               <div
                                 className={classNames(
-                                  projectcss.all,
+                                  "all",
                                   sty.freeBox___8Lsf9
                                 )}
                               >
@@ -1049,14 +1045,14 @@ function PlasmicWebsitesConnections__RenderFunc(props: {
                               </div>
                               <div
                                 className={classNames(
-                                  projectcss.all,
+                                  "all",
                                   sty.freeBox__vJOxM
                                 )}
                               >
                                 <div
                                   className={classNames(
-                                    projectcss.all,
-                                    projectcss.__wab_text,
+                                    "all",
+                                    "__wab_text",
                                     sty.text___6Wi8U
                                   )}
                                 >
@@ -1135,9 +1131,7 @@ function PlasmicWebsitesConnections__RenderFunc(props: {
                   }}
                   url={"https://nb.miaan.ir/webhook/not-connected"}
                 >
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__wyHoo)}
-                  >
+                  <div className={classNames("all", sty.freeBox__wyHoo)}>
                     {(_par =>
                       !_par ? [] : Array.isArray(_par) ? _par : [_par])(
                       (() => {
@@ -1163,7 +1157,7 @@ function PlasmicWebsitesConnections__RenderFunc(props: {
                           data-plasmic-name={"connectedPlatforms2"}
                           data-plasmic-override={overrides.connectedPlatforms2}
                           className={classNames(
-                            projectcss.all,
+                            "all",
                             sty.connectedPlatforms2,
                             hasVariant(globalVariants, "screen", "mobile")
                               ? "clickable"
@@ -1249,10 +1243,7 @@ function PlasmicWebsitesConnections__RenderFunc(props: {
                             }
                           })() ? (
                             <div
-                              className={classNames(
-                                projectcss.all,
-                                sty.freeBox__uayol
-                              )}
+                              className={classNames("all", sty.freeBox__uayol)}
                             >
                               <PlasmicImg__
                                 alt={""}
@@ -1316,15 +1307,12 @@ function PlasmicWebsitesConnections__RenderFunc(props: {
                             </div>
                           ) : null}
                           <div
-                            className={classNames(
-                              projectcss.all,
-                              sty.freeBox__dXjnZ
-                            )}
+                            className={classNames("all", sty.freeBox__dXjnZ)}
                           >
                             <div
                               className={classNames(
-                                projectcss.all,
-                                projectcss.__wab_text,
+                                "all",
+                                "__wab_text",
                                 sty.text__x96U3
                               )}
                             >
@@ -1412,7 +1400,7 @@ function PlasmicWebsitesConnections__RenderFunc(props: {
                     <div
                       data-plasmic-name={"allConnected"}
                       data-plasmic-override={overrides.allConnected}
-                      className={classNames(projectcss.all, sty.allConnected)}
+                      className={classNames("all", sty.allConnected)}
                     >
                       <PlasmicImg__
                         alt={""}
@@ -1440,8 +1428,8 @@ function PlasmicWebsitesConnections__RenderFunc(props: {
 
                       <div
                         className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
+                          "all",
+                          "__wab_text",
                           sty.text__o4YS9
                         )}
                       >
@@ -1453,7 +1441,7 @@ function PlasmicWebsitesConnections__RenderFunc(props: {
                   ) : null}
                 </ApiRequest>
                 <div
-                  className={classNames(projectcss.all, sty.freeBox__em2Wb)}
+                  className={classNames("all", sty.freeBox__em2Wb)}
                   onClick={async event => {
                     const $steps = {};
 
@@ -1478,13 +1466,11 @@ function PlasmicWebsitesConnections__RenderFunc(props: {
                     }
                   }}
                 >
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__zIqd5)}
-                  >
+                  <div className={classNames("all", sty.freeBox__zIqd5)}>
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text__v68QE
                       )}
                     >

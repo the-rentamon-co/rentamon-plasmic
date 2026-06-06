@@ -68,7 +68,6 @@ import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-impor
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicPlatformConnectionOtp.module.css"; // plasmic-import: R8Lwj3DU9BxT/css
 
 import CheckSvgIcon from "./icons/PlasmicIcon__CheckSvg"; // plasmic-import: aHRi_lZjzHt3/icon
@@ -210,10 +209,10 @@ function PlasmicPlatformConnectionOtp__RenderFunc(props: {
       data-plasmic-root={true}
       data-plasmic-for-node={forNode}
       className={classNames(
-        projectcss.all,
-        projectcss.root_reset,
-        projectcss.plasmic_default_styles,
-        projectcss.plasmic_mixins,
+        "all",
+        "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+        "plasmic_default_styles",
+        "plasmic_mixins",
         styleTokensClassNames,
         sty.root
       )}
@@ -256,8 +255,8 @@ function PlasmicPlatformConnectionOtp__RenderFunc(props: {
       >
         <DataCtxReader__>
           {$ctx => (
-            <div className={classNames(projectcss.all, sty.freeBox__zPjhK)}>
-              <div className={classNames(projectcss.all, sty.freeBox__duSl)}>
+            <div className={classNames("all", sty.freeBox__zPjhK)}>
+              <div className={classNames("all", sty.freeBox__duSl)}>
                 <PlasmicImg__
                   data-plasmic-name={"homsaDis"}
                   data-plasmic-override={overrides.homsaDis}
@@ -712,9 +711,9 @@ function PlasmicPlatformConnectionOtp__RenderFunc(props: {
                   children={null}
                   className={classNames("__wab_instance", sty.jabamaModal)}
                   defaultStylesClassName={classNames(
-                    projectcss.root_reset,
-                    projectcss.plasmic_default_styles,
-                    projectcss.plasmic_mixins,
+                    "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+                    "plasmic_default_styles",
+                    "plasmic_mixins",
                     styleTokensClassNames
                   )}
                   modalScopeClassName={sty["jabamaModal__modal"]}
@@ -729,8 +728,8 @@ function PlasmicPlatformConnectionOtp__RenderFunc(props: {
                     <React.Fragment>
                       <div
                         className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
+                          "all",
+                          "__wab_text",
                           sty.text__hQm67
                         )}
                       >
@@ -762,8 +761,8 @@ function PlasmicPlatformConnectionOtp__RenderFunc(props: {
 
                       <div
                         className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
+                          "all",
+                          "__wab_text",
                           sty.text__xIja
                         )}
                       >
@@ -781,9 +780,9 @@ function PlasmicPlatformConnectionOtp__RenderFunc(props: {
                   data-plasmic-override={overrides.jajigaModal}
                   className={classNames("__wab_instance", sty.jajigaModal)}
                   defaultStylesClassName={classNames(
-                    projectcss.root_reset,
-                    projectcss.plasmic_default_styles,
-                    projectcss.plasmic_mixins,
+                    "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+                    "plasmic_default_styles",
+                    "plasmic_mixins",
                     styleTokensClassNames
                   )}
                   hideFooter={true}
@@ -803,15 +802,10 @@ function PlasmicPlatformConnectionOtp__RenderFunc(props: {
                     <div
                       data-plasmic-name={"columns"}
                       data-plasmic-override={overrides.columns}
-                      className={classNames(projectcss.all, sty.columns)}
+                      className={classNames("all", sty.columns)}
                       dir={"rtl"}
                     >
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          sty.column__dFOmf
-                        )}
-                      >
+                      <div className={classNames("all", sty.column__dFOmf)}>
                         <PlasmicImg__
                           data-plasmic-name={"img"}
                           data-plasmic-override={overrides.img}
@@ -831,16 +825,11 @@ function PlasmicPlatformConnectionOtp__RenderFunc(props: {
                           width={"42"}
                         />
                       </div>
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          sty.column__bFDaK
-                        )}
-                      >
+                      <div className={classNames("all", sty.column__bFDaK)}>
                         <div
                           className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
+                            "all",
+                            "__wab_text",
                             sty.text__ut7Ym
                           )}
                         >
@@ -956,8 +945,8 @@ function PlasmicPlatformConnectionOtp__RenderFunc(props: {
                   >
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text__wp840
                       )}
                     >

@@ -66,7 +66,6 @@ import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-impor
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicDirectBooking.module.css"; // plasmic-import: b6PQkKJ78XCS/css
 
 const emptyProxy: any = new Proxy(() => "", {
@@ -240,17 +239,17 @@ function PlasmicDirectBooking__RenderFunc(props: {
         }
       `}</style>
 
-      <div className={projectcss.plasmic_page_wrapper}>
+      <div className={"plasmic_page_wrapper"}>
         <div
           data-plasmic-name={"root"}
           data-plasmic-override={overrides.root}
           data-plasmic-root={true}
           data-plasmic-for-node={forNode}
           className={classNames(
-            projectcss.all,
-            projectcss.root_reset,
-            projectcss.plasmic_default_styles,
-            projectcss.plasmic_mixins,
+            "all",
+            "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+            "plasmic_default_styles",
+            "plasmic_mixins",
             styleTokensClassNames,
             sty.root
           )}
@@ -258,7 +257,7 @@ function PlasmicDirectBooking__RenderFunc(props: {
           <div
             data-plasmic-name={"main"}
             data-plasmic-override={overrides.main}
-            className={classNames(projectcss.all, sty.main)}
+            className={classNames("all", sty.main)}
           >
             <ApiRequest
               data-plasmic-name={"apiRequest2"}
@@ -304,7 +303,7 @@ function PlasmicDirectBooking__RenderFunc(props: {
                 }
               })()}
             >
-              <div className={classNames(projectcss.all, sty.freeBox__yBaL)}>
+              <div className={classNames("all", sty.freeBox__yBaL)}>
                 <ApiRequest
                   data-plasmic-name={"apiRequest"}
                   data-plasmic-override={overrides.apiRequest}
@@ -757,10 +756,8 @@ window.smartCal = (function() {
                     })()}
                   />
                 </ApiRequest>
-                <div className={classNames(projectcss.all, sty.freeBox__bIzk)}>
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox___2EUy1)}
-                  >
+                <div className={classNames("all", sty.freeBox__bIzk)}>
+                  <div className={classNames("all", sty.freeBox___2EUy1)}>
                     <Embed
                       className={classNames(
                         "__wab_instance",
@@ -991,9 +988,7 @@ window.smartCal = (function() {
                       })()}
                     />
                   </div>
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__xxCI)}
-                  >
+                  <div className={classNames("all", sty.freeBox__xxCI)}>
                     <Embed
                       className={classNames(
                         "__wab_instance",

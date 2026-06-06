@@ -70,7 +70,6 @@ import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-impor
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./Plasmicتالار.module.css"; // plasmic-import: awYJCWS6HouC/css
 
 import Icon74Icon from "./icons/PlasmicIcon__Icon74"; // plasmic-import: 8KZpBYIvE0K7/icon
@@ -408,17 +407,17 @@ function Plasmicتالار__RenderFunc(props: {
         }
       `}</style>
 
-      <div className={projectcss.plasmic_page_wrapper}>
+      <div className={"plasmic_page_wrapper"}>
         <div
           data-plasmic-name={"root"}
           data-plasmic-override={overrides.root}
           data-plasmic-root={true}
           data-plasmic-for-node={forNode}
           className={classNames(
-            projectcss.all,
-            projectcss.root_reset,
-            projectcss.plasmic_default_styles,
-            projectcss.plasmic_mixins,
+            "all",
+            "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+            "plasmic_default_styles",
+            "plasmic_mixins",
             styleTokensClassNames,
             sty.root
           )}
@@ -426,24 +425,18 @@ function Plasmicتالار__RenderFunc(props: {
           <div
             data-plasmic-name={"header"}
             data-plasmic-override={overrides.header}
-            className={classNames(projectcss.all, sty.header)}
+            className={classNames("all", sty.header)}
           >
             <div
               data-plasmic-name={"headerTitle"}
               data-plasmic-override={overrides.headerTitle}
-              className={classNames(projectcss.all, sty.headerTitle)}
+              className={classNames("all", sty.headerTitle)}
             >
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__sq3Dn
-                )}
-              >
+              <div className={classNames("all", "__wab_text", sty.text__sq3Dn)}>
                 {"\u062a\u0627\u0644\u0627\u0631"}
               </div>
             </div>
-            <div className={classNames(projectcss.all, sty.freeBox__cr3Y7)}>
+            <div className={classNames("all", sty.freeBox__cr3Y7)}>
               <ApiRequest
                 data-plasmic-name={"profile2"}
                 data-plasmic-override={overrides.profile2}
@@ -484,7 +477,7 @@ function Plasmicتالار__RenderFunc(props: {
             data-plasmic-name={"menu"}
             data-plasmic-override={overrides.menu}
             className={classNames(
-              projectcss.all,
+              "all",
               sty.menu,
               hasVariant(globalVariants, "screen", "mobile") ? `` : undefined
             )}
@@ -493,11 +486,7 @@ function Plasmicتالار__RenderFunc(props: {
               <div
                 data-plasmic-name={"topProfile"}
                 data-plasmic-override={overrides.topProfile}
-                className={classNames(
-                  projectcss.all,
-                  sty.topProfile,
-                  "fadeinf"
-                )}
+                className={classNames("all", sty.topProfile, "fadeinf")}
               >
                 {(
                   hasVariant(globalVariants, "screen", "mobile") ? true : false
@@ -505,16 +494,12 @@ function Plasmicتالار__RenderFunc(props: {
                   <div
                     data-plasmic-name={"image"}
                     data-plasmic-override={overrides.image}
-                    className={classNames(projectcss.all, sty.image, "shine")}
+                    className={classNames("all", sty.image, "shine")}
                   >
                     <div
                       data-plasmic-name={"image2"}
                       data-plasmic-override={overrides.image2}
-                      className={classNames(
-                        projectcss.all,
-                        sty.image2,
-                        "shine"
-                      )}
+                      className={classNames("all", sty.image2, "shine")}
                     >
                       <PlasmicImg__
                         alt={""}
@@ -551,17 +536,17 @@ function Plasmicتالار__RenderFunc(props: {
                 <div
                   data-plasmic-name={"info"}
                   data-plasmic-override={overrides.info}
-                  className={classNames(projectcss.all, sty.info)}
+                  className={classNames("all", sty.info)}
                 >
                   <div
                     data-plasmic-name={"name"}
                     data-plasmic-override={overrides.name}
-                    className={classNames(projectcss.all, sty.name)}
+                    className={classNames("all", sty.name)}
                   >
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text___5FrEf
                       )}
                     >
@@ -588,12 +573,12 @@ function Plasmicتالار__RenderFunc(props: {
                   <div
                     data-plasmic-name={"number"}
                     data-plasmic-override={overrides.number}
-                    className={classNames(projectcss.all, sty.number)}
+                    className={classNames("all", sty.number)}
                   >
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text__q03Nc
                       )}
                     >
@@ -618,7 +603,7 @@ function Plasmicتالار__RenderFunc(props: {
                 <div
                   data-plasmic-name={"leftIcon"}
                   data-plasmic-override={overrides.leftIcon}
-                  className={classNames(projectcss.all, sty.leftIcon)}
+                  className={classNames("all", sty.leftIcon)}
                   onClick={async event => {
                     const $steps = {};
 
@@ -843,7 +828,7 @@ function Plasmicتالار__RenderFunc(props: {
               data-plasmic-name={"wallet"}
               data-plasmic-override={overrides.wallet}
               className={classNames(
-                projectcss.all,
+                "all",
                 sty.wallet,
                 hasVariant(globalVariants, "screen", "mobile")
                   ? (() => {
@@ -875,7 +860,7 @@ function Plasmicتالار__RenderFunc(props: {
                   data-plasmic-name={"walletInfo"}
                   data-plasmic-override={overrides.walletInfo}
                   className={classNames(
-                    projectcss.all,
+                    "all",
                     sty.walletInfo,
                     hasVariant(globalVariants, "screen", "smallMobile")
                       ? (() => {
@@ -970,9 +955,7 @@ function Plasmicتالار__RenderFunc(props: {
                     }
                   }}
                 >
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__pqB03)}
-                  >
+                  <div className={classNames("all", sty.freeBox__pqB03)}>
                     {(
                       hasVariant(globalVariants, "screen", "mobile")
                         ? true
@@ -981,7 +964,7 @@ function Plasmicتالار__RenderFunc(props: {
                       <div
                         data-plasmic-name={"right2"}
                         data-plasmic-override={overrides.right2}
-                        className={classNames(projectcss.all, sty.right2)}
+                        className={classNames("all", sty.right2)}
                       >
                         <PlasmicImg__
                           alt={""}
@@ -1009,12 +992,12 @@ function Plasmicتالار__RenderFunc(props: {
                     <div
                       data-plasmic-name={"mid2"}
                       data-plasmic-override={overrides.mid2}
-                      className={classNames(projectcss.all, sty.mid2)}
+                      className={classNames("all", sty.mid2)}
                     >
                       <div
                         className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
+                          "all",
+                          "__wab_text",
                           sty.text___58WW
                         )}
                       >
@@ -1083,7 +1066,7 @@ function Plasmicتالار__RenderFunc(props: {
               data-plasmic-name={"items8"}
               data-plasmic-override={overrides.items8}
               className={classNames(
-                projectcss.all,
+                "all",
                 sty.items8,
                 hasVariant(globalVariants, "screen", "mobile")
                   ? "fadeinf"
@@ -1097,7 +1080,7 @@ function Plasmicتالار__RenderFunc(props: {
                   data-plasmic-name={"channelManager"}
                   data-plasmic-override={overrides.channelManager}
                   className={classNames(
-                    projectcss.all,
+                    "all",
                     sty.channelManager,
                     hasVariant(globalVariants, "screen", "mobile")
                       ? (() => {
@@ -1161,7 +1144,7 @@ function Plasmicتالار__RenderFunc(props: {
                     <div
                       data-plasmic-name={"right"}
                       data-plasmic-override={overrides.right}
-                      className={classNames(projectcss.all, sty.right)}
+                      className={classNames("all", sty.right)}
                     >
                       <PlasmicImg__
                         alt={""}
@@ -1197,15 +1180,13 @@ function Plasmicتالار__RenderFunc(props: {
                   <div
                     data-plasmic-name={"mid"}
                     data-plasmic-override={overrides.mid}
-                    className={classNames(projectcss.all, sty.mid)}
+                    className={classNames("all", sty.mid)}
                   >
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__qoJwp)}
-                    >
+                    <div className={classNames("all", sty.freeBox__qoJwp)}>
                       <div
                         className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
+                          "all",
+                          "__wab_text",
                           sty.text__kOXp
                         )}
                       >
@@ -1218,10 +1199,10 @@ function Plasmicتالار__RenderFunc(props: {
                   <div
                     data-plasmic-name={"left"}
                     data-plasmic-override={overrides.left}
-                    className={classNames(projectcss.all, sty.left)}
+                    className={classNames("all", sty.left)}
                   >
                     <Icon74Icon
-                      className={classNames(projectcss.all, sty.svg__xgS23)}
+                      className={classNames("all", sty.svg__xgS23)}
                       role={"img"}
                     />
                   </div>
@@ -1233,11 +1214,7 @@ function Plasmicتالار__RenderFunc(props: {
                 <div
                   data-plasmic-name={"contacts"}
                   data-plasmic-override={overrides.contacts}
-                  className={classNames(
-                    projectcss.all,
-                    sty.contacts,
-                    "clickable"
-                  )}
+                  className={classNames("all", sty.contacts, "clickable")}
                   onClick={async event => {
                     const $steps = {};
 
@@ -1275,7 +1252,7 @@ function Plasmicتالار__RenderFunc(props: {
                     <div
                       data-plasmic-name={"right3"}
                       data-plasmic-override={overrides.right3}
-                      className={classNames(projectcss.all, sty.right3)}
+                      className={classNames("all", sty.right3)}
                     >
                       <PlasmicImg__
                         alt={""}
@@ -1299,15 +1276,13 @@ function Plasmicتالار__RenderFunc(props: {
                   <div
                     data-plasmic-name={"mid3"}
                     data-plasmic-override={overrides.mid3}
-                    className={classNames(projectcss.all, sty.mid3)}
+                    className={classNames("all", sty.mid3)}
                   >
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__slcuH)}
-                    >
+                    <div className={classNames("all", sty.freeBox__slcuH)}>
                       <div
                         className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
+                          "all",
+                          "__wab_text",
                           sty.text__grKFw
                         )}
                       >
@@ -1318,10 +1293,10 @@ function Plasmicتالار__RenderFunc(props: {
                   <div
                     data-plasmic-name={"left2"}
                     data-plasmic-override={overrides.left2}
-                    className={classNames(projectcss.all, sty.left2)}
+                    className={classNames("all", sty.left2)}
                   >
                     <Icon74Icon
-                      className={classNames(projectcss.all, sty.svg__qtzyl)}
+                      className={classNames("all", sty.svg__qtzyl)}
                       role={"img"}
                     />
                   </div>
@@ -1334,7 +1309,7 @@ function Plasmicتالار__RenderFunc(props: {
                   data-plasmic-name={"items9"}
                   data-plasmic-override={overrides.items9}
                   className={classNames(
-                    projectcss.all,
+                    "all",
                     sty.items9,
                     (() => {
                       try {
@@ -1390,7 +1365,7 @@ function Plasmicتالار__RenderFunc(props: {
                     <div
                       data-plasmic-name={"right9"}
                       data-plasmic-override={overrides.right9}
-                      className={classNames(projectcss.all, sty.right9)}
+                      className={classNames("all", sty.right9)}
                     >
                       <PlasmicImg__
                         alt={""}
@@ -1414,15 +1389,13 @@ function Plasmicتالار__RenderFunc(props: {
                   <div
                     data-plasmic-name={"mid9"}
                     data-plasmic-override={overrides.mid9}
-                    className={classNames(projectcss.all, sty.mid9)}
+                    className={classNames("all", sty.mid9)}
                   >
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__wnIo2)}
-                    >
+                    <div className={classNames("all", sty.freeBox__wnIo2)}>
                       <div
                         className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
+                          "all",
+                          "__wab_text",
                           sty.text___4HoA
                         )}
                       >
@@ -1433,11 +1406,11 @@ function Plasmicتالار__RenderFunc(props: {
                               data-plasmic-name={"link"}
                               data-plasmic-override={overrides.link}
                               className={classNames(
-                                projectcss.all,
-                                projectcss.a,
-                                projectcss.a__7SNMk,
-                                projectcss.__wab_text,
-                                projectcss.plasmic_default__inline,
+                                "all",
+                                "a",
+                                "a__7SNMk",
+                                "__wab_text",
+                                "plasmic_default__inline",
                                 sty.link
                               )}
                               component={Link}
@@ -1466,7 +1439,7 @@ function Plasmicتالار__RenderFunc(props: {
                   <div
                     data-plasmic-name={"left8"}
                     data-plasmic-override={overrides.left8}
-                    className={classNames(projectcss.all, sty.left8)}
+                    className={classNames("all", sty.left8)}
                   />
                 </div>
               ) : null}
@@ -1477,7 +1450,7 @@ function Plasmicتالار__RenderFunc(props: {
                   data-plasmic-name={"items10"}
                   data-plasmic-override={overrides.items10}
                   className={classNames(
-                    projectcss.all,
+                    "all",
                     sty.items10,
                     (() => {
                       try {
@@ -1534,10 +1507,10 @@ function Plasmicتالار__RenderFunc(props: {
                     <div
                       data-plasmic-name={"right10"}
                       data-plasmic-override={overrides.right10}
-                      className={classNames(projectcss.all, sty.right10)}
+                      className={classNames("all", sty.right10)}
                     >
                       <Icon80Icon
-                        className={classNames(projectcss.all, sty.svg__vw10J)}
+                        className={classNames("all", sty.svg__vw10J)}
                         role={"img"}
                       />
                     </div>
@@ -1545,18 +1518,13 @@ function Plasmicتالار__RenderFunc(props: {
                   <div
                     data-plasmic-name={"mid10"}
                     data-plasmic-override={overrides.mid10}
-                    className={classNames(projectcss.all, sty.mid10)}
+                    className={classNames("all", sty.mid10)}
                   >
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        sty.freeBox___5Ng1C
-                      )}
-                    >
+                    <div className={classNames("all", sty.freeBox___5Ng1C)}>
                       <div
                         className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
+                          "all",
+                          "__wab_text",
                           sty.text__rvtFp
                         )}
                       >
@@ -1567,7 +1535,7 @@ function Plasmicتالار__RenderFunc(props: {
                   <div
                     data-plasmic-name={"left9"}
                     data-plasmic-override={overrides.left9}
-                    className={classNames(projectcss.all, sty.left9)}
+                    className={classNames("all", sty.left9)}
                   />
                 </div>
               ) : null}
@@ -1575,7 +1543,7 @@ function Plasmicتالار__RenderFunc(props: {
                 data-plasmic-name={"instantReserve"}
                 data-plasmic-override={overrides.instantReserve}
                 className={classNames(
-                  projectcss.all,
+                  "all",
                   sty.instantReserve,
                   hasVariant(globalVariants, "screen", "mobile")
                     ? (() => {
@@ -1673,13 +1641,11 @@ function Plasmicتالار__RenderFunc(props: {
                   <div
                     data-plasmic-name={"right4"}
                     data-plasmic-override={overrides.right4}
-                    className={classNames(projectcss.all, sty.right4)}
+                    className={classNames("all", sty.right4)}
                   >
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__zlhco)}
-                    >
+                    <div className={classNames("all", sty.freeBox__zlhco)}>
                       <InstantBookingSvgIcon
-                        className={classNames(projectcss.all, sty.svg__esVgu)}
+                        className={classNames("all", sty.svg__esVgu)}
                         role={"img"}
                       />
                     </div>
@@ -1688,11 +1654,11 @@ function Plasmicتالار__RenderFunc(props: {
                 <div
                   data-plasmic-name={"mid4"}
                   data-plasmic-override={overrides.mid4}
-                  className={classNames(projectcss.all, sty.mid4)}
+                  className={classNames("all", sty.mid4)}
                 >
                   <div
                     className={classNames(
-                      projectcss.all,
+                      "all",
                       sty.freeBox___9SPft,
                       hasVariant(globalVariants, "screen", "mobile")
                         ? ``
@@ -1701,8 +1667,8 @@ function Plasmicتالار__RenderFunc(props: {
                   >
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text__mjqj0
                       )}
                     >
@@ -1713,10 +1679,10 @@ function Plasmicتالار__RenderFunc(props: {
                 <div
                   data-plasmic-name={"left3"}
                   data-plasmic-override={overrides.left3}
-                  className={classNames(projectcss.all, sty.left3)}
+                  className={classNames("all", sty.left3)}
                 >
                   <Icon74Icon
-                    className={classNames(projectcss.all, sty.svg__b9Mr)}
+                    className={classNames("all", sty.svg__b9Mr)}
                     role={"img"}
                   />
                 </div>
@@ -1742,7 +1708,7 @@ function Plasmicتالار__RenderFunc(props: {
                   data-plasmic-name={"settings"}
                   data-plasmic-override={overrides.settings}
                   className={classNames(
-                    projectcss.all,
+                    "all",
                     sty.settings,
                     (() => {
                       try {
@@ -1801,10 +1767,10 @@ function Plasmicتالار__RenderFunc(props: {
                     <div
                       data-plasmic-name={"right5"}
                       data-plasmic-override={overrides.right5}
-                      className={classNames(projectcss.all, sty.right5)}
+                      className={classNames("all", sty.right5)}
                     >
                       <Icon71Icon
-                        className={classNames(projectcss.all, sty.svg__zQElm)}
+                        className={classNames("all", sty.svg__zQElm)}
                         role={"img"}
                       />
                     </div>
@@ -1812,15 +1778,13 @@ function Plasmicتالار__RenderFunc(props: {
                   <div
                     data-plasmic-name={"mid5"}
                     data-plasmic-override={overrides.mid5}
-                    className={classNames(projectcss.all, sty.mid5)}
+                    className={classNames("all", sty.mid5)}
                   >
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__vX8Ws)}
-                    >
+                    <div className={classNames("all", sty.freeBox__vX8Ws)}>
                       <div
                         className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
+                          "all",
+                          "__wab_text",
                           sty.text__sG2Yf
                         )}
                       >
@@ -1831,10 +1795,10 @@ function Plasmicتالار__RenderFunc(props: {
                   <div
                     data-plasmic-name={"left4"}
                     data-plasmic-override={overrides.left4}
-                    className={classNames(projectcss.all, sty.left4)}
+                    className={classNames("all", sty.left4)}
                   >
                     <Icon74Icon
-                      className={classNames(projectcss.all, sty.svg__aZFzr)}
+                      className={classNames("all", sty.svg__aZFzr)}
                       role={"img"}
                     />
                   </div>
@@ -1847,7 +1811,7 @@ function Plasmicتالار__RenderFunc(props: {
                   data-plasmic-name={"support"}
                   data-plasmic-override={overrides.support}
                   className={classNames(
-                    projectcss.all,
+                    "all",
                     sty.support,
                     (() => {
                       try {
@@ -1906,10 +1870,10 @@ function Plasmicتالار__RenderFunc(props: {
                     <div
                       data-plasmic-name={"right6"}
                       data-plasmic-override={overrides.right6}
-                      className={classNames(projectcss.all, sty.right6)}
+                      className={classNames("all", sty.right6)}
                     >
                       <Icon78Icon
-                        className={classNames(projectcss.all, sty.svg___77W2)}
+                        className={classNames("all", sty.svg___77W2)}
                         role={"img"}
                       />
                     </div>
@@ -1917,15 +1881,13 @@ function Plasmicتالار__RenderFunc(props: {
                   <div
                     data-plasmic-name={"mid6"}
                     data-plasmic-override={overrides.mid6}
-                    className={classNames(projectcss.all, sty.mid6)}
+                    className={classNames("all", sty.mid6)}
                   >
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__z97Q)}
-                    >
+                    <div className={classNames("all", sty.freeBox__z97Q)}>
                       <div
                         className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
+                          "all",
+                          "__wab_text",
                           sty.text__duD
                         )}
                       >
@@ -1936,10 +1898,10 @@ function Plasmicتالار__RenderFunc(props: {
                   <div
                     data-plasmic-name={"left5"}
                     data-plasmic-override={overrides.left5}
-                    className={classNames(projectcss.all, sty.left5)}
+                    className={classNames("all", sty.left5)}
                   >
                     <Icon74Icon
-                      className={classNames(projectcss.all, sty.svg___9TRUe)}
+                      className={classNames("all", sty.svg___9TRUe)}
                       role={"img"}
                     />
                   </div>
@@ -1979,7 +1941,7 @@ function Plasmicتالار__RenderFunc(props: {
                   data-plasmic-name={"homePage"}
                   data-plasmic-override={overrides.homePage}
                   className={classNames(
-                    projectcss.all,
+                    "all",
                     sty.homePage,
                     (() => {
                       try {
@@ -2038,10 +2000,10 @@ function Plasmicتالار__RenderFunc(props: {
                     <div
                       data-plasmic-name={"right8"}
                       data-plasmic-override={overrides.right8}
-                      className={classNames(projectcss.all, sty.right8)}
+                      className={classNames("all", sty.right8)}
                     >
                       <Icon73Icon
-                        className={classNames(projectcss.all, sty.svg___1BebJ)}
+                        className={classNames("all", sty.svg___1BebJ)}
                         role={"img"}
                       />
                     </div>
@@ -2049,15 +2011,13 @@ function Plasmicتالار__RenderFunc(props: {
                   <div
                     data-plasmic-name={"mid8"}
                     data-plasmic-override={overrides.mid8}
-                    className={classNames(projectcss.all, sty.mid8)}
+                    className={classNames("all", sty.mid8)}
                   >
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__lCZuj)}
-                    >
+                    <div className={classNames("all", sty.freeBox__lCZuj)}>
                       <div
                         className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
+                          "all",
+                          "__wab_text",
                           sty.text__qmM8W
                         )}
                       >
@@ -2070,10 +2030,10 @@ function Plasmicتالار__RenderFunc(props: {
                   <div
                     data-plasmic-name={"left7"}
                     data-plasmic-override={overrides.left7}
-                    className={classNames(projectcss.all, sty.left7)}
+                    className={classNames("all", sty.left7)}
                   >
                     <Icon74Icon
-                      className={classNames(projectcss.all, sty.svg__mwDF)}
+                      className={classNames("all", sty.svg__mwDF)}
                       role={"img"}
                     />
                   </div>
@@ -2085,11 +2045,7 @@ function Plasmicتالار__RenderFunc(props: {
                 <div
                   data-plasmic-name={"logout"}
                   data-plasmic-override={overrides.logout}
-                  className={classNames(
-                    projectcss.all,
-                    sty.logout,
-                    "clickable"
-                  )}
+                  className={classNames("all", sty.logout, "clickable")}
                   onClick={async event => {
                     const $steps = {};
 
@@ -2156,10 +2112,10 @@ function Plasmicتالار__RenderFunc(props: {
                     <div
                       data-plasmic-name={"right7"}
                       data-plasmic-override={overrides.right7}
-                      className={classNames(projectcss.all, sty.right7)}
+                      className={classNames("all", sty.right7)}
                     >
                       <Icon72Icon
-                        className={classNames(projectcss.all, sty.svg__eJx3R)}
+                        className={classNames("all", sty.svg__eJx3R)}
                         role={"img"}
                       />
                     </div>
@@ -2167,15 +2123,13 @@ function Plasmicتالار__RenderFunc(props: {
                   <div
                     data-plasmic-name={"mid7"}
                     data-plasmic-override={overrides.mid7}
-                    className={classNames(projectcss.all, sty.mid7)}
+                    className={classNames("all", sty.mid7)}
                   >
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__zAsHi)}
-                    >
+                    <div className={classNames("all", sty.freeBox__zAsHi)}>
                       <div
                         className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
+                          "all",
+                          "__wab_text",
                           sty.text__rZeHq
                         )}
                       >
@@ -2186,7 +2140,7 @@ function Plasmicتالار__RenderFunc(props: {
                   <div
                     data-plasmic-name={"left6"}
                     data-plasmic-override={overrides.left6}
-                    className={classNames(projectcss.all, sty.left6)}
+                    className={classNames("all", sty.left6)}
                   />
                 </div>
               ) : null}
@@ -2196,7 +2150,7 @@ function Plasmicتالار__RenderFunc(props: {
                 <div
                   data-plasmic-name={"logout3"}
                   data-plasmic-override={overrides.logout3}
-                  className={classNames(projectcss.all, sty.logout3, ``)}
+                  className={classNames("all", sty.logout3, ``)}
                 >
                   {(
                     hasVariant(globalVariants, "screen", "mobile")
@@ -2206,7 +2160,7 @@ function Plasmicتالار__RenderFunc(props: {
                     <div
                       data-plasmic-name={"right11"}
                       data-plasmic-override={overrides.right11}
-                      className={classNames(projectcss.all, sty.right11)}
+                      className={classNames("all", sty.right11)}
                     >
                       <PlasmicImg__
                         alt={""}
@@ -2228,15 +2182,13 @@ function Plasmicتالار__RenderFunc(props: {
                   <div
                     data-plasmic-name={"mid12"}
                     data-plasmic-override={overrides.mid12}
-                    className={classNames(projectcss.all, sty.mid12)}
+                    className={classNames("all", sty.mid12)}
                   >
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__e9Rvx)}
-                    >
+                    <div className={classNames("all", sty.freeBox__e9Rvx)}>
                       <div
                         className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
+                          "all",
+                          "__wab_text",
                           sty.text__bfjHv
                         )}
                       >
@@ -2254,16 +2206,14 @@ function Plasmicتالار__RenderFunc(props: {
                 <div
                   data-plasmic-name={"logout2"}
                   data-plasmic-override={overrides.logout2}
-                  className={classNames(projectcss.all, sty.logout2)}
+                  className={classNames("all", sty.logout2)}
                 >
                   <div
                     data-plasmic-name={"mid11"}
                     data-plasmic-override={overrides.mid11}
-                    className={classNames(projectcss.all, sty.mid11)}
+                    className={classNames("all", sty.mid11)}
                   >
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__zWzC2)}
-                    >
+                    <div className={classNames("all", sty.freeBox__zWzC2)}>
                       {(
                         hasVariant(globalVariants, "screen", "mobile")
                           ? (() => {
@@ -2283,8 +2233,8 @@ function Plasmicتالار__RenderFunc(props: {
                       ) ? (
                         <div
                           className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
+                            "all",
+                            "__wab_text",
                             sty.text__mmAkl
                           )}
                         >
@@ -2302,11 +2252,7 @@ function Plasmicتالار__RenderFunc(props: {
               className={classNames("__wab_instance", sty.getUserWebsite)}
               errorDisplay={
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__xxefM
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__xxefM)}
                 >
                   {"Error fetching data"}
                 </div>
@@ -2344,11 +2290,7 @@ function Plasmicتالار__RenderFunc(props: {
                 className={classNames("__wab_instance", sty.getUserBalance)}
                 errorDisplay={
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__zDsnD
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__zDsnD)}
                   >
                     {"Error fetching data"}
                   </div>
@@ -2380,7 +2322,7 @@ function Plasmicتالار__RenderFunc(props: {
               />
             ) : null}
           </div>
-          <div className={classNames(projectcss.all, sty.freeBox__sgL9C)} />
+          <div className={classNames("all", sty.freeBox__sgL9C)} />
 
           <NavbarMnFooter
             data-plasmic-name={"navbarMnFooter"}
@@ -2715,7 +2657,7 @@ function Plasmicتالار__RenderFunc(props: {
               }}
             />
           ) : null}
-          <div className={classNames(projectcss.all, sty.freeBox__hieAx)}>
+          <div className={classNames("all", sty.freeBox__hieAx)}>
             <ClarityRntComponent
               data-plasmic-name={"clarityRntComponent"}
               data-plasmic-override={overrides.clarityRntComponent}
@@ -2733,9 +2675,9 @@ function Plasmicتالار__RenderFunc(props: {
             data-plasmic-override={overrides.modal}
             className={classNames("__wab_instance", sty.modal)}
             defaultStylesClassName={classNames(
-              projectcss.root_reset,
-              projectcss.plasmic_default_styles,
-              projectcss.plasmic_mixins,
+              "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+              "plasmic_default_styles",
+              "plasmic_mixins",
               styleTokensClassNames
             )}
             hideFooter={true}
@@ -2816,7 +2758,7 @@ function Plasmicتالار__RenderFunc(props: {
               hasVariant(globalVariants, "screen", "mobile") ? "400" : undefined
             }
           >
-            <div className={classNames(projectcss.all, sty.freeBox__kWLj)}>
+            <div className={classNames("all", sty.freeBox__kWLj)}>
               <PlasmicImg__
                 alt={""}
                 className={classNames(sty.img__pdU5A)}
@@ -2847,26 +2789,18 @@ function Plasmicتالار__RenderFunc(props: {
                 }
               />
             </div>
-            <div className={classNames(projectcss.all, sty.freeBox__ryqSs)}>
-              <div className={classNames(projectcss.all, sty.freeBox__umNL)}>
+            <div className={classNames("all", sty.freeBox__ryqSs)}>
+              <div className={classNames("all", sty.freeBox__umNL)}>
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__tB8PM
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__tB8PM)}
                 >
                   {
                     "\u0627\u0633\u0646\u067e \u062a\u0631\u06cc\u067e \u0628\u0647 \u0633\u0627\u06cc\u062a \u0647\u0627\u06cc \u062a\u062d\u062a \u067e\u0648\u0634\u0634 \u0645\u06cc\u0627\u0646 \u0627\u0636\u0627\u0641\u0647 \u0634\u062f\ud83c\udf89"
                   }
                 </div>
-                <div className={classNames(projectcss.all, sty.freeBox___9JuU)}>
+                <div className={classNames("all", sty.freeBox___9JuU)}>
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__eusEt
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__eusEt)}
                     onClick={async event => {
                       const $steps = {};
 
@@ -2966,11 +2900,7 @@ function Plasmicتالار__RenderFunc(props: {
                     }
                   </div>
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__kijrZ
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__kijrZ)}
                     onClick={async event => {
                       const $steps = {};
 

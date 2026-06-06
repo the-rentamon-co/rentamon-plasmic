@@ -74,7 +74,6 @@ import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-impor
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./Plasmicتعرفهخدمات.module.css"; // plasmic-import: 4KhpZ-of93My/css
 
 const emptyProxy: any = new Proxy(() => "", {
@@ -368,17 +367,17 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
         }
       `}</style>
 
-      <div className={projectcss.plasmic_page_wrapper}>
+      <div className={"plasmic_page_wrapper"}>
         <div
           data-plasmic-name={"root"}
           data-plasmic-override={overrides.root}
           data-plasmic-root={true}
           data-plasmic-for-node={forNode}
           className={classNames(
-            projectcss.all,
-            projectcss.root_reset,
-            projectcss.plasmic_default_styles,
-            projectcss.plasmic_mixins,
+            "all",
+            "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+            "plasmic_default_styles",
+            "plasmic_mixins",
             styleTokensClassNames,
             sty.root
           )}
@@ -389,30 +388,18 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
             className={classNames("__wab_instance", sty.navbarRntHeader)}
           />
 
-          <div className={classNames(projectcss.all, sty.freeBox__vzZul)}>
+          <div className={classNames("all", sty.freeBox__vzZul)}>
             <div
               data-plasmic-name={"featuresDesc2"}
               data-plasmic-override={overrides.featuresDesc2}
-              className={classNames(projectcss.all, sty.featuresDesc2)}
+              className={classNames("all", sty.featuresDesc2)}
             >
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__qdhY
-                )}
-              >
+              <div className={classNames("all", "__wab_text", sty.text__qdhY)}>
                 {
                   "\u062a\u0639\u0631\u0641\u0647 \u062e\u062f\u0645\u0627\u062a \u00ab\u0645\u06cc\u0627\u0646\u00bb"
                 }
               </div>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__aXfsu
-                )}
-              >
+              <div className={classNames("all", "__wab_text", sty.text__aXfsu)}>
                 {
                   "\u0645\u06cc\u0627\u0646 \u0627\u0646\u062c\u0627\u0645 \u06a9\u0627\u0631\u0647\u0627\u06cc \u0645\u0631\u0628\u0648\u0637 \u0628\u0647 \u0627\u062f\u0627\u0631\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0631\u0648 \u062f\u0647\u200c\u0647\u0627 \u0628\u0631\u0627\u0628\u0631 \u0633\u0627\u062f\u0647\u200c\u062a\u0631 \u0645\u06cc\u200c\u06a9\u0646\u0647\u060c \u062a\u0627 \u0634\u0645\u0627 \u0641\u0631\u0635\u062a \u0628\u06cc\u0634\u062a\u0631\u06cc \u0628\u0631\u0627\u06cc \u0641\u06a9\u0631 \u0648 \u06af\u0633\u062a\u0631\u0634 \u06a9\u0633\u0628\u200c\u0648\u06a9\u0627\u0631 \u062f\u0627\u0634\u062a\u0647 \u0628\u0627\u0634\u06cc."
                 }
@@ -422,34 +409,26 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
           <div
             data-plasmic-name={"_1stPart"}
             data-plasmic-override={overrides._1stPart}
-            className={classNames(projectcss.all, sty._1stPart)}
+            className={classNames("all", sty._1stPart)}
           >
-            <div className={classNames(projectcss.all, sty.freeBox__cymqY)}>
+            <div className={classNames("all", sty.freeBox__cymqY)}>
               <div
                 data-plasmic-name={"item1"}
                 data-plasmic-override={overrides.item1}
-                className={classNames(projectcss.all, sty.item1)}
+                className={classNames("all", sty.item1)}
               >
-                <div className={classNames(projectcss.all, sty.freeBox__lyGYi)}>
+                <div className={classNames("all", sty.freeBox__lyGYi)}>
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__ugVeN
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__ugVeN)}
                   >
                     {
                       "\u0639\u0646\u0648\u0627\u0646 \u0648\u06cc\u0698\u06af\u06cc"
                     }
                   </div>
                 </div>
-                <div className={classNames(projectcss.all, sty.freeBox__igZQw)}>
+                <div className={classNames("all", sty.freeBox__igZQw)}>
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__wl24
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__wl24)}
                   >
                     {"\u06a9\u0627\u0631\u0645\u0632\u062f"}
                   </div>
@@ -458,9 +437,9 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
               <div
                 data-plasmic-name={"item12"}
                 data-plasmic-override={overrides.item12}
-                className={classNames(projectcss.all, sty.item12)}
+                className={classNames("all", sty.item12)}
               >
-                <div className={classNames(projectcss.all, sty.freeBox__hhnFu)}>
+                <div className={classNames("all", sty.freeBox__hhnFu)}>
                   <Checkbox
                     data-plasmic-name={"checkbox8"}
                     data-plasmic-override={overrides.checkbox8}
@@ -491,8 +470,8 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
                   >
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text__ib7W4
                       )}
                     >
@@ -502,13 +481,9 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
                     </div>
                   </Checkbox>
                 </div>
-                <div className={classNames(projectcss.all, sty.freeBox__rEEcs)}>
+                <div className={classNames("all", sty.freeBox__rEEcs)}>
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__d8EzU
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__d8EzU)}
                   >
                     {"\u0631\u0627\u06cc\u06af\u0627\u0646"}
                   </div>
@@ -517,9 +492,9 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
               <div
                 data-plasmic-name={"item13"}
                 data-plasmic-override={overrides.item13}
-                className={classNames(projectcss.all, sty.item13)}
+                className={classNames("all", sty.item13)}
               >
-                <div className={classNames(projectcss.all, sty.freeBox__mt55G)}>
+                <div className={classNames("all", sty.freeBox__mt55G)}>
                   <Checkbox
                     data-plasmic-name={"checkbox2"}
                     data-plasmic-override={overrides.checkbox2}
@@ -550,8 +525,8 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
                   >
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text___9RMt
                       )}
                     >
@@ -561,13 +536,9 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
                     </div>
                   </Checkbox>
                 </div>
-                <div className={classNames(projectcss.all, sty.freeBox__agWjF)}>
+                <div className={classNames("all", sty.freeBox__agWjF)}>
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__mGsa5
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__mGsa5)}
                   >
                     {"\u0631\u0627\u06cc\u06af\u0627\u0646"}
                   </div>
@@ -576,9 +547,9 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
               <div
                 data-plasmic-name={"item14"}
                 data-plasmic-override={overrides.item14}
-                className={classNames(projectcss.all, sty.item14)}
+                className={classNames("all", sty.item14)}
               >
-                <div className={classNames(projectcss.all, sty.freeBox___39Xj)}>
+                <div className={classNames("all", sty.freeBox___39Xj)}>
                   <Checkbox
                     data-plasmic-name={"checkbox3"}
                     data-plasmic-override={overrides.checkbox3}
@@ -609,8 +580,8 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
                   >
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text__m11Mp
                       )}
                     >
@@ -620,13 +591,9 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
                     </div>
                   </Checkbox>
                 </div>
-                <div className={classNames(projectcss.all, sty.freeBox__eu95W)}>
+                <div className={classNames("all", sty.freeBox__eu95W)}>
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__rqTdd
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__rqTdd)}
                   >
                     {"\u0631\u0627\u06cc\u06af\u0627\u0646"}
                   </div>
@@ -635,11 +602,9 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
               <div
                 data-plasmic-name={"item19"}
                 data-plasmic-override={overrides.item19}
-                className={classNames(projectcss.all, sty.item19)}
+                className={classNames("all", sty.item19)}
               >
-                <div
-                  className={classNames(projectcss.all, sty.freeBox___8LYkq)}
-                >
+                <div className={classNames("all", sty.freeBox___8LYkq)}>
                   <Checkbox
                     data-plasmic-name={"checkbox9"}
                     data-plasmic-override={overrides.checkbox9}
@@ -670,8 +635,8 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
                   >
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text__v2Dw6
                       )}
                     >
@@ -681,11 +646,11 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
                     </div>
                   </Checkbox>
                 </div>
-                <div className={classNames(projectcss.all, sty.freeBox__goJq1)}>
+                <div className={classNames("all", sty.freeBox__goJq1)}>
                   <div
                     className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
+                      "all",
+                      "__wab_text",
                       sty.text___35GZu
                     )}
                   >
@@ -696,9 +661,9 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
               <div
                 data-plasmic-name={"item112"}
                 data-plasmic-override={overrides.item112}
-                className={classNames(projectcss.all, sty.item112)}
+                className={classNames("all", sty.item112)}
               >
-                <div className={classNames(projectcss.all, sty.freeBox__dNuO)}>
+                <div className={classNames("all", sty.freeBox__dNuO)}>
                   <Checkbox
                     data-plasmic-name={"checkbox10"}
                     data-plasmic-override={overrides.checkbox10}
@@ -729,8 +694,8 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
                   >
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text__lObgb
                       )}
                     >
@@ -740,13 +705,9 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
                     </div>
                   </Checkbox>
                 </div>
-                <div className={classNames(projectcss.all, sty.freeBox__booyR)}>
+                <div className={classNames("all", sty.freeBox__booyR)}>
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__bFc
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__bFc)}
                   >
                     {"\u0631\u0627\u06cc\u06af\u0627\u0646"}
                   </div>
@@ -755,11 +716,9 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
               <div
                 data-plasmic-name={"item113"}
                 data-plasmic-override={overrides.item113}
-                className={classNames(projectcss.all, sty.item113)}
+                className={classNames("all", sty.item113)}
               >
-                <div
-                  className={classNames(projectcss.all, sty.freeBox___12Lyw)}
-                >
+                <div className={classNames("all", sty.freeBox___12Lyw)}>
                   <Checkbox
                     data-plasmic-name={"checkbox11"}
                     data-plasmic-override={overrides.checkbox11}
@@ -790,8 +749,8 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
                   >
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text__axLn8
                       )}
                     >
@@ -801,13 +760,9 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
                     </div>
                   </Checkbox>
                 </div>
-                <div className={classNames(projectcss.all, sty.freeBox__m2K7F)}>
+                <div className={classNames("all", sty.freeBox__m2K7F)}>
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__q7L9F
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__q7L9F)}
                   >
                     {"\u0631\u0627\u06cc\u06af\u0627\u0646"}
                   </div>
@@ -816,11 +771,9 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
               <div
                 data-plasmic-name={"item114"}
                 data-plasmic-override={overrides.item114}
-                className={classNames(projectcss.all, sty.item114)}
+                className={classNames("all", sty.item114)}
               >
-                <div
-                  className={classNames(projectcss.all, sty.freeBox___2MZem)}
-                >
+                <div className={classNames("all", sty.freeBox___2MZem)}>
                   <Checkbox
                     data-plasmic-name={"checkbox12"}
                     data-plasmic-override={overrides.checkbox12}
@@ -851,8 +804,8 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
                   >
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text___9YP10
                       )}
                     >
@@ -862,13 +815,9 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
                     </div>
                   </Checkbox>
                 </div>
-                <div className={classNames(projectcss.all, sty.freeBox__mnhRn)}>
+                <div className={classNames("all", sty.freeBox__mnhRn)}>
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__fE4A1
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__fE4A1)}
                   >
                     {"\u0631\u0627\u06cc\u06af\u0627\u0646"}
                   </div>
@@ -877,9 +826,9 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
               <div
                 data-plasmic-name={"item16"}
                 data-plasmic-override={overrides.item16}
-                className={classNames(projectcss.all, sty.item16, "clickable")}
+                className={classNames("all", sty.item16, "clickable")}
               >
-                <div className={classNames(projectcss.all, sty.freeBox__gGntv)}>
+                <div className={classNames("all", sty.freeBox__gGntv)}>
                   <Checkbox
                     data-plasmic-name={"checkbox5"}
                     data-plasmic-override={overrides.checkbox5}
@@ -909,8 +858,8 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
                   >
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text___6C64K
                       )}
                     >
@@ -920,13 +869,9 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
                     </div>
                   </Checkbox>
                 </div>
-                <div className={classNames(projectcss.all, sty.freeBox__vg0Dz)}>
+                <div className={classNames("all", sty.freeBox__vg0Dz)}>
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__afQxa
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__afQxa)}
                   >
                     {"\u06f1.\u06f5\u066a"}
                   </div>
@@ -935,9 +880,9 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
               <div
                 data-plasmic-name={"item17"}
                 data-plasmic-override={overrides.item17}
-                className={classNames(projectcss.all, sty.item17, "clickable")}
+                className={classNames("all", sty.item17, "clickable")}
               >
-                <div className={classNames(projectcss.all, sty.freeBox__cnbU8)}>
+                <div className={classNames("all", sty.freeBox__cnbU8)}>
                   <Checkbox
                     data-plasmic-name={"checkbox6"}
                     data-plasmic-override={overrides.checkbox6}
@@ -967,8 +912,8 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
                   >
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text__sDnda
                       )}
                     >
@@ -992,13 +937,9 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
                     </div>
                   </Checkbox>
                 </div>
-                <div className={classNames(projectcss.all, sty.freeBox__gTkLc)}>
+                <div className={classNames("all", sty.freeBox__gTkLc)}>
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__oenC6
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__oenC6)}
                   >
                     {"\u066a \u06f1"}
                   </div>
@@ -1007,9 +948,9 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
               <div
                 data-plasmic-name={"item18"}
                 data-plasmic-override={overrides.item18}
-                className={classNames(projectcss.all, sty.item18)}
+                className={classNames("all", sty.item18)}
               >
-                <div className={classNames(projectcss.all, sty.freeBox__h3Xc)}>
+                <div className={classNames("all", sty.freeBox__h3Xc)}>
                   <Checkbox
                     data-plasmic-name={"checkbox7"}
                     data-plasmic-override={overrides.checkbox7}
@@ -1040,8 +981,8 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
                   >
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text__kKci3
                       )}
                     >
@@ -1051,13 +992,9 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
                     </div>
                   </Checkbox>
                 </div>
-                <div className={classNames(projectcss.all, sty.freeBox__rwNDr)}>
+                <div className={classNames("all", sty.freeBox__rwNDr)}>
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__m6EMr
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__m6EMr)}
                   >
                     {" "}
                   </div>
@@ -1066,14 +1003,10 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
               <div
                 data-plasmic-name={"item110"}
                 data-plasmic-override={overrides.item110}
-                className={classNames(projectcss.all, sty.item110)}
+                className={classNames("all", sty.item110)}
               >
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__phAjf
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__phAjf)}
                   onClick={async event => {
                     const $steps = {};
                   }}
@@ -1084,18 +1017,18 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
                       {
                         <ul
                           className={classNames(
-                            projectcss.all,
-                            projectcss.ul,
-                            projectcss.ul__7SNMk,
+                            "all",
+                            "ul",
+                            "ul__7SNMk",
                             sty.ul__zcaZ
                           )}
                         >
                           <li
                             className={classNames(
-                              projectcss.all,
-                              projectcss.li,
-                              projectcss.li__7SNMk,
-                              projectcss.__wab_text,
+                              "all",
+                              "li",
+                              "li__7SNMk",
+                              "__wab_text",
                               sty.li__xTups
                             )}
                           >
@@ -1109,18 +1042,18 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
                                 {
                                   <ul
                                     className={classNames(
-                                      projectcss.all,
-                                      projectcss.ul,
-                                      projectcss.ul__7SNMk,
+                                      "all",
+                                      "ul",
+                                      "ul__7SNMk",
                                       sty.ul__h2X6
                                     )}
                                   >
                                     <li
                                       className={classNames(
-                                        projectcss.all,
-                                        projectcss.li,
-                                        projectcss.li__7SNMk,
-                                        projectcss.__wab_text,
+                                        "all",
+                                        "li",
+                                        "li__7SNMk",
+                                        "__wab_text",
                                         sty.li__i3DkL
                                       )}
                                     >
@@ -1199,18 +1132,18 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
                                 {
                                   <ul
                                     className={classNames(
-                                      projectcss.all,
-                                      projectcss.ul,
-                                      projectcss.ul__7SNMk,
+                                      "all",
+                                      "ul",
+                                      "ul__7SNMk",
                                       sty.ul__h2X6
                                     )}
                                   >
                                     <li
                                       className={classNames(
-                                        projectcss.all,
-                                        projectcss.li,
-                                        projectcss.li__7SNMk,
-                                        projectcss.__wab_text,
+                                        "all",
+                                        "li",
+                                        "li__7SNMk",
+                                        "__wab_text",
                                         sty.li__i3DkL
                                       )}
                                     >
@@ -1295,18 +1228,18 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
                       {
                         <ul
                           className={classNames(
-                            projectcss.all,
-                            projectcss.ul,
-                            projectcss.ul__7SNMk,
+                            "all",
+                            "ul",
+                            "ul__7SNMk",
                             sty.ul__zcaZ
                           )}
                         >
                           <li
                             className={classNames(
-                              projectcss.all,
-                              projectcss.li,
-                              projectcss.li__7SNMk,
-                              projectcss.__wab_text,
+                              "all",
+                              "li",
+                              "li__7SNMk",
+                              "__wab_text",
                               sty.li__xTups
                             )}
                           >
@@ -1320,18 +1253,18 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
                                 {
                                   <ul
                                     className={classNames(
-                                      projectcss.all,
-                                      projectcss.ul,
-                                      projectcss.ul__7SNMk,
+                                      "all",
+                                      "ul",
+                                      "ul__7SNMk",
                                       sty.ul__h2X6
                                     )}
                                   >
                                     <li
                                       className={classNames(
-                                        projectcss.all,
-                                        projectcss.li,
-                                        projectcss.li__7SNMk,
-                                        projectcss.__wab_text,
+                                        "all",
+                                        "li",
+                                        "li__7SNMk",
+                                        "__wab_text",
                                         sty.li__i3DkL
                                       )}
                                     >
@@ -1410,18 +1343,18 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
                                 {
                                   <ul
                                     className={classNames(
-                                      projectcss.all,
-                                      projectcss.ul,
-                                      projectcss.ul__7SNMk,
+                                      "all",
+                                      "ul",
+                                      "ul__7SNMk",
                                       sty.ul__h2X6
                                     )}
                                   >
                                     <li
                                       className={classNames(
-                                        projectcss.all,
-                                        projectcss.li,
-                                        projectcss.li__7SNMk,
-                                        projectcss.__wab_text,
+                                        "all",
+                                        "li",
+                                        "li__7SNMk",
+                                        "__wab_text",
                                         sty.li__i3DkL
                                       )}
                                     >
@@ -1506,18 +1439,18 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
                       {
                         <ul
                           className={classNames(
-                            projectcss.all,
-                            projectcss.ul,
-                            projectcss.ul__7SNMk,
+                            "all",
+                            "ul",
+                            "ul__7SNMk",
                             sty.ul__zcaZ
                           )}
                         >
                           <li
                             className={classNames(
-                              projectcss.all,
-                              projectcss.li,
-                              projectcss.li__7SNMk,
-                              projectcss.__wab_text,
+                              "all",
+                              "li",
+                              "li__7SNMk",
+                              "__wab_text",
                               sty.li__xTups
                             )}
                           >
@@ -1531,18 +1464,18 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
                                 {
                                   <ul
                                     className={classNames(
-                                      projectcss.all,
-                                      projectcss.ul,
-                                      projectcss.ul__7SNMk,
+                                      "all",
+                                      "ul",
+                                      "ul__7SNMk",
                                       sty.ul__h2X6
                                     )}
                                   >
                                     <li
                                       className={classNames(
-                                        projectcss.all,
-                                        projectcss.li,
-                                        projectcss.li__7SNMk,
-                                        projectcss.__wab_text,
+                                        "all",
+                                        "li",
+                                        "li__7SNMk",
+                                        "__wab_text",
                                         sty.li__i3DkL
                                       )}
                                     >
@@ -1621,18 +1554,18 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
                                 {
                                   <ul
                                     className={classNames(
-                                      projectcss.all,
-                                      projectcss.ul,
-                                      projectcss.ul__7SNMk,
+                                      "all",
+                                      "ul",
+                                      "ul__7SNMk",
                                       sty.ul__h2X6
                                     )}
                                   >
                                     <li
                                       className={classNames(
-                                        projectcss.all,
-                                        projectcss.li,
-                                        projectcss.li__7SNMk,
-                                        projectcss.__wab_text,
+                                        "all",
+                                        "li",
+                                        "li__7SNMk",
+                                        "__wab_text",
                                         sty.li__i3DkL
                                       )}
                                     >
@@ -1717,14 +1650,10 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
               <div
                 data-plasmic-name={"item111"}
                 data-plasmic-override={overrides.item111}
-                className={classNames(projectcss.all, sty.item111)}
+                className={classNames("all", sty.item111)}
               >
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__zSu
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__zSu)}
                   onClick={async event => {
                     const $steps = {};
 
@@ -1761,97 +1690,61 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
               </div>
             </div>
           </div>
-          <div className={classNames(projectcss.all, sty.freeBox__mims1)}>
-            <div className={classNames(projectcss.all, sty.freeBox__aBc11)}>
+          <div className={classNames("all", sty.freeBox__mims1)}>
+            <div className={classNames("all", sty.freeBox__aBc11)}>
               <div
                 data-plasmic-name={"services"}
                 data-plasmic-override={overrides.services}
-                className={classNames(projectcss.all, sty.services)}
+                className={classNames("all", sty.services)}
               >
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__n46Kb
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__n46Kb)}
                 >
                   {hasVariant(globalVariants, "screen", "mobile")
                     ? "\u062a\u0639\u0631\u0641\u0647 \u062e\u062f\u0645\u0627\u062a \u0631\u0646\u062a\u0627\u0645\u0648\u0646\r"
                     : "\u062a\u0639\u0631\u0641\u0647 \u062e\u062f\u0645\u0627\u062a \u0631\u0646\u062a\u0627\u0645\u0648\u0646\r"}
                 </div>
-                <div className={classNames(projectcss.all, sty.freeBox__f7F0T)}>
+                <div className={classNames("all", sty.freeBox__f7F0T)}>
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__xlLsX
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__xlLsX)}
                   >
                     {"\u0627\u0645\u06a9\u0627\u0646\u0627\u062a"}
                   </div>
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__bWyb4
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__bWyb4)}
                   >
                     {"\u0646\u0633\u062e\u0647 \u067e\u0627\u06cc\u0647"}
                   </div>
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__yyruu
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__yyruu)}
                   >
                     {"\u062d\u0631\u0641\u0647\u200c\u0627\u06cc"}
                   </div>
                 </div>
-                <div
-                  className={classNames(projectcss.all, sty.freeBox__ms7Uo)}
-                />
+                <div className={classNames("all", sty.freeBox__ms7Uo)} />
 
-                <div
-                  className={classNames(projectcss.all, sty.freeBox___7Y3Ew)}
-                >
+                <div className={classNames("all", sty.freeBox___7Y3Ew)}>
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__omlmP
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__omlmP)}
                   >
                     {
                       "\u0645\u0634\u0627\u0647\u062f\u0647 \u062a\u0642\u0648\u06cc\u0645"
                     }
                   </div>
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__h72Jf
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__h72Jf)}
                   >
                     {"\u2705"}
                   </div>
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__wwjN1
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__wwjN1)}
                   >
                     {"\u2705"}
                   </div>
                 </div>
-                <div className={classNames(projectcss.all, sty.freeBox__wwgr0)}>
+                <div className={classNames("all", sty.freeBox__wwgr0)}>
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__polq6
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__polq6)}
                   >
                     {
                       "\u067e\u0631 \u0648 \u062e\u0627\u0644\u06cc \u06a9\u0631\u062f\u0646\r\n\r"
@@ -1859,32 +1752,22 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
                   </div>
                   <div
                     className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
+                      "all",
+                      "__wab_text",
                       sty.text___67Ppq
                     )}
                   >
                     {"\u2705"}
                   </div>
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__xsWsf
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__xsWsf)}
                   >
                     {"\u2705"}
                   </div>
                 </div>
-                <div
-                  className={classNames(projectcss.all, sty.freeBox___7Tdig)}
-                >
+                <div className={classNames("all", sty.freeBox___7Tdig)}>
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__kHrHq
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__kHrHq)}
                   >
                     {
                       "\u062a\u063a\u06cc\u06cc\u0631 \u0642\u06cc\u0645\u062a\r"
@@ -1892,8 +1775,8 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
                   </div>
                   <div
                     className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
+                      "all",
+                      "__wab_text",
                       sty.text___1Swqw
                     )}
                   >
@@ -1901,194 +1784,130 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
                   </div>
                   <div
                     className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
+                      "all",
+                      "__wab_text",
                       sty.text___9REjO
                     )}
                   >
                     {"\u2705"}
                   </div>
                 </div>
-                <div className={classNames(projectcss.all, sty.freeBox__rka5G)}>
+                <div className={classNames("all", sty.freeBox__rka5G)}>
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__m5Uw0
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__m5Uw0)}
                   >
                     {
                       "\u0627\u06cc\u062c\u0627\u062f \u062a\u062e\u0641\u06cc\u0641"
                     }
                   </div>
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__kwVi8
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__kwVi8)}
                   >
                     {"\u2705"}
                   </div>
                   <div
                     className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
+                      "all",
+                      "__wab_text",
                       sty.text___1BSk6
                     )}
                   >
                     {"\u2705"}
                   </div>
                 </div>
-                <div className={classNames(projectcss.all, sty.freeBox__hfXhZ)}>
+                <div className={classNames("all", sty.freeBox__hfXhZ)}>
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__wOity
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__wOity)}
                   >
                     {
                       " \u2b50\ufe0f\u0631\u0635\u062f \u06f2\u06f4 \u0633\u0627\u0639\u062a\u0647 \u0631\u0632\u0631\u0648\u0647\u0627\r"
                     }
                   </div>
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__cqpqX
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__cqpqX)}
                   >
                     {"\u274c\r"}
                   </div>
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__iqv
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__iqv)}
                   >
                     {"\u2705"}
                   </div>
                 </div>
-                <div className={classNames(projectcss.all, sty.freeBox__kfh9K)}>
+                <div className={classNames("all", sty.freeBox__kfh9K)}>
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__dCy6
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__dCy6)}
                   >
                     {
                       "\u2b50\ufe0f \u067e\u0631\u062f\u0627\u0632\u0634 \u062e\u0648\u062f\u06a9\u0627\u0631 \u0631\u0632\u0631\u0648\u0647\u0627"
                     }
                   </div>
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__o0Vs2
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__o0Vs2)}
                   >
                     {"\u274c\r"}
                   </div>
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__pdb1G
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__pdb1G)}
                   >
                     {"\u2705"}
                   </div>
                 </div>
-                <div className={classNames(projectcss.all, sty.freeBox__luauY)}>
+                <div className={classNames("all", sty.freeBox__luauY)}>
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__mqFjN
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__mqFjN)}
                   >
                     {
                       "\u2b50\ufe0f \u067e\u0631\u062f\u0627\u0632\u0634 \u062e\u0648\u062f\u06a9\u0627\u0631 \u0644\u063a\u0648\u0647\u0627"
                     }
                   </div>
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__u0QxV
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__u0QxV)}
                   >
                     {"\u274c\r"}
                   </div>
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__hslwP
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__hslwP)}
                   >
                     {"\u2705"}
                   </div>
                 </div>
-                <div className={classNames(projectcss.all, sty.freeBox__zIHc)}>
+                <div className={classNames("all", sty.freeBox__zIHc)}>
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__zb3RC
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__zb3RC)}
                   >
                     {
                       "\u2b50\ufe0f \u067e\u06cc\u0627\u0645\u06a9 \u0627\u0639\u0644\u0627\u0645 \u0648\u0636\u0639\u06cc\u062a"
                     }
                   </div>
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__ln48
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__ln48)}
                   >
                     {"\u274c\r"}
                   </div>
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__wlTru
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__wlTru)}
                   >
                     {"\u2705"}
                   </div>
                 </div>
-                <div className={classNames(projectcss.all, sty.freeBox__fiIgx)}>
+                <div className={classNames("all", sty.freeBox__fiIgx)}>
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__fbZbo
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__fbZbo)}
                   >
                     {"\u062a\u0639\u0631\u0641\u0647"}
                   </div>
                   <div
                     className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
+                      "all",
+                      "__wab_text",
                       sty.text___2Tp9U
                     )}
                   >
                     {"\u0631\u0627\u06cc\u06af\u0627\u0646"}
                   </div>
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__oiFot
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__oiFot)}
                   >
                     {
                       "\r\u0647\u0631 \u0634\u0628 \u0631\u0632\u0631\u0648 \u06f1\u06f5/\u06f0\u06f0\u06f0 \u062a\u0648\u0645\u0627\u0646"
@@ -2100,32 +1919,24 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
             <div
               data-plasmic-name={"calc"}
               data-plasmic-override={overrides.calc}
-              className={classNames(projectcss.all, sty.calc)}
+              className={classNames("all", sty.calc)}
             >
-              <div className={classNames(projectcss.all, sty.freeBox__yLfyJ)}>
+              <div className={classNames("all", sty.freeBox__yLfyJ)}>
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__wAuYg
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__wAuYg)}
                 >
                   {
                     "\u062a\u0623\u062b\u06cc\u0631 \u0645\u06cc\u0627\u0646 \u0628\u0631 \u062f\u0631\u0622\u0645\u062f\u0632\u0627\u06cc\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
                   }
                 </div>
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__tbSin
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__tbSin)}
                 >
                   {
                     "\u0648\u06cc\u0698\u06af\u06cc\u200c\u0647\u0627\u06cc \u0645\u062f\u0646\u0638\u0631\u062a \u0631\u0648 \u062a\u06cc\u06a9 \u0628\u0632\u0646 \u0648 \u0646\u0631\u062e \u0627\u062c\u0627\u0631\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u0631\u0648 \u0648\u0627\u0631\u062f \u06a9\u0646\u060c \u062a\u0627 \u06cc\u06a9 \u062a\u062e\u0645\u06cc\u0646 \u0627\u0632 \u0627\u0641\u0632\u0627\u06cc\u0634 \u062f\u0631\u0622\u0645\u062f \u0645\u0627\u0647\u0627\u0646\u0647 \u0648 \u06a9\u0627\u0631\u0645\u0632\u062f \u0645\u06cc\u0627\u0646 \u0628\u0628\u06cc\u0646\u06cc. \u0627\u06cc\u0646 \u0645\u062d\u0627\u0633\u0628\u0647\u200c\u06af\u0631\u060c \u0645\u06cc\u0632\u0627\u0646 \u0627\u062b\u0631\u06af\u0630\u0627\u0631\u06cc \u0645\u06cc\u0627\u0646 \u0628\u0631 \u062f\u0631\u0622\u0645\u062f (\u0646\u0633\u0628\u062a \u0628\u0647 \u0631\u0648\u0634 \u0633\u0646\u062a\u06cc) \u0631\u0648 \u0646\u0634\u0648\u0646 \u0645\u06cc\u200c\u062f\u0647."
                   }
                 </div>
-                <div className={classNames(projectcss.all, sty.freeBox__jkFhU)}>
+                <div className={classNames("all", sty.freeBox__jkFhU)}>
                   <Input
                     data-plasmic-name={"input2"}
                     data-plasmic-override={overrides.input2}
@@ -2143,17 +1954,11 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
                     value={generateStateValueProp($state, ["input2", "value"])}
                   />
 
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox___0Ck7F)}
-                  >
+                  <div className={classNames("all", sty.freeBox___0Ck7F)}>
                     <div
                       data-plasmic-name={"valueText"}
                       data-plasmic-override={overrides.valueText}
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.valueText
-                      )}
+                      className={classNames("all", "__wab_text", sty.valueText)}
                     >
                       {hasVariant(globalVariants, "screen", "smallMobile")
                         ? "\u0631\u0634\u062f \u062f\u0631\u0622\u0645\u062f \u0645\u0627\u0647\u0627\u0646\u0647:"
@@ -2164,11 +1969,7 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
                     <div
                       data-plasmic-name={"value"}
                       data-plasmic-override={overrides.value}
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.value
-                      )}
+                      className={classNames("all", "__wab_text", sty.value)}
                     >
                       <React.Fragment>
                         {(() => {
@@ -2202,17 +2003,11 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
                       </React.Fragment>
                     </div>
                   </div>
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__iUPtD)}
-                  >
+                  <div className={classNames("all", sty.freeBox__iUPtD)}>
                     <div
                       data-plasmic-name={"toman"}
                       data-plasmic-override={overrides.toman}
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.toman
-                      )}
+                      className={classNames("all", "__wab_text", sty.toman)}
                     >
                       {hasVariant(globalVariants, "screen", "smallMobile")
                         ? "\u06a9\u0627\u0631\u0645\u0632\u062f \u0628\u0647 \u0627\u0632\u0627\u06cc \u06cc\u06a9 \u0631\u0632\u0631\u0648:"
@@ -2224,8 +2019,8 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
                       data-plasmic-name={"commission"}
                       data-plasmic-override={overrides.commission}
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.commission
                       )}
                     >
@@ -2265,15 +2060,12 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
               <div
                 data-plasmic-name={"introCalendarRight"}
                 data-plasmic-override={overrides.introCalendarRight}
-                className={classNames(projectcss.all, sty.introCalendarRight)}
+                className={classNames("all", sty.introCalendarRight)}
               >
                 <div
                   data-plasmic-name={"introCalendarRight3"}
                   data-plasmic-override={overrides.introCalendarRight3}
-                  className={classNames(
-                    projectcss.all,
-                    sty.introCalendarRight3
-                  )}
+                  className={classNames("all", sty.introCalendarRight3)}
                 >
                   <Video
                     data-plasmic-name={"htmlVideo"}
@@ -2291,17 +2083,10 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
                 <div
                   data-plasmic-name={"introCalendarRight5"}
                   data-plasmic-override={overrides.introCalendarRight5}
-                  className={classNames(
-                    projectcss.all,
-                    sty.introCalendarRight5
-                  )}
+                  className={classNames("all", sty.introCalendarRight5)}
                 >
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__kLbRg
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__kLbRg)}
                   >
                     {
                       "\u062a\u062c\u0631\u0628\u0647\u200c\u06cc \u00ab\u062d\u0631\u0645\u062a\u200c\u0627\u0644\u0647 \u0642\u06cc\u0635\u0631\u06cc\u00bb \u062f\u0631 \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u00ab\u0645\u06cc\u0627\u0646\u00bb - \u0645\u06cc\u0632\u0628\u0627\u0646 \u062f\u0631 \u0641\u06cc\u0644\u0628\u0646\u062f \u0645\u0627\u0632\u0646\u062f\u0631\u0627\u0646"
@@ -2310,14 +2095,8 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
                 </div>
               </div>
             </div>
-            <div className={classNames(projectcss.all, sty.freeBox__y9Qpf)}>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__iazOe
-                )}
-              >
+            <div className={classNames("all", sty.freeBox__y9Qpf)}>
+              <div className={classNames("all", "__wab_text", sty.text__iazOe)}>
                 {
                   "\u062a\u0627\u0632\u0647 \u0628\u0627 \u00ab\u0645\u06cc\u0627\u0646\u00bb \u0622\u0634\u0646\u0627 \u0634\u062f\u06cc\u061f\n\u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u0648\u06cc\u0698\u06af\u06cc\u200c\u0647\u0627\u06cc \u062f\u0627\u0631\u0627\u06cc \u06a9\u0627\u0631\u0645\u0632\u062f\u060c \u0628\u0631\u0627\u06cc \u06f2\u06f0 \u0631\u0632\u0631\u0648 \u0627\u0648\u0644 \u06a9\u0627\u0645\u0644\u0627 \u0631\u0627\u06cc\u06af\u0627\u0646\u0647"
                 }
@@ -2326,7 +2105,7 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
                 data-plasmic-name={"cta1st"}
                 data-plasmic-override={overrides.cta1st}
                 className={classNames(
-                  projectcss.all,
+                  "all",
                   sty.cta1st,
                   hasVariant(globalVariants, "screen", "smallMobile")
                     ? "clickable"
@@ -2368,8 +2147,8 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
               >
                 <div
                   className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
+                    "all",
+                    "__wab_text",
                     sty.text___6Zx8G,
                     hasVariant(globalVariants, "screen", "smallMobile")
                       ? ``
@@ -2412,21 +2191,15 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
           <div
             data-plasmic-name={"qA"}
             data-plasmic-override={overrides.qA}
-            className={classNames(projectcss.all, sty.qA)}
+            className={classNames("all", sty.qA)}
           >
-            <div className={classNames(projectcss.all, sty.freeBox___7IoCw)}>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text___7W0I
-                )}
-              >
+            <div className={classNames("all", sty.freeBox___7IoCw)}>
+              <div className={classNames("all", "__wab_text", sty.text___7W0I)}>
                 {
                   "\u0633\u0648\u0627\u0644\u0627\u062a \u0645\u062a\u062f\u0627\u0648\u0644:\r\n\r"
                 }
               </div>
-              <div className={classNames(projectcss.all, sty.freeBox__fg00V)}>
+              <div className={classNames("all", sty.freeBox__fg00V)}>
                 {(() => {
                   const child$Props = {
                     activeKey: generateStateValueProp($state, [
@@ -2448,8 +2221,8 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
                               data-plasmic-name={"_1"}
                               data-plasmic-override={overrides._1}
                               className={classNames(
-                                projectcss.all,
-                                projectcss.__wab_text,
+                                "all",
+                                "__wab_text",
                                 sty._1
                               )}
                             >
@@ -2462,8 +2235,8 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
                         >
                           <div
                             className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
+                              "all",
+                              "__wab_text",
                               sty.text__zutQs
                             )}
                           >
@@ -2480,8 +2253,8 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
                           label2={
                             <div
                               className={classNames(
-                                projectcss.all,
-                                projectcss.__wab_text,
+                                "all",
+                                "__wab_text",
                                 sty.text__rfbRv
                               )}
                             >
@@ -2494,8 +2267,8 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
                         >
                           <div
                             className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
+                              "all",
+                              "__wab_text",
                               sty.text__udsS1
                             )}
                           >
@@ -2512,8 +2285,8 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
                           label2={
                             <div
                               className={classNames(
-                                projectcss.all,
-                                projectcss.__wab_text,
+                                "all",
+                                "__wab_text",
                                 sty.text__aiCrP
                               )}
                             >
@@ -2526,8 +2299,8 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
                         >
                           <div
                             className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
+                              "all",
+                              "__wab_text",
                               sty.text__uGte1
                             )}
                           >
@@ -2545,8 +2318,8 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
                           label2={
                             <div
                               className={classNames(
-                                projectcss.all,
-                                projectcss.__wab_text,
+                                "all",
+                                "__wab_text",
                                 sty.text__dlD5
                               )}
                             >
@@ -2559,8 +2332,8 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
                         >
                           <div
                             className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
+                              "all",
+                              "__wab_text",
                               sty.text__yL5BS
                             )}
                           >
@@ -2578,8 +2351,8 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
                           label2={
                             <div
                               className={classNames(
-                                projectcss.all,
-                                projectcss.__wab_text,
+                                "all",
+                                "__wab_text",
                                 sty.text__jw7R
                               )}
                             >
@@ -2592,8 +2365,8 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
                         >
                           <div
                             className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
+                              "all",
+                              "__wab_text",
                               sty.text__sso5
                             )}
                           >
@@ -2611,8 +2384,8 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
                           label2={
                             <div
                               className={classNames(
-                                projectcss.all,
-                                projectcss.__wab_text,
+                                "all",
+                                "__wab_text",
                                 sty.text__ggn5
                               )}
                             >
@@ -2625,8 +2398,8 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
                         >
                           <div
                             className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
+                              "all",
+                              "__wab_text",
                               sty.text__bBnnz
                             )}
                           >
@@ -2673,7 +2446,7 @@ function Plasmicتعرفهخدمات__RenderFunc(props: {
             <div
               data-plasmic-name={"html"}
               data-plasmic-override={overrides.html}
-              className={classNames(projectcss.all, sty.html)}
+              className={classNames("all", sty.html)}
             >
               <ClarityRntComponent
                 data-plasmic-name={"clarityRntComponent"}

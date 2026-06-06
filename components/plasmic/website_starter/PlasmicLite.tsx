@@ -73,7 +73,6 @@ import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-impor
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicLite.module.css"; // plasmic-import: rgUIidrS02xT/css
 
 import Icon36Icon from "./icons/PlasmicIcon__Icon36"; // plasmic-import: yp-BEibF8Gyh/icon
@@ -319,17 +318,17 @@ function PlasmicLite__RenderFunc(props: {
         }
       `}</style>
 
-      <div className={projectcss.plasmic_page_wrapper}>
+      <div className={"plasmic_page_wrapper"}>
         <div
           data-plasmic-name={"home"}
           data-plasmic-override={overrides.home}
           data-plasmic-root={true}
           data-plasmic-for-node={forNode}
           className={classNames(
-            projectcss.all,
-            projectcss.root_reset,
-            projectcss.plasmic_default_styles,
-            projectcss.plasmic_mixins,
+            "all",
+            "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+            "plasmic_default_styles",
+            "plasmic_mixins",
             styleTokensClassNames,
             sty.home
           )}
@@ -343,24 +342,20 @@ function PlasmicLite__RenderFunc(props: {
           <div
             data-plasmic-name={"mainContents"}
             data-plasmic-override={overrides.mainContents}
-            className={classNames(projectcss.all, sty.mainContents)}
+            className={classNames("all", sty.mainContents)}
           >
             <div
               data-plasmic-name={"introCalendar"}
               data-plasmic-override={overrides.introCalendar}
-              className={classNames(projectcss.all, sty.introCalendar)}
+              className={classNames("all", sty.introCalendar)}
             >
               <div
                 data-plasmic-name={"introCalendarTitle"}
                 data-plasmic-override={overrides.introCalendarTitle}
-                className={classNames(projectcss.all, sty.introCalendarTitle)}
+                className={classNames("all", sty.introCalendarTitle)}
               >
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__frdDf
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__frdDf)}
                 >
                   {
                     "\u0645\u06cc\u0627\u0646\u060c \u062a\u0642\u0648\u06cc\u0645 \u0622\u0646\u0644\u0627\u06cc\u0646 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
@@ -370,15 +365,9 @@ function PlasmicLite__RenderFunc(props: {
               <div
                 data-plasmic-name={"introCalendarCaption"}
                 data-plasmic-override={overrides.introCalendarCaption}
-                className={classNames(projectcss.all, sty.introCalendarCaption)}
+                className={classNames("all", sty.introCalendarCaption)}
               >
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__kLo
-                  )}
-                >
+                <div className={classNames("all", "__wab_text", sty.text__kLo)}>
                   {
                     "\u062a\u0645\u0627\u0645 \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0628\u0648\u0645\u06af\u0631\u062f\u06cc \u06cc\u0627 \u0648\u06cc\u0644\u0627\u062a\u0648\u060c \u062a\u0648\u06cc \u062c\u06cc\u0628\u062a \u062f\u0627\u0634\u062a\u0647 \u0628\u0627\u0634!"
                   }
@@ -387,25 +376,22 @@ function PlasmicLite__RenderFunc(props: {
               <div
                 data-plasmic-name={"introCalendar4"}
                 data-plasmic-override={overrides.introCalendar4}
-                className={classNames(projectcss.all, sty.introCalendar4)}
+                className={classNames("all", sty.introCalendar4)}
               >
                 <div
                   data-plasmic-name={"introCalendarRight"}
                   data-plasmic-override={overrides.introCalendarRight}
-                  className={classNames(projectcss.all, sty.introCalendarRight)}
+                  className={classNames("all", sty.introCalendarRight)}
                 >
                   <div
                     data-plasmic-name={"introCalendarRight3"}
                     data-plasmic-override={overrides.introCalendarRight3}
-                    className={classNames(
-                      projectcss.all,
-                      sty.introCalendarRight3
-                    )}
+                    className={classNames("all", sty.introCalendarRight3)}
                   >
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text__yXNy
                       )}
                     >
@@ -417,15 +403,12 @@ function PlasmicLite__RenderFunc(props: {
                   <div
                     data-plasmic-name={"introCalendarRight4"}
                     data-plasmic-override={overrides.introCalendarRight4}
-                    className={classNames(
-                      projectcss.all,
-                      sty.introCalendarRight4
-                    )}
+                    className={classNames("all", sty.introCalendarRight4)}
                   >
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text__bbSiO,
                         "clickable"
                       )}
@@ -463,7 +446,7 @@ function PlasmicLite__RenderFunc(props: {
                 <div
                   data-plasmic-name={"introCalendarLeft"}
                   data-plasmic-override={overrides.introCalendarLeft}
-                  className={classNames(projectcss.all, sty.introCalendarLeft)}
+                  className={classNames("all", sty.introCalendarLeft)}
                 >
                   <PlasmicImg__
                     alt={""}
@@ -500,34 +483,30 @@ function PlasmicLite__RenderFunc(props: {
             <div
               data-plasmic-name={"_3Benefits"}
               data-plasmic-override={overrides._3Benefits}
-              className={classNames(projectcss.all, sty._3Benefits)}
+              className={classNames("all", sty._3Benefits)}
             >
               <div
                 data-plasmic-name={"_3Benefits1st"}
                 data-plasmic-override={overrides._3Benefits1st}
-                className={classNames(projectcss.all, sty._3Benefits1st)}
+                className={classNames("all", sty._3Benefits1st)}
               >
                 <div
                   data-plasmic-name={"icon"}
                   data-plasmic-override={overrides.icon}
-                  className={classNames(projectcss.all, sty.icon)}
+                  className={classNames("all", sty.icon)}
                 >
                   <Icon36Icon
-                    className={classNames(projectcss.all, sty.svg__ylEzy)}
+                    className={classNames("all", sty.svg__ylEzy)}
                     role={"img"}
                   />
                 </div>
                 <div
                   data-plasmic-name={"title"}
                   data-plasmic-override={overrides.title}
-                  className={classNames(projectcss.all, sty.title)}
+                  className={classNames("all", sty.title)}
                 >
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__zjGoq
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__zjGoq)}
                   >
                     {
                       "\u062e\u062f\u0627\u062d\u0627\u0641\u0638\u06cc \u0628\u0627 \u062e\u0637\u0627 \u0648 \u0644\u063a\u0648 \u0631\u0632\u0631\u0648"
@@ -537,14 +516,10 @@ function PlasmicLite__RenderFunc(props: {
                 <div
                   data-plasmic-name={"caption"}
                   data-plasmic-override={overrides.caption}
-                  className={classNames(projectcss.all, sty.caption)}
+                  className={classNames("all", sty.caption)}
                 >
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__dsyrH
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__dsyrH)}
                   >
                     {
                       "\u062f\u06cc\u06af\u0647 \u0647\u06cc\u0686 \u0645\u0633\u0627\u0641\u0631\u06cc \u0641\u0631\u0627\u0645\u0648\u0634 \u0646\u0645\u06cc\u200c\u0634\u0647"
@@ -555,29 +530,25 @@ function PlasmicLite__RenderFunc(props: {
               <div
                 data-plasmic-name={"_3Benefits2nd"}
                 data-plasmic-override={overrides._3Benefits2nd}
-                className={classNames(projectcss.all, sty._3Benefits2nd)}
+                className={classNames("all", sty._3Benefits2nd)}
               >
                 <div
                   data-plasmic-name={"icon2"}
                   data-plasmic-override={overrides.icon2}
-                  className={classNames(projectcss.all, sty.icon2)}
+                  className={classNames("all", sty.icon2)}
                 >
                   <Icon35Icon
-                    className={classNames(projectcss.all, sty.svg__dmNq0)}
+                    className={classNames("all", sty.svg__dmNq0)}
                     role={"img"}
                   />
                 </div>
                 <div
                   data-plasmic-name={"title2"}
                   data-plasmic-override={overrides.title2}
-                  className={classNames(projectcss.all, sty.title2)}
+                  className={classNames("all", sty.title2)}
                 >
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__aEq5G
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__aEq5G)}
                   >
                     {
                       "\u0635\u0631\u0641\u0647\u200c\u062c\u0648\u06cc\u06cc \u062f\u0631 \u0648\u0642\u062a"
@@ -587,14 +558,10 @@ function PlasmicLite__RenderFunc(props: {
                 <div
                   data-plasmic-name={"caption2"}
                   data-plasmic-override={overrides.caption2}
-                  className={classNames(projectcss.all, sty.caption2)}
+                  className={classNames("all", sty.caption2)}
                 >
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__hUkkj
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__hUkkj)}
                   >
                     {
                       "\u062a\u0642\u0648\u06cc\u0645\u062a \u0647\u0645\u06cc\u0634\u0647 \u0628\u0647\u200c\u0631\u0648\u0632\u0647"
@@ -605,29 +572,25 @@ function PlasmicLite__RenderFunc(props: {
               <div
                 data-plasmic-name={"_3Benefits3rd"}
                 data-plasmic-override={overrides._3Benefits3rd}
-                className={classNames(projectcss.all, sty._3Benefits3rd)}
+                className={classNames("all", sty._3Benefits3rd)}
               >
                 <div
                   data-plasmic-name={"icon3"}
                   data-plasmic-override={overrides.icon3}
-                  className={classNames(projectcss.all, sty.icon3)}
+                  className={classNames("all", sty.icon3)}
                 >
                   <Icon33Icon
-                    className={classNames(projectcss.all, sty.svg__u6CeI)}
+                    className={classNames("all", sty.svg__u6CeI)}
                     role={"img"}
                   />
                 </div>
                 <div
                   data-plasmic-name={"title3"}
                   data-plasmic-override={overrides.title3}
-                  className={classNames(projectcss.all, sty.title3)}
+                  className={classNames("all", sty.title3)}
                 >
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__wXrUg
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__wXrUg)}
                   >
                     {
                       "\u0645\u062f\u06cc\u0631\u06cc\u062a \u0645\u062a\u0645\u0631\u06a9\u0632"
@@ -637,14 +600,10 @@ function PlasmicLite__RenderFunc(props: {
                 <div
                   data-plasmic-name={"caption3"}
                   data-plasmic-override={overrides.caption3}
-                  className={classNames(projectcss.all, sty.caption3)}
+                  className={classNames("all", sty.caption3)}
                 >
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__gt0Nw
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__gt0Nw)}
                   >
                     {
                       "\u0627\u0632 \u0646\u06af\u0647\u062f\u0627\u0631\u06cc \u0633\u0631 \u0631\u0633\u06cc\u062f \u062e\u0644\u0627\u0635 \u0634\u0648"
@@ -656,19 +615,15 @@ function PlasmicLite__RenderFunc(props: {
             <div
               data-plasmic-name={"introAutoSync"}
               data-plasmic-override={overrides.introAutoSync}
-              className={classNames(projectcss.all, sty.introAutoSync)}
+              className={classNames("all", sty.introAutoSync)}
             >
               <div
                 data-plasmic-name={"introAutoSyncTitle"}
                 data-plasmic-override={overrides.introAutoSyncTitle}
-                className={classNames(projectcss.all, sty.introAutoSyncTitle)}
+                className={classNames("all", sty.introAutoSyncTitle)}
               >
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__rpXu2
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__rpXu2)}
                 >
                   {
                     "\u0634\u0641\u0627\u0641\u06cc\u062a \u062d\u0633\u0627\u0628 \u0648 \u06a9\u062a\u0627\u0628\u200c\u0647\u0627"
@@ -678,14 +633,10 @@ function PlasmicLite__RenderFunc(props: {
               <div
                 data-plasmic-name={"introAutoSyncCaption"}
                 data-plasmic-override={overrides.introAutoSyncCaption}
-                className={classNames(projectcss.all, sty.introAutoSyncCaption)}
+                className={classNames("all", sty.introAutoSyncCaption)}
               >
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__qVu8H
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__qVu8H)}
                 >
                   {
                     "\u0628\u0627 \u062b\u0628\u062a \u0646\u0631\u062e \u0631\u0648\u06cc \u062a\u0642\u0648\u06cc\u0645 \u0648 \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0645\u0631\u0628\u0648\u0637 \u0628\u0647 \u0647\u0631 \u0631\u0632\u0631\u0648\u060c \u0645\u0648\u0642\u0639 \u062d\u0633\u0627\u0628 \u0648 \u06a9\u062a\u0627\u0628 \u0647\u06cc\u0686 \u062e\u0637\u0627\u06cc\u06cc \u067e\u06cc\u0634 \u0646\u0645\u06cc\u0627\u062f."
@@ -695,22 +646,15 @@ function PlasmicLite__RenderFunc(props: {
               <div
                 data-plasmic-name={"introAutoSyncDesc"}
                 data-plasmic-override={overrides.introAutoSyncDesc}
-                className={classNames(projectcss.all, sty.introAutoSyncDesc)}
+                className={classNames("all", sty.introAutoSyncDesc)}
               >
                 <div
                   data-plasmic-name={"introAutoSyncBenefits"}
                   data-plasmic-override={overrides.introAutoSyncBenefits}
-                  className={classNames(
-                    projectcss.all,
-                    sty.introAutoSyncBenefits
-                  )}
+                  className={classNames("all", sty.introAutoSyncBenefits)}
                 >
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text___6YC3
-                    )}
+                    className={classNames("all", "__wab_text", sty.text___6YC3)}
                   >
                     {
                       "\u2705 \u062b\u0628\u062a \u0646\u0631\u062e \u0627\u062c\u0627\u0631\u0647 \u0647\u0631 \u0631\u0648\u0632 \u062f\u0631 \u062a\u0642\u0648\u06cc\u0645\n\u2705 \u062b\u0628\u062a \u062a\u062e\u0641\u06cc\u0641\n\u2705 \u0627\u0634\u062a\u0631\u0627\u06a9\u200c\u06af\u0630\u0627\u0631\u06cc \u062a\u0642\u0648\u06cc\u0645 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0628\u0627 \u0647\u0645\u06a9\u0627\u0631\u0627\u0646"
@@ -720,7 +664,7 @@ function PlasmicLite__RenderFunc(props: {
                 <div
                   data-plasmic-name={"introAutoSyncGif"}
                   data-plasmic-override={overrides.introAutoSyncGif}
-                  className={classNames(projectcss.all, sty.introAutoSyncGif)}
+                  className={classNames("all", sty.introAutoSyncGif)}
                 >
                   <PlasmicImg__
                     alt={""}
@@ -745,19 +689,15 @@ function PlasmicLite__RenderFunc(props: {
             <div
               data-plasmic-name={"testimonials"}
               data-plasmic-override={overrides.testimonials}
-              className={classNames(projectcss.all, sty.testimonials)}
+              className={classNames("all", sty.testimonials)}
             >
               <div
                 data-plasmic-name={"titlePart"}
                 data-plasmic-override={overrides.titlePart}
-                className={classNames(projectcss.all, sty.titlePart)}
+                className={classNames("all", sty.titlePart)}
               >
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__pQUs
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__pQUs)}
                 >
                   {
                     "\u0627\u0639\u062a\u0645\u0627\u062f \u0628\u06cc\u0634 \u0627\u0632 \u06f1\u06f2\u06f0\u06f0 \u0645\u06cc\u0632\u0628\u0627\u0646 \u0627\u0632 \u0633\u0631\u0627\u0633\u0631 \u06a9\u0634\u0648\u0631"
@@ -767,7 +707,7 @@ function PlasmicLite__RenderFunc(props: {
               <div
                 data-plasmic-name={"commentsScrolling"}
                 data-plasmic-override={overrides.commentsScrolling}
-                className={classNames(projectcss.all, sty.commentsScrolling)}
+                className={classNames("all", sty.commentsScrolling)}
               >
                 <TestimonialsScrolling
                   data-plasmic-name={"testimonialsScrolling"}
@@ -779,7 +719,7 @@ function PlasmicLite__RenderFunc(props: {
                 />
               </div>
             </div>
-            <div className={classNames(projectcss.all, sty.freeBox__bz6Y7)}>
+            <div className={classNames("all", sty.freeBox__bz6Y7)}>
               <Embed
                 data-plasmic-name={"embedHtml"}
                 data-plasmic-override={overrides.embedHtml}
@@ -799,24 +739,20 @@ function PlasmicLite__RenderFunc(props: {
           <div
             data-plasmic-name={"screenshots"}
             data-plasmic-override={overrides.screenshots}
-            className={classNames(projectcss.all, sty.screenshots)}
+            className={classNames("all", sty.screenshots)}
           >
             <div
               data-plasmic-name={"screenshotsRight"}
               data-plasmic-override={overrides.screenshotsRight}
-              className={classNames(projectcss.all, sty.screenshotsRight)}
+              className={classNames("all", sty.screenshotsRight)}
             >
               <div
                 data-plasmic-name={"screenshotsCaption"}
                 data-plasmic-override={overrides.screenshotsCaption}
-                className={classNames(projectcss.all, sty.screenshotsCaption)}
+                className={classNames("all", sty.screenshotsCaption)}
               >
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__r6Rq4
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__r6Rq4)}
                 >
                   {hasVariant(globalVariants, "screen", "smallMobile")
                     ? "\u0645\u0634\u0627\u0647\u062f\u0647 \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u062a\u0627\u0631\u06cc\u062e\u0686\u0647 \u0645\u0647\u0645\u0627\u0646\u0627\u0646 \u0648 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u0622\u06cc\u0646\u062f\u0647"
@@ -829,7 +765,7 @@ function PlasmicLite__RenderFunc(props: {
             <div
               data-plasmic-name={"screenshotsLeft"}
               data-plasmic-override={overrides.screenshotsLeft}
-              className={classNames(projectcss.all, sty.screenshotsLeft)}
+              className={classNames("all", sty.screenshotsLeft)}
             >
               <Embed
                 data-plasmic-name={"carousel"}
@@ -844,17 +780,17 @@ function PlasmicLite__RenderFunc(props: {
           <div
             data-plasmic-name={"addingVillaIntoPltforms"}
             data-plasmic-override={overrides.addingVillaIntoPltforms}
-            className={classNames(projectcss.all, sty.addingVillaIntoPltforms)}
+            className={classNames("all", sty.addingVillaIntoPltforms)}
           >
             <div
               data-plasmic-name={"reg"}
               data-plasmic-override={overrides.reg}
-              className={classNames(projectcss.all, sty.reg)}
+              className={classNames("all", sty.reg)}
             >
               <div
                 className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
+                  "all",
+                  "__wab_text",
                   sty.text__iWtB,
                   "clickable"
                 )}
@@ -890,22 +826,16 @@ function PlasmicLite__RenderFunc(props: {
           <div
             data-plasmic-name={"qA"}
             data-plasmic-override={overrides.qA}
-            className={classNames(projectcss.all, sty.qA)}
+            className={classNames("all", sty.qA)}
           >
-            <div className={classNames(projectcss.all, sty.freeBox__vdQf)}>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__boWLb
-                )}
-              >
+            <div className={classNames("all", sty.freeBox__vdQf)}>
+              <div className={classNames("all", "__wab_text", sty.text__boWLb)}>
                 {
                   "\u0633\u0648\u0627\u0644\u0627\u062a \u0645\u062a\u062f\u0627\u0648\u0644:\r\n\r"
                 }
               </div>
             </div>
-            <div className={classNames(projectcss.all, sty.freeBox___8M3Uf)}>
+            <div className={classNames("all", sty.freeBox___8M3Uf)}>
               {(() => {
                 const child$Props = {
                   activeKey: generateStateValueProp($state, [
@@ -926,11 +856,7 @@ function PlasmicLite__RenderFunc(props: {
                           <div
                             data-plasmic-name={"_1"}
                             data-plasmic-override={overrides._1}
-                            className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
-                              sty._1
-                            )}
+                            className={classNames("all", "__wab_text", sty._1)}
                           >
                             {
                               "\u0647\u0632\u06cc\u0646\u0647\u200c\u06cc \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u00ab\u062a\u0642\u0648\u06cc\u0645 \u06cc\u06a9\u067e\u0627\u0631\u0686\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u00bb \u0686\u0642\u062f\u0631\u0647\u061f"
@@ -941,8 +867,8 @@ function PlasmicLite__RenderFunc(props: {
                       >
                         <div
                           className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
+                            "all",
+                            "__wab_text",
                             sty.text__dMJkD
                           )}
                         >
@@ -959,8 +885,8 @@ function PlasmicLite__RenderFunc(props: {
                         label2={
                           <div
                             className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
+                              "all",
+                              "__wab_text",
                               sty.text__mLEka
                             )}
                           >
@@ -973,8 +899,8 @@ function PlasmicLite__RenderFunc(props: {
                       >
                         <div
                           className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
+                            "all",
+                            "__wab_text",
                             sty.text__xojtl
                           )}
                         >
@@ -992,8 +918,8 @@ function PlasmicLite__RenderFunc(props: {
                         label2={
                           <div
                             className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
+                              "all",
+                              "__wab_text",
                               sty.text__c2Eta
                             )}
                           >
@@ -1006,8 +932,8 @@ function PlasmicLite__RenderFunc(props: {
                       >
                         <div
                           className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
+                            "all",
+                            "__wab_text",
                             sty.text__aqDfq
                           )}
                         >
@@ -1025,8 +951,8 @@ function PlasmicLite__RenderFunc(props: {
                         label2={
                           <div
                             className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
+                              "all",
+                              "__wab_text",
                               sty.text__abClb
                             )}
                           >
@@ -1039,8 +965,8 @@ function PlasmicLite__RenderFunc(props: {
                       >
                         <div
                           className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
+                            "all",
+                            "__wab_text",
                             sty.text__er6Z9
                           )}
                         >
@@ -1055,11 +981,11 @@ function PlasmicLite__RenderFunc(props: {
                                 data-plasmic-name={"link"}
                                 data-plasmic-override={overrides.link}
                                 className={classNames(
-                                  projectcss.all,
-                                  projectcss.a,
-                                  projectcss.a__7SNMk,
-                                  projectcss.__wab_text,
-                                  projectcss.plasmic_default__inline,
+                                  "all",
+                                  "a",
+                                  "a__7SNMk",
+                                  "__wab_text",
+                                  "plasmic_default__inline",
                                   sty.link
                                 )}
                                 component={Link}
@@ -1115,7 +1041,7 @@ function PlasmicLite__RenderFunc(props: {
             <div
               data-plasmic-name={"html"}
               data-plasmic-override={overrides.html}
-              className={classNames(projectcss.all, sty.html)}
+              className={classNames("all", sty.html)}
             >
               <Embed
                 data-plasmic-name={"goftino"}
@@ -1126,7 +1052,7 @@ function PlasmicLite__RenderFunc(props: {
                 }
               />
 
-              <div className={classNames(projectcss.all, sty.freeBox__glh1F)}>
+              <div className={classNames("all", sty.freeBox__glh1F)}>
                 <ClarityRntComponent
                   data-plasmic-name={"clarityRntComponent"}
                   data-plasmic-override={overrides.clarityRntComponent}

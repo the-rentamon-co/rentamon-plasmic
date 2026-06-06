@@ -66,7 +66,6 @@ import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-impor
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicCheckbox.module.css"; // plasmic-import: kNwK3iA1B39P/css
 
 import SquareSvgIcon from "./icons/PlasmicIcon__SquareSvg"; // plasmic-import: I1VWMiXXoPZO/icon
@@ -223,10 +222,10 @@ function PlasmicCheckbox__RenderFunc(props: {
       data-plasmic-root={true}
       data-plasmic-for-node={forNode}
       className={classNames(
-        projectcss.all,
-        projectcss.root_reset,
-        projectcss.plasmic_default_styles,
-        projectcss.plasmic_mixins,
+        "all",
+        "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+        "plasmic_default_styles",
+        "plasmic_mixins",
         styleTokensClassNames,
         sty.root,
         {
@@ -246,7 +245,7 @@ function PlasmicCheckbox__RenderFunc(props: {
       <div
         data-plasmic-name={"freeBox"}
         data-plasmic-override={overrides.freeBox}
-        className={classNames(projectcss.all, sty.freeBox, {
+        className={classNames("all", sty.freeBox, {
           [sty.freeBox___focusVisibleWithin]: triggers.focusVisibleWithin_root,
           [sty.freeBoxisChecked]: hasVariant($state, "isChecked", "isChecked"),
           [sty.freeBoxisDisabled]: hasVariant(
@@ -272,7 +271,7 @@ function PlasmicCheckbox__RenderFunc(props: {
                 ? SquareCheckFilledSvgIcon
                 : SquareSvgIcon
           }
-          className={classNames(projectcss.all, sty.svg, {
+          className={classNames("all", sty.svg, {
             [sty.svg___focusVisibleWithin]: triggers.focusVisibleWithin_root,
             [sty.svgisChecked]: hasVariant($state, "isChecked", "isChecked"),
             [sty.svgisDisabled]: hasVariant($state, "isDisabled", "isDisabled"),
@@ -290,7 +289,7 @@ function PlasmicCheckbox__RenderFunc(props: {
         <div
           data-plasmic-name={"labelContainer"}
           data-plasmic-override={overrides.labelContainer}
-          className={classNames(projectcss.all, sty.labelContainer, {
+          className={classNames("all", sty.labelContainer, {
             [sty.labelContainer___focusVisibleWithin]:
               triggers.focusVisibleWithin_root,
             [sty.labelContainerisDisabled]: hasVariant(

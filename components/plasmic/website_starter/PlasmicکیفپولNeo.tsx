@@ -76,7 +76,6 @@ import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-impor
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicکیفپولNeo.module.css"; // plasmic-import: L3NV0-BjfqNQ/css
 
 import CheckSvgIcon from "./icons/PlasmicIcon__CheckSvg"; // plasmic-import: aHRi_lZjzHt3/icon
@@ -359,17 +358,17 @@ function PlasmicکیفپولNeo__RenderFunc(props: {
         }
       `}</style>
 
-      <div className={projectcss.plasmic_page_wrapper}>
+      <div className={"plasmic_page_wrapper"}>
         <div
           data-plasmic-name={"wallet"}
           data-plasmic-override={overrides.wallet}
           data-plasmic-root={true}
           data-plasmic-for-node={forNode}
           className={classNames(
-            projectcss.all,
-            projectcss.root_reset,
-            projectcss.plasmic_default_styles,
-            projectcss.plasmic_mixins,
+            "all",
+            "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+            "plasmic_default_styles",
+            "plasmic_mixins",
             styleTokensClassNames,
             sty.wallet
           )}
@@ -378,7 +377,7 @@ function PlasmicکیفپولNeo__RenderFunc(props: {
             data-plasmic-name={"header"}
             data-plasmic-override={overrides.header}
             className={classNames(
-              projectcss.all,
+              "all",
               sty.header,
               hasVariant(globalVariants, "screen", "smallMobile")
                 ? "fadeinf"
@@ -387,7 +386,7 @@ function PlasmicکیفپولNeo__RenderFunc(props: {
                   : "fadeinf"
             )}
           >
-            <div className={classNames(projectcss.all, sty.freeBox__jaMuc)}>
+            <div className={classNames("all", sty.freeBox__jaMuc)}>
               <SideBar2
                 data-plasmic-name={"sideBar2"}
                 data-plasmic-override={overrides.sideBar2}
@@ -412,7 +411,7 @@ function PlasmicکیفپولNeo__RenderFunc(props: {
             </div>
             <div
               className={classNames(
-                projectcss.all,
+                "all",
                 sty.freeBox___9MWlx,
                 hasVariant(globalVariants, "screen", "smallMobile")
                   ? ``
@@ -421,8 +420,8 @@ function PlasmicکیفپولNeo__RenderFunc(props: {
             >
               <div
                 className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
+                  "all",
+                  "__wab_text",
                   sty.text__aTs9,
                   "fadeinf"
                 )}
@@ -430,7 +429,7 @@ function PlasmicکیفپولNeo__RenderFunc(props: {
                 {"\u06a9\u06cc\u0641 \u067e\u0648\u0644"}
               </div>
             </div>
-            <div className={classNames(projectcss.all, sty.freeBox__cBpxx)}>
+            <div className={classNames("all", sty.freeBox__cBpxx)}>
               <ApiRequest
                 data-plasmic-name={"profile2"}
                 data-plasmic-override={overrides.profile2}
@@ -485,32 +484,26 @@ function PlasmicکیفپولNeo__RenderFunc(props: {
           <div
             data-plasmic-name={"balanceAndCharge"}
             data-plasmic-override={overrides.balanceAndCharge}
-            className={classNames(projectcss.all, sty.balanceAndCharge)}
+            className={classNames("all", sty.balanceAndCharge)}
           >
             <div
               data-plasmic-name={"balance"}
               data-plasmic-override={overrides.balance}
               className={classNames(
-                projectcss.all,
+                "all",
                 sty.balance,
                 hasVariant(globalVariants, "screen", "smallMobile")
                   ? "fadein"
                   : undefined
               )}
             >
-              <div
-                className={classNames(
-                  projectcss.all,
-                  sty.freeBox__ggFuY,
-                  "fadeinf"
-                )}
-              >
+              <div className={classNames("all", sty.freeBox__ggFuY, "fadeinf")}>
                 <div
                   data-plasmic-name={"balance2"}
                   data-plasmic-override={overrides.balance2}
                   className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
+                    "all",
+                    "__wab_text",
                     sty.balance2,
                     "fadeinf"
                   )}
@@ -546,7 +539,7 @@ function PlasmicکیفپولNeo__RenderFunc(props: {
               data-plasmic-name={"report"}
               data-plasmic-override={overrides.report}
               className={classNames(
-                projectcss.all,
+                "all",
                 sty.report,
                 hasVariant(globalVariants, "screen", "mobile")
                   ? "fadein"
@@ -613,8 +606,8 @@ function PlasmicکیفپولNeo__RenderFunc(props: {
             >
               <div
                 className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
+                  "all",
+                  "__wab_text",
                   sty.text__bMFnI,
                   hasVariant(globalVariants, "screen", "smallMobile")
                     ? "clickable"
@@ -634,9 +627,9 @@ function PlasmicکیفپولNeo__RenderFunc(props: {
             data-plasmic-override={overrides.modal}
             className={classNames("__wab_instance", sty.modal)}
             defaultStylesClassName={classNames(
-              projectcss.root_reset,
-              projectcss.plasmic_default_styles,
-              projectcss.plasmic_mixins,
+              "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+              "plasmic_default_styles",
+              "plasmic_mixins",
               styleTokensClassNames
             )}
             hideFooter={true}
@@ -671,38 +664,20 @@ function PlasmicکیفپولNeo__RenderFunc(props: {
                   : undefined
             }
           >
-            <div className={classNames(projectcss.all, sty.freeBox__sMjgn)}>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__jyyby
-                )}
-              >
+            <div className={classNames("all", sty.freeBox__sMjgn)}>
+              <div className={classNames("all", "__wab_text", sty.text__jyyby)}>
                 {
                   "\u062a\u0627\u06cc\u06cc\u062f \u0645\u0628\u0644\u063a \u0648 \u067e\u0631\u062f\u0627\u062e\u062a \u062f\u0631 \u062f\u0631\u06af\u0627\u0647 \u0628\u0627\u0646\u06a9"
                 }
               </div>
             </div>
-            <div className={classNames(projectcss.all, sty.freeBox__aRsCu)}>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__ne0Fj
-                )}
-              >
+            <div className={classNames("all", sty.freeBox__aRsCu)}>
+              <div className={classNames("all", "__wab_text", sty.text__ne0Fj)}>
                 {hasVariant(globalVariants, "screen", "tablet")
                   ? "\u0645\u0628\u0644\u063a \u067e\u0631\u062f\u0627\u062e\u062a\u06cc:  "
                   : "\u0645\u0628\u0644\u063a:"}
               </div>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__efUf
-                )}
-              >
+              <div className={classNames("all", "__wab_text", sty.text__efUf)}>
                 {hasVariant(globalVariants, "screen", "mobile") ? (
                   <React.Fragment>
                     {(() => {
@@ -766,20 +741,16 @@ function PlasmicکیفپولNeo__RenderFunc(props: {
                 )}
               </div>
             </div>
-            <div className={classNames(projectcss.all, sty.freeBox___2AD12)}>
+            <div className={classNames("all", sty.freeBox___2AD12)}>
               <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text___3JnDg
-                )}
+                className={classNames("all", "__wab_text", sty.text___3JnDg)}
               >
                 {hasVariant(globalVariants, "screen", "tablet")
                   ? "\u0642\u0627\u0628\u0644 \u067e\u0631\u062f\u0627\u062e\u062a \u0628\u0627 \u062a\u0645\u0627\u0645\u06cc \u06a9\u0627\u0631\u062a\u200c\u0647\u0627\u06cc \u0628\u0627\u0646\u06a9\u06cc \u0639\u0636\u0648 \u0634\u062a\u0627\u0628"
                   : "\u0642\u0627\u0628\u0644 \u067e\u0631\u062f\u0627\u062e\u062a \u0628\u0627 \u062a\u0645\u0627\u0645\u06cc \u06a9\u0627\u0631\u062a\u200c\u0647\u0627\u06cc \u0639\u0636\u0648 \u0634\u062a\u0627\u0628\r"}
               </div>
             </div>
-            <div className={classNames(projectcss.all, sty.freeBox__fGhOu)}>
+            <div className={classNames("all", sty.freeBox__fGhOu)}>
               <Button
                 className={classNames("__wab_instance", sty.button___2YOVo)}
                 link={(() => {
@@ -800,11 +771,7 @@ function PlasmicکیفپولNeo__RenderFunc(props: {
                 })()}
               >
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__hsIyy
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__hsIyy)}
                 >
                   {hasVariant(globalVariants, "screen", "tablet")
                     ? "\u067e\u0631\u062f\u0627\u062e\u062a \u0622\u0646\u0644\u0627\u06cc\u0646"
@@ -814,7 +781,7 @@ function PlasmicکیفپولNeo__RenderFunc(props: {
               <div
                 data-plasmic-name={"button2"}
                 data-plasmic-override={overrides.button2}
-                className={classNames(projectcss.all, sty.button2, "clickable")}
+                className={classNames("all", sty.button2, "clickable")}
                 onClick={async event => {
                   const $steps = {};
 
@@ -916,11 +883,7 @@ function PlasmicکیفپولNeo__RenderFunc(props: {
                   />
                 ) : null}
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__tDGcs
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__tDGcs)}
                 >
                   {
                     "\u067e\u0631\u062f\u0627\u062e\u062a \u0627\u06cc\u0646\u062a\u0631\u0646\u062a\u06cc"
@@ -929,25 +892,13 @@ function PlasmicکیفپولNeo__RenderFunc(props: {
               </div>
             </div>
           </AntdModal>
-          <div
-            className={classNames(
-              projectcss.all,
-              sty.freeBox__gkvPt,
-              "fadeinf"
-            )}
-          >
+          <div className={classNames("all", sty.freeBox__gkvPt, "fadeinf")}>
             <div
               data-plasmic-name={"title"}
               data-plasmic-override={overrides.title}
-              className={classNames(projectcss.all, sty.title)}
+              className={classNames("all", sty.title)}
             >
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__n35Hx
-                )}
-              >
+              <div className={classNames("all", "__wab_text", sty.text__n35Hx)}>
                 {
                   "\u0634\u0627\u0631\u0698 \u06a9\u06cc\u0641 \u067e\u0648\u0644"
                 }
@@ -956,22 +907,22 @@ function PlasmicکیفپولNeo__RenderFunc(props: {
             <div
               data-plasmic-name={"charge"}
               data-plasmic-override={overrides.charge}
-              className={classNames(projectcss.all, sty.charge)}
+              className={classNames("all", sty.charge)}
             >
               <div
                 data-plasmic-name={"input"}
                 data-plasmic-override={overrides.input}
-                className={classNames(projectcss.all, sty.input)}
+                className={classNames("all", sty.input)}
               >
                 <div
                   data-plasmic-name={"right"}
                   data-plasmic-override={overrides.right}
-                  className={classNames(projectcss.all, sty.right)}
+                  className={classNames("all", sty.right)}
                 >
                   <div
                     className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
+                      "all",
+                      "__wab_text",
                       sty.text___2X6TJ
                     )}
                   >
@@ -981,7 +932,7 @@ function PlasmicکیفپولNeo__RenderFunc(props: {
                 <div
                   data-plasmic-name={"center"}
                   data-plasmic-override={overrides.center}
-                  className={classNames(projectcss.all, sty.center)}
+                  className={classNames("all", sty.center)}
                 >
                   <Input
                     data-plasmic-name={"input3"}
@@ -1056,14 +1007,10 @@ function PlasmicکیفپولNeo__RenderFunc(props: {
                 <div
                   data-plasmic-name={"left"}
                   data-plasmic-override={overrides.left}
-                  className={classNames(projectcss.all, sty.left)}
+                  className={classNames("all", sty.left)}
                 >
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__heias
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__heias)}
                   >
                     {"\u062a\u0648\u0645\u0627\u0646"}
                   </div>
@@ -1072,19 +1019,15 @@ function PlasmicکیفپولNeo__RenderFunc(props: {
               <div
                 data-plasmic-name={"intext"}
                 data-plasmic-override={overrides.intext}
-                className={classNames(projectcss.all, sty.intext)}
+                className={classNames("all", sty.intext)}
               >
                 <div
                   data-plasmic-name={"right2"}
                   data-plasmic-override={overrides.right2}
-                  className={classNames(projectcss.all, sty.right2)}
+                  className={classNames("all", sty.right2)}
                 >
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__nAnM
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__nAnM)}
                   >
                     {"\u0628\u0647 \u062d\u0631\u0648\u0641:"}
                   </div>
@@ -1092,14 +1035,10 @@ function PlasmicکیفپولNeo__RenderFunc(props: {
                 <div
                   data-plasmic-name={"left2"}
                   data-plasmic-override={overrides.left2}
-                  className={classNames(projectcss.all, sty.left2)}
+                  className={classNames("all", sty.left2)}
                 >
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__zPcy1
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__zPcy1)}
                   >
                     <React.Fragment>
                       {(() => {
@@ -1246,12 +1185,12 @@ function PlasmicکیفپولNeo__RenderFunc(props: {
             <div
               data-plasmic-name={"packages"}
               data-plasmic-override={overrides.packages}
-              className={classNames(projectcss.all, sty.packages)}
+              className={classNames("all", sty.packages)}
             >
               <div
                 data-plasmic-name={"p1"}
                 data-plasmic-override={overrides.p1}
-                className={classNames(projectcss.all, sty.p1)}
+                className={classNames("all", sty.p1)}
               >
                 {(() => {
                   try {
@@ -1268,8 +1207,8 @@ function PlasmicکیفپولNeo__RenderFunc(props: {
                 })() ? (
                   <div
                     className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
+                      "all",
+                      "__wab_text",
                       sty.text__odQDp,
                       hasVariant(globalVariants, "screen", "mobile")
                         ? "clickable"
@@ -1338,8 +1277,8 @@ function PlasmicکیفپولNeo__RenderFunc(props: {
                     data-plasmic-name={"selected"}
                     data-plasmic-override={overrides.selected}
                     className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
+                      "all",
+                      "__wab_text",
                       sty.selected,
                       hasVariant(globalVariants, "screen", "mobile")
                         ? "clickable"
@@ -1406,8 +1345,8 @@ function PlasmicکیفپولNeo__RenderFunc(props: {
                 })() ? (
                   <div
                     className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
+                      "all",
+                      "__wab_text",
                       sty.text__j5UlV,
                       hasVariant(globalVariants, "screen", "mobile")
                         ? "clickable"
@@ -1476,8 +1415,8 @@ function PlasmicکیفپولNeo__RenderFunc(props: {
                     data-plasmic-name={"selected2"}
                     data-plasmic-override={overrides.selected2}
                     className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
+                      "all",
+                      "__wab_text",
                       sty.selected2,
                       hasVariant(globalVariants, "screen", "mobile")
                         ? "clickable"
@@ -1544,8 +1483,8 @@ function PlasmicکیفپولNeo__RenderFunc(props: {
                 })() ? (
                   <div
                     className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
+                      "all",
+                      "__wab_text",
                       sty.text__d2WH5,
                       hasVariant(globalVariants, "screen", "mobile")
                         ? "clickable"
@@ -1614,8 +1553,8 @@ function PlasmicکیفپولNeo__RenderFunc(props: {
                     data-plasmic-name={"selected3"}
                     data-plasmic-override={overrides.selected3}
                     className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
+                      "all",
+                      "__wab_text",
                       sty.selected3,
                       hasVariant(globalVariants, "screen", "mobile")
                         ? "clickable"
@@ -1672,12 +1611,12 @@ function PlasmicکیفپولNeo__RenderFunc(props: {
             <div
               data-plasmic-name={"paymentbutton"}
               data-plasmic-override={overrides.paymentbutton}
-              className={classNames(projectcss.all, sty.paymentbutton)}
+              className={classNames("all", sty.paymentbutton)}
             >
               <div
                 data-plasmic-name={"button"}
                 data-plasmic-override={overrides.button}
-                className={classNames(projectcss.all, sty.button, "clickable")}
+                className={classNames("all", sty.button, "clickable")}
                 onClick={async event => {
                   const $steps = {};
 
@@ -1966,37 +1905,21 @@ function PlasmicکیفپولNeo__RenderFunc(props: {
                   />
                 ) : null}
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text___4VVuG
-                  )}
+                  className={classNames("all", "__wab_text", sty.text___4VVuG)}
                 >
                   {"\u067e\u0631\u062f\u0627\u062e\u062a"}
                 </div>
               </div>
             </div>
-            <div className={classNames(projectcss.all, sty.freeBox___14RM8)}>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__t0Nna
-                )}
-              >
+            <div className={classNames("all", sty.freeBox___14RM8)}>
+              <div className={classNames("all", "__wab_text", sty.text__t0Nna)}>
                 {hasVariant(globalVariants, "screen", "smallMobile")
                   ? "\u062f\u0631 \u0635\u0648\u0631\u062a \u0639\u062f\u0645 \u0631\u0636\u0627\u06cc\u062a \u0627\u0632 \u06a9\u06cc\u0641\u06cc\u062a \u062e\u062f\u0645\u0627\u062a\u060c \u0645\u0648\u062c\u0648\u062f\u06cc \u06a9\u06cc\u0641 \u067e\u0648\u0644 \u0628\u06cc\u200c\u0642\u06cc\u062f\u0648\u0634\u0631\u0637 \u0628\u0647 \u062d\u0633\u0627\u0628 \u0634\u0645\u0627 \u0639\u0648\u062f\u062a \u062f\u0627\u062f\u0647 \u0645\u06cc\u200c\u0634\u0647."
                   : hasVariant(globalVariants, "screen", "mobile")
                     ? "\u062f\u0631 \u0635\u0648\u0631\u062a \u0639\u062f\u0645 \u0631\u0636\u0627\u06cc\u062a \u0627\u0632 \u06a9\u06cc\u0641\u06cc\u062a \u062e\u062f\u0645\u0627\u062a\u060c \u0645\u0648\u062c\u0648\u062f\u06cc \u06a9\u06cc\u0641 \u067e\u0648\u0644 \u067e\u0631\u062f\u0627\u062e\u062a \u0634\u062f\u0647 \u062a\u0648\u0633\u0637 \u0634\u0645\u0627 \u0628\u06cc \u0642\u06cc\u062f\u0648\u0634\u0631\u0637 \u0628\u0647 \u062d\u0633\u0627\u0628 \u0634\u0645\u0627 \u0639\u0648\u062f\u062a \u062f\u0627\u062f\u0647 \u0645\u06cc\u200c\u0634\u0647."
                     : "\u062f\u0631 \u0635\u0648\u0631\u062a \u0639\u062f\u0645 \u0631\u0636\u0627\u06cc\u062a \u0627\u0632 \u06a9\u06cc\u0641\u06cc\u062a \u062e\u062f\u0645\u0627\u062a\u060c \u0645\u0648\u062c\u0648\u062f\u06cc \u06a9\u06cc\u0641 \u067e\u0648\u0644 \u067e\u0631\u062f\u0627\u062e\u062a \u0634\u062f\u0647 \u062a\u0648\u0633\u0637 \u0634\u0645\u0627 \u0628\u06cc \u0642\u06cc\u062f\u0648\u0634\u0631\u0637 \u0628\u0647 \u062d\u0633\u0627\u0628 \u0634\u0645\u0627 \u0639\u0648\u062f\u062a \u062f\u0627\u062f\u0647 \u0645\u06cc\u200c\u0634\u0647."}
               </div>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__tMtd
-                )}
-              >
+              <div className={classNames("all", "__wab_text", sty.text__tMtd)}>
                 {hasVariant(globalVariants, "screen", "mobile") ? (
                   <React.Fragment>
                     <span
@@ -2011,11 +1934,11 @@ function PlasmicکیفپولNeo__RenderFunc(props: {
                     {
                       <PlasmicLink__
                         className={classNames(
-                          projectcss.all,
-                          projectcss.a,
-                          projectcss.a__7SNMk,
-                          projectcss.__wab_text,
-                          projectcss.plasmic_default__inline,
+                          "all",
+                          "a",
+                          "a__7SNMk",
+                          "__wab_text",
+                          "plasmic_default__inline",
                           sty.link__oot7
                         )}
                         component={Link}
@@ -2045,11 +1968,11 @@ function PlasmicکیفپولNeo__RenderFunc(props: {
                     {
                       <PlasmicLink__
                         className={classNames(
-                          projectcss.all,
-                          projectcss.a,
-                          projectcss.a__7SNMk,
-                          projectcss.__wab_text,
-                          projectcss.plasmic_default__inline,
+                          "all",
+                          "a",
+                          "a__7SNMk",
+                          "__wab_text",
+                          "plasmic_default__inline",
                           sty.link__xJb2N
                         )}
                         component={Link}
@@ -2073,14 +1996,10 @@ function PlasmicکیفپولNeo__RenderFunc(props: {
           <div
             data-plasmic-name={"pricing"}
             data-plasmic-override={overrides.pricing}
-            className={classNames(projectcss.all, sty.pricing)}
+            className={classNames("all", sty.pricing)}
           >
             <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__ta8L1
-              )}
+              className={classNames("all", "__wab_text", sty.text__ta8L1)}
               onClick={async event => {
                 const $steps = {};
 
@@ -2122,12 +2041,12 @@ function PlasmicکیفپولNeo__RenderFunc(props: {
           <div
             data-plasmic-name={"ctaReferral"}
             data-plasmic-override={overrides.ctaReferral}
-            className={classNames(projectcss.all, sty.ctaReferral)}
+            className={classNames("all", sty.ctaReferral)}
           >
             <div
               className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
+                "all",
+                "__wab_text",
                 sty.text__lugFm,
                 "clickable"
               )}
@@ -2168,21 +2087,15 @@ function PlasmicکیفپولNeo__RenderFunc(props: {
           <div
             data-plasmic-name={"qA"}
             data-plasmic-override={overrides.qA}
-            className={classNames(projectcss.all, sty.qA)}
+            className={classNames("all", sty.qA)}
           >
-            <div className={classNames(projectcss.all, sty.freeBox__mjC4O)}>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__kPsgD
-                )}
-              >
+            <div className={classNames("all", sty.freeBox__mjC4O)}>
+              <div className={classNames("all", "__wab_text", sty.text__kPsgD)}>
                 {
                   "\u0633\u0648\u0627\u0644\u0627\u062a \u0645\u062a\u062f\u0627\u0648\u0644:\r\n\r"
                 }
               </div>
-              <div className={classNames(projectcss.all, sty.freeBox__dqHwX)}>
+              <div className={classNames("all", sty.freeBox__dqHwX)}>
                 {(() => {
                   const child$Props = {
                     activeKey: generateStateValueProp($state, [
@@ -2205,8 +2118,8 @@ function PlasmicکیفپولNeo__RenderFunc(props: {
                               data-plasmic-name={"_7"}
                               data-plasmic-override={overrides._7}
                               className={classNames(
-                                projectcss.all,
-                                projectcss.__wab_text,
+                                "all",
+                                "__wab_text",
                                 sty._7
                               )}
                             >
@@ -2219,8 +2132,8 @@ function PlasmicکیفپولNeo__RenderFunc(props: {
                         >
                           <div
                             className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
+                              "all",
+                              "__wab_text",
                               sty.text__ybddB
                             )}
                           >
@@ -2239,8 +2152,8 @@ function PlasmicکیفپولNeo__RenderFunc(props: {
                               data-plasmic-name={"_1"}
                               data-plasmic-override={overrides._1}
                               className={classNames(
-                                projectcss.all,
-                                projectcss.__wab_text,
+                                "all",
+                                "__wab_text",
                                 sty._1
                               )}
                             >
@@ -2253,8 +2166,8 @@ function PlasmicکیفپولNeo__RenderFunc(props: {
                         >
                           <div
                             className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
+                              "all",
+                              "__wab_text",
                               sty.text__lDsSk
                             )}
                           >
@@ -2271,8 +2184,8 @@ function PlasmicکیفپولNeo__RenderFunc(props: {
                           label2={
                             <div
                               className={classNames(
-                                projectcss.all,
-                                projectcss.__wab_text,
+                                "all",
+                                "__wab_text",
                                 sty.text__ntJkp
                               )}
                             >
@@ -2285,8 +2198,8 @@ function PlasmicکیفپولNeo__RenderFunc(props: {
                         >
                           <div
                             className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
+                              "all",
+                              "__wab_text",
                               sty.text__kDypu
                             )}
                           >
@@ -2303,8 +2216,8 @@ function PlasmicکیفپولNeo__RenderFunc(props: {
                           label2={
                             <div
                               className={classNames(
-                                projectcss.all,
-                                projectcss.__wab_text,
+                                "all",
+                                "__wab_text",
                                 sty.text___6Q8Sn
                               )}
                             >
@@ -2317,8 +2230,8 @@ function PlasmicکیفپولNeo__RenderFunc(props: {
                         >
                           <div
                             className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
+                              "all",
+                              "__wab_text",
                               sty.text__mrR39
                             )}
                           >
@@ -2331,11 +2244,11 @@ function PlasmicکیفپولNeo__RenderFunc(props: {
                               {
                                 <PlasmicLink__
                                   className={classNames(
-                                    projectcss.all,
-                                    projectcss.a,
-                                    projectcss.a__7SNMk,
-                                    projectcss.__wab_text,
-                                    projectcss.plasmic_default__inline,
+                                    "all",
+                                    "a",
+                                    "a__7SNMk",
+                                    "__wab_text",
+                                    "plasmic_default__inline",
                                     sty.link__keRqm
                                   )}
                                   component={Link}
@@ -2360,8 +2273,8 @@ function PlasmicکیفپولNeo__RenderFunc(props: {
                           label2={
                             <div
                               className={classNames(
-                                projectcss.all,
-                                projectcss.__wab_text,
+                                "all",
+                                "__wab_text",
                                 sty.text___7HkL
                               )}
                             >
@@ -2374,8 +2287,8 @@ function PlasmicکیفپولNeo__RenderFunc(props: {
                         >
                           <div
                             className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
+                              "all",
+                              "__wab_text",
                               sty.text__yH8Hd
                             )}
                           >
@@ -2392,8 +2305,8 @@ function PlasmicکیفپولNeo__RenderFunc(props: {
                           label2={
                             <div
                               className={classNames(
-                                projectcss.all,
-                                projectcss.__wab_text,
+                                "all",
+                                "__wab_text",
                                 sty.text__xrs5K
                               )}
                             >
@@ -2406,8 +2319,8 @@ function PlasmicکیفپولNeo__RenderFunc(props: {
                         >
                           <div
                             className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
+                              "all",
+                              "__wab_text",
                               sty.text__cXpkP
                             )}
                           >
@@ -2425,8 +2338,8 @@ function PlasmicکیفپولNeo__RenderFunc(props: {
                           label2={
                             <div
                               className={classNames(
-                                projectcss.all,
-                                projectcss.__wab_text,
+                                "all",
+                                "__wab_text",
                                 sty.text___6JQzg
                               )}
                             >
@@ -2439,8 +2352,8 @@ function PlasmicکیفپولNeo__RenderFunc(props: {
                         >
                           <div
                             className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
+                              "all",
+                              "__wab_text",
                               sty.text__aZyHz
                             )}
                           >
@@ -2458,8 +2371,8 @@ function PlasmicکیفپولNeo__RenderFunc(props: {
                           label2={
                             <div
                               className={classNames(
-                                projectcss.all,
-                                projectcss.__wab_text,
+                                "all",
+                                "__wab_text",
                                 sty.text__ldLxy
                               )}
                             >
@@ -2472,8 +2385,8 @@ function PlasmicکیفپولNeo__RenderFunc(props: {
                         >
                           <div
                             className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
+                              "all",
+                              "__wab_text",
                               sty.text__tt9Rb
                             )}
                           >
@@ -2520,9 +2433,9 @@ function PlasmicکیفپولNeo__RenderFunc(props: {
             <div
               data-plasmic-name={"html"}
               data-plasmic-override={overrides.html}
-              className={classNames(projectcss.all, sty.html)}
+              className={classNames("all", sty.html)}
             >
-              <div className={classNames(projectcss.all, sty.freeBox__gVtz2)}>
+              <div className={classNames("all", sty.freeBox__gVtz2)}>
                 <ClarityRntComponent
                   data-plasmic-name={"clarityRntComponent"}
                   data-plasmic-override={overrides.clarityRntComponent}

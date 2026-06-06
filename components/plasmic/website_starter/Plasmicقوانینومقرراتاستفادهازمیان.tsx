@@ -69,7 +69,6 @@ import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-impor
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./Plasmicقوانینومقرراتاستفادهازمیان.module.css"; // plasmic-import: ItZEs9masGCY/css
 
 const emptyProxy: any = new Proxy(() => "", {
@@ -229,17 +228,17 @@ function Plasmicقوانینومقرراتاستفادهازمیان__RenderFunc
         }
       `}</style>
 
-      <div className={projectcss.plasmic_page_wrapper}>
+      <div className={"plasmic_page_wrapper"}>
         <div
           data-plasmic-name={"root"}
           data-plasmic-override={overrides.root}
           data-plasmic-root={true}
           data-plasmic-for-node={forNode}
           className={classNames(
-            projectcss.all,
-            projectcss.root_reset,
-            projectcss.plasmic_default_styles,
-            projectcss.plasmic_mixins,
+            "all",
+            "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+            "plasmic_default_styles",
+            "plasmic_mixins",
             styleTokensClassNames,
             sty.root
           )}
@@ -275,24 +274,20 @@ function Plasmicقوانینومقرراتاستفادهازمیان__RenderFunc
           <div
             data-plasmic-name={"mainContents"}
             data-plasmic-override={overrides.mainContents}
-            className={classNames(projectcss.all, sty.mainContents)}
+            className={classNames("all", sty.mainContents)}
           >
             <div
               data-plasmic-name={"intro1st"}
               data-plasmic-override={overrides.intro1st}
-              className={classNames(projectcss.all, sty.intro1st)}
+              className={classNames("all", sty.intro1st)}
             >
               <div
                 data-plasmic-name={"introTitle"}
                 data-plasmic-override={overrides.introTitle}
-                className={classNames(projectcss.all, sty.introTitle)}
+                className={classNames("all", sty.introTitle)}
               >
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text___2BkbI
-                  )}
+                  className={classNames("all", "__wab_text", sty.text___2BkbI)}
                 >
                   {
                     "\u0642\u0648\u0627\u0646\u06cc\u0646 \u0648 \u0645\u0642\u0631\u0631\u0627\u062a \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u00ab\u0645\u06cc\u0627\u0646\u00bb"
@@ -303,26 +298,14 @@ function Plasmicقوانینومقرراتاستفادهازمیان__RenderFunc
             <div
               data-plasmic-name={"introduction"}
               data-plasmic-override={overrides.introduction}
-              className={classNames(projectcss.all, sty.introduction)}
+              className={classNames("all", sty.introduction)}
             >
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__rvVUk
-                )}
-              >
+              <div className={classNames("all", "__wab_text", sty.text__rvVUk)}>
                 {
                   "\u0622\u062e\u0631\u06cc\u0646 \u0628\u0647\u200c\u0631\u0648\u0632 \u0631\u0633\u0627\u0646\u06cc: \u06f1\u06f4\u06f0\u06f4/\u06f0\u06f8/\u06f2\u06f6 \u0633\u0627\u0639\u062a \u06f1\u06f9:\u06f4\u06f5"
                 }
               </div>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__isa1H
-                )}
-              >
+              <div className={classNames("all", "__wab_text", sty.text__isa1H)}>
                 {
                   "\u06a9\u0627\u0631\u0628\u0631 \u06af\u0631\u0627\u0645\u06cc\u060c \u062a\u0645\u0627\u0645 \u062a\u0644\u0627\u0634 \u0645\u06cc\u0627\u0646 (\u0631\u0646\u062a\u0627\u0645\u0648\u0646 \u0633\u0627\u0628\u0642) \u062f\u0631 \u062a\u062f\u0648\u06cc\u0646 \u0627\u06cc\u0646 \u0645\u0633\u062a\u0646\u062f\u060c \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0628\u0647\u06cc\u0646\u0647 \u0634\u0645\u0627 \u0627\u0632 \u062e\u062f\u0645\u0627\u062a \u0634\u0631\u06a9\u062a \u00ab\u062a\u0648\u0633\u0639\u0647 \u0641\u0646\u0627\u0648\u0631\u06cc \u0648 \u062a\u0648\u0627\u0646\u0645\u0646\u062f\u0633\u0627\u0632\u06cc \u0634\u0631\u06cc\u0641\u00bb \u0628\u0647 \u0634\u0645\u0627\u0631\u0647 \u062b\u0628\u062a \u06f2\u06f2\u06f5\u06f7\u06f7 \u0627\u0633\u062a. \u0628\u0647 \u0645\u0646\u0638\u0648\u0631 \u0622\u0634\u0646\u0627\u06cc\u06cc \u0647\u0631\u0686\u0647 \u0628\u06cc\u0634\u062a\u0631 \u062d\u0642 \u0648 \u062d\u0642\u0648\u0642 \u0642\u0627\u0646\u0648\u0646\u06cc \u062e\u0648\u062f\u060c \u0644\u0637\u0641\u0627 \u0645\u0648\u0627\u0631\u062f \u0632\u06cc\u0631 \u0631\u0627 \u0628\u0647\u200c\u062f\u0642\u062a \u0645\u0637\u0627\u0644\u0639\u0647 \u06a9\u0646\u06cc\u062f.\r"
                 }
@@ -331,15 +314,9 @@ function Plasmicقوانینومقرراتاستفادهازمیان__RenderFunc
             <div
               data-plasmic-name={"introduction2"}
               data-plasmic-override={overrides.introduction2}
-              className={classNames(projectcss.all, sty.introduction2)}
+              className={classNames("all", sty.introduction2)}
             >
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__un56I
-                )}
-              >
+              <div className={classNames("all", "__wab_text", sty.text__un56I)}>
                 <React.Fragment>
                   <span
                     className={
@@ -355,18 +332,18 @@ function Plasmicقوانینومقرراتاستفادهازمیان__RenderFunc
                   {
                     <ul
                       className={classNames(
-                        projectcss.all,
-                        projectcss.ul,
-                        projectcss.ul__7SNMk,
+                        "all",
+                        "ul",
+                        "ul__7SNMk",
                         sty.ul__hG4Nf
                       )}
                     >
                       <li
                         className={classNames(
-                          projectcss.all,
-                          projectcss.li,
-                          projectcss.li__7SNMk,
-                          projectcss.__wab_text,
+                          "all",
+                          "li",
+                          "li__7SNMk",
+                          "__wab_text",
                           sty.li__eRDu
                         )}
                       >
@@ -376,10 +353,10 @@ function Plasmicقوانینومقرراتاستفادهازمیان__RenderFunc
                       </li>
                       <li
                         className={classNames(
-                          projectcss.all,
-                          projectcss.li,
-                          projectcss.li__7SNMk,
-                          projectcss.__wab_text,
+                          "all",
+                          "li",
+                          "li__7SNMk",
+                          "__wab_text",
                           sty.li__jEfJi
                         )}
                       >
@@ -389,10 +366,10 @@ function Plasmicقوانینومقرراتاستفادهازمیان__RenderFunc
                       </li>
                       <li
                         className={classNames(
-                          projectcss.all,
-                          projectcss.li,
-                          projectcss.li__7SNMk,
-                          projectcss.__wab_text,
+                          "all",
+                          "li",
+                          "li__7SNMk",
+                          "__wab_text",
                           sty.li__rwfnI
                         )}
                       >
@@ -402,10 +379,10 @@ function Plasmicقوانینومقرراتاستفادهازمیان__RenderFunc
                       </li>
                       <li
                         className={classNames(
-                          projectcss.all,
-                          projectcss.li,
-                          projectcss.li__7SNMk,
-                          projectcss.__wab_text,
+                          "all",
+                          "li",
+                          "li__7SNMk",
+                          "__wab_text",
                           sty.li__kSPd3
                         )}
                       >
@@ -415,10 +392,10 @@ function Plasmicقوانینومقرراتاستفادهازمیان__RenderFunc
                       </li>
                       <li
                         className={classNames(
-                          projectcss.all,
-                          projectcss.li,
-                          projectcss.li__7SNMk,
-                          projectcss.__wab_text,
+                          "all",
+                          "li",
+                          "li__7SNMk",
+                          "__wab_text",
                           sty.li__wC7R5
                         )}
                       >
@@ -430,10 +407,10 @@ function Plasmicقوانینومقرراتاستفادهازمیان__RenderFunc
                       </li>
                       <li
                         className={classNames(
-                          projectcss.all,
-                          projectcss.li,
-                          projectcss.li__7SNMk,
-                          projectcss.__wab_text,
+                          "all",
+                          "li",
+                          "li__7SNMk",
+                          "__wab_text",
                           sty.li__c2OU9
                         )}
                       >
@@ -443,10 +420,10 @@ function Plasmicقوانینومقرراتاستفادهازمیان__RenderFunc
                       </li>
                       <li
                         className={classNames(
-                          projectcss.all,
-                          projectcss.li,
-                          projectcss.li__7SNMk,
-                          projectcss.__wab_text,
+                          "all",
+                          "li",
+                          "li__7SNMk",
+                          "__wab_text",
                           sty.li__sbEb
                         )}
                       >
@@ -456,10 +433,10 @@ function Plasmicقوانینومقرراتاستفادهازمیان__RenderFunc
                       </li>
                       <li
                         className={classNames(
-                          projectcss.all,
-                          projectcss.li,
-                          projectcss.li__7SNMk,
-                          projectcss.__wab_text,
+                          "all",
+                          "li",
+                          "li__7SNMk",
+                          "__wab_text",
                           sty.li__xvhf3
                         )}
                       >
@@ -469,10 +446,10 @@ function Plasmicقوانینومقرراتاستفادهازمیان__RenderFunc
                       </li>
                       <li
                         className={classNames(
-                          projectcss.all,
-                          projectcss.li,
-                          projectcss.li__7SNMk,
-                          projectcss.__wab_text,
+                          "all",
+                          "li",
+                          "li__7SNMk",
+                          "__wab_text",
                           sty.li__nttkT
                         )}
                       >
@@ -482,10 +459,10 @@ function Plasmicقوانینومقرراتاستفادهازمیان__RenderFunc
                       </li>
                       <li
                         className={classNames(
-                          projectcss.all,
-                          projectcss.li,
-                          projectcss.li__7SNMk,
-                          projectcss.__wab_text,
+                          "all",
+                          "li",
+                          "li__7SNMk",
+                          "__wab_text",
                           sty.li___9HlV0
                         )}
                       >
@@ -495,10 +472,10 @@ function Plasmicقوانینومقرراتاستفادهازمیان__RenderFunc
                       </li>
                       <li
                         className={classNames(
-                          projectcss.all,
-                          projectcss.li,
-                          projectcss.li__7SNMk,
-                          projectcss.__wab_text,
+                          "all",
+                          "li",
+                          "li__7SNMk",
+                          "__wab_text",
                           sty.li__jRrOt
                         )}
                       >
@@ -523,18 +500,18 @@ function Plasmicقوانینومقرراتاستفادهازمیان__RenderFunc
                   {
                     <ul
                       className={classNames(
-                        projectcss.all,
-                        projectcss.ul,
-                        projectcss.ul__7SNMk,
+                        "all",
+                        "ul",
+                        "ul__7SNMk",
                         sty.ul__eCqGt
                       )}
                     >
                       <li
                         className={classNames(
-                          projectcss.all,
-                          projectcss.li,
-                          projectcss.li__7SNMk,
-                          projectcss.__wab_text,
+                          "all",
+                          "li",
+                          "li__7SNMk",
+                          "__wab_text",
                           sty.li__v2Gmg
                         )}
                       >
@@ -544,10 +521,10 @@ function Plasmicقوانینومقرراتاستفادهازمیان__RenderFunc
                       </li>
                       <li
                         className={classNames(
-                          projectcss.all,
-                          projectcss.li,
-                          projectcss.li__7SNMk,
-                          projectcss.__wab_text,
+                          "all",
+                          "li",
+                          "li__7SNMk",
+                          "__wab_text",
                           sty.li__dLnT
                         )}
                       >
@@ -557,10 +534,10 @@ function Plasmicقوانینومقرراتاستفادهازمیان__RenderFunc
                       </li>
                       <li
                         className={classNames(
-                          projectcss.all,
-                          projectcss.li,
-                          projectcss.li__7SNMk,
-                          projectcss.__wab_text,
+                          "all",
+                          "li",
+                          "li__7SNMk",
+                          "__wab_text",
                           sty.li__xi3KN
                         )}
                       >
@@ -570,10 +547,10 @@ function Plasmicقوانینومقرراتاستفادهازمیان__RenderFunc
                       </li>
                       <li
                         className={classNames(
-                          projectcss.all,
-                          projectcss.li,
-                          projectcss.li__7SNMk,
-                          projectcss.__wab_text,
+                          "all",
+                          "li",
+                          "li__7SNMk",
+                          "__wab_text",
                           sty.li___761TA
                         )}
                       >
@@ -583,10 +560,10 @@ function Plasmicقوانینومقرراتاستفادهازمیان__RenderFunc
                       </li>
                       <li
                         className={classNames(
-                          projectcss.all,
-                          projectcss.li,
-                          projectcss.li__7SNMk,
-                          projectcss.__wab_text,
+                          "all",
+                          "li",
+                          "li__7SNMk",
+                          "__wab_text",
                           sty.li___58Qoc
                         )}
                       >
@@ -596,10 +573,10 @@ function Plasmicقوانینومقرراتاستفادهازمیان__RenderFunc
                       </li>
                       <li
                         className={classNames(
-                          projectcss.all,
-                          projectcss.li,
-                          projectcss.li__7SNMk,
-                          projectcss.__wab_text,
+                          "all",
+                          "li",
+                          "li__7SNMk",
+                          "__wab_text",
                           sty.li__uiKSs
                         )}
                       >
@@ -609,10 +586,10 @@ function Plasmicقوانینومقرراتاستفادهازمیان__RenderFunc
                       </li>
                       <li
                         className={classNames(
-                          projectcss.all,
-                          projectcss.li,
-                          projectcss.li__7SNMk,
-                          projectcss.__wab_text,
+                          "all",
+                          "li",
+                          "li__7SNMk",
+                          "__wab_text",
                           sty.li__fylWf
                         )}
                       >
@@ -622,10 +599,10 @@ function Plasmicقوانینومقرراتاستفادهازمیان__RenderFunc
                       </li>
                       <li
                         className={classNames(
-                          projectcss.all,
-                          projectcss.li,
-                          projectcss.li__7SNMk,
-                          projectcss.__wab_text,
+                          "all",
+                          "li",
+                          "li__7SNMk",
+                          "__wab_text",
                           sty.li__oP14E
                         )}
                       >
@@ -635,10 +612,10 @@ function Plasmicقوانینومقرراتاستفادهازمیان__RenderFunc
                       </li>
                       <li
                         className={classNames(
-                          projectcss.all,
-                          projectcss.li,
-                          projectcss.li__7SNMk,
-                          projectcss.__wab_text,
+                          "all",
+                          "li",
+                          "li__7SNMk",
+                          "__wab_text",
                           sty.li__reKfS
                         )}
                       >
@@ -648,10 +625,10 @@ function Plasmicقوانینومقرراتاستفادهازمیان__RenderFunc
                       </li>
                       <li
                         className={classNames(
-                          projectcss.all,
-                          projectcss.li,
-                          projectcss.li__7SNMk,
-                          projectcss.__wab_text,
+                          "all",
+                          "li",
+                          "li__7SNMk",
+                          "__wab_text",
                           sty.li__lTX
                         )}
                       >
@@ -661,10 +638,10 @@ function Plasmicقوانینومقرراتاستفادهازمیان__RenderFunc
                       </li>
                       <li
                         className={classNames(
-                          projectcss.all,
-                          projectcss.li,
-                          projectcss.li__7SNMk,
-                          projectcss.__wab_text,
+                          "all",
+                          "li",
+                          "li__7SNMk",
+                          "__wab_text",
                           sty.li__rlSmh
                         )}
                       >
@@ -674,10 +651,10 @@ function Plasmicقوانینومقرراتاستفادهازمیان__RenderFunc
                       </li>
                       <li
                         className={classNames(
-                          projectcss.all,
-                          projectcss.li,
-                          projectcss.li__7SNMk,
-                          projectcss.__wab_text,
+                          "all",
+                          "li",
+                          "li__7SNMk",
+                          "__wab_text",
                           sty.li__u530
                         )}
                       >
@@ -687,10 +664,10 @@ function Plasmicقوانینومقرراتاستفادهازمیان__RenderFunc
                       </li>
                       <li
                         className={classNames(
-                          projectcss.all,
-                          projectcss.li,
-                          projectcss.li__7SNMk,
-                          projectcss.__wab_text,
+                          "all",
+                          "li",
+                          "li__7SNMk",
+                          "__wab_text",
                           sty.li__nfdW7
                         )}
                       >
@@ -703,13 +680,7 @@ function Plasmicقوانینومقرراتاستفادهازمیان__RenderFunc
                   <React.Fragment>{""}</React.Fragment>
                 </React.Fragment>
               </div>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__wT5Ns
-                )}
-              >
+              <div className={classNames("all", "__wab_text", sty.text__wT5Ns)}>
                 <React.Fragment>
                   <React.Fragment>{"\r\n\n"}</React.Fragment>
                   <span
@@ -760,18 +731,18 @@ function Plasmicقوانینومقرراتاستفادهازمیان__RenderFunc
                   {
                     <ul
                       className={classNames(
-                        projectcss.all,
-                        projectcss.ul,
-                        projectcss.ul__7SNMk,
+                        "all",
+                        "ul",
+                        "ul__7SNMk",
                         sty.ul___95RfE
                       )}
                     >
                       <li
                         className={classNames(
-                          projectcss.all,
-                          projectcss.li,
-                          projectcss.li__7SNMk,
-                          projectcss.__wab_text,
+                          "all",
+                          "li",
+                          "li__7SNMk",
+                          "__wab_text",
                           sty.li__xumMs
                         )}
                       >
@@ -781,10 +752,10 @@ function Plasmicقوانینومقرراتاستفادهازمیان__RenderFunc
                       </li>
                       <li
                         className={classNames(
-                          projectcss.all,
-                          projectcss.li,
-                          projectcss.li__7SNMk,
-                          projectcss.__wab_text,
+                          "all",
+                          "li",
+                          "li__7SNMk",
+                          "__wab_text",
                           sty.li__iqaq9
                         )}
                       >
@@ -794,10 +765,10 @@ function Plasmicقوانینومقرراتاستفادهازمیان__RenderFunc
                       </li>
                       <li
                         className={classNames(
-                          projectcss.all,
-                          projectcss.li,
-                          projectcss.li__7SNMk,
-                          projectcss.__wab_text,
+                          "all",
+                          "li",
+                          "li__7SNMk",
+                          "__wab_text",
                           sty.li___0Sb97
                         )}
                       >
@@ -807,10 +778,10 @@ function Plasmicقوانینومقرراتاستفادهازمیان__RenderFunc
                       </li>
                       <li
                         className={classNames(
-                          projectcss.all,
-                          projectcss.li,
-                          projectcss.li__7SNMk,
-                          projectcss.__wab_text,
+                          "all",
+                          "li",
+                          "li__7SNMk",
+                          "__wab_text",
                           sty.li___5DvK5
                         )}
                       >
@@ -839,18 +810,18 @@ function Plasmicقوانینومقرراتاستفادهازمیان__RenderFunc
                   {
                     <ul
                       className={classNames(
-                        projectcss.all,
-                        projectcss.ul,
-                        projectcss.ul__7SNMk,
+                        "all",
+                        "ul",
+                        "ul__7SNMk",
                         sty.ul__jWoRr
                       )}
                     >
                       <li
                         className={classNames(
-                          projectcss.all,
-                          projectcss.li,
-                          projectcss.li__7SNMk,
-                          projectcss.__wab_text,
+                          "all",
+                          "li",
+                          "li__7SNMk",
+                          "__wab_text",
                           sty.li__yjxtS
                         )}
                       >
@@ -862,10 +833,10 @@ function Plasmicقوانینومقرراتاستفادهازمیان__RenderFunc
                       </li>
                       <li
                         className={classNames(
-                          projectcss.all,
-                          projectcss.li,
-                          projectcss.li__7SNMk,
-                          projectcss.__wab_text,
+                          "all",
+                          "li",
+                          "li__7SNMk",
+                          "__wab_text",
                           sty.li___4OAgJ
                         )}
                       >
@@ -1000,13 +971,7 @@ function Plasmicقوانینومقرراتاستفادهازمیان__RenderFunc
                   </React.Fragment>
                 </React.Fragment>
               </div>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__mnQ1G
-                )}
-              >
+              <div className={classNames("all", "__wab_text", sty.text__mnQ1G)}>
                 {hasVariant(globalVariants, "screen", "mobile") ? (
                   <React.Fragment>
                     <React.Fragment>{"\r\n\n"}</React.Fragment>
@@ -1024,18 +989,18 @@ function Plasmicقوانینومقرراتاستفادهازمیان__RenderFunc
                     {
                       <ul
                         className={classNames(
-                          projectcss.all,
-                          projectcss.ul,
-                          projectcss.ul__7SNMk,
+                          "all",
+                          "ul",
+                          "ul__7SNMk",
                           sty.ul__sUbvs
                         )}
                       >
                         <li
                           className={classNames(
-                            projectcss.all,
-                            projectcss.li,
-                            projectcss.li__7SNMk,
-                            projectcss.__wab_text,
+                            "all",
+                            "li",
+                            "li__7SNMk",
+                            "__wab_text",
                             sty.li__dgt4B
                           )}
                         >
@@ -1045,10 +1010,10 @@ function Plasmicقوانینومقرراتاستفادهازمیان__RenderFunc
                         </li>
                         <li
                           className={classNames(
-                            projectcss.all,
-                            projectcss.li,
-                            projectcss.li__7SNMk,
-                            projectcss.__wab_text,
+                            "all",
+                            "li",
+                            "li__7SNMk",
+                            "__wab_text",
                             sty.li__cTaYd
                           )}
                         >
@@ -1058,10 +1023,10 @@ function Plasmicقوانینومقرراتاستفادهازمیان__RenderFunc
                         </li>
                         <li
                           className={classNames(
-                            projectcss.all,
-                            projectcss.li,
-                            projectcss.li__7SNMk,
-                            projectcss.__wab_text,
+                            "all",
+                            "li",
+                            "li__7SNMk",
+                            "__wab_text",
                             sty.li__szb2J
                           )}
                         >
@@ -1071,10 +1036,10 @@ function Plasmicقوانینومقرراتاستفادهازمیان__RenderFunc
                         </li>
                         <li
                           className={classNames(
-                            projectcss.all,
-                            projectcss.li,
-                            projectcss.li__7SNMk,
-                            projectcss.__wab_text,
+                            "all",
+                            "li",
+                            "li__7SNMk",
+                            "__wab_text",
                             sty.li__mZck4
                           )}
                         >
@@ -1084,10 +1049,10 @@ function Plasmicقوانینومقرراتاستفادهازمیان__RenderFunc
                         </li>
                         <li
                           className={classNames(
-                            projectcss.all,
-                            projectcss.li,
-                            projectcss.li__7SNMk,
-                            projectcss.__wab_text,
+                            "all",
+                            "li",
+                            "li__7SNMk",
+                            "__wab_text",
                             sty.li__qsDd6
                           )}
                         >
@@ -1097,10 +1062,10 @@ function Plasmicقوانینومقرراتاستفادهازمیان__RenderFunc
                         </li>
                         <li
                           className={classNames(
-                            projectcss.all,
-                            projectcss.li,
-                            projectcss.li__7SNMk,
-                            projectcss.__wab_text,
+                            "all",
+                            "li",
+                            "li__7SNMk",
+                            "__wab_text",
                             sty.li__nfomN
                           )}
                         >
@@ -1110,10 +1075,10 @@ function Plasmicقوانینومقرراتاستفادهازمیان__RenderFunc
                         </li>
                         <li
                           className={classNames(
-                            projectcss.all,
-                            projectcss.li,
-                            projectcss.li__7SNMk,
-                            projectcss.__wab_text,
+                            "all",
+                            "li",
+                            "li__7SNMk",
+                            "__wab_text",
                             sty.li__fdAaa
                           )}
                         >
@@ -1123,10 +1088,10 @@ function Plasmicقوانینومقرراتاستفادهازمیان__RenderFunc
                         </li>
                         <li
                           className={classNames(
-                            projectcss.all,
-                            projectcss.li,
-                            projectcss.li__7SNMk,
-                            projectcss.__wab_text,
+                            "all",
+                            "li",
+                            "li__7SNMk",
+                            "__wab_text",
                             sty.li__k5Wwf
                           )}
                         >
@@ -1136,10 +1101,10 @@ function Plasmicقوانینومقرراتاستفادهازمیان__RenderFunc
                         </li>
                         <li
                           className={classNames(
-                            projectcss.all,
-                            projectcss.li,
-                            projectcss.li__7SNMk,
-                            projectcss.__wab_text,
+                            "all",
+                            "li",
+                            "li__7SNMk",
+                            "__wab_text",
                             sty.li__dSkzc
                           )}
                         >
@@ -1149,10 +1114,10 @@ function Plasmicقوانینومقرراتاستفادهازمیان__RenderFunc
                         </li>
                         <li
                           className={classNames(
-                            projectcss.all,
-                            projectcss.li,
-                            projectcss.li__7SNMk,
-                            projectcss.__wab_text,
+                            "all",
+                            "li",
+                            "li__7SNMk",
+                            "__wab_text",
                             sty.li__roqL
                           )}
                         >
@@ -1162,10 +1127,10 @@ function Plasmicقوانینومقرراتاستفادهازمیان__RenderFunc
                         </li>
                         <li
                           className={classNames(
-                            projectcss.all,
-                            projectcss.li,
-                            projectcss.li__7SNMk,
-                            projectcss.__wab_text,
+                            "all",
+                            "li",
+                            "li__7SNMk",
+                            "__wab_text",
                             sty.li__hzqaG
                           )}
                         >
@@ -1175,10 +1140,10 @@ function Plasmicقوانینومقرراتاستفادهازمیان__RenderFunc
                         </li>
                         <li
                           className={classNames(
-                            projectcss.all,
-                            projectcss.li,
-                            projectcss.li__7SNMk,
-                            projectcss.__wab_text,
+                            "all",
+                            "li",
+                            "li__7SNMk",
+                            "__wab_text",
                             sty.li__krsfO
                           )}
                         >
@@ -1188,10 +1153,10 @@ function Plasmicقوانینومقرراتاستفادهازمیان__RenderFunc
                         </li>
                         <li
                           className={classNames(
-                            projectcss.all,
-                            projectcss.li,
-                            projectcss.li__7SNMk,
-                            projectcss.__wab_text,
+                            "all",
+                            "li",
+                            "li__7SNMk",
+                            "__wab_text",
                             sty.li__naXPv
                           )}
                         >
@@ -1201,10 +1166,10 @@ function Plasmicقوانینومقرراتاستفادهازمیان__RenderFunc
                         </li>
                         <li
                           className={classNames(
-                            projectcss.all,
-                            projectcss.li,
-                            projectcss.li__7SNMk,
-                            projectcss.__wab_text,
+                            "all",
+                            "li",
+                            "li__7SNMk",
+                            "__wab_text",
                             sty.li__iBg7D
                           )}
                         >
@@ -1214,10 +1179,10 @@ function Plasmicقوانینومقرراتاستفادهازمیان__RenderFunc
                         </li>
                         <li
                           className={classNames(
-                            projectcss.all,
-                            projectcss.li,
-                            projectcss.li__7SNMk,
-                            projectcss.__wab_text,
+                            "all",
+                            "li",
+                            "li__7SNMk",
+                            "__wab_text",
                             sty.li__y0C
                           )}
                         >
@@ -1246,18 +1211,18 @@ function Plasmicقوانینومقرراتاستفادهازمیان__RenderFunc
                     {
                       <ul
                         className={classNames(
-                          projectcss.all,
-                          projectcss.ul,
-                          projectcss.ul__7SNMk,
+                          "all",
+                          "ul",
+                          "ul__7SNMk",
                           sty.ul__sUbvs
                         )}
                       >
                         <li
                           className={classNames(
-                            projectcss.all,
-                            projectcss.li,
-                            projectcss.li__7SNMk,
-                            projectcss.__wab_text,
+                            "all",
+                            "li",
+                            "li__7SNMk",
+                            "__wab_text",
                             sty.li__dgt4B
                           )}
                         >
@@ -1267,10 +1232,10 @@ function Plasmicقوانینومقرراتاستفادهازمیان__RenderFunc
                         </li>
                         <li
                           className={classNames(
-                            projectcss.all,
-                            projectcss.li,
-                            projectcss.li__7SNMk,
-                            projectcss.__wab_text,
+                            "all",
+                            "li",
+                            "li__7SNMk",
+                            "__wab_text",
                             sty.li__cTaYd
                           )}
                         >
@@ -1280,10 +1245,10 @@ function Plasmicقوانینومقرراتاستفادهازمیان__RenderFunc
                         </li>
                         <li
                           className={classNames(
-                            projectcss.all,
-                            projectcss.li,
-                            projectcss.li__7SNMk,
-                            projectcss.__wab_text,
+                            "all",
+                            "li",
+                            "li__7SNMk",
+                            "__wab_text",
                             sty.li__szb2J
                           )}
                         >
@@ -1293,10 +1258,10 @@ function Plasmicقوانینومقرراتاستفادهازمیان__RenderFunc
                         </li>
                         <li
                           className={classNames(
-                            projectcss.all,
-                            projectcss.li,
-                            projectcss.li__7SNMk,
-                            projectcss.__wab_text,
+                            "all",
+                            "li",
+                            "li__7SNMk",
+                            "__wab_text",
                             sty.li__mZck4
                           )}
                         >
@@ -1306,10 +1271,10 @@ function Plasmicقوانینومقرراتاستفادهازمیان__RenderFunc
                         </li>
                         <li
                           className={classNames(
-                            projectcss.all,
-                            projectcss.li,
-                            projectcss.li__7SNMk,
-                            projectcss.__wab_text,
+                            "all",
+                            "li",
+                            "li__7SNMk",
+                            "__wab_text",
                             sty.li__qsDd6
                           )}
                         >
@@ -1319,10 +1284,10 @@ function Plasmicقوانینومقرراتاستفادهازمیان__RenderFunc
                         </li>
                         <li
                           className={classNames(
-                            projectcss.all,
-                            projectcss.li,
-                            projectcss.li__7SNMk,
-                            projectcss.__wab_text,
+                            "all",
+                            "li",
+                            "li__7SNMk",
+                            "__wab_text",
                             sty.li__nfomN
                           )}
                         >
@@ -1332,10 +1297,10 @@ function Plasmicقوانینومقرراتاستفادهازمیان__RenderFunc
                         </li>
                         <li
                           className={classNames(
-                            projectcss.all,
-                            projectcss.li,
-                            projectcss.li__7SNMk,
-                            projectcss.__wab_text,
+                            "all",
+                            "li",
+                            "li__7SNMk",
+                            "__wab_text",
                             sty.li__fdAaa
                           )}
                         >
@@ -1345,10 +1310,10 @@ function Plasmicقوانینومقرراتاستفادهازمیان__RenderFunc
                         </li>
                         <li
                           className={classNames(
-                            projectcss.all,
-                            projectcss.li,
-                            projectcss.li__7SNMk,
-                            projectcss.__wab_text,
+                            "all",
+                            "li",
+                            "li__7SNMk",
+                            "__wab_text",
                             sty.li__k5Wwf
                           )}
                         >
@@ -1358,10 +1323,10 @@ function Plasmicقوانینومقرراتاستفادهازمیان__RenderFunc
                         </li>
                         <li
                           className={classNames(
-                            projectcss.all,
-                            projectcss.li,
-                            projectcss.li__7SNMk,
-                            projectcss.__wab_text,
+                            "all",
+                            "li",
+                            "li__7SNMk",
+                            "__wab_text",
                             sty.li__dSkzc
                           )}
                         >
@@ -1371,10 +1336,10 @@ function Plasmicقوانینومقرراتاستفادهازمیان__RenderFunc
                         </li>
                         <li
                           className={classNames(
-                            projectcss.all,
-                            projectcss.li,
-                            projectcss.li__7SNMk,
-                            projectcss.__wab_text,
+                            "all",
+                            "li",
+                            "li__7SNMk",
+                            "__wab_text",
                             sty.li__roqL
                           )}
                         >
@@ -1384,10 +1349,10 @@ function Plasmicقوانینومقرراتاستفادهازمیان__RenderFunc
                         </li>
                         <li
                           className={classNames(
-                            projectcss.all,
-                            projectcss.li,
-                            projectcss.li__7SNMk,
-                            projectcss.__wab_text,
+                            "all",
+                            "li",
+                            "li__7SNMk",
+                            "__wab_text",
                             sty.li__hzqaG
                           )}
                         >
@@ -1397,10 +1362,10 @@ function Plasmicقوانینومقرراتاستفادهازمیان__RenderFunc
                         </li>
                         <li
                           className={classNames(
-                            projectcss.all,
-                            projectcss.li,
-                            projectcss.li__7SNMk,
-                            projectcss.__wab_text,
+                            "all",
+                            "li",
+                            "li__7SNMk",
+                            "__wab_text",
                             sty.li__krsfO
                           )}
                         >
@@ -1410,10 +1375,10 @@ function Plasmicقوانینومقرراتاستفادهازمیان__RenderFunc
                         </li>
                         <li
                           className={classNames(
-                            projectcss.all,
-                            projectcss.li,
-                            projectcss.li__7SNMk,
-                            projectcss.__wab_text,
+                            "all",
+                            "li",
+                            "li__7SNMk",
+                            "__wab_text",
                             sty.li__naXPv
                           )}
                         >
@@ -1423,10 +1388,10 @@ function Plasmicقوانینومقرراتاستفادهازمیان__RenderFunc
                         </li>
                         <li
                           className={classNames(
-                            projectcss.all,
-                            projectcss.li,
-                            projectcss.li__7SNMk,
-                            projectcss.__wab_text,
+                            "all",
+                            "li",
+                            "li__7SNMk",
+                            "__wab_text",
                             sty.li__iBg7D
                           )}
                         >
@@ -1436,10 +1401,10 @@ function Plasmicقوانینومقرراتاستفادهازمیان__RenderFunc
                         </li>
                         <li
                           className={classNames(
-                            projectcss.all,
-                            projectcss.li,
-                            projectcss.li__7SNMk,
-                            projectcss.__wab_text,
+                            "all",
+                            "li",
+                            "li__7SNMk",
+                            "__wab_text",
                             sty.li__y0C
                           )}
                         >
@@ -1453,13 +1418,7 @@ function Plasmicقوانینومقرراتاستفادهازمیان__RenderFunc
                   </React.Fragment>
                 )}
               </div>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__vnUgP
-                )}
-              >
+              <div className={classNames("all", "__wab_text", sty.text__vnUgP)}>
                 <React.Fragment>
                   <React.Fragment>{"\r\n\n"}</React.Fragment>
                   <span

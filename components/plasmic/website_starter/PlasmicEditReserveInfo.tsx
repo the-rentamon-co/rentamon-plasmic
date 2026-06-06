@@ -69,7 +69,6 @@ import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-impor
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicEditReserveInfo.module.css"; // plasmic-import: IxuDnIzMrMZF/css
 
 import SearchSvgIcon from "./icons/PlasmicIcon__SearchSvg"; // plasmic-import: xpwiGbFxHMB2/icon
@@ -352,10 +351,10 @@ function PlasmicEditReserveInfo__RenderFunc(props: {
       data-plasmic-root={true}
       data-plasmic-for-node={forNode}
       className={classNames(
-        projectcss.all,
-        projectcss.root_reset,
-        projectcss.plasmic_default_styles,
-        projectcss.plasmic_mixins,
+        "all",
+        "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+        "plasmic_default_styles",
+        "plasmic_mixins",
         styleTokensClassNames,
         sty.root
       )}
@@ -363,34 +362,22 @@ function PlasmicEditReserveInfo__RenderFunc(props: {
       <div
         data-plasmic-name={"form"}
         data-plasmic-override={overrides.form}
-        className={classNames(projectcss.all, sty.form)}
+        className={classNames("all", sty.form)}
       >
         <div
           data-plasmic-name={"title"}
           data-plasmic-override={overrides.title}
-          className={classNames(projectcss.all, sty.title)}
+          className={classNames("all", sty.title)}
         >
-          <div className={classNames(projectcss.all, sty.freeBox__nJt3A)}>
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__g32Dr
-              )}
-            >
+          <div className={classNames("all", sty.freeBox__nJt3A)}>
+            <div className={classNames("all", "__wab_text", sty.text__g32Dr)}>
               {
                 "\u062b\u0628\u062a \u0645\u0634\u062e\u0635\u0627\u062a \u0631\u0632\u0631\u0648"
               }
             </div>
           </div>
-          <div className={classNames(projectcss.all, sty.freeBox__slUjF)}>
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__xXx9
-              )}
-            >
+          <div className={classNames("all", sty.freeBox__slUjF)}>
+            <div className={classNames("all", "__wab_text", sty.text__xXx9)}>
               <React.Fragment>
                 {(() => {
                   try {
@@ -430,13 +417,7 @@ function PlasmicEditReserveInfo__RenderFunc(props: {
                 })()}
               </React.Fragment>
             </div>
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__px26S
-              )}
-            >
+            <div className={classNames("all", "__wab_text", sty.text__px26S)}>
               <React.Fragment>
                 {(() => {
                   try {
@@ -481,7 +462,7 @@ function PlasmicEditReserveInfo__RenderFunc(props: {
         <div
           data-plasmic-name={"p1"}
           data-plasmic-override={overrides.p1}
-          className={classNames(projectcss.all, sty.p1)}
+          className={classNames("all", sty.p1)}
         >
           <TextInput
             data-plasmic-name={"guestName"}
@@ -509,12 +490,12 @@ function PlasmicEditReserveInfo__RenderFunc(props: {
         <div
           data-plasmic-name={"p4"}
           data-plasmic-override={overrides.p4}
-          className={classNames(projectcss.all, sty.p4)}
+          className={classNames("all", sty.p4)}
         >
           <div
             data-plasmic-name={"referrer"}
             data-plasmic-override={overrides.referrer}
-            className={classNames(projectcss.all, sty.referrer)}
+            className={classNames("all", sty.referrer)}
           >
             <Select
               data-plasmic-name={"guestReferrer"}
@@ -562,11 +543,7 @@ function PlasmicEditReserveInfo__RenderFunc(props: {
               })()}
               placeholder={
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__qKu4W
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__qKu4W)}
                 >
                   {"\u0645\u0639\u0631\u0641 \u0645\u0647\u0645\u0627\u0646"}
                 </div>
@@ -577,7 +554,7 @@ function PlasmicEditReserveInfo__RenderFunc(props: {
           <div
             data-plasmic-name={"count2"}
             data-plasmic-override={overrides.count2}
-            className={classNames(projectcss.all, sty.count2)}
+            className={classNames("all", sty.count2)}
           >
             <AntdInputNumber
               data-plasmic-name={"guestCount"}
@@ -598,7 +575,7 @@ function PlasmicEditReserveInfo__RenderFunc(props: {
         <div
           data-plasmic-name={"p2"}
           data-plasmic-override={overrides.p2}
-          className={classNames(projectcss.all, sty.p2)}
+          className={classNames("all", sty.p2)}
         >
           <TextInput
             data-plasmic-name={"phoneNumber"}
@@ -627,13 +604,7 @@ function PlasmicEditReserveInfo__RenderFunc(props: {
             }
           />
 
-          <div
-            className={classNames(
-              projectcss.all,
-              projectcss.__wab_text,
-              sty.text__paWwX
-            )}
-          >
+          <div className={classNames("all", "__wab_text", sty.text__paWwX)}>
             <React.Fragment>
               <span
                 className={
@@ -651,7 +622,7 @@ function PlasmicEditReserveInfo__RenderFunc(props: {
         <div
           data-plasmic-name={"p3"}
           data-plasmic-override={overrides.p3}
-          className={classNames(projectcss.all, sty.p3)}
+          className={classNames("all", sty.p3)}
         >
           <Input
             data-plasmic-name={"amount2"}
@@ -687,22 +658,16 @@ function PlasmicEditReserveInfo__RenderFunc(props: {
             value={generateStateValueProp($state, ["amount", "value"])}
           />
 
-          <div
-            className={classNames(
-              projectcss.all,
-              projectcss.__wab_text,
-              sty.text__wkIdZ
-            )}
-          >
+          <div className={classNames("all", "__wab_text", sty.text__wkIdZ)}>
             {""}
           </div>
         </div>
         <div
           data-plasmic-name={"p5"}
           data-plasmic-override={overrides.p5}
-          className={classNames(projectcss.all, sty.p5)}
+          className={classNames("all", sty.p5)}
         >
-          <div className={classNames(projectcss.all, sty.freeBox__u5X5C)}>
+          <div className={classNames("all", sty.freeBox__u5X5C)}>
             <Button
               data-plasmic-name={"button"}
               data-plasmic-override={overrides.button}
@@ -759,11 +724,7 @@ function PlasmicEditReserveInfo__RenderFunc(props: {
               submitsForm={false}
             >
               <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text___7Bmut
-                )}
+                className={classNames("all", "__wab_text", sty.text___7Bmut)}
               >
                 {
                   "\u062b\u0628\u062a \u062f\u0631 \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u0645\u0646"

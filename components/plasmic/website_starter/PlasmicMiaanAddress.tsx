@@ -65,7 +65,6 @@ import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-impor
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicMiaanAddress.module.css"; // plasmic-import: WMV6AnpBtswg/css
 
 createPlasmicElementProxy;
@@ -142,10 +141,10 @@ function PlasmicMiaanAddress__RenderFunc(props: {
       data-plasmic-root={true}
       data-plasmic-for-node={forNode}
       className={classNames(
-        projectcss.all,
-        projectcss.root_reset,
-        projectcss.plasmic_default_styles,
-        projectcss.plasmic_mixins,
+        "all",
+        "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+        "plasmic_default_styles",
+        "plasmic_mixins",
         styleTokensClassNames,
         sty.content
       )}
@@ -153,16 +152,12 @@ function PlasmicMiaanAddress__RenderFunc(props: {
       <div
         data-plasmic-name={"addressText"}
         data-plasmic-override={overrides.addressText}
-        className={classNames(projectcss.all, sty.addressText)}
+        className={classNames("all", sty.addressText)}
       >
         <div
           data-plasmic-name={"text"}
           data-plasmic-override={overrides.text}
-          className={classNames(
-            projectcss.all,
-            projectcss.__wab_text,
-            sty.text
-          )}
+          className={classNames("all", "__wab_text", sty.text)}
         >
           <React.Fragment>
             <React.Fragment>
@@ -175,11 +170,11 @@ function PlasmicMiaanAddress__RenderFunc(props: {
                 data-plasmic-name={"link"}
                 data-plasmic-override={overrides.link}
                 className={classNames(
-                  projectcss.all,
-                  projectcss.a,
-                  projectcss.a__7SNMk,
-                  projectcss.__wab_text,
-                  projectcss.plasmic_default__inline,
+                  "all",
+                  "a",
+                  "a__7SNMk",
+                  "__wab_text",
+                  "plasmic_default__inline",
                   sty.link
                 )}
                 component={Link}
@@ -203,7 +198,7 @@ function PlasmicMiaanAddress__RenderFunc(props: {
       <div
         data-plasmic-name={"map"}
         data-plasmic-override={overrides.map}
-        className={classNames(projectcss.all, sty.map)}
+        className={classNames("all", sty.map)}
       >
         <Embed
           data-plasmic-name={"embedHtml"}

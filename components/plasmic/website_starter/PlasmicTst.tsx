@@ -70,7 +70,6 @@ import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-impor
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicTst.module.css"; // plasmic-import: kZSAE7HA3zLq/css
 
 import SearchSvgIcon from "./icons/PlasmicIcon__SearchSvg"; // plasmic-import: xpwiGbFxHMB2/icon
@@ -273,17 +272,17 @@ function PlasmicTst__RenderFunc(props: {
         }
       `}</style>
 
-      <div className={projectcss.plasmic_page_wrapper}>
+      <div className={"plasmic_page_wrapper"}>
         <div
           data-plasmic-name={"root"}
           data-plasmic-override={overrides.root}
           data-plasmic-root={true}
           data-plasmic-for-node={forNode}
           className={classNames(
-            projectcss.all,
-            projectcss.root_reset,
-            projectcss.plasmic_default_styles,
-            projectcss.plasmic_mixins,
+            "all",
+            "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+            "plasmic_default_styles",
+            "plasmic_mixins",
             styleTokensClassNames,
             sty.root
           )}
@@ -291,7 +290,7 @@ function PlasmicTst__RenderFunc(props: {
           <div
             data-plasmic-name={"progressbar"}
             data-plasmic-override={overrides.progressbar}
-            className={classNames(projectcss.all, sty.progressbar)}
+            className={classNames("all", sty.progressbar)}
           >
             <Embed
               className={classNames("__wab_instance", sty.embedHtml__qhlPx)}
@@ -305,7 +304,7 @@ function PlasmicTst__RenderFunc(props: {
           <div
             data-plasmic-name={"progressbar2"}
             data-plasmic-override={overrides.progressbar2}
-            className={classNames(projectcss.all, sty.progressbar2)}
+            className={classNames("all", sty.progressbar2)}
           >
             <Embed
               className={classNames("__wab_instance", sty.embedHtml__bvUvq)}
@@ -385,31 +384,23 @@ function PlasmicTst__RenderFunc(props: {
           <div
             data-plasmic-name={"otp"}
             data-plasmic-override={overrides.otp}
-            className={classNames(projectcss.all, sty.otp)}
+            className={classNames("all", sty.otp)}
           >
-            <div className={classNames(projectcss.all, sty.freeBox__tM4XJ)}>
+            <div className={classNames("all", sty.freeBox__tM4XJ)}>
               <ApiRequest
                 data-plasmic-name={"apiRequest"}
                 data-plasmic-override={overrides.apiRequest}
                 className={classNames("__wab_instance", sty.apiRequest)}
                 errorDisplay={
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__aBXy
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__aBXy)}
                   >
                     {"Error fetching data"}
                   </div>
                 }
                 loadingDisplay={
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__kuVkI
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__kuVkI)}
                   >
                     {"Loading..."}
                   </div>
@@ -439,11 +430,7 @@ function PlasmicTst__RenderFunc(props: {
                 url={"https://api-v3.miaan.ir/webhook/is_user_login"}
               >
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__oZvh8
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__oZvh8)}
                 >
                   {
                     "\u0634\u0645\u0627 \u0644\u0627\u06af\u06cc\u0646 \u0647\u0633\u062a\u06cc\u062f"
@@ -451,14 +438,8 @@ function PlasmicTst__RenderFunc(props: {
                 </div>
               </ApiRequest>
             </div>
-            <div className={classNames(projectcss.all, sty.freeBox__lANk)}>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__plyv1
-                )}
-              >
+            <div className={classNames("all", sty.freeBox__lANk)}>
+              <div className={classNames("all", "__wab_text", sty.text__plyv1)}>
                 {"\u0634\u0645\u0627\u0631\u0647"}
               </div>
               <TextInput
@@ -519,14 +500,8 @@ function PlasmicTst__RenderFunc(props: {
                 }}
               />
             </div>
-            <div className={classNames(projectcss.all, sty.freeBox___9FUr6)}>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__iCx5G
-                )}
-              >
+            <div className={classNames("all", sty.freeBox___9FUr6)}>
+              <div className={classNames("all", "__wab_text", sty.text__iCx5G)}>
                 {"\u06a9\u062f"}
               </div>
               <TextInput
@@ -590,13 +565,9 @@ function PlasmicTst__RenderFunc(props: {
                 }}
               />
             </div>
-            <div className={classNames(projectcss.all, sty.freeBox__qw0Qt)}>
+            <div className={classNames("all", sty.freeBox__qw0Qt)}>
               <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text___3PPEh
-                )}
+                className={classNames("all", "__wab_text", sty.text___3PPEh)}
               >
                 {"\u06a9\u062f"}
               </div>

@@ -68,7 +68,6 @@ import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-impor
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicDrawer.module.css"; // plasmic-import: gJB_QTm_9xy1/css
 
 import CircleIcon from "./icons/PlasmicIcon__Circle"; // plasmic-import: ElHWritzoqrj/icon
@@ -230,9 +229,9 @@ function PlasmicDrawer__RenderFunc(props: {
       data-plasmic-for-node={forNode}
       className={classNames(
         "__wab_instance",
-        projectcss.root_reset,
-        projectcss.plasmic_default_styles,
-        projectcss.plasmic_mixins,
+        "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+        "plasmic_default_styles",
+        "plasmic_mixins",
         styleTokensClassNames,
         sty.ariaDialogTrigger,
         {
@@ -269,9 +268,9 @@ function PlasmicDrawer__RenderFunc(props: {
             $refs["ariaModal"] = ref;
           }}
           resetClassName={classNames(
-            projectcss.root_reset,
-            projectcss.plasmic_default_styles,
-            projectcss.plasmic_mixins,
+            "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+            "plasmic_default_styles",
+            "plasmic_mixins",
             styleTokensClassNames
           )}
         >
@@ -286,15 +285,15 @@ function PlasmicDrawer__RenderFunc(props: {
               )
             })}
           >
-            <div className={classNames(projectcss.all, sty.freeBox__mWhzV)}>
+            <div className={classNames("all", sty.freeBox__mWhzV)}>
               {renderPlasmicSlot({
                 defaultContents: (
                   <h2
                     className={classNames(
-                      projectcss.all,
-                      projectcss.h2,
-                      projectcss.h2__7SNMk,
-                      projectcss.__wab_text,
+                      "all",
+                      "h2",
+                      "h2__7SNMk",
+                      "__wab_text",
                       sty.h2__ax4JJ
                     )}
                   >
@@ -306,17 +305,15 @@ function PlasmicDrawer__RenderFunc(props: {
               <div
                 data-plasmic-name={"scrollableContent"}
                 data-plasmic-override={overrides.scrollableContent}
-                className={classNames(projectcss.all, sty.scrollableContent)}
+                className={classNames("all", sty.scrollableContent)}
               >
                 {renderPlasmicSlot({
                   defaultContents: (
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__bp6Mf)}
-                    >
+                    <div className={classNames("all", sty.freeBox__bp6Mf)}>
                       <div
                         className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
+                          "all",
+                          "__wab_text",
                           sty.text__yOq8M
                         )}
                       >
@@ -324,8 +321,8 @@ function PlasmicDrawer__RenderFunc(props: {
                       </div>
                       <div
                         className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
+                          "all",
+                          "__wab_text",
                           sty.text__bsjlr
                         )}
                       >
@@ -338,12 +335,10 @@ function PlasmicDrawer__RenderFunc(props: {
                   value: args.content
                 })}
               </div>
-              <div className={classNames(projectcss.all, sty.freeBox__mUzs)}>
+              <div className={classNames("all", sty.freeBox__mUzs)}>
                 {renderPlasmicSlot({
                   defaultContents: (
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__cmIlO)}
-                    >
+                    <div className={classNames("all", sty.freeBox__cmIlO)}>
                       <Button3
                         color={"muted"}
                         label={"Close"}
@@ -417,8 +412,8 @@ function PlasmicDrawer__RenderFunc(props: {
                   label={
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text__o6Ig7
                       )}
                     >

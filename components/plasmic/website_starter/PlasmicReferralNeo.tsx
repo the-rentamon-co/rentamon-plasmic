@@ -73,7 +73,6 @@ import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-impor
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicReferralNeo.module.css"; // plasmic-import: K2GIv7FTzPej/css
 
 import SearchSvgIcon from "./icons/PlasmicIcon__SearchSvg"; // plasmic-import: xpwiGbFxHMB2/icon
@@ -328,17 +327,17 @@ function PlasmicReferralNeo__RenderFunc(props: {
         }
       `}</style>
 
-      <div className={projectcss.plasmic_page_wrapper}>
+      <div className={"plasmic_page_wrapper"}>
         <div
           data-plasmic-name={"root"}
           data-plasmic-override={overrides.root}
           data-plasmic-root={true}
           data-plasmic-for-node={forNode}
           className={classNames(
-            projectcss.all,
-            projectcss.root_reset,
-            projectcss.plasmic_default_styles,
-            projectcss.plasmic_mixins,
+            "all",
+            "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+            "plasmic_default_styles",
+            "plasmic_mixins",
             styleTokensClassNames,
             sty.root
           )}
@@ -352,24 +351,20 @@ function PlasmicReferralNeo__RenderFunc(props: {
           <div
             data-plasmic-name={"mainContents"}
             data-plasmic-override={overrides.mainContents}
-            className={classNames(projectcss.all, sty.mainContents)}
+            className={classNames("all", sty.mainContents)}
           >
             <div
               data-plasmic-name={"intro1st"}
               data-plasmic-override={overrides.intro1st}
-              className={classNames(projectcss.all, sty.intro1st)}
+              className={classNames("all", sty.intro1st)}
             >
               <div
                 data-plasmic-name={"introTitle"}
                 data-plasmic-override={overrides.introTitle}
-                className={classNames(projectcss.all, sty.introTitle)}
+                className={classNames("all", sty.introTitle)}
               >
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__chWwi
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__chWwi)}
                 >
                   {hasVariant(globalVariants, "screen", "tablet")
                     ? "\u0628\u0627 \u0645\u0639\u0631\u0641\u06cc \u00ab\u0645\u06cc\u0627\u0646\u00bb \u0628\u0647 \u06a9\u0633\u0628\u200c\u0648\u06a9\u0627\u0631 \u062f\u06cc\u06af\u0631\u0627\u0646 \u0631\u0648\u0646\u0642 \u0628\u062f\u0647\n\u0648 \u0647\u062f\u06cc\u0647 \u0628\u06af\u06cc\u0631 \ud83c\udf81"
@@ -379,12 +374,12 @@ function PlasmicReferralNeo__RenderFunc(props: {
               <div
                 data-plasmic-name={"teamImage"}
                 data-plasmic-override={overrides.teamImage}
-                className={classNames(projectcss.all, sty.teamImage)}
+                className={classNames("all", sty.teamImage)}
               >
                 <div
                   data-plasmic-name={"introImage"}
                   data-plasmic-override={overrides.introImage}
-                  className={classNames(projectcss.all, sty.introImage)}
+                  className={classNames("all", sty.introImage)}
                 >
                   <PlasmicImg__
                     alt={""}
@@ -417,14 +412,10 @@ function PlasmicReferralNeo__RenderFunc(props: {
                 <div
                   data-plasmic-name={"introduction"}
                   data-plasmic-override={overrides.introduction}
-                  className={classNames(projectcss.all, sty.introduction)}
+                  className={classNames("all", sty.introduction)}
                 >
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__bvVk0
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__bvVk0)}
                   >
                     <React.Fragment>
                       <React.Fragment>
@@ -464,9 +455,7 @@ function PlasmicReferralNeo__RenderFunc(props: {
                       </React.Fragment>
                     </React.Fragment>
                   </div>
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__x8BjJ)}
-                  >
+                  <div className={classNames("all", sty.freeBox__x8BjJ)}>
                     <PlasmicImg__
                       alt={""}
                       className={classNames(sty.img__eje5X)}
@@ -490,20 +479,16 @@ function PlasmicReferralNeo__RenderFunc(props: {
                     />
                   </div>
                 </div>
-                <div className={classNames(projectcss.all, sty.freeBox__pLsnv)}>
+                <div className={classNames("all", sty.freeBox__pLsnv)}>
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__r9Qy9
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__r9Qy9)}
                   >
                     {
                       "\u062a\u0627 \u067e\u0627\u06cc\u0627\u0646 \u062c\u0634\u0646\u0648\u0627\u0631\u0647"
                     }
                   </div>
                 </div>
-                <div className={classNames(projectcss.all, sty.freeBox__dwMBe)}>
+                <div className={classNames("all", sty.freeBox__dwMBe)}>
                   <Embed
                     data-plasmic-name={"embedHtml"}
                     data-plasmic-override={overrides.embedHtml}
@@ -517,17 +502,17 @@ function PlasmicReferralNeo__RenderFunc(props: {
               <div
                 data-plasmic-name={"cta"}
                 data-plasmic-override={overrides.cta}
-                className={classNames(projectcss.all, sty.cta)}
+                className={classNames("all", sty.cta)}
               >
                 <div
                   data-plasmic-name={"ctaText"}
                   data-plasmic-override={overrides.ctaText}
-                  className={classNames(projectcss.all, sty.ctaText)}
+                  className={classNames("all", sty.ctaText)}
                 >
                   <div
                     className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
+                      "all",
+                      "__wab_text",
                       sty.text___4L9Jt
                     )}
                   >
@@ -621,12 +606,12 @@ function PlasmicReferralNeo__RenderFunc(props: {
                 <div
                   data-plasmic-name={"ctaButton"}
                   data-plasmic-override={overrides.ctaButton}
-                  className={classNames(projectcss.all, sty.ctaButton)}
+                  className={classNames("all", sty.ctaButton)}
                 >
                   <div
                     className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
+                      "all",
+                      "__wab_text",
                       sty.text__kvtga,
                       "clickable"
                     )}
@@ -781,11 +766,7 @@ ${$state.textInput.value}
                       : "\u062f\u0639\u0648\u062a \u0627\u0632 \u062f\u0648\u0633\u062a\u0627\u0646"}
                   </div>
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      sty.freeBox___74Abx,
-                      "ltr"
-                    )}
+                    className={classNames("all", sty.freeBox___74Abx, "ltr")}
                   >
                     <TextInput
                       data-plasmic-name={"textInput"}
@@ -825,8 +806,8 @@ ${$state.textInput.value}
                     errorDisplay={
                       <div
                         className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
+                          "all",
+                          "__wab_text",
                           sty.text__yiAeq
                         )}
                       >
@@ -862,14 +843,10 @@ ${$state.textInput.value}
                 <div
                   data-plasmic-name={"ctaText2"}
                   data-plasmic-override={overrides.ctaText2}
-                  className={classNames(projectcss.all, sty.ctaText2)}
+                  className={classNames("all", sty.ctaText2)}
                 >
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__x2Tuy
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__x2Tuy)}
                   >
                     {hasVariant(globalVariants, "screen", "smallMobile")
                       ? "\u0627\u06cc\u0646 \u0644\u06cc\u0646\u06a9 \u0627\u062e\u062a\u0635\u0627\u0635\u06cc \u0634\u0645\u0627\u0633\u062a \u0648 \u0628\u0631\u0627\u06cc \u062f\u0631\u06cc\u0627\u0641\u062a \u0647\u062f\u06cc\u0647\u060c \u0641\u0631\u062f \u062f\u0639\u0648\u062a \u0634\u062f\u0647 \u062d\u062a\u0645\u0627 \u0628\u0627\u06cc\u062f \u0631\u0648\u06cc \u0647\u0645\u06cc\u0646 \u0644\u06cc\u0646\u06a9 \u0628\u0632\u0646\u0647."
@@ -885,9 +862,9 @@ ${$state.textInput.value}
                   data-plasmic-override={overrides.shareLink}
                   className={classNames("__wab_instance", sty.shareLink)}
                   defaultStylesClassName={classNames(
-                    projectcss.root_reset,
-                    projectcss.plasmic_default_styles,
-                    projectcss.plasmic_mixins,
+                    "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+                    "plasmic_default_styles",
+                    "plasmic_mixins",
                     styleTokensClassNames
                   )}
                   hideFooter={true}
@@ -902,8 +879,8 @@ ${$state.textInput.value}
                   title={
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text__jSkIu
                       )}
                     >
@@ -914,17 +891,11 @@ ${$state.textInput.value}
                   }
                   trigger={null}
                 >
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox___1Rj9Z)}
-                  >
+                  <div className={classNames("all", sty.freeBox___1Rj9Z)}>
                     <div
                       data-plasmic-name={"refertxt"}
                       data-plasmic-override={overrides.refertxt}
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.refertxt
-                      )}
+                      className={classNames("all", "__wab_text", sty.refertxt)}
                     >
                       {hasVariant(globalVariants, "screen", "smallMobile") ? (
                         <React.Fragment>
@@ -1027,10 +998,10 @@ ${$state.textInput.value}
                   <div
                     data-plasmic-name={"ctaButton2"}
                     data-plasmic-override={overrides.ctaButton2}
-                    className={classNames(projectcss.all, sty.ctaButton2)}
+                    className={classNames("all", sty.ctaButton2)}
                   >
                     <div
-                      className={classNames(projectcss.all, sty.freeBox__sveRr)}
+                      className={classNames("all", sty.freeBox__sveRr)}
                       onClick={async event => {
                         const $steps = {};
 
@@ -1120,8 +1091,8 @@ ${$state.textInput.value}
                     >
                       <div
                         className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
+                          "all",
+                          "__wab_text",
                           sty.text___8Haq
                         )}
                         onClick={async event => {
@@ -1137,7 +1108,7 @@ ${$state.textInput.value}
                       <Icon51Icon
                         data-plasmic-name={"svg"}
                         data-plasmic-override={overrides.svg}
-                        className={classNames(projectcss.all, sty.svg)}
+                        className={classNames("all", sty.svg)}
                         role={"img"}
                       />
                     </div>
@@ -1159,42 +1130,36 @@ ${$state.textInput.value}
               throw e;
             }
           })() ? (
-            <div className={classNames(projectcss.all, sty.freeBox__qGa2)}>
-              <div className={classNames(projectcss.all, sty.freeBox__tuLbG)}>
-                <div className={classNames(projectcss.all, sty.freeBox__dZjTq)}>
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__cZoiR)}
-                  >
+            <div className={classNames("all", sty.freeBox__qGa2)}>
+              <div className={classNames("all", sty.freeBox__tuLbG)}>
+                <div className={classNames("all", sty.freeBox__dZjTq)}>
+                  <div className={classNames("all", sty.freeBox__cZoiR)}>
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text__ruAn
                       )}
                     >
                       {"\u062f\u0639\u0648\u062a\u200c\u0647\u0627"}
                     </div>
                   </div>
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__dq9Dw)}
-                  >
+                  <div className={classNames("all", sty.freeBox__dq9Dw)}>
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text__soXqR
                       )}
                     >
                       {"\u0645\u0648\u0641\u0642"}
                     </div>
                   </div>
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__adoFd)}
-                  >
+                  <div className={classNames("all", sty.freeBox__adoFd)}>
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text__gifHs
                       )}
                     >
@@ -1207,9 +1172,9 @@ ${$state.textInput.value}
                         {
                           <sup
                             className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
-                              projectcss.plasmic_default__inline,
+                              "all",
+                              "__wab_text",
+                              "plasmic_default__inline",
                               sty.sup___05N08
                             )}
                           >
@@ -1220,13 +1185,11 @@ ${$state.textInput.value}
                       </React.Fragment>
                     </div>
                   </div>
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__fYoo)}
-                  >
+                  <div className={classNames("all", sty.freeBox__fYoo)}>
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text__yvTLs
                       )}
                     >
@@ -1237,9 +1200,9 @@ ${$state.textInput.value}
                         {
                           <sup
                             className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
-                              projectcss.plasmic_default__inline,
+                              "all",
+                              "__wab_text",
+                              "plasmic_default__inline",
                               sty.sup__wEvzH
                             )}
                           >
@@ -1251,14 +1214,12 @@ ${$state.textInput.value}
                     </div>
                   </div>
                 </div>
-                <div className={classNames(projectcss.all, sty.freeBox__rl2Hg)}>
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__z9O5Y)}
-                  >
+                <div className={classNames("all", sty.freeBox__rl2Hg)}>
+                  <div className={classNames("all", sty.freeBox__z9O5Y)}>
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text__g3VqJ
                       )}
                     >
@@ -1287,13 +1248,11 @@ ${$state.textInput.value}
                       </React.Fragment>
                     </div>
                   </div>
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__xQfa1)}
-                  >
+                  <div className={classNames("all", sty.freeBox__xQfa1)}>
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text__bMpBs
                       )}
                     >
@@ -1316,13 +1275,11 @@ ${$state.textInput.value}
                       </React.Fragment>
                     </div>
                   </div>
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__b6HpD)}
-                  >
+                  <div className={classNames("all", sty.freeBox__b6HpD)}>
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text__fvYgW
                       )}
                     >
@@ -1352,13 +1309,11 @@ ${$state.textInput.value}
                       </React.Fragment>
                     </div>
                   </div>
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox___9EGzo)}
-                  >
+                  <div className={classNames("all", sty.freeBox___9EGzo)}>
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text___2ZtC
                       )}
                     >
@@ -1390,14 +1345,10 @@ ${$state.textInput.value}
                   </div>
                 </div>
               </div>
-              <div className={classNames(projectcss.all, sty.freeBox__wKm9J)}>
-                <div className={classNames(projectcss.all, sty.freeBox__of9OD)}>
+              <div className={classNames("all", sty.freeBox__wKm9J)}>
+                <div className={classNames("all", sty.freeBox__of9OD)}>
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__cYbo
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__cYbo)}
                   >
                     {
                       "\u062c\u0632\u06cc\u06cc\u0627\u062a \u062f\u0639\u0648\u062a \u0634\u0648\u0646\u062f\u0647\u200c\u0647\u0627"
@@ -1411,8 +1362,8 @@ ${$state.textInput.value}
                   errorDisplay={
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text___36JQb
                       )}
                     >
@@ -1422,8 +1373,8 @@ ${$state.textInput.value}
                   loadingDisplay={
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text__yvYL
                       )}
                     >
@@ -1472,13 +1423,11 @@ ${$state.textInput.value}
                       throw e;
                     }
                   })() ? (
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__lpP4K)}
-                    >
+                    <div className={classNames("all", sty.freeBox__lpP4K)}>
                       <div
                         className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
+                          "all",
+                          "__wab_text",
                           sty.text___7Rb70
                         )}
                       >
@@ -1524,26 +1473,20 @@ ${$state.textInput.value}
                         const currentIndex = __plasmic_idx_0;
                         return (
                           <div
-                            className={classNames(
-                              projectcss.all,
-                              sty.freeBox__wLc5
-                            )}
+                            className={classNames("all", sty.freeBox__wLc5)}
                             key={currentIndex}
                           >
                             <div
-                              className={classNames(
-                                projectcss.all,
-                                sty.freeBox__xBc9M
-                              )}
+                              className={classNames("all", sty.freeBox__xBc9M)}
                             >
                               <PlasmicLink__
                                 data-plasmic-name={"link"}
                                 data-plasmic-override={overrides.link}
                                 className={classNames(
-                                  projectcss.all,
-                                  projectcss.a,
-                                  projectcss.a__7SNMk,
-                                  projectcss.__wab_text,
+                                  "all",
+                                  "a",
+                                  "a__7SNMk",
+                                  "__wab_text",
                                   sty.link
                                 )}
                                 component={Link}
@@ -1605,7 +1548,7 @@ ${$state.textInput.value}
                             })() ? (
                               <div
                                 className={classNames(
-                                  projectcss.all,
+                                  "all",
                                   sty.freeBox__rhztQ
                                 )}
                               >
@@ -1692,10 +1635,7 @@ ${$state.textInput.value}
                               </div>
                             ) : null}
                             <div
-                              className={classNames(
-                                projectcss.all,
-                                sty.freeBox__nDllp
-                              )}
+                              className={classNames("all", sty.freeBox__nDllp)}
                             >
                               {(() => {
                                 try {
@@ -1717,8 +1657,8 @@ ${$state.textInput.value}
                               })() ? (
                                 <div
                                   className={classNames(
-                                    projectcss.all,
-                                    projectcss.__wab_text,
+                                    "all",
+                                    "__wab_text",
                                     sty.text___7FCzw
                                   )}
                                 >
@@ -1756,28 +1696,16 @@ ${$state.textInput.value}
           <div
             data-plasmic-name={"rules"}
             data-plasmic-override={overrides.rules}
-            className={classNames(projectcss.all, sty.rules)}
+            className={classNames("all", sty.rules)}
           >
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text___4AjZz
-              )}
-            >
+            <div className={classNames("all", "__wab_text", sty.text___4AjZz)}>
               {hasVariant(globalVariants, "screen", "smallMobile")
                 ? "\u0637\u0631\u062d \u062f\u0639\u0648\u062a \u0686\u0637\u0648\u0631 \u06a9\u0627\u0631 \u0645\u06cc\u200c\u06a9\u0646\u0647\u061f"
                 : hasVariant(globalVariants, "screen", "tablet")
                   ? "\u0637\u0631\u062d \u062f\u0639\u0648\u062a \u0686\u0637\u0648\u0631 \u06a9\u0627\u0631 \u0645\u06cc\u200c\u06a9\u0646\u0647\u061f"
                   : "\u0637\u0631\u062d \u062f\u0639\u0648\u062a \u0686\u0637\u0648\u0631 \u06a9\u0627\u0631 \u0645\u06cc\u200c\u06a9\u0646\u0647\u061f"}
             </div>
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__vfZn
-              )}
-            >
+            <div className={classNames("all", "__wab_text", sty.text__vfZn)}>
               <React.Fragment>
                 <React.Fragment>
                   {
@@ -1805,7 +1733,7 @@ ${$state.textInput.value}
           <div
             data-plasmic-name={"smsImage"}
             data-plasmic-override={overrides.smsImage}
-            className={classNames(projectcss.all, sty.smsImage)}
+            className={classNames("all", sty.smsImage)}
           >
             <PlasmicImg__
               alt={""}
@@ -1833,44 +1761,32 @@ ${$state.textInput.value}
           <div
             data-plasmic-name={"tips"}
             data-plasmic-override={overrides.tips}
-            className={classNames(projectcss.all, sty.tips)}
+            className={classNames("all", sty.tips)}
           >
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__dblW4
-              )}
-            >
+            <div className={classNames("all", "__wab_text", sty.text__dblW4)}>
               {hasVariant(globalVariants, "screen", "smallMobile")
                 ? "\u0628\u0631\u0627\u06cc \u062c\u0627\u06cc\u0632\u0647\u200c\u06cc \u0645\u06cc\u0644\u06cc\u0648\u0646\u06cc!"
                 : "\u0628\u0631\u0627\u06cc \u062c\u0627\u06cc\u0632\u0647\u200c\u06cc \u0645\u06cc\u0644\u06cc\u0648\u0646\u06cc!"}
             </div>
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__dc6Cn
-              )}
-            >
+            <div className={classNames("all", "__wab_text", sty.text__dc6Cn)}>
               {hasVariant(globalVariants, "screen", "smallMobile") ? (
                 <React.Fragment>
                   <React.Fragment>{""}</React.Fragment>
                   {
                     <ul
                       className={classNames(
-                        projectcss.all,
-                        projectcss.ul,
-                        projectcss.ul__7SNMk,
+                        "all",
+                        "ul",
+                        "ul__7SNMk",
                         sty.ul___4PPoT
                       )}
                     >
                       <li
                         className={classNames(
-                          projectcss.all,
-                          projectcss.li,
-                          projectcss.li__7SNMk,
-                          projectcss.__wab_text,
+                          "all",
+                          "li",
+                          "li__7SNMk",
+                          "__wab_text",
                           sty.li__gbQcu
                         )}
                       >
@@ -1880,10 +1796,10 @@ ${$state.textInput.value}
                       </li>
                       <li
                         className={classNames(
-                          projectcss.all,
-                          projectcss.li,
-                          projectcss.li__7SNMk,
-                          projectcss.__wab_text,
+                          "all",
+                          "li",
+                          "li__7SNMk",
+                          "__wab_text",
                           sty.li__t3Lb
                         )}
                       >
@@ -1893,10 +1809,10 @@ ${$state.textInput.value}
                       </li>
                       <li
                         className={classNames(
-                          projectcss.all,
-                          projectcss.li,
-                          projectcss.li__7SNMk,
-                          projectcss.__wab_text,
+                          "all",
+                          "li",
+                          "li__7SNMk",
+                          "__wab_text",
                           sty.li__ynowY
                         )}
                       >
@@ -1906,10 +1822,10 @@ ${$state.textInput.value}
                       </li>
                       <li
                         className={classNames(
-                          projectcss.all,
-                          projectcss.li,
-                          projectcss.li__7SNMk,
-                          projectcss.__wab_text,
+                          "all",
+                          "li",
+                          "li__7SNMk",
+                          "__wab_text",
                           sty.li__zpuE7
                         )}
                       >
@@ -1927,18 +1843,18 @@ ${$state.textInput.value}
                   {
                     <ul
                       className={classNames(
-                        projectcss.all,
-                        projectcss.ul,
-                        projectcss.ul__7SNMk,
+                        "all",
+                        "ul",
+                        "ul__7SNMk",
                         sty.ul__uymiH
                       )}
                     >
                       <li
                         className={classNames(
-                          projectcss.all,
-                          projectcss.li,
-                          projectcss.li__7SNMk,
-                          projectcss.__wab_text,
+                          "all",
+                          "li",
+                          "li__7SNMk",
+                          "__wab_text",
                           sty.li__yKd6X
                         )}
                       >
@@ -1948,10 +1864,10 @@ ${$state.textInput.value}
                       </li>
                       <li
                         className={classNames(
-                          projectcss.all,
-                          projectcss.li,
-                          projectcss.li__7SNMk,
-                          projectcss.__wab_text,
+                          "all",
+                          "li",
+                          "li__7SNMk",
+                          "__wab_text",
                           sty.li__a1PNe
                         )}
                       >
@@ -1961,10 +1877,10 @@ ${$state.textInput.value}
                       </li>
                       <li
                         className={classNames(
-                          projectcss.all,
-                          projectcss.li,
-                          projectcss.li__7SNMk,
-                          projectcss.__wab_text,
+                          "all",
+                          "li",
+                          "li__7SNMk",
+                          "__wab_text",
                           sty.li__zXjne
                         )}
                       >
@@ -1974,10 +1890,10 @@ ${$state.textInput.value}
                       </li>
                       <li
                         className={classNames(
-                          projectcss.all,
-                          projectcss.li,
-                          projectcss.li__7SNMk,
-                          projectcss.__wab_text,
+                          "all",
+                          "li",
+                          "li__7SNMk",
+                          "__wab_text",
                           sty.li__cEcws
                         )}
                       >
@@ -1987,10 +1903,10 @@ ${$state.textInput.value}
                       </li>
                       <li
                         className={classNames(
-                          projectcss.all,
-                          projectcss.li,
-                          projectcss.li__7SNMk,
-                          projectcss.__wab_text,
+                          "all",
+                          "li",
+                          "li__7SNMk",
+                          "__wab_text",
                           sty.li__juVmt
                         )}
                       >
@@ -2008,18 +1924,18 @@ ${$state.textInput.value}
                   {
                     <ul
                       className={classNames(
-                        projectcss.all,
-                        projectcss.ul,
-                        projectcss.ul__7SNMk,
+                        "all",
+                        "ul",
+                        "ul__7SNMk",
                         sty.ul__hsBJx
                       )}
                     >
                       <li
                         className={classNames(
-                          projectcss.all,
-                          projectcss.li,
-                          projectcss.li__7SNMk,
-                          projectcss.__wab_text,
+                          "all",
+                          "li",
+                          "li__7SNMk",
+                          "__wab_text",
                           sty.li__fszqG
                         )}
                       >
@@ -2029,10 +1945,10 @@ ${$state.textInput.value}
                       </li>
                       <li
                         className={classNames(
-                          projectcss.all,
-                          projectcss.li,
-                          projectcss.li__7SNMk,
-                          projectcss.__wab_text,
+                          "all",
+                          "li",
+                          "li__7SNMk",
+                          "__wab_text",
                           sty.li___5RtTb
                         )}
                       >
@@ -2042,10 +1958,10 @@ ${$state.textInput.value}
                       </li>
                       <li
                         className={classNames(
-                          projectcss.all,
-                          projectcss.li,
-                          projectcss.li__7SNMk,
-                          projectcss.__wab_text,
+                          "all",
+                          "li",
+                          "li__7SNMk",
+                          "__wab_text",
                           sty.li__y9Q7R
                         )}
                       >
@@ -2055,10 +1971,10 @@ ${$state.textInput.value}
                       </li>
                       <li
                         className={classNames(
-                          projectcss.all,
-                          projectcss.li,
-                          projectcss.li__7SNMk,
-                          projectcss.__wab_text,
+                          "all",
+                          "li",
+                          "li__7SNMk",
+                          "__wab_text",
                           sty.li__nNmPx
                         )}
                       >
@@ -2076,18 +1992,18 @@ ${$state.textInput.value}
                   {
                     <ul
                       className={classNames(
-                        projectcss.all,
-                        projectcss.ul,
-                        projectcss.ul__7SNMk,
+                        "all",
+                        "ul",
+                        "ul__7SNMk",
                         sty.ul__zytMg
                       )}
                     >
                       <li
                         className={classNames(
-                          projectcss.all,
-                          projectcss.li,
-                          projectcss.li__7SNMk,
-                          projectcss.__wab_text,
+                          "all",
+                          "li",
+                          "li__7SNMk",
+                          "__wab_text",
                           sty.li__hehBc
                         )}
                       >
@@ -2097,10 +2013,10 @@ ${$state.textInput.value}
                       </li>
                       <li
                         className={classNames(
-                          projectcss.all,
-                          projectcss.li,
-                          projectcss.li__7SNMk,
-                          projectcss.__wab_text,
+                          "all",
+                          "li",
+                          "li__7SNMk",
+                          "__wab_text",
                           sty.li__t0Hy
                         )}
                       >
@@ -2110,10 +2026,10 @@ ${$state.textInput.value}
                       </li>
                       <li
                         className={classNames(
-                          projectcss.all,
-                          projectcss.li,
-                          projectcss.li__7SNMk,
-                          projectcss.__wab_text,
+                          "all",
+                          "li",
+                          "li__7SNMk",
+                          "__wab_text",
                           sty.li___645WS
                         )}
                       >
@@ -2123,10 +2039,10 @@ ${$state.textInput.value}
                       </li>
                       <li
                         className={classNames(
-                          projectcss.all,
-                          projectcss.li,
-                          projectcss.li__7SNMk,
-                          projectcss.__wab_text,
+                          "all",
+                          "li",
+                          "li__7SNMk",
+                          "__wab_text",
                           sty.li__ffAkh
                         )}
                       >
@@ -2136,10 +2052,10 @@ ${$state.textInput.value}
                       </li>
                       <li
                         className={classNames(
-                          projectcss.all,
-                          projectcss.li,
-                          projectcss.li__7SNMk,
-                          projectcss.__wab_text,
+                          "all",
+                          "li",
+                          "li__7SNMk",
+                          "__wab_text",
                           sty.li__a10H
                         )}
                       >
@@ -2284,7 +2200,7 @@ ${$state.textInput.value}
             }}
           />
 
-          <div className={classNames(projectcss.all, sty.freeBox__gxwZo)}>
+          <div className={classNames("all", sty.freeBox__gxwZo)}>
             <ClarityRntComponent
               data-plasmic-name={"clarityRntComponent"}
               data-plasmic-override={overrides.clarityRntComponent}

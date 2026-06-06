@@ -74,7 +74,6 @@ import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-impor
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicInstantNeo.module.css"; // plasmic-import: 7ViJ3IYQ12xn/css
 
 const emptyProxy: any = new Proxy(() => "", {
@@ -675,17 +674,17 @@ function PlasmicInstantNeo__RenderFunc(props: {
         }
       `}</style>
 
-      <div className={projectcss.plasmic_page_wrapper}>
+      <div className={"plasmic_page_wrapper"}>
         <div
           data-plasmic-name={"root"}
           data-plasmic-override={overrides.root}
           data-plasmic-root={true}
           data-plasmic-for-node={forNode}
           className={classNames(
-            projectcss.all,
-            projectcss.root_reset,
-            projectcss.plasmic_default_styles,
-            projectcss.plasmic_mixins,
+            "all",
+            "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+            "plasmic_default_styles",
+            "plasmic_mixins",
             styleTokensClassNames,
             sty.root
           )}
@@ -880,9 +879,9 @@ function PlasmicInstantNeo__RenderFunc(props: {
           <div
             data-plasmic-name={"header"}
             data-plasmic-override={overrides.header}
-            className={classNames(projectcss.all, sty.header)}
+            className={classNames("all", sty.header)}
           >
-            <div className={classNames(projectcss.all, sty.freeBox___7KD)}>
+            <div className={classNames("all", sty.freeBox___7KD)}>
               {(() => {
                 try {
                   return $state.isOld == false;
@@ -921,11 +920,11 @@ function PlasmicInstantNeo__RenderFunc(props: {
                 />
               ) : null}
             </div>
-            <div className={classNames(projectcss.all, sty.freeBox__n96D9)}>
+            <div className={classNames("all", sty.freeBox__n96D9)}>
               <div
                 className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
+                  "all",
+                  "__wab_text",
                   sty.text__q1Wfg,
                   "fadeinf"
                 )}
@@ -935,7 +934,7 @@ function PlasmicInstantNeo__RenderFunc(props: {
                 }
               </div>
             </div>
-            <div className={classNames(projectcss.all, sty.freeBox___4ITuH)}>
+            <div className={classNames("all", sty.freeBox___4ITuH)}>
               <ApiRequest
                 data-plasmic-name={"profile2"}
                 data-plasmic-override={overrides.profile2}
@@ -990,15 +989,9 @@ function PlasmicInstantNeo__RenderFunc(props: {
           <section
             data-plasmic-name={"topContainer"}
             data-plasmic-override={overrides.topContainer}
-            className={classNames(projectcss.all, sty.topContainer, "fadeinf")}
+            className={classNames("all", sty.topContainer, "fadeinf")}
           >
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text___71Kkg
-              )}
-            >
+            <div className={classNames("all", "__wab_text", sty.text___71Kkg)}>
               {
                 "\u0628\u0627 \u0641\u0639\u0627\u0644 \u06a9\u0631\u062f\u0646 \u0622\u0646\u06cc \u0647\u0631 \u0633\u0627\u06cc\u062a\u060c \u062a\u0642\u0648\u06cc\u0645\u062a \u0622\u0646\u06cc \u0645\u06cc\u200c\u0645\u0648\u0646\u0647 \u062a\u0627 \u0648\u0642\u062a\u06cc \u062e\u0627\u0645\u0648\u0634\u0634 \u06a9\u0646\u06cc"
               }
@@ -1007,14 +1000,14 @@ function PlasmicInstantNeo__RenderFunc(props: {
           <section
             data-plasmic-name={"topContainer2"}
             data-plasmic-override={overrides.topContainer2}
-            className={classNames(projectcss.all, sty.topContainer2)}
+            className={classNames("all", sty.topContainer2)}
           >
             {false ? (
-              <div className={classNames(projectcss.all, sty.freeBox__mtM5C)}>
+              <div className={classNames("all", sty.freeBox__mtM5C)}>
                 <div
                   data-plasmic-name={"alertIcon"}
                   data-plasmic-override={overrides.alertIcon}
-                  className={classNames(projectcss.all, sty.alertIcon)}
+                  className={classNames("all", sty.alertIcon)}
                 >
                   <PlasmicImg__
                     alt={""}
@@ -1043,12 +1036,12 @@ function PlasmicInstantNeo__RenderFunc(props: {
                 <div
                   data-plasmic-name={"alertText"}
                   data-plasmic-override={overrides.alertText}
-                  className={classNames(projectcss.all, sty.alertText)}
+                  className={classNames("all", sty.alertText)}
                 >
                   <div
                     className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
+                      "all",
+                      "__wab_text",
                       sty.text___2Po4V
                     )}
                   >
@@ -1060,12 +1053,12 @@ function PlasmicInstantNeo__RenderFunc(props: {
                 <div
                   data-plasmic-name={"alertButton"}
                   data-plasmic-override={overrides.alertButton}
-                  className={classNames(projectcss.all, sty.alertButton)}
+                  className={classNames("all", sty.alertButton)}
                 >
                   <div
                     data-plasmic-name={"button"}
                     data-plasmic-override={overrides.button}
-                    className={classNames(projectcss.all, sty.button)}
+                    className={classNames("all", sty.button)}
                     onClick={async event => {
                       const $steps = {};
 
@@ -1097,8 +1090,8 @@ function PlasmicInstantNeo__RenderFunc(props: {
                   >
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text__uPpim
                       )}
                     >
@@ -1112,7 +1105,7 @@ function PlasmicInstantNeo__RenderFunc(props: {
           <section
             data-plasmic-name={"mainSection"}
             data-plasmic-override={overrides.mainSection}
-            className={classNames(projectcss.all, sty.mainSection, "fadein")}
+            className={classNames("all", sty.mainSection, "fadein")}
           >
             <ApiRequest
               data-plasmic-name={"properties"}
@@ -1120,22 +1113,14 @@ function PlasmicInstantNeo__RenderFunc(props: {
               className={classNames("__wab_instance", sty.properties)}
               errorDisplay={
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__bqKy8
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__bqKy8)}
                 >
                   {"Error fetching data"}
                 </div>
               }
               loadingDisplay={
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text___7Iaj6
-                  )}
+                  className={classNames("all", "__wab_text", sty.text___7Iaj6)}
                 >
                   {"Loading..."}
                 </div>
@@ -1241,11 +1226,7 @@ function PlasmicInstantNeo__RenderFunc(props: {
                 })()}
                 placeholder={
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__snfq
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__snfq)}
                   >
                     {"\u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647.."}
                   </div>
@@ -1269,19 +1250,14 @@ function PlasmicInstantNeo__RenderFunc(props: {
                   throw e;
                 }
               })() ? (
-                <div className={classNames(projectcss.all, sty.freeBox__eGeoJ)}>
+                <div className={classNames("all", sty.freeBox__eGeoJ)}>
                   {false ? (
                     <div
                       data-plasmic-name={"homsaContainer"}
                       data-plasmic-override={overrides.homsaContainer}
-                      className={classNames(projectcss.all, sty.homsaContainer)}
+                      className={classNames("all", sty.homsaContainer)}
                     >
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          sty.freeBox__m50P1
-                        )}
-                      >
+                      <div className={classNames("all", sty.freeBox__m50P1)}>
                         <PlasmicImg__
                           alt={""}
                           className={classNames(sty.img__uSDp3)}
@@ -1302,8 +1278,8 @@ function PlasmicInstantNeo__RenderFunc(props: {
 
                         <div
                           className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
+                            "all",
+                            "__wab_text",
                             sty.text__dwT2F
                           )}
                         >
@@ -1618,17 +1594,9 @@ function PlasmicInstantNeo__RenderFunc(props: {
                     <div
                       data-plasmic-name={"mihmanshoContainer"}
                       data-plasmic-override={overrides.mihmanshoContainer}
-                      className={classNames(
-                        projectcss.all,
-                        sty.mihmanshoContainer
-                      )}
+                      className={classNames("all", sty.mihmanshoContainer)}
                     >
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          sty.freeBox___0Fois
-                        )}
-                      >
+                      <div className={classNames("all", sty.freeBox___0Fois)}>
                         <PlasmicImg__
                           alt={""}
                           className={classNames(sty.img__fsKp1)}
@@ -1649,8 +1617,8 @@ function PlasmicInstantNeo__RenderFunc(props: {
 
                         <div
                           className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
+                            "all",
+                            "__wab_text",
                             sty.text__u6Mu4
                           )}
                         >
@@ -1971,14 +1939,9 @@ function PlasmicInstantNeo__RenderFunc(props: {
                     <div
                       data-plasmic-name={"shabContainer"}
                       data-plasmic-override={overrides.shabContainer}
-                      className={classNames(projectcss.all, sty.shabContainer)}
+                      className={classNames("all", sty.shabContainer)}
                     >
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          sty.freeBox__h5RxL
-                        )}
-                      >
+                      <div className={classNames("all", sty.freeBox__h5RxL)}>
                         <PlasmicImg__
                           alt={""}
                           className={classNames(sty.img__h492R)}
@@ -1999,8 +1962,8 @@ function PlasmicInstantNeo__RenderFunc(props: {
 
                         <div
                           className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
+                            "all",
+                            "__wab_text",
                             sty.text__nntJb
                           )}
                         >
@@ -2312,17 +2275,9 @@ function PlasmicInstantNeo__RenderFunc(props: {
                     <div
                       data-plasmic-name={"otaghakContainer"}
                       data-plasmic-override={overrides.otaghakContainer}
-                      className={classNames(
-                        projectcss.all,
-                        sty.otaghakContainer
-                      )}
+                      className={classNames("all", sty.otaghakContainer)}
                     >
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          sty.freeBox___3Cjo8
-                        )}
-                      >
+                      <div className={classNames("all", sty.freeBox___3Cjo8)}>
                         <PlasmicImg__
                           alt={""}
                           className={classNames(sty.img___4HnKd)}
@@ -2343,8 +2298,8 @@ function PlasmicInstantNeo__RenderFunc(props: {
 
                         <div
                           className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
+                            "all",
+                            "__wab_text",
                             sty.text__rPbqu
                           )}
                         >
@@ -2659,17 +2614,9 @@ function PlasmicInstantNeo__RenderFunc(props: {
                     <div
                       data-plasmic-name={"jabamaContainer"}
                       data-plasmic-override={overrides.jabamaContainer}
-                      className={classNames(
-                        projectcss.all,
-                        sty.jabamaContainer
-                      )}
+                      className={classNames("all", sty.jabamaContainer)}
                     >
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          sty.freeBox__nysjS
-                        )}
-                      >
+                      <div className={classNames("all", sty.freeBox__nysjS)}>
                         <PlasmicImg__
                           alt={""}
                           className={classNames(sty.img__xClPb)}
@@ -2690,8 +2637,8 @@ function PlasmicInstantNeo__RenderFunc(props: {
 
                         <div
                           className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
+                            "all",
+                            "__wab_text",
                             sty.text__ipjgI
                           )}
                         >
@@ -3006,10 +2953,7 @@ function PlasmicInstantNeo__RenderFunc(props: {
                     <div
                       data-plasmic-name={"jajigaContainer"}
                       data-plasmic-override={overrides.jajigaContainer}
-                      className={classNames(
-                        projectcss.all,
-                        sty.jajigaContainer
-                      )}
+                      className={classNames("all", sty.jajigaContainer)}
                       onClick={async event => {
                         const $steps = {};
 
@@ -3051,12 +2995,7 @@ function PlasmicInstantNeo__RenderFunc(props: {
                         }
                       }}
                     >
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          sty.freeBox___4Jjs9
-                        )}
-                      >
+                      <div className={classNames("all", sty.freeBox___4Jjs9)}>
                         <PlasmicImg__
                           alt={""}
                           className={classNames(sty.img__tuLrs)}
@@ -3077,8 +3016,8 @@ function PlasmicInstantNeo__RenderFunc(props: {
 
                         <div
                           className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
+                            "all",
+                            "__wab_text",
                             sty.text__sb2UJ
                           )}
                         >
@@ -3437,7 +3376,7 @@ function PlasmicInstantNeo__RenderFunc(props: {
             </ApiRequest>
           </section>
           <div
-            className={classNames(projectcss.all, sty.freeBox__oviGq)}
+            className={classNames("all", sty.freeBox__oviGq)}
             onClick={async event => {
               const $steps = {};
 
@@ -3464,13 +3403,7 @@ function PlasmicInstantNeo__RenderFunc(props: {
               }
             }}
           >
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__y23Ix
-              )}
-            >
+            <div className={classNames("all", "__wab_text", sty.text__y23Ix)}>
               <React.Fragment>
                 <span
                   className={
@@ -3492,22 +3425,18 @@ function PlasmicInstantNeo__RenderFunc(props: {
             }
           />
 
-          <div className={classNames(projectcss.all, sty.freeBox__ffJke)}>
+          <div className={classNames("all", sty.freeBox__ffJke)}>
             <div
               data-plasmic-name={"desc"}
               data-plasmic-override={overrides.desc}
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.desc
-              )}
+              className={classNames("all", "__wab_text", sty.desc)}
             >
               {
                 "\u00ab\u0631\u0632\u0631\u0648 \u0622\u0646\u06cc\u00bb \u0628\u0647 \u0645\u0647\u0645\u0627\u0646 \u0627\u062c\u0627\u0632\u0647 \u0645\u06cc\u200c\u062f\u0647 \u06a9\u0647 \u0628\u062f\u0648\u0646 \u0646\u06cc\u0627\u0632 \u0628\u0647 \u062a\u0627\u06cc\u06cc\u062f \u0645\u06cc\u0632\u0628\u0627\u0646\u060c \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0631\u0648 \u0628\u0644\u0627\u0641\u0627\u0635\u0644\u0647 \u0631\u0632\u0631\u0648 \u06a9\u0646\u0647. \u0627\u06cc\u0646 \u0648\u06cc\u0698\u06af\u06cc \u0628\u0627\u0639\u062b \u0628\u06cc\u0634\u200c\u062a\u0631 \u0634\u062f\u0646 \u062a\u0639\u062f\u0627\u062f \u0631\u0632\u0631\u0648\u0647\u0627\u060c \u06a9\u0627\u0647\u0634 \u0632\u0645\u0627\u0646 \u0645\u062f\u06cc\u0631\u06cc\u062a \u062f\u0631\u062e\u0648\u0627\u0633\u062a\u200c\u0647\u0627 \u0648 \u0628\u0627\u0644\u0627\u062a\u0631 \u0631\u0641\u062a\u0646 \u062f\u0631 \u0646\u062a\u0627\u06cc\u062c \u062c\u0633\u062a\u062c\u0648\u06cc \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0622\u06af\u0647\u06cc \u0648\u06cc\u0644\u0627 \u0645\u06cc\u200c\u0634\u0647."
               }
             </div>
           </div>
-          <div className={classNames(projectcss.all, sty.freeBox__xyQ18)} />
+          <div className={classNames("all", sty.freeBox__xyQ18)} />
 
           <Embed
             className={classNames("__wab_instance", sty.embedHtml__cwLl)}
@@ -3658,14 +3587,10 @@ function PlasmicInstantNeo__RenderFunc(props: {
           <div
             data-plasmic-name={"returnButton"}
             data-plasmic-override={overrides.returnButton}
-            className={classNames(projectcss.all, sty.returnButton, "fix")}
+            className={classNames("all", sty.returnButton, "fix")}
           >
             <div
-              className={classNames(
-                projectcss.all,
-                sty.freeBox___0Foya,
-                "clickable"
-              )}
+              className={classNames("all", sty.freeBox___0Foya, "clickable")}
               onClick={async event => {
                 const $steps = {};
 
@@ -3693,17 +3618,13 @@ function PlasmicInstantNeo__RenderFunc(props: {
               }}
             >
               <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text___8Hl1I
-                )}
+                className={classNames("all", "__wab_text", sty.text___8Hl1I)}
               >
                 {"\u0628\u0627\u0632\u06af\u0634\u062a "}
               </div>
             </div>
           </div>
-          <div className={classNames(projectcss.all, sty.freeBox__cdq8K)}>
+          <div className={classNames("all", sty.freeBox__cdq8K)}>
             <ClarityRntComponent
               data-plasmic-name={"clarityRntComponent"}
               data-plasmic-override={overrides.clarityRntComponent}
@@ -3721,9 +3642,9 @@ function PlasmicInstantNeo__RenderFunc(props: {
             data-plasmic-override={overrides.jajigaModal}
             className={classNames("__wab_instance", sty.jajigaModal)}
             defaultStylesClassName={classNames(
-              projectcss.root_reset,
-              projectcss.plasmic_default_styles,
-              projectcss.plasmic_mixins,
+              "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+              "plasmic_default_styles",
+              "plasmic_mixins",
               styleTokensClassNames
             )}
             hideFooter={true}
@@ -3740,13 +3661,7 @@ function PlasmicInstantNeo__RenderFunc(props: {
             }}
             open={generateStateValueProp($state, ["jajigaModal", "open"])}
             title={
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__uKvOs
-                )}
-              >
+              <div className={classNames("all", "__wab_text", sty.text__uKvOs)}>
                 <React.Fragment>
                   <span
                     className={
@@ -3766,31 +3681,21 @@ function PlasmicInstantNeo__RenderFunc(props: {
               hasVariant(globalVariants, "screen", "mobile") ? "80%" : undefined
             }
           >
-            <div className={classNames(projectcss.all, sty.freeBox__hsydK)}>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__zzc5Z
-                )}
-              >
+            <div className={classNames("all", sty.freeBox__hsydK)}>
+              <div className={classNames("all", "__wab_text", sty.text__zzc5Z)}>
                 {
                   "\ud83d\udcc5\u062a\u0642\u0648\u06cc\u0645\u062a \u0631\u0648 \u0647\u0645\u06cc\u0634\u0647 \u0628\u0647\u200c\u0631\u0648\u0632 \u0646\u06af\u0647 \u062f\u0627\u0631\n\u2705\u0647\u0645\u0647\u200c\u06cc \u062f\u0631\u062e\u0648\u0627\u0633\u062a\u200c\u0647\u0627 \u0631\u0648 \u062a\u0627\u06cc\u06cc\u062f \u06a9\u0646\n\ud83d\udcac\u0627\u0632 \u0645\u0647\u0645\u0627\u0646\u200c\u0647\u0627 \u0628\u062e\u0648\u0627\u0647 \u0628\u0631\u0627\u062a \u0646\u0638\u0631 \u0628\u0630\u0627\u0631\u0646\n\n\u062a\u0627 \u0633\u0631\u06cc\u0639\u200c\u062a\u0631 \u0627\u0645\u062a\u06cc\u0627\u0632\u062a \u0628\u0627\u0644\u0627 \u0628\u0631\u0647 \u0648 \u0628\u062a\u0648\u0646\u06cc \u062c\u0627\u062c\u06cc\u06af\u0627 \u0631\u0648 \u0622\u0646\u06cc \u06a9\u0646\u06cc."
                 }
               </div>
             </div>
-            <div className={classNames(projectcss.all, sty.freeBox__qj26I)}>
+            <div className={classNames("all", sty.freeBox__qj26I)}>
               <div
                 data-plasmic-name={"active4"}
                 data-plasmic-override={overrides.active4}
-                className={classNames(projectcss.all, sty.active4)}
+                className={classNames("all", sty.active4)}
               >
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__lBHp
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__lBHp)}
                   onClick={async event => {
                     const $steps = {};
 
@@ -3878,9 +3783,9 @@ function PlasmicInstantNeo__RenderFunc(props: {
             data-plasmic-override={overrides.notificationModal}
             className={classNames("__wab_instance", sty.notificationModal)}
             defaultStylesClassName={classNames(
-              projectcss.root_reset,
-              projectcss.plasmic_default_styles,
-              projectcss.plasmic_mixins,
+              "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+              "plasmic_default_styles",
+              "plasmic_mixins",
               styleTokensClassNames
             )}
             hideFooter={true}
@@ -3897,13 +3802,7 @@ function PlasmicInstantNeo__RenderFunc(props: {
             }}
             open={generateStateValueProp($state, ["notificationModal", "open"])}
             title={
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__uXgbX
-                )}
-              >
+              <div className={classNames("all", "__wab_text", sty.text__uXgbX)}>
                 <React.Fragment>
                   <span
                     className={
@@ -3923,31 +3822,21 @@ function PlasmicInstantNeo__RenderFunc(props: {
               hasVariant(globalVariants, "screen", "mobile") ? "80%" : undefined
             }
           >
-            <div className={classNames(projectcss.all, sty.freeBox__tilHi)}>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__csq68
-                )}
-              >
+            <div className={classNames("all", sty.freeBox__tilHi)}>
+              <div className={classNames("all", "__wab_text", sty.text__csq68)}>
                 {
                   "\u0627\u06cc\u0646 \u0635\u0641\u062d\u0647 \u062f\u0631 \u062d\u0627\u0644 \u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc \u0633\u062a.\n\u062a\u0627 \u0633\u0627\u0639\u0627\u062a\u06cc \u062f\u06cc\u06af\u0647 \u0628\u0631\u0645\u06cc\u200c\u06af\u0631\u062f\u06cc\u0645."
                 }
               </div>
             </div>
-            <div className={classNames(projectcss.all, sty.freeBox___30RfC)}>
+            <div className={classNames("all", sty.freeBox___30RfC)}>
               <div
                 data-plasmic-name={"active5"}
                 data-plasmic-override={overrides.active5}
-                className={classNames(projectcss.all, sty.active5)}
+                className={classNames("all", sty.active5)}
               >
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text___3VPe6
-                  )}
+                  className={classNames("all", "__wab_text", sty.text___3VPe6)}
                   onClick={async event => {
                     const $steps = {};
 

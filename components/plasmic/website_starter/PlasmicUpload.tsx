@@ -68,7 +68,6 @@ import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-impor
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicUpload.module.css"; // plasmic-import: f8SYQUnLoWQ1/css
 
 const emptyProxy: any = new Proxy(() => "", {
@@ -228,17 +227,17 @@ function PlasmicUpload__RenderFunc(props: {
         }
       `}</style>
 
-      <div className={projectcss.plasmic_page_wrapper}>
+      <div className={"plasmic_page_wrapper"}>
         <div
           data-plasmic-name={"root"}
           data-plasmic-override={overrides.root}
           data-plasmic-root={true}
           data-plasmic-for-node={forNode}
           className={classNames(
-            projectcss.all,
-            projectcss.root_reset,
-            projectcss.plasmic_default_styles,
-            projectcss.plasmic_mixins,
+            "all",
+            "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+            "plasmic_default_styles",
+            "plasmic_mixins",
             styleTokensClassNames,
             sty.root
           )}
@@ -246,29 +245,23 @@ function PlasmicUpload__RenderFunc(props: {
           <div
             data-plasmic-name={"pic"}
             data-plasmic-override={overrides.pic}
-            className={classNames(projectcss.all, sty.pic)}
+            className={classNames("all", sty.pic)}
           >
             <div
               data-plasmic-name={"title"}
               data-plasmic-override={overrides.title}
-              className={classNames(projectcss.all, sty.title)}
+              className={classNames("all", sty.title)}
             >
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__pnuw9
-                )}
-              >
+              <div className={classNames("all", "__wab_text", sty.text__pnuw9)}>
                 {"admin upload panel"}
               </div>
             </div>
             <div
               data-plasmic-name={"imageFrame"}
               data-plasmic-override={overrides.imageFrame}
-              className={classNames(projectcss.all, sty.imageFrame)}
+              className={classNames("all", sty.imageFrame)}
             >
-              <div className={classNames(projectcss.all, sty.freeBox___1Atpc)}>
+              <div className={classNames("all", sty.freeBox___1Atpc)}>
                 <Embed
                   data-plasmic-name={"embedHtml"}
                   data-plasmic-override={overrides.embedHtml}
@@ -341,9 +334,7 @@ function PlasmicUpload__RenderFunc(props: {
                       throw e;
                     }
                   })() ? (
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__mjUk0)}
-                    >
+                    <div className={classNames("all", sty.freeBox__mjUk0)}>
                       <PlasmicImg__
                         alt={""}
                         className={classNames(sty.img__vqVgf)}
@@ -393,9 +384,7 @@ function PlasmicUpload__RenderFunc(props: {
                       throw e;
                     }
                   })() ? (
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__nt0Fr)}
-                    >
+                    <div className={classNames("all", sty.freeBox__nt0Fr)}>
                       <PlasmicImg__
                         alt={""}
                         className={classNames(sty.img__op6Un)}
@@ -416,8 +405,8 @@ function PlasmicUpload__RenderFunc(props: {
 
                       <div
                         className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
+                          "all",
+                          "__wab_text",
                           sty.text__f6HS3
                         )}
                       >
@@ -431,7 +420,7 @@ function PlasmicUpload__RenderFunc(props: {
               </div>
             </div>
           </div>
-          <div className={classNames(projectcss.all, sty.freeBox__hohIi)}>
+          <div className={classNames("all", sty.freeBox__hohIi)}>
             <ClarityRntComponent
               data-plasmic-name={"clarityRntComponent"}
               data-plasmic-override={overrides.clarityRntComponent}

@@ -65,7 +65,6 @@ import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-impor
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicDivarPaymentError.module.css"; // plasmic-import: HF_nnfWpImAL/css
 
 const emptyProxy: any = new Proxy(() => "", {
@@ -177,22 +176,22 @@ function PlasmicDivarPaymentError__RenderFunc(props: {
         }
       `}</style>
 
-      <div className={projectcss.plasmic_page_wrapper}>
+      <div className={"plasmic_page_wrapper"}>
         <div
           data-plasmic-name={"root"}
           data-plasmic-override={overrides.root}
           data-plasmic-root={true}
           data-plasmic-for-node={forNode}
           className={classNames(
-            projectcss.all,
-            projectcss.root_reset,
-            projectcss.plasmic_default_styles,
-            projectcss.plasmic_mixins,
+            "all",
+            "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+            "plasmic_default_styles",
+            "plasmic_mixins",
             styleTokensClassNames,
             sty.root
           )}
         >
-          <div className={classNames(projectcss.all, sty.freeBox__cVmzu)}>
+          <div className={classNames("all", sty.freeBox__cVmzu)}>
             <PlasmicImg__
               data-plasmic-name={"successful"}
               data-plasmic-override={overrides.successful}
@@ -221,31 +220,19 @@ function PlasmicDivarPaymentError__RenderFunc(props: {
               }}
             />
           </div>
-          <div
-            className={classNames(
-              projectcss.all,
-              projectcss.__wab_text,
-              sty.text__koNCa
-            )}
-          >
+          <div className={classNames("all", "__wab_text", sty.text__koNCa)}>
             {hasVariant(globalVariants, "screen", "mobile")
               ? "\u067e\u0631\u062f\u0627\u062e\u062a \u0627\u0646\u062c\u0627\u0645 \u0646\u0634\u062f!"
               : "\u067e\u0631\u062f\u0627\u062e\u062a \u0627\u0646\u062c\u0627\u0645 \u0646\u0634\u062f!"}
           </div>
-          <div
-            className={classNames(
-              projectcss.all,
-              projectcss.__wab_text,
-              sty.text__qfymR
-            )}
-          >
+          <div className={classNames("all", "__wab_text", sty.text__qfymR)}>
             {hasVariant(globalVariants, "screen", "smallMobile")
               ? "\u062f\u0631\u0635\u0648\u0631\u062a \u06a9\u0633\u0631 \u0645\u0628\u0644\u063a\u060c \u0646\u0647\u0627\u06cc\u062a\u0627 \u0637\u06cc \u06f7\u06f2 \u0633\u0627\u0639\u062a \u0622\u06cc\u0646\u062f\u0647 \u0628\u0647 \u062d\u0633\u0627\u0628 \u0634\u0645\u0627 \u0628\u0631\u0645\u06cc\u200c\u06af\u0631\u062f\u0647."
               : hasVariant(globalVariants, "screen", "mobile")
                 ? "\u062f\u0631\u0635\u0648\u0631\u062a \u06a9\u0633\u0631 \u0645\u0628\u0644\u063a \u0627\u0632 \u062d\u0633\u0627\u0628 \u0634\u0645\u0627\u060c \u0646\u0647\u0627\u06cc\u062a\u0627 \u0637\u06cc \u06f7\u06f2 \u0633\u0627\u0639\u062a \u0622\u06cc\u0646\u062f\u0647 \u0628\u0647 \u062d\u0633\u0627\u0628 \u0634\u0645\u0627 \u0628\u0631\u0645\u06cc\u200c\u06af\u0631\u062f\u0647."
                 : "\u062f\u0631\u0635\u0648\u0631\u062a \u06a9\u0633\u0631 \u0645\u0628\u0644\u063a \u0627\u0632 \u062d\u0633\u0627\u0628 \u0634\u0645\u0627\u060c \u0646\u0647\u0627\u06cc\u062a\u0627 \u0637\u06cc \u06f7\u06f2 \u0633\u0627\u0639\u062a \u0622\u06cc\u0646\u062f\u0647 \u0628\u0647 \u062d\u0633\u0627\u0628 \u0634\u0645\u0627 \u0628\u0631\u0645\u06cc\u200c\u06af\u0631\u062f\u0647."}
           </div>
-          <div className={classNames(projectcss.all, sty.freeBox__afZk)}>
+          <div className={classNames("all", sty.freeBox__afZk)}>
             <Embed
               data-plasmic-name={"embedHtml"}
               data-plasmic-override={overrides.embedHtml}

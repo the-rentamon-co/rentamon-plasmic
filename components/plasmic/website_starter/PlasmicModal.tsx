@@ -68,7 +68,6 @@ import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-impor
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicModal.module.css"; // plasmic-import: seS3S1gMwM5R/css
 
 import CircleIcon from "./icons/PlasmicIcon__Circle"; // plasmic-import: ElHWritzoqrj/icon
@@ -227,9 +226,9 @@ function PlasmicModal__RenderFunc(props: {
       data-plasmic-for-node={forNode}
       className={classNames(
         "__wab_instance",
-        projectcss.root_reset,
-        projectcss.plasmic_default_styles,
-        projectcss.plasmic_mixins,
+        "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+        "plasmic_default_styles",
+        "plasmic_mixins",
         styleTokensClassNames,
         sty.ariaDialogTrigger,
         {
@@ -273,9 +272,9 @@ function PlasmicModal__RenderFunc(props: {
             $refs["ariaModal"] = ref;
           }}
           resetClassName={classNames(
-            projectcss.root_reset,
-            projectcss.plasmic_default_styles,
-            projectcss.plasmic_mixins,
+            "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+            "plasmic_default_styles",
+            "plasmic_mixins",
             styleTokensClassNames
           )}
         >
@@ -294,10 +293,10 @@ function PlasmicModal__RenderFunc(props: {
               defaultContents: (
                 <h3
                   className={classNames(
-                    projectcss.all,
-                    projectcss.h3,
-                    projectcss.h3__7SNMk,
-                    projectcss.__wab_text,
+                    "all",
+                    "h3",
+                    "h3__7SNMk",
+                    "__wab_text",
                     sty.h3__vCxpx
                   )}
                 >
@@ -309,17 +308,15 @@ function PlasmicModal__RenderFunc(props: {
             <div
               data-plasmic-name={"scrollableContent"}
               data-plasmic-override={overrides.scrollableContent}
-              className={classNames(projectcss.all, sty.scrollableContent)}
+              className={classNames("all", sty.scrollableContent)}
             >
               {renderPlasmicSlot({
                 defaultContents: (
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__a6EJh)}
-                  >
+                  <div className={classNames("all", sty.freeBox__a6EJh)}>
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text__ntOl8
                       )}
                     >
@@ -327,8 +324,8 @@ function PlasmicModal__RenderFunc(props: {
                     </div>
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text__iwmhs
                       )}
                     >
@@ -345,20 +342,18 @@ function PlasmicModal__RenderFunc(props: {
               <div
                 data-plasmic-name={"freeBox"}
                 data-plasmic-override={overrides.freeBox}
-                className={classNames(projectcss.all, sty.freeBox)}
+                className={classNames("all", sty.freeBox)}
               >
                 {renderPlasmicSlot({
                   defaultContents: (
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__fwOps)}
-                    >
+                    <div className={classNames("all", sty.freeBox__fwOps)}>
                       <Button3
                         color={"muted"}
                         label={
                           <div
                             className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
+                              "all",
+                              "__wab_text",
                               sty.text__bRBj
                             )}
                           >

@@ -69,7 +69,6 @@ import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-impor
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./Plasmicدانلوداپلیکیشنموبایلمیان.module.css"; // plasmic-import: 4_Sank-PwTYC/css
 
 const emptyProxy: any = new Proxy(() => "", {
@@ -269,17 +268,17 @@ function Plasmicدانلوداپلیکیشنموبایلمیان__RenderFunc(pro
         }
       `}</style>
 
-      <div className={projectcss.plasmic_page_wrapper}>
+      <div className={"plasmic_page_wrapper"}>
         <div
           data-plasmic-name={"downlaod"}
           data-plasmic-override={overrides.downlaod}
           data-plasmic-root={true}
           data-plasmic-for-node={forNode}
           className={classNames(
-            projectcss.all,
-            projectcss.root_reset,
-            projectcss.plasmic_default_styles,
-            projectcss.plasmic_mixins,
+            "all",
+            "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+            "plasmic_default_styles",
+            "plasmic_mixins",
             styleTokensClassNames,
             sty.downlaod
           )}
@@ -293,39 +292,36 @@ function Plasmicدانلوداپلیکیشنموبایلمیان__RenderFunc(pro
           <div
             data-plasmic-name={"mainContents"}
             data-plasmic-override={overrides.mainContents}
-            className={classNames(projectcss.all, sty.mainContents)}
+            className={classNames("all", sty.mainContents)}
           >
             <div
               data-plasmic-name={"introApp"}
               data-plasmic-override={overrides.introApp}
-              className={classNames(projectcss.all, sty.introApp)}
+              className={classNames("all", sty.introApp)}
             >
               <div
                 data-plasmic-name={"introCalendar4"}
                 data-plasmic-override={overrides.introCalendar4}
-                className={classNames(projectcss.all, sty.introCalendar4)}
+                className={classNames("all", sty.introCalendar4)}
               >
                 <div
                   data-plasmic-name={"introCalendarRight"}
                   data-plasmic-override={overrides.introCalendarRight}
-                  className={classNames(projectcss.all, sty.introCalendarRight)}
+                  className={classNames("all", sty.introCalendarRight)}
                 >
                   <div
                     data-plasmic-name={"introCalendarRight2"}
                     data-plasmic-override={overrides.introCalendarRight2}
-                    className={classNames(
-                      projectcss.all,
-                      sty.introCalendarRight2
-                    )}
+                    className={classNames("all", sty.introCalendarRight2)}
                   >
                     <h1
                       data-plasmic-name={"h1"}
                       data-plasmic-override={overrides.h1}
                       className={classNames(
-                        projectcss.all,
-                        projectcss.h1,
-                        projectcss.h1__7SNMk,
-                        projectcss.__wab_text,
+                        "all",
+                        "h1",
+                        "h1__7SNMk",
+                        "__wab_text",
                         sty.h1
                       )}
                     >
@@ -338,18 +334,12 @@ function Plasmicدانلوداپلیکیشنموبایلمیان__RenderFunc(pro
                 <div
                   data-plasmic-name={"introCalendarRight4"}
                   data-plasmic-override={overrides.introCalendarRight4}
-                  className={classNames(
-                    projectcss.all,
-                    sty.introCalendarRight4
-                  )}
+                  className={classNames("all", sty.introCalendarRight4)}
                 >
                   <div
                     data-plasmic-name={"introCalendarRight6"}
                     data-plasmic-override={overrides.introCalendarRight6}
-                    className={classNames(
-                      projectcss.all,
-                      sty.introCalendarRight6
-                    )}
+                    className={classNames("all", sty.introCalendarRight6)}
                   >
                     <Video
                       data-plasmic-name={"htmlVideo"}
@@ -370,74 +360,63 @@ function Plasmicدانلوداپلیکیشنموبایلمیان__RenderFunc(pro
             <div
               data-plasmic-name={"link"}
               data-plasmic-override={overrides.link}
-              className={classNames(projectcss.all, sty.link)}
+              className={classNames("all", sty.link)}
             >
               <div
                 data-plasmic-name={"downloadLinks"}
                 data-plasmic-override={overrides.downloadLinks}
-                className={classNames(projectcss.all, sty.downloadLinks)}
+                className={classNames("all", sty.downloadLinks)}
               >
                 <div
                   data-plasmic-name={"directDl"}
                   data-plasmic-override={overrides.directDl}
-                  className={classNames(
-                    projectcss.all,
-                    sty.directDl,
-                    "clickable"
-                  )}
+                  className={classNames("all", sty.directDl, "clickable")}
                   onClick={async event => {
                     const $steps = {};
 
-                    $steps["goToHttpsMediaMiaanIrApk2FD985Db8CD8A7D986V23Apk"] =
-                      true
-                        ? (() => {
-                            const actionArgs = {
-                              destination:
-                                "https://media.miaan.ir/apk%2F%D9%85%DB%8C%D8%A7%D9%86v23.apk"
-                            };
-                            return (({ destination }) => {
-                              if (
-                                typeof destination === "string" &&
-                                destination.startsWith("#")
-                              ) {
-                                document
-                                  .getElementById(destination.substr(1))
-                                  .scrollIntoView({ behavior: "smooth" });
-                              } else {
-                                __nextRouter?.push(destination);
-                              }
-                            })?.apply(null, [actionArgs]);
-                          })()
-                        : undefined;
+                    $steps["goToHttpsMediaMiaanIrApkMiaanV23AppApk"] = true
+                      ? (() => {
+                          const actionArgs = {
+                            destination:
+                              "https://media.miaan.ir/apk/miaan-v23-app.apk"
+                          };
+                          return (({ destination }) => {
+                            if (
+                              typeof destination === "string" &&
+                              destination.startsWith("#")
+                            ) {
+                              document
+                                .getElementById(destination.substr(1))
+                                .scrollIntoView({ behavior: "smooth" });
+                            } else {
+                              __nextRouter?.push(destination);
+                            }
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
                     if (
-                      $steps[
-                        "goToHttpsMediaMiaanIrApk2FD985Db8CD8A7D986V23Apk"
-                      ] != null &&
+                      $steps["goToHttpsMediaMiaanIrApkMiaanV23AppApk"] !=
+                        null &&
                       typeof $steps[
-                        "goToHttpsMediaMiaanIrApk2FD985Db8CD8A7D986V23Apk"
+                        "goToHttpsMediaMiaanIrApkMiaanV23AppApk"
                       ] === "object" &&
-                      typeof $steps[
-                        "goToHttpsMediaMiaanIrApk2FD985Db8CD8A7D986V23Apk"
-                      ].then === "function"
+                      typeof $steps["goToHttpsMediaMiaanIrApkMiaanV23AppApk"]
+                        .then === "function"
                     ) {
-                      $steps[
-                        "goToHttpsMediaMiaanIrApk2FD985Db8CD8A7D986V23Apk"
-                      ] =
-                        await $steps[
-                          "goToHttpsMediaMiaanIrApk2FD985Db8CD8A7D986V23Apk"
-                        ];
+                      $steps["goToHttpsMediaMiaanIrApkMiaanV23AppApk"] =
+                        await $steps["goToHttpsMediaMiaanIrApkMiaanV23AppApk"];
                     }
                   }}
                 >
                   <div
                     data-plasmic-name={"text"}
                     data-plasmic-override={overrides.text}
-                    className={classNames(projectcss.all, sty.text)}
+                    className={classNames("all", sty.text)}
                   >
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text__vkyyr
                       )}
                     >
@@ -447,8 +426,8 @@ function Plasmicدانلوداپلیکیشنموبایلمیان__RenderFunc(pro
                     </div>
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text__dsPT
                       )}
                     >
@@ -460,7 +439,7 @@ function Plasmicدانلوداپلیکیشنموبایلمیان__RenderFunc(pro
                   <div
                     data-plasmic-name={"icon"}
                     data-plasmic-override={overrides.icon}
-                    className={classNames(projectcss.all, sty.icon)}
+                    className={classNames("all", sty.icon)}
                   >
                     <PlasmicImg__
                       alt={""}
@@ -488,7 +467,7 @@ function Plasmicدانلوداپلیکیشنموبایلمیان__RenderFunc(pro
                 <div
                   data-plasmic-name={"iOs"}
                   data-plasmic-override={overrides.iOs}
-                  className={classNames(projectcss.all, sty.iOs, "clickable")}
+                  className={classNames("all", sty.iOs, "clickable")}
                   onClick={async event => {
                     const $steps = {};
 
@@ -523,12 +502,12 @@ function Plasmicدانلوداپلیکیشنموبایلمیان__RenderFunc(pro
                   <div
                     data-plasmic-name={"text2"}
                     data-plasmic-override={overrides.text2}
-                    className={classNames(projectcss.all, sty.text2)}
+                    className={classNames("all", sty.text2)}
                   >
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text___38Wuz
                       )}
                     >
@@ -538,8 +517,8 @@ function Plasmicدانلوداپلیکیشنموبایلمیان__RenderFunc(pro
                     </div>
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text__auZyW
                       )}
                     >
@@ -551,7 +530,7 @@ function Plasmicدانلوداپلیکیشنموبایلمیان__RenderFunc(pro
                   <div
                     data-plasmic-name={"icon2"}
                     data-plasmic-override={overrides.icon2}
-                    className={classNames(projectcss.all, sty.icon2)}
+                    className={classNames("all", sty.icon2)}
                   >
                     <PlasmicImg__
                       alt={""}
@@ -589,11 +568,7 @@ function Plasmicدانلوداپلیکیشنموبایلمیان__RenderFunc(pro
                 <div
                   data-plasmic-name={"cafeBazar"}
                   data-plasmic-override={overrides.cafeBazar}
-                  className={classNames(
-                    projectcss.all,
-                    sty.cafeBazar,
-                    "clickable"
-                  )}
+                  className={classNames("all", sty.cafeBazar, "clickable")}
                   onClick={async event => {
                     const $steps = {};
 
@@ -626,12 +601,12 @@ function Plasmicدانلوداپلیکیشنموبایلمیان__RenderFunc(pro
                   <div
                     data-plasmic-name={"text4"}
                     data-plasmic-override={overrides.text4}
-                    className={classNames(projectcss.all, sty.text4)}
+                    className={classNames("all", sty.text4)}
                   >
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text___5Br6W
                       )}
                     >
@@ -641,7 +616,7 @@ function Plasmicدانلوداپلیکیشنموبایلمیان__RenderFunc(pro
                   <div
                     data-plasmic-name={"icon4"}
                     data-plasmic-override={overrides.icon4}
-                    className={classNames(projectcss.all, sty.icon4)}
+                    className={classNames("all", sty.icon4)}
                   >
                     <PlasmicImg__
                       alt={""}
@@ -671,7 +646,7 @@ function Plasmicدانلوداپلیکیشنموبایلمیان__RenderFunc(pro
                 <div
                   data-plasmic-name={"myket"}
                   data-plasmic-override={overrides.myket}
-                  className={classNames(projectcss.all, sty.myket, "clickable")}
+                  className={classNames("all", sty.myket, "clickable")}
                   onClick={async event => {
                     const $steps = {};
 
@@ -704,14 +679,10 @@ function Plasmicدانلوداپلیکیشنموبایلمیان__RenderFunc(pro
                   <div
                     data-plasmic-name={"text5"}
                     data-plasmic-override={overrides.text5}
-                    className={classNames(projectcss.all, sty.text5)}
+                    className={classNames("all", sty.text5)}
                   >
                     <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__r5B
-                      )}
+                      className={classNames("all", "__wab_text", sty.text__r5B)}
                     >
                       {"\u062f\u0631\u06cc\u0627\u0641\u062a \u0627\u0632"}
                     </div>
@@ -719,7 +690,7 @@ function Plasmicدانلوداپلیکیشنموبایلمیان__RenderFunc(pro
                   <div
                     data-plasmic-name={"icon5"}
                     data-plasmic-override={overrides.icon5}
-                    className={classNames(projectcss.all, sty.icon5)}
+                    className={classNames("all", sty.icon5)}
                   >
                     <PlasmicImg__
                       alt={""}
@@ -749,33 +720,22 @@ function Plasmicدانلوداپلیکیشنموبایلمیان__RenderFunc(pro
             <div
               data-plasmic-name={"image"}
               data-plasmic-override={overrides.image}
-              className={classNames(projectcss.all, sty.image)}
+              className={classNames("all", sty.image)}
             >
               <div
                 data-plasmic-name={"introAutoSyncCaption2"}
                 data-plasmic-override={overrides.introAutoSyncCaption2}
-                className={classNames(
-                  projectcss.all,
-                  sty.introAutoSyncCaption2
-                )}
+                className={classNames("all", sty.introAutoSyncCaption2)}
               >
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__kcmja
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__kcmja)}
                 >
                   {
                     "\u0628\u0631\u0627\u06cc \u0627\u06cc\u0646\u06a9\u0647 \u06a9\u0644 \u0645\u0627\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0631\u0648 \u067e\u0631 \u06a9\u0646\u06cc\u060c \u0644\u0627\u0632\u0645\u0647 \u0628\u0627 \u0686\u0646\u062f\u06cc\u0646 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u0647\u0645\u06a9\u0627\u0631\u06cc \u06a9\u0646\u06cc. \u0627\u0645\u0627 \u0628\u0647\u200c\u0631\u0648\u0632 \u0646\u06af\u0647 \u062f\u0627\u0634\u062a\u0646 \u062a\u0642\u0648\u06cc\u0645 \u0686\u0646\u062f\u062a\u0627 \u0633\u0627\u06cc\u062a \u062e\u06cc\u0644\u06cc \u062f\u0631\u062f\u0633\u0631 \u062f\u0627\u0631\u0647."
                   }
                 </div>
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__vohiy
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__vohiy)}
                 >
                   {
                     "\u0645\u06cc\u0627\u0646\u060c \u0628\u0647\u200c\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u0631\u0648 \u0628\u062c\u0627\u06cc \u062a\u0648 \u0627\u0646\u062c\u0627\u0645 \u0645\u06cc\u200c\u062f\u0647 :)"
@@ -785,12 +745,12 @@ function Plasmicدانلوداپلیکیشنموبایلمیان__RenderFunc(pro
               <div
                 data-plasmic-name={"introAutoSyncDesc2"}
                 data-plasmic-override={overrides.introAutoSyncDesc2}
-                className={classNames(projectcss.all, sty.introAutoSyncDesc2)}
+                className={classNames("all", sty.introAutoSyncDesc2)}
               >
                 <div
                   data-plasmic-name={"introAutoSyncGif2"}
                   data-plasmic-override={overrides.introAutoSyncGif2}
-                  className={classNames(projectcss.all, sty.introAutoSyncGif2)}
+                  className={classNames("all", sty.introAutoSyncGif2)}
                 >
                   <PlasmicImg__
                     alt={""}
@@ -812,29 +772,26 @@ function Plasmicدانلوداپلیکیشنموبایلمیان__RenderFunc(pro
             <div
               data-plasmic-name={"screenshots"}
               data-plasmic-override={overrides.screenshots}
-              className={classNames(projectcss.all, sty.screenshots)}
+              className={classNames("all", sty.screenshots)}
             >
               <div
                 data-plasmic-name={"introCalendarRight5"}
                 data-plasmic-override={overrides.introCalendarRight5}
-                className={classNames(projectcss.all, sty.introCalendarRight5)}
+                className={classNames("all", sty.introCalendarRight5)}
               >
                 <div
                   data-plasmic-name={"introCalendarRight7"}
                   data-plasmic-override={overrides.introCalendarRight7}
-                  className={classNames(
-                    projectcss.all,
-                    sty.introCalendarRight7
-                  )}
+                  className={classNames("all", sty.introCalendarRight7)}
                 >
                   <h2
                     data-plasmic-name={"h2"}
                     data-plasmic-override={overrides.h2}
                     className={classNames(
-                      projectcss.all,
-                      projectcss.h2,
-                      projectcss.h2__7SNMk,
-                      projectcss.__wab_text,
+                      "all",
+                      "h2",
+                      "h2__7SNMk",
+                      "__wab_text",
                       sty.h2
                     )}
                   >
@@ -843,11 +800,7 @@ function Plasmicدانلوداپلیکیشنموبایلمیان__RenderFunc(pro
                     }
                   </h2>
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__dfRz1
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__dfRz1)}
                   >
                     {
                       "\u2705 \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u062f\u0631 \u0686\u0646\u062f\u06cc\u0646 \u0633\u0627\u06cc\u062a \u0622\u06af\u0647\u06cc \u0628\u0630\u0627\u0631\u06cc \u062a\u0627 \u0628\u06cc\u0634\u062a\u0631 \u0645\u0633\u0627\u0641\u0631 \u0628\u06af\u06cc\u0631\u06cc\n\u2705 \u0646\u06cc\u0627\u0632 \u0628\u0647 \u0647\u0645\u0631\u0627\u0647 \u062f\u0627\u0634\u062a\u0646 \u0633\u0631 \u0631\u0633\u06cc\u062f \u0646\u06cc\u0633\u062a\n\u2705 \u0646\u06af\u0631\u0627\u0646 \u0642\u0648\u0644 \u0627\u0634\u062a\u0628\u0627\u0647\u06cc \u062f\u0627\u062f\u0646 \u0628\u0647 \u0686\u0646\u062f \u0645\u0647\u0645\u0627\u0646 \u0646\u0628\u0627\u0634\n\u2705 \u062f\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0645\u062e\u062a\u0644\u0641 \u0631\u0632\u0631\u0648 \u0647\u0645\u200c\u0632\u0645\u0627\u0646 \u0648 \u0627\u0634\u062a\u0628\u0627\u0647\u06cc \u0646\u0645\u06cc\u200c\u06af\u06cc\u0631\u06cc\r\n\u2705 \u0628\u062c\u0627\u06cc \u0686\u0646\u062f \u0628\u0631\u0646\u0627\u0645\u0647\u060c \u06a9\u0627\u0641\u06cc\u0647 \u06cc\u06a9 \u0628\u0631\u0646\u0627\u0645\u0647 \u062f\u0627\u0634\u062a\u0647 \u0628\u0627\u0634\u06cc\r\n\u2705 \u0646\u0631\u062e \u0627\u062c\u0627\u0631\u0647\u200c\u06cc \u062a\u0645\u0627\u0645 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627 \u0631\u0648 \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u0627\u0632 \u06cc\u06a9\u200c\u062c\u0627 \u062a\u063a\u06cc\u06cc\u0631 \u0628\u062f\u06cc"
@@ -857,8 +810,8 @@ function Plasmicدانلوداپلیکیشنموبایلمیان__RenderFunc(pro
               </div>
             </div>
           </div>
-          <div className={classNames(projectcss.all, sty.freeBox___7Lda8)}>
-            <div className={classNames(projectcss.all, sty.freeBox__memql)}>
+          <div className={classNames("all", sty.freeBox___7Lda8)}>
+            <div className={classNames("all", sty.freeBox__memql)}>
               <ClarityRntComponent
                 data-plasmic-name={"clarityRntComponent"}
                 data-plasmic-override={overrides.clarityRntComponent}

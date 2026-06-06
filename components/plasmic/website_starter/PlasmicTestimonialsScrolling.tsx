@@ -65,7 +65,6 @@ import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-impor
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicTestimonialsScrolling.module.css"; // plasmic-import: lrlVKcMJCRk_/css
 
 createPlasmicElementProxy;
@@ -192,10 +191,10 @@ function PlasmicTestimonialsScrolling__RenderFunc(props: {
       data-plasmic-root={true}
       data-plasmic-for-node={forNode}
       className={classNames(
-        projectcss.all,
-        projectcss.root_reset,
-        projectcss.plasmic_default_styles,
-        projectcss.plasmic_mixins,
+        "all",
+        "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+        "plasmic_default_styles",
+        "plasmic_mixins",
         styleTokensClassNames,
         sty.testimonialsScrolling
       )}
@@ -209,11 +208,7 @@ function PlasmicTestimonialsScrolling__RenderFunc(props: {
           <div
             data-plasmic-name={"text"}
             data-plasmic-override={overrides.text}
-            className={classNames(
-              projectcss.all,
-              projectcss.__wab_text,
-              sty.text
-            )}
+            className={classNames("all", "__wab_text", sty.text)}
           >
             {""}
           </div>
@@ -264,14 +259,14 @@ function PlasmicTestimonialsScrolling__RenderFunc(props: {
       <div
         data-plasmic-name={"frame"}
         data-plasmic-override={overrides.frame}
-        className={classNames(projectcss.all, sty.frame)}
+        className={classNames("all", sty.frame)}
       >
         <div
           data-plasmic-name={"quotes"}
           data-plasmic-override={overrides.quotes}
-          className={classNames(projectcss.all, sty.quotes, "quotes")}
+          className={classNames("all", sty.quotes, "quotes")}
         >
-          <div className={classNames(projectcss.all, sty.freeBox__ml3GW)}>
+          <div className={classNames("all", sty.freeBox__ml3GW)}>
             {(_par => (!_par ? [] : Array.isArray(_par) ? _par : [_par]))(
               (() => {
                 try {
@@ -291,18 +286,16 @@ function PlasmicTestimonialsScrolling__RenderFunc(props: {
               const currentIndex = __plasmic_idx_0;
               return (
                 <div
-                  className={classNames(projectcss.all, sty.freeBox__tyiks)}
+                  className={classNames("all", sty.freeBox__tyiks)}
                   key={currentIndex}
                 >
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__vGlv7)}
-                  >
+                  <div className={classNames("all", sty.freeBox__vGlv7)}>
                     <div
                       data-plasmic-name={"userQuote2"}
                       data-plasmic-override={overrides.userQuote2}
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.userQuote2
                       )}
                     >
@@ -324,23 +317,21 @@ function PlasmicTestimonialsScrolling__RenderFunc(props: {
                       </React.Fragment>
                     </div>
                   </div>
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__yqxv0)}
-                  >
+                  <div className={classNames("all", sty.freeBox__yqxv0)}>
                     <div
                       data-plasmic-name={"right"}
                       data-plasmic-override={overrides.right}
-                      className={classNames(projectcss.all, sty.right)}
+                      className={classNames("all", sty.right)}
                     >
                       <div
                         data-plasmic-name={"rRight"}
                         data-plasmic-override={overrides.rRight}
-                        className={classNames(projectcss.all, sty.rRight)}
+                        className={classNames("all", sty.rRight)}
                       >
                         <div
                           data-plasmic-name={"img"}
                           data-plasmic-override={overrides.img}
-                          className={classNames(projectcss.all, sty.img)}
+                          className={classNames("all", sty.img)}
                         >
                           <PlasmicImg__
                             alt={""}
@@ -431,19 +422,19 @@ function PlasmicTestimonialsScrolling__RenderFunc(props: {
                       <div
                         data-plasmic-name={"lRight"}
                         data-plasmic-override={overrides.lRight}
-                        className={classNames(projectcss.all, sty.lRight)}
+                        className={classNames("all", sty.lRight)}
                       >
                         <div
                           data-plasmic-name={"name"}
                           data-plasmic-override={overrides.name}
-                          className={classNames(projectcss.all, sty.name)}
+                          className={classNames("all", sty.name)}
                         >
                           <div
                             data-plasmic-name={"userName4"}
                             data-plasmic-override={overrides.userName4}
                             className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
+                              "all",
+                              "__wab_text",
                               sty.userName4
                             )}
                           >
@@ -495,14 +486,14 @@ function PlasmicTestimonialsScrolling__RenderFunc(props: {
                         <div
                           data-plasmic-name={"platform"}
                           data-plasmic-override={overrides.platform}
-                          className={classNames(projectcss.all, sty.platform)}
+                          className={classNames("all", sty.platform)}
                         >
                           <div
                             data-plasmic-name={"userPlatform"}
                             data-plasmic-override={overrides.userPlatform}
                             className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
+                              "all",
+                              "__wab_text",
                               sty.userPlatform
                             )}
                           >
@@ -556,12 +547,12 @@ function PlasmicTestimonialsScrolling__RenderFunc(props: {
                     <div
                       data-plasmic-name={"left"}
                       data-plasmic-override={overrides.left}
-                      className={classNames(projectcss.all, sty.left)}
+                      className={classNames("all", sty.left)}
                     >
                       <div
                         data-plasmic-name={"location"}
                         data-plasmic-override={overrides.location}
-                        className={classNames(projectcss.all, sty.location)}
+                        className={classNames("all", sty.location)}
                       >
                         <PlasmicImg__
                           alt={""}
@@ -597,8 +588,8 @@ function PlasmicTestimonialsScrolling__RenderFunc(props: {
                           data-plasmic-name={"userCity"}
                           data-plasmic-override={overrides.userCity}
                           className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
+                            "all",
+                            "__wab_text",
                             sty.userCity
                           )}
                         >

@@ -81,7 +81,6 @@ import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-impor
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./Plasmicثبتآگهیاقامتگاه.module.css"; // plasmic-import: 1vN9Eff09IS1/css
 
 import CheckSvgIcon from "./icons/PlasmicIcon__CheckSvg"; // plasmic-import: aHRi_lZjzHt3/icon
@@ -347,17 +346,17 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
         }
       `}</style>
 
-      <div className={projectcss.plasmic_page_wrapper}>
+      <div className={"plasmic_page_wrapper"}>
         <div
           data-plasmic-name={"content"}
           data-plasmic-override={overrides.content}
           data-plasmic-root={true}
           data-plasmic-for-node={forNode}
           className={classNames(
-            projectcss.all,
-            projectcss.root_reset,
-            projectcss.plasmic_default_styles,
-            projectcss.plasmic_mixins,
+            "all",
+            "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+            "plasmic_default_styles",
+            "plasmic_mixins",
             styleTokensClassNames,
             sty.content
           )}
@@ -371,26 +370,26 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
           <div
             data-plasmic-name={"mainContents"}
             data-plasmic-override={overrides.mainContents}
-            className={classNames(projectcss.all, sty.mainContents)}
+            className={classNames("all", sty.mainContents)}
           >
             <div
               data-plasmic-name={"intro"}
               data-plasmic-override={overrides.intro}
-              className={classNames(projectcss.all, sty.intro)}
+              className={classNames("all", sty.intro)}
             >
               <div
                 data-plasmic-name={"introTitle"}
                 data-plasmic-override={overrides.introTitle}
-                className={classNames(projectcss.all, sty.introTitle)}
+                className={classNames("all", sty.introTitle)}
               >
                 <h1
                   data-plasmic-name={"h1"}
                   data-plasmic-override={overrides.h1}
                   className={classNames(
-                    projectcss.all,
-                    projectcss.h1,
-                    projectcss.h1__7SNMk,
-                    projectcss.__wab_text,
+                    "all",
+                    "h1",
+                    "h1__7SNMk",
+                    "__wab_text",
                     sty.h1
                   )}
                 >
@@ -402,14 +401,10 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
               <div
                 data-plasmic-name={"introDesc"}
                 data-plasmic-override={overrides.introDesc}
-                className={classNames(projectcss.all, sty.introDesc)}
+                className={classNames("all", sty.introDesc)}
               >
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__tc6ZD
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__tc6ZD)}
                 >
                   {
                     "\u062b\u0628\u062a \u0622\u06af\u0647\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0645\u0639\u062a\u0628\u0631 \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u0645\u062b\u0644 \u062c\u0627\u062c\u06cc\u06af\u0627\u060c \u062c\u0627\u0628\u0627\u0645\u0627\u060c \u0627\u062a\u0627\u0642\u06a9\u060c \u0627\u0633\u0646\u067e\u200c\u062a\u0631\u06cc\u067e \u0648\u2026 \u0645\u06cc\u200c\u062a\u0648\u0646\u0647 \u062f\u0631\u0622\u0645\u062f \u0634\u0645\u0627 \u0631\u0648 \u062a\u0627 \u06f3 \u0628\u0631\u0627\u0628\u0631 \u0627\u0641\u0632\u0627\u06cc\u0634 \u0628\u062f\u0647. \u06a9\u0627\u0641\u06cc\u0647 \u06cc\u0647 \u0628\u0627\u0631 \u0645\u0634\u062e\u0635\u0627\u062a \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u0631\u0648 \u062f\u0631 \u00ab\u0645\u06cc\u0627\u0646\u00bb \u062b\u0628\u062a \u06a9\u0646\u06cc\u060c \u062a\u0627 \u062f\u0631 \u0645\u0639\u062a\u0628\u0631\u062a\u0631\u06cc\u0646 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u0646\u0645\u0627\u06cc\u0634 \u062f\u0627\u062f\u0647 \u0628\u0634\u0647. \u0647\u0645\u0686\u0646\u06cc\u0646 \u062b\u0628\u062a \u0622\u06af\u0647\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0631 \u0686\u0646\u062f\u06cc\u0646 \u0633\u0627\u06cc\u062a\u060c  \u0628\u0627\u0639\u062b \u0645\u06cc\u200c\u0634\u0647 \u0632\u0645\u0627\u0646\u06cc \u06a9\u0647 \u0645\u0633\u0627\u0641\u0631 \u0627\u0633\u0645 \u0634\u0647\u0631 \u06cc\u0627 \u0648\u06cc\u0644\u0627\u06cc \u0634\u0645\u0627 \u0631\u0648 \u062c\u0633\u062a\u062c\u0648 \u0645\u06cc\u200c\u06a9\u0646\u0647\u060c \u0627\u062d\u062a\u0645\u0627\u0644 \u062f\u06cc\u062f\u0647 \u0634\u062f\u0646 \u0634\u0645\u0627 \u062f\u0631 \u0646\u062a\u0627\u06cc\u062c \u06af\u0648\u06af\u0644 \u0686\u0646\u062f\u06cc\u0646 \u0628\u0631\u0627\u0628\u0631 \u0628\u0634\u0647. \u0648 \u0627\u06cc\u0646 \u06cc\u0639\u0646\u06cc \u0627\u0641\u0632\u0627\u06cc\u0634 \u0645\u0633\u0627\u0641\u0631 \u0648 \u062f\u0631\u0622\u0645\u062f\u0628\u0627\u0644\u0627\u062a\u0631!"
@@ -419,11 +414,9 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
               <div
                 data-plasmic-name={"str"}
                 data-plasmic-override={overrides.str}
-                className={classNames(projectcss.all, sty.str, "fadeinf")}
+                className={classNames("all", sty.str, "fadeinf")}
               >
-                <div
-                  className={classNames(projectcss.all, sty.freeBox___8M63E)}
-                >
+                <div className={classNames("all", sty.freeBox___8M63E)}>
                   <PlasmicImg__
                     alt={""}
                     className={classNames(sty.img___9Qy7J)}
@@ -443,16 +436,12 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                   />
 
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__jzwJv
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__jzwJv)}
                   >
                     {"\u062c\u0627\u062c\u06cc\u06af\u0627"}
                   </div>
                 </div>
-                <div className={classNames(projectcss.all, sty.freeBox___1SUy)}>
+                <div className={classNames("all", sty.freeBox___1SUy)}>
                   <PlasmicImg__
                     alt={""}
                     className={classNames(sty.img__mXdZu)}
@@ -472,18 +461,12 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                   />
 
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__mEb3V
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__mEb3V)}
                   >
                     {"\u062c\u0627\u0628\u0627\u0645\u0627"}
                   </div>
                 </div>
-                <div
-                  className={classNames(projectcss.all, sty.freeBox___2WWmz)}
-                >
+                <div className={classNames("all", sty.freeBox___2WWmz)}>
                   <PlasmicImg__
                     alt={""}
                     className={classNames(sty.img__jQog0)}
@@ -503,16 +486,12 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                   />
 
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__aop16
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__aop16)}
                   >
                     {"\u0627\u062a\u0627\u0642\u06a9"}
                   </div>
                 </div>
-                <div className={classNames(projectcss.all, sty.freeBox__jdeJo)}>
+                <div className={classNames("all", sty.freeBox__jdeJo)}>
                   <PlasmicImg__
                     alt={""}
                     className={classNames(sty.img__qCzhF)}
@@ -532,16 +511,12 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                   />
 
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__frZBf
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__frZBf)}
                   >
                     {"\u0645\u06cc\u0647\u0645\u0627\u0646\u0634\u0648"}
                   </div>
                 </div>
-                <div className={classNames(projectcss.all, sty.freeBox__z8Qky)}>
+                <div className={classNames("all", sty.freeBox__z8Qky)}>
                   <PlasmicImg__
                     alt={""}
                     className={classNames(sty.img__uDjB)}
@@ -561,16 +536,12 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                   />
 
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__uvWof
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__uvWof)}
                   >
                     {"\u0647\u0648\u0645\u0633\u0627"}
                   </div>
                 </div>
-                <div className={classNames(projectcss.all, sty.freeBox__rtH0T)}>
+                <div className={classNames("all", sty.freeBox__rtH0T)}>
                   <PlasmicImg__
                     alt={""}
                     className={classNames(sty.img__kfEre)}
@@ -590,16 +561,12 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                   />
 
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text___6MWV
-                    )}
+                    className={classNames("all", "__wab_text", sty.text___6MWV)}
                   >
                     {"\u0634\u0628"}
                   </div>
                 </div>
-                <div className={classNames(projectcss.all, sty.freeBox__oEk8D)}>
+                <div className={classNames("all", sty.freeBox__oEk8D)}>
                   <PlasmicImg__
                     alt={""}
                     className={classNames(sty.img__sljxA)}
@@ -619,23 +586,13 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                   />
 
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__slcnL
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__slcnL)}
                   >
                     {"\u0627\u0633\u0646\u067e\u200c\u062a\u0631\u06cc\u067e"}
                   </div>
                 </div>
               </div>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  sty.freeBox__rrCw,
-                  "fadeinf"
-                )}
-              >
+              <div className={classNames("all", sty.freeBox__rrCw, "fadeinf")}>
                 <PlasmicImg__
                   alt={""}
                   className={classNames(sty.img___9GLlr)}
@@ -658,26 +615,22 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
             <div
               data-plasmic-name={"registration"}
               data-plasmic-override={overrides.registration}
-              className={classNames(projectcss.all, sty.registration)}
+              className={classNames("all", sty.registration)}
             >
-              <div className={classNames(projectcss.all, sty.freeBox__uLaxc)}>
+              <div className={classNames("all", sty.freeBox__uLaxc)}>
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__s2Elk
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__s2Elk)}
                 >
                   {
                     "\u0628\u0631\u0627\u06cc \u062b\u0628\u062a\u200c \u0645\u0634\u062e\u0635\u0627\u062a \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0631\u0648\u06cc \u062f\u06a9\u0645\u0647\u200c\u06cc \u0632\u06cc\u0631 \u0628\u0632\u0646\r"
                   }
                 </div>
               </div>
-              <div className={classNames(projectcss.all, sty.freeBox___6AvZ)}>
+              <div className={classNames("all", sty.freeBox___6AvZ)}>
                 <div
                   data-plasmic-name={"regForm"}
                   data-plasmic-override={overrides.regForm}
-                  className={classNames(projectcss.all, sty.regForm)}
+                  className={classNames("all", sty.regForm)}
                 >
                   {(() => {
                     const child$Props = {
@@ -934,8 +887,8 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                         >
                           <div
                             className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
+                              "all",
+                              "__wab_text",
                               sty.text__e6FTz
                             )}
                           >
@@ -947,8 +900,8 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                   })()}
                   <div
                     className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
+                      "all",
+                      "__wab_text",
                       sty.text__gqH9N,
                       "clickable"
                     )}
@@ -1098,17 +1051,15 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                   >
                     {"\u0627\u0631\u0633\u0627\u0644"}
                   </div>
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__hN0Hf)}
-                  >
+                  <div className={classNames("all", sty.freeBox__hN0Hf)}>
                     <AntdModal
                       data-plasmic-name={"modal"}
                       data-plasmic-override={overrides.modal}
                       className={classNames("__wab_instance", sty.modal)}
                       defaultStylesClassName={classNames(
-                        projectcss.root_reset,
-                        projectcss.plasmic_default_styles,
-                        projectcss.plasmic_mixins,
+                        "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+                        "plasmic_default_styles",
+                        "plasmic_mixins",
                         styleTokensClassNames
                       )}
                       hideFooter={true}
@@ -1123,16 +1074,11 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                       title={null}
                       trigger={null}
                     >
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          sty.freeBox__ax3HD
-                        )}
-                      >
+                      <div className={classNames("all", sty.freeBox__ax3HD)}>
                         <div
                           className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
+                            "all",
+                            "__wab_text",
                             sty.text__xxfRh
                           )}
                         >
@@ -1141,12 +1087,7 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                           }
                         </div>
                       </div>
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          sty.freeBox__loGNk
-                        )}
-                      >
+                      <div className={classNames("all", sty.freeBox__loGNk)}>
                         <PlasmicImg__
                           alt={""}
                           className={classNames(sty.img___3Cf1K)}
@@ -1165,16 +1106,11 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                           }}
                         />
                       </div>
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          sty.freeBox__cGXa
-                        )}
-                      >
+                      <div className={classNames("all", sty.freeBox__cGXa)}>
                         <div
                           className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
+                            "all",
+                            "__wab_text",
                             sty.text__jTrBz,
                             "clickable"
                           )}
@@ -1632,13 +1568,7 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                 </Button>
               </div>
             </div>
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__tOQnH
-              )}
-            >
+            <div className={classNames("all", "__wab_text", sty.text__tOQnH)}>
               {
                 "\u062f\u0631\u0635\u0648\u0631\u062a \u0648\u062c\u0648\u062f \u0647\u0631\u06af\u0648\u0646\u0647 \u0633\u0648\u0627\u0644 \u06cc\u0627 \u0627\u0628\u0647\u0627\u0645\u060c \u062a\u0645\u0627\u0633 \u0628\u06af\u06cc\u0631\u06cc\u062f: \u06f9\u06f1\u06f0\u06f9\u06f6\u06f2\u06f2\u06f7-\u06f0\u06f2\u06f1\r\n\u0631\u0648\u0632\u0647\u0627\u06cc \u063a\u06cc\u0631 \u062a\u0639\u0637\u06cc\u0644 \u0627\u0632 \u06f9 \u0627\u0644\u06cc \u06f1\u06f7\r"
               }
@@ -1646,19 +1576,15 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
             <div
               data-plasmic-name={"testimonials"}
               data-plasmic-override={overrides.testimonials}
-              className={classNames(projectcss.all, sty.testimonials, "fadein")}
+              className={classNames("all", sty.testimonials, "fadein")}
             >
               <div
                 data-plasmic-name={"title"}
                 data-plasmic-override={overrides.title}
-                className={classNames(projectcss.all, sty.title)}
+                className={classNames("all", sty.title)}
               >
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__q5Ur9
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__q5Ur9)}
                 >
                   {hasVariant(globalVariants, "screen", "smallMobile")
                     ? "\u062a\u062c\u0631\u0628\u0647\u200c\u06cc \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627\u06cc \u0645\u0648\u0641\u0642 \u0628\u0627 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627\r"
@@ -1668,32 +1594,26 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
               <div
                 data-plasmic-name={"videos"}
                 data-plasmic-override={overrides.videos}
-                className={classNames(projectcss.all, sty.videos)}
+                className={classNames("all", sty.videos)}
               >
-                <div className={classNames(projectcss.all, sty.freeBox__dao4O)}>
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__chd4)}
-                  >
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__vuIs2)}
-                    >
+                <div className={classNames("all", sty.freeBox__dao4O)}>
+                  <div className={classNames("all", sty.freeBox__chd4)}>
+                    <div className={classNames("all", sty.freeBox__vuIs2)}>
                       <div
                         className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
+                          "all",
+                          "__wab_text",
                           sty.text__gx9JO
                         )}
                       >
                         {"\u0622\u0631\u0634 \u062a\u0648\u0627\u0646\u0627"}
                       </div>
                     </div>
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__yjDmI)}
-                    >
+                    <div className={classNames("all", sty.freeBox__yjDmI)}>
                       <div
                         className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
+                          "all",
+                          "__wab_text",
                           sty.text__wkvt
                         )}
                       >
@@ -1703,9 +1623,7 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                       </div>
                     </div>
                   </div>
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__eCa7T)}
-                  >
+                  <div className={classNames("all", sty.freeBox__eCa7T)}>
                     <Video
                       className={classNames(
                         "__wab_instance",
@@ -1717,13 +1635,11 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                       }
                     />
                   </div>
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__ae8Sg)}
-                  >
+                  <div className={classNames("all", sty.freeBox__ae8Sg)}>
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text__yPdu1
                       )}
                     >
@@ -1732,13 +1648,11 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                       }
                     </div>
                   </div>
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__dyAqE)}
-                  >
+                  <div className={classNames("all", sty.freeBox__dyAqE)}>
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text__kGm6W,
                         "clickable"
                       )}
@@ -1783,20 +1697,13 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                     </div>
                   </div>
                 </div>
-                <div className={classNames(projectcss.all, sty.freeBox__hX0Mv)}>
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__lk3Jy)}
-                  >
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        sty.freeBox___0Xipd
-                      )}
-                    >
+                <div className={classNames("all", sty.freeBox__hX0Mv)}>
+                  <div className={classNames("all", sty.freeBox__lk3Jy)}>
+                    <div className={classNames("all", sty.freeBox___0Xipd)}>
                       <div
                         className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
+                          "all",
+                          "__wab_text",
                           sty.text__ui0Ev
                         )}
                       >
@@ -1805,13 +1712,11 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                         }
                       </div>
                     </div>
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__eiONo)}
-                    >
+                    <div className={classNames("all", sty.freeBox__eiONo)}>
                       <div
                         className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
+                          "all",
+                          "__wab_text",
                           sty.text__renrb
                         )}
                       >
@@ -1819,9 +1724,7 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                       </div>
                     </div>
                   </div>
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__voY8Z)}
-                  >
+                  <div className={classNames("all", sty.freeBox__voY8Z)}>
                     <Video
                       className={classNames(
                         "__wab_instance",
@@ -1833,13 +1736,11 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                       }
                     />
                   </div>
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__hZhRc)}
-                  >
+                  <div className={classNames("all", sty.freeBox__hZhRc)}>
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text__tayFz
                       )}
                     >
@@ -1848,13 +1749,11 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                       }
                     </div>
                   </div>
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__fmVlo)}
-                  >
+                  <div className={classNames("all", sty.freeBox__fmVlo)}>
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text__bfmlC,
                         "clickable"
                       )}
@@ -1899,17 +1798,13 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                     </div>
                   </div>
                 </div>
-                <div className={classNames(projectcss.all, sty.freeBox__rQnu0)}>
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__gWWrJ)}
-                  >
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__vy77K)}
-                    >
+                <div className={classNames("all", sty.freeBox__rQnu0)}>
+                  <div className={classNames("all", sty.freeBox__gWWrJ)}>
+                    <div className={classNames("all", sty.freeBox__vy77K)}>
                       <div
                         className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
+                          "all",
+                          "__wab_text",
                           sty.text__lb7OH
                         )}
                       >
@@ -1918,16 +1813,11 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                           : "\u062e\u0627\u0646\u0645 \u0645\u0631\u0627\u062f\u062d\u0633\u06cc\u0646\u06cc"}
                       </div>
                     </div>
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        sty.freeBox___6GLoF
-                      )}
-                    >
+                    <div className={classNames("all", sty.freeBox___6GLoF)}>
                       <div
                         className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
+                          "all",
+                          "__wab_text",
                           sty.text__ybkvp
                         )}
                       >
@@ -1937,9 +1827,7 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                       </div>
                     </div>
                   </div>
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__b6E4C)}
-                  >
+                  <div className={classNames("all", sty.freeBox__b6E4C)}>
                     <Video
                       className={classNames(
                         "__wab_instance",
@@ -1951,13 +1839,11 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                       }
                     />
                   </div>
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__p5V35)}
-                  >
+                  <div className={classNames("all", sty.freeBox__p5V35)}>
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text___0AgMw
                       )}
                     >
@@ -1966,13 +1852,11 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                       }
                     </div>
                   </div>
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__aIxre)}
-                  >
+                  <div className={classNames("all", sty.freeBox__aIxre)}>
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text___5SrM,
                         "clickable"
                       )}
@@ -2022,15 +1906,9 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
             <div
               data-plasmic-name={"relatedContents2"}
               data-plasmic-override={overrides.relatedContents2}
-              className={classNames(projectcss.all, sty.relatedContents2)}
+              className={classNames("all", sty.relatedContents2)}
             >
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__bvakH
-                )}
-              >
+              <div className={classNames("all", "__wab_text", sty.text__bvakH)}>
                 <React.Fragment>
                   <React.Fragment>
                     {
@@ -2040,11 +1918,11 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                   {
                     <PlasmicLink__
                       className={classNames(
-                        projectcss.all,
-                        projectcss.a,
-                        projectcss.a__7SNMk,
-                        projectcss.__wab_text,
-                        projectcss.plasmic_default__inline,
+                        "all",
+                        "a",
+                        "a__7SNMk",
+                        "__wab_text",
+                        "plasmic_default__inline",
                         sty.link__phujC
                       )}
                       component={Link}
@@ -2061,11 +1939,11 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                   {
                     <PlasmicLink__
                       className={classNames(
-                        projectcss.all,
-                        projectcss.a,
-                        projectcss.a__7SNMk,
-                        projectcss.__wab_text,
-                        projectcss.plasmic_default__inline,
+                        "all",
+                        "a",
+                        "a__7SNMk",
+                        "__wab_text",
+                        "plasmic_default__inline",
                         sty.link__vAGf
                       )}
                       component={Link}
@@ -2085,29 +1963,27 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
             <div
               data-plasmic-name={"bot"}
               data-plasmic-override={overrides.bot}
-              className={classNames(projectcss.all, sty.bot)}
+              className={classNames("all", sty.bot)}
             >
               <div
                 data-plasmic-name={"more"}
                 data-plasmic-override={overrides.more}
-                className={classNames(projectcss.all, sty.more)}
+                className={classNames("all", sty.more)}
               >
                 <div
                   data-plasmic-name={"certificates"}
                   data-plasmic-override={overrides.certificates}
-                  className={classNames(projectcss.all, sty.certificates)}
+                  className={classNames("all", sty.certificates)}
                 >
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__vHiXs)}
-                  >
+                  <div className={classNames("all", sty.freeBox__vHiXs)}>
                     <h2
                       data-plasmic-name={"h2"}
                       data-plasmic-override={overrides.h2}
                       className={classNames(
-                        projectcss.all,
-                        projectcss.h2,
-                        projectcss.h2__7SNMk,
-                        projectcss.__wab_text,
+                        "all",
+                        "h2",
+                        "h2__7SNMk",
+                        "__wab_text",
                         sty.h2
                       )}
                     >
@@ -2117,8 +1993,8 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                     </h2>
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text__rcwUb
                       )}
                     >
@@ -2206,19 +2082,15 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
               <div
                 data-plasmic-name={"neighbours"}
                 data-plasmic-override={overrides.neighbours}
-                className={classNames(projectcss.all, sty.neighbours)}
+                className={classNames("all", sty.neighbours)}
               >
                 <div
                   data-plasmic-name={"benefitsTitle2"}
                   data-plasmic-override={overrides.benefitsTitle2}
-                  className={classNames(projectcss.all, sty.benefitsTitle2)}
+                  className={classNames("all", sty.benefitsTitle2)}
                 >
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__uVf3I
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__uVf3I)}
                   >
                     {
                       "\u0627\u06af\u0647 \u0641\u06a9\u0631 \u0645\u06cc\u200c\u06a9\u0646\u06cc \u0631\u0633\u06cc\u062f\u06af\u06cc \u0628\u0647 \u0622\u06af\u0647\u06cc \u0648 \u062a\u0642\u0648\u06cc\u0645 \u0648\u06cc\u0644\u0627 \u062a\u0648\u06cc \u0686\u0646\u062f\u062a\u0627 \u0633\u0627\u06cc\u062a \u0633\u062e\u062a\u0647\u060c\u0647\u0645\u06cc\u0646 \u0627\u0644\u0627\u0646 \u0648\u0627\u0631\u062f \u0633\u0627\u06cc\u062a \u0628\u0634\u0648.!\n\u0645\u06cc\u0627\u0646 \u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc\u200c\u062e\u0648\u062f\u06a9\u0627\u0631 \u0645\u0648\u062c\u0648\u062f\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0631\u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627"
@@ -2228,17 +2100,17 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                 <div
                   data-plasmic-name={"benefitsCaption2"}
                   data-plasmic-override={overrides.benefitsCaption2}
-                  className={classNames(projectcss.all, sty.benefitsCaption2)}
+                  className={classNames("all", sty.benefitsCaption2)}
                 >
                   <div
                     data-plasmic-name={"button2"}
                     data-plasmic-override={overrides.button2}
-                    className={classNames(projectcss.all, sty.button2)}
+                    className={classNames("all", sty.button2)}
                   >
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text__aiwrr,
                         "clickable"
                       )}
@@ -2279,7 +2151,7 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
                 </div>
               </div>
             </div>
-            <div className={classNames(projectcss.all, sty.freeBox__b7Afr)} />
+            <div className={classNames("all", sty.freeBox__b7Afr)} />
           </div>
           <MiaanFooter
             data-plasmic-name={"miaanFooter"}
@@ -2287,7 +2159,7 @@ function Plasmicثبتآگهیاقامتگاه__RenderFunc(props: {
             className={classNames("__wab_instance", sty.miaanFooter)}
           />
 
-          <div className={classNames(projectcss.all, sty.freeBox__n5NpO)}>
+          <div className={classNames("all", sty.freeBox__n5NpO)}>
             <ClarityRntComponent
               data-plasmic-name={"clarityRntComponent"}
               data-plasmic-override={overrides.clarityRntComponent}

@@ -64,7 +64,6 @@ import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-impor
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicReservationsRecordList2.module.css"; // plasmic-import: V9-w7OjDK6vb/css
 
 createPlasmicElementProxy;
@@ -223,10 +222,10 @@ function PlasmicReservationsRecordList2__RenderFunc(props: {
       data-plasmic-root={true}
       data-plasmic-for-node={forNode}
       className={classNames(
-        projectcss.all,
-        projectcss.root_reset,
-        projectcss.plasmic_default_styles,
-        projectcss.plasmic_mixins,
+        "all",
+        "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+        "plasmic_default_styles",
+        "plasmic_mixins",
         styleTokensClassNames,
         sty.tourGuideReservations,
         hasVariant($state, "pendingBookings", "pendingBookings")
@@ -278,7 +277,7 @@ function PlasmicReservationsRecordList2__RenderFunc(props: {
       )}
     >
       <div
-        className={classNames(projectcss.all, sty.freeBox__taGf8, {
+        className={classNames("all", sty.freeBox__taGf8, {
           [sty.freeBoxcancelledBookings__taGf8Uepcc]: hasVariant(
             $state,
             "cancelledBookings",
@@ -307,39 +306,34 @@ function PlasmicReservationsRecordList2__RenderFunc(props: {
         <div
           data-plasmic-name={"rightSide"}
           data-plasmic-override={overrides.rightSide}
-          className={classNames(projectcss.all, sty.rightSide)}
+          className={classNames("all", sty.rightSide)}
         >
-          <div className={classNames(projectcss.all, sty.freeBox___6Zch)}>
+          <div className={classNames("all", sty.freeBox___6Zch)}>
             <div
               data-plasmic-name={"guestName"}
               data-plasmic-override={overrides.guestName}
-              className={classNames(projectcss.all, sty.guestName)}
+              className={classNames("all", sty.guestName)}
             >
               <div
                 data-plasmic-name={"geustName"}
                 data-plasmic-override={overrides.geustName}
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.geustName,
-                  {
-                    [sty.geustNameconfirmedBookings]: hasVariant(
-                      $state,
-                      "confirmedBookings",
-                      "confirmedBookings"
-                    ),
-                    [sty.geustNamepastBookingsBox]: hasVariant(
-                      $state,
-                      "pastBookingsBox",
-                      "pastBookingsBox"
-                    ),
-                    [sty.geustNamependingBookings]: hasVariant(
-                      $state,
-                      "pendingBookings",
-                      "pendingBookings"
-                    )
-                  }
-                )}
+                className={classNames("all", "__wab_text", sty.geustName, {
+                  [sty.geustNameconfirmedBookings]: hasVariant(
+                    $state,
+                    "confirmedBookings",
+                    "confirmedBookings"
+                  ),
+                  [sty.geustNamepastBookingsBox]: hasVariant(
+                    $state,
+                    "pastBookingsBox",
+                    "pastBookingsBox"
+                  ),
+                  [sty.geustNamependingBookings]: hasVariant(
+                    $state,
+                    "pendingBookings",
+                    "pendingBookings"
+                  )
+                })}
               >
                 {hasVariant(globalVariants, "screen", "smallMobile") ? (
                   <React.Fragment>
@@ -395,28 +389,23 @@ function PlasmicReservationsRecordList2__RenderFunc(props: {
             <div
               data-plasmic-name={"source"}
               data-plasmic-override={overrides.source}
-              className={classNames(projectcss.all, sty.source)}
+              className={classNames("all", sty.source)}
             >
               <div
                 data-plasmic-name={"website"}
                 data-plasmic-override={overrides.website}
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.website,
-                  {
-                    [sty.websiteconfirmedBookings]: hasVariant(
-                      $state,
-                      "confirmedBookings",
-                      "confirmedBookings"
-                    ),
-                    [sty.websitepastBookingsBox]: hasVariant(
-                      $state,
-                      "pastBookingsBox",
-                      "pastBookingsBox"
-                    )
-                  }
-                )}
+                className={classNames("all", "__wab_text", sty.website, {
+                  [sty.websiteconfirmedBookings]: hasVariant(
+                    $state,
+                    "confirmedBookings",
+                    "confirmedBookings"
+                  ),
+                  [sty.websitepastBookingsBox]: hasVariant(
+                    $state,
+                    "pastBookingsBox",
+                    "pastBookingsBox"
+                  )
+                })}
               >
                 {hasVariant(globalVariants, "screen", "smallMobile") ? (
                   <React.Fragment>
@@ -470,27 +459,22 @@ function PlasmicReservationsRecordList2__RenderFunc(props: {
               </div>
             </div>
           </div>
-          <div className={classNames(projectcss.all, sty.freeBox__r60Tb)}>
+          <div className={classNames("all", sty.freeBox__r60Tb)}>
             <div
               data-plasmic-name={"date2"}
               data-plasmic-override={overrides.date2}
-              className={classNames(projectcss.all, sty.date2)}
+              className={classNames("all", sty.date2)}
             >
               <div
                 data-plasmic-name={"date"}
                 data-plasmic-override={overrides.date}
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.date,
-                  {
-                    [sty.datepastBookingsBox]: hasVariant(
-                      $state,
-                      "pastBookingsBox",
-                      "pastBookingsBox"
-                    )
-                  }
-                )}
+                className={classNames("all", "__wab_text", sty.date, {
+                  [sty.datepastBookingsBox]: hasVariant(
+                    $state,
+                    "pastBookingsBox",
+                    "pastBookingsBox"
+                  )
+                })}
               >
                 {hasVariant(globalVariants, "screen", "smallMobile") ? (
                   <React.Fragment>
@@ -988,23 +972,18 @@ function PlasmicReservationsRecordList2__RenderFunc(props: {
             <div
               data-plasmic-name={"date3"}
               data-plasmic-override={overrides.date3}
-              className={classNames(projectcss.all, sty.date3)}
+              className={classNames("all", sty.date3)}
             >
               <div
                 data-plasmic-name={"date4"}
                 data-plasmic-override={overrides.date4}
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.date4,
-                  {
-                    [sty.date4confirmedBookings]: hasVariant(
-                      $state,
-                      "confirmedBookings",
-                      "confirmedBookings"
-                    )
-                  }
-                )}
+                className={classNames("all", "__wab_text", sty.date4, {
+                  [sty.date4confirmedBookings]: hasVariant(
+                    $state,
+                    "confirmedBookings",
+                    "confirmedBookings"
+                  )
+                })}
               >
                 {hasVariant(globalVariants, "screen", "smallMobile") ? (
                   <React.Fragment>
@@ -1504,46 +1483,37 @@ function PlasmicReservationsRecordList2__RenderFunc(props: {
         <div
           data-plasmic-name={"leftSide"}
           data-plasmic-override={overrides.leftSide}
-          className={classNames(projectcss.all, sty.leftSide)}
+          className={classNames("all", sty.leftSide)}
         >
-          <div className={classNames(projectcss.all, sty.freeBox__llxC)}>
+          <div className={classNames("all", sty.freeBox__llxC)}>
             <div
               data-plasmic-name={"property"}
               data-plasmic-override={overrides.property}
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.property,
-                {
-                  [sty.propertycancelledBookings]: hasVariant(
-                    $state,
-                    "cancelledBookings",
-                    "cancelledBookings"
-                  ),
-                  [sty.propertyconfirmedBookings]: hasVariant(
-                    $state,
-                    "confirmedBookings",
-                    "confirmedBookings"
-                  ),
-                  [sty.propertypastBookingsBox]: hasVariant(
-                    $state,
-                    "pastBookingsBox",
-                    "pastBookingsBox"
-                  ),
-                  [sty.propertypastBookingsBox_cancelledBookings]:
-                    hasVariant($state, "pastBookingsBox", "pastBookingsBox") &&
-                    hasVariant(
-                      $state,
-                      "cancelledBookings",
-                      "cancelledBookings"
-                    ),
-                  [sty.propertypendingBookings]: hasVariant(
-                    $state,
-                    "pendingBookings",
-                    "pendingBookings"
-                  )
-                }
-              )}
+              className={classNames("all", "__wab_text", sty.property, {
+                [sty.propertycancelledBookings]: hasVariant(
+                  $state,
+                  "cancelledBookings",
+                  "cancelledBookings"
+                ),
+                [sty.propertyconfirmedBookings]: hasVariant(
+                  $state,
+                  "confirmedBookings",
+                  "confirmedBookings"
+                ),
+                [sty.propertypastBookingsBox]: hasVariant(
+                  $state,
+                  "pastBookingsBox",
+                  "pastBookingsBox"
+                ),
+                [sty.propertypastBookingsBox_cancelledBookings]:
+                  hasVariant($state, "pastBookingsBox", "pastBookingsBox") &&
+                  hasVariant($state, "cancelledBookings", "cancelledBookings"),
+                [sty.propertypendingBookings]: hasVariant(
+                  $state,
+                  "pendingBookings",
+                  "pendingBookings"
+                )
+              })}
             >
               {hasVariant(globalVariants, "screen", "smallMobile") ? (
                 <React.Fragment>

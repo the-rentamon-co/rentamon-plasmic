@@ -78,7 +78,6 @@ import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-impor
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicBookingsNeo.module.css"; // plasmic-import: F7Ze7Mc__gmB/css
 
 import SearchSvgIcon from "./icons/PlasmicIcon__SearchSvg"; // plasmic-import: xpwiGbFxHMB2/icon
@@ -537,17 +536,17 @@ function PlasmicBookingsNeo__RenderFunc(props: {
         }
       `}</style>
 
-      <div className={projectcss.plasmic_page_wrapper}>
+      <div className={"plasmic_page_wrapper"}>
         <div
           data-plasmic-name={"root"}
           data-plasmic-override={overrides.root}
           data-plasmic-root={true}
           data-plasmic-for-node={forNode}
           className={classNames(
-            projectcss.all,
-            projectcss.root_reset,
-            projectcss.plasmic_default_styles,
-            projectcss.plasmic_mixins,
+            "all",
+            "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+            "plasmic_default_styles",
+            "plasmic_mixins",
             styleTokensClassNames,
             sty.root
           )}
@@ -967,11 +966,7 @@ function PlasmicBookingsNeo__RenderFunc(props: {
           />
 
           <div
-            className={classNames(
-              projectcss.all,
-              sty.freeBox__tJzYt,
-              "sticky-header"
-            )}
+            className={classNames("all", sty.freeBox__tJzYt, "sticky-header")}
           >
             <ApiRequest
               data-plasmic-name={"checkFeatureStatus"}
@@ -979,11 +974,7 @@ function PlasmicBookingsNeo__RenderFunc(props: {
               className={classNames("__wab_instance", sty.checkFeatureStatus)}
               errorDisplay={
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__sOjfh
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__sOjfh)}
                 >
                   {" "}
                 </div>
@@ -1045,7 +1036,7 @@ function PlasmicBookingsNeo__RenderFunc(props: {
                   throw e;
                 }
               })() ? (
-                <div className={classNames(projectcss.all, sty.freeBox__dDtot)}>
+                <div className={classNames("all", sty.freeBox__dDtot)}>
                   <ToastMessageRnt
                     data-plasmic-name={"toastMessageRnt"}
                     data-plasmic-override={overrides.toastMessageRnt}
@@ -1071,7 +1062,7 @@ function PlasmicBookingsNeo__RenderFunc(props: {
             <div
               data-plasmic-name={"filterSection"}
               data-plasmic-override={overrides.filterSection}
-              className={classNames(projectcss.all, sty.filterSection, ``)}
+              className={classNames("all", sty.filterSection, ``)}
               onScroll={async event => {
                 const $steps = {};
               }}
@@ -1079,17 +1070,17 @@ function PlasmicBookingsNeo__RenderFunc(props: {
               <div
                 data-plasmic-name={"filterAndSearch"}
                 data-plasmic-override={overrides.filterAndSearch}
-                className={classNames(projectcss.all, sty.filterAndSearch)}
+                className={classNames("all", sty.filterAndSearch)}
               >
                 <div
                   data-plasmic-name={"search"}
                   data-plasmic-override={overrides.search}
-                  className={classNames(projectcss.all, sty.search)}
+                  className={classNames("all", sty.search)}
                 >
                   <div
                     data-plasmic-name={"searchBox"}
                     data-plasmic-override={overrides.searchBox}
-                    className={classNames(projectcss.all, sty.searchBox)}
+                    className={classNames("all", sty.searchBox)}
                   >
                     <TextInput2
                       data-plasmic-name={"textInput2"}
@@ -1227,7 +1218,7 @@ function PlasmicBookingsNeo__RenderFunc(props: {
                             <div
                               data-plasmic-name={"remove"}
                               data-plasmic-override={overrides.remove}
-                              className={classNames(projectcss.all, sty.remove)}
+                              className={classNames("all", sty.remove)}
                               onClick={async event => {
                                 const $steps = {};
 
@@ -1351,10 +1342,7 @@ function PlasmicBookingsNeo__RenderFunc(props: {
                             <div
                               data-plasmic-name={"searchIcon"}
                               data-plasmic-override={overrides.searchIcon}
-                              className={classNames(
-                                projectcss.all,
-                                sty.searchIcon
-                              )}
+                              className={classNames("all", sty.searchIcon)}
                             >
                               <PlasmicImg__
                                 alt={""}
@@ -1493,16 +1481,16 @@ function PlasmicBookingsNeo__RenderFunc(props: {
                 <div
                   data-plasmic-name={"sort"}
                   data-plasmic-override={overrides.sort}
-                  className={classNames(projectcss.all, sty.sort)}
+                  className={classNames("all", sty.sort)}
                 />
 
                 <div
                   data-plasmic-name={"filter"}
                   data-plasmic-override={overrides.filter}
-                  className={classNames(projectcss.all, sty.filter)}
+                  className={classNames("all", sty.filter)}
                 >
                   <div
-                    className={classNames(projectcss.all, sty.freeBox__pQhNm)}
+                    className={classNames("all", sty.freeBox__pQhNm)}
                     onClick={async event => {
                       const $steps = {};
 
@@ -1598,17 +1586,12 @@ function PlasmicBookingsNeo__RenderFunc(props: {
                         throw e;
                       }
                     })() ? (
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          sty.freeBox___4QeJn
-                        )}
-                      />
+                      <div className={classNames("all", sty.freeBox___4QeJn)} />
                     ) : null}
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text__kkPpp
                       )}
                     >
@@ -1638,9 +1621,9 @@ function PlasmicBookingsNeo__RenderFunc(props: {
                       children={null}
                       className={classNames("__wab_instance", sty.filterMenu)}
                       defaultStylesClassName={classNames(
-                        projectcss.root_reset,
-                        projectcss.plasmic_default_styles,
-                        projectcss.plasmic_mixins,
+                        "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+                        "plasmic_default_styles",
+                        "plasmic_mixins",
                         styleTokensClassNames
                       )}
                       hideFooter={true}
@@ -1656,28 +1639,17 @@ function PlasmicBookingsNeo__RenderFunc(props: {
                         "open"
                       ])}
                       title={
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            sty.freeBox__ubQ4
-                          )}
-                        >
+                        <div className={classNames("all", sty.freeBox__ubQ4)}>
                           <div
-                            className={classNames(
-                              projectcss.all,
-                              sty.freeBox__p4R2A
-                            )}
+                            className={classNames("all", sty.freeBox__p4R2A)}
                           >
                             <div
-                              className={classNames(
-                                projectcss.all,
-                                sty.freeBox__ow8IL
-                              )}
+                              className={classNames("all", sty.freeBox__ow8IL)}
                             >
                               <div
                                 className={classNames(
-                                  projectcss.all,
-                                  projectcss.__wab_text,
+                                  "all",
+                                  "__wab_text",
                                   sty.text__kAi8W
                                 )}
                               >
@@ -1685,10 +1657,7 @@ function PlasmicBookingsNeo__RenderFunc(props: {
                               </div>
                             </div>
                             <div
-                              className={classNames(
-                                projectcss.all,
-                                sty.freeBox__lMmnH
-                              )}
+                              className={classNames("all", sty.freeBox__lMmnH)}
                             >
                               <PlasmicImg__
                                 alt={""}
@@ -1710,10 +1679,7 @@ function PlasmicBookingsNeo__RenderFunc(props: {
                             </div>
                           </div>
                           <div
-                            className={classNames(
-                              projectcss.all,
-                              sty.freeBox___6UpnF
-                            )}
+                            className={classNames("all", sty.freeBox___6UpnF)}
                           >
                             <PlasmicImg__
                               alt={""}
@@ -1785,12 +1751,12 @@ function PlasmicBookingsNeo__RenderFunc(props: {
             <div
               data-plasmic-name={"checkInAndChecklOut"}
               data-plasmic-override={overrides.checkInAndChecklOut}
-              className={classNames(projectcss.all, sty.checkInAndChecklOut)}
+              className={classNames("all", sty.checkInAndChecklOut)}
             >
               <div
                 data-plasmic-name={"checkIn"}
                 data-plasmic-override={overrides.checkIn}
-                className={classNames(projectcss.all, sty.checkIn, "clickable")}
+                className={classNames("all", sty.checkIn, "clickable")}
                 onClick={async event => {
                   const $steps = {};
 
@@ -1941,11 +1907,7 @@ function PlasmicBookingsNeo__RenderFunc(props: {
                 })()}
               >
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__pfbej
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__pfbej)}
                   style={(() => {
                     try {
                       return (() => {
@@ -2005,11 +1967,7 @@ function PlasmicBookingsNeo__RenderFunc(props: {
               <div
                 data-plasmic-name={"checkOut"}
                 data-plasmic-override={overrides.checkOut}
-                className={classNames(
-                  projectcss.all,
-                  sty.checkOut,
-                  "clickable"
-                )}
+                className={classNames("all", sty.checkOut, "clickable")}
                 onClick={async event => {
                   const $steps = {};
 
@@ -2173,11 +2131,7 @@ function PlasmicBookingsNeo__RenderFunc(props: {
                 })()}
               >
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__p0V8B
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__p0V8B)}
                   style={(() => {
                     try {
                       return (() => {
@@ -2230,11 +2184,7 @@ function PlasmicBookingsNeo__RenderFunc(props: {
               <div
                 data-plasmic-name={"checkOut2"}
                 data-plasmic-override={overrides.checkOut2}
-                className={classNames(
-                  projectcss.all,
-                  sty.checkOut2,
-                  "clickable"
-                )}
+                className={classNames("all", sty.checkOut2, "clickable")}
                 onClick={async event => {
                   const $steps = {};
 
@@ -2347,11 +2297,7 @@ function PlasmicBookingsNeo__RenderFunc(props: {
                 })()}
               >
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__rts9M
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__rts9M)}
                   style={(() => {
                     try {
                       return (() => {
@@ -2381,13 +2327,7 @@ function PlasmicBookingsNeo__RenderFunc(props: {
             children={null}
             className={classNames("__wab_instance", sty.reserveData)}
             errorDisplay={
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__mPwC
-                )}
-              >
+              <div className={classNames("all", "__wab_text", sty.text__mPwC)}>
                 {
                   "\u062e\u0637\u0627 \u062f\u0631 \u0628\u0631\u0642\u0631\u0627\u0631\u06cc \u0627\u0631\u062a\u0628\u0627\u0637"
                 }
@@ -2508,12 +2448,12 @@ function PlasmicBookingsNeo__RenderFunc(props: {
           <div
             data-plasmic-name={"container"}
             data-plasmic-override={overrides.container}
-            className={classNames(projectcss.all, sty.container)}
+            className={classNames("all", sty.container)}
           >
             <div
               data-plasmic-name={"pendingReserve"}
               data-plasmic-override={overrides.pendingReserve}
-              className={classNames(projectcss.all, sty.pendingReserve)}
+              className={classNames("all", sty.pendingReserve)}
             >
               {(_par => (!_par ? [] : Array.isArray(_par) ? _par : [_par]))(
                 (() => {
@@ -2535,7 +2475,7 @@ function PlasmicBookingsNeo__RenderFunc(props: {
                 return (
                   <div
                     className={classNames(
-                      projectcss.all,
+                      "all",
                       sty.freeBox__cvjy0,
                       "clickable"
                     )}
@@ -2869,7 +2809,7 @@ function PlasmicBookingsNeo__RenderFunc(props: {
               <div
                 data-plasmic-name={"reserveMainStack"}
                 data-plasmic-override={overrides.reserveMainStack}
-                className={classNames(projectcss.all, sty.reserveMainStack)}
+                className={classNames("all", sty.reserveMainStack)}
                 id={``}
                 onScroll={async event => {
                   const $steps = {};
@@ -2891,7 +2831,7 @@ function PlasmicBookingsNeo__RenderFunc(props: {
                   <div
                     data-plasmic-name={"pagination2"}
                     data-plasmic-override={overrides.pagination2}
-                    className={classNames(projectcss.all, sty.pagination2)}
+                    className={classNames("all", sty.pagination2)}
                   >
                     {(() => {
                       try {
@@ -2929,10 +2869,7 @@ function PlasmicBookingsNeo__RenderFunc(props: {
                       }
                     })() ? (
                       <div
-                        className={classNames(
-                          projectcss.all,
-                          sty.freeBox__ppg2E
-                        )}
+                        className={classNames("all", sty.freeBox__ppg2E)}
                         onClick={async event => {
                           const $steps = {};
 
@@ -3059,8 +2996,8 @@ function PlasmicBookingsNeo__RenderFunc(props: {
                       >
                         <div
                           className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
+                            "all",
+                            "__wab_text",
                             sty.text___6XLiY
                           )}
                         >
@@ -3089,7 +3026,7 @@ function PlasmicBookingsNeo__RenderFunc(props: {
                   const currentIndex = __plasmic_idx_0;
                   return (
                     <div
-                      className={classNames(projectcss.all, sty.freeBox__nNJow)}
+                      className={classNames("all", sty.freeBox__nNJow)}
                       key={currentIndex}
                       onClick={async event => {
                         const $steps = {};
@@ -3133,12 +3070,7 @@ function PlasmicBookingsNeo__RenderFunc(props: {
                         }
                       }}
                     >
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          sty.freeBox___0BCfe
-                        )}
-                      >
+                      <div className={classNames("all", sty.freeBox___0BCfe)}>
                         {(() => {
                           try {
                             return currentItem.date != null;
@@ -3153,17 +3085,14 @@ function PlasmicBookingsNeo__RenderFunc(props: {
                           }
                         })() ? (
                           <div
-                            className={classNames(
-                              projectcss.all,
-                              sty.freeBox___53Jpo
-                            )}
+                            className={classNames("all", sty.freeBox___53Jpo)}
                           >
                             <div
                               data-plasmic-name={"dates"}
                               data-plasmic-override={overrides.dates}
                               className={classNames(
-                                projectcss.all,
-                                projectcss.__wab_text,
+                                "all",
+                                "__wab_text",
                                 sty.dates
                               )}
                               id={(() => {
@@ -3322,10 +3251,7 @@ function PlasmicBookingsNeo__RenderFunc(props: {
                               </React.Fragment>
                             </div>
                             <div
-                              className={classNames(
-                                projectcss.all,
-                                sty.freeBox___78Kj
-                              )}
+                              className={classNames("all", sty.freeBox___78Kj)}
                             />
                           </div>
                         ) : null}
@@ -3350,7 +3276,7 @@ function PlasmicBookingsNeo__RenderFunc(props: {
                           return (
                             <div
                               className={classNames(
-                                projectcss.all,
+                                "all",
                                 sty.freeBox__jaYtO,
                                 (() => {
                                   try {
@@ -3673,11 +3599,7 @@ function PlasmicBookingsNeo__RenderFunc(props: {
                   }
                 })() ? (
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__gzg2G
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__gzg2G)}
                   >
                     {
                       "\u0645\u0648\u0631\u062f\u06cc \u067e\u06cc\u062f\u0627 \u0646\u0634\u062f"
@@ -3701,9 +3623,7 @@ function PlasmicBookingsNeo__RenderFunc(props: {
                     throw e;
                   }
                 })() ? (
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox___6NxGr)}
-                  >
+                  <div className={classNames("all", sty.freeBox___6NxGr)}>
                     {(
                       hasVariant(globalVariants, "screen", "mobile")
                         ? (() => {
@@ -3739,8 +3659,8 @@ function PlasmicBookingsNeo__RenderFunc(props: {
                     ) ? (
                       <div
                         className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
+                          "all",
+                          "__wab_text",
                           sty.text__i1JNn
                         )}
                       >
@@ -3804,9 +3724,7 @@ function PlasmicBookingsNeo__RenderFunc(props: {
                         }
                       })()
                 ) ? (
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__oAmb)}
-                  >
+                  <div className={classNames("all", sty.freeBox__oAmb)}>
                     {(
                       hasVariant(globalVariants, "screen", "mobile")
                         ? (() => {
@@ -3841,8 +3759,8 @@ function PlasmicBookingsNeo__RenderFunc(props: {
                     ) ? (
                       <div
                         className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
+                          "all",
+                          "__wab_text",
                           sty.text___2QFg6
                         )}
                       >
@@ -3891,7 +3809,7 @@ function PlasmicBookingsNeo__RenderFunc(props: {
                   }
                 })() ? (
                   <div
-                    className={classNames(projectcss.all, sty.freeBox__kXtQs)}
+                    className={classNames("all", sty.freeBox__kXtQs)}
                     onClick={async event => {
                       const $steps = {};
 
@@ -3932,11 +3850,7 @@ function PlasmicBookingsNeo__RenderFunc(props: {
                     <div
                       data-plasmic-name={"\u0628\u06cc\u062e\u06cc\u0627\u0644"}
                       data-plasmic-override={overrides.بیخیال}
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.بیخیال
-                      )}
+                      className={classNames("all", "__wab_text", sty.بیخیال)}
                       onClick={async event => {
                         const $steps = {};
 
@@ -4020,7 +3934,7 @@ function PlasmicBookingsNeo__RenderFunc(props: {
               <div
                 data-plasmic-name={"reserveFilterStack2"}
                 data-plasmic-override={overrides.reserveFilterStack2}
-                className={classNames(projectcss.all, sty.reserveFilterStack2)}
+                className={classNames("all", sty.reserveFilterStack2)}
                 onScroll={async event => {
                   const $steps = {};
                 }}
@@ -4044,7 +3958,7 @@ function PlasmicBookingsNeo__RenderFunc(props: {
                   const currentIndex = __plasmic_idx_0;
                   return (
                     <div
-                      className={classNames(projectcss.all, sty.freeBox__phArc)}
+                      className={classNames("all", sty.freeBox__phArc)}
                       key={currentIndex}
                       onClick={async event => {
                         const $steps = {};
@@ -4089,10 +4003,7 @@ function PlasmicBookingsNeo__RenderFunc(props: {
                       }}
                     >
                       <div
-                        className={classNames(
-                          projectcss.all,
-                          sty.freeBox___7Vj6I
-                        )}
+                        className={classNames("all", sty.freeBox___7Vj6I)}
                         onClick={async event => {
                           const $steps = {};
 
@@ -4247,11 +4158,7 @@ function PlasmicBookingsNeo__RenderFunc(props: {
                   }
                 })() ? (
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__qvxEf
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__qvxEf)}
                   >
                     {
                       "\u0645\u0648\u0631\u062f\u06cc \u067e\u06cc\u062f\u0627 \u0646\u0634\u062f"
@@ -4281,7 +4188,7 @@ function PlasmicBookingsNeo__RenderFunc(props: {
             <div
               data-plasmic-name={"intro"}
               data-plasmic-override={overrides.intro}
-              className={classNames(projectcss.all, sty.intro)}
+              className={classNames("all", sty.intro)}
             >
               {(
                 hasVariant(globalVariants, "screen", "mobile")
@@ -4317,11 +4224,7 @@ function PlasmicBookingsNeo__RenderFunc(props: {
                     })()
               ) ? (
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text___9MBkx
-                  )}
+                  className={classNames("all", "__wab_text", sty.text___9MBkx)}
                 >
                   {hasVariant(globalVariants, "screen", "mobile")
                     ? "\u0647\u0631 \u0632\u0645\u0627\u0646 \u0631\u0632\u0631\u0648 \u062c\u062f\u06cc\u062f\u06cc \u062f\u0631 \u062a\u0642\u0648\u06cc\u0645\u062a \u062b\u0628\u062a \u0634\u0647\u060c \u062c\u0632\u06cc\u06cc\u0627\u062a \u0627\u0648\u0646 \u0631\u0632\u0631\u0648 \u062e\u0648\u062f\u06a9\u0627\u0631 \u0627\u06cc\u0646\u062c\u0627 \u0630\u062e\u06cc\u0631\u0647 \u0645\u06cc\u200c\u0634\u0647. \u0627\u06cc\u0646\u200c\u062c\u0627 \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u062a\u0627\u0631\u06cc\u062e\u0686\u0647\u200c\u06cc \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u06af\u0630\u0634\u062a\u0647 \u0648 \u0622\u06cc\u0646\u062f\u0647 \u0631\u0648 \u0628\u0628\u06cc\u0646\u06cc."
@@ -4333,14 +4236,10 @@ function PlasmicBookingsNeo__RenderFunc(props: {
           <div
             data-plasmic-name={"returnButton"}
             data-plasmic-override={overrides.returnButton}
-            className={classNames(projectcss.all, sty.returnButton, "fix")}
+            className={classNames("all", sty.returnButton, "fix")}
           >
             <div
-              className={classNames(
-                projectcss.all,
-                sty.freeBox__nEbLi,
-                "clickable"
-              )}
+              className={classNames("all", sty.freeBox__nEbLi, "clickable")}
               onClick={async event => {
                 const $steps = {};
 
@@ -4367,19 +4266,13 @@ function PlasmicBookingsNeo__RenderFunc(props: {
                 }
               }}
             >
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__n0IUa
-                )}
-              >
+              <div className={classNames("all", "__wab_text", sty.text__n0IUa)}>
                 {"\u0628\u0627\u0632\u06af\u0634\u062a "}
               </div>
             </div>
           </div>
           {(hasVariant(globalVariants, "screen", "mobile") ? true : false) ? (
-            <div className={classNames(projectcss.all, sty.freeBox__p2Bbb)}>
+            <div className={classNames("all", sty.freeBox__p2Bbb)}>
               <ClarityRntComponent
                 data-plasmic-name={"clarityRntComponent"}
                 data-plasmic-override={overrides.clarityRntComponent}
@@ -4404,9 +4297,9 @@ function PlasmicBookingsNeo__RenderFunc(props: {
             data-plasmic-override={overrides.finalModal}
             className={classNames("__wab_instance", sty.finalModal)}
             defaultStylesClassName={classNames(
-              projectcss.root_reset,
-              projectcss.plasmic_default_styles,
-              projectcss.plasmic_mixins,
+              "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+              "plasmic_default_styles",
+              "plasmic_mixins",
               styleTokensClassNames
             )}
             hideFooter={true}
@@ -4425,7 +4318,7 @@ function PlasmicBookingsNeo__RenderFunc(props: {
             <div
               data-plasmic-name={"title2"}
               data-plasmic-override={overrides.title2}
-              className={classNames(projectcss.all, sty.title2)}
+              className={classNames("all", sty.title2)}
             >
               {(() => {
                 try {
@@ -4441,11 +4334,7 @@ function PlasmicBookingsNeo__RenderFunc(props: {
                 }
               })() ? (
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__aFsNk
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__aFsNk)}
                 >
                   {"\u062a\u0627\u06cc\u06cc\u062f \u0631\u0632\u0631\u0648"}
                 </div>
@@ -4464,11 +4353,7 @@ function PlasmicBookingsNeo__RenderFunc(props: {
                 }
               })() ? (
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__tpuTg
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__tpuTg)}
                 >
                   {
                     "\u0631\u062f \u062f\u0631\u062e\u0648\u0627\u0633\u062a \u0631\u0632\u0631\u0648"
@@ -4476,7 +4361,7 @@ function PlasmicBookingsNeo__RenderFunc(props: {
                 </div>
               ) : null}
             </div>
-            <div className={classNames(projectcss.all, sty.freeBox___8UwoS)}>
+            <div className={classNames("all", sty.freeBox___8UwoS)}>
               {(() => {
                 try {
                   return $state.selectedAction == "accept";
@@ -4491,11 +4376,7 @@ function PlasmicBookingsNeo__RenderFunc(props: {
                 }
               })() ? (
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__tBcHg
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__tBcHg)}
                 >
                   {
                     "\u0645\u0637\u0645\u0626\u0646\u06cc \u06a9\u0647 \u0645\u06cc\u062e\u0648\u0627\u06cc \u0631\u0632\u0631\u0648 \u0631\u0648 \u062a\u0627\u06cc\u06cc\u062f \u06a9\u0646\u06cc\u061f"
@@ -4516,24 +4397,14 @@ function PlasmicBookingsNeo__RenderFunc(props: {
                 }
               })() ? (
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__nXhHt
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__nXhHt)}
                 >
                   {
                     "\u0622\u06cc\u0627 \u0628\u0631\u0627\u06cc \u0631\u062f \u0627\u06cc\u0646 \u062f\u0631\u062e\u0648\u0627\u0633\u062a \u0631\u0632\u0631\u0648 \u0627\u0637\u0645\u06cc\u0646\u0627\u0646 \u062f\u0627\u0631\u06cc\u061f"
                   }
                 </div>
               ) : null}
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__ndc1
-                )}
-              >
+              <div className={classNames("all", "__wab_text", sty.text__ndc1)}>
                 {hasVariant(globalVariants, "screen", "mobile") ? (
                   <React.Fragment>
                     {(() => {
@@ -4778,13 +4649,7 @@ function PlasmicBookingsNeo__RenderFunc(props: {
                   </React.Fragment>
                 )}
               </div>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__ilFi
-                )}
-              >
+              <div className={classNames("all", "__wab_text", sty.text__ilFi)}>
                 <React.Fragment>
                   {(() => {
                     try {
@@ -4802,7 +4667,7 @@ function PlasmicBookingsNeo__RenderFunc(props: {
                 </React.Fragment>
               </div>
             </div>
-            <div className={classNames(projectcss.all, sty.freeBox__pYpG0)}>
+            <div className={classNames("all", sty.freeBox__pYpG0)}>
               {(() => {
                 try {
                   return $state.selectedAction != "accept";
@@ -4945,13 +4810,11 @@ function PlasmicBookingsNeo__RenderFunc(props: {
                     }
                   }}
                 >
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__s5PVs)}
-                  >
+                  <div className={classNames("all", sty.freeBox__s5PVs)}>
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text__subug
                       )}
                     >
@@ -5128,13 +4991,11 @@ function PlasmicBookingsNeo__RenderFunc(props: {
                     }
                   }}
                 >
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__xvvXt)}
-                  >
+                  <div className={classNames("all", sty.freeBox__xvvXt)}>
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text__lJ3Bt
                       )}
                     >
@@ -5306,13 +5167,11 @@ function PlasmicBookingsNeo__RenderFunc(props: {
                     }
                   }}
                 >
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__yYHk)}
-                  >
+                  <div className={classNames("all", sty.freeBox__yYHk)}>
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text__cSq1R
                       )}
                     >
@@ -5418,11 +5277,7 @@ function PlasmicBookingsNeo__RenderFunc(props: {
                 type={"primary"}
               >
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__lUoPx
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__lUoPx)}
                 >
                   {"\u0628\u0627\u0632\u06af\u0634\u062a"}
                 </div>
@@ -5434,9 +5289,9 @@ function PlasmicBookingsNeo__RenderFunc(props: {
             data-plasmic-override={overrides.confirmed}
             className={classNames("__wab_instance", sty.confirmed)}
             defaultStylesClassName={classNames(
-              projectcss.root_reset,
-              projectcss.plasmic_default_styles,
-              projectcss.plasmic_mixins,
+              "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+              "plasmic_default_styles",
+              "plasmic_mixins",
               styleTokensClassNames
             )}
             hideFooter={true}
@@ -5450,7 +5305,7 @@ function PlasmicBookingsNeo__RenderFunc(props: {
             open={generateStateValueProp($state, ["confirmed", "open"])}
             title={
               <React.Fragment>
-                <div className={classNames(projectcss.all, sty.freeBox__mLw5)}>
+                <div className={classNames("all", sty.freeBox__mLw5)}>
                   <PlasmicImg__
                     alt={""}
                     className={classNames(sty.img__oniKx)}
@@ -5506,7 +5361,7 @@ function PlasmicBookingsNeo__RenderFunc(props: {
                     }}
                   />
                 </div>
-                <div className={classNames(projectcss.all, sty.freeBox___0Rqi)}>
+                <div className={classNames("all", sty.freeBox___0Rqi)}>
                   {(() => {
                     try {
                       return $state.modalData[0].platfromName == "شب";
@@ -5784,11 +5639,7 @@ function PlasmicBookingsNeo__RenderFunc(props: {
                     />
                   ) : null}
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__jCfkx
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__jCfkx)}
                   >
                     <React.Fragment>
                       {(() => {
@@ -5815,24 +5666,20 @@ function PlasmicBookingsNeo__RenderFunc(props: {
             <div
               data-plasmic-name={"main2"}
               data-plasmic-override={overrides.main2}
-              className={classNames(projectcss.all, sty.main2)}
+              className={classNames("all", sty.main2)}
             >
               <div
                 data-plasmic-name={"_3"}
                 data-plasmic-override={overrides._3}
-                className={classNames(projectcss.all, sty._3)}
+                className={classNames("all", sty._3)}
               >
                 <div
                   data-plasmic-name={"_17"}
                   data-plasmic-override={overrides._17}
-                  className={classNames(projectcss.all, sty._17)}
+                  className={classNames("all", sty._17)}
                 >
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__hyWVd
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__hyWVd)}
                   >
                     <React.Fragment>
                       {(() => {
@@ -5852,8 +5699,8 @@ function PlasmicBookingsNeo__RenderFunc(props: {
                   </div>
                   <div
                     className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
+                      "all",
+                      "__wab_text",
                       sty.text___667Uw
                     )}
                   >
@@ -5875,8 +5722,8 @@ function PlasmicBookingsNeo__RenderFunc(props: {
                   </div>
                   <div
                     className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
+                      "all",
+                      "__wab_text",
                       sty.text___3V8J3
                     )}
                   >
@@ -5900,11 +5747,9 @@ function PlasmicBookingsNeo__RenderFunc(props: {
                 <div
                   data-plasmic-name={"_18"}
                   data-plasmic-override={overrides._18}
-                  className={classNames(projectcss.all, sty._18)}
+                  className={classNames("all", sty._18)}
                 >
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__joUbg)}
-                  >
+                  <div className={classNames("all", sty.freeBox__joUbg)}>
                     {(() => {
                       try {
                         return $state.modalData[0].status == "Confirmed";
@@ -5921,11 +5766,7 @@ function PlasmicBookingsNeo__RenderFunc(props: {
                       <div
                         data-plasmic-name={"status2"}
                         data-plasmic-override={overrides.status2}
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.status2
-                        )}
+                        className={classNames("all", "__wab_text", sty.status2)}
                       >
                         {"\u0646\u0647\u0627\u06cc\u06cc \u0634\u062f\u0647"}
                       </div>
@@ -5947,8 +5788,8 @@ function PlasmicBookingsNeo__RenderFunc(props: {
                         data-plasmic-name={"falseStatus2"}
                         data-plasmic-override={overrides.falseStatus2}
                         className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
+                          "all",
+                          "__wab_text",
                           sty.falseStatus2
                         )}
                       >
@@ -5961,19 +5802,15 @@ function PlasmicBookingsNeo__RenderFunc(props: {
               <div
                 data-plasmic-name={"_4"}
                 data-plasmic-override={overrides._4}
-                className={classNames(projectcss.all, sty._4)}
+                className={classNames("all", sty._4)}
               >
                 <div
                   data-plasmic-name={"_19"}
                   data-plasmic-override={overrides._19}
-                  className={classNames(projectcss.all, sty._19)}
+                  className={classNames("all", sty._19)}
                 >
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__rliur
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__rliur)}
                   >
                     <React.Fragment>
                       {(() => {
@@ -5995,23 +5832,15 @@ function PlasmicBookingsNeo__RenderFunc(props: {
                 <div
                   data-plasmic-name={"_110"}
                   data-plasmic-override={overrides._110}
-                  className={classNames(projectcss.all, sty._110)}
+                  className={classNames("all", sty._110)}
                 >
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__u46U8
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__u46U8)}
                   >
                     {"\u0648\u0631\u0648\u062f:"}
                   </div>
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__pOrvn
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__pOrvn)}
                   >
                     <React.Fragment>
                       {(() => {
@@ -6033,23 +5862,15 @@ function PlasmicBookingsNeo__RenderFunc(props: {
                 <div
                   data-plasmic-name={"_111"}
                   data-plasmic-override={overrides._111}
-                  className={classNames(projectcss.all, sty._111)}
+                  className={classNames("all", sty._111)}
                 >
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__mI9WA
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__mI9WA)}
                   >
                     {"\u062e\u0631\u0648\u062c:"}
                   </div>
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__pToIx
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__pToIx)}
                   >
                     <React.Fragment>
                       {(() => {
@@ -6071,23 +5892,15 @@ function PlasmicBookingsNeo__RenderFunc(props: {
                 <div
                   data-plasmic-name={"_112"}
                   data-plasmic-override={overrides._112}
-                  className={classNames(projectcss.all, sty._112)}
+                  className={classNames("all", sty._112)}
                 >
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__iIeXe
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__iIeXe)}
                   >
                     {"\u0645\u0628\u0644\u063a \u06a9\u0644:"}
                   </div>
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__xq1TE
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__xq1TE)}
                   >
                     <React.Fragment>
                       {(() => {
@@ -6108,7 +5921,7 @@ function PlasmicBookingsNeo__RenderFunc(props: {
                 </div>
               </div>
             </div>
-            <div className={classNames(projectcss.all, sty.freeBox__rKkfZ)}>
+            <div className={classNames("all", sty.freeBox__rKkfZ)}>
               <Button
                 className={classNames("__wab_instance", sty.button__ypDKo)}
                 onClick={async event => {
@@ -6218,13 +6031,11 @@ function PlasmicBookingsNeo__RenderFunc(props: {
                   }
                 }}
               >
-                <div
-                  className={classNames(projectcss.all, sty.freeBox___8BWbg)}
-                >
+                <div className={classNames("all", sty.freeBox___8BWbg)}>
                   <div
                     className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
+                      "all",
+                      "__wab_text",
                       sty.text___2Vkxp
                     )}
                   >
@@ -6379,13 +6190,11 @@ function PlasmicBookingsNeo__RenderFunc(props: {
                   size={"medium"}
                   type={"primary"}
                 >
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox___2CYM)}
-                  >
+                  <div className={classNames("all", sty.freeBox___2CYM)}>
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text__rtJh6
                       )}
                     >
@@ -6471,13 +6280,11 @@ function PlasmicBookingsNeo__RenderFunc(props: {
                   size={"medium"}
                   type={"primary"}
                 >
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__ixtS)}
-                  >
+                  <div className={classNames("all", sty.freeBox__ixtS)}>
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text__cqJF
                       )}
                     >
@@ -6490,7 +6297,7 @@ function PlasmicBookingsNeo__RenderFunc(props: {
           </AntdModal>
           <div
             className={classNames(
-              projectcss.all,
+              "all",
               sty.freeBox__bMjt7,
               (() => {
                 try {
@@ -6518,12 +6325,12 @@ function PlasmicBookingsNeo__RenderFunc(props: {
               const $steps = {};
             }}
           >
-            <div className={classNames(projectcss.all, sty.freeBox__jiiLw)}>
+            <div className={classNames("all", sty.freeBox__jiiLw)}>
               <div
                 data-plasmic-name={"filter2"}
                 data-plasmic-override={overrides.filter2}
                 className={classNames(
-                  projectcss.all,
+                  "all",
                   sty.filter2,
                   (() => {
                     try {
@@ -6545,27 +6352,21 @@ function PlasmicBookingsNeo__RenderFunc(props: {
                 <div
                   data-plasmic-name={"title"}
                   data-plasmic-override={overrides.title}
-                  className={classNames(projectcss.all, sty.title)}
+                  className={classNames("all", sty.title)}
                 >
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__ipSqR)}
-                  >
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__q1OJp)}
-                    >
+                  <div className={classNames("all", sty.freeBox__ipSqR)}>
+                    <div className={classNames("all", sty.freeBox__q1OJp)}>
                       <div
                         className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
+                          "all",
+                          "__wab_text",
                           sty.text__ml6Xr
                         )}
                       >
                         {"\u0641\u06cc\u0644\u062a\u0631\u0647\u0627"}
                       </div>
                     </div>
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__tg23I)}
-                    >
+                    <div className={classNames("all", sty.freeBox__tg23I)}>
                       <PlasmicImg__
                         alt={""}
                         className={classNames(sty.img__mr3Sq)}
@@ -6585,9 +6386,7 @@ function PlasmicBookingsNeo__RenderFunc(props: {
                       />
                     </div>
                   </div>
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__jl4Aq)}
-                  >
+                  <div className={classNames("all", sty.freeBox__jl4Aq)}>
                     <PlasmicImg__
                       alt={""}
                       className={classNames(sty.img__aOy6)}
@@ -6653,21 +6452,14 @@ function PlasmicBookingsNeo__RenderFunc(props: {
                   <div
                     data-plasmic-name={"source2"}
                     data-plasmic-override={overrides.source2}
-                    className={classNames(projectcss.all, sty.source2)}
+                    className={classNames("all", sty.source2)}
                   >
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__wifkz)}
-                    >
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          sty.freeBox__do1Fd
-                        )}
-                      >
+                    <div className={classNames("all", sty.freeBox__wifkz)}>
+                      <div className={classNames("all", sty.freeBox__do1Fd)}>
                         <div
                           className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
+                            "all",
+                            "__wab_text",
                             sty.text__xv2A
                           )}
                         >
@@ -6677,9 +6469,7 @@ function PlasmicBookingsNeo__RenderFunc(props: {
                         </div>
                       </div>
                     </div>
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__fbN79)}
-                    >
+                    <div className={classNames("all", sty.freeBox__fbN79)}>
                       <PlasmicImg__
                         alt={""}
                         className={classNames(sty.img__fSyg6)}
@@ -6706,21 +6496,14 @@ function PlasmicBookingsNeo__RenderFunc(props: {
                   <div
                     data-plasmic-name={"property2"}
                     data-plasmic-override={overrides.property2}
-                    className={classNames(projectcss.all, sty.property2)}
+                    className={classNames("all", sty.property2)}
                   >
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__wy3Yt)}
-                    >
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          sty.freeBox___68KO4
-                        )}
-                      >
+                    <div className={classNames("all", sty.freeBox__wy3Yt)}>
+                      <div className={classNames("all", sty.freeBox___68KO4)}>
                         <div
                           className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
+                            "all",
+                            "__wab_text",
                             sty.text__evNom
                           )}
                         >
@@ -6730,9 +6513,7 @@ function PlasmicBookingsNeo__RenderFunc(props: {
                         </div>
                       </div>
                     </div>
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__oNznt)}
-                    >
+                    <div className={classNames("all", sty.freeBox__oNznt)}>
                       <PlasmicImg__
                         alt={""}
                         className={classNames(sty.img__o75Iy)}
@@ -6756,18 +6537,14 @@ function PlasmicBookingsNeo__RenderFunc(props: {
                 <div
                   data-plasmic-name={"settlement"}
                   data-plasmic-override={overrides.settlement}
-                  className={classNames(projectcss.all, sty.settlement)}
+                  className={classNames("all", sty.settlement)}
                 >
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__qkr8Z)}
-                  >
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__krXMy)}
-                    >
+                  <div className={classNames("all", sty.freeBox__qkr8Z)}>
+                    <div className={classNames("all", sty.freeBox__krXMy)}>
                       <div
                         className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
+                          "all",
+                          "__wab_text",
                           sty.text__yf6T3
                         )}
                       >
@@ -6777,9 +6554,7 @@ function PlasmicBookingsNeo__RenderFunc(props: {
                       </div>
                     </div>
                   </div>
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox___9Xg7P)}
-                  >
+                  <div className={classNames("all", sty.freeBox___9Xg7P)}>
                     <Switch
                       data-plasmic-name={"settlement2"}
                       data-plasmic-override={overrides.settlement2}
@@ -6965,21 +6740,14 @@ function PlasmicBookingsNeo__RenderFunc(props: {
                 <div
                   data-plasmic-name={"settlement3"}
                   data-plasmic-override={overrides.settlement3}
-                  className={classNames(projectcss.all, sty.settlement3)}
+                  className={classNames("all", sty.settlement3)}
                 >
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__tftX)}
-                  >
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        sty.freeBox___0Xemw
-                      )}
-                    >
+                  <div className={classNames("all", sty.freeBox__tftX)}>
+                    <div className={classNames("all", sty.freeBox___0Xemw)}>
                       <div
                         className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
+                          "all",
+                          "__wab_text",
                           sty.text__cevKq
                         )}
                       >
@@ -6987,9 +6755,7 @@ function PlasmicBookingsNeo__RenderFunc(props: {
                       </div>
                     </div>
                   </div>
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__zj5U5)}
-                  >
+                  <div className={classNames("all", sty.freeBox__zj5U5)}>
                     {(() => {
                       const child$Props = {
                         checked: generateStateValueProp($state, [
@@ -7155,18 +6921,14 @@ function PlasmicBookingsNeo__RenderFunc(props: {
                 <div
                   data-plasmic-name={"cancelled"}
                   data-plasmic-override={overrides.cancelled}
-                  className={classNames(projectcss.all, sty.cancelled)}
+                  className={classNames("all", sty.cancelled)}
                 >
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__azvb4)}
-                  >
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__hiFqw)}
-                    >
+                  <div className={classNames("all", sty.freeBox__azvb4)}>
+                    <div className={classNames("all", sty.freeBox__hiFqw)}>
                       <div
                         className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
+                          "all",
+                          "__wab_text",
                           sty.text__k9H2U
                         )}
                       >
@@ -7174,9 +6936,7 @@ function PlasmicBookingsNeo__RenderFunc(props: {
                       </div>
                     </div>
                   </div>
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__fmwL)}
-                  >
+                  <div className={classNames("all", sty.freeBox__fmwL)}>
                     <Switch
                       data-plasmic-name={"cancelled3"}
                       data-plasmic-override={overrides.cancelled3}
@@ -7393,18 +7153,14 @@ function PlasmicBookingsNeo__RenderFunc(props: {
                 <div
                   data-plasmic-name={"button"}
                   data-plasmic-override={overrides.button}
-                  className={classNames(projectcss.all, sty.button)}
+                  className={classNames("all", sty.button)}
                 >
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__orJcz)}
-                  >
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__wP375)}
-                    >
+                  <div className={classNames("all", sty.freeBox__orJcz)}>
+                    <div className={classNames("all", sty.freeBox__wP375)}>
                       <div
                         className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
+                          "all",
+                          "__wab_text",
                           sty.text__yf3
                         )}
                         onClick={async event => {
@@ -7453,7 +7209,7 @@ function PlasmicBookingsNeo__RenderFunc(props: {
                     </div>
                   </div>
                   <div
-                    className={classNames(projectcss.all, sty.freeBox__kPfxv)}
+                    className={classNames("all", sty.freeBox__kPfxv)}
                     onClick={async event => {
                       const $steps = {};
 
@@ -7571,8 +7327,8 @@ function PlasmicBookingsNeo__RenderFunc(props: {
                   >
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text__gibSz
                       )}
                     >
@@ -7588,7 +7344,7 @@ function PlasmicBookingsNeo__RenderFunc(props: {
               data-plasmic-name={"newbookingpricingalert"}
               data-plasmic-override={overrides.newbookingpricingalert}
               className={classNames(
-                projectcss.all,
+                "all",
                 sty.newbookingpricingalert,
                 (() => {
                   try {
@@ -7607,15 +7363,13 @@ function PlasmicBookingsNeo__RenderFunc(props: {
                 })()
               )}
             >
-              <div className={classNames(projectcss.all, sty.freeBox__aCiz)}>
-                <div className={classNames(projectcss.all, sty.freeBox__n7KgS)}>
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__kksWc)}
-                  >
+              <div className={classNames("all", sty.freeBox__aCiz)}>
+                <div className={classNames("all", sty.freeBox__n7KgS)}>
+                  <div className={classNames("all", sty.freeBox__kksWc)}>
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text__fnu3W
                       )}
                     >
@@ -7625,8 +7379,8 @@ function PlasmicBookingsNeo__RenderFunc(props: {
                     </div>
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text__xccv
                       )}
                     >
@@ -7658,7 +7412,7 @@ function PlasmicBookingsNeo__RenderFunc(props: {
                     ) : null}
                   </div>
                 </div>
-                <div className={classNames(projectcss.all, sty.freeBox__wlLs7)}>
+                <div className={classNames("all", sty.freeBox__wlLs7)}>
                   <PlasmicImg__
                     alt={""}
                     className={classNames(sty.img___6ZFiV)}
@@ -7679,11 +7433,7 @@ function PlasmicBookingsNeo__RenderFunc(props: {
                   />
                 </div>
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text___4NIuB
-                  )}
+                  className={classNames("all", "__wab_text", sty.text___4NIuB)}
                   onClick={async event => {
                     const $steps = {};
 

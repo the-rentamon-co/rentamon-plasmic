@@ -64,7 +64,6 @@ import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-impor
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicNewPage4.module.css"; // plasmic-import: 6CFXY27Y4RPh/css
 
 const emptyProxy: any = new Proxy(() => "", {
@@ -172,17 +171,17 @@ function PlasmicNewPage4__RenderFunc(props: {
         }
       `}</style>
 
-      <div className={projectcss.plasmic_page_wrapper}>
+      <div className={"plasmic_page_wrapper"}>
         <div
           data-plasmic-name={"root"}
           data-plasmic-override={overrides.root}
           data-plasmic-root={true}
           data-plasmic-for-node={forNode}
           className={classNames(
-            projectcss.all,
-            projectcss.root_reset,
-            projectcss.plasmic_default_styles,
-            projectcss.plasmic_mixins,
+            "all",
+            "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+            "plasmic_default_styles",
+            "plasmic_mixins",
             styleTokensClassNames,
             sty.root
           )}
@@ -190,7 +189,7 @@ function PlasmicNewPage4__RenderFunc(props: {
           <div
             data-plasmic-name={"main"}
             data-plasmic-override={overrides.main}
-            className={classNames(projectcss.all, sty.main)}
+            className={classNames("all", sty.main)}
           />
         </div>
       </div>

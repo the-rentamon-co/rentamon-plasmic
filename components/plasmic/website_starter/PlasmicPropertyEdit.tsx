@@ -71,7 +71,6 @@ import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-impor
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicPropertyEdit.module.css"; // plasmic-import: 0Vey5WEyBBAp/css
 
 import SearchSvgIcon from "./icons/PlasmicIcon__SearchSvg"; // plasmic-import: xpwiGbFxHMB2/icon
@@ -278,7 +277,7 @@ function PlasmicPropertyEdit__RenderFunc(props: {
         }
       `}</style>
 
-      <div className={projectcss.plasmic_page_wrapper}>
+      <div className={"plasmic_page_wrapper"}>
         <div
           data-plasmic-name={
             "\u0648\u06cc\u0631\u0627\u06cc\u0634\u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
@@ -287,10 +286,10 @@ function PlasmicPropertyEdit__RenderFunc(props: {
           data-plasmic-root={true}
           data-plasmic-for-node={forNode}
           className={classNames(
-            projectcss.all,
-            projectcss.root_reset,
-            projectcss.plasmic_default_styles,
-            projectcss.plasmic_mixins,
+            "all",
+            "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+            "plasmic_default_styles",
+            "plasmic_mixins",
             styleTokensClassNames,
             sty.ویرایشاقامتگاه
           )}
@@ -300,13 +299,7 @@ function PlasmicPropertyEdit__RenderFunc(props: {
             data-plasmic-override={overrides.userInfoApiRequest}
             className={classNames("__wab_instance", sty.userInfoApiRequest)}
             errorDisplay={
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__qMvT
-                )}
-              >
+              <div className={classNames("all", "__wab_text", sty.text__qMvT)}>
                 {"Error fetching data"}
               </div>
             }
@@ -370,15 +363,11 @@ function PlasmicPropertyEdit__RenderFunc(props: {
             <div
               data-plasmic-name={"type"}
               data-plasmic-override={overrides.type}
-              className={classNames(projectcss.all, sty.type)}
+              className={classNames("all", sty.type)}
             >
-              <div className={classNames(projectcss.all, sty.freeBox__tfzfK)}>
+              <div className={classNames("all", sty.freeBox__tfzfK)}>
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text___1Wwa3
-                  )}
+                  className={classNames("all", "__wab_text", sty.text___1Wwa3)}
                 >
                   <React.Fragment>
                     {(() => {
@@ -399,13 +388,9 @@ function PlasmicPropertyEdit__RenderFunc(props: {
                   </React.Fragment>
                 </div>
               </div>
-              <div className={classNames(projectcss.all, sty.freeBox___05Qhp)}>
+              <div className={classNames("all", sty.freeBox___05Qhp)}>
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__zh60V
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__zh60V)}
                 >
                   {
                     "\u0646\u0648\u0639 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u0686\u06cc\u0647\u061f"
@@ -413,11 +398,7 @@ function PlasmicPropertyEdit__RenderFunc(props: {
                 </div>
               </div>
               <div
-                className={classNames(
-                  projectcss.all,
-                  sty.freeBox__mcbAd,
-                  "clickable"
-                )}
+                className={classNames("all", sty.freeBox__mcbAd, "clickable")}
                 onClick={async event => {
                   const $steps = {};
 
@@ -575,11 +556,7 @@ function PlasmicPropertyEdit__RenderFunc(props: {
                   }
                 })() ? (
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__tfRbg
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__tfRbg)}
                   >
                     {
                       "\u0648\u06cc\u0644\u0627/\u0648\u06cc\u0644\u0627\u06cc\u06cc"
@@ -603,11 +580,7 @@ function PlasmicPropertyEdit__RenderFunc(props: {
                   }
                 })() ? (
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__g3Fv9
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__g3Fv9)}
                   >
                     {
                       "\u0648\u06cc\u0644\u0627/\u0648\u06cc\u0644\u0627\u06cc\u06cc"
@@ -616,11 +589,7 @@ function PlasmicPropertyEdit__RenderFunc(props: {
                 ) : null}
               </div>
               <div
-                className={classNames(
-                  projectcss.all,
-                  sty.freeBox__rz2I3,
-                  "clickable"
-                )}
+                className={classNames("all", sty.freeBox__rz2I3, "clickable")}
                 onClick={async event => {
                   const $steps = {};
 
@@ -791,11 +760,7 @@ function PlasmicPropertyEdit__RenderFunc(props: {
                   }
                 })() ? (
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__mKleg
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__mKleg)}
                   >
                     {
                       "\u0622\u067e\u0627\u0631\u062a\u0645\u0627\u0646/\u0633\u0648\u06cc\u06cc\u062a"
@@ -819,11 +784,7 @@ function PlasmicPropertyEdit__RenderFunc(props: {
                   }
                 })() ? (
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__r7B1R
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__r7B1R)}
                   >
                     {
                       "\u0622\u067e\u0627\u0631\u062a\u0645\u0627\u0646/\u0633\u0648\u06cc\u06cc\u062a"
@@ -832,11 +793,7 @@ function PlasmicPropertyEdit__RenderFunc(props: {
                 ) : null}
               </div>
               <div
-                className={classNames(
-                  projectcss.all,
-                  sty.freeBox__bmhlj,
-                  "clickable"
-                )}
+                className={classNames("all", sty.freeBox__bmhlj, "clickable")}
                 onClick={async event => {
                   const $steps = {};
 
@@ -1007,11 +964,7 @@ function PlasmicPropertyEdit__RenderFunc(props: {
                   }
                 })() ? (
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__bqWMf
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__bqWMf)}
                   >
                     {
                       "\u0628\u0648\u0645\u06af\u0631\u062f\u06cc/\u0647\u0627\u0633\u062a\u0644"
@@ -1035,11 +988,7 @@ function PlasmicPropertyEdit__RenderFunc(props: {
                   }
                 })() ? (
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__glrl1
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__glrl1)}
                   >
                     {
                       "\u0628\u0648\u0645\u06af\u0631\u062f\u06cc/\u0647\u0627\u0633\u062a\u0644"
@@ -1049,7 +998,7 @@ function PlasmicPropertyEdit__RenderFunc(props: {
               </div>
             </div>
           ) : null}
-          <div className={classNames(projectcss.all, sty.freeBox__faAQh)}>
+          <div className={classNames("all", sty.freeBox__faAQh)}>
             {(() => {
               try {
                 return $state.step == 1;
@@ -1066,48 +1015,34 @@ function PlasmicPropertyEdit__RenderFunc(props: {
               <div
                 data-plasmic-name={"name"}
                 data-plasmic-override={overrides.name}
-                className={classNames(projectcss.all, sty.name)}
+                className={classNames("all", sty.name)}
               >
-                <div className={classNames(projectcss.all, sty.freeBox__iw6Aw)}>
+                <div className={classNames("all", sty.freeBox__iw6Aw)}>
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__vhIq
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__vhIq)}
                   >
                     {
                       "\u0646\u0627\u0645 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
                     }
                   </div>
                 </div>
-                <div
-                  className={classNames(projectcss.all, sty.freeBox___0Js01)}
-                >
+                <div className={classNames("all", sty.freeBox___0Js01)}>
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__eg81B
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__eg81B)}
                   >
                     {
                       "\u0627\u0633\u0645 \u062c\u062f\u06cc\u062f \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u0686\u06cc \u0628\u0627\u0634\u0647\u061f"
                     }
                   </div>
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__yZlb6
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__yZlb6)}
                   >
                     {
                       "\u0627\u06cc\u0646 \u0627\u0633\u0645 \u0631\u0648 \u0641\u0642\u0637 \u062e\u0648\u062f\u062a \u062f\u0631 \u00ab\u0645\u06cc\u0627\u0646\u00bb \u0645\u06cc\u200c\u0628\u06cc\u0646\u06cc"
                     }
                   </div>
                 </div>
-                <div className={classNames(projectcss.all, sty.freeBox__gf7R)}>
+                <div className={classNames("all", sty.freeBox__gf7R)}>
                   <TextInput
                     data-plasmic-name={"textInput"}
                     data-plasmic-override={overrides.textInput}
@@ -1167,8 +1102,8 @@ function PlasmicPropertyEdit__RenderFunc(props: {
                   })() ? (
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text___2UiJv
                       )}
                     >
@@ -1181,16 +1116,12 @@ function PlasmicPropertyEdit__RenderFunc(props: {
                 <div
                   data-plasmic-name={"newButtons"}
                   data-plasmic-override={overrides.newButtons}
-                  className={classNames(projectcss.all, sty.newButtons)}
+                  className={classNames("all", sty.newButtons)}
                 >
                   <div
                     data-plasmic-name={"next"}
                     data-plasmic-override={overrides.next}
-                    className={classNames(
-                      projectcss.all,
-                      sty.next,
-                      "clickable"
-                    )}
+                    className={classNames("all", sty.next, "clickable")}
                     onClick={async event => {
                       const $steps = {};
 
@@ -1349,8 +1280,8 @@ function PlasmicPropertyEdit__RenderFunc(props: {
                   >
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text__wxeuT
                       )}
                     >
@@ -1377,11 +1308,7 @@ function PlasmicPropertyEdit__RenderFunc(props: {
                   <div
                     data-plasmic-name={"privious"}
                     data-plasmic-override={overrides.privious}
-                    className={classNames(
-                      projectcss.all,
-                      sty.privious,
-                      "clickable"
-                    )}
+                    className={classNames("all", sty.privious, "clickable")}
                     onClick={async event => {
                       const $steps = {};
 
@@ -1422,8 +1349,8 @@ function PlasmicPropertyEdit__RenderFunc(props: {
                   >
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text__gXfVl
                       )}
                     >
@@ -1450,19 +1377,15 @@ function PlasmicPropertyEdit__RenderFunc(props: {
             <div
               data-plasmic-name={"pic"}
               data-plasmic-override={overrides.pic}
-              className={classNames(projectcss.all, sty.pic)}
+              className={classNames("all", sty.pic)}
             >
               <div
                 data-plasmic-name={"title"}
                 data-plasmic-override={overrides.title}
-                className={classNames(projectcss.all, sty.title)}
+                className={classNames("all", sty.title)}
               >
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__aZoa6
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__aZoa6)}
                 >
                   {
                     "\u062a\u0635\u0648\u06cc\u0631 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
@@ -1472,15 +1395,13 @@ function PlasmicPropertyEdit__RenderFunc(props: {
               <div
                 data-plasmic-name={"imageFrame"}
                 data-plasmic-override={overrides.imageFrame}
-                className={classNames(projectcss.all, sty.imageFrame)}
+                className={classNames("all", sty.imageFrame)}
               >
-                <div
-                  className={classNames(projectcss.all, sty.freeBox___7Da0M)}
-                >
+                <div className={classNames("all", sty.freeBox___7Da0M)}>
                   <div
                     className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
+                      "all",
+                      "__wab_text",
                       sty.text___991Pf
                     )}
                   >
@@ -1501,18 +1422,14 @@ function PlasmicPropertyEdit__RenderFunc(props: {
                     </React.Fragment>
                   </div>
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__hhS0Y
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__hhS0Y)}
                   >
                     {hasVariant(globalVariants, "screen", "mobile")
                       ? "\u0641\u0642\u0637 \u062e\u0648\u062f\u062a \u0627\u06cc\u0646 \u0639\u06a9\u0633 \u0631\u0648 \u0645\u06cc\u200c\u0628\u06cc\u0646\u06cc"
                       : "\u0641\u0642\u0637 \u062e\u0648\u062f\u062a \u0627\u06cc\u0646 \u0639\u06a9\u0633 \u0631\u0648 \u0645\u06cc\u200c\u0628\u06cc\u0646\u06cc"}
                   </div>
                 </div>
-                <div className={classNames(projectcss.all, sty.freeBox__aBGzQ)}>
+                <div className={classNames("all", sty.freeBox__aBGzQ)}>
                   <Embed
                     data-plasmic-name={"embedHtml"}
                     data-plasmic-override={overrides.embedHtml}
@@ -1556,16 +1473,12 @@ function PlasmicPropertyEdit__RenderFunc(props: {
                 <div
                   data-plasmic-name={"newButtons2"}
                   data-plasmic-override={overrides.newButtons2}
-                  className={classNames(projectcss.all, sty.newButtons2)}
+                  className={classNames("all", sty.newButtons2)}
                 >
                   <div
                     data-plasmic-name={"next2"}
                     data-plasmic-override={overrides.next2}
-                    className={classNames(
-                      projectcss.all,
-                      sty.next2,
-                      "clickable"
-                    )}
+                    className={classNames("all", sty.next2, "clickable")}
                     onClick={async event => {
                       const $steps = {};
 
@@ -1697,8 +1610,8 @@ function PlasmicPropertyEdit__RenderFunc(props: {
                     ) : null}
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text__gVmd6
                       )}
                     >
@@ -1708,11 +1621,7 @@ function PlasmicPropertyEdit__RenderFunc(props: {
                   <div
                     data-plasmic-name={"privious2"}
                     data-plasmic-override={overrides.privious2}
-                    className={classNames(
-                      projectcss.all,
-                      sty.privious2,
-                      "clickable"
-                    )}
+                    className={classNames("all", sty.privious2, "clickable")}
                     onClick={async event => {
                       const $steps = {};
 
@@ -1753,8 +1662,8 @@ function PlasmicPropertyEdit__RenderFunc(props: {
                   >
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text__jMysY
                       )}
                     >
@@ -1768,14 +1677,10 @@ function PlasmicPropertyEdit__RenderFunc(props: {
           <div
             data-plasmic-name={"back"}
             data-plasmic-override={overrides.back}
-            className={classNames(projectcss.all, sty.back)}
+            className={classNames("all", sty.back)}
           >
             <div
-              className={classNames(
-                projectcss.all,
-                sty.freeBox__gw4Z2,
-                "clickable"
-              )}
+              className={classNames("all", sty.freeBox__gw4Z2, "clickable")}
               onClick={async event => {
                 const $steps = {};
 
@@ -1802,13 +1707,7 @@ function PlasmicPropertyEdit__RenderFunc(props: {
                 }
               }}
             >
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__zbAJj
-                )}
-              >
+              <div className={classNames("all", "__wab_text", sty.text__zbAJj)}>
                 {"\u0627\u0646\u0635\u0631\u0627\u0641"}
               </div>
             </div>
@@ -1825,7 +1724,7 @@ function PlasmicPropertyEdit__RenderFunc(props: {
                 throw e;
               }
             })() ? (
-              <div className={classNames(projectcss.all, sty.freeBox__pMHug)}>
+              <div className={classNames("all", sty.freeBox__pMHug)}>
                 {(
                   hasVariant(globalVariants, "screen", "mobile")
                     ? true
@@ -1846,15 +1745,13 @@ function PlasmicPropertyEdit__RenderFunc(props: {
                   <div
                     data-plasmic-name={"propGuide5"}
                     data-plasmic-override={overrides.propGuide5}
-                    className={classNames(projectcss.all, sty.propGuide5)}
+                    className={classNames("all", sty.propGuide5)}
                   >
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__moV7D)}
-                    >
+                    <div className={classNames("all", sty.freeBox__moV7D)}>
                       <div
                         className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
+                          "all",
+                          "__wab_text",
                           sty.text__yDdb
                         )}
                       >
@@ -1867,18 +1764,13 @@ function PlasmicPropertyEdit__RenderFunc(props: {
                       <div
                         data-plasmic-name={"propGuide6"}
                         data-plasmic-override={overrides.propGuide6}
-                        className={classNames(projectcss.all, sty.propGuide6)}
+                        className={classNames("all", sty.propGuide6)}
                       >
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            sty.freeBox___8EWTp
-                          )}
-                        >
+                        <div className={classNames("all", sty.freeBox___8EWTp)}>
                           <div
                             className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
+                              "all",
+                              "__wab_text",
                               sty.text__u9K0
                             )}
                           >
@@ -1914,15 +1806,11 @@ function PlasmicPropertyEdit__RenderFunc(props: {
             <div
               data-plasmic-name={"propGuide4"}
               data-plasmic-override={overrides.propGuide4}
-              className={classNames(projectcss.all, sty.propGuide4)}
+              className={classNames("all", sty.propGuide4)}
             >
-              <div className={classNames(projectcss.all, sty.freeBox___3JWuq)}>
+              <div className={classNames("all", sty.freeBox___3JWuq)}>
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__wYMuT
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__wYMuT)}
                 >
                   {
                     "\u062d\u0627\u0644\u0627 \u0627\u0633\u0645 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u0631\u0648 \u0628\u0646\u0648\u06cc\u0633\n\u0627\u06cc\u0646 \u0627\u0633\u0645 \u0631\u0648 \u0641\u0642\u0637 \u062e\u0648\u062f\u062a \u0645\u06cc\u200c\u0628\u06cc\u0646\u06cc"
@@ -1963,15 +1851,11 @@ function PlasmicPropertyEdit__RenderFunc(props: {
             <div
               data-plasmic-name={"propGuide"}
               data-plasmic-override={overrides.propGuide}
-              className={classNames(projectcss.all, sty.propGuide)}
+              className={classNames("all", sty.propGuide)}
             >
-              <div className={classNames(projectcss.all, sty.freeBox__b6XhP)}>
+              <div className={classNames("all", sty.freeBox__b6XhP)}>
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__e5FKp
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__e5FKp)}
                 >
                   {
                     "\u0627\u0648\u0644 \u0627\u06cc\u0646\u062c\u0627 \u0628\u06af\u0648 \u0646\u0648\u0639 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u0686\u06cc\u0647"
@@ -2000,9 +1884,9 @@ function PlasmicPropertyEdit__RenderFunc(props: {
             <div
               data-plasmic-name={"propGuide2"}
               data-plasmic-override={overrides.propGuide2}
-              className={classNames(projectcss.all, sty.propGuide2)}
+              className={classNames("all", sty.propGuide2)}
             >
-              <div className={classNames(projectcss.all, sty.freeBox__shMDi)}>
+              <div className={classNames("all", sty.freeBox__shMDi)}>
                 {(
                   hasVariant(globalVariants, "screen", "mobile")
                     ? true
@@ -2021,11 +1905,7 @@ function PlasmicPropertyEdit__RenderFunc(props: {
                       })()
                 ) ? (
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__xlVed
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__xlVed)}
                   >
                     {
                       "\u062d\u0627\u0644\u0627 \u0627\u0633\u0645 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u06a9\u0647 \u0642\u0631\u0627\u0631\u0647 \u0647\u0645\u06cc\u0634\u0647 \u062f\u0631 \u00ab\u0645\u06cc\u0627\u0646\u00bb \u0628\u0628\u06cc\u0646\u06cc \u0631\u0648 \u0628\u0646\u0648\u06cc\u0633"
@@ -2055,9 +1935,9 @@ function PlasmicPropertyEdit__RenderFunc(props: {
             <div
               data-plasmic-name={"propGuide3"}
               data-plasmic-override={overrides.propGuide3}
-              className={classNames(projectcss.all, sty.propGuide3)}
+              className={classNames("all", sty.propGuide3)}
             >
-              <div className={classNames(projectcss.all, sty.freeBox__w3Ls3)}>
+              <div className={classNames("all", sty.freeBox__w3Ls3)}>
                 {(
                   hasVariant(globalVariants, "screen", "mobile")
                     ? true
@@ -2077,8 +1957,8 @@ function PlasmicPropertyEdit__RenderFunc(props: {
                 ) ? (
                   <div
                     className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
+                      "all",
+                      "__wab_text",
                       sty.text___12FCh
                     )}
                   >
@@ -2090,7 +1970,7 @@ function PlasmicPropertyEdit__RenderFunc(props: {
               </div>
             </div>
           ) : null}
-          <div className={classNames(projectcss.all, sty.freeBox__wXwte)}>
+          <div className={classNames("all", sty.freeBox__wXwte)}>
             <ClarityRntComponent
               data-plasmic-name={"clarityRntComponent"}
               data-plasmic-override={overrides.clarityRntComponent}

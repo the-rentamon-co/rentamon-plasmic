@@ -65,7 +65,6 @@ import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-impor
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicSplashDivar.module.css"; // plasmic-import: -FeDSki1P3al/css
 
 import Icon79Icon from "./icons/PlasmicIcon__Icon79"; // plasmic-import: 8tMAV60HqJyj/icon
@@ -211,23 +210,23 @@ function PlasmicSplashDivar__RenderFunc(props: {
         }
       `}</style>
 
-      <div className={projectcss.plasmic_page_wrapper}>
+      <div className={"plasmic_page_wrapper"}>
         <div
           data-plasmic-name={"root"}
           data-plasmic-override={overrides.root}
           data-plasmic-root={true}
           data-plasmic-for-node={forNode}
           className={classNames(
-            projectcss.all,
-            projectcss.root_reset,
-            projectcss.plasmic_default_styles,
-            projectcss.plasmic_mixins,
+            "all",
+            "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+            "plasmic_default_styles",
+            "plasmic_mixins",
             styleTokensClassNames,
             sty.root,
             hasVariant(globalVariants, "screen", "mobile") ? `` : undefined
           )}
         >
-          <div className={classNames(projectcss.all, sty.freeBox__lBc8R)}>
+          <div className={classNames("all", sty.freeBox__lBc8R)}>
             <PlasmicImg__
               alt={""}
               className={classNames(sty.img__giCNh)}
@@ -265,13 +264,7 @@ function PlasmicSplashDivar__RenderFunc(props: {
                 throw e;
               }
             })() ? (
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__dXvJ3
-                )}
-              >
+              <div className={classNames("all", "__wab_text", sty.text__dXvJ3)}>
                 {
                   "\u062f\u0631 \u062d\u0627\u0644 \u0627\u0646\u062a\u0642\u0627\u0644 \u0628\u0647 \u0645\u06cc\u0627\u0646"
                 }
@@ -291,10 +284,10 @@ function PlasmicSplashDivar__RenderFunc(props: {
               throw e;
             }
           })() ? (
-            <div className={classNames(projectcss.all, sty.freeBox__ghRsh)}>
+            <div className={classNames("all", sty.freeBox__ghRsh)}>
               <div
                 className={classNames(
-                  projectcss.all,
+                  "all",
                   sty.freeBox__ksDk,
                   "clickable fadein"
                 )}
@@ -323,11 +316,7 @@ function PlasmicSplashDivar__RenderFunc(props: {
                 }}
               >
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__rTyWh
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__rTyWh)}
                 >
                   {"\u062a\u0644\u0627\u0634 \u0645\u062c\u062f\u062f"}
                 </div>
@@ -352,7 +341,7 @@ function PlasmicSplashDivar__RenderFunc(props: {
             data-plasmic-name={"center"}
             data-plasmic-override={overrides.center}
             className={classNames(
-              projectcss.all,
+              "all",
               sty.center,
               hasVariant(globalVariants, "screen", "mobile")
                 ? "logo-effect1"
@@ -361,7 +350,7 @@ function PlasmicSplashDivar__RenderFunc(props: {
           >
             <div
               className={classNames(
-                projectcss.all,
+                "all",
                 sty.freeBox__vazz,
                 hasVariant(globalVariants, "screen", "mobile") ? `` : undefined
               )}
@@ -370,7 +359,7 @@ function PlasmicSplashDivar__RenderFunc(props: {
                 data-plasmic-name={"svg"}
                 data-plasmic-override={overrides.svg}
                 className={classNames(
-                  projectcss.all,
+                  "all",
                   sty.svg,
                   hasVariant(globalVariants, "screen", "mobile")
                     ? ``
@@ -381,7 +370,7 @@ function PlasmicSplashDivar__RenderFunc(props: {
             </div>
             <div
               className={classNames(
-                projectcss.all,
+                "all",
                 sty.freeBox__jPb3T,
                 hasVariant(globalVariants, "screen", "mobile")
                   ? ``
@@ -390,8 +379,8 @@ function PlasmicSplashDivar__RenderFunc(props: {
             >
               <div
                 className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
+                  "all",
+                  "__wab_text",
                   sty.text__dd6Qc,
                   hasVariant(globalVariants, "screen", "mobile")
                     ? ``

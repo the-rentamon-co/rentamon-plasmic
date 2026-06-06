@@ -68,7 +68,6 @@ import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-impor
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicSelect.module.css"; // plasmic-import: GgjLI5qwOqwu/css
 
 import ArrowDownSvgrepoCom1SvgIcon from "./icons/PlasmicIcon__ArrowDownSvgrepoCom1Svg"; // plasmic-import: kdHrOLvph_JQ/icon
@@ -277,10 +276,10 @@ function PlasmicSelect__RenderFunc(props: {
         data-plasmic-root={true}
         data-plasmic-for-node={forNode}
         className={classNames(
-          projectcss.all,
-          projectcss.root_reset,
-          projectcss.plasmic_default_styles,
-          projectcss.plasmic_mixins,
+          "all",
+          "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+          "plasmic_default_styles",
+          "plasmic_mixins",
           styleTokensClassNames,
           sty.root,
           {
@@ -314,73 +313,63 @@ function PlasmicSelect__RenderFunc(props: {
         <button
           data-plasmic-name={"trigger"}
           data-plasmic-override={overrides.trigger}
-          className={classNames(
-            projectcss.all,
-            projectcss.button,
-            projectcss.button__7SNMk,
-            sty.trigger,
-            {
-              [sty.trigger___focusVisibleWithin]:
-                triggers.focusVisibleWithin_root,
-              [sty.triggercolor_clear]: hasVariant($state, "color", "clear"),
-              [sty.triggercolor_softBlue]: hasVariant(
-                $state,
-                "color",
-                "softBlue"
-              ),
-              [sty.triggercolor_softCyan]: hasVariant(
-                $state,
-                "color",
-                "softCyan"
-              ),
-              [sty.triggercolor_softGray]: hasVariant(
-                $state,
-                "color",
-                "softGray"
-              ),
-              [sty.triggercolor_softGreen]: hasVariant(
-                $state,
-                "color",
-                "softGreen"
-              ),
-              [sty.triggercolor_softOrange]: hasVariant(
-                $state,
-                "color",
-                "softOrange"
-              ),
-              [sty.triggercolor_softPink]: hasVariant(
-                $state,
-                "color",
-                "softPink"
-              ),
-              [sty.triggercolor_softPurple]: hasVariant(
-                $state,
-                "color",
-                "softPurple"
-              ),
-              [sty.triggercolor_softRed]: hasVariant(
-                $state,
-                "color",
-                "softRed"
-              ),
-              [sty.triggercolor_softYellow]: hasVariant(
-                $state,
-                "color",
-                "softYellow"
-              ),
-              [sty.triggerisDisabled]: hasVariant(
-                $state,
-                "isDisabled",
-                "isDisabled"
-              ),
-              [sty.triggerisOpen]: hasVariant($state, "isOpen", "isOpen"),
-              [sty.triggershowPlaceholder]: hasVariant(
-                $state,
-                "showPlaceholder",
-                "showPlaceholder"
-              )
-            }
-          )}
+          className={classNames("all", "button", "button__7SNMk", sty.trigger, {
+            [sty.trigger___focusVisibleWithin]:
+              triggers.focusVisibleWithin_root,
+            [sty.triggercolor_clear]: hasVariant($state, "color", "clear"),
+            [sty.triggercolor_softBlue]: hasVariant(
+              $state,
+              "color",
+              "softBlue"
+            ),
+            [sty.triggercolor_softCyan]: hasVariant(
+              $state,
+              "color",
+              "softCyan"
+            ),
+            [sty.triggercolor_softGray]: hasVariant(
+              $state,
+              "color",
+              "softGray"
+            ),
+            [sty.triggercolor_softGreen]: hasVariant(
+              $state,
+              "color",
+              "softGreen"
+            ),
+            [sty.triggercolor_softOrange]: hasVariant(
+              $state,
+              "color",
+              "softOrange"
+            ),
+            [sty.triggercolor_softPink]: hasVariant(
+              $state,
+              "color",
+              "softPink"
+            ),
+            [sty.triggercolor_softPurple]: hasVariant(
+              $state,
+              "color",
+              "softPurple"
+            ),
+            [sty.triggercolor_softRed]: hasVariant($state, "color", "softRed"),
+            [sty.triggercolor_softYellow]: hasVariant(
+              $state,
+              "color",
+              "softYellow"
+            ),
+            [sty.triggerisDisabled]: hasVariant(
+              $state,
+              "isDisabled",
+              "isDisabled"
+            ),
+            [sty.triggerisOpen]: hasVariant($state, "isOpen", "isOpen"),
+            [sty.triggershowPlaceholder]: hasVariant(
+              $state,
+              "showPlaceholder",
+              "showPlaceholder"
+            )
+          })}
           disabled={
             hasVariant($state, "isDisabled", "isDisabled") ? true : undefined
           }
@@ -391,7 +380,7 @@ function PlasmicSelect__RenderFunc(props: {
           <div
             data-plasmic-name={"contentContainer"}
             data-plasmic-override={overrides.contentContainer}
-            className={classNames(projectcss.all, sty.contentContainer, {
+            className={classNames("all", sty.contentContainer, {
               [sty.contentContainercolor_softBlue]: hasVariant(
                 $state,
                 "color",
@@ -512,8 +501,8 @@ function PlasmicSelect__RenderFunc(props: {
                   defaultContents: (
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text__ndQ6Z
                       )}
                     >
@@ -626,7 +615,7 @@ function PlasmicSelect__RenderFunc(props: {
                     ? ArrowDownSvgrepoCom1SvgIcon
                     : ArrowDownSvgrepoCom1SvgIcon
             }
-            className={classNames(projectcss.all, sty.dropdownIcon, {
+            className={classNames("all", sty.dropdownIcon, {
               [sty.dropdownIcon___focusVisibleWithin]:
                 triggers.focusVisibleWithin_root,
               [sty.dropdownIconcolor_clear]: hasVariant(
@@ -706,7 +695,7 @@ function PlasmicSelect__RenderFunc(props: {
             <div
               data-plasmic-name={"optionsContainer"}
               data-plasmic-override={overrides.optionsContainer}
-              className={classNames(projectcss.all, sty.optionsContainer, {
+              className={classNames("all", sty.optionsContainer, {
                 [sty.optionsContainerisOpen]: hasVariant(
                   $state,
                   "isOpen",

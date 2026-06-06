@@ -71,7 +71,6 @@ import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-impor
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicAnalytics.module.css"; // plasmic-import: 8d3uvVUzIbi1/css
 
 const emptyProxy: any = new Proxy(() => "", {
@@ -365,17 +364,17 @@ function PlasmicAnalytics__RenderFunc(props: {
         }
       `}</style>
 
-      <div className={projectcss.plasmic_page_wrapper}>
+      <div className={"plasmic_page_wrapper"}>
         <div
           data-plasmic-name={"root"}
           data-plasmic-override={overrides.root}
           data-plasmic-root={true}
           data-plasmic-for-node={forNode}
           className={classNames(
-            projectcss.all,
-            projectcss.root_reset,
-            projectcss.plasmic_default_styles,
-            projectcss.plasmic_mixins,
+            "all",
+            "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+            "plasmic_default_styles",
+            "plasmic_mixins",
             styleTokensClassNames,
             sty.root
           )}
@@ -383,7 +382,7 @@ function PlasmicAnalytics__RenderFunc(props: {
           <div
             data-plasmic-name={"header"}
             data-plasmic-override={overrides.header}
-            className={classNames(projectcss.all, sty.header)}
+            className={classNames("all", sty.header)}
           >
             <SideBar2
               data-plasmic-name={"sideBar2"}
@@ -407,25 +406,15 @@ function PlasmicAnalytics__RenderFunc(props: {
               })()}
             />
 
-            <div className={classNames(projectcss.all, sty.freeBox__ihhXu)}>
+            <div className={classNames("all", sty.freeBox__ihhXu)}>
               <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text___5Wp8N
-                )}
+                className={classNames("all", "__wab_text", sty.text___5Wp8N)}
               >
                 {
                   "\u06af\u0632\u0627\u0631\u0634\u0627\u062a \u067e\u06cc\u0634\u0631\u0641\u062a\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 (\u0622\u0632\u0645\u0627\u06cc\u0634\u06cc)"
                 }
               </div>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__yvNig
-                )}
-              >
+              <div className={classNames("all", "__wab_text", sty.text__yvNig)}>
                 {
                   "\u062f\u0631\u0635\u0648\u0631\u062a \u0627\u0628\u0647\u0627\u0645 \u0648 \u06cc\u0627 \u0645\u0634\u0627\u0647\u062f\u0647 \u062e\u0637\u0627\u06cc \u0645\u062d\u0627\u0633\u0628\u0627\u062a\u06cc\u060c \u0644\u0637\u0641\u0627 \u0627\u0637\u0644\u0627\u0639 \u0628\u062f\u0647"
                 }
@@ -465,17 +454,17 @@ function PlasmicAnalytics__RenderFunc(props: {
           <div
             data-plasmic-name={"mainContents"}
             data-plasmic-override={overrides.mainContents}
-            className={classNames(projectcss.all, sty.mainContents)}
+            className={classNames("all", sty.mainContents)}
           >
             <div
               data-plasmic-name={"introduction"}
               data-plasmic-override={overrides.introduction}
-              className={classNames(projectcss.all, sty.introduction)}
+              className={classNames("all", sty.introduction)}
             >
               <div
                 data-plasmic-name={"image"}
                 data-plasmic-override={overrides.image}
-                className={classNames(projectcss.all, sty.image)}
+                className={classNames("all", sty.image)}
               >
                 <PlasmicImg__
                   data-plasmic-name={"img"}
@@ -504,14 +493,10 @@ function PlasmicAnalytics__RenderFunc(props: {
               <div
                 data-plasmic-name={"caption"}
                 data-plasmic-override={overrides.caption}
-                className={classNames(projectcss.all, sty.caption)}
+                className={classNames("all", sty.caption)}
               >
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__yE2Gm
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__yE2Gm)}
                 >
                   {
                     "\u0628\u0631\u0631\u0633\u06cc \u06af\u0632\u0627\u0631\u0634\u0627\u062a \u067e\u06cc\u0634\u0631\u0641\u062a\u0647 \u06a9\u0645\u06a9 \u0645\u06cc\u200c\u06a9\u0646\u0647 \u0634\u0646\u0627\u062e\u062a \u0628\u0647\u062a\u0631\u06cc \u0646\u0633\u0628\u062a \u0628\u0647 \u0634\u0631\u0627\u06cc\u0637 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u0628\u0647 \u062f\u0633\u062a \u0628\u06cc\u0627\u0631\u06cc \u0648 \u062f\u0631 \u0622\u06cc\u0646\u062f\u0647 \u062a\u0635\u0645\u06cc\u0645\u200c\u0647\u0627\u06cc \u0628\u0647\u062a\u0631\u06cc \u0628\u06af\u06cc\u0631\u06cc."
@@ -522,27 +507,23 @@ function PlasmicAnalytics__RenderFunc(props: {
             <div
               data-plasmic-name={"monthlyIncome2"}
               data-plasmic-override={overrides.monthlyIncome2}
-              className={classNames(projectcss.all, sty.monthlyIncome2)}
+              className={classNames("all", sty.monthlyIncome2)}
             >
               <div
                 data-plasmic-name={"monthlyIncome"}
                 data-plasmic-override={overrides.monthlyIncome}
-                className={classNames(projectcss.all, sty.monthlyIncome)}
+                className={classNames("all", sty.monthlyIncome)}
               >
-                <div className={classNames(projectcss.all, sty.freeBox__w3Dif)}>
+                <div className={classNames("all", sty.freeBox__w3Dif)}>
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__j8U01
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__j8U01)}
                   >
                     {
                       "\u062f\u0631\u0622\u0645\u062f \u0645\u0627\u0647\u06cc\u0627\u0646\u0647 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
                     }
                   </div>
                 </div>
-                <div className={classNames(projectcss.all, sty.freeBox__eVtAr)}>
+                <div className={classNames("all", sty.freeBox__eVtAr)}>
                   <Chart
                     cartesianGrid={[]}
                     chartConfig={(() => {
@@ -667,22 +648,14 @@ function PlasmicAnalytics__RenderFunc(props: {
                 )}
                 errorDisplay={
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__mIo8S
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__mIo8S)}
                   >
                     {"Error fetching data"}
                   </div>
                 }
                 loadingDisplay={
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__aje3J
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__aje3J)}
                   >
                     {"Loading..."}
                   </div>
@@ -715,27 +688,23 @@ function PlasmicAnalytics__RenderFunc(props: {
             <div
               data-plasmic-name={"sourcesOfReserves2"}
               data-plasmic-override={overrides.sourcesOfReserves2}
-              className={classNames(projectcss.all, sty.sourcesOfReserves2)}
+              className={classNames("all", sty.sourcesOfReserves2)}
             >
               <div
                 data-plasmic-name={"sourcesOfReserves"}
                 data-plasmic-override={overrides.sourcesOfReserves}
-                className={classNames(projectcss.all, sty.sourcesOfReserves)}
+                className={classNames("all", sty.sourcesOfReserves)}
               >
-                <div className={classNames(projectcss.all, sty.freeBox__qbSdR)}>
+                <div className={classNames("all", sty.freeBox__qbSdR)}>
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__gkfL8
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__gkfL8)}
                   >
                     {
                       "\u062a\u0639\u062f\u0627\u062f \u0631\u0632\u0631\u0648  \u0627\u0632 \u0647\u0631 \u0633\u0627\u06cc\u062a"
                     }
                   </div>
                 </div>
-                <div className={classNames(projectcss.all, sty.freeBox__z02AS)}>
+                <div className={classNames("all", sty.freeBox__z02AS)}>
                   <Chart
                     cartesianGrid={[]}
                     chartConfig={(() => {
@@ -853,8 +822,8 @@ function PlasmicAnalytics__RenderFunc(props: {
                 errorDisplay={
                   <div
                     className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
+                      "all",
+                      "__wab_text",
                       sty.text___3Bu1C
                     )}
                   >
@@ -863,11 +832,7 @@ function PlasmicAnalytics__RenderFunc(props: {
                 }
                 loadingDisplay={
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__wQdKd
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__wQdKd)}
                   >
                     {"Loading..."}
                   </div>
@@ -900,25 +865,21 @@ function PlasmicAnalytics__RenderFunc(props: {
             <div
               data-plasmic-name={"occupancyRate2"}
               data-plasmic-override={overrides.occupancyRate2}
-              className={classNames(projectcss.all, sty.occupancyRate2)}
+              className={classNames("all", sty.occupancyRate2)}
             >
               <div
                 data-plasmic-name={"occupancyRate"}
                 data-plasmic-override={overrides.occupancyRate}
-                className={classNames(projectcss.all, sty.occupancyRate)}
+                className={classNames("all", sty.occupancyRate)}
               >
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__vMzey
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__vMzey)}
                 >
                   {hasVariant(globalVariants, "screen", "mobile")
                     ? "\u062a\u0639\u062f\u0627\u062f \u0634\u0628\u200c\u0647\u0627\u06cc \u067e\u0631 \u0634\u062f\u0647 \u062f\u0631 \u0647\u0631 \u0645\u0627\u0647"
                     : "\u062a\u0639\u062f\u0627\u062f \u0634\u0628\u200c\u0647\u0627\u06cc \u067e\u0631 \u0634\u062f\u0647"}
                 </div>
-                <div className={classNames(projectcss.all, sty.freeBox__lQmRi)}>
+                <div className={classNames("all", sty.freeBox__lQmRi)}>
                   <Chart
                     cartesianGrid={
                       hasVariant(globalVariants, "screen", "smallMobile")
@@ -994,11 +955,7 @@ function PlasmicAnalytics__RenderFunc(props: {
                 )}
                 errorDisplay={
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__hbhrg
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__hbhrg)}
                   >
                     {"Error fetching data"}
                   </div>
@@ -1006,8 +963,8 @@ function PlasmicAnalytics__RenderFunc(props: {
                 loadingDisplay={
                   <div
                     className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
+                      "all",
+                      "__wab_text",
                       sty.text___4Cikn
                     )}
                   >
@@ -1042,7 +999,7 @@ function PlasmicAnalytics__RenderFunc(props: {
             <div
               data-plasmic-name={"avgDailyRate2"}
               data-plasmic-override={overrides.avgDailyRate2}
-              className={classNames(projectcss.all, sty.avgDailyRate2)}
+              className={classNames("all", sty.avgDailyRate2)}
             >
               <ApiRequest
                 data-plasmic-name={"apiRequestAvgDailyRate"}
@@ -1053,11 +1010,7 @@ function PlasmicAnalytics__RenderFunc(props: {
                 )}
                 errorDisplay={
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__wkQm1
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__wkQm1)}
                   >
                     {
                       "\u062e\u0637\u0627 \u062f\u0631 \u062f\u0631\u06cc\u0627\u0641\u062a \u0627\u0637\u0644\u0627\u0639\u0627\u062a"
@@ -1066,11 +1019,7 @@ function PlasmicAnalytics__RenderFunc(props: {
                 }
                 loadingDisplay={
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__rj7E
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__rj7E)}
                   >
                     {"Loading..."}
                   </div>
@@ -1103,25 +1052,17 @@ function PlasmicAnalytics__RenderFunc(props: {
               <div
                 data-plasmic-name={"avgDailyRate"}
                 data-plasmic-override={overrides.avgDailyRate}
-                className={classNames(projectcss.all, sty.avgDailyRate)}
+                className={classNames("all", sty.avgDailyRate)}
               >
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text___6Nn1C
-                  )}
+                  className={classNames("all", "__wab_text", sty.text___6Nn1C)}
                 >
                   {
                     "\u0645\u0639\u062f\u0644 \u0646\u0631\u062e \u0627\u062c\u0627\u0631\u0647 \u0628\u0647 \u0627\u0632\u0627\u06cc \u0647\u0631 \u0634\u0628 (\u062a\u0648\u0645\u0627\u0646):"
                   }
                 </div>
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__ztAop
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__ztAop)}
                 >
                   <React.Fragment>
                     {(() => {
@@ -1168,7 +1109,7 @@ function PlasmicAnalytics__RenderFunc(props: {
           <div
             data-plasmic-name={"html"}
             data-plasmic-override={overrides.html}
-            className={classNames(projectcss.all, sty.html)}
+            className={classNames("all", sty.html)}
           >
             <Embed
               data-plasmic-name={"goftino"}
@@ -1179,7 +1120,7 @@ function PlasmicAnalytics__RenderFunc(props: {
               }
             />
 
-            <div className={classNames(projectcss.all, sty.freeBox__k3H9Z)}>
+            <div className={classNames("all", sty.freeBox__k3H9Z)}>
               <ClarityRntComponent
                 data-plasmic-name={"clarityRntComponent"}
                 data-plasmic-override={overrides.clarityRntComponent}

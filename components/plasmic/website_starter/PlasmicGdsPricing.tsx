@@ -68,7 +68,6 @@ import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-impor
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicGdsPricing.module.css"; // plasmic-import: ughXhz3-XBs4/css
 
 const emptyProxy: any = new Proxy(() => "", {
@@ -425,30 +424,24 @@ function PlasmicGdsPricing__RenderFunc(props: {
         }
       `}</style>
 
-      <div className={projectcss.plasmic_page_wrapper}>
+      <div className={"plasmic_page_wrapper"}>
         <div
           data-plasmic-name={"root"}
           data-plasmic-override={overrides.root}
           data-plasmic-root={true}
           data-plasmic-for-node={forNode}
           className={classNames(
-            projectcss.all,
-            projectcss.root_reset,
-            projectcss.plasmic_default_styles,
-            projectcss.plasmic_mixins,
+            "all",
+            "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+            "plasmic_default_styles",
+            "plasmic_mixins",
             styleTokensClassNames,
             sty.root
           )}
         >
-          <div className={classNames(projectcss.all, sty.freeBox__vrRbk)}>
-            <div className={classNames(projectcss.all, sty.freeBox__u6O1Q)}>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__wf8Uc
-                )}
-              >
+          <div className={classNames("all", sty.freeBox__vrRbk)}>
+            <div className={classNames("all", sty.freeBox__u6O1Q)}>
+              <div className={classNames("all", "__wab_text", sty.text__wf8Uc)}>
                 {hasVariant(globalVariants, "screen", "mobile")
                   ? "\u0628\u0631\u0627\u06cc \u0634\u0631\u0648\u0639\u060c \u0644\u0637\u0641\u0627 \u0642\u06cc\u0645\u062a \u0631\u0648\u0632\u0647\u0627\u06cc \u0639\u0627\u062f\u06cc\u060c \u0622\u062e\u0631 \u0647\u0641\u062a\u0647\u200c\u0647\u0627 \u0648 \u0627\u06cc\u0627\u0645 \u067e\u06cc\u06a9 \u0648\u0627\u0631\u062f \u06a9\u0646."
                   : "\u0628\u0631\u0627\u06cc \u0634\u0631\u0648\u0639\u060c \u0644\u0637\u0641\u0627 \u0646\u0631\u062e  \u0631\u0648\u0632\u0647\u0627\u06cc \u0639\u0627\u062f\u06cc\u060c \u0622\u062e\u0631 \u0647\u0641\u062a\u0647\u200c\u0647\u0627 \u0648 \u0627\u06cc\u0627\u0645 \u067e\u06cc\u06a9 \u0648\u0627\u0631\u062f \u06a9\u0646."}
@@ -458,7 +451,7 @@ function PlasmicGdsPricing__RenderFunc(props: {
               data-plasmic-name={"headerMobileNew"}
               data-plasmic-override={overrides.headerMobileNew}
               className={classNames(
-                projectcss.all,
+                "all",
                 sty.headerMobileNew,
                 hasVariant(globalVariants, "screen", "mobile")
                   ? "fadeinf"
@@ -468,23 +461,23 @@ function PlasmicGdsPricing__RenderFunc(props: {
               <div
                 data-plasmic-name={"header"}
                 data-plasmic-override={overrides.header}
-                className={classNames(projectcss.all, sty.header, "fadeinf")}
+                className={classNames("all", sty.header, "fadeinf")}
               >
                 <div
                   data-plasmic-name={"right"}
                   data-plasmic-override={overrides.right}
-                  className={classNames(projectcss.all, sty.right)}
+                  className={classNames("all", sty.right)}
                 >
                   <div
                     data-plasmic-name={"newHeader"}
                     data-plasmic-override={overrides.newHeader}
-                    className={classNames(projectcss.all, sty.newHeader)}
+                    className={classNames("all", sty.newHeader)}
                   >
                     <div
                       data-plasmic-name={"r1"}
                       data-plasmic-override={overrides.r1}
                       className={classNames(
-                        projectcss.all,
+                        "all",
                         sty.r1,
                         (() => {
                           try {
@@ -631,8 +624,8 @@ function PlasmicGdsPricing__RenderFunc(props: {
                         placeholder={
                           <div
                             className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
+                              "all",
+                              "__wab_text",
                               sty.text__k7MhT
                             )}
                           >
@@ -652,7 +645,7 @@ function PlasmicGdsPricing__RenderFunc(props: {
                 <div
                   data-plasmic-name={"left"}
                   data-plasmic-override={overrides.left}
-                  className={classNames(projectcss.all, sty.left)}
+                  className={classNames("all", sty.left)}
                 >
                   {(() => {
                     try {
@@ -674,7 +667,7 @@ function PlasmicGdsPricing__RenderFunc(props: {
                       data-plasmic-name={"image"}
                       data-plasmic-override={overrides.image}
                       className={classNames(
-                        projectcss.all,
+                        "all",
                         sty.image,
                         hasVariant(globalVariants, "screen", "mobile")
                           ? "shine"
@@ -780,7 +773,7 @@ function PlasmicGdsPricing__RenderFunc(props: {
                     }
                   })() ? (
                     <div
-                      className={classNames(projectcss.all, sty.freeBox__aKlXc)}
+                      className={classNames("all", sty.freeBox__aKlXc)}
                       onClick={async event => {
                         const $steps = {};
 
@@ -813,8 +806,8 @@ function PlasmicGdsPricing__RenderFunc(props: {
                     >
                       <div
                         className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
+                          "all",
+                          "__wab_text",
                           sty.text__mQkAg
                         )}
                       >
@@ -949,49 +942,29 @@ function PlasmicGdsPricing__RenderFunc(props: {
                   })()}
                 >
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__ev79F
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__ev79F)}
                   >
                     {"Enter some text"}
                   </div>
                 </ApiRequest>
               </div>
             </div>
-            <div className={classNames(projectcss.all, sty.freeBox__vta3T)}>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__fwyEz
-                )}
-              >
+            <div className={classNames("all", sty.freeBox__vta3T)}>
+              <div className={classNames("all", "__wab_text", sty.text__fwyEz)}>
                 {hasVariant(globalVariants, "screen", "mobile")
                   ? "\u062a\u0645\u0627\u0645\u06cc \u0642\u06cc\u0645\u062a \u0647\u0627\u06cc \u0632\u06cc\u0631\u060c \u0645\u0628\u0627\u0644\u063a \u062f\u0631\u06cc\u0627\u0641\u062a\u06cc \u0634\u0645\u0627 \u0648 \u0628\u0639\u062f \u0627\u0632 \u062f\u0631\u06cc\u0627\u0641\u062a \u06a9\u0627\u0631\u0645\u0632\u062f \u0648\u0627\u0633\u0637\u0647\u200c\u0647\u0627 \u0627\u0633\u062a."
                   : "\u062a\u0645\u0627\u0645\u06cc \u0642\u06cc\u0645\u062a \u0647\u0627\u06cc \u0632\u06cc\u0631\u060c \u0645\u0628\u0627\u0644\u063a \u062f\u0631\u06cc\u0627\u0641\u062a\u06cc \u0634\u0645\u0627 \u0648 \u0628\u0639\u062f \u0627\u0632 \u062f\u0631\u06cc\u0627\u0641\u062a \u06a9\u0627\u0631\u0645\u0632\u062f \u0648\u0627\u0633\u0637\u0647\u200c\u0647\u0627 \u0627\u0633\u062a."}
               </div>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__dtAst
-                )}
-              >
+              <div className={classNames("all", "__wab_text", sty.text__dtAst)}>
                 {
                   "\u0627\u06cc\u0646 \u0642\u06cc\u0645\u062a\u200c\u0647\u0627\u060c \u0645\u0633\u062a\u0642\u0644 \u0627\u0632 \u0642\u06cc\u0645\u062a\u200c\u0647\u0627\u06cc \u062a\u0642\u0648\u06cc\u0645 \u06cc\u06a9\u067e\u0627\u0631\u0686\u0647 \u0647\u0633\u062a\u0646\u062f."
                 }
               </div>
             </div>
-            <div className={classNames(projectcss.all, sty.freeBox__uVo0)}>
-              <div className={classNames(projectcss.all, sty.freeBox__tJ7Qc)}>
+            <div className={classNames("all", sty.freeBox__uVo0)}>
+              <div className={classNames("all", sty.freeBox__tJ7Qc)}>
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__c2H9A
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__c2H9A)}
                 >
                   {
                     "\u0642\u06cc\u0645\u062a \u0631\u0648\u0632\u0647\u0627\u06cc \u0639\u0627\u062f\u06cc"
@@ -1029,11 +1002,7 @@ function PlasmicGdsPricing__RenderFunc(props: {
                 />
 
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__lr5Tv
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__lr5Tv)}
                 >
                   <React.Fragment>
                     {(() => {
@@ -1199,13 +1168,9 @@ function PlasmicGdsPricing__RenderFunc(props: {
                   </React.Fragment>
                 </div>
               </div>
-              <div className={classNames(projectcss.all, sty.freeBox__nra8S)}>
+              <div className={classNames("all", sty.freeBox__nra8S)}>
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__r9JpH
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__r9JpH)}
                 >
                   {
                     "\u0642\u06cc\u0645\u062a \u0622\u062e\u0631 \u0647\u0641\u062a\u0647 (\u0686\u0647\u0627\u0631\u0634\u0646\u0628\u0647 \u0648 \u067e\u0646\u062c\u0634\u0646\u0628\u0647)"
@@ -1243,11 +1208,7 @@ function PlasmicGdsPricing__RenderFunc(props: {
                 />
 
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__u9JUe
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__u9JUe)}
                 >
                   <React.Fragment>
                     {(() => {
@@ -1413,13 +1374,9 @@ function PlasmicGdsPricing__RenderFunc(props: {
                   </React.Fragment>
                 </div>
               </div>
-              <div className={classNames(projectcss.all, sty.freeBox__aMvkv)}>
+              <div className={classNames("all", sty.freeBox__aMvkv)}>
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__g5Jh1
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__g5Jh1)}
                 >
                   {
                     "\u0642\u06cc\u0645\u062a \u0627\u06cc\u0627\u0645 \u067e\u06cc\u06a9"
@@ -1457,11 +1414,7 @@ function PlasmicGdsPricing__RenderFunc(props: {
                 />
 
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__h1VtM
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__h1VtM)}
                 >
                   <React.Fragment>
                     {(() => {
@@ -1695,13 +1648,9 @@ function PlasmicGdsPricing__RenderFunc(props: {
                 })()}
               />
             </div>
-            <div className={classNames(projectcss.all, sty.freeBox__i5WzH)}>
+            <div className={classNames("all", sty.freeBox__i5WzH)}>
               <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__buKce
-                )}
+                className={classNames("all", "__wab_text", sty.text__buKce)}
                 onClick={async event => {
                   const $steps = {};
 

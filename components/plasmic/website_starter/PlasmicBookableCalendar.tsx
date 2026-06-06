@@ -66,7 +66,6 @@ import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-impor
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicBookableCalendar.module.css"; // plasmic-import: NNR58lJR0oX5/css
 
 createPlasmicElementProxy;
@@ -204,17 +203,17 @@ function PlasmicBookableCalendar__RenderFunc(props: {
       data-plasmic-root={true}
       data-plasmic-for-node={forNode}
       className={classNames(
-        projectcss.all,
-        projectcss.root_reset,
-        projectcss.plasmic_default_styles,
-        projectcss.plasmic_mixins,
+        "all",
+        "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+        "plasmic_default_styles",
+        "plasmic_mixins",
         styleTokensClassNames,
         sty.main
       )}
     >
-      <div className={classNames(projectcss.all, sty.freeBox__hVjWa)}>
-        <div className={classNames(projectcss.all, sty.freeBox__r0NzS)}>
-          <div className={classNames(projectcss.all, sty.freeBox___2Jl3C)}>
+      <div className={classNames("all", sty.freeBox__hVjWa)}>
+        <div className={classNames("all", sty.freeBox__r0NzS)}>
+          <div className={classNames("all", sty.freeBox___2Jl3C)}>
             <ApiRequest
               data-plasmic-name={"profile2"}
               data-plasmic-override={overrides.profile2}
@@ -273,8 +272,8 @@ function PlasmicBookableCalendar__RenderFunc(props: {
                     })()
               }
             >
-              <div className={classNames(projectcss.all, sty.freeBox__yQw8)}>
-                <div className={classNames(projectcss.all, sty.freeBox__nMyEa)}>
+              <div className={classNames("all", sty.freeBox__yQw8)}>
+                <div className={classNames("all", sty.freeBox__nMyEa)}>
                   <PlasmicImg__
                     data-plasmic-name={"img"}
                     data-plasmic-override={overrides.img}
@@ -306,13 +305,9 @@ function PlasmicBookableCalendar__RenderFunc(props: {
                     }
                   />
                 </div>
-                <div className={classNames(projectcss.all, sty.freeBox__sBxl)}>
+                <div className={classNames("all", sty.freeBox__sBxl)}>
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__tUVqd
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__tUVqd)}
                   >
                     <React.Fragment>
                       {(() => {
@@ -336,13 +331,9 @@ function PlasmicBookableCalendar__RenderFunc(props: {
                     </React.Fragment>
                   </div>
                 </div>
-                <div className={classNames(projectcss.all, sty.freeBox___09FZ)}>
+                <div className={classNames("all", sty.freeBox___09FZ)}>
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__y7M0O
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__y7M0O)}
                   >
                     {""}
                   </div>
@@ -396,7 +387,7 @@ function PlasmicBookableCalendar__RenderFunc(props: {
           }
         })()}
       >
-        <div className={classNames(projectcss.all, sty.freeBox__qqxa3)}>
+        <div className={classNames("all", sty.freeBox__qqxa3)}>
           <Embed
             className={classNames("__wab_instance", sty.embedHtml__oZyQ4)}
             code={(() => {
@@ -555,8 +546,8 @@ function PlasmicBookableCalendar__RenderFunc(props: {
             })()}
           />
 
-          <div className={classNames(projectcss.all, sty.freeBox___75A5)}>
-            <div className={classNames(projectcss.all, sty.freeBox__erLfL)}>
+          <div className={classNames("all", sty.freeBox___75A5)}>
+            <div className={classNames("all", sty.freeBox__erLfL)}>
               <Embed
                 className={classNames("__wab_instance", sty.embedHtml___8TSV)}
                 code={
@@ -564,7 +555,7 @@ function PlasmicBookableCalendar__RenderFunc(props: {
                 }
               />
             </div>
-            <div className={classNames(projectcss.all, sty.freeBox__k82Vx)}>
+            <div className={classNames("all", sty.freeBox__k82Vx)}>
               <Embed
                 className={classNames("__wab_instance", sty.embedHtml__gsL8C)}
                 code={

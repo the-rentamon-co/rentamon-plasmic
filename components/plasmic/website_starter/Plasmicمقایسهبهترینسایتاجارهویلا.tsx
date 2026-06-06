@@ -70,7 +70,6 @@ import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-impor
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./Plasmicمقایسهبهترینسایتاجارهویلا.module.css"; // plasmic-import: wqhmVdxkd2UU/css
 
 const emptyProxy: any = new Proxy(() => "", {
@@ -289,17 +288,17 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
         }
       `}</style>
 
-      <div className={projectcss.plasmic_page_wrapper}>
+      <div className={"plasmic_page_wrapper"}>
         <div
           data-plasmic-name={"content"}
           data-plasmic-override={overrides.content}
           data-plasmic-root={true}
           data-plasmic-for-node={forNode}
           className={classNames(
-            projectcss.all,
-            projectcss.root_reset,
-            projectcss.plasmic_default_styles,
-            projectcss.plasmic_mixins,
+            "all",
+            "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+            "plasmic_default_styles",
+            "plasmic_mixins",
             styleTokensClassNames,
             sty.content
           )}
@@ -313,26 +312,26 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
           <div
             data-plasmic-name={"mainContents"}
             data-plasmic-override={overrides.mainContents}
-            className={classNames(projectcss.all, sty.mainContents)}
+            className={classNames("all", sty.mainContents)}
           >
             <div
               data-plasmic-name={"intro"}
               data-plasmic-override={overrides.intro}
-              className={classNames(projectcss.all, sty.intro)}
+              className={classNames("all", sty.intro)}
             >
               <div
                 data-plasmic-name={"introTitle"}
                 data-plasmic-override={overrides.introTitle}
-                className={classNames(projectcss.all, sty.introTitle)}
+                className={classNames("all", sty.introTitle)}
               >
                 <h1
                   data-plasmic-name={"h1"}
                   data-plasmic-override={overrides.h1}
                   className={classNames(
-                    projectcss.all,
-                    projectcss.h1,
-                    projectcss.h1__7SNMk,
-                    projectcss.__wab_text,
+                    "all",
+                    "h1",
+                    "h1__7SNMk",
+                    "__wab_text",
                     sty.h1
                   )}
                 >
@@ -344,14 +343,10 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
               <div
                 data-plasmic-name={"introDesc"}
                 data-plasmic-override={overrides.introDesc}
-                className={classNames(projectcss.all, sty.introDesc)}
+                className={classNames("all", sty.introDesc)}
               >
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text___82KF
-                  )}
+                  className={classNames("all", "__wab_text", sty.text___82KF)}
                 >
                   {
                     "\u0627\u06af\u0647 \u0645\u06cc\u0632\u0628\u0627\u0646 \u06cc\u0627 \u0635\u0627\u062d\u0628 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0647\u0633\u062a\u06cc \u0648 \u062f\u0646\u0628\u0627\u0644 \u0628\u0647\u062a\u0631\u06cc\u0646 \u0633\u0627\u06cc\u062a (\u067e\u0644\u062a\u0641\u0631\u0645)\u0628\u0631\u0627\u06cc \u06af\u0630\u0627\u0634\u062a\u0646 \u0622\u06af\u0647\u06cc \u0645\u06cc\u06af\u0631\u062f\u06cc\u060c \u0627\u062d\u062a\u0645\u0627\u0644\u0627\u064b \u0627\u0633\u0645\u200c\u0647\u0627\u06cc\u06cc \u0645\u062b\u0644 \u0634\u0628\u060c \u062c\u0627\u062c\u06cc\u06af\u0627\u060c \u0627\u062a\u0627\u0642\u06a9\u060c \u062c\u0627\u0628\u0627\u0645\u0627\u060c \u0627\u0633\u0646\u067e\u062a\u0631\u06cc\u067e\u060c \u0622\u0646\u06cc\u062c\u0627\u060c \u0644\u06cc\u062f\u0648\u0645\u0627\u062a\u0631\u06cc\u067e \u0648 \u0645\u06cc\u0647\u0645\u0627\u0646\u0634\u0648 \u0648 \u062e\u06cc\u0644\u06cc \u0645\u0648\u0627\u0631\u062f \u062f\u06cc\u06af\u0647 \u0631\u0648 \u0634\u0646\u06cc\u062f\u06cc\u060c.\u0627\u0645\u0627 \u062a\u0639\u062f\u0627\u062f \u0632\u06cc\u0627\u062f \u0622\u0646\u0647\u0627 \u0628\u0627\u0639\u062b \u0633\u0631\u062f\u0631\u06af\u0645\u06cc \u0627\u0641\u0631\u0627\u062f \u0645\u06cc\u0634\u0647.\r"
@@ -361,7 +356,7 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
               <div
                 data-plasmic-name={"str"}
                 data-plasmic-override={overrides.str}
-                className={classNames(projectcss.all, sty.str)}
+                className={classNames("all", sty.str)}
               >
                 <DataFetcher
                   className={classNames(
@@ -413,23 +408,15 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
                       <div
                         data-plasmic-name={"strDefinition"}
                         data-plasmic-override={overrides.strDefinition}
-                        className={classNames(
-                          projectcss.all,
-                          sty.strDefinition
-                        )}
+                        className={classNames("all", sty.strDefinition)}
                       >
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            sty.freeBox__njQaX
-                          )}
-                        >
+                        <div className={classNames("all", sty.freeBox__njQaX)}>
                           <h2
                             className={classNames(
-                              projectcss.all,
-                              projectcss.h2,
-                              projectcss.h2__7SNMk,
-                              projectcss.__wab_text,
+                              "all",
+                              "h2",
+                              "h2__7SNMk",
+                              "__wab_text",
                               sty.h2__j5Sh7
                             )}
                           >
@@ -439,8 +426,8 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
                           </h2>
                           <div
                             className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
+                              "all",
+                              "__wab_text",
                               sty.text__o9UhC
                             )}
                           >
@@ -448,8 +435,8 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
                           </div>
                           <div
                             className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
+                              "all",
+                              "__wab_text",
                               sty.text___7DL1F
                             )}
                           >
@@ -458,30 +445,19 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
                             }
                           </div>
                         </div>
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            sty.freeBox__vk6TK
-                          )}
-                        >
+                        <div className={classNames("all", sty.freeBox__vk6TK)}>
                           <div
                             data-plasmic-name={"titlesRow"}
                             data-plasmic-override={overrides.titlesRow}
-                            className={classNames(
-                              projectcss.all,
-                              sty.titlesRow
-                            )}
+                            className={classNames("all", sty.titlesRow)}
                           >
                             <div
-                              className={classNames(
-                                projectcss.all,
-                                sty.freeBox__q4Klv
-                              )}
+                              className={classNames("all", sty.freeBox__q4Klv)}
                             >
                               <div
                                 className={classNames(
-                                  projectcss.all,
-                                  projectcss.__wab_text,
+                                  "all",
+                                  "__wab_text",
                                   sty.text__mfVja
                                 )}
                               >
@@ -489,15 +465,12 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
                               </div>
                             </div>
                             <div
-                              className={classNames(
-                                projectcss.all,
-                                sty.freeBox___3Vksc
-                              )}
+                              className={classNames("all", sty.freeBox___3Vksc)}
                             >
                               <div
                                 className={classNames(
-                                  projectcss.all,
-                                  projectcss.__wab_text,
+                                  "all",
+                                  "__wab_text",
                                   sty.text__faQ6C
                                 )}
                               >
@@ -505,15 +478,12 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
                               </div>
                             </div>
                             <div
-                              className={classNames(
-                                projectcss.all,
-                                sty.freeBox__geyXj
-                              )}
+                              className={classNames("all", sty.freeBox__geyXj)}
                             >
                               <div
                                 className={classNames(
-                                  projectcss.all,
-                                  projectcss.__wab_text,
+                                  "all",
+                                  "__wab_text",
                                   sty.text__eS1Ln
                                 )}
                               >
@@ -527,15 +497,12 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
                               </div>
                             </div>
                             <div
-                              className={classNames(
-                                projectcss.all,
-                                sty.freeBox__yCEuC
-                              )}
+                              className={classNames("all", sty.freeBox__yCEuC)}
                             >
                               <div
                                 className={classNames(
-                                  projectcss.all,
-                                  projectcss.__wab_text,
+                                  "all",
+                                  "__wab_text",
                                   sty.text__g6M4L
                                 )}
                               >
@@ -543,15 +510,12 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
                               </div>
                             </div>
                             <div
-                              className={classNames(
-                                projectcss.all,
-                                sty.freeBox___4SxL
-                              )}
+                              className={classNames("all", sty.freeBox___4SxL)}
                             >
                               <div
                                 className={classNames(
-                                  projectcss.all,
-                                  projectcss.__wab_text,
+                                  "all",
+                                  "__wab_text",
                                   sty.text___68ZeJ
                                 )}
                               >
@@ -561,15 +525,12 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
                               </div>
                             </div>
                             <div
-                              className={classNames(
-                                projectcss.all,
-                                sty.freeBox__dOl6G
-                              )}
+                              className={classNames("all", sty.freeBox__dOl6G)}
                             >
                               <div
                                 className={classNames(
-                                  projectcss.all,
-                                  projectcss.__wab_text,
+                                  "all",
+                                  "__wab_text",
                                   sty.text__tUtkP
                                 )}
                               >
@@ -599,22 +560,19 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
                               <div
                                 data-plasmic-name={"titlesRow3"}
                                 data-plasmic-override={overrides.titlesRow3}
-                                className={classNames(
-                                  projectcss.all,
-                                  sty.titlesRow3
-                                )}
+                                className={classNames("all", sty.titlesRow3)}
                                 key={currentIndex}
                               >
                                 <div
                                   className={classNames(
-                                    projectcss.all,
+                                    "all",
                                     sty.freeBox__lbZ5P
                                   )}
                                 >
                                   <div
                                     className={classNames(
-                                      projectcss.all,
-                                      projectcss.__wab_text,
+                                      "all",
+                                      "__wab_text",
                                       sty.text__qKjEc
                                     )}
                                   >
@@ -638,14 +596,14 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
                                 </div>
                                 <div
                                   className={classNames(
-                                    projectcss.all,
+                                    "all",
                                     sty.freeBox__utHVl
                                   )}
                                 >
                                   <div
                                     className={classNames(
-                                      projectcss.all,
-                                      projectcss.__wab_text,
+                                      "all",
+                                      "__wab_text",
                                       sty.text__cMu5U
                                     )}
                                   >
@@ -669,14 +627,14 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
                                 </div>
                                 <div
                                   className={classNames(
-                                    projectcss.all,
+                                    "all",
                                     sty.freeBox__yUbK3
                                   )}
                                 >
                                   <div
                                     className={classNames(
-                                      projectcss.all,
-                                      projectcss.__wab_text,
+                                      "all",
+                                      "__wab_text",
                                       sty.text__bd9T6
                                     )}
                                   >
@@ -700,14 +658,14 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
                                 </div>
                                 <div
                                   className={classNames(
-                                    projectcss.all,
+                                    "all",
                                     sty.freeBox__zjnRu
                                   )}
                                 >
                                   <div
                                     className={classNames(
-                                      projectcss.all,
-                                      projectcss.__wab_text,
+                                      "all",
+                                      "__wab_text",
                                       sty.text__raKkn
                                     )}
                                   >
@@ -731,14 +689,14 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
                                 </div>
                                 <div
                                   className={classNames(
-                                    projectcss.all,
+                                    "all",
                                     sty.freeBox__nowX
                                   )}
                                 >
                                   <div
                                     className={classNames(
-                                      projectcss.all,
-                                      projectcss.__wab_text,
+                                      "all",
+                                      "__wab_text",
                                       sty.text__j6Ly2
                                     )}
                                   >
@@ -762,14 +720,14 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
                                 </div>
                                 <div
                                   className={classNames(
-                                    projectcss.all,
+                                    "all",
                                     sty.freeBox__ilhVv
                                   )}
                                 >
                                   <div
                                     className={classNames(
-                                      projectcss.all,
-                                      projectcss.__wab_text,
+                                      "all",
+                                      "__wab_text",
                                       sty.text___9KPcR
                                     )}
                                   >
@@ -800,7 +758,7 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
                   </DataCtxReader__>
                 </DataFetcher>
               </div>
-              <div className={classNames(projectcss.all, sty.freeBox__txPc)}>
+              <div className={classNames("all", sty.freeBox__txPc)}>
                 <PlasmicImg__
                   alt={""}
                   className={classNames(sty.img__u8Ckj)}
@@ -823,15 +781,15 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
             <div
               data-plasmic-name={"strDefinition2"}
               data-plasmic-override={overrides.strDefinition2}
-              className={classNames(projectcss.all, sty.strDefinition2)}
+              className={classNames("all", sty.strDefinition2)}
             >
-              <div className={classNames(projectcss.all, sty.freeBox__xnmxK)}>
+              <div className={classNames("all", sty.freeBox__xnmxK)}>
                 <h2
                   className={classNames(
-                    projectcss.all,
-                    projectcss.h2,
-                    projectcss.h2__7SNMk,
-                    projectcss.__wab_text,
+                    "all",
+                    "h2",
+                    "h2__7SNMk",
+                    "__wab_text",
                     sty.h2__tRAhj
                   )}
                 >
@@ -840,21 +798,11 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
                   }
                 </h2>
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__lMzU5
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__lMzU5)}
                 >
                   {""}
                 </div>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__hT3
-                  )}
-                >
+                <div className={classNames("all", "__wab_text", sty.text__hT3)}>
                   <React.Fragment>
                     <React.Fragment>
                       {
@@ -865,19 +813,14 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
                       <ul
                         data-plasmic-name={"ul"}
                         data-plasmic-override={overrides.ul}
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.ul,
-                          projectcss.ul__7SNMk,
-                          sty.ul
-                        )}
+                        className={classNames("all", "ul", "ul__7SNMk", sty.ul)}
                       >
                         <li
                           className={classNames(
-                            projectcss.all,
-                            projectcss.li,
-                            projectcss.li__7SNMk,
-                            projectcss.__wab_text,
+                            "all",
+                            "li",
+                            "li__7SNMk",
+                            "__wab_text",
                             sty.li__rHnEm
                           )}
                         >
@@ -887,10 +830,10 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
                         </li>
                         <li
                           className={classNames(
-                            projectcss.all,
-                            projectcss.li,
-                            projectcss.li__7SNMk,
-                            projectcss.__wab_text,
+                            "all",
+                            "li",
+                            "li__7SNMk",
+                            "__wab_text",
                             sty.li__edbLc
                           )}
                         >
@@ -900,10 +843,10 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
                         </li>
                         <li
                           className={classNames(
-                            projectcss.all,
-                            projectcss.li,
-                            projectcss.li__7SNMk,
-                            projectcss.__wab_text,
+                            "all",
+                            "li",
+                            "li__7SNMk",
+                            "__wab_text",
                             sty.li__imIUo
                           )}
                         >
@@ -917,7 +860,7 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
                   </React.Fragment>
                 </div>
               </div>
-              <div className={classNames(projectcss.all, sty.freeBox__xp20C)}>
+              <div className={classNames("all", sty.freeBox__xp20C)}>
                 <DataFetcher
                   className={classNames(
                     "__wab_instance",
@@ -944,35 +887,21 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
                       <div
                         data-plasmic-name={"strDefinition4"}
                         data-plasmic-override={overrides.strDefinition4}
-                        className={classNames(
-                          projectcss.all,
-                          sty.strDefinition4
-                        )}
+                        className={classNames("all", sty.strDefinition4)}
                       >
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            sty.freeBox__txy20
-                          )}
-                        >
+                        <div className={classNames("all", sty.freeBox__txy20)}>
                           <div
                             data-plasmic-name={"titlesRow4"}
                             data-plasmic-override={overrides.titlesRow4}
-                            className={classNames(
-                              projectcss.all,
-                              sty.titlesRow4
-                            )}
+                            className={classNames("all", sty.titlesRow4)}
                           >
                             <div
-                              className={classNames(
-                                projectcss.all,
-                                sty.freeBox__a0Hrf
-                              )}
+                              className={classNames("all", sty.freeBox__a0Hrf)}
                             >
                               <div
                                 className={classNames(
-                                  projectcss.all,
-                                  projectcss.__wab_text,
+                                  "all",
+                                  "__wab_text",
                                   sty.text__xFiA
                                 )}
                               >
@@ -982,15 +911,12 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
                               </div>
                             </div>
                             <div
-                              className={classNames(
-                                projectcss.all,
-                                sty.freeBox__n3QPg
-                              )}
+                              className={classNames("all", sty.freeBox__n3QPg)}
                             >
                               <div
                                 className={classNames(
-                                  projectcss.all,
-                                  projectcss.__wab_text,
+                                  "all",
+                                  "__wab_text",
                                   sty.text__oAyNy
                                 )}
                               >
@@ -1020,22 +946,19 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
                               <div
                                 data-plasmic-name={"titlesRow5"}
                                 data-plasmic-override={overrides.titlesRow5}
-                                className={classNames(
-                                  projectcss.all,
-                                  sty.titlesRow5
-                                )}
+                                className={classNames("all", sty.titlesRow5)}
                                 key={currentIndex}
                               >
                                 <div
                                   className={classNames(
-                                    projectcss.all,
+                                    "all",
                                     sty.freeBox__mTj3E
                                   )}
                                 >
                                   <div
                                     className={classNames(
-                                      projectcss.all,
-                                      projectcss.__wab_text,
+                                      "all",
+                                      "__wab_text",
                                       sty.text___1BarQ
                                     )}
                                   >
@@ -1059,14 +982,14 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
                                 </div>
                                 <div
                                   className={classNames(
-                                    projectcss.all,
+                                    "all",
                                     sty.freeBox__yQjUg
                                   )}
                                 >
                                   <div
                                     className={classNames(
-                                      projectcss.all,
-                                      projectcss.__wab_text,
+                                      "all",
+                                      "__wab_text",
                                       sty.text__taTB
                                     )}
                                   >
@@ -1098,7 +1021,7 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
                 </DataFetcher>
               </div>
             </div>
-            <div className={classNames(projectcss.all, sty.freeBox__it0YC)}>
+            <div className={classNames("all", sty.freeBox__it0YC)}>
               <PlasmicImg__
                 alt={""}
                 className={classNames(sty.img__svCGt)}
@@ -1117,14 +1040,8 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
                 }}
               />
             </div>
-            <div className={classNames(projectcss.all, sty.freeBox__btm5V)}>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__ogynV
-                )}
-              >
+            <div className={classNames("all", sty.freeBox__btm5V)}>
+              <div className={classNames("all", "__wab_text", sty.text__ogynV)}>
                 <React.Fragment>
                   <span
                     className={
@@ -1149,11 +1066,11 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
                   {
                     <PlasmicLink__
                       className={classNames(
-                        projectcss.all,
-                        projectcss.a,
-                        projectcss.a__7SNMk,
-                        projectcss.__wab_text,
-                        projectcss.plasmic_default__inline,
+                        "all",
+                        "a",
+                        "a__7SNMk",
+                        "__wab_text",
+                        "plasmic_default__inline",
                         sty.link__qzVcN
                       )}
                       component={Link}
@@ -1188,11 +1105,11 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
                   {
                     <PlasmicLink__
                       className={classNames(
-                        projectcss.all,
-                        projectcss.a,
-                        projectcss.a__7SNMk,
-                        projectcss.__wab_text,
-                        projectcss.plasmic_default__inline,
+                        "all",
+                        "a",
+                        "a__7SNMk",
+                        "__wab_text",
+                        "plasmic_default__inline",
                         sty.link___5OOiH
                       )}
                       component={Link}
@@ -1221,44 +1138,32 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
             <div
               data-plasmic-name={"strDefinition3"}
               data-plasmic-override={overrides.strDefinition3}
-              className={classNames(projectcss.all, sty.strDefinition3)}
+              className={classNames("all", sty.strDefinition3)}
             >
-              <div className={classNames(projectcss.all, sty.freeBox__uKaNj)}>
+              <div className={classNames("all", sty.freeBox__uKaNj)}>
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__utxly
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__utxly)}
                 >
                   {
                     "\u0645\u062f\u062a \u0632\u0645\u0627\u0646 \u0627\u0646\u062a\u0638\u0627\u0631 \u0628\u0631\u0627\u06cc \u0648\u0627\u0631\u06cc\u0632 \u062f\u0631\u0622\u0645\u062f \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647"
                   }
                 </div>
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__e6SC
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__e6SC)}
                 >
                   {hasVariant(globalVariants, "screen", "mobile")
                     ? "\u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u0648 \u0633\u0648\u06cc\u06cc\u062a \u0686\u0642\u062f\u0631 \u0637\u0648\u0644 \u0645\u06cc\u200c\u06a9\u0634\u0647 \u062a\u0627 \u062a\u0633\u0648\u06cc\u0647\u200c\u062d\u0633\u0627\u0628 \u06a9\u0646\u0646\u062f\u061f"
                     : "\u0648\u0627\u0631\u06cc\u0632 \u0628\u0647 \u0645\u0648\u0642\u0639 \u062f\u0631\u0622\u0645\u062f \u0648\u06cc\u0644\u0627"}
                 </div>
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text___02QL1
-                  )}
+                  className={classNames("all", "__wab_text", sty.text___02QL1)}
                 >
                   {
                     "\u0628\u0631\u0646\u0627\u0645\u0647\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u0645\u0639\u0645\u0648\u0644\u0627\u064b \u06cc\u06a9 \u0631\u0648\u0632 \u0628\u0639\u062f \u0627\u0632 \u0648\u0631\u0648\u062f \u0645\u0647\u0645\u0627\u0646 \u0648 \u0627\u0637\u0645\u06cc\u0646\u0627\u0646 \u0627\u0632 \u0627\u0633\u062a\u0642\u0631\u0627\u0631 \u0627\u0648\u0646\u200c\u0647\u0627\u060c \u0633\u0647\u0645 \u0645\u06cc\u0632\u0628\u0627\u0646 \u0631\u0648 \u0628\u0647 \u062d\u0633\u0627\u0628\u200c\u0627\u0634 \u0648\u0627\u0631\u06cc\u0632 \u0645\u06cc\u200c\u06a9\u0646\u0646\u062f. \u0628\u0627 \u062a\u0648\u062c\u0647 \u0628\u0647 \u0627\u06cc\u0646\u06a9\u0647 \u0648\u062c\u0647 \u0628\u0647 \u0634\u0645\u0627\u0631\u0647 \u0634\u0628\u0627 \u0645\u06cc\u0632\u0628\u0627\u0646 \u0648\u0627\u0631\u06cc\u0632 \u0645\u06cc\u0634\u0647\u060c \u0628\u0627\u06cc\u062f \u0632\u0645\u0627\u0646 \u0645\u0639\u0637\u0644\u06cc \u0646\u0642\u0644 \u0648 \u0627\u0646\u062a\u0642\u0627\u0644 \u0628\u0627\u0646\u06a9\u06cc \u0648 \u062e\u0635\u0648\u0635\u0627 \u0631\u0648\u0632\u0647\u0627\u06cc \u062a\u0639\u0637\u06cc\u0644 \u0631\u0648 \u0647\u0645 \u062f\u0631 \u0646\u0638\u0631 \u06af\u0631\u0641\u062a.\r\n\u0627\u0644\u0628\u062a\u0647 \u06af\u0627\u0647\u06cc \u00ab\u0645\u062f\u062a \u0632\u0645\u0627\u0646 \u0627\u0639\u0644\u0627\u0645 \u0634\u062f\u0647 \u0628\u0631\u0627\u06cc \u0648\u0627\u0631\u06cc\u0632\u00bb \u0628\u0627 \u0632\u0645\u0627\u0646\u06cc \u06a9\u0647 \u0648\u0627\u0631\u06cc\u0632 \u0648\u0627\u0642\u0639\u0627 \u0627\u0646\u062c\u0627\u0645 \u0645\u06cc\u200c\u0634\u0647\u060c \u062a\u0641\u0627\u0648\u062a \u062f\u0627\u0631\u0647."
                   }
                 </div>
               </div>
-              <div className={classNames(projectcss.all, sty.freeBox__jaSxE)}>
+              <div className={classNames("all", sty.freeBox__jaSxE)}>
                 <DataFetcher
                   className={classNames(
                     "__wab_instance",
@@ -1285,35 +1190,21 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
                       <div
                         data-plasmic-name={"strDefinition5"}
                         data-plasmic-override={overrides.strDefinition5}
-                        className={classNames(
-                          projectcss.all,
-                          sty.strDefinition5
-                        )}
+                        className={classNames("all", sty.strDefinition5)}
                       >
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            sty.freeBox___9WNex
-                          )}
-                        >
+                        <div className={classNames("all", sty.freeBox___9WNex)}>
                           <div
                             data-plasmic-name={"titlesRow6"}
                             data-plasmic-override={overrides.titlesRow6}
-                            className={classNames(
-                              projectcss.all,
-                              sty.titlesRow6
-                            )}
+                            className={classNames("all", sty.titlesRow6)}
                           >
                             <div
-                              className={classNames(
-                                projectcss.all,
-                                sty.freeBox__szM7Q
-                              )}
+                              className={classNames("all", sty.freeBox__szM7Q)}
                             >
                               <div
                                 className={classNames(
-                                  projectcss.all,
-                                  projectcss.__wab_text,
+                                  "all",
+                                  "__wab_text",
                                   sty.text__fzEh2
                                 )}
                               >
@@ -1323,15 +1214,12 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
                               </div>
                             </div>
                             <div
-                              className={classNames(
-                                projectcss.all,
-                                sty.freeBox__nAmhy
-                              )}
+                              className={classNames("all", sty.freeBox__nAmhy)}
                             >
                               <div
                                 className={classNames(
-                                  projectcss.all,
-                                  projectcss.__wab_text,
+                                  "all",
+                                  "__wab_text",
                                   sty.text__kblol
                                 )}
                               >
@@ -1363,22 +1251,19 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
                               <div
                                 data-plasmic-name={"titlesRow7"}
                                 data-plasmic-override={overrides.titlesRow7}
-                                className={classNames(
-                                  projectcss.all,
-                                  sty.titlesRow7
-                                )}
+                                className={classNames("all", sty.titlesRow7)}
                                 key={currentIndex}
                               >
                                 <div
                                   className={classNames(
-                                    projectcss.all,
+                                    "all",
                                     sty.freeBox__cvvYx
                                   )}
                                 >
                                   <div
                                     className={classNames(
-                                      projectcss.all,
-                                      projectcss.__wab_text,
+                                      "all",
+                                      "__wab_text",
                                       sty.text__vBbNg
                                     )}
                                   >
@@ -1402,14 +1287,14 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
                                 </div>
                                 <div
                                   className={classNames(
-                                    projectcss.all,
+                                    "all",
                                     sty.freeBox__ocEhs
                                   )}
                                 >
                                   <div
                                     className={classNames(
-                                      projectcss.all,
-                                      projectcss.__wab_text,
+                                      "all",
+                                      "__wab_text",
                                       sty.text__tUGyB
                                     )}
                                   >
@@ -1441,13 +1326,7 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
                 </DataFetcher>
               </div>
             </div>
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__rCjtz
-              )}
-            >
+            <div className={classNames("all", "__wab_text", sty.text__rCjtz)}>
               {
                 "\u0628\u0647 \u06af\u0641\u062a\u0647\u200c\u06cc \u0628\u0631\u062e\u06cc \u0645\u06cc\u0632\u0628\u0627\u0646\u200c\u0647\u0627\u060c \u0645\u0645\u06a9\u0646\u0647 \u0648\u0627\u0631\u06cc\u0632 \u0648\u062c\u0647\u0650 \u0634\u0628 \u0648 \u062c\u0627\u0628\u0627\u0645\u0627 \u062a\u0627 \u0686\u0646\u062f \u0631\u0648\u0632 \u0628\u0627 \u062a\u0627\u062e\u06cc\u0631 \u0627\u0646\u062c\u0627\u0645 \u0628\u0634\u0647."
               }
@@ -1455,9 +1334,9 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
             <div
               data-plasmic-name={"support"}
               data-plasmic-override={overrides.support}
-              className={classNames(projectcss.all, sty.support)}
+              className={classNames("all", sty.support)}
             >
-              <div className={classNames(projectcss.all, sty.freeBox___5Hatn)}>
+              <div className={classNames("all", sty.freeBox___5Hatn)}>
                 <PlasmicImg__
                   alt={""}
                   className={classNames(sty.img___2W4Ag)}
@@ -1479,25 +1358,17 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
               <div
                 data-plasmic-name={"supportText"}
                 data-plasmic-override={overrides.supportText}
-                className={classNames(projectcss.all, sty.supportText)}
+                className={classNames("all", sty.supportText)}
               >
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__dYUtH
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__dYUtH)}
                 >
                   {
                     "\u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc \u0648 \u062f\u0633\u062a\u0631\u0633\u06cc\u200c\u067e\u0630\u06cc\u0631\u06cc"
                   }
                 </div>
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__ke47I
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__ke47I)}
                 >
                   {
                     "\u0627\u06af\u0647 \u0628\u0627 \u0645\u0647\u0645\u0627\u0646 \u0628\u0647 \u0645\u0634\u06a9\u0644 \u0628\u062e\u0648\u0631\u06cc\u060c \u0648 \u06cc\u0627 \u0648\u0627\u0631\u06cc\u0632 \u062f\u0631\u0622\u0645\u062f \u0628\u0627 \u062a\u0627\u062e\u06cc\u0631 \u0627\u0646\u062c\u0627\u0645 \u0628\u0634\u0647\u060c \u06a9\u06cc\u0641\u06cc\u062a \u0648 \u0633\u0631\u0639\u062a \u0639\u0645\u0644 \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc \u0627\u0647\u0645\u06cc\u062a \u0632\u06cc\u0627\u062f\u06cc \u067e\u06cc\u062f\u0627 \u0645\u06cc\u200c\u06a9\u0646\u0647! \u0631\u062a\u0628\u0647\u200c\u0628\u0646\u062f\u06cc \u0648 \u0627\u0645\u062a\u06cc\u0627\u0632 \u062f\u0627\u062f\u0646 \u0628\u0647 \u06a9\u06cc\u0641\u06cc\u062a \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc \u0645\u0634\u062a\u0631\u06cc\u0627\u0646 \u06a9\u0627\u0631 \u0633\u0627\u062f\u0647\u200c\u0627\u06cc \u0646\u06cc\u0633\u062a\u060c \u0686\u0648\u0646 \u06a9\u06cc\u0641\u06cc\u062a \u0631\u0648 \u0628\u0647 \u0633\u062e\u062a\u06cc \u0645\u06cc\u200c\u0634\u0647 \u0627\u0646\u062f\u0627\u0632\u0647 \u06af\u0631\u0641\u062a. "
@@ -1507,14 +1378,10 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
               <div
                 data-plasmic-name={"outlines"}
                 data-plasmic-override={overrides.outlines}
-                className={classNames(projectcss.all, sty.outlines)}
+                className={classNames("all", sty.outlines)}
               >
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__f3Lou
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__f3Lou)}
                 >
                   <React.Fragment>
                     <span
@@ -1606,23 +1473,23 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
             <div
               data-plasmic-name={"bot"}
               data-plasmic-override={overrides.bot}
-              className={classNames(projectcss.all, sty.bot)}
+              className={classNames("all", sty.bot)}
             >
               <div
                 data-plasmic-name={"more"}
                 data-plasmic-override={overrides.more}
-                className={classNames(projectcss.all, sty.more)}
+                className={classNames("all", sty.more)}
               >
                 <div
                   data-plasmic-name={"certificates"}
                   data-plasmic-override={overrides.certificates}
-                  className={classNames(projectcss.all, sty.certificates)}
+                  className={classNames("all", sty.certificates)}
                 >
-                  <div className={classNames(projectcss.all, sty.freeBox__koA)}>
+                  <div className={classNames("all", sty.freeBox__koA)}>
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text__neWHx
                       )}
                     >
@@ -1632,8 +1499,8 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
                     </div>
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text___3POvo
                       )}
                     >
@@ -1646,7 +1513,7 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
                 <div
                   data-plasmic-name={"iamges"}
                   data-plasmic-override={overrides.iamges}
-                  className={classNames(projectcss.all, sty.iamges)}
+                  className={classNames("all", sty.iamges)}
                 >
                   <PlasmicImg__
                     alt={""}
@@ -1704,17 +1571,11 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
               <div
                 data-plasmic-name={"relatedContents"}
                 data-plasmic-override={overrides.relatedContents}
-                className={classNames(projectcss.all, sty.relatedContents)}
+                className={classNames("all", sty.relatedContents)}
               >
-                <div
-                  className={classNames(projectcss.all, sty.freeBox___6O4El)}
-                >
+                <div className={classNames("all", sty.freeBox___6O4El)}>
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__raLIx
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__raLIx)}
                   >
                     <React.Fragment>
                       <span
@@ -1731,11 +1592,11 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
                       {
                         <PlasmicLink__
                           className={classNames(
-                            projectcss.all,
-                            projectcss.a,
-                            projectcss.a__7SNMk,
-                            projectcss.__wab_text,
-                            projectcss.plasmic_default__inline,
+                            "all",
+                            "a",
+                            "a__7SNMk",
+                            "__wab_text",
+                            "plasmic_default__inline",
                             sty.link___4BJaZ
                           )}
                           component={Link}
@@ -1752,11 +1613,11 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
                       {
                         <PlasmicLink__
                           className={classNames(
-                            projectcss.all,
-                            projectcss.a,
-                            projectcss.a__7SNMk,
-                            projectcss.__wab_text,
-                            projectcss.plasmic_default__inline,
+                            "all",
+                            "a",
+                            "a__7SNMk",
+                            "__wab_text",
+                            "plasmic_default__inline",
                             sty.link__w16Gw
                           )}
                           component={Link}
@@ -1777,30 +1638,22 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
               <div
                 data-plasmic-name={"neighbours"}
                 data-plasmic-override={overrides.neighbours}
-                className={classNames(projectcss.all, sty.neighbours)}
+                className={classNames("all", sty.neighbours)}
               >
                 <div
                   data-plasmic-name={"benefitsTitle2"}
                   data-plasmic-override={overrides.benefitsTitle2}
-                  className={classNames(projectcss.all, sty.benefitsTitle2)}
+                  className={classNames("all", sty.benefitsTitle2)}
                 >
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__sEu9Y
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__sEu9Y)}
                   >
                     {
                       "\u0627\u0645\u06a9\u0627\u0646 \u0686\u062a \u0648 \u0627\u0631\u062a\u0628\u0627\u0637 \u06af\u0631\u0641\u062a\u0646 \u0628\u0627 \u0645\u0647\u0645\u0627\u0646 \u0648\u062c\u0648\u062f \u062f\u0627\u0631\u0647\u061f"
                     }
                   </div>
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__vkq1Q
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__vkq1Q)}
                   >
                     {
                       "\u0627\u06af\u0647 \u0645\u06cc\u0632\u0628\u0627\u0646 \u0628\u062a\u0648\u0646\u0647 \u0628\u0627 \u0645\u0647\u0645\u0627\u0646 \u0645\u0633\u062a\u0642\u06cc\u0645 \u06af\u0641\u062a\u06af\u0648 \u06a9\u0646\u0647\u060c \u062e\u06cc\u0627\u0644\u0634 \u0631\u0627\u062d\u062a\u200c\u062a\u0631 \u0647\u0633\u062a. \u0645\u062e\u0635\u0648\u0635\u0627\u064b \u067e\u06cc\u0634 \u0627\u0632 \u0646\u0647\u0627\u06cc\u06cc \u0634\u062f\u0646 \u0631\u0632\u0631\u0648. \u0647\u0645\u0686\u0646\u06cc\u0646 \u0645\u06cc\u0634\u0647 \u0645\u0648\u0636\u0648\u0639\u0627\u062a \u0632\u06cc\u0627\u062f\u06cc \u0631\u0648 \u0627\u0632 \u067e\u06cc\u0634 \u0628\u0627 \u0645\u062a\u0642\u0627\u0636\u06cc \u0647\u0645\u0627\u0647\u0646\u06af \u0648 \u062d\u062a\u06cc \u0637\u06cc \u06a9\u0631\u062f\u060c \u062a\u0627 \u0634\u0631\u0627\u06cc\u0637 \u067e\u06cc\u0634\u200c\u0628\u06cc\u0646\u06cc \u0646\u0634\u062f\u0647 \u0628\u0647 \u0648\u062c\u0648\u062f \u0646\u06cc\u0627\u062f.\r\r"
@@ -1810,7 +1663,7 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
                 <div
                   data-plasmic-name={"benefitsCaption2"}
                   data-plasmic-override={overrides.benefitsCaption2}
-                  className={classNames(projectcss.all, sty.benefitsCaption2)}
+                  className={classNames("all", sty.benefitsCaption2)}
                 >
                   <PlasmicImg__
                     alt={""}
@@ -1851,11 +1704,7 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
                   />
                 </div>
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__wkyZx
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__wkyZx)}
                 >
                   {
                     "\u0627\u0645\u06cc\u062f\u0648\u0627\u0631\u06cc\u0645 \u0627\u06cc\u0646 \u0645\u0642\u0627\u06cc\u0633\u0647 \u0628\u0647 \u0627\u0646\u062a\u062e\u0627\u0628 \u0628\u0647\u062a\u0631 \u0634\u0631\u06cc\u06a9 \u06a9\u0627\u0631\u06cc \u0634\u0645\u0627 \u06a9\u0645\u06a9 \u06a9\u0631\u062f\u0647 \u0628\u0627\u0634\u0647. \u0627\u06af\u0647 \u062f\u0631\u0645\u0648\u0631\u062f \u0627\u06cc\u0646 \u0645\u0642\u0627\u06cc\u0633\u0647 \u067e\u06cc\u0634\u0646\u0647\u0627\u062f \u0648 \u06cc\u0627 \u0627\u0646\u062a\u0642\u0627\u062f\u06cc \u062f\u0627\u0634\u062a\u06cc\u062f\u060c \u062d\u062a\u0645\u0627 \u0628\u0627 \u0645\u0627 \u0645\u0637\u0631\u062d \u06a9\u0646\u06cc\u062f. \u067e\u0627\u06cc\u06cc\u0646 \u0635\u0641\u062d\u0647 \u0634\u0645\u0627\u0631\u0647 \u0645\u0627 \u0647\u0633\u062a."
@@ -1865,19 +1714,15 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
               <div
                 data-plasmic-name={"cta"}
                 data-plasmic-override={overrides.cta}
-                className={classNames(projectcss.all, sty.cta)}
+                className={classNames("all", sty.cta)}
               >
                 <div
                   data-plasmic-name={"ctaText"}
                   data-plasmic-override={overrides.ctaText}
-                  className={classNames(projectcss.all, sty.ctaText)}
+                  className={classNames("all", sty.ctaText)}
                 >
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__vzhiP
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__vzhiP)}
                   >
                     {hasVariant(globalVariants, "screen", "mobile")
                       ? "\u0628\u0631\u0627\u06cc \u062b\u0628\u062a \u0628\u06cc\u200c\u062f\u0631\u062f\u0633\u0631 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0631 \u0633\u0627\u06cc\u062a\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 (\u062a\u0648\u0633\u0637 \u0645\u0627) \u0631\u0648\u06cc \u062f\u06a9\u0645\u0647\u200c\u06cc \u067e\u0627\u06cc\u06cc\u0646 \u0628\u0632\u0646"
@@ -1887,12 +1732,12 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
                 <div
                   data-plasmic-name={"button"}
                   data-plasmic-override={overrides.button}
-                  className={classNames(projectcss.all, sty.button)}
+                  className={classNames("all", sty.button)}
                 >
                   <div
                     className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
+                      "all",
+                      "__wab_text",
                       sty.text__vYRdE,
                       "clickable"
                     )}
@@ -1942,7 +1787,7 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
             className={classNames("__wab_instance", sty.miaanFooter)}
           />
 
-          <div className={classNames(projectcss.all, sty.freeBox___5Upoz)}>
+          <div className={classNames("all", sty.freeBox___5Upoz)}>
             <ClarityRntComponent
               data-plasmic-name={"clarityRntComponent"}
               data-plasmic-override={overrides.clarityRntComponent}

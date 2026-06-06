@@ -66,7 +66,6 @@ import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-impor
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicSelect__OptionGroup.module.css"; // plasmic-import: d_b2_mjvC-EH/css
 
 import SUPER__PlasmicSelect from "./PlasmicSelect"; // plasmic-import: GgjLI5qwOqwu/render
@@ -186,10 +185,10 @@ function PlasmicSelect__OptionGroup__RenderFunc(props: {
       data-plasmic-root={true}
       data-plasmic-for-node={forNode}
       className={classNames(
-        projectcss.all,
-        projectcss.root_reset,
-        projectcss.plasmic_default_styles,
-        projectcss.plasmic_mixins,
+        "all",
+        "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+        "plasmic_default_styles",
+        "plasmic_mixins",
         styleTokensClassNames,
         sty.root
       )}
@@ -198,7 +197,7 @@ function PlasmicSelect__OptionGroup__RenderFunc(props: {
         <div
           data-plasmic-name={"separator"}
           data-plasmic-override={overrides.separator}
-          className={classNames(projectcss.all, sty.separator, {
+          className={classNames("all", sty.separator, {
             [sty.separatorisFirst]: hasVariant($state, "isFirst", "isFirst"),
             [sty.separatornoTitle]: hasVariant($state, "noTitle", "noTitle")
           })}
@@ -208,7 +207,7 @@ function PlasmicSelect__OptionGroup__RenderFunc(props: {
         <div
           data-plasmic-name={"titleContainer"}
           data-plasmic-override={overrides.titleContainer}
-          className={classNames(projectcss.all, sty.titleContainer, {
+          className={classNames("all", sty.titleContainer, {
             [sty.titleContainerisFirst]: hasVariant(
               $state,
               "isFirst",
@@ -231,7 +230,7 @@ function PlasmicSelect__OptionGroup__RenderFunc(props: {
       <div
         data-plasmic-name={"optionsContainer"}
         data-plasmic-override={overrides.optionsContainer}
-        className={classNames(projectcss.all, sty.optionsContainer)}
+        className={classNames("all", sty.optionsContainer)}
       >
         {renderPlasmicSlot({
           defaultContents: (

@@ -70,7 +70,6 @@ import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-impor
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicIntegrations.module.css"; // plasmic-import: 7qT9iMfa9pib/css
 
 const emptyProxy: any = new Proxy(() => "", {
@@ -292,10 +291,10 @@ function PlasmicIntegrations__RenderFunc(props: {
         data-plasmic-root={true}
         data-plasmic-for-node={forNode}
         className={classNames(
-          projectcss.all,
-          projectcss.root_reset,
-          projectcss.plasmic_default_styles,
-          projectcss.plasmic_mixins,
+          "all",
+          "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+          "plasmic_default_styles",
+          "plasmic_mixins",
           styleTokensClassNames,
           sty.integrations
         )}
@@ -309,26 +308,26 @@ function PlasmicIntegrations__RenderFunc(props: {
         <div
           data-plasmic-name={"mainContents"}
           data-plasmic-override={overrides.mainContents}
-          className={classNames(projectcss.all, sty.mainContents)}
+          className={classNames("all", sty.mainContents)}
         >
           <div
             data-plasmic-name={"introApi"}
             data-plasmic-override={overrides.introApi}
-            className={classNames(projectcss.all, sty.introApi)}
+            className={classNames("all", sty.introApi)}
           >
             <div
               data-plasmic-name={"introApiTitle"}
               data-plasmic-override={overrides.introApiTitle}
-              className={classNames(projectcss.all, sty.introApiTitle)}
+              className={classNames("all", sty.introApiTitle)}
             >
               <h1
                 data-plasmic-name={"h1"}
                 data-plasmic-override={overrides.h1}
                 className={classNames(
-                  projectcss.all,
-                  projectcss.h1,
-                  projectcss.h1__7SNMk,
-                  projectcss.__wab_text,
+                  "all",
+                  "h1",
+                  "h1__7SNMk",
+                  "__wab_text",
                   sty.h1
                 )}
               >
@@ -336,13 +335,7 @@ function PlasmicIntegrations__RenderFunc(props: {
                   "API \u0645\u06cc\u0627\u0646 \u0648 \u0627\u062a\u0635\u0627\u0644 \u0628\u0647 \u0633\u0631\u0648\u06cc\u0633\u200c\u0647\u0627\u06cc \u0634\u0645\u0627"
                 }
               </h1>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__aTsAr
-                )}
-              >
+              <div className={classNames("all", "__wab_text", sty.text__aTsAr)}>
                 {
                   "\u0645\u06cc\u0627\u0646\u060c \u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc \u0645\u0648\u062c\u0648\u062f\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u062f\u0631 \u06a9\u0627\u0646\u0627\u0644\u200c\u0647\u0627\u06cc \u0641\u0631\u0648\u0634"
                 }
@@ -351,15 +344,9 @@ function PlasmicIntegrations__RenderFunc(props: {
             <div
               data-plasmic-name={"introApiCaption"}
               data-plasmic-override={overrides.introApiCaption}
-              className={classNames(projectcss.all, sty.introApiCaption)}
+              className={classNames("all", sty.introApiCaption)}
             >
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__mtwpL
-                )}
-              >
+              <div className={classNames("all", "__wab_text", sty.text__mtwpL)}>
                 {
                   "\u0641\u0631\u0642\u06cc \u0646\u0645\u06cc\u200c\u06a9\u0646\u0647 \u06a9\u0647 \u0633\u0627\u06cc\u062a \u0627\u062e\u062a\u0635\u0627\u0635\u06cc \u0628\u0631\u0627\u06cc \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u062a \u062f\u0627\u0631\u06cc\u060c \u062a\u06cc\u0645\u062a \u06cc\u0647 CRM \u062f\u0627\u062e\u0644\u06cc \u062f\u0627\u0631\u0647 \u0648 \u06cc\u0627 \u0635\u0627\u062d\u0628 \u067e\u0644\u062a\u0641\u0631\u0645 \u0627\u062c\u0627\u0631\u0647 \u0648\u06cc\u0644\u0627 \u0647\u0633\u062a\u06cc\u060c \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u0627\u06cc\u0646 API \u0634\u0645\u0627 \u0631\u0648 \u0648\u0627\u0631\u062f \u062c\u0645\u0639 \u0628\u0632\u0631\u06af\u062a\u0631\u06cc\u0646 \u0627\u06a9\u0648\u0633\u06cc\u0633\u062a\u0645 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647\u200c\u0647\u0627\u06cc \u0622\u0646\u0644\u0627\u06cc\u0646 \u06a9\u0634\u0648\u0631 \u0645\u06cc\u200c\u06a9\u0646\u0647. \u0627\u06cc\u0646 integration \u06a9\u0627\u0631\u0647\u0627\u06cc\u06cc \u0645\u062b\u0644 \u0628\u0631\u0648\u0632 \u0631\u0633\u0627\u0646\u06cc \u0648\u0636\u0639\u06cc\u062a \u062a\u0642\u0648\u06cc\u0645\u060c \u0645\u0634\u0627\u0647\u062f\u0647 \u0648 \u0645\u062f\u06cc\u0631\u06cc\u062a \u0645\u0648\u062c\u0648\u062f\u06cc (inventory) \u0645\u06cc\u0632\u0628\u0627\u0646 \u0631\u0648 \u062f\u0631 \u06a9\u0627\u0646\u0627\u0644\u200c\u0647\u0627\u06cc \u0641\u0631\u0648\u0634\u060c \u0633\u0627\u062f\u0647 \u0648 \u0622\u0646\u06cc \u0645\u06cc\u200c\u06a9\u0646\u0647."
                 }
@@ -368,14 +355,14 @@ function PlasmicIntegrations__RenderFunc(props: {
             <div
               data-plasmic-name={"platformsTitle"}
               data-plasmic-override={overrides.platformsTitle}
-              className={classNames(projectcss.all, sty.platformsTitle)}
+              className={classNames("all", sty.platformsTitle)}
             >
               <h2
                 className={classNames(
-                  projectcss.all,
-                  projectcss.h2,
-                  projectcss.h2__7SNMk,
-                  projectcss.__wab_text,
+                  "all",
+                  "h2",
+                  "h2__7SNMk",
+                  "__wab_text",
                   sty.h2__eWeM1
                 )}
               >
@@ -387,22 +374,22 @@ function PlasmicIntegrations__RenderFunc(props: {
             <div
               data-plasmic-name={"platforms"}
               data-plasmic-override={overrides.platforms}
-              className={classNames(projectcss.all, sty.platforms)}
+              className={classNames("all", sty.platforms)}
             >
               <div
                 data-plasmic-name={"names"}
                 data-plasmic-override={overrides.names}
-                className={classNames(projectcss.all, sty.names)}
+                className={classNames("all", sty.names)}
               >
                 <div
                   data-plasmic-name={"jajiga"}
                   data-plasmic-override={overrides.jajiga}
-                  className={classNames(projectcss.all, sty.jajiga)}
+                  className={classNames("all", sty.jajiga)}
                 >
                   <div
                     data-plasmic-name={"platformNames5"}
                     data-plasmic-override={overrides.platformNames5}
-                    className={classNames(projectcss.all, sty.platformNames5)}
+                    className={classNames("all", sty.platformNames5)}
                   >
                     <PlasmicImg__
                       alt={""}
@@ -451,12 +438,12 @@ function PlasmicIntegrations__RenderFunc(props: {
                   <div
                     data-plasmic-name={"platformNames25"}
                     data-plasmic-override={overrides.platformNames25}
-                    className={classNames(projectcss.all, sty.platformNames25)}
+                    className={classNames("all", sty.platformNames25)}
                   >
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text___4Yfgo
                       )}
                     >
@@ -471,12 +458,12 @@ function PlasmicIntegrations__RenderFunc(props: {
                 <div
                   data-plasmic-name={"mihmansho"}
                   data-plasmic-override={overrides.mihmansho}
-                  className={classNames(projectcss.all, sty.mihmansho)}
+                  className={classNames("all", sty.mihmansho)}
                 >
                   <div
                     data-plasmic-name={"platformNames20"}
                     data-plasmic-override={overrides.platformNames20}
-                    className={classNames(projectcss.all, sty.platformNames20)}
+                    className={classNames("all", sty.platformNames20)}
                   >
                     <PlasmicImg__
                       alt={""}
@@ -527,12 +514,12 @@ function PlasmicIntegrations__RenderFunc(props: {
                   <div
                     data-plasmic-name={"platformNames21"}
                     data-plasmic-override={overrides.platformNames21}
-                    className={classNames(projectcss.all, sty.platformNames21)}
+                    className={classNames("all", sty.platformNames21)}
                   >
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text__nDaYf
                       )}
                     >
@@ -543,12 +530,12 @@ function PlasmicIntegrations__RenderFunc(props: {
                 <div
                   data-plasmic-name={"jabama"}
                   data-plasmic-override={overrides.jabama}
-                  className={classNames(projectcss.all, sty.jabama)}
+                  className={classNames("all", sty.jabama)}
                 >
                   <div
                     data-plasmic-name={"platformNames8"}
                     data-plasmic-override={overrides.platformNames8}
-                    className={classNames(projectcss.all, sty.platformNames8)}
+                    className={classNames("all", sty.platformNames8)}
                   >
                     <PlasmicImg__
                       alt={""}
@@ -599,12 +586,12 @@ function PlasmicIntegrations__RenderFunc(props: {
                   <div
                     data-plasmic-name={"platformNames9"}
                     data-plasmic-override={overrides.platformNames9}
-                    className={classNames(projectcss.all, sty.platformNames9)}
+                    className={classNames("all", sty.platformNames9)}
                   >
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text__i9PIx
                       )}
                     >
@@ -615,12 +602,12 @@ function PlasmicIntegrations__RenderFunc(props: {
                 <div
                   data-plasmic-name={"snapptrip"}
                   data-plasmic-override={overrides.snapptrip}
-                  className={classNames(projectcss.all, sty.snapptrip)}
+                  className={classNames("all", sty.snapptrip)}
                 >
                   <div
                     data-plasmic-name={"platformNames11"}
                     data-plasmic-override={overrides.platformNames11}
-                    className={classNames(projectcss.all, sty.platformNames11)}
+                    className={classNames("all", sty.platformNames11)}
                   >
                     <PlasmicImg__
                       alt={""}
@@ -671,12 +658,12 @@ function PlasmicIntegrations__RenderFunc(props: {
                   <div
                     data-plasmic-name={"platformNames12"}
                     data-plasmic-override={overrides.platformNames12}
-                    className={classNames(projectcss.all, sty.platformNames12)}
+                    className={classNames("all", sty.platformNames12)}
                   >
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text__etbZz
                       )}
                     >
@@ -687,12 +674,12 @@ function PlasmicIntegrations__RenderFunc(props: {
                 <div
                   data-plasmic-name={"otaghak"}
                   data-plasmic-override={overrides.otaghak}
-                  className={classNames(projectcss.all, sty.otaghak)}
+                  className={classNames("all", sty.otaghak)}
                 >
                   <div
                     data-plasmic-name={"platformNames13"}
                     data-plasmic-override={overrides.platformNames13}
-                    className={classNames(projectcss.all, sty.platformNames13)}
+                    className={classNames("all", sty.platformNames13)}
                   >
                     <PlasmicImg__
                       alt={""}
@@ -743,12 +730,12 @@ function PlasmicIntegrations__RenderFunc(props: {
                   <div
                     data-plasmic-name={"platformNames16"}
                     data-plasmic-override={overrides.platformNames16}
-                    className={classNames(projectcss.all, sty.platformNames16)}
+                    className={classNames("all", sty.platformNames16)}
                   >
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text__uzs9H
                       )}
                     >
@@ -759,12 +746,12 @@ function PlasmicIntegrations__RenderFunc(props: {
                 <div
                   data-plasmic-name={"homsa"}
                   data-plasmic-override={overrides.homsa}
-                  className={classNames(projectcss.all, sty.homsa)}
+                  className={classNames("all", sty.homsa)}
                 >
                   <div
                     data-plasmic-name={"platformNames14"}
                     data-plasmic-override={overrides.platformNames14}
-                    className={classNames(projectcss.all, sty.platformNames14)}
+                    className={classNames("all", sty.platformNames14)}
                   >
                     <PlasmicImg__
                       alt={""}
@@ -815,12 +802,12 @@ function PlasmicIntegrations__RenderFunc(props: {
                   <div
                     data-plasmic-name={"platformNames15"}
                     data-plasmic-override={overrides.platformNames15}
-                    className={classNames(projectcss.all, sty.platformNames15)}
+                    className={classNames("all", sty.platformNames15)}
                   >
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text__ovz79
                       )}
                     >
@@ -831,12 +818,12 @@ function PlasmicIntegrations__RenderFunc(props: {
                 <div
                   data-plasmic-name={"mizboon"}
                   data-plasmic-override={overrides.mizboon}
-                  className={classNames(projectcss.all, sty.mizboon)}
+                  className={classNames("all", sty.mizboon)}
                 >
                   <div
                     data-plasmic-name={"platformNames17"}
                     data-plasmic-override={overrides.platformNames17}
-                    className={classNames(projectcss.all, sty.platformNames17)}
+                    className={classNames("all", sty.platformNames17)}
                   >
                     <PlasmicImg__
                       alt={""}
@@ -887,12 +874,12 @@ function PlasmicIntegrations__RenderFunc(props: {
                   <div
                     data-plasmic-name={"platformNames18"}
                     data-plasmic-override={overrides.platformNames18}
-                    className={classNames(projectcss.all, sty.platformNames18)}
+                    className={classNames("all", sty.platformNames18)}
                   >
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text__c9Ooy
                       )}
                     >
@@ -903,12 +890,12 @@ function PlasmicIntegrations__RenderFunc(props: {
                 <div
                   data-plasmic-name={"shab"}
                   data-plasmic-override={overrides.shab}
-                  className={classNames(projectcss.all, sty.shab)}
+                  className={classNames("all", sty.shab)}
                 >
                   <div
                     data-plasmic-name={"platformNames2"}
                     data-plasmic-override={overrides.platformNames2}
-                    className={classNames(projectcss.all, sty.platformNames2)}
+                    className={classNames("all", sty.platformNames2)}
                   >
                     <PlasmicImg__
                       alt={""}
@@ -959,12 +946,12 @@ function PlasmicIntegrations__RenderFunc(props: {
                   <div
                     data-plasmic-name={"platformNames3"}
                     data-plasmic-override={overrides.platformNames3}
-                    className={classNames(projectcss.all, sty.platformNames3)}
+                    className={classNames("all", sty.platformNames3)}
                   >
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text__h9EO
                       )}
                     >
@@ -975,12 +962,12 @@ function PlasmicIntegrations__RenderFunc(props: {
                 <div
                   data-plasmic-name={"site"}
                   data-plasmic-override={overrides.site}
-                  className={classNames(projectcss.all, sty.site)}
+                  className={classNames("all", sty.site)}
                 >
                   <div
                     data-plasmic-name={"platformNames23"}
                     data-plasmic-override={overrides.platformNames23}
-                    className={classNames(projectcss.all, sty.platformNames23)}
+                    className={classNames("all", sty.platformNames23)}
                   >
                     <PlasmicImg__
                       alt={""}
@@ -1031,12 +1018,12 @@ function PlasmicIntegrations__RenderFunc(props: {
                   <div
                     data-plasmic-name={"platformNames24"}
                     data-plasmic-override={overrides.platformNames24}
-                    className={classNames(projectcss.all, sty.platformNames24)}
+                    className={classNames("all", sty.platformNames24)}
                   >
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text___3Ip9N
                       )}
                     >
@@ -1050,19 +1037,19 @@ function PlasmicIntegrations__RenderFunc(props: {
           <div
             data-plasmic-name={"benefits"}
             data-plasmic-override={overrides.benefits}
-            className={classNames(projectcss.all, sty.benefits)}
+            className={classNames("all", sty.benefits)}
           >
             <div
               data-plasmic-name={"benefitsTitle"}
               data-plasmic-override={overrides.benefitsTitle}
-              className={classNames(projectcss.all, sty.benefitsTitle)}
+              className={classNames("all", sty.benefitsTitle)}
             >
               <h2
                 className={classNames(
-                  projectcss.all,
-                  projectcss.h2,
-                  projectcss.h2__7SNMk,
-                  projectcss.__wab_text,
+                  "all",
+                  "h2",
+                  "h2__7SNMk",
+                  "__wab_text",
                   sty.h2__oja5I
                 )}
               >
@@ -1074,34 +1061,23 @@ function PlasmicIntegrations__RenderFunc(props: {
             <div
               data-plasmic-name={"benefitsCaption"}
               data-plasmic-override={overrides.benefitsCaption}
-              className={classNames(projectcss.all, sty.benefitsCaption)}
+              className={classNames("all", sty.benefitsCaption)}
             >
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__gz95V
-                )}
-              >
+              <div className={classNames("all", "__wab_text", sty.text__gz95V)}>
                 <React.Fragment>
                   <React.Fragment>{""}</React.Fragment>
                   {
                     <ul
                       data-plasmic-name={"ul"}
                       data-plasmic-override={overrides.ul}
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.ul,
-                        projectcss.ul__7SNMk,
-                        sty.ul
-                      )}
+                      className={classNames("all", "ul", "ul__7SNMk", sty.ul)}
                     >
                       <li
                         className={classNames(
-                          projectcss.all,
-                          projectcss.li,
-                          projectcss.li__7SNMk,
-                          projectcss.__wab_text,
+                          "all",
+                          "li",
+                          "li__7SNMk",
+                          "__wab_text",
                           sty.li__oCTjJ
                         )}
                       >
@@ -1111,10 +1087,10 @@ function PlasmicIntegrations__RenderFunc(props: {
                       </li>
                       <li
                         className={classNames(
-                          projectcss.all,
-                          projectcss.li,
-                          projectcss.li__7SNMk,
-                          projectcss.__wab_text,
+                          "all",
+                          "li",
+                          "li__7SNMk",
+                          "__wab_text",
                           sty.li__ywE0D
                         )}
                       >
@@ -1124,10 +1100,10 @@ function PlasmicIntegrations__RenderFunc(props: {
                       </li>
                       <li
                         className={classNames(
-                          projectcss.all,
-                          projectcss.li,
-                          projectcss.li__7SNMk,
-                          projectcss.__wab_text,
+                          "all",
+                          "li",
+                          "li__7SNMk",
+                          "__wab_text",
                           sty.li__dPlPa
                         )}
                       >
@@ -1137,10 +1113,10 @@ function PlasmicIntegrations__RenderFunc(props: {
                       </li>
                       <li
                         className={classNames(
-                          projectcss.all,
-                          projectcss.li,
-                          projectcss.li__7SNMk,
-                          projectcss.__wab_text,
+                          "all",
+                          "li",
+                          "li__7SNMk",
+                          "__wab_text",
                           sty.li__stWhX
                         )}
                       >
@@ -1150,10 +1126,10 @@ function PlasmicIntegrations__RenderFunc(props: {
                       </li>
                       <li
                         className={classNames(
-                          projectcss.all,
-                          projectcss.li,
-                          projectcss.li__7SNMk,
-                          projectcss.__wab_text,
+                          "all",
+                          "li",
+                          "li__7SNMk",
+                          "__wab_text",
                           sty.li__rKgry
                         )}
                       >
@@ -1163,10 +1139,10 @@ function PlasmicIntegrations__RenderFunc(props: {
                       </li>
                       <li
                         className={classNames(
-                          projectcss.all,
-                          projectcss.li,
-                          projectcss.li__7SNMk,
-                          projectcss.__wab_text,
+                          "all",
+                          "li",
+                          "li__7SNMk",
+                          "__wab_text",
                           sty.li__puCGq
                         )}
                       >
@@ -1176,10 +1152,10 @@ function PlasmicIntegrations__RenderFunc(props: {
                       </li>
                       <li
                         className={classNames(
-                          projectcss.all,
-                          projectcss.li,
-                          projectcss.li__7SNMk,
-                          projectcss.__wab_text,
+                          "all",
+                          "li",
+                          "li__7SNMk",
+                          "__wab_text",
                           sty.li__lfWym
                         )}
                       >
@@ -1189,10 +1165,10 @@ function PlasmicIntegrations__RenderFunc(props: {
                       </li>
                       <li
                         className={classNames(
-                          projectcss.all,
-                          projectcss.li,
-                          projectcss.li__7SNMk,
-                          projectcss.__wab_text,
+                          "all",
+                          "li",
+                          "li__7SNMk",
+                          "__wab_text",
                           sty.li__rOEh
                         )}
                       >
@@ -1202,10 +1178,10 @@ function PlasmicIntegrations__RenderFunc(props: {
                       </li>
                       <li
                         className={classNames(
-                          projectcss.all,
-                          projectcss.li,
-                          projectcss.li__7SNMk,
-                          projectcss.__wab_text,
+                          "all",
+                          "li",
+                          "li__7SNMk",
+                          "__wab_text",
                           sty.li__k8J4V
                         )}
                       >
@@ -1219,14 +1195,8 @@ function PlasmicIntegrations__RenderFunc(props: {
                 </React.Fragment>
               </div>
             </div>
-            <div className={classNames(projectcss.all, sty.freeBox__lbWw)}>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__aFml5
-                )}
-              >
+            <div className={classNames("all", sty.freeBox__lbWw)}>
+              <div className={classNames("all", "__wab_text", sty.text__aFml5)}>
                 {
                   "\u062a\u0642\u0648\u06cc\u0645 \u0645\u06cc\u0632\u0628\u0627\u0646\u0627\u0646 \u0647\u0645\u06cc\u0634\u0647 \u0628\u0647\u200c\u0631\u0648\u0632 \u062e\u0648\u0627\u0647\u062f \u0628\u0648\u062f \u0648 \u0686\u0627\u0644\u0634\u200c\u0647\u0627\u06cc \u062a\u06cc\u0645 \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc \u0645\u06cc\u0632\u0628\u0627\u0646\u0627\u0646 \u0648 \u0647\u0645\u0686\u0646\u06cc\u0646 \u0631\u0634\u062f \u0628\u062e\u0634 \u062a\u0627\u0645\u06cc\u0646 (supply) \u0628\u0631\u0637\u0631\u0641 \u0645\u06cc\u200c\u0634\u0646. \u0628\u0627 \u0627\u0632 \u0628\u06cc\u0646 \u0628\u0631\u062f\u0646 \u0627\u06cc\u0646 \u062f\u063a\u062f\u063a\u0647\u200c\u0647\u0627\u060c \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u062a\u0645\u0631\u06a9\u0632\u062a \u0631\u0648 \u0631\u0648\u06cc \u0631\u0634\u062f \u0648 \u062a\u0648\u0633\u0639\u0647 \u06a9\u0633\u0628\u200c\u0648\u06a9\u0627\u0631 \u0627\u0635\u0644\u06cc \u062e\u0648\u062f\u062a\u060c \u062e\u0635\u0648\u0635\u0627 \u0633\u0645\u062a demand\u060c \u0628\u06af\u0630\u0627\u0631\u06cc."
                 }
@@ -1235,7 +1205,7 @@ function PlasmicIntegrations__RenderFunc(props: {
             <div
               data-plasmic-name={"autoSyncGif"}
               data-plasmic-override={overrides.autoSyncGif}
-              className={classNames(projectcss.all, sty.autoSyncGif)}
+              className={classNames("all", sty.autoSyncGif)}
             >
               <Video
                 data-plasmic-name={"htmlVideo"}
@@ -1252,35 +1222,27 @@ function PlasmicIntegrations__RenderFunc(props: {
           <div
             data-plasmic-name={"bot"}
             data-plasmic-override={overrides.bot}
-            className={classNames(projectcss.all, sty.bot)}
+            className={classNames("all", sty.bot)}
           >
             <div
               data-plasmic-name={"apiAccess"}
               data-plasmic-override={overrides.apiAccess}
-              className={classNames(projectcss.all, sty.apiAccess)}
+              className={classNames("all", sty.apiAccess)}
             >
               <div
                 data-plasmic-name={"moreDecs"}
                 data-plasmic-override={overrides.moreDecs}
-                className={classNames(projectcss.all, sty.moreDecs)}
+                className={classNames("all", sty.moreDecs)}
               >
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__lzaO
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__lzaO)}
                 >
                   {
                     "\u0645\u06cc\u0627\u0646 \u0628\u0647\u200c\u0635\u0648\u0631\u062a \u062e\u0648\u062f\u06a9\u0627\u0631 \u062a\u063a\u06cc\u06cc\u0631\u0627\u062a \u062a\u0642\u0648\u06cc\u0645 \u0647\u0631 \u0627\u0642\u0627\u0645\u062a\u06af\u0627\u0647 \u0631\u0648 \u0630\u062e\u06cc\u0631\u0647 \u0645\u06cc\u200c\u06a9\u0646\u0647. \u0628\u0639\u062f \u0627AP \u0628\u0644\u0627\u0641\u0627\u0635\u0644\u0647 \u0627\u0632 \u0637\u0631\u06cc\u0642 \u0648\u0628\u200c\u0647\u0648\u06a9\u200c\u0647\u0627\u060c \u0634\u0645\u0627 \u0631\u0648 \u0627\u0632 \u0627\u06cc\u0646 \u062a\u063a\u06cc\u06cc\u0631\u0627\u062a \u0645\u0637\u0644\u0639 \u0645\u06cc\u200c\u06a9\u0646\u0647 \u062a\u0627 \u0628\u062a\u0648\u0646\u06cc\u062f \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0645\u0631\u0628\u0648\u0637\u0647 \u0631\u0648 \u062f\u0631 \u0633\u06cc\u0633\u062a\u0645 \u062e\u0648\u062f\u062a\u0648\u0646 \u0628\u0647\u200c\u0631\u0648\u0632 \u06a9\u0646\u06cc\u062f.\n\r"
                   }
                 </div>
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__kBrti
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__kBrti)}
                 >
                   {
                     "\u0627\u06cc\u0646 \u0641\u0631\u0622\u06cc\u0646\u062f \u062a\u0636\u0645\u06cc\u0646 \u0645\u06cc\u200c\u06a9\u0646\u0647 \u06a9\u0647 \u062f\u0627\u062f\u0647\u200c\u0647\u0627\u06cc \u0634\u0645\u0627 \u0647\u0645\u06cc\u0634\u0647 \u0628\u0627 \u0622\u062e\u0631\u06cc\u0646 \u0648\u0636\u0639\u06cc\u062a \u06a9\u0644\u06cc\u0647\u200c\u06cc \u06a9\u0627\u0646\u0627\u0644\u200c\u0647\u0627\u06cc \u0641\u0631\u0648\u0634 \u0647\u0645\u0627\u0647\u0646\u06af \u0628\u0627\u0634\u0647."
@@ -1290,7 +1252,7 @@ function PlasmicIntegrations__RenderFunc(props: {
               <div
                 data-plasmic-name={"requestDemo"}
                 data-plasmic-override={overrides.requestDemo}
-                className={classNames(projectcss.all, sty.requestDemo)}
+                className={classNames("all", sty.requestDemo)}
                 onClick={async event => {
                   const $steps = {};
 
@@ -1325,8 +1287,8 @@ function PlasmicIntegrations__RenderFunc(props: {
               >
                 <div
                   className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
+                    "all",
+                    "__wab_text",
                     sty.text__zwJw9,
                     "clickable"
                   )}
@@ -1342,14 +1304,10 @@ function PlasmicIntegrations__RenderFunc(props: {
               <div
                 data-plasmic-name={"moreDecs2"}
                 data-plasmic-override={overrides.moreDecs2}
-                className={classNames(projectcss.all, sty.moreDecs2)}
+                className={classNames("all", sty.moreDecs2)}
               >
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__wcvtr
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__wcvtr)}
                 >
                   {
                     "\u0628\u0631\u0627\u06cc \u062f\u0631\u06cc\u0627\u0641\u062a \u0631\u0627\u0647\u06a9\u0627\u0631 \u0627\u062e\u062a\u0635\u0627\u0635\u06cc \u06a9\u0633\u0628\u200c\u0648\u06a9\u0627\u0631 \u062e\u0648\u062f\u062a\u0648\u0646 \u0628\u0627 \u0645\u0627 \u062f\u0631 \u062a\u0645\u0627\u0633 \u0628\u0627\u0634\u06cc\u062f."
@@ -1365,7 +1323,7 @@ function PlasmicIntegrations__RenderFunc(props: {
           className={classNames("__wab_instance", sty.miaanFooter)}
         />
 
-        <div className={classNames(projectcss.all, sty.freeBox__mFxUc)}>
+        <div className={classNames("all", sty.freeBox__mFxUc)}>
           <ClarityRntComponent
             data-plasmic-name={"clarityRntComponent"}
             data-plasmic-override={overrides.clarityRntComponent}

@@ -81,7 +81,6 @@ import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-impor
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./PlasmicBookings3.module.css"; // plasmic-import: u3GQtj6pGCDB/css
 
 import SearchSvgIcon from "./icons/PlasmicIcon__SearchSvg"; // plasmic-import: xpwiGbFxHMB2/icon
@@ -570,17 +569,17 @@ function PlasmicBookings3__RenderFunc(props: {
         }
       `}</style>
 
-      <div className={projectcss.plasmic_page_wrapper}>
+      <div className={"plasmic_page_wrapper"}>
         <div
           data-plasmic-name={"root"}
           data-plasmic-override={overrides.root}
           data-plasmic-root={true}
           data-plasmic-for-node={forNode}
           className={classNames(
-            projectcss.all,
-            projectcss.root_reset,
-            projectcss.plasmic_default_styles,
-            projectcss.plasmic_mixins,
+            "all",
+            "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+            "plasmic_default_styles",
+            "plasmic_mixins",
             styleTokensClassNames,
             sty.root
           )}
@@ -1002,12 +1001,12 @@ function PlasmicBookings3__RenderFunc(props: {
           <div
             data-plasmic-name={"header"}
             data-plasmic-override={overrides.header}
-            className={classNames(projectcss.all, sty.header)}
+            className={classNames("all", sty.header)}
           >
             <div
               data-plasmic-name={"sidebar"}
               data-plasmic-override={overrides.sidebar}
-              className={classNames(projectcss.all, sty.sidebar)}
+              className={classNames("all", sty.sidebar)}
             />
 
             {(
@@ -1027,7 +1026,7 @@ function PlasmicBookings3__RenderFunc(props: {
                     }
                   })()
             ) ? (
-              <div className={classNames(projectcss.all, sty.freeBox__gLaWs)}>
+              <div className={classNames("all", sty.freeBox__gLaWs)}>
                 <SideBar2
                   data-plasmic-name={"sideBar2"}
                   data-plasmic-override={overrides.sideBar2}
@@ -1066,7 +1065,7 @@ function PlasmicBookings3__RenderFunc(props: {
                     }
                   })()
             ) ? (
-              <div className={classNames(projectcss.all, sty.freeBox__uFeo)}>
+              <div className={classNames("all", sty.freeBox__uFeo)}>
                 <SidebarLite
                   data-plasmic-name={"sidebarLite"}
                   data-plasmic-override={overrides.sidebarLite}
@@ -1090,7 +1089,7 @@ function PlasmicBookings3__RenderFunc(props: {
             ) : null}
             <div
               className={classNames(
-                projectcss.all,
+                "all",
                 sty.freeBox___7F3ZJ,
                 hasVariant(globalVariants, "screen", "mobile")
                   ? "fadeinf"
@@ -1099,8 +1098,8 @@ function PlasmicBookings3__RenderFunc(props: {
             >
               <div
                 className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
+                  "all",
+                  "__wab_text",
                   sty.text__ipv5P,
                   hasVariant(globalVariants, "screen", "mobile")
                     ? ``
@@ -1110,7 +1109,7 @@ function PlasmicBookings3__RenderFunc(props: {
                 {"\u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u0645\u0646"}
               </div>
             </div>
-            <div className={classNames(projectcss.all, sty.freeBox__rZx6C)}>
+            <div className={classNames("all", sty.freeBox__rZx6C)}>
               <ApiRequest
                 data-plasmic-name={"profile"}
                 data-plasmic-override={overrides.profile}
@@ -1163,11 +1162,7 @@ function PlasmicBookings3__RenderFunc(props: {
             </div>
           </div>
           <div
-            className={classNames(
-              projectcss.all,
-              sty.freeBox__z84W1,
-              "sticky-header"
-            )}
+            className={classNames("all", sty.freeBox__z84W1, "sticky-header")}
           >
             <ApiRequest
               data-plasmic-name={"checkFeatureStatus"}
@@ -1175,11 +1170,7 @@ function PlasmicBookings3__RenderFunc(props: {
               className={classNames("__wab_instance", sty.checkFeatureStatus)}
               errorDisplay={
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__hhNeX
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__hhNeX)}
                 >
                   {" "}
                 </div>
@@ -1241,9 +1232,7 @@ function PlasmicBookings3__RenderFunc(props: {
                   throw e;
                 }
               })() ? (
-                <div
-                  className={classNames(projectcss.all, sty.freeBox___7Vten)}
-                >
+                <div className={classNames("all", sty.freeBox___7Vten)}>
                   <ToastMessageRnt
                     data-plasmic-name={"toastMessageRnt"}
                     data-plasmic-override={overrides.toastMessageRnt}
@@ -1269,7 +1258,7 @@ function PlasmicBookings3__RenderFunc(props: {
             <div
               data-plasmic-name={"filterSection"}
               data-plasmic-override={overrides.filterSection}
-              className={classNames(projectcss.all, sty.filterSection, ``)}
+              className={classNames("all", sty.filterSection, ``)}
               onScroll={async event => {
                 const $steps = {};
               }}
@@ -1277,17 +1266,17 @@ function PlasmicBookings3__RenderFunc(props: {
               <div
                 data-plasmic-name={"filterAndSearch"}
                 data-plasmic-override={overrides.filterAndSearch}
-                className={classNames(projectcss.all, sty.filterAndSearch)}
+                className={classNames("all", sty.filterAndSearch)}
               >
                 <div
                   data-plasmic-name={"search"}
                   data-plasmic-override={overrides.search}
-                  className={classNames(projectcss.all, sty.search)}
+                  className={classNames("all", sty.search)}
                 >
                   <div
                     data-plasmic-name={"searchBox"}
                     data-plasmic-override={overrides.searchBox}
-                    className={classNames(projectcss.all, sty.searchBox)}
+                    className={classNames("all", sty.searchBox)}
                   >
                     <TextInput2
                       data-plasmic-name={"textInput2"}
@@ -1425,7 +1414,7 @@ function PlasmicBookings3__RenderFunc(props: {
                             <div
                               data-plasmic-name={"remove"}
                               data-plasmic-override={overrides.remove}
-                              className={classNames(projectcss.all, sty.remove)}
+                              className={classNames("all", sty.remove)}
                               onClick={async event => {
                                 const $steps = {};
 
@@ -1549,10 +1538,7 @@ function PlasmicBookings3__RenderFunc(props: {
                             <div
                               data-plasmic-name={"searchIcon"}
                               data-plasmic-override={overrides.searchIcon}
-                              className={classNames(
-                                projectcss.all,
-                                sty.searchIcon
-                              )}
+                              className={classNames("all", sty.searchIcon)}
                             >
                               <PlasmicImg__
                                 alt={""}
@@ -1691,16 +1677,16 @@ function PlasmicBookings3__RenderFunc(props: {
                 <div
                   data-plasmic-name={"sort"}
                   data-plasmic-override={overrides.sort}
-                  className={classNames(projectcss.all, sty.sort)}
+                  className={classNames("all", sty.sort)}
                 />
 
                 <div
                   data-plasmic-name={"filter"}
                   data-plasmic-override={overrides.filter}
-                  className={classNames(projectcss.all, sty.filter)}
+                  className={classNames("all", sty.filter)}
                 >
                   <div
-                    className={classNames(projectcss.all, sty.freeBox__nzUr0)}
+                    className={classNames("all", sty.freeBox__nzUr0)}
                     onClick={async event => {
                       const $steps = {};
 
@@ -1796,17 +1782,12 @@ function PlasmicBookings3__RenderFunc(props: {
                         throw e;
                       }
                     })() ? (
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          sty.freeBox___4NPnj
-                        )}
-                      />
+                      <div className={classNames("all", sty.freeBox___4NPnj)} />
                     ) : null}
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text___5NzkS
                       )}
                     >
@@ -1836,9 +1817,9 @@ function PlasmicBookings3__RenderFunc(props: {
                       children={null}
                       className={classNames("__wab_instance", sty.filterMenu)}
                       defaultStylesClassName={classNames(
-                        projectcss.root_reset,
-                        projectcss.plasmic_default_styles,
-                        projectcss.plasmic_mixins,
+                        "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+                        "plasmic_default_styles",
+                        "plasmic_mixins",
                         styleTokensClassNames
                       )}
                       hideFooter={true}
@@ -1854,28 +1835,17 @@ function PlasmicBookings3__RenderFunc(props: {
                         "open"
                       ])}
                       title={
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            sty.freeBox__uTuYo
-                          )}
-                        >
+                        <div className={classNames("all", sty.freeBox__uTuYo)}>
                           <div
-                            className={classNames(
-                              projectcss.all,
-                              sty.freeBox___82Da8
-                            )}
+                            className={classNames("all", sty.freeBox___82Da8)}
                           >
                             <div
-                              className={classNames(
-                                projectcss.all,
-                                sty.freeBox__eqpWw
-                              )}
+                              className={classNames("all", sty.freeBox__eqpWw)}
                             >
                               <div
                                 className={classNames(
-                                  projectcss.all,
-                                  projectcss.__wab_text,
+                                  "all",
+                                  "__wab_text",
                                   sty.text___5NEo
                                 )}
                               >
@@ -1883,10 +1853,7 @@ function PlasmicBookings3__RenderFunc(props: {
                               </div>
                             </div>
                             <div
-                              className={classNames(
-                                projectcss.all,
-                                sty.freeBox__mITsO
-                              )}
+                              className={classNames("all", sty.freeBox__mITsO)}
                             >
                               <PlasmicImg__
                                 alt={""}
@@ -1908,10 +1875,7 @@ function PlasmicBookings3__RenderFunc(props: {
                             </div>
                           </div>
                           <div
-                            className={classNames(
-                              projectcss.all,
-                              sty.freeBox__irLfq
-                            )}
+                            className={classNames("all", sty.freeBox__irLfq)}
                           >
                             <PlasmicImg__
                               alt={""}
@@ -1983,12 +1947,12 @@ function PlasmicBookings3__RenderFunc(props: {
             <div
               data-plasmic-name={"checkInAndChecklOut"}
               data-plasmic-override={overrides.checkInAndChecklOut}
-              className={classNames(projectcss.all, sty.checkInAndChecklOut)}
+              className={classNames("all", sty.checkInAndChecklOut)}
             >
               <div
                 data-plasmic-name={"checkIn"}
                 data-plasmic-override={overrides.checkIn}
-                className={classNames(projectcss.all, sty.checkIn, "clickable")}
+                className={classNames("all", sty.checkIn, "clickable")}
                 onClick={async event => {
                   const $steps = {};
 
@@ -2139,11 +2103,7 @@ function PlasmicBookings3__RenderFunc(props: {
                 })()}
               >
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__eiubh
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__eiubh)}
                   style={(() => {
                     try {
                       return (() => {
@@ -2203,11 +2163,7 @@ function PlasmicBookings3__RenderFunc(props: {
               <div
                 data-plasmic-name={"checkOut"}
                 data-plasmic-override={overrides.checkOut}
-                className={classNames(
-                  projectcss.all,
-                  sty.checkOut,
-                  "clickable"
-                )}
+                className={classNames("all", sty.checkOut, "clickable")}
                 onClick={async event => {
                   const $steps = {};
 
@@ -2371,11 +2327,7 @@ function PlasmicBookings3__RenderFunc(props: {
                 })()}
               >
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__gEdMf
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__gEdMf)}
                   style={(() => {
                     try {
                       return (() => {
@@ -2428,11 +2380,7 @@ function PlasmicBookings3__RenderFunc(props: {
               <div
                 data-plasmic-name={"checkOut2"}
                 data-plasmic-override={overrides.checkOut2}
-                className={classNames(
-                  projectcss.all,
-                  sty.checkOut2,
-                  "clickable"
-                )}
+                className={classNames("all", sty.checkOut2, "clickable")}
                 onClick={async event => {
                   const $steps = {};
 
@@ -2545,11 +2493,7 @@ function PlasmicBookings3__RenderFunc(props: {
                 })()}
               >
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text___56UGl
-                  )}
+                  className={classNames("all", "__wab_text", sty.text___56UGl)}
                   style={(() => {
                     try {
                       return (() => {
@@ -2579,13 +2523,7 @@ function PlasmicBookings3__RenderFunc(props: {
             children={null}
             className={classNames("__wab_instance", sty.reserveData)}
             errorDisplay={
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__u9Pfs
-                )}
-              >
+              <div className={classNames("all", "__wab_text", sty.text__u9Pfs)}>
                 {
                   "\u062e\u0637\u0627 \u062f\u0631 \u0628\u0631\u0642\u0631\u0627\u0631\u06cc \u0627\u0631\u062a\u0628\u0627\u0637"
                 }
@@ -2706,12 +2644,12 @@ function PlasmicBookings3__RenderFunc(props: {
           <div
             data-plasmic-name={"container"}
             data-plasmic-override={overrides.container}
-            className={classNames(projectcss.all, sty.container)}
+            className={classNames("all", sty.container)}
           >
             <div
               data-plasmic-name={"pendingReserve"}
               data-plasmic-override={overrides.pendingReserve}
-              className={classNames(projectcss.all, sty.pendingReserve)}
+              className={classNames("all", sty.pendingReserve)}
             >
               {(_par => (!_par ? [] : Array.isArray(_par) ? _par : [_par]))(
                 (() => {
@@ -2733,7 +2671,7 @@ function PlasmicBookings3__RenderFunc(props: {
                 return (
                   <div
                     className={classNames(
-                      projectcss.all,
+                      "all",
                       sty.freeBox__hfsdO,
                       "clickable"
                     )}
@@ -3067,7 +3005,7 @@ function PlasmicBookings3__RenderFunc(props: {
               <div
                 data-plasmic-name={"reserveMainStack"}
                 data-plasmic-override={overrides.reserveMainStack}
-                className={classNames(projectcss.all, sty.reserveMainStack)}
+                className={classNames("all", sty.reserveMainStack)}
                 id={``}
                 onScroll={async event => {
                   const $steps = {};
@@ -3089,7 +3027,7 @@ function PlasmicBookings3__RenderFunc(props: {
                   <div
                     data-plasmic-name={"pagination2"}
                     data-plasmic-override={overrides.pagination2}
-                    className={classNames(projectcss.all, sty.pagination2)}
+                    className={classNames("all", sty.pagination2)}
                   >
                     {(() => {
                       try {
@@ -3127,10 +3065,7 @@ function PlasmicBookings3__RenderFunc(props: {
                       }
                     })() ? (
                       <div
-                        className={classNames(
-                          projectcss.all,
-                          sty.freeBox__wrAbZ
-                        )}
+                        className={classNames("all", sty.freeBox__wrAbZ)}
                         onClick={async event => {
                           const $steps = {};
 
@@ -3257,8 +3192,8 @@ function PlasmicBookings3__RenderFunc(props: {
                       >
                         <div
                           className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
+                            "all",
+                            "__wab_text",
                             sty.text__z1O2U
                           )}
                         >
@@ -3287,7 +3222,7 @@ function PlasmicBookings3__RenderFunc(props: {
                   const currentIndex = __plasmic_idx_0;
                   return (
                     <div
-                      className={classNames(projectcss.all, sty.freeBox__c9KOs)}
+                      className={classNames("all", sty.freeBox__c9KOs)}
                       key={currentIndex}
                       onClick={async event => {
                         const $steps = {};
@@ -3331,12 +3266,7 @@ function PlasmicBookings3__RenderFunc(props: {
                         }
                       }}
                     >
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          sty.freeBox__upO1W
-                        )}
-                      >
+                      <div className={classNames("all", sty.freeBox__upO1W)}>
                         {(() => {
                           try {
                             return currentItem.date != null;
@@ -3351,17 +3281,14 @@ function PlasmicBookings3__RenderFunc(props: {
                           }
                         })() ? (
                           <div
-                            className={classNames(
-                              projectcss.all,
-                              sty.freeBox__tCfZx
-                            )}
+                            className={classNames("all", sty.freeBox__tCfZx)}
                           >
                             <div
                               data-plasmic-name={"dates"}
                               data-plasmic-override={overrides.dates}
                               className={classNames(
-                                projectcss.all,
-                                projectcss.__wab_text,
+                                "all",
+                                "__wab_text",
                                 sty.dates
                               )}
                               id={(() => {
@@ -3520,10 +3447,7 @@ function PlasmicBookings3__RenderFunc(props: {
                               </React.Fragment>
                             </div>
                             <div
-                              className={classNames(
-                                projectcss.all,
-                                sty.freeBox__pfFtu
-                              )}
+                              className={classNames("all", sty.freeBox__pfFtu)}
                             />
                           </div>
                         ) : null}
@@ -3548,7 +3472,7 @@ function PlasmicBookings3__RenderFunc(props: {
                           return (
                             <div
                               className={classNames(
-                                projectcss.all,
+                                "all",
                                 sty.freeBox___2FUby,
                                 (() => {
                                   try {
@@ -3879,11 +3803,7 @@ function PlasmicBookings3__RenderFunc(props: {
                   }
                 })() ? (
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__ddkat
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__ddkat)}
                   >
                     {
                       "\u0645\u0648\u0631\u062f\u06cc \u067e\u06cc\u062f\u0627 \u0646\u0634\u062f"
@@ -3907,9 +3827,7 @@ function PlasmicBookings3__RenderFunc(props: {
                     throw e;
                   }
                 })() ? (
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__sdroH)}
-                  >
+                  <div className={classNames("all", sty.freeBox__sdroH)}>
                     {(
                       hasVariant(globalVariants, "screen", "mobile")
                         ? (() => {
@@ -3945,8 +3863,8 @@ function PlasmicBookings3__RenderFunc(props: {
                     ) ? (
                       <div
                         className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
+                          "all",
+                          "__wab_text",
                           sty.text__hLat8
                         )}
                       >
@@ -4010,9 +3928,7 @@ function PlasmicBookings3__RenderFunc(props: {
                         }
                       })()
                 ) ? (
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__aDst9)}
-                  >
+                  <div className={classNames("all", sty.freeBox__aDst9)}>
                     {(
                       hasVariant(globalVariants, "screen", "mobile")
                         ? (() => {
@@ -4047,8 +3963,8 @@ function PlasmicBookings3__RenderFunc(props: {
                     ) ? (
                       <div
                         className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
+                          "all",
+                          "__wab_text",
                           sty.text__jgqq4
                         )}
                       >
@@ -4097,7 +4013,7 @@ function PlasmicBookings3__RenderFunc(props: {
                   }
                 })() ? (
                   <div
-                    className={classNames(projectcss.all, sty.freeBox__qhySr)}
+                    className={classNames("all", sty.freeBox__qhySr)}
                     onClick={async event => {
                       const $steps = {};
 
@@ -4138,11 +4054,7 @@ function PlasmicBookings3__RenderFunc(props: {
                     <div
                       data-plasmic-name={"\u0628\u06cc\u062e\u06cc\u0627\u0644"}
                       data-plasmic-override={overrides.بیخیال}
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.بیخیال
-                      )}
+                      className={classNames("all", "__wab_text", sty.بیخیال)}
                       onClick={async event => {
                         const $steps = {};
 
@@ -4226,7 +4138,7 @@ function PlasmicBookings3__RenderFunc(props: {
               <div
                 data-plasmic-name={"reserveFilterStack2"}
                 data-plasmic-override={overrides.reserveFilterStack2}
-                className={classNames(projectcss.all, sty.reserveFilterStack2)}
+                className={classNames("all", sty.reserveFilterStack2)}
                 onScroll={async event => {
                   const $steps = {};
                 }}
@@ -4250,7 +4162,7 @@ function PlasmicBookings3__RenderFunc(props: {
                   const currentIndex = __plasmic_idx_0;
                   return (
                     <div
-                      className={classNames(projectcss.all, sty.freeBox__yaFvd)}
+                      className={classNames("all", sty.freeBox__yaFvd)}
                       key={currentIndex}
                       onClick={async event => {
                         const $steps = {};
@@ -4295,10 +4207,7 @@ function PlasmicBookings3__RenderFunc(props: {
                       }}
                     >
                       <div
-                        className={classNames(
-                          projectcss.all,
-                          sty.freeBox__nDPn
-                        )}
+                        className={classNames("all", sty.freeBox__nDPn)}
                         onClick={async event => {
                           const $steps = {};
 
@@ -4453,11 +4362,7 @@ function PlasmicBookings3__RenderFunc(props: {
                   }
                 })() ? (
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text___9RPr
-                    )}
+                    className={classNames("all", "__wab_text", sty.text___9RPr)}
                   >
                     {
                       "\u0645\u0648\u0631\u062f\u06cc \u067e\u06cc\u062f\u0627 \u0646\u0634\u062f"
@@ -4507,7 +4412,7 @@ function PlasmicBookings3__RenderFunc(props: {
             <div
               data-plasmic-name={"intro"}
               data-plasmic-override={overrides.intro}
-              className={classNames(projectcss.all, sty.intro)}
+              className={classNames("all", sty.intro)}
             >
               {(
                 hasVariant(globalVariants, "screen", "mobile")
@@ -4543,11 +4448,7 @@ function PlasmicBookings3__RenderFunc(props: {
                     })()
               ) ? (
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__qmZeS
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__qmZeS)}
                 >
                   {hasVariant(globalVariants, "screen", "mobile")
                     ? "\u0647\u0631 \u0632\u0645\u0627\u0646 \u0631\u0632\u0631\u0648 \u062c\u062f\u06cc\u062f\u06cc \u062f\u0631 \u062a\u0642\u0648\u06cc\u0645\u062a \u062b\u0628\u062a \u0634\u0647\u060c \u062c\u0632\u06cc\u06cc\u0627\u062a \u0627\u0648\u0646 \u0631\u0632\u0631\u0648 \u062e\u0648\u062f\u06a9\u0627\u0631 \u0627\u06cc\u0646\u062c\u0627 \u0630\u062e\u06cc\u0631\u0647 \u0645\u06cc\u200c\u0634\u0647. \u0627\u06cc\u0646\u200c\u062c\u0627 \u0645\u06cc\u200c\u062a\u0648\u0646\u06cc \u062a\u0627\u0631\u06cc\u062e\u0686\u0647\u200c\u06cc \u0631\u0632\u0631\u0648\u0647\u0627\u06cc \u06af\u0630\u0634\u062a\u0647 \u0648 \u0622\u06cc\u0646\u062f\u0647 \u0631\u0648 \u0628\u0628\u06cc\u0646\u06cc."
@@ -4559,14 +4460,10 @@ function PlasmicBookings3__RenderFunc(props: {
           <div
             data-plasmic-name={"returnButton"}
             data-plasmic-override={overrides.returnButton}
-            className={classNames(projectcss.all, sty.returnButton, "fix")}
+            className={classNames("all", sty.returnButton, "fix")}
           >
             <div
-              className={classNames(
-                projectcss.all,
-                sty.freeBox__oO9P,
-                "clickable"
-              )}
+              className={classNames("all", sty.freeBox__oO9P, "clickable")}
               onClick={async event => {
                 const $steps = {};
 
@@ -4593,19 +4490,13 @@ function PlasmicBookings3__RenderFunc(props: {
                 }
               }}
             >
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__e25GJ
-                )}
-              >
+              <div className={classNames("all", "__wab_text", sty.text__e25GJ)}>
                 {"\u0628\u0627\u0632\u06af\u0634\u062a "}
               </div>
             </div>
           </div>
           {(hasVariant(globalVariants, "screen", "mobile") ? true : false) ? (
-            <div className={classNames(projectcss.all, sty.freeBox___0HoT)}>
+            <div className={classNames("all", sty.freeBox___0HoT)}>
               <ClarityRntComponent
                 data-plasmic-name={"clarityRntComponent"}
                 data-plasmic-override={overrides.clarityRntComponent}
@@ -4630,9 +4521,9 @@ function PlasmicBookings3__RenderFunc(props: {
             data-plasmic-override={overrides.finalModal}
             className={classNames("__wab_instance", sty.finalModal)}
             defaultStylesClassName={classNames(
-              projectcss.root_reset,
-              projectcss.plasmic_default_styles,
-              projectcss.plasmic_mixins,
+              "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+              "plasmic_default_styles",
+              "plasmic_mixins",
               styleTokensClassNames
             )}
             hideFooter={true}
@@ -4651,7 +4542,7 @@ function PlasmicBookings3__RenderFunc(props: {
             <div
               data-plasmic-name={"title2"}
               data-plasmic-override={overrides.title2}
-              className={classNames(projectcss.all, sty.title2)}
+              className={classNames("all", sty.title2)}
             >
               {(() => {
                 try {
@@ -4667,11 +4558,7 @@ function PlasmicBookings3__RenderFunc(props: {
                 }
               })() ? (
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__qoYuF
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__qoYuF)}
                 >
                   {"\u062a\u0627\u06cc\u06cc\u062f \u0631\u0632\u0631\u0648"}
                 </div>
@@ -4690,11 +4577,7 @@ function PlasmicBookings3__RenderFunc(props: {
                 }
               })() ? (
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__dtKo
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__dtKo)}
                 >
                   {
                     "\u0631\u062f \u062f\u0631\u062e\u0648\u0627\u0633\u062a \u0631\u0632\u0631\u0648"
@@ -4702,7 +4585,7 @@ function PlasmicBookings3__RenderFunc(props: {
                 </div>
               ) : null}
             </div>
-            <div className={classNames(projectcss.all, sty.freeBox__krVzo)}>
+            <div className={classNames("all", sty.freeBox__krVzo)}>
               {(() => {
                 try {
                   return $state.selectedAction == "accept";
@@ -4717,11 +4600,7 @@ function PlasmicBookings3__RenderFunc(props: {
                 }
               })() ? (
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__nl5Ze
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__nl5Ze)}
                 >
                   {
                     "\u0645\u0637\u0645\u0626\u0646\u06cc \u06a9\u0647 \u0645\u06cc\u062e\u0648\u0627\u06cc \u0631\u0632\u0631\u0648 \u0631\u0648 \u062a\u0627\u06cc\u06cc\u062f \u06a9\u0646\u06cc\u061f"
@@ -4742,11 +4621,7 @@ function PlasmicBookings3__RenderFunc(props: {
                 }
               })() ? (
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__jIDcq
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__jIDcq)}
                 >
                   {
                     "\u0622\u06cc\u0627 \u0628\u0631\u0627\u06cc \u0631\u062f \u0627\u06cc\u0646 \u062f\u0631\u062e\u0648\u0627\u0633\u062a \u0631\u0632\u0631\u0648 \u0627\u0637\u0645\u06cc\u0646\u0627\u0646 \u062f\u0627\u0631\u06cc\u061f"
@@ -4754,11 +4629,7 @@ function PlasmicBookings3__RenderFunc(props: {
                 </div>
               ) : null}
               <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text___9EEt1
-                )}
+                className={classNames("all", "__wab_text", sty.text___9EEt1)}
               >
                 {hasVariant(globalVariants, "screen", "mobile") ? (
                   <React.Fragment>
@@ -5005,11 +4876,7 @@ function PlasmicBookings3__RenderFunc(props: {
                 )}
               </div>
               <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text___8Kst2
-                )}
+                className={classNames("all", "__wab_text", sty.text___8Kst2)}
               >
                 <React.Fragment>
                   {(() => {
@@ -5028,7 +4895,7 @@ function PlasmicBookings3__RenderFunc(props: {
                 </React.Fragment>
               </div>
             </div>
-            <div className={classNames(projectcss.all, sty.freeBox__t4LoK)}>
+            <div className={classNames("all", sty.freeBox__t4LoK)}>
               {(() => {
                 try {
                   return $state.selectedAction != "accept";
@@ -5171,13 +5038,11 @@ function PlasmicBookings3__RenderFunc(props: {
                     }
                   }}
                 >
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__mgASf)}
-                  >
+                  <div className={classNames("all", sty.freeBox__mgASf)}>
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text__kcFi7
                       )}
                     >
@@ -5354,11 +5219,11 @@ function PlasmicBookings3__RenderFunc(props: {
                     }
                   }}
                 >
-                  <div className={classNames(projectcss.all, sty.freeBox__dPM)}>
+                  <div className={classNames("all", sty.freeBox__dPM)}>
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text__zdkWt
                       )}
                     >
@@ -5530,13 +5395,11 @@ function PlasmicBookings3__RenderFunc(props: {
                     }
                   }}
                 >
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__ip6Xt)}
-                  >
+                  <div className={classNames("all", sty.freeBox__ip6Xt)}>
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text__w3G0
                       )}
                     >
@@ -5642,11 +5505,7 @@ function PlasmicBookings3__RenderFunc(props: {
                 type={"primary"}
               >
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__szAia
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__szAia)}
                 >
                   {"\u0628\u0627\u0632\u06af\u0634\u062a"}
                 </div>
@@ -5658,9 +5517,9 @@ function PlasmicBookings3__RenderFunc(props: {
             data-plasmic-override={overrides.confirmed}
             className={classNames("__wab_instance", sty.confirmed)}
             defaultStylesClassName={classNames(
-              projectcss.root_reset,
-              projectcss.plasmic_default_styles,
-              projectcss.plasmic_mixins,
+              "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+              "plasmic_default_styles",
+              "plasmic_mixins",
               styleTokensClassNames
             )}
             hideFooter={true}
@@ -5674,7 +5533,7 @@ function PlasmicBookings3__RenderFunc(props: {
             open={generateStateValueProp($state, ["confirmed", "open"])}
             title={
               <React.Fragment>
-                <div className={classNames(projectcss.all, sty.freeBox__vhtSt)}>
+                <div className={classNames("all", sty.freeBox__vhtSt)}>
                   <PlasmicImg__
                     alt={""}
                     className={classNames(sty.img__kEemb)}
@@ -5730,7 +5589,7 @@ function PlasmicBookings3__RenderFunc(props: {
                     }}
                   />
                 </div>
-                <div className={classNames(projectcss.all, sty.freeBox__g7NnK)}>
+                <div className={classNames("all", sty.freeBox__g7NnK)}>
                   {(() => {
                     try {
                       return $state.modalData[0].platfromName == "شب";
@@ -6008,11 +5867,7 @@ function PlasmicBookings3__RenderFunc(props: {
                     />
                   ) : null}
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__eLhHr
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__eLhHr)}
                   >
                     <React.Fragment>
                       {(() => {
@@ -6039,24 +5894,20 @@ function PlasmicBookings3__RenderFunc(props: {
             <div
               data-plasmic-name={"main2"}
               data-plasmic-override={overrides.main2}
-              className={classNames(projectcss.all, sty.main2)}
+              className={classNames("all", sty.main2)}
             >
               <div
                 data-plasmic-name={"_3"}
                 data-plasmic-override={overrides._3}
-                className={classNames(projectcss.all, sty._3)}
+                className={classNames("all", sty._3)}
               >
                 <div
                   data-plasmic-name={"_17"}
                   data-plasmic-override={overrides._17}
-                  className={classNames(projectcss.all, sty._17)}
+                  className={classNames("all", sty._17)}
                 >
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__ejVg2
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__ejVg2)}
                   >
                     <React.Fragment>
                       {(() => {
@@ -6075,11 +5926,7 @@ function PlasmicBookings3__RenderFunc(props: {
                     </React.Fragment>
                   </div>
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__gaVrZ
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__gaVrZ)}
                   >
                     <React.Fragment>
                       {(() => {
@@ -6098,11 +5945,7 @@ function PlasmicBookings3__RenderFunc(props: {
                     </React.Fragment>
                   </div>
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__yeoNd
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__yeoNd)}
                   >
                     <React.Fragment>
                       {(() => {
@@ -6124,11 +5967,9 @@ function PlasmicBookings3__RenderFunc(props: {
                 <div
                   data-plasmic-name={"_18"}
                   data-plasmic-override={overrides._18}
-                  className={classNames(projectcss.all, sty._18)}
+                  className={classNames("all", sty._18)}
                 >
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__tUouW)}
-                  >
+                  <div className={classNames("all", sty.freeBox__tUouW)}>
                     {(() => {
                       try {
                         return $state.modalData[0].status == "Confirmed";
@@ -6145,11 +5986,7 @@ function PlasmicBookings3__RenderFunc(props: {
                       <div
                         data-plasmic-name={"status2"}
                         data-plasmic-override={overrides.status2}
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.status2
-                        )}
+                        className={classNames("all", "__wab_text", sty.status2)}
                       >
                         {"\u0646\u0647\u0627\u06cc\u06cc \u0634\u062f\u0647"}
                       </div>
@@ -6171,8 +6008,8 @@ function PlasmicBookings3__RenderFunc(props: {
                         data-plasmic-name={"falseStatus2"}
                         data-plasmic-override={overrides.falseStatus2}
                         className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
+                          "all",
+                          "__wab_text",
                           sty.falseStatus2
                         )}
                       >
@@ -6185,19 +6022,15 @@ function PlasmicBookings3__RenderFunc(props: {
               <div
                 data-plasmic-name={"_4"}
                 data-plasmic-override={overrides._4}
-                className={classNames(projectcss.all, sty._4)}
+                className={classNames("all", sty._4)}
               >
                 <div
                   data-plasmic-name={"_19"}
                   data-plasmic-override={overrides._19}
-                  className={classNames(projectcss.all, sty._19)}
+                  className={classNames("all", sty._19)}
                 >
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__qnJe
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__qnJe)}
                   >
                     <React.Fragment>
                       {(() => {
@@ -6219,23 +6052,15 @@ function PlasmicBookings3__RenderFunc(props: {
                 <div
                   data-plasmic-name={"_110"}
                   data-plasmic-override={overrides._110}
-                  className={classNames(projectcss.all, sty._110)}
+                  className={classNames("all", sty._110)}
                 >
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__dwPUt
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__dwPUt)}
                   >
                     {"\u0648\u0631\u0648\u062f:"}
                   </div>
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__w72Qv
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__w72Qv)}
                   >
                     <React.Fragment>
                       {(() => {
@@ -6257,23 +6082,15 @@ function PlasmicBookings3__RenderFunc(props: {
                 <div
                   data-plasmic-name={"_111"}
                   data-plasmic-override={overrides._111}
-                  className={classNames(projectcss.all, sty._111)}
+                  className={classNames("all", sty._111)}
                 >
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__nyyWv
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__nyyWv)}
                   >
                     {"\u062e\u0631\u0648\u062c:"}
                   </div>
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__hRqR7
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__hRqR7)}
                   >
                     <React.Fragment>
                       {(() => {
@@ -6295,23 +6112,15 @@ function PlasmicBookings3__RenderFunc(props: {
                 <div
                   data-plasmic-name={"_112"}
                   data-plasmic-override={overrides._112}
-                  className={classNames(projectcss.all, sty._112)}
+                  className={classNames("all", sty._112)}
                 >
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__m5D4Z
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__m5D4Z)}
                   >
                     {"\u0645\u0628\u0644\u063a \u06a9\u0644:"}
                   </div>
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__siao5
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__siao5)}
                   >
                     <React.Fragment>
                       {(() => {
@@ -6332,7 +6141,7 @@ function PlasmicBookings3__RenderFunc(props: {
                 </div>
               </div>
             </div>
-            <div className={classNames(projectcss.all, sty.freeBox__bz2Ls)}>
+            <div className={classNames("all", sty.freeBox__bz2Ls)}>
               <Button
                 className={classNames("__wab_instance", sty.button__wxSTe)}
                 onClick={async event => {
@@ -6442,13 +6251,9 @@ function PlasmicBookings3__RenderFunc(props: {
                   }
                 }}
               >
-                <div className={classNames(projectcss.all, sty.freeBox__vf0N0)}>
+                <div className={classNames("all", sty.freeBox__vf0N0)}>
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__hHet6
-                    )}
+                    className={classNames("all", "__wab_text", sty.text__hHet6)}
                   >
                     {"\u062a\u0627\u06cc\u06cc\u062f \u0631\u0632\u0631\u0648"}
                   </div>
@@ -6601,13 +6406,11 @@ function PlasmicBookings3__RenderFunc(props: {
                   size={"medium"}
                   type={"primary"}
                 >
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__uuXQn)}
-                  >
+                  <div className={classNames("all", sty.freeBox__uuXQn)}>
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text__c4RHo
                       )}
                     >
@@ -6693,13 +6496,11 @@ function PlasmicBookings3__RenderFunc(props: {
                   size={"medium"}
                   type={"primary"}
                 >
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__geE6C)}
-                  >
+                  <div className={classNames("all", sty.freeBox__geE6C)}>
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text___2VLv
                       )}
                     >
@@ -6712,7 +6513,7 @@ function PlasmicBookings3__RenderFunc(props: {
           </AntdModal>
           <div
             className={classNames(
-              projectcss.all,
+              "all",
               sty.freeBox__eqUb0,
               (() => {
                 try {
@@ -6740,12 +6541,12 @@ function PlasmicBookings3__RenderFunc(props: {
               const $steps = {};
             }}
           >
-            <div className={classNames(projectcss.all, sty.freeBox__dmjRc)}>
+            <div className={classNames("all", sty.freeBox__dmjRc)}>
               <div
                 data-plasmic-name={"filter2"}
                 data-plasmic-override={overrides.filter2}
                 className={classNames(
-                  projectcss.all,
+                  "all",
                   sty.filter2,
                   (() => {
                     try {
@@ -6767,27 +6568,21 @@ function PlasmicBookings3__RenderFunc(props: {
                 <div
                   data-plasmic-name={"title"}
                   data-plasmic-override={overrides.title}
-                  className={classNames(projectcss.all, sty.title)}
+                  className={classNames("all", sty.title)}
                 >
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__dd2Af)}
-                  >
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__eXc97)}
-                    >
+                  <div className={classNames("all", sty.freeBox__dd2Af)}>
+                    <div className={classNames("all", sty.freeBox__eXc97)}>
                       <div
                         className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
+                          "all",
+                          "__wab_text",
                           sty.text__c4MnZ
                         )}
                       >
                         {"\u0641\u06cc\u0644\u062a\u0631\u0647\u0627"}
                       </div>
                     </div>
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__zD8Pm)}
-                    >
+                    <div className={classNames("all", sty.freeBox__zD8Pm)}>
                       <PlasmicImg__
                         alt={""}
                         className={classNames(sty.img__rJRjF)}
@@ -6807,9 +6602,7 @@ function PlasmicBookings3__RenderFunc(props: {
                       />
                     </div>
                   </div>
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__qTKth)}
-                  >
+                  <div className={classNames("all", sty.freeBox__qTKth)}>
                     <PlasmicImg__
                       alt={""}
                       className={classNames(sty.img___8PfCx)}
@@ -6875,24 +6668,14 @@ function PlasmicBookings3__RenderFunc(props: {
                   <div
                     data-plasmic-name={"source2"}
                     data-plasmic-override={overrides.source2}
-                    className={classNames(projectcss.all, sty.source2)}
+                    className={classNames("all", sty.source2)}
                   >
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        sty.freeBox___0Lnsz
-                      )}
-                    >
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          sty.freeBox__njw40
-                        )}
-                      >
+                    <div className={classNames("all", sty.freeBox___0Lnsz)}>
+                      <div className={classNames("all", sty.freeBox__njw40)}>
                         <div
                           className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
+                            "all",
+                            "__wab_text",
                             sty.text__gmzr
                           )}
                         >
@@ -6902,9 +6685,7 @@ function PlasmicBookings3__RenderFunc(props: {
                         </div>
                       </div>
                     </div>
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__aQrCn)}
-                    >
+                    <div className={classNames("all", sty.freeBox__aQrCn)}>
                       <PlasmicImg__
                         alt={""}
                         className={classNames(sty.img__iVtl)}
@@ -6931,21 +6712,14 @@ function PlasmicBookings3__RenderFunc(props: {
                   <div
                     data-plasmic-name={"property2"}
                     data-plasmic-override={overrides.property2}
-                    className={classNames(projectcss.all, sty.property2)}
+                    className={classNames("all", sty.property2)}
                   >
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__pMilj)}
-                    >
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          sty.freeBox__aUe49
-                        )}
-                      >
+                    <div className={classNames("all", sty.freeBox__pMilj)}>
+                      <div className={classNames("all", sty.freeBox__aUe49)}>
                         <div
                           className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
+                            "all",
+                            "__wab_text",
                             sty.text__zvlL
                           )}
                         >
@@ -6955,12 +6729,7 @@ function PlasmicBookings3__RenderFunc(props: {
                         </div>
                       </div>
                     </div>
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        sty.freeBox___1ZFlB
-                      )}
-                    >
+                    <div className={classNames("all", sty.freeBox___1ZFlB)}>
                       <PlasmicImg__
                         alt={""}
                         className={classNames(sty.img__kk9YG)}
@@ -6984,18 +6753,14 @@ function PlasmicBookings3__RenderFunc(props: {
                 <div
                   data-plasmic-name={"settlement"}
                   data-plasmic-override={overrides.settlement}
-                  className={classNames(projectcss.all, sty.settlement)}
+                  className={classNames("all", sty.settlement)}
                 >
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__mrffu)}
-                  >
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__khLxt)}
-                    >
+                  <div className={classNames("all", sty.freeBox__mrffu)}>
+                    <div className={classNames("all", sty.freeBox__khLxt)}>
                       <div
                         className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
+                          "all",
+                          "__wab_text",
                           sty.text__npNaa
                         )}
                       >
@@ -7005,9 +6770,7 @@ function PlasmicBookings3__RenderFunc(props: {
                       </div>
                     </div>
                   </div>
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox___4KD2V)}
-                  >
+                  <div className={classNames("all", sty.freeBox___4KD2V)}>
                     <Switch
                       data-plasmic-name={"settlement2"}
                       data-plasmic-override={overrides.settlement2}
@@ -7193,18 +6956,14 @@ function PlasmicBookings3__RenderFunc(props: {
                 <div
                   data-plasmic-name={"settlement3"}
                   data-plasmic-override={overrides.settlement3}
-                  className={classNames(projectcss.all, sty.settlement3)}
+                  className={classNames("all", sty.settlement3)}
                 >
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__shm8C)}
-                  >
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__aotqB)}
-                    >
+                  <div className={classNames("all", sty.freeBox__shm8C)}>
+                    <div className={classNames("all", sty.freeBox__aotqB)}>
                       <div
                         className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
+                          "all",
+                          "__wab_text",
                           sty.text___20Rb1
                         )}
                       >
@@ -7212,9 +6971,7 @@ function PlasmicBookings3__RenderFunc(props: {
                       </div>
                     </div>
                   </div>
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__eOd3)}
-                  >
+                  <div className={classNames("all", sty.freeBox__eOd3)}>
                     {(() => {
                       const child$Props = {
                         checked: generateStateValueProp($state, [
@@ -7380,18 +7137,14 @@ function PlasmicBookings3__RenderFunc(props: {
                 <div
                   data-plasmic-name={"cancelled"}
                   data-plasmic-override={overrides.cancelled}
-                  className={classNames(projectcss.all, sty.cancelled)}
+                  className={classNames("all", sty.cancelled)}
                 >
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox___0DO1Q)}
-                  >
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__zmIV)}
-                    >
+                  <div className={classNames("all", sty.freeBox___0DO1Q)}>
+                    <div className={classNames("all", sty.freeBox__zmIV)}>
                       <div
                         className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
+                          "all",
+                          "__wab_text",
                           sty.text__kjbg
                         )}
                       >
@@ -7399,9 +7152,7 @@ function PlasmicBookings3__RenderFunc(props: {
                       </div>
                     </div>
                   </div>
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__g9Ej)}
-                  >
+                  <div className={classNames("all", sty.freeBox__g9Ej)}>
                     <Switch
                       data-plasmic-name={"cancelled3"}
                       data-plasmic-override={overrides.cancelled3}
@@ -7618,18 +7369,14 @@ function PlasmicBookings3__RenderFunc(props: {
                 <div
                   data-plasmic-name={"button"}
                   data-plasmic-override={overrides.button}
-                  className={classNames(projectcss.all, sty.button)}
+                  className={classNames("all", sty.button)}
                 >
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__mhyhL)}
-                  >
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__j4Gq6)}
-                    >
+                  <div className={classNames("all", sty.freeBox__mhyhL)}>
+                    <div className={classNames("all", sty.freeBox__j4Gq6)}>
                       <div
                         className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
+                          "all",
+                          "__wab_text",
                           sty.text__nPaSj
                         )}
                         onClick={async event => {
@@ -7678,7 +7425,7 @@ function PlasmicBookings3__RenderFunc(props: {
                     </div>
                   </div>
                   <div
-                    className={classNames(projectcss.all, sty.freeBox__drzVv)}
+                    className={classNames("all", sty.freeBox__drzVv)}
                     onClick={async event => {
                       const $steps = {};
 
@@ -7796,8 +7543,8 @@ function PlasmicBookings3__RenderFunc(props: {
                   >
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text__mdaY
                       )}
                     >
@@ -7813,7 +7560,7 @@ function PlasmicBookings3__RenderFunc(props: {
               data-plasmic-name={"newbookingpricingalert"}
               data-plasmic-override={overrides.newbookingpricingalert}
               className={classNames(
-                projectcss.all,
+                "all",
                 sty.newbookingpricingalert,
                 (() => {
                   try {
@@ -7832,15 +7579,13 @@ function PlasmicBookings3__RenderFunc(props: {
                 })()
               )}
             >
-              <div className={classNames(projectcss.all, sty.freeBox__t4Rnh)}>
-                <div className={classNames(projectcss.all, sty.freeBox__fMq5L)}>
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox___4YA9K)}
-                  >
+              <div className={classNames("all", sty.freeBox__t4Rnh)}>
+                <div className={classNames("all", sty.freeBox__fMq5L)}>
+                  <div className={classNames("all", sty.freeBox___4YA9K)}>
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text___368Mj
                       )}
                     >
@@ -7850,8 +7595,8 @@ function PlasmicBookings3__RenderFunc(props: {
                     </div>
                     <div
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
+                        "all",
+                        "__wab_text",
                         sty.text__sTqR
                       )}
                     >
@@ -7883,7 +7628,7 @@ function PlasmicBookings3__RenderFunc(props: {
                     ) : null}
                   </div>
                 </div>
-                <div className={classNames(projectcss.all, sty.freeBox__twVku)}>
+                <div className={classNames("all", sty.freeBox__twVku)}>
                   <PlasmicImg__
                     alt={""}
                     className={classNames(sty.img__kCvGq)}
@@ -7904,11 +7649,7 @@ function PlasmicBookings3__RenderFunc(props: {
                   />
                 </div>
                 <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__v2QPh
-                  )}
+                  className={classNames("all", "__wab_text", sty.text__v2QPh)}
                   onClick={async event => {
                     const $steps = {};
 

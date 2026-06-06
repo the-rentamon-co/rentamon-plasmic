@@ -65,7 +65,6 @@ import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-impor
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
-import projectcss from "./plasmic.module.css"; // plasmic-import: 7SNMkB8UMukVgcWJYokeAQ/projectcss
 import sty from "./Plasmicسایتاجارهویلا2.module.css"; // plasmic-import: LYIAIzikp9Vo/css
 
 const emptyProxy: any = new Proxy(() => "", {
@@ -174,7 +173,7 @@ function Plasmicسایتاجارهویلا2__RenderFunc(props: {
         }
       `}</style>
 
-      <div className={projectcss.plasmic_page_wrapper}>
+      <div className={"plasmic_page_wrapper"}>
         <div
           data-plasmic-name={
             "\u0633\u0627\u06cc\u062a\u0627\u062c\u0627\u0631\u0647\u0648\u06cc\u0644\u06272"
@@ -183,10 +182,10 @@ function Plasmicسایتاجارهویلا2__RenderFunc(props: {
           data-plasmic-root={true}
           data-plasmic-for-node={forNode}
           className={classNames(
-            projectcss.all,
-            projectcss.root_reset,
-            projectcss.plasmic_default_styles,
-            projectcss.plasmic_mixins,
+            "all",
+            "root_reset_7SNMkB8UMukVgcWJYokeAQ",
+            "plasmic_default_styles",
+            "plasmic_mixins",
             styleTokensClassNames,
             sty.سایتاجارهویلا2
           )}
@@ -196,11 +195,7 @@ function Plasmicسایتاجارهویلا2__RenderFunc(props: {
               "\u0633\u0627\u06cc\u062a\u0627\u062c\u0627\u0631\u0647\u0648\u06cc\u0644\u062722"
             }
             data-plasmic-override={overrides.سایتاجارهویلا22}
-            className={classNames(
-              projectcss.all,
-              projectcss.__wab_text,
-              sty.سایتاجارهویلا22
-            )}
+            className={classNames("all", "__wab_text", sty.سایتاجارهویلا22)}
           >
             {
               "\u062f\u0631 \u062d\u0627\u0644 \u0627\u0646\u062a\u0642\u0627\u0644..."
