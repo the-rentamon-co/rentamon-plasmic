@@ -984,6 +984,7 @@
 @media (max-width: 350px) {
   .text__vohiy {
     font-size: 16px;
+    font-weight: 500;
   }
 }
 .introAutoSyncDesc2 {
