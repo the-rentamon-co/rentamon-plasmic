@@ -3307,7 +3307,7 @@ function PlasmicBookingsNeo__RenderFunc(props: {
                                             const bookingId =
                                               currentItem.booking_id;
                                             return window.open(
-                                              `https://panel.miaan.ir/bookings/${bookingId}`,
+                                              `https://panel.miaan.ir/bookings2/${bookingId}`,
                                               "_blank"
                                             );
                                           })();
