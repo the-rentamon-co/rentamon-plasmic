@@ -604,28 +604,6 @@ function PlasmicInvite__RenderFunc(props: {
                         $steps["runCode"] = await $steps["runCode"];
                       }
 
-                      $steps["runCode2"] = false
-                        ? (() => {
-                            const actionArgs = {
-                              customFunction: async () => {
-                                return window.open(
-                                  `https://sso.miaan.ir/web/index.html?callback=https://miaan.ir/splash?src=referral`
-                                );
-                              }
-                            };
-                            return (({ customFunction }) => {
-                              return customFunction();
-                            })?.apply(null, [actionArgs]);
-                          })()
-                        : undefined;
-                      if (
-                        $steps["runCode2"] != null &&
-                        typeof $steps["runCode2"] === "object" &&
-                        typeof $steps["runCode2"].then === "function"
-                      ) {
-                        $steps["runCode2"] = await $steps["runCode2"];
-                      }
-
                       $steps["goToSplash"] = true
                         ? (() => {
                             const actionArgs = {

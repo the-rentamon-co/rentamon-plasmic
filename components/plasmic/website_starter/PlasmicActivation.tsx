@@ -1143,7 +1143,7 @@ function PlasmicActivation__RenderFunc(props: {
                                             "=" +
                                             (value || "") +
                                             expires +
-                                            "; path=/";
+                                            "; path=/; domain=.miaan.ir; secure; samesite=lax";
                                         }
                                         return setCookie(
                                           "prop_tour",
