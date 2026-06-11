@@ -565,7 +565,7 @@ function PlasmicNavbarRntHeader__RenderFunc(props: {
                 sty.link__ryWoj
               )}
               component={Link}
-              href={`/splash?src=${"web"}`}
+              href={"http://panel.miaan.ir/splash?src=web"}
               legacyBehavior={false}
               onClick={async event => {
                 const $steps = {};

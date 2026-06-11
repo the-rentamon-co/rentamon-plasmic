@@ -614,10 +614,11 @@ function PlasmicHomepage__RenderFunc(props: {
                     onClick={async event => {
                       const $steps = {};
 
-                      $steps["goToSplash"] = true
+                      $steps["goToHttpPanelMiaanIrSplashSrcWeb"] = true
                         ? (() => {
                             const actionArgs = {
-                              destination: `/splash?src=${"web"}`
+                              destination:
+                                "http://panel.miaan.ir/splash?src=web"
                             };
                             return (({ destination }) => {
                               if (
@@ -634,11 +635,14 @@ function PlasmicHomepage__RenderFunc(props: {
                           })()
                         : undefined;
                       if (
-                        $steps["goToSplash"] != null &&
-                        typeof $steps["goToSplash"] === "object" &&
-                        typeof $steps["goToSplash"].then === "function"
+                        $steps["goToHttpPanelMiaanIrSplashSrcWeb"] != null &&
+                        typeof $steps["goToHttpPanelMiaanIrSplashSrcWeb"] ===
+                          "object" &&
+                        typeof $steps["goToHttpPanelMiaanIrSplashSrcWeb"]
+                          .then === "function"
                       ) {
-                        $steps["goToSplash"] = await $steps["goToSplash"];
+                        $steps["goToHttpPanelMiaanIrSplashSrcWeb"] =
+                          await $steps["goToHttpPanelMiaanIrSplashSrcWeb"];
                       }
                     }}
                   >
@@ -1824,10 +1828,10 @@ function PlasmicHomepage__RenderFunc(props: {
                 onClick={async event => {
                   const $steps = {};
 
-                  $steps["goToHttpsRentamonComSplashSrcWeb"] = true
+                  $steps["goToHttpPanelMiaanIrSplashSrcWeb"] = true
                     ? (() => {
                         const actionArgs = {
-                          destination: "https://rentamon.com/splash?src=web"
+                          destination: "http://panel.miaan.ir/splash?src=web"
                         };
                         return (({ destination }) => {
                           if (
@@ -1844,14 +1848,14 @@ function PlasmicHomepage__RenderFunc(props: {
                       })()
                     : undefined;
                   if (
-                    $steps["goToHttpsRentamonComSplashSrcWeb"] != null &&
-                    typeof $steps["goToHttpsRentamonComSplashSrcWeb"] ===
+                    $steps["goToHttpPanelMiaanIrSplashSrcWeb"] != null &&
+                    typeof $steps["goToHttpPanelMiaanIrSplashSrcWeb"] ===
                       "object" &&
-                    typeof $steps["goToHttpsRentamonComSplashSrcWeb"].then ===
+                    typeof $steps["goToHttpPanelMiaanIrSplashSrcWeb"].then ===
                       "function"
                   ) {
-                    $steps["goToHttpsRentamonComSplashSrcWeb"] =
-                      await $steps["goToHttpsRentamonComSplashSrcWeb"];
+                    $steps["goToHttpPanelMiaanIrSplashSrcWeb"] =
+                      await $steps["goToHttpPanelMiaanIrSplashSrcWeb"];
                   }
                 }}
               >
