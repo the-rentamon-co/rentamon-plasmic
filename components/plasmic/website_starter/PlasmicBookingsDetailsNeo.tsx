@@ -14036,17 +14036,10 @@ function PlasmicBookingsDetailsNeo__RenderFunc(props: {
                               $ctx?.Fragment?.previewApiConfig || {}
                             ).length > 0;
                           if (isPlasmicStudio) return;
-                          const isMiaan =
-                            window.location.hostname.includes("miaan.ir");
-                          const ssoBase = isMiaan
-                            ? "https://sso.miaan.ir"
-                            : "https://sso.rentamon.com";
-                          const callbackBase = isMiaan
-                            ? "https://miaan.ir"
-                            : "https://rentamon.com";
-                          const USSO_REFRESH_URL = `${ssoBase}/auth/refresh`;
-                          const LEGACY_REFRESH_URL =
+                          const REFRESH_URL =
                             "https://api-v2.miaan.ir/api/auth/refresh";
+                          const LOGOUT_URL =
+                            "https://api-v2.miaan.ir/api/auth/logout";
                           const REDIRECT_URL = `https://auth.miaan.ir/login`;
                           const getCookie = name => {
                             const value = `; ${document.cookie}`;
@@ -14055,57 +14048,43 @@ function PlasmicBookingsDetailsNeo__RenderFunc(props: {
                               return parts.pop().split(";").shift();
                             return null;
                           };
-                          const ussoAccess = getCookie("usso_access_available");
-                          const ussoRefresh = getCookie(
-                            "usso_refresh_available"
-                          );
-                          if (ussoAccess || ussoRefresh) {
-                            const runUssorefresh = async forceReload => {
-                              try {
-                                const response = await fetch(USSO_REFRESH_URL, {
-                                  method: "GET",
-                                  credentials: "include"
-                                });
-                                console.log("USSO Token Refresh Attempted...");
-                                if (response.ok) {
-                                  if (forceReload) {
-                                    window.location.reload();
-                                  }
-                                } else if (!ussoAccess) {
-                                  window.location.href = REDIRECT_URL;
-                                }
-                              } catch (error) {
-                                console.error("USSO Refresh Error:", error);
-                                if (!ussoAccess)
-                                  window.location.href = REDIRECT_URL;
-                              }
-                            };
-                            await runUssorefresh(!ussoAccess);
-                            setInterval(() => runUssorefresh(false), 300000);
-                            return;
-                          }
-                          const legacyAccessToken = getCookie("access_token");
+                          const clearCookiesAndRedirect = () => {
+                            document.cookie =
+                              "is_login=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=.miaan.ir;";
+                            document.cookie =
+                              "is_login=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+                            window.location.href = REDIRECT_URL;
+                          };
+                          const forceLogout = async () => {
+                            try {
+                              await fetch(LOGOUT_URL, {
+                                method: "POST",
+                                credentials: "include"
+                              });
+                            } catch (err) {
+                            } finally {
+                              clearCookiesAndRedirect();
+                            }
+                          };
+                          const accessToken = getCookie("access_token");
                           const isLogin = getCookie("is_login");
-                          if (!legacyAccessToken) {
+                          if (!accessToken) {
                             if (isLogin) {
                               try {
-                                const response = await fetch(
-                                  LEGACY_REFRESH_URL,
-                                  {
-                                    method: "POST",
-                                    credentials: "include"
-                                  }
-                                );
+                                const response = await fetch(REFRESH_URL, {
+                                  method: "POST",
+                                  credentials: "include"
+                                });
                                 if (response.ok) {
                                   window.location.reload();
                                 } else {
-                                  window.location.href = REDIRECT_URL;
+                                  await forceLogout();
                                 }
                               } catch (err) {
-                                window.location.href = REDIRECT_URL;
+                                await forceLogout();
                               }
                             } else {
-                              window.location.href = REDIRECT_URL;
+                              await forceLogout();
                             }
                           }
                         })();

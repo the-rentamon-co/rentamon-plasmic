@@ -650,23 +650,16 @@ function PlasmicContacts__RenderFunc(props: {
                 ? (() => {
                     const actionArgs = {
                       customFunction: async () => {
-                        return async () => {
+                        return (async () => {
                           const isPlasmicStudio =
                             Object.values(
                               $ctx?.Fragment?.previewApiConfig || {}
                             ).length > 0;
                           if (isPlasmicStudio) return;
-                          const isMiaan =
-                            window.location.hostname.includes("miaan.ir");
-                          const ssoBase = isMiaan
-                            ? "https://sso.miaan.ir"
-                            : "https://sso.rentamon.com";
-                          const callbackBase = isMiaan
-                            ? "https://miaan.ir"
-                            : "https://rentamon.com";
-                          const USSO_REFRESH_URL = `${ssoBase}/auth/refresh`;
-                          const LEGACY_REFRESH_URL =
+                          const REFRESH_URL =
                             "https://api-v2.miaan.ir/api/auth/refresh";
+                          const LOGOUT_URL =
+                            "https://api-v2.miaan.ir/api/auth/logout";
                           const REDIRECT_URL = `https://auth.miaan.ir/login`;
                           const getCookie = name => {
                             const value = `; ${document.cookie}`;
@@ -675,87 +668,46 @@ function PlasmicContacts__RenderFunc(props: {
                               return parts.pop().split(";").shift();
                             return null;
                           };
-                          const ussoAccess = getCookie("usso_access_available");
-                          const ussoRefresh = getCookie(
-                            "usso_refresh_available"
-                          );
-                          async function refreshToken() {
+                          const clearCookiesAndRedirect = () => {
+                            document.cookie =
+                              "is_login=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=.miaan.ir;";
+                            document.cookie =
+                              "is_login=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+                            window.location.href = REDIRECT_URL;
+                          };
+                          const forceLogout = async () => {
                             try {
-                              const response = await fetch(USSO_REFRESH_URL, {
-                                method: "GET",
+                              await fetch(LOGOUT_URL, {
+                                method: "POST",
                                 credentials: "include"
                               });
-                              console.log("Refreshed Token in 5 minutes");
-                              if (response.ok) {
-                                const data = await response.json();
-                                console.log(
-                                  "Token refreshed successfully:",
-                                  data
-                                );
-                              } else {
-                                console.error(
-                                  "Failed to refresh token:",
-                                  response.status
-                                );
-                              }
-                            } catch (error) {
-                              console.error("Error refreshing token:", error);
+                            } catch (err) {
+                            } finally {
+                              clearCookiesAndRedirect();
                             }
-                          }
-                          if (ussoAccess || ussoRefresh) {
-                            setInterval(refreshToken, 300000);
-                            refreshToken();
-                            if (!ussoAccess) {
-                              if (!ussoRefresh) {
-                                window.location.href = REDIRECT_URL;
-                              } else {
-                                try {
-                                  const response = await fetch(
-                                    USSO_REFRESH_URL,
-                                    {
-                                      method: "GET",
-                                      credentials: "include"
-                                    }
-                                  );
-                                  if (!response.ok) {
-                                    throw new Error("Failed to refresh token");
-                                  }
-                                  const data = await response.json();
-                                  console.log("Token refreshed:", data);
-                                  window.location.reload();
-                                } catch (error) {
-                                  console.error("Error:", error);
-                                  window.location.href = REDIRECT_URL;
-                                }
-                              }
-                            }
-                            return;
-                          }
-                          const legacyAccessToken = getCookie("access_token");
+                          };
+                          const accessToken = getCookie("access_token");
                           const isLogin = getCookie("is_login");
-                          if (!legacyAccessToken) {
+                          if (!accessToken) {
                             if (isLogin) {
                               try {
-                                const response = await fetch(
-                                  LEGACY_REFRESH_URL,
-                                  {
-                                    method: "POST",
-                                    credentials: "include"
-                                  }
-                                );
+                                const response = await fetch(REFRESH_URL, {
+                                  method: "POST",
+                                  credentials: "include"
+                                });
                                 if (response.ok) {
                                   window.location.reload();
                                 } else {
-                                  window.location.href = REDIRECT_URL;
+                                  await forceLogout();
                                 }
                               } catch (err) {
-                                window.location.href = REDIRECT_URL;
+                                await forceLogout();
                               }
                             } else {
-                              window.location.href = REDIRECT_URL;
+                              await forceLogout();
                             }
                           }
-                        };
+                        })();
                       }
                     };
                     return (({ customFunction }) => {

@@ -6084,86 +6084,59 @@ function PlasmicConnectionsNeo__RenderFunc(props: {
                       customFunction: async () => {
                         return (async () => {
                           const isPlasmicStudio =
-                            Object.values($ctx.Fragment.previewApiConfig)
-                              .length > 0;
-                          const isMiaan =
-                            window.location.hostname.includes("miaan.ir");
-                          const ssoBase = isMiaan
-                            ? "https://sso.miaan.ir"
-                            : "https://sso.rentamon.com";
-                          const callbackBase = isMiaan
-                            ? "https://miaan.ir"
-                            : "https://rentamon.com";
-                          const redirectUrl = `${ssoBase}/web/index.html?callback=${callbackBase}/bookings/`;
-                          const refreshUrl = `${ssoBase}/auth/refresh`;
-                          async function refreshToken() {
-                            if (isPlasmicStudio) return;
-                            try {
-                              const response = await fetch(refreshUrl, {
-                                method: "GET",
-                                credentials: "include"
-                              });
-                              console.log("Refreshed Token in 10 minutes");
-                              if (response.ok) {
-                                const data = await response.json();
-                                console.log(
-                                  "Token refreshed successfully:",
-                                  data
-                                );
-                              } else {
-                                console.error(
-                                  "Failed to refresh token:",
-                                  response.status
-                                );
-                              }
-                            } catch (error) {
-                              console.error("Error refreshing token:", error);
-                            }
-                          }
-                          setInterval(refreshToken, 300000);
-                          refreshToken();
-                          function getCookie(name) {
-                            const value = `; ${globalThis.document.cookie}`;
+                            Object.values(
+                              $ctx?.Fragment?.previewApiConfig || {}
+                            ).length > 0;
+                          if (isPlasmicStudio) return;
+                          const REFRESH_URL =
+                            "https://api-v2.miaan.ir/api/auth/refresh";
+                          const LOGOUT_URL =
+                            "https://api-v2.miaan.ir/api/auth/logout";
+                          const REDIRECT_URL = `https://auth.miaan.ir/login`;
+                          const getCookie = name => {
+                            const value = `; ${document.cookie}`;
                             const parts = value.split(`; ${name}=`);
                             if (parts.length === 2)
                               return parts.pop().split(";").shift();
-                          }
-                          const ussoRefreshAvailable =
-                            getCookie("usso_refresh_available") || false;
-                          console.log(
-                            "this is ussoRefresh: ",
-                            ussoRefreshAvailable
-                          );
-                          const ussoAccessAvailable =
-                            getCookie("usso_access_available") || false;
-                          console.log(
-                            "this is ussoAccessAvailable: ",
-                            ussoAccessAvailable
-                          );
-                          if (!ussoAccessAvailable && !isPlasmicStudio) {
-                            if (!ussoRefreshAvailable) {
-                              console.log("got here in redirect");
-                              return (window.location.href = redirectUrl);
-                            } else {
-                              console.log("got here in refreshToken");
-                              return fetch(refreshUrl, {
-                                method: "GET",
+                            return null;
+                          };
+                          const clearCookiesAndRedirect = () => {
+                            document.cookie =
+                              "is_login=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=.miaan.ir;";
+                            document.cookie =
+                              "is_login=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+                            window.location.href = REDIRECT_URL;
+                          };
+                          const forceLogout = async () => {
+                            try {
+                              await fetch(LOGOUT_URL, {
+                                method: "POST",
                                 credentials: "include"
-                              })
-                                .then(response => {
-                                  if (!response.ok) {
-                                    throw new Error("Failed to refresh token");
-                                  }
-                                  return response.json();
-                                })
-                                .then(data => {
-                                  console.log("Token refreshed:", data);
-                                  window.location.reload();
-                                })
-                                .catch(error => {
-                                  console.error("Error:", error);
-                                  window.location.href = redirectUrl;
+                              });
+                            } catch (err) {
+                            } finally {
+                              clearCookiesAndRedirect();
+                            }
+                          };
+                          const accessToken = getCookie("access_token");
+                          const isLogin = getCookie("is_login");
+                          if (!accessToken) {
+                            if (isLogin) {
+                              try {
+                                const response = await fetch(REFRESH_URL, {
+                                  method: "POST",
+                                  credentials: "include"
                                 });
+                                if (response.ok) {
+                                  window.location.reload();
+                                } else {
+                                  await forceLogout();
+                                }
+                              } catch (err) {
+                                await forceLogout();
+                              }
+                            } else {
+                              await forceLogout();
                             }
                           }
                         })();
