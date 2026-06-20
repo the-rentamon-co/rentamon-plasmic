@@ -397,7 +397,7 @@ function PlasmicTransactionsNeo__RenderFunc(props: {
                   )}
                 >
                   {
-                    "\u0628\u0631\u0627\u06cc \u062f\u0628\u062f\u0646 \u062c\u0632\u0626\u064a\u0627\u062a \u062a\u0631\u0627\u06a9\u0646\u0634\u200c\u060c \u0631\u0648\u0634 \u0628\u0632\u0646"
+                    "\u0628\u0631\u0627\u06cc \u062f\u06cc\u062f\u0646 \u062c\u0632\u0626\u064a\u0627\u062a \u062a\u0631\u0627\u06a9\u0646\u0634\u200c\u060c \u0631\u0648\u0634 \u0628\u0632\u0646"
                   }
                 </div>
               </div>

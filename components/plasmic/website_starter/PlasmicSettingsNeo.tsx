@@ -277,7 +277,7 @@ function PlasmicSettingsNeo__RenderFunc(props: {
           hasVariant(globalVariants, "screen", "smallMobile")
             ? false
             : hasVariant(globalVariants, "screen", "mobile")
-              ? false
+              ? true
               : hasVariant(globalVariants, "screen", "tablet")
                 ? false
                 : false
@@ -2347,7 +2347,9 @@ function PlasmicSettingsNeo__RenderFunc(props: {
                   "plasmic_mixins",
                   styleTokensClassNames
                 )}
-                hideFooter={true}
+                hideFooter={
+                  hasVariant(globalVariants, "screen", "mobile") ? false : true
+                }
                 maskClosable={false}
                 modalScopeClassName={sty["activateSmartbooking__modal"]}
                 onOpenChange={async (...eventArgs: any) => {
