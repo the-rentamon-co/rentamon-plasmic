@@ -992,7 +992,7 @@ function PlasmicBookingsNeo__RenderFunc(props: {
                   <ToastMessageRnt
                     data-plasmic-name={"toastMessageRnt"}
                     data-plasmic-override={overrides.toastMessageRnt}
-                    buttonLink={`/settings`}
+                    buttonLink={`/settings-neo`}
                     buttonText={"\u062a\u0646\u0638\u06cc\u0645\u0627\u062a"}
                     className={classNames(
                       "__wab_instance",
