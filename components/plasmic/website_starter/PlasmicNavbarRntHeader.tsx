@@ -347,7 +347,7 @@ function PlasmicNavbarRntHeader__RenderFunc(props: {
                   component={Link}
                   href={
                     hasVariant(globalVariants, "screen", "mobile")
-                      ? `/splash`
+                      ? "http://panel.miaan.ir/splash?src=web"
                       : "/"
                   }
                   legacyBehavior={false}
