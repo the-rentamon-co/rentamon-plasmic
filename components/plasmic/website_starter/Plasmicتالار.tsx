@@ -2077,8 +2077,8 @@ function Plasmicتالار__RenderFunc(props: {
                       ? (() => {
                           const actionArgs = {
                             args: [
-                              "POST",
-                              "https://api.miaan.ir/api/auth/logout"
+                              "GET",
+                              "https://api-v2.miaan.ir/api/auth/logout/by/admin"
                             ]
                           };
                           return $globalActions["Fragment.apiRequest"]?.apply(
