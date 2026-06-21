@@ -2073,34 +2073,27 @@ function Plasmicتالار__RenderFunc(props: {
                       $steps["runCode2"] = await $steps["runCode2"];
                     }
 
-                    $steps["runCode"] = true
+                    $steps["invokeGlobalAction"] = true
                       ? (() => {
                           const actionArgs = {
-                            customFunction: async () => {
-                              return (() => {
-                                const isMiaan =
-                                  window.location.hostname.includes("miaan.ir");
-                                const ssoBase = isMiaan
-                                  ? "https://sso.miaan.ir"
-                                  : "https://sso.rentamon.com";
-                                const callbackBase = isMiaan
-                                  ? "https://miaan.ir"
-                                  : "https://rentamon.com";
-                                return (window.location.href = `${ssoBase}/auth/logout?callback=${callbackBase}/panel`);
-                              })();
-                            }
+                            args: [
+                              "POST",
+                              "https://api.miaan.ir/api/auth/logout"
+                            ]
                           };
-                          return (({ customFunction }) => {
-                            return customFunction();
-                          })?.apply(null, [actionArgs]);
+                          return $globalActions["Fragment.apiRequest"]?.apply(
+                            null,
+                            [...actionArgs.args]
+                          );
                         })()
                       : undefined;
                     if (
-                      $steps["runCode"] != null &&
-                      typeof $steps["runCode"] === "object" &&
-                      typeof $steps["runCode"].then === "function"
+                      $steps["invokeGlobalAction"] != null &&
+                      typeof $steps["invokeGlobalAction"] === "object" &&
+                      typeof $steps["invokeGlobalAction"].then === "function"
                     ) {
-                      $steps["runCode"] = await $steps["runCode"];
+                      $steps["invokeGlobalAction"] =
+                        await $steps["invokeGlobalAction"];
                     }
                   }}
                 >
