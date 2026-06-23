@@ -59,7 +59,6 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
-import NavbarRntHeader from "../../NavbarRntHeader"; // plasmic-import: gWac1FMbIJat/component
 import { Embed } from "@plasmicpkgs/plasmic-basic-components";
 import TextInput from "../../TextInput"; // plasmic-import: 7KjdVT2JykAk/component
 import { ApiRequest } from "@/fragment/components/api-request"; // plasmic-import: a17-BE4K1UE7/codeComponent
@@ -128,7 +127,6 @@ export const PlasmicReferralNeo__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicReferralNeo__OverridesType = {
   root?: Flex__<"div">;
-  navbarRntHeader?: Flex__<typeof NavbarRntHeader>;
   mainContents?: Flex__<"div">;
   intro1st?: Flex__<"div">;
   introTitle?: Flex__<"div">;
@@ -342,12 +340,6 @@ function PlasmicReferralNeo__RenderFunc(props: {
             sty.root
           )}
         >
-          <NavbarRntHeader
-            data-plasmic-name={"navbarRntHeader"}
-            data-plasmic-override={overrides.navbarRntHeader}
-            className={classNames("__wab_instance", sty.navbarRntHeader)}
-          />
-
           <div
             data-plasmic-name={"mainContents"}
             data-plasmic-override={overrides.mainContents}
@@ -2265,7 +2257,6 @@ ${$state.textInput.value}
 const PlasmicDescendants = {
   root: [
     "root",
-    "navbarRntHeader",
     "mainContents",
     "intro1st",
     "introTitle",
@@ -2292,7 +2283,6 @@ const PlasmicDescendants = {
     "clarityRntComponent",
     "faviconRntComponent"
   ],
-  navbarRntHeader: ["navbarRntHeader"],
   mainContents: [
     "mainContents",
     "intro1st",
@@ -2370,7 +2360,6 @@ type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
-  navbarRntHeader: typeof NavbarRntHeader;
   mainContents: "div";
   intro1st: "div";
   introTitle: "div";
@@ -2460,7 +2449,6 @@ export const PlasmicReferralNeo = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    navbarRntHeader: makeNodeComponent("navbarRntHeader"),
     mainContents: makeNodeComponent("mainContents"),
     intro1st: makeNodeComponent("intro1st"),
     introTitle: makeNodeComponent("introTitle"),
