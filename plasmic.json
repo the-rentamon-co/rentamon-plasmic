@@ -3679,6 +3679,34 @@
           "cssFilePath": "plasmic/website_starter/PlasmicUserDebtsModal.module.css",
           "scheme": "blackbox",
           "componentType": "component"
+        },
+        {
+          "id": "-Ukx-HxWJKo4",
+          "name": "PropertyDetail",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicPropertyDetail.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/properties/[property_id].tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicPropertyDetail.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/properties/[property_id]"
+        },
+        {
+          "id": "7IRwdtxuDEQP",
+          "name": "Hosts",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicHosts.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/hosts/[host_id].tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicHosts.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/hosts/[host_id]"
         }
       ],
       "icons": [
@@ -6718,6 +6746,6 @@
   "nextjsConfig": {
     "pagesDir": "../src/pages"
   },
-  "cliVersion": "0.1.364",
-  "$schema": "https://unpkg.com/@plasmicapp/cli@0.1.364/dist/plasmic.schema.json"
+  "cliVersion": "0.1.366",
+  "$schema": "https://unpkg.com/@plasmicapp/cli@0.1.366/dist/plasmic.schema.json"
 }
