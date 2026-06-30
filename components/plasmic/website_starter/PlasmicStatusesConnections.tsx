@@ -1435,19 +1435,25 @@ function PlasmicStatusesConnections__RenderFunc(props: {
                                             .website
                                         ) {
                                           case 2:
-                                            return "https://media.rentamon.com/icon%2Fjabama-wide.jpg";
+                                            return "https://media.miaan.ir/icon%2Fjabama.png";
                                           case 3:
-                                            return "https://media.rentamon.com/icon%2Fjajiga-wide.jpg";
+                                            return "https://media.miaan.ir/icon%2Fjajiga.png";
                                           case 4:
-                                            return "https://media.rentamon.com/icon%2Fshab-wide.jpg";
+                                            return "https://media.miaan.ir/icon%2Fshab.png";
+                                          case 5:
+                                            return "https://media.miaan.ir/icon%2Fmizboon.png";
                                           case 6:
-                                            return "https://media.rentamon.com/icon%2Fotaghak-wide.jpg";
+                                            return "https://media.miaan.ir/icon%2Fotaghak.png";
                                           case 7:
-                                            return "https://media.rentamon.com/icon%2Fmihmansho-wide.jpg";
+                                            return "https://media.miaan.ir/icon%2Fmihmansho.png";
                                           case 8:
-                                            return "https://media.rentamon.com/icon%2Fhomsa-wide.jpg";
+                                            return "https://media.miaan.ir/icon%2Fhomsa.png";
                                           case 17:
-                                            return "https://media.rentamon.com/icon%2Fsnapptrip.png";
+                                            return "https://media.miaan.ir/icon%2Fsnapptrip.png";
+                                          case 20:
+                                            return "https://media.miaan.ir/icon%2Fsepanja.png";
+                                          case 9:
+                                            return "https://media.miaan.ir/icon%2Fdivar.png";
                                           default:
                                             return "";
                                         }
@@ -1556,6 +1562,10 @@ function PlasmicStatusesConnections__RenderFunc(props: {
                                             return "هومسا";
                                           case 17:
                                             return "اسنپ";
+                                          case 9:
+                                            return "دیوار";
+                                          case 20:
+                                            return "سپنجا";
                                           default:
                                             return "";
                                         }
