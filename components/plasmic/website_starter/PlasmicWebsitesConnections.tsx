@@ -1167,57 +1167,90 @@ function PlasmicWebsitesConnections__RenderFunc(props: {
                           onClick={async event => {
                             const $steps = {};
 
-                            $steps["goToConnections"] = true
-                              ? (() => {
-                                  const actionArgs = {
-                                    destination: `/connections?step=${(() => {
-                                      try {
-                                        return (() => {
-                                          switch (currentItems.website) {
-                                            case 2:
-                                              return 1;
-                                            case 3:
-                                              return 3;
-                                            case 4:
-                                              return 5;
-                                            case 6:
-                                              return 7;
-                                            case 7:
-                                              return 10;
-                                            case 8:
-                                              return 9;
-                                            case 17:
-                                              return 11;
-                                            default:
-                                              return null;
+                            $steps["showToast"] =
+                              $state.apiRequest2.data[currentIndexs].website ===
+                                20 ||
+                              $state.apiRequest2.data[currentIndexs].website ===
+                                9
+                                ? (() => {
+                                    const actionArgs = {
+                                      args: [
+                                        undefined,
+                                        "\u0628\u0627 \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc \u0645\u06cc\u0627\u0646 \u062a\u0645\u0627\u0633 \u0628\u06af\u06cc\u0631: 02191096227",
+                                        "top-center",
+                                        10000
+                                      ]
+                                    };
+                                    return $globalActions[
+                                      "Fragment.showToast"
+                                    ]?.apply(null, [...actionArgs.args]);
+                                  })()
+                                : undefined;
+                            if (
+                              $steps["showToast"] != null &&
+                              typeof $steps["showToast"] === "object" &&
+                              typeof $steps["showToast"].then === "function"
+                            ) {
+                              $steps["showToast"] = await $steps["showToast"];
+                            }
+
+                            $steps["goToConnections"] =
+                              $state.apiRequest2.data[currentIndexs].website !==
+                                20 &&
+                              $state.apiRequest2.data[currentIndexs].website !==
+                                9
+                                ? (() => {
+                                    const actionArgs = {
+                                      destination: `/connections?step=${(() => {
+                                        try {
+                                          return (() => {
+                                            switch (currentItems.website) {
+                                              case 2:
+                                                return 1;
+                                              case 3:
+                                                return 3;
+                                              case 4:
+                                                return 5;
+                                              case 6:
+                                                return 7;
+                                              case 7:
+                                                return 10;
+                                              case 8:
+                                                return 9;
+                                              case 17:
+                                                return 11;
+                                              default:
+                                                return null;
+                                            }
+                                          })();
+                                        } catch (e) {
+                                          if (
+                                            e instanceof TypeError ||
+                                            e?.plasmicType ===
+                                              "PlasmicUndefinedDataError"
+                                          ) {
+                                            return undefined;
                                           }
-                                        })();
-                                      } catch (e) {
-                                        if (
-                                          e instanceof TypeError ||
-                                          e?.plasmicType ===
-                                            "PlasmicUndefinedDataError"
-                                        ) {
-                                          return undefined;
+                                          throw e;
                                         }
-                                        throw e;
+                                      })()}`
+                                    };
+                                    return (({ destination }) => {
+                                      if (
+                                        typeof destination === "string" &&
+                                        destination.startsWith("#")
+                                      ) {
+                                        document
+                                          .getElementById(destination.substr(1))
+                                          .scrollIntoView({
+                                            behavior: "smooth"
+                                          });
+                                      } else {
+                                        __nextRouter?.push(destination);
                                       }
-                                    })()}`
-                                  };
-                                  return (({ destination }) => {
-                                    if (
-                                      typeof destination === "string" &&
-                                      destination.startsWith("#")
-                                    ) {
-                                      document
-                                        .getElementById(destination.substr(1))
-                                        .scrollIntoView({ behavior: "smooth" });
-                                    } else {
-                                      __nextRouter?.push(destination);
-                                    }
-                                  })?.apply(null, [actionArgs]);
-                                })()
-                              : undefined;
+                                    })?.apply(null, [actionArgs]);
+                                  })()
+                                : undefined;
                             if (
                               $steps["goToConnections"] != null &&
                               typeof $steps["goToConnections"] === "object" &&
@@ -1268,21 +1301,25 @@ function PlasmicWebsitesConnections__RenderFunc(props: {
                                           .website
                                       ) {
                                         case 2:
-                                          return "https://media.rentamon.com/icon%2Fjabama-wide.jpg";
+                                          return "https://media.miaan.ir/icon%2Fjabama.png";
                                         case 3:
-                                          return "https://media.rentamon.com/icon%2Fjajiga-wide.jpg";
+                                          return "https://media.miaan.ir/icon%2Fjajiga.png";
                                         case 4:
-                                          return "https://media.rentamon.com/icon%2Fshab-wide.jpg";
+                                          return "https://media.miaan.ir/icon%2Fshab.png";
                                         case 5:
-                                          return "https://media.rentamon.com/icon%2Fmizboon-wide.jpg";
+                                          return "https://media.miaan.ir/icon%2Fmizboon.png";
                                         case 6:
-                                          return "https://media.rentamon.com/icon%2Fotaghak-wide.jpg";
+                                          return "https://media.miaan.ir/icon%2Fotaghak.png";
                                         case 7:
-                                          return "https://media.rentamon.com/icon%2Fmihmansho-wide.jpg";
+                                          return "https://media.miaan.ir/icon%2Fmihmansho.png";
                                         case 8:
-                                          return "https://media.rentamon.com/icon%2Fhomsa-wide.jpg";
+                                          return "https://media.miaan.ir/icon%2Fhomsa.png";
                                         case 17:
-                                          return "https://media.rentamon.com/icon%2Fsnapptrip.png";
+                                          return "https://media.miaan.ir/icon%2Fsnapptrip.png";
+                                        case 20:
+                                          return "https://media.miaan.ir/icon%2Fsepanja.png";
+                                        case 9:
+                                          return "https://media.miaan.ir/icon%2Fdivar.png";
                                         default:
                                           return "";
                                       }
@@ -1340,6 +1377,10 @@ function PlasmicWebsitesConnections__RenderFunc(props: {
                                           return "هومسا";
                                         case 17:
                                           return "اسنپ";
+                                        case 20:
+                                          return "سپنجا";
+                                        case 9:
+                                          return "دیوار";
                                         default:
                                           return "";
                                       }
