@@ -6616,6 +6616,11 @@
           "id": "hUAsSCwYLXFL",
           "name": "walletwithDebt.svg",
           "filePath": "../public/plasmic/website_starter/images/walletwithDebtSvg.svg"
+        },
+        {
+          "id": "JaVetEf-zuyQ",
+          "name": "sepanja.png",
+          "filePath": "../public/plasmic/website_starter/images/sepanjaPng.png"
         }
       ],
       "indirect": false,

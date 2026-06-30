@@ -815,6 +815,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  cursor: pointer;
   padding: 8px 0px 8px 8px;
 }
 @media (max-width: 350px) {
@@ -903,6 +904,7 @@
   pointer-events: auto;
   filter: blur(0px);
   box-shadow: none;
+  cursor: pointer;
   padding: 8px 0px 8px 8px;
 }
 @media (max-width: 350px) {
@@ -984,7 +986,7 @@
   justify-content: space-between;
   align-items: center;
   opacity: 1;
-  cursor: auto;
+  cursor: pointer;
   pointer-events: auto;
   padding: 8px 0px 8px 8px;
 }
@@ -1069,7 +1071,7 @@
   background: none;
   opacity: 1;
   pointer-events: none;
-  cursor: auto;
+  cursor: pointer;
   filter: blur(0px);
   padding: 8px 20px 8px 8px;
 }
@@ -1133,6 +1135,94 @@
   text-overflow: clip;
 }
 .jajigaSwitch:global(.__wab_instance) {
+  cursor: auto;
+  pointer-events: auto;
+}
+.sepanjaContainer2 {
+  display: flex;
+  position: relative;
+  width: 338px;
+  max-width: 100%;
+  align-self: auto;
+  left: auto;
+  top: auto;
+  z-index: 1;
+  bottom: auto;
+  height: auto;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background: none;
+  opacity: 0.6;
+  pointer-events: none;
+  cursor: pointer;
+  filter: blur(0px);
+  padding: 8px 20px 8px 8px;
+}
+@media (max-width: 350px) {
+  .sepanjaContainer2 {
+    padding-right: 0px;
+    padding-left: 0px;
+    left: auto;
+    top: auto;
+    bottom: auto;
+  }
+}
+.freeBox___6X537 {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  margin-left: 0px;
+  min-width: 0;
+  padding: 0px 0px 0px 8px;
+}
+@media (max-width: 350px) {
+  .freeBox___6X537 {
+    padding-right: 0px;
+    padding-bottom: 0px;
+  }
+}
+.img___4N7Hw {
+  object-fit: cover;
+  max-width: 100%;
+  width: 44px;
+  height: 44px;
+  object-position: 50% 50%;
+  margin-left: 12px;
+  opacity: 0.6;
+  flex-shrink: 0;
+  border-radius: 7px;
+}
+.img___4N7Hw > picture > img {
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+.text__tWjyw {
+  position: relative;
+  width: auto;
+  height: auto;
+  max-width: auto;
+  font-size: 18px;
+  text-align: right;
+  padding-left: 0px;
+  font-family: "Estedad";
+  font-weight: 400;
+  font-style: normal;
+  color: #203647;
+  text-transform: none;
+  line-height: 1.5;
+  letter-spacing: normal;
+  white-space: pre-wrap;
+  user-select: text;
+  text-decoration-line: none;
+  text-overflow: clip;
+}
+.jajigaSwitch2:global(.__wab_instance) {
   cursor: auto;
   pointer-events: auto;
 }

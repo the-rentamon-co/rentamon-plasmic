@@ -147,6 +147,8 @@ export type PlasmicInstantNeo__OverridesType = {
   jabamaSwitch?: Flex__<typeof Switch>;
   jajigaContainer?: Flex__<"div">;
   jajigaSwitch?: Flex__<typeof Switch>;
+  sepanjaContainer2?: Flex__<"div">;
+  jajigaSwitch2?: Flex__<typeof Switch>;
   desc?: Flex__<"div">;
   sideEffect?: Flex__<typeof SideEffect>;
   returnButton?: Flex__<"div">;
@@ -640,6 +642,25 @@ function PlasmicInstantNeo__RenderFunc(props: {
         type: "private",
         variableType: "boolean",
         initFunc: ({ $props, $state, $queries, $q, $ctx }) => false
+      },
+      {
+        path: "jajigaSwitch2.checked",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) =>
+          (() => {
+            try {
+              return $state.isJajigaSwitchChecked;
+            } catch (e) {
+              if (
+                e instanceof TypeError ||
+                e?.plasmicType === "PlasmicUndefinedDataError"
+              ) {
+                return false;
+              }
+              throw e;
+            }
+          })()
       }
     ],
     [$props, $ctx, $refs]
@@ -3371,6 +3392,129 @@ function PlasmicInstantNeo__RenderFunc(props: {
                       />
                     </div>
                   ) : null}
+                  {(() => {
+                    try {
+                      return $state.instantPropertyWebsite.data.some(
+                        item => item.website_id === "20"
+                      );
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return false;
+                      }
+                      throw e;
+                    }
+                  })() ? (
+                    <div
+                      data-plasmic-name={"sepanjaContainer2"}
+                      data-plasmic-override={overrides.sepanjaContainer2}
+                      className={classNames("all", sty.sepanjaContainer2)}
+                      onClick={async event => {
+                        const $steps = {};
+
+                        $steps["invokeGlobalAction"] = true
+                          ? (() => {
+                              const actionArgs = {
+                                args: [
+                                  "error",
+                                  "\u0641\u0639\u0644\u0627 \u0627\u0645\u06a9\u0627\u0646 \u0641\u0639\u0627\u0644 \u0634\u062f\u0646 \u0622\u0646\u06cc \u00ab\u0633\u067e\u0646\u062c\u0627\u00bb \u0646\u06cc\u0633\u062a!",
+                                  "top-center"
+                                ]
+                              };
+                              return $globalActions[
+                                "Fragment.showToast"
+                              ]?.apply(null, [...actionArgs.args]);
+                            })()
+                          : undefined;
+                        if (
+                          $steps["invokeGlobalAction"] != null &&
+                          typeof $steps["invokeGlobalAction"] === "object" &&
+                          typeof $steps["invokeGlobalAction"].then ===
+                            "function"
+                        ) {
+                          $steps["invokeGlobalAction"] =
+                            await $steps["invokeGlobalAction"];
+                        }
+                      }}
+                    >
+                      <div className={classNames("all", sty.freeBox___6X537)}>
+                        <PlasmicImg__
+                          alt={""}
+                          className={classNames(sty.img___4N7Hw)}
+                          displayHeight={"44px"}
+                          displayMaxHeight={"none"}
+                          displayMaxWidth={"100%"}
+                          displayMinHeight={"0"}
+                          displayMinWidth={"0"}
+                          displayWidth={"44px"}
+                          loading={"lazy"}
+                          src={{
+                            src: "/plasmic/website_starter/images/sepanjaPng.png",
+                            fullWidth: 46,
+                            fullHeight: 45,
+                            aspectRatio: undefined
+                          }}
+                        />
+
+                        <div
+                          className={classNames(
+                            "all",
+                            "__wab_text",
+                            sty.text__tWjyw
+                          )}
+                        >
+                          {"\u0633\u067e\u0646\u062c\u0627"}
+                        </div>
+                      </div>
+                      <Switch
+                        data-plasmic-name={"jajigaSwitch2"}
+                        data-plasmic-override={overrides.jajigaSwitch2}
+                        checked={generateStateValueProp($state, [
+                          "jajigaSwitch2",
+                          "checked"
+                        ])}
+                        className={classNames(
+                          "__wab_instance",
+                          sty.jajigaSwitch2
+                        )}
+                        disabled={true}
+                        onCheckedChange={async (...eventArgs: any) => {
+                          generateStateOnChangeProp($state, [
+                            "jajigaSwitch2",
+                            "checked"
+                          ]).apply(null, eventArgs);
+
+                          (async checked => {
+                            const $steps = {};
+
+                            $steps["log"] = true
+                              ? (() => {
+                                  const actionArgs = {
+                                    customFunction: async () => {
+                                      return console.log(
+                                        $steps.apiRequestForInstant
+                                      );
+                                    }
+                                  };
+                                  return (({ customFunction }) => {
+                                    return customFunction();
+                                  })?.apply(null, [actionArgs]);
+                                })()
+                              : undefined;
+                            if (
+                              $steps["log"] != null &&
+                              typeof $steps["log"] === "object" &&
+                              typeof $steps["log"].then === "function"
+                            ) {
+                              $steps["log"] = await $steps["log"];
+                            }
+                          }).apply(null, eventArgs);
+                        }}
+                      />
+                    </div>
+                  ) : null}
                 </div>
               ) : null}
             </ApiRequest>
@@ -3925,6 +4069,8 @@ const PlasmicDescendants = {
     "jabamaSwitch",
     "jajigaContainer",
     "jajigaSwitch",
+    "sepanjaContainer2",
+    "jajigaSwitch2",
     "desc",
     "sideEffect",
     "returnButton",
@@ -3968,7 +4114,9 @@ const PlasmicDescendants = {
     "jabamaContainer",
     "jabamaSwitch",
     "jajigaContainer",
-    "jajigaSwitch"
+    "jajigaSwitch",
+    "sepanjaContainer2",
+    "jajigaSwitch2"
   ],
   properties: [
     "properties",
@@ -3984,7 +4132,9 @@ const PlasmicDescendants = {
     "jabamaContainer",
     "jabamaSwitch",
     "jajigaContainer",
-    "jajigaSwitch"
+    "jajigaSwitch",
+    "sepanjaContainer2",
+    "jajigaSwitch2"
   ],
   selectProperty: ["selectProperty"],
   homsaContainer: ["homsaContainer", "homsaSwitch"],
@@ -3999,6 +4149,8 @@ const PlasmicDescendants = {
   jabamaSwitch: ["jabamaSwitch"],
   jajigaContainer: ["jajigaContainer", "jajigaSwitch"],
   jajigaSwitch: ["jajigaSwitch"],
+  sepanjaContainer2: ["sepanjaContainer2", "jajigaSwitch2"],
+  jajigaSwitch2: ["jajigaSwitch2"],
   desc: ["desc"],
   sideEffect: ["sideEffect"],
   returnButton: ["returnButton"],
@@ -4041,6 +4193,8 @@ type NodeDefaultElementType = {
   jabamaSwitch: typeof Switch;
   jajigaContainer: "div";
   jajigaSwitch: typeof Switch;
+  sepanjaContainer2: "div";
+  jajigaSwitch2: typeof Switch;
   desc: "div";
   sideEffect: typeof SideEffect;
   returnButton: "div";
@@ -4141,6 +4295,8 @@ export const PlasmicInstantNeo = Object.assign(
     jabamaSwitch: makeNodeComponent("jabamaSwitch"),
     jajigaContainer: makeNodeComponent("jajigaContainer"),
     jajigaSwitch: makeNodeComponent("jajigaSwitch"),
+    sepanjaContainer2: makeNodeComponent("sepanjaContainer2"),
+    jajigaSwitch2: makeNodeComponent("jajigaSwitch2"),
     desc: makeNodeComponent("desc"),
     sideEffect: makeNodeComponent("sideEffect"),
     returnButton: makeNodeComponent("returnButton"),
