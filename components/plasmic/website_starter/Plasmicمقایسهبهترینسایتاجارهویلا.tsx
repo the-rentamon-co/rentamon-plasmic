@@ -68,6 +68,7 @@ import { FormItemWrapper } from "@plasmicpkgs/antd5/skinny/FormItem";
 import { AntdInput } from "@plasmicpkgs/antd5/skinny/registerInput";
 import { inputHelpers as AntdInput_Helpers } from "@plasmicpkgs/antd5/skinny/registerInput";
 import { AntdButton } from "@plasmicpkgs/antd5/skinny/registerButton";
+import { Embed } from "@plasmicpkgs/plasmic-basic-components";
 import MiaanFooter from "../../MiaanFooter"; // plasmic-import: DSdlo5kdtbOe/component
 import ClarityRntComponent from "../../ClarityRntComponent"; // plasmic-import: J5D8c7V05ty1/component
 import FaviconRntComponent from "../../FaviconRntComponent"; // plasmic-import: 2Chy9NeUIB9Q/component
@@ -172,6 +173,7 @@ export type Plasmicمقایسهبهترینسایتاجارهویلا__Overrides
   support?: Flex__<"div">;
   supportText?: Flex__<"div">;
   outlines?: Flex__<"div">;
+  embedHtml?: Flex__<typeof Embed>;
   bot?: Flex__<"div">;
   more?: Flex__<"div">;
   certificates?: Flex__<"div">;
@@ -2048,6 +2050,14 @@ function Plasmicمقایسهبهترینسایتاجارهویلا__RenderFunc(p
                     </React.Fragment>
                   </React.Fragment>
                 </div>
+                <Embed
+                  data-plasmic-name={"embedHtml"}
+                  data-plasmic-override={overrides.embedHtml}
+                  className={classNames("__wab_instance", sty.embedHtml)}
+                  code={
+                    '<section class="platforms-accordion-section" dir="rtl">\r\n    <h2 class="section-title">\u067e\u0644\u062a\u0641\u0631\u0645\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647</h2>\r\n    <div class="accordion-container" id="platformsContainer"></div>\r\n</section>\r\n\r\n<script>\r\nasync function loadPlatforms() {\r\n    const container = document.getElementById("platformsContainer");\r\n    try {\r\n        const res = await fetch("https://mkm.miaan.ir/webhook/v1/platforms");\r\n        const json = await res.json();\r\n\r\n        container.innerHTML = "";\r\n\r\n        // \u0641\u06cc\u0644\u062a\u0631 \u06a9\u0631\u062f\u0646 \u0622\u06cc\u062a\u0645\u200c\u0647\u0627\u06cc\u06cc \u06a9\u0647 \u0622\u062f\u0631\u0633\u060c \u0627\u0633\u062a\u0627\u0646 \u06cc\u0627 \u0634\u0647\u0631 \u0622\u0646\u200c\u0647\u0627 \u062e\u0627\u0644\u06cc \u0627\u0633\u062a\r\n        const validPlatforms = json.filter(item => {\r\n            const p = item.data;\r\n            return p.address && p.province && p.city && \r\n                   p.address.trim() !== "" && \r\n                   p.province.trim() !== "" && \r\n                   p.city.trim() !== "";\r\n        });\r\n\r\n        validPlatforms.forEach((item, index) => {\r\n            const p = item.data;\r\n            const phone = p.contact_numbers?.[0];\r\n            const cleanUrl = p.website_url ? p.website_url.replace("https://","").replace("http://","").replace("www.","") : "";\r\n\r\n            const el = document.createElement("details");\r\n            el.className = "platform-item";\r\n            el.setAttribute("itemscope", "");\r\n            el.setAttribute("itemtype", "https://schema.org/Organization");\r\n            \r\n            // \u0628\u0627\u0632 \u0646\u06af\u0647 \u062f\u0627\u0634\u062a\u0646 \u0627\u0648\u0644\u06cc\u0646 \u0622\u06cc\u062a\u0645 \u0645\u0639\u062a\u0628\u0631 \u0628\u0647 \u0635\u0648\u0631\u062a \u062f\u06cc\u0641\u0627\u0644\u062a (\u062c\u0627\u0628\u0627\u0645\u0627)\r\n            if (index === 0) {\r\n                el.setAttribute("open", "");\r\n            }\r\n\r\n            el.innerHTML = `\r\n                <summary class="platform-header">\r\n                    <div class="header-main">\r\n                        <img src="${p.logo_url}" alt="${p.name}" class="platform-logo" itemprop="logo">\r\n                        <div class="title-group">\r\n                            <h3 class="platform-title" itemprop="name">${p.name}</h3>\r\n                            <a href="${p.website_url}" target="_blank" rel="noopener" class="platform-subtitle">${cleanUrl}</a>\r\n                        </div>\r\n                    </div>\r\n                    <span class="accordion-icon"></span>\r\n                </summary>\r\n                <div class="platform-content">\r\n                    <div class="info-row">\r\n                        <span class="info-label">\ud83d\udccd \u0645\u0648\u0642\u0639\u06cc\u062a:</span>\r\n                        <span class="info-value">${p.province}\u060c ${p.city}</span>\r\n                    </div>\r\n                    <div class="info-row" itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">\r\n                        <span class="info-label">\ud83d\uddfa\ufe0f \u0622\u062f\u0631\u0633:</span>\r\n                        <span class="info-value" itemprop="streetAddress">${p.address}</span>\r\n                    </div>\r\n                    <div class="info-row">\r\n                        <span class="info-label">\ud83d\udcde \u062a\u0644\u0641\u0646 \u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u06cc:</span>\r\n                        ${phone ? `<a href="tel:${phone}" itemprop="telephone" class="tel-link">${phone}</a>` : `<span class="info-value">-</span>`}\r\n                    </div>\r\n                    <div class="info-row">\r\n                        <span class="info-label">\u2709\ufe0f \u0627\u06cc\u0645\u06cc\u0644:</span>\r\n                        ${p.email ? `<a href="mailto:${p.email}" itemprop="email">${p.email}</a>` : `<span class="info-value">-</span>`}\r\n                    </div>\r\n                </div>\r\n            `;\r\n\r\n            // \u062c\u0644\u0648\u06af\u06cc\u0631\u06cc \u0627\u0632 \u0628\u0627\u0632/\u0628\u0633\u062a\u0647 \u0634\u062f\u0646 \u0622\u06a9\u0627\u0631\u062f\u0626\u0648\u0646 \u0647\u0646\u06af\u0627\u0645 \u06a9\u0644\u06cc\u06a9 \u0631\u0648\u06cc \u0644\u06cc\u0646\u06a9 \u0632\u06cc\u0631 \u0639\u0646\u0648\u0627\u0646\r\n            const subtitleLink = el.querySelector(\'.platform-subtitle\');\r\n            if (subtitleLink) {\r\n                subtitleLink.addEventListener(\'click\', (e) => {\r\n                    e.stopPropagation();\r\n                });\r\n            }\r\n\r\n            // \u0647\u0646\u062f\u0644 \u06a9\u0631\u062f\u0646 \u0648\u0636\u0639\u06cc\u062a \u0622\u06a9\u0627\u0631\u062f\u0626\u0648\u0646\r\n            el.addEventListener(\'toggle\', () => {\r\n                if (el.open) {\r\n                    document.querySelectorAll(\'.platform-item\').forEach(otherItem => {\r\n                        if (otherItem !== el) otherItem.removeAttribute(\'open\');\r\n                    });\r\n                }\r\n            });\r\n\r\n            container.appendChild(el);\r\n        });\r\n    } catch (error) {\r\n        console.error("\u062e\u0637\u0627 \u062f\u0631 \u062f\u0631\u06cc\u0627\u0641\u062a \u0627\u0637\u0644\u0627\u0639\u0627\u062a:", error);\r\n    }\r\n}\r\n\r\nloadPlatforms();\r\n</script>\r\n\r\n<style>\r\n    /* \u0628\u0627\u0631\u06af\u0630\u0627\u0631\u06cc \u0641\u0648\u0646\u062a \u0627\u0633\u062a\u0639\u062f\u0627\u062f */\r\n    @font-face {\r\n        font-family: \'Estedad\';\r\n        src: url(\'https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/fonts%2Festedad%2FEstedad-Regular.ttf\') format(\'truetype\');\r\n        font-weight: normal;\r\n        font-style: normal;\r\n    }\r\n    @font-face {\r\n        font-family: \'Estedad\';\r\n        src: url(\'https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/fonts%2Festedad%2FEstedad-Medium%20%281%29.ttf\') format(\'truetype\');\r\n        font-weight: 500;\r\n        font-style: normal;\r\n    }\r\n    @font-face {\r\n        font-family: \'Estedad\';\r\n        src: url(\'https://rentamon-library.s3.ir-thr-at1.arvanstorage.ir/fonts%2Festedad%2FEstedad-SemiBold.ttf\') format(\'truetype\');\r\n        font-weight: 600;\r\n        font-style: normal;\r\n    }\r\n\r\n    /* \u0627\u0633\u062a\u0627\u06cc\u0644\u200c\u0647\u0627\u06cc \u067e\u0627\u06cc\u0647 \u06a9\u0627\u0645\u067e\u0648\u0646\u0646\u062a \u0628\u0631 \u0627\u0633\u0627\u0633 \u0628\u0631\u0646\u062f\u0628\u0648\u06a9 \u0645\u06cc\u0627\u0646 */\r\n    .platforms-accordion-section {\r\n        max-width: 460px;\r\n        margin: 24px auto;\r\n        padding: 20px;\r\n        background: linear-gradient(180deg, #EBFAFF 0%, #FCFCFC 100%);\r\n        border-radius: 16px;\r\n        font-family: \'Estedad\', system-ui, -apple-system, sans-serif;\r\n    }\r\n\r\n    .section-title {\r\n        color: #444444;\r\n        font-weight: 600;\r\n        margin-top: 0;\r\n        margin-bottom: 20px;\r\n    }\r\n\r\n    .accordion-container {\r\n        display: flex;\r\n        flex-direction: column;\r\n        gap: 16px;\r\n    }\r\n\r\n    .platform-item {\r\n        background-color: #FCFCFC;\r\n        border: 1px solid rgba(165, 165, 165, 0.2);\r\n        border-radius: 16px;\r\n        overflow: hidden;\r\n    }\r\n\r\n    .platform-header {\r\n        display: flex;\r\n        justify-content: space-between;\r\n        align-items: center;\r\n        padding: 16px;\r\n        cursor: pointer;\r\n        list-style: none;\r\n    }\r\n    \r\n    .platform-header::-webkit-details-marker {\r\n        display: none;\r\n    }\r\n\r\n    .header-main {\r\n        display: flex;\r\n        gap: 14px;\r\n        align-items: center;\r\n    }\r\n\r\n    .title-group {\r\n        display: flex;\r\n        flex-direction: column;\r\n        gap: 4px;\r\n        align-items: flex-start;\r\n    }\r\n\r\n    .platform-logo {\r\n        width: 44px;\r\n        height: 44px;\r\n        object-fit: contain;\r\n        border-radius: 8px;\r\n    }\r\n\r\n    .platform-title {\r\n        margin: 0;\r\n        color: #444444;\r\n        font-weight: 600;\r\n    }\r\n\r\n    .platform-subtitle {\r\n        color: #A5A5A5;\r\n        font-size: 13px;\r\n        direction: ltr;\r\n        text-decoration: none;\r\n    }\r\n    \r\n    .platform-subtitle:hover {\r\n        color: #0000F7;\r\n    }\r\n\r\n    .accordion-icon {\r\n        width: 10px;\r\n        height: 10px;\r\n        border-bottom: 2px solid #0000F7;\r\n        border-left: 2px solid #0000F7;\r\n        transform: rotate(-45deg);\r\n        transition: transform 0.2s ease;\r\n        margin-left: 4px;\r\n    }\r\n\r\n    .platform-item[open] .accordion-icon {\r\n        transform: rotate(135deg);\r\n    }\r\n\r\n    .platform-content {\r\n        padding: 4px 20px 20px;\r\n        border-top: 1px solid rgba(165, 165, 165, 0.1);\r\n        display: flex;\r\n        flex-direction: column;\r\n        gap: 12px;\r\n    }\r\n\r\n    .info-row {\r\n        display: flex;\r\n        flex-direction: column;\r\n        gap: 4px;\r\n    }\r\n\r\n    .info-label {\r\n        color: #A5A5A5;\r\n        font-size: 13px;\r\n    }\r\n\r\n    .info-value, .platform-content a {\r\n        color: #444444;\r\n        text-decoration: none;\r\n        line-height: 1.6;\r\n    }\r\n\r\n    .platform-content a {\r\n        color: #0000F7;\r\n        width: fit-content;\r\n    }\r\n\r\n    /* \u0648\u0627\u06a9\u0646\u0634\u200c\u06af\u0631\u0627\u06cc\u06cc \u062a\u0627\u06cc\u067e\u0648\u06af\u0631\u0627\u0641\u06cc \u0628\u0631 \u0627\u0633\u0627\u0633 \u062f\u0633\u062a\u06af\u0627\u0647\u200c\u0647\u0627 */\r\n    @media (min-width: 1025px) {\r\n        .section-title { font-size: 20px; }\r\n        .platform-title { font-size: 17px; }\r\n        .info-value, .platform-content a { font-size: 16px; }\r\n    }\r\n\r\n    @media (max-width: 1024px) and (min-width: 769px) {\r\n        .section-title { font-size: 18px; }\r\n        .platform-title { font-size: 16px; }\r\n        .info-value, .platform-content a { font-size: 16px; }\r\n    }\r\n\r\n    @media (max-width: 768px) and (min-width: 481px) {\r\n        .section-title { font-size: 18px; }\r\n        .platform-title { font-size: 16px; }\r\n        .info-value, .platform-content a { font-size: 15px; }\r\n    }\r\n\r\n    @media (max-width: 480px) {\r\n        .section-title { font-size: 17px; }\r\n        .platform-title { font-size: 16px; }\r\n        .info-value, .platform-content a { font-size: 15px; }\r\n    }\r\n</style>'
+                  }
+                />
               </div>
             </div>
             <div
@@ -2457,6 +2467,7 @@ const PlasmicDescendants = {
     "support",
     "supportText",
     "outlines",
+    "embedHtml",
     "bot",
     "more",
     "certificates",
@@ -2503,6 +2514,7 @@ const PlasmicDescendants = {
     "support",
     "supportText",
     "outlines",
+    "embedHtml",
     "bot",
     "more",
     "certificates",
@@ -2586,9 +2598,10 @@ const PlasmicDescendants = {
   strDefinition5: ["strDefinition5", "titlesRow6", "titlesRow7"],
   titlesRow6: ["titlesRow6"],
   titlesRow7: ["titlesRow7"],
-  support: ["support", "supportText", "outlines"],
+  support: ["support", "supportText", "outlines", "embedHtml"],
   supportText: ["supportText"],
-  outlines: ["outlines"],
+  outlines: ["outlines", "embedHtml"],
+  embedHtml: ["embedHtml"],
   bot: [
     "bot",
     "more",
@@ -2651,6 +2664,7 @@ type NodeDefaultElementType = {
   support: "div";
   supportText: "div";
   outlines: "div";
+  embedHtml: typeof Embed;
   bot: "div";
   more: "div";
   certificates: "div";
@@ -2761,6 +2775,7 @@ export const Plasmicمقایسهبهترینسایتاجارهویلا = Object.
     support: makeNodeComponent("support"),
     supportText: makeNodeComponent("supportText"),
     outlines: makeNodeComponent("outlines"),
+    embedHtml: makeNodeComponent("embedHtml"),
     bot: makeNodeComponent("bot"),
     more: makeNodeComponent("more"),
     certificates: makeNodeComponent("certificates"),

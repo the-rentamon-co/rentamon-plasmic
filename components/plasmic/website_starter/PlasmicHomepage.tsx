@@ -570,7 +570,7 @@ function PlasmicHomepage__RenderFunc(props: {
                           sty.embedHtml___2YmQ
                         )}
                         code={
-                          '<video\r\n    src="https://media.miaan.ir/video%2Fauto-sync.mp4?versionId="\r\n  autoplay\r\n  muted\r\n  loop\r\n  playsinline\r\n  webkit-playsinline\r\n  preload="auto"\r\n  width="640"\r\n></video>'
+                          '<video\r\n    src="https://media.miaan.ir/video%2FPaseban%281%29.mp4?versionId="\r\n  autoplay\r\n  muted\r\n  loop\r\n  playsinline\r\n  webkit-playsinline\r\n  preload="auto"\r\n  width="640"\r\n></video>'
                         }
                       />
                     </div>

@@ -3326,6 +3326,7 @@
   font-size: 16px;
   line-height: 1.8;
   color: #444444;
+  display: none;
 }
 @media (max-width: 1200px) {
   .text__f3Lou {
@@ -3341,6 +3342,11 @@
   .text__f3Lou {
     font-size: 16px;
   }
+}
+.embedHtml:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+  width: 1173px;
 }
 .bot {
   display: flex;

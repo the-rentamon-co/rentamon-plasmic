@@ -471,12 +471,13 @@
   color: var(--token-8R7jjC_-F9FF);
   overflow: hidden;
   width: 100%;
-  height: auto;
+  height: 393px;
   max-width: 100%;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
   min-width: 0;
+  flex-shrink: 0;
   border-radius: 15px;
   padding: 24px 8px 8px;
 }
