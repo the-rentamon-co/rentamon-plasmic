@@ -819,9 +819,22 @@ function PlasmicInvite__RenderFunc(props: {
             </div>
             <div className={classNames("all", sty.freeBox__kb3W2)}>
               <div className={classNames("all", "__wab_text", sty.text__pvaXy)}>
-                {hasVariant(globalVariants, "screen", "mobile")
-                  ? "\u0647\u0645\u06cc\u0646 \u0627\u0644\u0627\u0646 \u062b\u0628\u062a \u0646\u0627\u0645 \u06a9\u0646"
-                  : "\u0647\u0645\u06cc\u0646 \u0627\u0644\u0627\u0646 \u062f\u0631 \u0645\u06cc\u0627\u0646 \u062b\u0628\u062a \u0646\u0627\u0645 \u06a9\u0646"}
+                {hasVariant(globalVariants, "screen", "mobile") ? (
+                  "\u0647\u0645\u06cc\u0646 \u0627\u0644\u0627\u0646 \u062b\u0628\u062a \u0646\u0627\u0645 \u06a9\u0646"
+                ) : (
+                  <React.Fragment>
+                    <span
+                      className={
+                        "plasmic_default__all plasmic_default__span plasmic_default__span__7SNMk"
+                      }
+                      style={{ fontWeight: 700, color: "#000000" }}
+                    >
+                      {
+                        "\u0647\u0645\u06cc\u0646 \u0627\u0644\u0627\u0646 \u062f\u0631 \u0645\u06cc\u0627\u0646 \u062b\u0628\u062a \u0646\u0627\u0645 \u06a9\u0646"
+                      }
+                    </span>
+                  </React.Fragment>
+                )}
               </div>
               <div
                 className={classNames("all", sty.freeBox__vMItQ, "clickable")}

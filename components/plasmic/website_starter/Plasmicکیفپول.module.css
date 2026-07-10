@@ -2137,6 +2137,7 @@
   height: auto;
   max-width: 100%;
   font-size: 16px;
+  margin-bottom: 0px;
   min-width: 0;
 }
 @media (max-width: 500px) {

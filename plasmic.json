@@ -3707,6 +3707,34 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/hosts/[host_id]"
+        },
+        {
+          "id": "Bm-xLsW10LTt",
+          "name": "JajigaStep1",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicJajigaStep1.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/jajiga/step-1.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicJajigaStep1.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/jajiga/step-1"
+        },
+        {
+          "id": "3E7MfLwjLi9i",
+          "name": "JajigaStep2",
+          "type": "managed",
+          "projectId": "7SNMkB8UMukVgcWJYokeAQ",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicJajigaStep2.tsx",
+          "importSpec": {
+            "modulePath": "../src/pages/jajiga/step-2.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicJajigaStep2.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/jajiga/step-2"
         }
       ],
       "icons": [
