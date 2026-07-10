@@ -241,6 +241,31 @@ function PlasmicJajigaStep2__RenderFunc(props: {
                 $steps["invokeGlobalAction"] =
                   await $steps["invokeGlobalAction"];
               }
+
+              $steps["goToProCalendar2"] = true
+                ? (() => {
+                    const actionArgs = { destination: `/panel-2` };
+                    return (({ destination }) => {
+                      if (
+                        typeof destination === "string" &&
+                        destination.startsWith("#")
+                      ) {
+                        document
+                          .getElementById(destination.substr(1))
+                          .scrollIntoView({ behavior: "smooth" });
+                      } else {
+                        __nextRouter?.push(destination);
+                      }
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["goToProCalendar2"] != null &&
+                typeof $steps["goToProCalendar2"] === "object" &&
+                typeof $steps["goToProCalendar2"].then === "function"
+              ) {
+                $steps["goToProCalendar2"] = await $steps["goToProCalendar2"];
+              }
             }}
           />
         </div>
