@@ -379,7 +379,7 @@ function PlasmicProCalendar2__RenderFunc(props: {
         path: "modal.open",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $q, $ctx }) => false
+        initFunc: ({ $props, $state, $queries, $q, $ctx }) => true
       },
       {
         path: "variable2",
@@ -2187,7 +2187,7 @@ function PlasmicProCalendar2__RenderFunc(props: {
                 styleTokensClassNames
               )}
               hideFooter={true}
-              maskClosable={false}
+              maskClosable={true}
               modalScopeClassName={sty["modal__modal"]}
               onOpenChange={async (...eventArgs: any) => {
                 generateStateOnChangeProp($state, ["modal", "open"]).apply(
@@ -2203,9 +2203,26 @@ function PlasmicProCalendar2__RenderFunc(props: {
                 <div
                   className={classNames("all", "__wab_text", sty.text__qOzWq)}
                 >
-                  {hasVariant(globalVariants, "screen", "smallMobile")
-                    ? "\u26a0\ufe0f\r\n\u0628\u0647 \u062f\u0644\u06cc\u0644 \u0627\u062e\u062a\u0644\u0627\u0644 \u0633\u0631\u0627\u0633\u0631\u06cc \u0631\u0648\u06cc \u0627\u06cc\u0646\u062a\u0631\u0646\u062a \u06a9\u0634\u0648\u0631\u060c \u0645\u0645\u06a9\u0646\u0647 \u0628\u0639\u0636\u06cc \u062a\u063a\u06cc\u06cc\u0631\u0627\u062a \u0628\u0627 \u062e\u0637\u0627 \u0645\u0648\u0627\u062c\u0647 \u0628\u0634\u0646"
-                    : "\u26a0\ufe0f\r\n\u0628\u0647 \u0639\u0644\u062a \u0627\u062e\u062a\u0644\u0627\u0644 \u062f\u0631 \u0633\u0627\u06cc\u062a \u0647\u0648\u0645\u0633\u0627 \u0645\u0645\u06a9\u0646\u0647 \u0628\u0639\u0636\u06cc \u0627\u0632 \u062a\u063a\u06cc\u06cc\u0631\u0627\u062a \u0627\u0639\u0645\u0627\u0644 \u0646\u0634\u0647"}
+                  <React.Fragment>
+                    <React.Fragment>
+                      {
+                        "\ud83c\udf89\u0646\u0633\u062e\u0647 \u062c\u062f\u06cc\u062f \u00ab\u0645\u06cc\u0627\u0646\u00bb \u0645\u0646\u062a\u0634\u0631 \u0634\u062f\ud83c\udf89\n\u062c\u0647\u062a \u0627\u062f\u0627\u0645\u0647 \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u062e\u062f\u0645\u0627\u062a \u0645\u06cc\u0627\u0646 \u0644\u0637\u0641\u0627 \u0628\u0631\u0646\u0627\u0645\u0647 \u0631\u0648 "
+                      }
+                    </React.Fragment>
+                    <span
+                      className={
+                        "plasmic_default__all plasmic_default__span plasmic_default__span__7SNMk"
+                      }
+                      style={{ fontWeight: 700 }}
+                    >
+                      {
+                        "\u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc "
+                      }
+                    </span>
+                    <React.Fragment>
+                      {"\u06a9\u0646\ud83d\udc47"}
+                    </React.Fragment>
+                  </React.Fragment>
                 </div>
               </div>
               <div
@@ -2287,8 +2304,41 @@ function PlasmicProCalendar2__RenderFunc(props: {
               >
                 <div
                   className={classNames("all", "__wab_text", sty.text__cxHpa)}
+                  onClick={async event => {
+                    const $steps = {};
+
+                    $steps["goToدانلوداپلیکیشنموبایلمیان"] = true
+                      ? (() => {
+                          const actionArgs = { destination: `/download` };
+                          return (({ destination }) => {
+                            if (
+                              typeof destination === "string" &&
+                              destination.startsWith("#")
+                            ) {
+                              document
+                                .getElementById(destination.substr(1))
+                                .scrollIntoView({ behavior: "smooth" });
+                            } else {
+                              __nextRouter?.push(destination);
+                            }
+                          })?.apply(null, [actionArgs]);
+                        })()
+                      : undefined;
+                    if (
+                      $steps["goToدانلوداپلیکیشنموبایلمیان"] != null &&
+                      typeof $steps["goToدانلوداپلیکیشنموبایلمیان"] ===
+                        "object" &&
+                      typeof $steps["goToدانلوداپلیکیشنموبایلمیان"].then ===
+                        "function"
+                    ) {
+                      $steps["goToدانلوداپلیکیشنموبایلمیان"] =
+                        await $steps["goToدانلوداپلیکیشنموبایلمیان"];
+                    }
+                  }}
                 >
-                  {"\u0628\u0627\u0634\u0647"}
+                  {
+                    "\u0628\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc \u0628\u0631\u0646\u0627\u0645\u0647"
+                  }
                 </div>
               </div>
             </AntdModal>
